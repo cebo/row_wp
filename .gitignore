@@ -1,0 +1,6 @@
+# ignore Mac OS X Desktop Service Store
+.DS_Store
+# ignore debug.log
+wp-content/debug.log
+# ignore local-config.php
+local-config.php
