@@ -1,0 +1,597 @@
+2014-01-29 14:24:53: User Deleted file C:\wamp\www\milo\wp-content\themes\ic\library\mapper.php
+2014-01-29 14:24:53: ===== Done =====
+2014-01-29 14:24:53: 
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /404.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /archive.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /attachment.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /author.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /category.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /comments.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/custom-plugins.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/custom.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/datepicker.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/font-awesome.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/font-awesome.min.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/Didot-Bold.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/Didot-Italic.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/Didot.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/fontawesome-webfont.eot
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/fontawesome-webfont.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/fontawesome-webfont.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/fontawesome-webfont.woff
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/FontAwesome.otf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/helveticaltstd-bold-webfont.eot
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/helveticaltstd-bold-webfont.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/helveticaltstd-bold-webfont.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/helveticaltstd-bold-webfont.woff
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/helveticaltstd-light-demo.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/helveticaltstd-light-webfont.eot
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/helveticaltstd-light-webfont.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/helveticaltstd-light-webfont.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/helveticaltstd-light-webfont.woff
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/scala-sansbold-lf-webfont.eot
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/scala-sansbold-lf-webfont.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/scala-sansbold-lf-webfont.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/scala-sansbold-lf-webfont.woff
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/scala-sansbold-lf.otf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/fonts/scala_sans-light.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/hoverfold.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/iosslider.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/media.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/nu-hotel.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/oceana-hotel.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/prettyPhoto.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/quotes-rotator/component.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/quotes-rotator/default.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/slidejs.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /css/style.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /echo-arts.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /echo-dine.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /echo-do.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /echo-events.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /echo-shop.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /error_log
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /fonts/icomoon.dev.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /fonts/icomoon.eot
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /fonts/icomoon.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /fonts/icomoon.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /fonts/icomoon.woff
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /footer.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /functions.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /header.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/5.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/6.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/amenities-desserts.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/amenities-desserts.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/arrow_left_gray.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/arrow_left_white.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/arrow_right_gray.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/arrow_right_white.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/arrow_updown_gray.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/bg_direction_nav.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/calbg.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/deal_marker2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/deluxe-king-2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/deluxe-king.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/dine_marker2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/dining_marker2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/do_marker2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/e-bike-rent.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/example-slide-1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/example-slide-2.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/example-slide-3.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/example-slide-4.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/fading-dots-horizontal.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/fading-dots-vertical.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/family-stay-package.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/gray.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/ico-quote-left.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/ico-quote-right.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/independent-collection-footer.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/container-bg.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-1-l.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-1-thumb.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-2-l.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-2-thumb.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-2.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-3-l.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-3-thumb.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-3.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-4-l.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-4-thumb.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-4.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-5-l.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/h-slider-5.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/selector-shadow.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/iosslider/slider-buttons.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/loading.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/logo.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/map.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/marker.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/nu-hotel/brooklyn-bridge.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/nu-hotel/downtown-brooklyn-event.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/nu-hotel/nu-page-photo.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/nu-hotel/urban-suite-1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/nu-hotel/urban-suite-2.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/nu-hotel/urban-suite-featured-image.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/nu-hotel/urban-suite-featured.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/ocean-view-king-1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/ocean-view-king-2.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/ocean-view-king-3.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/ocean-view-king-main-photo.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/ocean-view-king-room-details.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/header_hoteloverview.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/Hotel-Oceana--Santa-Barbara-photos-Exterior.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/Hotel-Oceana-Santa-Barbara-Hotel-Exterior-8-DEF.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/ocean_1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/oceana-featured-room-1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/oceana-featured-room-thumb.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/oceana-featured-room.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/oceana-room-list-photo-1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/oceana-room-list-photo-2.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/oceana-room-list-photo-3.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/oceana-room-list-photo-4.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/OceansideSurf.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/palm_trees_1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/purple_flower_.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/room_view_1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/oceana/stearnssantabarbara.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/pagination.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/party_marker2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/pattern.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/placeholder-gallery-photo.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_rounded/btnNext.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_rounded/btnPrevious.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_rounded/contentPattern.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_rounded/default_thumbnail.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_rounded/loader.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_rounded/sprite.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_square/btnNext.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_square/btnPrevious.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_square/contentPattern.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_square/default_thumbnail.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_square/loader.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/dark_square/sprite.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/default/default_thumb.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/default/loader.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/default/sprite.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/default/sprite_next.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/default/sprite_prev.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/default/sprite_x.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/default/sprite_y.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/facebook/btnNext.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/facebook/btnPrevious.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/facebook/contentPatternBottom.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/facebook/contentPatternLeft.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/facebook/contentPatternRight.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/facebook/contentPatternTop.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/facebook/default_thumbnail.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/facebook/loader.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/facebook/sprite.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_rounded/btnNext.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_rounded/btnPrevious.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_rounded/default_thumbnail.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_rounded/loader.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_rounded/sprite.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_square/btnNext.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_square/btnPrevious.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_square/default_thumbnail.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_square/loader.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/prettyPhoto/light_square/sprite.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/progress.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/santa-port.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/shop-shirt.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/shopping-bags.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/shopping-bags.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/shopping_marker2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/slider-gradience.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/stay_marker2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/map-OceansideSurf.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/map-santabarbara.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-10.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-2.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-3.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-4.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-5.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-6.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-7.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-8.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/tab-photo-9.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/test/test-1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/thumb.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/white-coastal-area-1.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/white-coastal-area.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/white-coastal-area.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /images/white-coastal-area_old.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /index.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/basic.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/bootstrap-datepicker.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/basic-carousel.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/carousel-min-max.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/css/demo.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/dynamic-carousel-min-max.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-medium/eot/1110FC_0.eot
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-medium/svg/1110FC_0.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-medium/svg/svg_test.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-medium/ttf/1110FC_0.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-medium/woff/1110FC_0.woff
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-regular/eot/11014B_0.eot
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-regular/svg/11014B_0.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-regular/svg/svg_test.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-regular/ttf/11014B_0.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-regular/woff/11014B_0.woff
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-semibold/eot/style_169898.eot
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-semibold/svg/index.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-semibold/svg/style_169898.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-semibold/ttf/style_169898.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/fonts/webfonts/geo-semibold/woff/style_169898.woff
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/images/kitchen_adventurer_caramel.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/images/kitchen_adventurer_cheesecake_brownie.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/images/kitchen_adventurer_donut.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/images/kitchen_adventurer_lemon.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/images/logo.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/index.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/demo.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/froogaloop.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/jquery.easing.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/jquery.fitvid.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/jquery.mousewheel.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/modernizr.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/shBrushCss.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/shBrushJScript.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/shBrushXml.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/js/shCore.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/thumbnail-controlnav.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/thumbnail-slider.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/video-wistia.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/demo/video.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/flexslider.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/fonts/flexslider-icon.eot
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/fonts/flexslider-icon.svg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/fonts/flexslider-icon.ttf
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/fonts/flexslider-icon.woff
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/images/bg_play_pause.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/jquery.flexslider-min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/flexslider/jquery.flexslider.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/gmap3.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/gmap3new.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery-clicknav.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.colorbox.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.easing-1.3.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.easing.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.hoverfold.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.iosslider.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.mousewheel.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.prettyPhoto.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.simplemodal.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.slides.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/jquery.sticky.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/quotes-rotator/jquery.cbpQTRotator.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/quotes-rotator/jquery.cbpQTRotator.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /js/quotes-rotator/modernizr.custom.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /languages/default.mo
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /languages/default.po
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/aboutme.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/aboutus.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/blog.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/captcha.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/class.phpmailer.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/contact.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/contact_three.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/contact_two.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/custom_fields.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/featured.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/inset.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/jquery.contact.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/maps.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/navigation.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/outdoor.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/panel.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/parallax.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/portfolio.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/post_types.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/process-form.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/reposts.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/rss.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/shortcodes.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/simple_functions.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/super-map.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/tinymce/img/add.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/tinymce/js/scripts.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/tinymce/tinymce.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/tinymce/tinymce.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/twitter.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/videobox.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /library/widgets.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /oauth/callback.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /oauth/clearsessions.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /oauth/config.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /oauth/connect.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /oauth/error_log
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /oauth/html.inc
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /oauth/twitteroauth/OAuth.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /oauth/twitteroauth/twitteroauth.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /ocean-view-king.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/activate.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/admin-style-grey.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/admin-style.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/colorpicker.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/colorpicker.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/eye.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/furu-ajax.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/accept-bg.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/accept.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/admin-bg-grad-grey.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/admin-bg-grad.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/admin_sidebar_icon.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/AlphaBar.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/bar-opacity.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/Bars.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/bg-save-bar-grey.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/bg-save-bar.jpg
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/blank.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/browse.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/checkboxbg.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/blank.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_background.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_hex.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_hsb_b.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_hsb_h.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_hsb_s.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_indic.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_overlay.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_rgb_b.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_rgb_g.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_rgb_r.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_select.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/colorpicker_submit.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/colorpicker/select.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/expand.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/icon_option.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/icon_option_grey.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/icon_options.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/icon_project.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/icon_slides.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/icon_team.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/map-opacity.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/mappoint.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/Maps.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/marker.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/mask.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/NoColor.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/off.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/on.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/options_logo.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/options_panel.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/options_sidebar_navbg.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/picker.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/preview-opacity.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/rangearrows.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/sample-layouts/sample-layout-1.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/sample-layouts/sample-layout-2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/sample-layouts/sample-layout-3.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/select.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/select.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/select2.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/slider.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/slider_center.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/slider_left.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/slider_right.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/twitter_icon.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/upload-button.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/images/wpspin_light.gif
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/iphone-style-checkboxes.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/jquery.tweet.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/js/ajaxupload.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/js/colorpicker.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/js/jquery.maskedinput-1.2.2.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/layout.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/layout.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/local-options.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/my-script.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/nothinghere.htm
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/options_panel-scrollTo-DOM.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/options_panel-scrollTo.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/options_panel.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/options_panel.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/pretty.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/project-options.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/secondary-panel.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/single-options.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /options/utils.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /page.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /page_gallery.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /page_guide.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /page_rooms.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /page_specials.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /screenshot.png
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/image.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/images.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/instafeed.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jbclock.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery-1.7.2.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.columnizer.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.easing.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.flexslider-min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.flexslider.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.hoverex.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.hoverizr.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.jscroll.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.jscroll.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.lazyload.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.lazyload.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.lazyload11111.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.lwtCountdown-1.0.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.parallax-1.1.3.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.prettyPhoto.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.sticky.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.touchcarousel-1.1.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.touchcarousel-1.2.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/jquery.tweet.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/main.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/mainso.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/map.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/modernizr.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/pageslide.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/paralax-ini.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/scroll.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/supersized.3.2.7.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/supersized.3.2.7.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/supersized.images.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/supersized.shutter.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /scripts/waypoints.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /search.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /searchform.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /sidebar.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /single-rooms.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /single-specials.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /single.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /style.css
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201205191719/30.170879-85.79366-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201205191719/30.192952-85.834601-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201205191719/30.208901-85.862621-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201205191719/30.213092-85.858555-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201205191719/30.220509-85.875034-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201205191719/30.22748-85.899786-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201205191719/undefined-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201208250259/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201208262200/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201208291632/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201209052234/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201209201433/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201209301122/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201210140227/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201210141404/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201210151708/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201210270709/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201211240918/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201211301658/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201301110223/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201302010954/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201401250059/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/201401271117/-cache.txt
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache/cache.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/cache.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/error_log
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/localIterator.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /svc/twitter.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /tag.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /tools/cache/index.html
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /tools/cache/timthumb_cacheLastCleanTime.touch
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /tools/timthumb.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /twitter/index.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /twitter/jquery.tweet.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /twitter/jquery.tweet.min.js
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /twitter/lib/tmhOAuth.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /twitter/lib/tmhUtilities.php
+2014-01-29 14:28:18: === User Changed Action from 'CONFLICT' to 'COPY_RIGHT_TO_LEFT' on item /urban-suite.html
+2014-01-29 14:28:18: Done.
+2014-01-29 14:28:28: New _gsdata_ folder(s) created, so rescan all job folders for their ghosts
+2014-01-29 14:28:28: == Oceana - FTP: SYNC started by User on 'MANDINO-PC'
+2014-01-29 14:28:28: C:\wamp\www\milo\wp-content\themes\ic <-> ftp://ftp.lurnglier.com/milo/wp-content/themes/ic
+2014-01-29 14:28:33: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/404.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\404.php' (User Action)
+2014-01-29 14:28:34: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/archive.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\archive.php' (User Action)
+2014-01-29 14:28:35: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/attachment.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\attachment.php' (User Action)
+2014-01-29 14:28:36: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/author.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\author.php' (User Action)
+2014-01-29 14:28:37: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/category.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\category.php' (User Action)
+2014-01-29 14:28:38: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/comments.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\comments.php' (User Action)
+2014-01-29 14:28:39: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/custom-plugins.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\custom-plugins.css' (User Action)
+2014-01-29 14:28:41: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/custom.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\custom.css' (User Action)
+2014-01-29 14:28:42: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/datepicker.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\datepicker.css' (User Action)
+2014-01-29 14:28:43: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/font-awesome.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\font-awesome.css' (User Action)
+2014-01-29 14:28:44: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/font-awesome.min.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\font-awesome.min.css' (User Action)
+2014-01-29 14:28:47: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/Didot-Bold.ttf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\Didot-Bold.ttf' (User Action)
+2014-01-29 14:28:48: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/Didot-Italic.ttf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\Didot-Italic.ttf' (User Action)
+2014-01-29 14:28:50: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/Didot.ttf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\Didot.ttf' (User Action)
+2014-01-29 14:28:52: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/fontawesome-webfont.eot' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\fontawesome-webfont.eot' (User Action)
+2014-01-29 14:28:54: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/fontawesome-webfont.svg' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\fontawesome-webfont.svg' (User Action)
+2014-01-29 14:28:56: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/fontawesome-webfont.ttf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\fontawesome-webfont.ttf' (User Action)
+2014-01-29 14:28:57: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/fontawesome-webfont.woff' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\fontawesome-webfont.woff' (User Action)
+2014-01-29 14:28:59: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/FontAwesome.otf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\FontAwesome.otf' (User Action)
+2014-01-29 14:29:00: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/helveticaltstd-bold-webfont.eot' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\helveticaltstd-bold-webfont.eot' (User Action)
+2014-01-29 14:29:02: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/helveticaltstd-bold-webfont.svg' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\helveticaltstd-bold-webfont.svg' (User Action)
+2014-01-29 14:29:04: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/helveticaltstd-bold-webfont.ttf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\helveticaltstd-bold-webfont.ttf' (User Action)
+2014-01-29 14:29:05: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/helveticaltstd-bold-webfont.woff' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\helveticaltstd-bold-webfont.woff' (User Action)
+2014-01-29 14:29:07: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/helveticaltstd-light-demo.html' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\helveticaltstd-light-demo.html' (User Action)
+2014-01-29 14:29:08: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/helveticaltstd-light-webfont.eot' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\helveticaltstd-light-webfont.eot' (User Action)
+2014-01-29 14:29:10: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/helveticaltstd-light-webfont.svg' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\helveticaltstd-light-webfont.svg' (User Action)
+2014-01-29 14:29:12: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/helveticaltstd-light-webfont.ttf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\helveticaltstd-light-webfont.ttf' (User Action)
+2014-01-29 14:29:13: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/helveticaltstd-light-webfont.woff' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\helveticaltstd-light-webfont.woff' (User Action)
+2014-01-29 14:29:14: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/scala-sansbold-lf-webfont.eot' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\scala-sansbold-lf-webfont.eot' (User Action)
+2014-01-29 14:29:16: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/scala-sansbold-lf-webfont.svg' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\scala-sansbold-lf-webfont.svg' (User Action)
+2014-01-29 14:29:18: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/scala-sansbold-lf-webfont.ttf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\scala-sansbold-lf-webfont.ttf' (User Action)
+2014-01-29 14:29:19: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/scala-sansbold-lf-webfont.woff' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\scala-sansbold-lf-webfont.woff' (User Action)
+2014-01-29 14:29:21: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/scala-sansbold-lf.otf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\scala-sansbold-lf.otf' (User Action)
+2014-01-29 14:29:22: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/fonts/scala_sans-light.ttf' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\fonts\scala_sans-light.ttf' (User Action)
+2014-01-29 14:29:24: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/hoverfold.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\hoverfold.css' (User Action)
+2014-01-29 14:29:25: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/iosslider.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\iosslider.css' (User Action)
+2014-01-29 14:29:26: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/media.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\media.css' (User Action)
+2014-01-29 14:29:27: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/nu-hotel.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\nu-hotel.css' (User Action)
+2014-01-29 14:29:28: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/oceana-hotel.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\oceana-hotel.css' (User Action)
+2014-01-29 14:29:29: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/prettyPhoto.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\prettyPhoto.css' (User Action)
+2014-01-29 14:29:30: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/quotes-rotator/component.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\quotes-rotator\component.css' (User Action)
+2014-01-29 14:29:31: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/quotes-rotator/default.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\quotes-rotator\default.css' (User Action)
+2014-01-29 14:29:33: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/slidejs.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\slidejs.css' (User Action)
+2014-01-29 14:29:34: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/css/style.css' -> 'C:\wamp\www\milo\wp-content\themes\ic\css\style.css' (User Action)
+2014-01-29 14:29:36: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/echo-arts.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\echo-arts.php' (User Action)
+2014-01-29 14:29:37: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/echo-dine.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\echo-dine.php' (User Action)
+2014-01-29 14:29:38: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/echo-do.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\echo-do.php' (User Action)
+2014-01-29 14:29:39: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/echo-events.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\echo-events.php' (User Action)
+2014-01-29 14:29:40: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/echo-shop.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\echo-shop.php' (User Action)
+2014-01-29 14:29:41: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/error_log' -> 'C:\wamp\www\milo\wp-content\themes\ic\error_log' (User Action)
+2014-01-29 14:29:43: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/fonts/icomoon.dev.svg' -> 'C:\wamp\www\milo\wp-content\themes\ic\fonts\icomoon.dev.svg' (User Action)
+2014-01-29 14:29:44: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/fonts/icomoon.eot' -> 'C:\wamp\www\milo\wp-content\themes\ic\fonts\icomoon.eot' (User Action)
+2014-01-29 14:29:46: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/fonts/icomoon.svg' -> 'C:\wamp\www\milo\wp-content\themes\ic\fonts\icomoon.svg' (User Action)
+2014-01-29 14:29:47: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/fonts/icomoon.ttf' -> 'C:\wamp\www\milo\wp-content\themes\ic\fonts\icomoon.ttf' (User Action)
+2014-01-29 14:29:48: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/fonts/icomoon.woff' -> 'C:\wamp\www\milo\wp-content\themes\ic\fonts\icomoon.woff' (User Action)
+2014-01-29 14:29:49: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/footer.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\footer.php' (User Action)
+2014-01-29 14:29:50: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/functions.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\functions.php' (User Action)
+2014-01-29 14:29:52: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/header.php' -> 'C:\wamp\www\milo\wp-content\themes\ic\header.php' (User Action)
+2014-01-29 14:29:53: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/5.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\5.jpg' (User Action)
+2014-01-29 14:29:55: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/6.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\6.jpg' (User Action)
+2014-01-29 14:29:56: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/amenities-desserts.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\amenities-desserts.jpg' (User Action)
+2014-01-29 14:29:57: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/amenities-desserts.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\amenities-desserts.png' (User Action)
+2014-01-29 14:29:58: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/arrow_left_gray.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\arrow_left_gray.png' (User Action)
+2014-01-29 14:29:59: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/arrow_left_white.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\arrow_left_white.png' (User Action)
+2014-01-29 14:30:00: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/arrow_right_gray.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\arrow_right_gray.png' (User Action)
+2014-01-29 14:30:02: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/arrow_right_white.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\arrow_right_white.png' (User Action)
+2014-01-29 14:30:03: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/arrow_updown_gray.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\arrow_updown_gray.png' (User Action)
+2014-01-29 14:30:04: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/bg_direction_nav.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\bg_direction_nav.png' (User Action)
+2014-01-29 14:30:05: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/calbg.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\calbg.png' (User Action)
+2014-01-29 14:30:06: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/deal_marker2.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\deal_marker2.png' (User Action)
+2014-01-29 14:30:08: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/deluxe-king-2.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\deluxe-king-2.png' (User Action)
+2014-01-29 14:30:12: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/deluxe-king.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\deluxe-king.png' (User Action)
+2014-01-29 14:30:13: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/dine_marker2.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\dine_marker2.png' (User Action)
+2014-01-29 14:30:14: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/dining_marker2.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\dining_marker2.png' (User Action)
+2014-01-29 14:30:15: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/do_marker2.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\do_marker2.png' (User Action)
+2014-01-29 14:30:17: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/e-bike-rent.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\e-bike-rent.png' (User Action)
+2014-01-29 14:30:18: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/example-slide-1.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\example-slide-1.jpg' (User Action)
+2014-01-29 14:30:20: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/example-slide-2.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\example-slide-2.jpg' (User Action)
+2014-01-29 14:30:22: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/example-slide-3.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\example-slide-3.jpg' (User Action)
+2014-01-29 14:30:24: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/example-slide-4.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\example-slide-4.jpg' (User Action)
+2014-01-29 14:30:25: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/fading-dots-horizontal.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\fading-dots-horizontal.png' (User Action)
+2014-01-29 14:30:26: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/fading-dots-vertical.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\fading-dots-vertical.png' (User Action)
+2014-01-29 14:30:27: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/family-stay-package.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\family-stay-package.jpg' (User Action)
+2014-01-29 14:30:28: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/gray.gif' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\gray.gif' (User Action)
+2014-01-29 14:30:29: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/ico-quote-left.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\ico-quote-left.png' (User Action)
+2014-01-29 14:30:30: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/ico-quote-right.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\ico-quote-right.png' (User Action)
+2014-01-29 14:30:31: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/independent-collection-footer.png' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\independent-collection-footer.png' (User Action)
+2014-01-29 14:30:34: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/container-bg.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\container-bg.jpg' (User Action)
+2014-01-29 14:30:36: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-1-l.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-1-l.jpg' (User Action)
+2014-01-29 14:30:37: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-1-thumb.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-1-thumb.jpg' (User Action)
+2014-01-29 14:30:40: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-1.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-1.jpg' (User Action)
+2014-01-29 14:30:42: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-2-l.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-2-l.jpg' (User Action)
+2014-01-29 14:30:43: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-2-thumb.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-2-thumb.jpg' (User Action)
+2014-01-29 14:30:46: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-2.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-2.jpg' (User Action)
+2014-01-29 14:30:48: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-3-l.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-3-l.jpg' (User Action)
+2014-01-29 14:30:49: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-3-thumb.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-3-thumb.jpg' (User Action)
+2014-01-29 14:30:52: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-3.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-3.jpg' (User Action)
+2014-01-29 14:30:54: Copy Over 'ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/images/iosslider/h-slider-4-l.jpg' -> 'C:\wamp\www\milo\wp-content\themes\ic\images\iosslider\h-slider-4-l.jpg' (User Action)
+- ERROR: Error copying file: Data Connection: stopped by User Request
+2014-01-29 14:30:56: FTP: Fast reconnect succeeded
+2014-01-29 14:30:58: Save State File ftp://ftp.lurnglier.com/milo/wp-content/themes/ic/_gsdata_/_file_state_v4._gs
+2014-01-29 14:30:59: stopped by User Request
+2014-01-29 14:30:59: 
