@@ -1,0 +1,148 @@
+/* Flexslider ---------------------------------------------------- */
+
+.flexslider {
+	border: 0;
+	overflow: hidden;
+	height: 500px;
+	margin-bottom: 0;
+}
+
+.flexslider .slides > li {
+    position: relative;
+    height: 500px;
+}
+
+.flexslider .slides img {
+    height: 100%;
+}
+
+
+
+/* Prettyphoto ---------------------------------------------------- */
+
+div.pp_pic_holder {
+	z-index: 999999;
+}
+
+.pp_inline {
+    padding: 20px;
+}
+
+.pp_inline > h2 {
+    color: #FA9C03;
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-transform: none;
+}
+
+#pp_full_res .pp_inline p {
+    color: #FFFFFF;
+}
+
+div.dark_square .pp_close:after {
+    color: #FA9C03;
+    content: "X";
+    font-family: gothamlight;
+    font-size: 25px;
+    font-weight: bold;
+    left: -33px;
+    position: relative;
+    top: 8px;
+}
+
+div.dark_square .pp_close {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 2px solid #FA9C03;
+    border-radius: 40px;
+    color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 40px;
+    right: -10px;
+    text-indent: 0;
+    top: -18px;
+    width: 40px;
+}
+	div.dark_square .pp_close:hover {
+		opacity: .8;
+	}
+
+div.dark_square .pp_details {
+    position: absolute;
+    top: 0;
+}
+
+
+
+/* Scrollbar ---------------------------------------------------- */
+
+.jspVerticalBar {
+    z-index: 99;
+    opacity: .7;
+    width: 9px;
+}
+
+.jspDrag {
+    background: rgba(0,0,0,.6);
+}
+
+
+
+/* Spinner ---------------------------------------------------- */
+
+.topnav a.ui-spinner-button {
+    background: none repeat scroll 0 0 #FA9C03;
+    display: block;
+    float: none;
+    height: 13px;
+    padding: 0;
+    width: auto;
+    width: 32px;
+}
+    .topnav a.ui-spinner-button:hover span span {
+        color: #000000;
+    }
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-radius: 0;   
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 0;
+    border: 0;
+}
+
+.ui-state-default .ui-icon {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: none transparent;
+    border: 0;
+}
+
+.ui-button-text-only .ui-button-text {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    display: block;
+    left: 8px;
+    padding: 0.6em 0.8em;
+    position: relative;
+    top: -1px;
+}
+    .ui-button-text-only .ui-button-text:hover {
+        opacity: 0.7;
+    }

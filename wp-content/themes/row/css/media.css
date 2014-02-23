@@ -1,3 +1,600 @@
+
+
+
+/* ================================================  MAX WIDTH 1440px ======================================= */
+
+@media only screen 
+and (max-width : 1440px) {
+
+	
+
+}
+
+
+
+/* ================================================  MAX WIDTH 1439px ======================================= */
+
+@media only screen 
+and (max-width : 1439px) {
+
+
+
+	/* Page - Time Square */
+
+	.listed-content:nth-child(6) {
+	    clear: left;
+	}
+
+	.listed-content:nth-child(8) {
+	    clear: none;
+	}
+
+
+
+}
+
+
+
+/* ================================================ 1024 ======================================= */
+
+@media only screen 
+and (max-width : 1279px) {
+
+
+
+	/* FONT SIZES - Home & General */
+
+	h1 {
+		font-size: 25px;
+		line-height: 1.2;
+	}
+
+	h2 {
+		font-size: 20px;
+		line-height: 1.2;
+	}
+
+	h3 {
+		font-size: 16px;
+		line-height: 1.2;
+	}
+
+	h4 {
+		font-size: 17px;
+	}
+
+	h5 {
+	}
+
+	p {
+		font-size: 13px;
+	}
+
+	.overlay h1 {
+		font-size: 25px;
+	}
+
+	.overlay h1 {
+	    font-size: 22px;
+	    line-height: 1.5;
+	}
+
+	.overlay h2 {
+	    font-size: 25px;
+	    line-height: 1.1;
+	}
+
+	.overlay a {
+	    font-size: 11px;
+	}
+
+	.textbox h3, .textbox-1 h3 {
+	    line-height: 1.1;
+	}
+
+	.textbox h4, .textbox-1 h4 {
+	    font-size: 17px;
+	}
+
+	.textbox p, .textbox-1 p {
+	    font-size: 12px;
+	}
+
+	.littleover > h1 {
+	    font-size: 18px;
+	    line-height: 1.1;
+	}
+
+	.littleover > h2 {
+	    line-height: 1.1;
+	}
+
+	.littleover p {
+	    line-height: 1.2;
+	}
+
+
+
+	/* GENERAL - Generic Page Settings */
+
+	.button {
+	    font-size: 14px;
+	    padding: 8px 16px;
+	}
+
+	.page-content > h1 {
+	    font-size: 30px;
+	}
+
+	.wideover {
+		padding: 15px;
+	}
+
+	.text-content.left > h1 {
+	    font-size: 33px;
+	    line-height: 1;
+	    margin-bottom: 20px;
+	}
+
+	.text-content.left > p {
+	    font-size: 13px;
+	}
+
+	.text-content.left {
+	    width: 67%;
+	}
+
+	.extra-details.right {
+	    width: 27%;
+	}
+
+	.page-intro > h1 {
+	    font-size: 30px;
+	    margin-bottom: 10px;
+	}
+
+	.page-intro h4.sub-line {
+	    font-size: 18px;
+	}
+
+
+
+	/* Side Navigation */
+
+	.navigate {
+	    width: 250px;
+	}
+
+	.navigate .supernav li ul.dropbox {
+	    left: 85px;
+	    width: 165px;
+	}
+
+	.navigate.slipnot {
+	    width: 85px;
+	}
+
+	.slipnot .supernav li ul.dropbox li.drop-intro {
+	    padding: 25px 7% 15px;
+	}
+
+	.navigate .supernav li.subinside:hover li.drop-intro p {
+	    width: 100%;
+	}
+
+	.behindnavigate {
+	    left: 85px;
+	    width: 165px;
+	}
+
+
+
+	/* Banner Area */
+
+	.banner {
+	    margin-left: 250px;
+	    font-size: 12px;
+	}
+
+	.banner p {
+		width: 60%;
+		font-size: 13px;
+	}
+
+	.contacto span {
+		font-size: 18px;
+	}
+
+	.topnav {
+	    max-width: 356px;
+	    width: 38.6%;
+	}
+
+	.topnav li a {
+		padding: 20px 10px;
+	}
+
+
+
+	/* Content area */
+
+	.contentarea {
+		margin-left: 250px;
+	}
+
+
+
+	/* Footer */
+
+	.tier-two ul li.widest {
+		width: 30%;
+	}
+
+	li.widest > span {
+	    clear: both;
+	    display: block;
+	    margin-left: 0;
+	}
+
+	.tier-two ul li {
+		width: 30%;
+	}
+
+	.tier-two li a {
+		font-size: 13px;
+	}
+
+	.tier-two li span {
+	    font-size: 12px;
+	}
+
+	.footer .tier-one ul li a {
+	    font-size: 10px;
+	    font-weight: normal;
+	}
+
+	.footer .tier-two {
+	    height: auto;
+	    overflow: auto;
+	}
+
+
+
+	/* PAGE - General settings */
+
+	.page .suboverlay {
+	    top: 15%;
+	}
+
+	.page .suboverlay p {
+	    font-size: 13px;
+	}
+
+
+
+	/* SINGLE - General settings */
+
+
+
+	/* PAGE - Amenities */
+
+	.page .suboverlay h1 {
+	    margin-bottom: 7px;
+	}
+
+
+
+	/* PAGE - Group Rates */
+
+	.rate-box {
+		top: 20%;
+	}
+
+	.rate-box > h1 {
+	    font-size: 28px;
+	}
+
+	.group-details > ul {
+		padding-bottom: 0;
+	}
+
+	.group-details li {
+	    margin: 0 12px 30px;
+	}
+
+	.group-details {
+	    margin-bottom: 0;
+	}
+
+	.rate-box h4 {
+	    font-size: 14px;
+	    margin-top: 20px;
+	}
+
+
+
+	/* PAGE - Events */
+
+	.page.events .suboverlay h1 {
+	    font-size: 23px;
+	    line-height: 1.2;
+	}
+
+	.slide-bottom-title > h1 {
+	    line-height: 1.5;
+	}
+
+	.event-small-details span {
+	    font-size: 10px;
+	}
+
+	.the-events li:first-child {
+	    font-size: 16px;
+	}
+
+	.the-events h2 {
+	    font-size: 18px;
+	}
+
+	.the-events span {
+	    line-height: 2;
+	}
+
+
+
+	/* PAGE - Deals */
+
+	.deal-wrapper > h1 {
+	    font-size: 25px;
+	    line-height: 1.1;
+	    margin-bottom: 20px;
+	}
+
+
+
+	/* PAGE - Concierge */
+
+	.concierge-box .left {
+	    width: 370px;
+	}
+
+	.concierge-box .wideover.overlay h1 {
+	    font-size: 18px;
+	}
+
+	.page.concierge .page-content > h1 {
+	    font-size: 30px;
+	    margin-bottom: 15px;
+	}
+
+	.page.concierge .page-content > h3 {
+	    font-size: 19px;
+	    line-height: 1.2;
+	    margin-bottom: 15px;
+	}
+
+	.page.concierge .page-content div p span {
+	    font-size: 17px;
+	    margin-right: 25px;
+	}
+
+	.concierge-box.box-style-4 .right {
+	    padding: 12px 37px;
+	}
+
+	.concierge-box.box-style-4 .right p {
+	    font-size: 12px;
+	    margin-bottom: 2px;
+	}
+
+	.box-style-4 a {
+	    font-size: 14px;
+	}
+
+
+
+	/* Single - Amenity */
+
+	.amenity-features li {
+	    font-size: 12px;
+	}
+
+	.amenity-featured-images.right {
+	    float: none;
+	    overflow: hidden;
+	    width: auto;
+	}
+
+	.amenity-contact > div {
+	    width: 190px;
+	}
+
+
+
+	/* SINGLE - Deal */
+
+	.deal-more-detail ul li {
+	    padding-right: 10px;
+	    width: 47%;
+	}
+
+	.deal-more-detail ul li li {
+	    font-size: 13px;
+	}
+
+
+
+	/* SINGLE - Eat & Drink */
+
+	.photo-list li {
+	    margin-right: 0;
+	}
+
+	.main-page-content.left > h1 {
+	    margin-bottom: 15px;
+	}
+
+	.menu-area.right h3 {
+	    font-size: 20px;
+	    margin-bottom: 15px;
+	}
+
+	.menu-this-month li {
+	    font-size: 13px;
+	    line-height: 1.7;
+	    margin-bottom: 5px;
+	}
+
+		.menu-area.right ul li a {
+	    font-size: 14px;
+	    line-height: 1.5;
+	}
+
+
+
+	/* SINGLE - Master Suite */
+
+	.room-details li.room-detail {
+	    width: 30.8%;
+	    margin-right: 0;
+	}
+
+	.room-detail > img {
+	    max-height: 219px;
+	    min-height: 219px;
+	    width: 100%;
+	}
+
+
+
+}
+
+
+
+/* ================================================ 768 ======================================= */
+
+@media only screen 
+and (max-width : 900px) {
+
+
+
+	/* Header */
+
+	.banner p a:before {
+	    content: "- ";
+	}
+
+	.banner p a {
+		margin-left: 0;
+	}
+
+	.banner p {
+	    padding: 5px 4% 5px 0;
+	    width: 45%;
+	}
+
+	.topnav {
+	    max-width: 356px;
+	    top: 52px;
+	    width: 50%;
+	}
+
+	.fixed {
+	    position: fixed;
+	    top: 0;
+	}
+
+
+
+	/* Footer */
+
+	.tier-one {
+	    padding: 10px;
+	    width: auto;
+	    height: auto;
+	}
+
+	.tier-one ul {
+	    display: block;
+	    overflow: auto;
+	    table-layout: fixed;
+	    text-align: center;
+	    width: auto;
+	}
+
+	.tier-one ul li {
+	    display: block;
+	    float: left;
+	    list-style: none outside none;
+	    margin-right: 10px;
+	    text-align: left;
+	}
+
+	.tier-two {
+		padding: 10px 0;
+	}
+
+	.tier-two ul {
+	    text-align: center;
+	}
+
+	.tier-two ul li {
+	    display: inline-block;
+	    float: none;
+	    text-align: center;
+	    width: 100%;
+	    padding: 0;
+	}
+
+	.tier-two ul li.widest {
+	    width: 100%;
+	}
+
+
+
+
+	/* Homepage content */
+
+	.leftside, .rightside {
+		width: 100%;
+	}
+
+	.third-level {
+		overflow: auto;
+	}
+
+	.fourth-level {
+		clear: both;
+	}
+
+	.shorter {
+	    height: 310px;
+	    margin-bottom: 10px;
+	    overflow: hidden;
+	}
+
+	.bigover h1 {
+	    font-size: 45px;
+	    line-height: 1.1;
+	    padding: 10px;
+	}
+
+	.blogposts {
+		-moz-column-count: 2;
+	    -webkit-column-count: 2;
+	    column-count: 2;
+	}
+
+	.third-level .picone {
+		margin-bottom: 0;
+	}
+
+
+
+}
+
+
+
 /* ================================================  MOBILES BELOW 399 ======================================= */
 
 
