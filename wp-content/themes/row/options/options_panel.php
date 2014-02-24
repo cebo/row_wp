@@ -1459,28 +1459,29 @@ $options[] = array( "name" => __('General Booking Link','cebolang'),
 			
 			
 			
-$options[] = array( "name" => __('Primary Short Title','cebolang'),
-			"desc" => "The tag line on the homepage ex 'NY Style'. Will also work as default as well",
-			"id" => $shortname."_shorttitle",
+$options[] = array( "name" => __('Home Banner Image','cebolang'),
+			"desc" => __('Upload the large background pic for the welcome area. It can be anything. A good size is a large image 1,000 x 600. ','cebolang'),
+			"id" => $shortname."_homebanner",
 			"std" => "",
-			"type" => "text");
+			"type" => "upload");
 
-$options[] = array( "name" => __('Primary Long Title','cebolang'),
-			"desc" => "Gerneral title. Will work as default as well",
-			"id" => $shortname."_longtitle",
+$options[] = array( "name" => __('Home Banner Title: Top Line','cebolang'),
+			"desc" => "Heading for the banner image (ROW NYC)",
+			"id" => $shortname."_hblineone",
 			"std" => "",
 			"type" => "text");						
 
 
-$options[] = array( "name" => __('Footer Short Title','cebolang'),
-			"desc" => "The tag line on the homepage ex 'NY Style'. Will also work as default as well",
-			"id" => $shortname."_foottitle",
+$options[] = array( "name" => __('Home Banner Title: Second (thin) Line','cebolang'),
+			"desc" => "Second Line. Add a break if you like (TIMES SQUARE <br> NEVER LOOKED SO GOOD",
+			"id" => $shortname."_hblinetwo",
 			"std" => "",
 			"type" => "text");
 
-$options[] = array( "name" => __('Footer Description','cebolang'),
-			"desc" => "Gerneral title. Will work as default as well",
-			"id" => $shortname."_footdesc",
+
+$options[] = array( "name" => __('Homepage Dropdown Text','cebolang'),
+			"desc" => "Paste in full code, using tags for headings",
+			"id" => $shortname."_hometext",
 			"std" => "",
 			"type" => "textarea");				
 
