@@ -36,7 +36,7 @@ $pagetypes = array('Basic No Feature', 'Scrolling Feature', 'Full Screen Feature
 
 $meta_boxer = array(
 	'id' => 'CUSTOM FIELDS',
-	'title' => 'Additional Variations For Your Project Pages',
+	'title' => 'Additional Variations For Your Rooms',
 	// 'page' => determines where the custom field is supposed to show up.
 	// here it is desplaying Testimonials, but other options are
 	// page or post
@@ -46,32 +46,21 @@ $meta_boxer = array(
 	'fields' => array(
 				
 		array( 
-              "name" => "Choose Your Page Layout.",
-	          "desc" => "Defaults as a Two Column page. Just select the preference.",
-	          "id" => $prefix."_pagetype",
-	          "type" => "select",	          
-	          "options" => $pagetypes,
-	          "std" => ""
-              )
-		,	
-		array( 
               "name" => "Big Tag Line",
-	          "desc" => "This tagline will display in different places and will override the page title as well.",
+	          "desc" => "This tagline is the mini description for each rooms",
 	          "id" => $prefix."_tagline",
 	          "type" => "text",
 	          "std" => ""
               )
  		,
  		array( 
-              "name" => "Thumbnail option rather than the featured image (hit INSERT INTO POST)",
-	          "desc" => "This thumb should be panoramic. A good size is 520w X 350h. ",
-	          "id" => $prefix."_homethumb",
-	          "type" => "upload",
+              "name" => "Square Footage",
+	          "desc" => "Room Square Footage",
+	          "id" => $prefix."_footage",
+	          "type" => "text",
 	          "std" => ""
               )
  		,
- 		
- 		
  		array( 
               "name" => "Full screen banner image (hit INSERT INTO POST)",
 	          "desc" => "Wide and narrow is optimum for this image. Try ratios of 16:9, like 800 x 450 or 2000 x 800. ",
@@ -81,9 +70,49 @@ $meta_boxer = array(
               )
  		,
  		array( 
-              "name" => "Amenities List",
+              "name" => "Square details image #1",
+	          "desc" => "This will also be the thumbnail when a square is required",
+	          "id" => $prefix."_thumbone",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "Square details image #2",
+	          "desc" => "hit insert into post",
+	          "id" => $prefix."_thumbtwo",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "Square details image #3",
+	          "desc" => "hit insert into post",
+	          "id" => $prefix."_thumbthree",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "For Your Comfort List",
 	          "desc" => "Separate each one by a comma. I.E: red, yellow, blue",
 	          "id" => $prefix."_details",
+	          "type" => "text",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "For Your Worklife List",
+	          "desc" => "Separate each one by a comma. I.E: red, yellow, blue",
+	          "id" => $prefix."_workdetails",
+	          "type" => "text",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "For Your Entertainment List",
+	          "desc" => "Separate each one by a comma. I.E: red, yellow, blue",
+	          "id" => $prefix."_entdetails",
 	          "type" => "text",
 	          "std" => ""
               )

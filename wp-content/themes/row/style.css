@@ -1930,6 +1930,7 @@ ul#selectUl li.unselected:hover {
 .stretch {
 	width: 100%;
 	height: 100%;
+	position: relative;
 	background-size:cover;
 	background-position: center center;
 	background-position: center center;
@@ -2309,6 +2310,7 @@ ul#selectUl li.unselected:hover {
     text-align: center;
     text-transform: uppercase;
     width: 100%;
+    display: block;
 }
 	.rooms-book-now .right a:hover {
 		background: none repeat scroll 0 0 rgba(250, 156, 3, 1);

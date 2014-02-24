@@ -272,7 +272,7 @@
 	</head> 
 	
 	
-<body<?php if(is_single() || is_page()) { ?> class="single"<?php } ?>>
+<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } ?>>
 
 
 	<section class="navigate">
@@ -596,7 +596,6 @@
 							                    <option value="7">7</option>
 							                    <option value="8">8</option>                                
 							                    <option value="9">9</option>
-\\
 										</select>
 									</div>
 									<i class="fa fa-chevron-down"></i>
