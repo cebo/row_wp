@@ -272,7 +272,7 @@
 	</head> 
 	
 	
-<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } ?>>
+<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page() || is_single()) { ?> class="single page"<?php } ?>>
 
 
 	<section class="navigate">

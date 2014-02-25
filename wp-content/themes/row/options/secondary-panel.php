@@ -45,7 +45,14 @@ $meta_box = array(
 	'priority' => 'high',
 	'fields' => array(
 				
-				
+		array( 
+              "name" => "Is This A Featured Special",
+	          "desc" => "Slide Out Special on the home page",
+	          "id" => $prefix."_available_on_header",
+	          "type" => "checkbox",
+	          "std" => ""
+              )	
+        ,		
 		array( 
               "name" => "Price Point",
 	          "desc" => "Anything be here, but should be short ex: From $29",

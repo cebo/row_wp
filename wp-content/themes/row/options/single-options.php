@@ -1,7 +1,7 @@
 <?php
 $categories = get_categories('hide_empty=0&orderby=name');
 $taxers = get_terms('location', 'orderby=name&hide_empty=0');
-$proptype = get_terms('propertytype', 'orderby=name&hide_empty=0');
+$proptype = get_terms('loctype', 'orderby=name&hide_empty=0');
 $pages_array = get_pages('hide_empty=0');
 $terms = array();
 $site_pages = array();
@@ -46,35 +46,35 @@ $meta_boxel = array(
 	'fields' => array(
 				
 		array( 
-              "name" => "Choose Your Page Layout.",
-	          "desc" => "Defaults as a Two Column page. Just select the preference.",
-	          "id" => $prefix."_pagetype",
-	          "type" => "radio",	          
-	          "options" => $pagetypes,
+              "name" => "Big Tag Line",
+	          "desc" => "This tagline is the mini description for each rooms",
+	          "id" => $prefix."_tagline",
+	          "type" => "text",
 	          "std" => ""
               )
-		,	
+ 		,
+ 		array( 
+              "name" => "Is This A Location Heading?",
+	          "desc" => "If so, select the location taxonomy to create the list",
+	          "id" => $prefix."_loctype",
+	          "type" => "select",
+	          'options' => $type,
+	          "std" => "0"
+              )
+		,
 		array( 
-              "name" => "Do Not Show Sliding Gallery",
-	          "desc" => "If you have uploaded multiple pictures to this post, check if you want show the featured image rather than sliding gallery.",
-	          "id" => $prefix."_attachonly",
-	          "type" => "checkbox",
+              "name" => "Full screen banner image (hit INSERT INTO POST)",
+	          "desc" => "Wide and narrow is optimum for this image. Try ratios of 16:9, like 800 x 450 or 2000 x 800. ",
+	          "id" => $prefix."_fullpic",
+	          "type" => "upload",
 	          "std" => ""
-        	  )
+              )
  		,
  		array( 
-              "name" => "Hide Video/Picture/Slider Above Content Altogether",
-	          "desc" => "Check if you want to hide everything above the post content",
-	          "id" => $prefix."_hidepics",
-	          "type" => "checkbox",
-	          "std" => ""
-        	  )
- 		,
- 		array( 
-              "name" => "Youtube ID",
-	          "desc" => "You can put your YOUTUBE video id here and replace the initial image with a video: ex: 'oHg5SJYRHA0'",
-	          "id" => $prefix."_youtube",
-	          "type" => "text",
+              "name" => "General Thumbnail",
+	          "desc" => "If you do not wish to use the featured image.",
+	          "id" => $prefix."_thumbone",
+	          "type" => "upload",
 	          "std" => ""
               )
  		,
@@ -105,7 +105,7 @@ add_action('admin_menu', 'mythemes_add_boxel');
 // Add meta boxel
 function mythemes_add_boxel() {
 	global $meta_boxel;
-	foreach ( array( 'post', 'event' ) as $page )
+	foreach ( array( 'page' ) as $page )
 	add_meta_box($meta_boxel['id'], $meta_boxel['title'], 'mythemes_show_boxel', $page, $meta_boxel['context'], 			$meta_boxel['priority']);
 }
 // Callback function to show fields in meta boxel

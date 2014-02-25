@@ -1,7 +1,7 @@
 <?php
 $categories = get_categories('hide_empty=0&orderby=name');
 $taxers = get_terms('location', 'orderby=name&hide_empty=0');
-$proptype = get_terms('propertytype', 'orderby=name&hide_empty=0');
+$proptype = get_terms('location-type', 'orderby=name&hide_empty=0');
 $pages_array = get_pages('hide_empty=0');
 $terms = array();
 $site_pages = array();
@@ -124,23 +124,7 @@ $meta_boxer = array(
 	          "type" => "text",
 	          "std" => ""
               )
- 		,
-       	array( 
-              "name" => "If You Have Chosen Colored Background Choose Your Color",
-	          "desc" => "Any hexagonal code will do.",
-	          "id" => $prefix."_colorbg",
-	          "type" => "color",
-	          "std" => ""
-              )
- 		,
- 		array( 
-              "name" => "Hide Images Below Post Content",
-	          "desc" => "Check if you want to hide the pictures below the post content",
-	          "id" => $prefix."_hidepics",
-	          "type" => "checkbox",
-	          "std" => ""
-        	  )
- 		
+		
        	)
 );
 
@@ -160,7 +144,7 @@ add_action('admin_menu', 'mythemer_add_boxer');
 // Add meta boxer
 function mythemer_add_boxer() {
 	global $meta_boxer;
-	foreach ( array( 'rooms', 'page', 'event' ) as $page )
+	foreach ( array( 'rooms','event' ) as $page )
 	add_meta_box($meta_boxer['id'], $meta_boxer['title'], 'mythemer_show_boxer', $page, $meta_boxer['context'], 			$meta_boxer['priority']);
 }
 // Callback function to show fields in meta boxer
