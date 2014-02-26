@@ -106,6 +106,35 @@
 			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
 			        $('#dep').val(selectedMonthName);
 			        $("#departure_date").val(event);
+			        
+			    }
+			});
+
+			$('.datepickerr').datepicker({
+			    dateFormat: 'yy-mm-dd',
+			    altField  : '#arve-1',
+    			altFormat : 'dd',
+    			minDate: new Date(),
+			    onSelect: function(event, ui) {
+			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
+			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
+			        $('#arv-1').val(selectedMonthName);
+			        $("#arrival_date-1").val(event);
+			       
+			    }
+			     
+			});
+						
+			$('.departdatepickerr').datepicker({
+			    dateFormat: 'yy-mm-dd',
+			    altField  : '#depee-1',
+    			altFormat : 'dd',
+    			minDate: 3,
+			    onSelect: function(event, ui) {
+			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
+			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
+			        $('#dep-1').val(selectedMonthName);
+			        $("#departure_date-1").val(event);
 			    }
 			});
 			
@@ -130,6 +159,8 @@
 			
 			$("#arv").attr("placeholder", n);
 			$("#dep").attr("placeholder", n);
+			$("#arv-1").attr("placeholder", n);
+			$("#dep-1").attr("placeholder", n);
 
 			
 		});
@@ -420,6 +451,181 @@
 		<div class="bottom"></div>
 	
 	</section>
+
+	<section class="navigate mobile">
+		
+			
+			
+			<div class="logobox">
+			
+				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
+				
+				
+				<div class="languages"></div>
+			
+			</div>
+
+			<div class="mobile-menu right">
+
+				<div class="mobile-menu-section">
+
+					<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i> MENU</a>
+
+					<div class="languages"></div>
+
+				</div>
+
+				<div class="banner"> 
+							
+					<p class="contacto">Reservations <span>888.353.3650</span></p>
+					
+					<div class="clear"></div>
+					
+				</div>
+
+				<div class="topnav">
+			
+					<ul>
+
+						<li>
+
+							<a class="booking-link" href="#"><i class="fa fa-calendar"></i><span class="book">Book</span></a>
+									
+							<div class="dropout">
+
+								<div class="inner">
+									
+									<form action="<?php echo get_option('cebo_genbooklink'); ?>/search?" target="_blank">
+
+							
+										<div class="calspacer">
+											<span>
+												
+												<label for="arrival">Arriving Date</label>
+												
+												<div class="squaredance">
+													<input type="hidden" name="arrival_date-1" id="arrival_date-1" placeholder="" class="calendarsection" />
+													<input type="text" id="arv-1">
+													<input type="text" id="arve-1">
+													
+													<i class="fa fa-chevron-down"></i>
+												</div>
+												
+												<div class="datepickerr"></div>
+											</span>
+											
+											<span>
+												<label for="arrival">Departing Date</label>
+												
+												<div class="squaredance">
+													<input name="departure_date-1" type="hidden" id="departure_date-1" placeholder="" class="calendarsection" />
+													<input type="text" id="dep-1">
+													<input type="text" id="depee-1">
+													
+													<i class="fa fa-chevron-down"></i>
+												</div>
+												
+												<div class="departdatepickerr"></div>
+											</span>
+											
+											<span class="lowselect">
+												<label for="arrival">Adults</label>
+												
+												<div class="squaredance">
+													<p class="topping">How Many?</p>
+													
+													<select name="Adults">
+														<option value="2">2</option>
+													 	<option value="1">1</option>
+									                    <option value="2">2</option>
+									                    <option value="3">3</option>
+									                    <option value="4">4</option>                                
+									                    <option value="5">5</option>
+									                    <option value="6">6</option>
+									                    <option value="7">7</option>
+									                    <option value="8">8</option>                                
+									                    <option value="9">9</option>
+													</select>
+													
+													<!--<ul id="selectUl">
+													    <li>2</li>
+													    <li>1</li>
+													    <li>2</li>
+													    <li>3</li>
+													    <li>4</li>
+													    <li>5</li>
+													    <li>6</li>
+													    <li>7</li>
+													    <li>8</li>
+													    <li>9</li>
+													</ul>
+													<select name="Adults">
+													 		<option value="2">2</option>
+														 	<option value="1">1</option>
+										                    <option value="2">2</option>
+										                    <option value="3">3</option>
+										                    <option value="4">4</option>                                
+										                    <option value="5">5</option>
+										                    <option value="6">6</option>
+										                    <option value="7">7</option>
+										                    <option value="8">8</option>                                
+										                    <option value="9">9</option>
+										                    <option value="10">10</option> 
+													</select>-->
+						
+												</div>
+												<i class="fa fa-chevron-down"></i>
+											</span>
+											
+											<span class="lowselect">
+												<label for="arrival">Children</label>
+												
+												<div class="squaredance">
+													<p class="topping">How Many?</p>
+													 <select name="children[]" >
+													 	<option value="0">0</option>
+														 <option value="1">1</option>
+										                    <option value="2">2</option>
+										                    <option value="3">3</option>
+										                    <option value="4">4</option>                                
+										                    <option value="5">5</option>
+										                    <option value="6">6</option>
+										                    <option value="7">7</option>
+										                    <option value="8">8</option>                                
+										                    <option value="9">9</option>
+													</select>
+												</div>
+												<i class="fa fa-chevron-down"></i>
+											</span>
+											
+											<div class="clear"></div>
+											
+											
+											<button class="button">See Availability</button>
+											
+										</div>
+									
+									</form>
+										
+								</div>			
+							
+							</div>
+
+						</li>
+						
+						<li><a class="booking-link" href="#"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
+						
+						<li><a class="booking-link" href="#"><i class="fa  fa-envelope"></i><span class="offer">Exclusive<br>Offers</span></a></li>
+
+					</ul>
+					
+				</div>
+
+			</div>
+		
+		<div class="bottom"></div>
+	
+	</section>
 	
 	
 	<div class="behindnavigate"></div>
@@ -444,115 +650,115 @@
 						
 						<form action="<?php echo get_option('cebo_genbooklink'); ?>/search?" target="_blank">
 
-							
-							<div class="calspacer">
-								<span>
-									
-									<label for="arrival">Arriving Date</label>
-									
-									<div class="squaredance">
-										<input type="hidden" name="arrival_date" id="arrival_date" placeholder="" class="calendarsection" />
-										<input type="text" id="arv">
-										<input type="text"id="arve">
 										
-										<i class="fa fa-chevron-down"></i>
-									</div>
-									
-									<div class="datepicker"></div>
-								</span>
-								
-								<span>
-									<label for="arrival">Departing Date</label>
-									
-									<div class="squaredance">
-										<input name="departure_date" type="hidden" id="departure_date" placeholder="" class="calendarsection" />
-										<input type="text" id="dep">
-										<input type="text" id="depee">
-										
-										<i class="fa fa-chevron-down"></i>
-									</div>
-									
-									<div class="departdatepicker"></div>
-								</span>
-								
-								<span class="lowselect">
-									<label for="arrival">Adults</label>
-									
-									<div class="squaredance">
-										<p class="topping">How Many?</p>
-										
-										<select name="Adults">
-											<option value="2">2</option>
-										 	<option value="1">1</option>
-						                    <option value="2">2</option>
-						                    <option value="3">3</option>
-						                    <option value="4">4</option>                                
-						                    <option value="5">5</option>
-						                    <option value="6">6</option>
-						                    <option value="7">7</option>
-						                    <option value="8">8</option>                                
-						                    <option value="9">9</option>
-										</select>
-										
-										<!--<ul id="selectUl">
-										    <li>2</li>
-										    <li>1</li>
-										    <li>2</li>
-										    <li>3</li>
-										    <li>4</li>
-										    <li>5</li>
-										    <li>6</li>
-										    <li>7</li>
-										    <li>8</li>
-										    <li>9</li>
-										</ul>
-										<select name="Adults">
-										 		<option value="2">2</option>
-											 	<option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                    <option value="4">4</option>                                
-							                    <option value="5">5</option>
-							                    <option value="6">6</option>
-							                    <option value="7">7</option>
-							                    <option value="8">8</option>                                
-							                    <option value="9">9</option>
-							                    <option value="10">10</option> 
-										</select>-->
-			
-									</div>
-									<i class="fa fa-chevron-down"></i>
-								</span>
-								
-								<span class="lowselect">
-									<label for="arrival">Children</label>
-									
-									<div class="squaredance">
-										<p class="topping">How Many?</p>
-										 <select name="children[]" >
-										 	<option value="0">0</option>
-											 <option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                    <option value="4">4</option>                                
-							                    <option value="5">5</option>
-							                    <option value="6">6</option>
-							                    <option value="7">7</option>
-							                    <option value="8">8</option>                                
-							                    <option value="9">9</option>
-										</select>
-									</div>
-									<i class="fa fa-chevron-down"></i>
-								</span>
-								
-								<div class="clear"></div>
-								
-								
-								<button class="button">See Availability</button>
-								
-							</div>
+										<div class="calspacer">
+											<span>
+												
+												<label for="arrival">Arriving Date</label>
+												
+												<div class="squaredance">
+													<input type="hidden" name="arrival_date" id="arrival_date" placeholder="" class="calendarsection" />
+													<input type="text" id="arv">
+													<input type="text" id="arve">
+													
+													<i class="fa fa-chevron-down"></i>
+												</div>
+												
+												<div class="datepicker"></div>
+											</span>
+											
+											<span>
+												<label for="arrival">Departing Date</label>
+												
+												<div class="squaredance">
+													<input name="departure_date" type="hidden" id="departure_date" placeholder="" class="calendarsection" />
+													<input type="text" id="dep">
+													<input type="text" id="depee">
+													
+													<i class="fa fa-chevron-down"></i>
+												</div>
+												
+												<div class="departdatepicker"></div>
+											</span>
+											
+											<span class="lowselect">
+												<label for="arrival">Adults</label>
+												
+												<div class="squaredance">
+													<p class="topping">How Many?</p>
+													
+													<select name="Adults">
+														<option value="2">2</option>
+													 	<option value="1">1</option>
+									                    <option value="2">2</option>
+									                    <option value="3">3</option>
+									                    <option value="4">4</option>                                
+									                    <option value="5">5</option>
+									                    <option value="6">6</option>
+									                    <option value="7">7</option>
+									                    <option value="8">8</option>                                
+									                    <option value="9">9</option>
+													</select>
+													
+													<!--<ul id="selectUl">
+													    <li>2</li>
+													    <li>1</li>
+													    <li>2</li>
+													    <li>3</li>
+													    <li>4</li>
+													    <li>5</li>
+													    <li>6</li>
+													    <li>7</li>
+													    <li>8</li>
+													    <li>9</li>
+													</ul>
+													<select name="Adults">
+													 		<option value="2">2</option>
+														 	<option value="1">1</option>
+										                    <option value="2">2</option>
+										                    <option value="3">3</option>
+										                    <option value="4">4</option>                                
+										                    <option value="5">5</option>
+										                    <option value="6">6</option>
+										                    <option value="7">7</option>
+										                    <option value="8">8</option>                                
+										                    <option value="9">9</option>
+										                    <option value="10">10</option> 
+													</select>-->
 						
-						</form>
+												</div>
+												<i class="fa fa-chevron-down"></i>
+											</span>
+											
+											<span class="lowselect">
+												<label for="arrival">Children</label>
+												
+												<div class="squaredance">
+													<p class="topping">How Many?</p>
+													 <select name="children[]" >
+													 	<option value="0">0</option>
+														 <option value="1">1</option>
+										                    <option value="2">2</option>
+										                    <option value="3">3</option>
+										                    <option value="4">4</option>                                
+										                    <option value="5">5</option>
+										                    <option value="6">6</option>
+										                    <option value="7">7</option>
+										                    <option value="8">8</option>                                
+										                    <option value="9">9</option>
+													</select>
+												</div>
+												<i class="fa fa-chevron-down"></i>
+											</span>
+											
+											<div class="clear"></div>
+											
+											
+											<button class="button">See Availability</button>
+											
+										</div>
+									
+									</form>
 							
 					</div>			
 				

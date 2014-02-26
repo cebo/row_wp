@@ -237,7 +237,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .deal-more-detail a h3,
 .the-events .event-more-details a,
 .suboverlay h4,
-.topnav li a
+.topnav li a,
+.social-media-details i
 {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -249,7 +250,10 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 /* .4s transitions */
 
 .topnav .calsec i,
-.topnav .calsec > a
+.topnav .calsec > a,
+.finished.mobile .right i,
+.footer .navigate .supernav li a,
+.gallery-categories a
 {
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -361,6 +365,10 @@ p {
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
+}
+
+.navigate.mobile {
+	display: none;
 }
 
 
@@ -815,10 +823,6 @@ p {
 
 
 
-
-
-
-
 /* Calendar  ---------------------------------------------------- */
 
 
@@ -892,7 +896,7 @@ p {
 .calspacer span:hover input {
 	color: #fff;
 }
-.calspacer span input#arv {
+.calspacer span input#arv, .calspacer span input#arv-1 {
 	font-size: 14px;
 	color: #333;
 	background: transparent;
@@ -906,7 +910,7 @@ p {
 	margin-left: 0;
 }
 
-.calspacer span input#dep {
+.calspacer span input#dep, .calspacer span input#dep-1 {
 	font-size: 14px;
 	color: #333;
 	background: transparent;
@@ -1072,7 +1076,7 @@ ul#selectUl li.unselected:hover {
 	display: block;
 } 
 
-.datepicker {
+.datepicker, .datepickerr {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
@@ -1089,14 +1093,14 @@ ul#selectUl li.unselected:hover {
     -o-transition: all 0.2s ease-in-out;
     box-shadow: 0 0 7px #919191;
 }
-.calspacer span:hover .datepicker {
+.calspacer span:hover .datepicker, .calspacer span:hover .datepickerr {
 	opacity: 1;
 	visibility: visible;
 	top: 130px;
 }
 
 
-.departdatepicker {
+.departdatepicker, .departdatepickerr {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
@@ -1113,24 +1117,25 @@ ul#selectUl li.unselected:hover {
     -o-transition: all 0.2s ease-in-out;
     box-shadow: 0 0 7px #919191;
 }
-.calspacer span:hover .departdatepicker {
+.calspacer span:hover .departdatepicker, .calspacer span:hover .departdatepickerr {
 	opacity: 1;
 	visibility: visible;
 	top: 130px;;
 }
 
-.calspacer .datepicker span {
+.calspacer .datepicker span, .calspacer .datepickerr span {
 	float: none;
 	width: inherit;
 	margin: 0;
 }
 
 
-.calspacer .departdatepicker span {
+.calspacer .departdatepicker span, .calspacer .departdatepickerr span {
 	float: none;
 	width: inherit;
 	margin: 0;
 }
+
 
 
 /* General Banner Page Styles ---------------------------------------------------- */
@@ -1202,7 +1207,7 @@ ul#selectUl li.unselected:hover {
 .topnav {
 	position: relative;
 	position: absolute;
-	right: 2px;
+	right: 0;
 	padding: 0;
 	top: 32px;
 	width: 26.6%;
@@ -1290,7 +1295,7 @@ ul#selectUl li.unselected:hover {
     right: 0;
     top: 46px;
     visibility: hidden;
-    width: 430px;
+    width: 450px;
     z-index: 99999999;
 }
 
@@ -1387,7 +1392,7 @@ ul#selectUl li.unselected:hover {
 /* Booking Styles ---------------------------------------------------- */
 
 .dropout .inner form {
-   
+    overflow: visible;
 }
 
 .calsec {
@@ -1499,9 +1504,18 @@ ul#selectUl li.unselected:hover {
 }
 
 
-.ui-icon:hover {
-	background: transparent !important;
+
+
+
+
+/* FOOTER ---------------------------------------------------- */
+
+.footer .navigate {
+	display: none;
 }
+
+
+
 
 
 
@@ -1553,7 +1567,7 @@ ul#selectUl li.unselected:hover {
 	top: 30%;
 	left: 50%;
 	text-align: center;
-	z-index: 999;
+	z-index: 99;
 	margin-left: -22.5%;
 	-webkit-animation-fill-mode: both;
 	-moz-animation-fill-mode:both;
@@ -1700,7 +1714,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .home-intro {
-    height: 620px;
+    height: 420px;
     margin-bottom: 10px;
     max-height: 800px;
     overflow: hidden;
@@ -1708,11 +1722,6 @@ ul#selectUl li.unselected:hover {
     width: 100%;
 }
 
-.single .home-intro {
-	margin-left: 300px;
-	width: auto;
-}
-	
 .littleover {
 	position: absolute;
 	background: rgba(255,255,255,0.7);
@@ -1828,6 +1837,7 @@ ul#selectUl li.unselected:hover {
 	width: 92%;
 	text-align: center;
 	color: #000;
+	background: #fff;
 }
 
 .innerbox .fa-chevron-up {
@@ -1938,7 +1948,6 @@ ul#selectUl li.unselected:hover {
 .stretch {
 	width: 100%;
 	height: 100%;
-	position: relative;
 	background-size:cover;
 	background-position: center center;
 	background-position: center center;
@@ -2061,6 +2070,7 @@ ul#selectUl li.unselected:hover {
 
 .blogposts li img {
 	width: 100% !important;
+	/*height: 33%  !important;*/
 	display: block;
 	 vertical-align:top;
 }
@@ -2212,6 +2222,10 @@ ul#selectUl li.unselected:hover {
     width: 361px;
 }
 
+.right.social-tickets {
+	display: none;
+}
+
 .page .page-content {
 	padding: 30px;
 }
@@ -2317,7 +2331,6 @@ ul#selectUl li.unselected:hover {
     text-align: center;
     text-transform: uppercase;
     width: 100%;
-    display: block;
 }
 	.rooms-book-now .right a:hover {
 		background: none repeat scroll 0 0 rgba(250, 156, 3, 1);
@@ -2352,7 +2365,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .rooms-book-now.slide-booking .right a {
-    line-height: 6;
+    line-height: 4.6;
     display: block;
 }
 
@@ -2566,6 +2579,9 @@ ul#selectUl li.unselected:hover {
     color: #666666;
     font-size: 30px;
 }
+	.social-media-details i:hover {
+		color: #FA9C03;
+	}
 
 
 
@@ -2573,13 +2589,13 @@ ul#selectUl li.unselected:hover {
 
 /* Textbox area */
 
-.time-square .home-intro {
+.page.time-square .home-intro {
     margin-bottom: 0;
     margin-left: 300px;
     width: auto;
 }
 
-.time-square .textbox {
+.page.time-square .textbox {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
     bottom: 0;
     height: 140px;
@@ -2590,11 +2606,11 @@ ul#selectUl li.unselected:hover {
     z-index: 1;
 }
 
-.time-square .innerbox {
+.page.time-square .innerbox {
     padding: 15px;
 }
 
-.time-square .textbox.openbox-up {
+.page.time-square .textbox.openbox-up {
     min-height: 50%;
     max-height: 50%;
 }
@@ -2603,16 +2619,16 @@ ul#selectUl li.unselected:hover {
     margin-bottom: 7px;
 }
 
-.time-square h4 {
+.page.time-square h4 {
     clear: both;
 }
 
-.time-square .innerbox h5 {
+.page.time-square .innerbox h5 {
     color: #666666;
     margin: 10px 0;
 }
 
-.time-square .innerbox .fa {
+.page.time-square .innerbox .fa {
     bottom: auto;
     position: absolute;
     right: 15px;
@@ -2620,19 +2636,19 @@ ul#selectUl li.unselected:hover {
     width: auto;
 }
 
-.time-square .innerbox .fa-chevron-down {
+.page.time-square .innerbox .fa-chevron-down {
 	display: none;
 }
 
-.time-square .innerbox .fa-chevron-up {
+.page.time-square .innerbox .fa-chevron-up {
 	display: block;
 }
 
-.time-square .openbox-up .fa-chevron-up {
+.page.time-square .openbox-up .fa-chevron-up {
 	display: none;
 }
 
-.time-square .openbox-up .fa-chevron-down {
+.page.time-square .openbox-up .fa-chevron-down {
 	display: block;
 }
 
@@ -2645,8 +2661,6 @@ ul#selectUl li.unselected:hover {
     margin-bottom: 20px;
     margin-right: 15px;
     width: 212px;
-    min-height: 285px;
-    max-height: 285px;
 }
 
 .listed-content:nth-child(8) {
@@ -2689,13 +2703,13 @@ ul#selectUl li.unselected:hover {
     padding: 20px 40px;
 }
 
-.page.concierge .page-content > h1 {
+.page.concierge .page-content > h1, .page.concierge .page-content .concierge-top-wrapper h1 {
     font-size: 40px;
     line-height: 1;
     margin-bottom: 20px;
 }
 
-.page.concierge .page-content > h3 {
+.page.concierge .page-content > h3, .page.concierge .page-content .concierge-top-wrapper h3 {
     color: #999999;
     font-size: 22px;
     line-height: 1.2;
@@ -2836,14 +2850,6 @@ ul#selectUl li.unselected:hover {
     font-size: 13px;
     line-height: 1.25;
     margin-bottom: 5px;
-}
-
-
-
-/* Page - Rooms ---------------------------------------------------- */
-
-.fourth-level > img {
-    width: 0;
 }
 
 
@@ -3157,6 +3163,76 @@ ul#selectUl li.unselected:hover {
 
 
 
+/* PAGE - Gallery ---------------------------------------------------- */
+
+.gallery .fourth-level {
+	margin-top: 0;
+}
+
+.gallery .flexslider {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	-o-box-shadow: none;
+    height: 620px;
+    padding-bottom: 30px;
+}
+
+.gallery .flexslider .slides > li {
+	height: 600px;
+}
+
+.gallery .flexslider .slides img {
+    height: auto;
+    width: 100%;
+}
+
+.gallery .rooms-book-now.slide-booking {
+    bottom: auto;
+    height: auto;
+    position: relative;
+}
+
+.gallery-description {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
+    bottom: 0;
+    clear: both;
+    position: absolute;
+    width: 100%;
+}
+
+.gallery-description > p {
+    padding: 20px;
+}
+
+.gallery-categories {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.gallery-categories > ul {
+    text-align: center;
+}
+
+.gallery-categories li {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: normal;
+    margin-right: 30px;
+    line-height: 2;
+}
+
+.gallery-categories a {
+    color: #777777;
+    font-family: gothambook;
+    text-transform: uppercase;
+}
+	.gallery-categories a:hover {
+	    color: #FFA500;
+	}
+
+
+
 /* Page - Contact ---------------------------------------------------- */
 
 .page.contact .page-content {
@@ -3441,6 +3517,76 @@ ul#selectUl li.unselected:hover {
 
 
 
+/* PAGE - Gallery ---------------------------------------------------- */
+
+.gallery .fourth-level {
+	margin-top: 0;
+}
+
+.gallery .flexslider {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	-o-box-shadow: none;
+    height: 620px;
+    padding-bottom: 30px;
+}
+
+.gallery .flexslider .slides > li {
+	height: 600px;
+}
+
+.gallery .flexslider .slides img {
+    height: auto;
+    width: 100%;
+}
+
+.gallery .rooms-book-now.slide-booking {
+    bottom: auto;
+    height: auto;
+    position: relative;
+}
+
+.gallery-description {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
+    bottom: 0;
+    clear: both;
+    position: absolute;
+    width: 100%;
+}
+
+.gallery-description > p {
+    padding: 20px;
+}
+
+.gallery-categories {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.gallery-categories > ul {
+    text-align: center;
+}
+
+.gallery-categories li {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: normal;
+    margin-right: 30px;
+    line-height: 2;
+}
+
+.gallery-categories a {
+    color: #777777;
+    font-family: gothambook;
+    text-transform: uppercase;
+}
+	.gallery-categories a:hover {
+	    color: #FFA500;
+	}
+
+
+
 /* Slide Properties ---------------------------------------------------- */
 
 .slide-bottom-title {
@@ -3461,9 +3607,6 @@ ul#selectUl li.unselected:hover {
 .slide-bottom-title > h1 {
     line-height: 1.3;
 }
-
-
-
 
 
 
