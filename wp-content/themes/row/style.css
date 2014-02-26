@@ -1845,7 +1845,7 @@ ul#selectUl li.unselected:hover {
     background: none repeat scroll 0 0 #FFFFFF;
     bottom: 0;
     color: #000000;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
     position: absolute;
     text-align: center;
     width: 92%;

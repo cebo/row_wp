@@ -40,12 +40,6 @@ $(document).ready(function(){
 			  e.preventDefault();
 		  $(".textbox").toggleClass( "openbox" );
 		});
-
-		$(".opensays").click(function(e) {
- 			  
-			  e.preventDefault();
-		  $(".textbox").toggleClass( "openbox" );
-		});
  		
  		$(".opensays-up").click(function(e) {
  			  
