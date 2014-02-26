@@ -2840,6 +2840,14 @@ ul#selectUl li.unselected:hover {
 
 
 
+/* Page - Rooms ---------------------------------------------------- */
+
+.fourth-level > img {
+    width: 0;
+}
+
+
+
 /* Page - Full Vertical ---------------------------------------------------- */
 
 .page .contentarea.fullvertical {
