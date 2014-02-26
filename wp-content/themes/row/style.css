@@ -1831,13 +1831,15 @@ ul#selectUl li.unselected:hover {
 	font-family: 'GothamLight';
 	font-size: 14px;
 }
+
 .innerbox .fa {
-	position: absolute;
-	bottom: 5px;
-	width: 92%;
-	text-align: center;
-	color: #000;
-	background: #fff;
+    background: none repeat scroll 0 0 #FFFFFF;
+    bottom: 0;
+    color: #000000;
+    padding-bottom: 8px;
+    position: absolute;
+    text-align: center;
+    width: 92%;
 }
 
 .innerbox .fa-chevron-up {

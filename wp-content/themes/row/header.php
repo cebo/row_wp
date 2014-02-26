@@ -43,6 +43,7 @@
 
 <!-- Plugin CSS -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/jscrollpane.css">
+<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/jquery.mmenu.css">
 <!-- <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/ui-lightness/jquery.ui.all.css"> -->
 
 
@@ -65,6 +66,9 @@
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.widget.js"></script>
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.button.js"></script>
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.spinner.min.js"></script>
+
+<!-- Jquery Mmenu -->
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.mmenu.min.js"></script>
 
 <!-- Scripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
@@ -246,6 +250,9 @@
 <body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page() || is_single()) { ?> class="single page"<?php } ?>>
 
 
+<div>
+
+
 	<section class="navigate">
 		
 			
@@ -275,7 +282,7 @@
 			
 			<li>
 				<a href="<?php echo get_option('cebo_genbooklink'); ?>"><span class="reserve"></span><p>Reservations</p></a>
-</li>
+			</li>
 
 			<li class="subinside">
 				<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p>Rooms</p></a>
@@ -622,8 +629,150 @@
 				</div>
 
 			</div>
+
+		<nav id="menu" class="mobile">
 		
-		<div class="bottom"></div>
+			<ul>
+				
+				
+				<li>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=6"><span class="hotel"></span><p>Hotel</p></a>
+					
+						<ul class="dropdown">
+							
+							<?php wp_nav_menu( array( 'menu' => 'hotel' ,  'items_wrap' => '%3$s', 'container' => '') ); ?>
+							
+						</ul>
+				</li>
+				
+				<li>
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>"><span class="reserve"></span><p>Reservations</p></a>
+				</li>
+
+				<li>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p>Rooms</p></a>
+					
+						<ul>
+							
+							<?php query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							
+							
+							<li>
+							
+							
+								<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+								<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+								
+								<?php } elseif($imgsrc) { ?>
+								
+								
+								<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+								
+								<?php } else { ?>
+													
+								<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" alt="<?php the_title(); ?>"></a>
+								
+								
+								<?php } ?>							
+
+								<h3><?php the_title(); ?></h3>
+							</li>
+							
+							<?php endwhile; endif; wp_reset_query(); ?>		
+							
+											
+						</ul>
+				</li>
+				
+				
+				<li>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=89"><span class="gallery"></span><p>Gallery</p></a>
+				</li>
+				
+				<li>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p>Deals</p></a>
+					
+						<ul class="dropdown">
+							
+							<?php query_posts('post_type=specials&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							
+							<li>
+								
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								
+								
+							</li>
+							<?php endwhile; endif; wp_reset_query(); ?>	
+							
+						</ul>
+				</li>
+				
+				<li>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p>Eat & Drink</p></a>
+					
+						<ul class="dropdown">
+						
+							<?php query_posts('post_type=amenities&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							
+							<li>
+								
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								
+								
+							</li>
+							<?php endwhile; endif; wp_reset_query(); ?>							
+						</ul>
+				</li>
+				
+				<li>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p>Explore NYC</p></a>
+					
+						<ul>
+							
+							<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page')); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							
+							
+							<li>
+							
+							
+								<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+								<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+								
+								<?php } elseif($imgsrc) { ?>
+								
+								
+								<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+								
+								<?php } else { ?>
+													
+								<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" alt="<?php the_title(); ?>"></a>
+								
+								
+								<?php } ?>							
+
+								<h3><?php the_title(); ?></h3>
+							</li>
+							
+							<?php endwhile; endif; wp_reset_query(); ?>	
+							
+													
+						</ul>
+						
+				</li>
+				
+				<li>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=68"><span class="contact"></span><p>Contact</p></a>
+				</li>
+				
+				<!--<li>
+					<a href="#"><span class="blog"></span><p>Apple Blog</p></a>
+				</li>-->
+			
+			</ul>
+
+		</nav>
 	
 	</section>
 	

@@ -72,7 +72,7 @@ $(document).ready(function(){
 
 	if ($(window).width() > 640) {
 
-	$('.supernav li.subinside').hover(function() {
+		$('.supernav li.subinside').hover(function() {
   
    			$('.navigate').stop().addClass("slipnot");
 			
@@ -101,8 +101,6 @@ $(document).ready(function(){
 
 
 
-// Jscrollpane ////////////////////////////////////////////////////////////
-
 $(function() {
 
 	// Jquery UI spinner
@@ -111,6 +109,9 @@ $(function() {
 	$('.ui-spinner-up .ui-button-text').html('<span class="ui-icon ui-icon-triangle-1-n fa fa-angle-up"></span>');
 	$('.ui-spinner-down .ui-button-text').html('<span class="ui-icon ui-icon-triangle-1-n fa fa-angle-down"></span>');
 				
+
+				
+	// Jscrollpane ////////////////////////////////////////////////////////////
 	// the element we want to apply the jScrollPane
 	var $el					= $('.dropbox').jScrollPane({
 		verticalGutter 	: -16
