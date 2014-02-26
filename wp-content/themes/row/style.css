@@ -3266,6 +3266,14 @@ ul#selectUl li.unselected:hover {
     width: 50%;
 }
 
+.deal:nth-child(2n) {
+    clear: right;
+}
+
+.deal:nth-child(3n) {
+    clear: left;
+}
+
 .deal-photo {
     background-position: center center;
     background-repeat: no-repeat;
