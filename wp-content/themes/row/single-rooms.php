@@ -61,10 +61,7 @@
 					</div>
 				</div>
 		</div>
-		
 				
-		</div>
-		
 		<?php } else { ?>
 							
 		<div class="stretch"  style="min-height: 500px; background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);">
@@ -151,12 +148,12 @@
 									<a href="#">Book Now</a>
 								</div>
 							</div>
-						</li>-->
+						</li>
 
 					</ul>
 				</div>
 			
-			</div>
+			</div> -->
 			
 			
 			
