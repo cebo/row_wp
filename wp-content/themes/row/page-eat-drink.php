@@ -27,7 +27,7 @@
 											
 								<h1><?php the_title(); ?></h1>
 								
-								<?php the_content(); ?>
+								<?php echo content(150); ?>
 									
 								<a class="opensays" href="#"><i class="fa fa-chevron-down"></i></a>
 								<a class="opensays" href="#"><i class="fa fa-chevron-up"></i></a>
@@ -39,16 +39,16 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 		
 						
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
 						
 						<?php } else { ?>
 											
-						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
 						
 						
 						<?php } ?>
@@ -71,7 +71,7 @@
 											
 								<h1><?php the_title(); ?></h1>
 								
-								<?php the_content(); ?>
+								<?php echo content(150); ?>
 	
 								<a class="opensays-1" href="#"><i class="fa fa-chevron-down"></i></a>
 								<a class="opensays-1" href="#"><i class="fa fa-chevron-up"></i></a>
@@ -83,16 +83,16 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 		
 						
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
 						
 						<?php } else { ?>
 											
-						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
 						
 						
 		<?php } ?>

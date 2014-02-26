@@ -199,7 +199,20 @@
 			  $(".textbox").toggleClass( "openbox" );
 			});
  		
- 		
+ 		$(".opensays-up").click(function(e) {
+ 			  
+ 			  e.preventDefault();
+			  $(".textbox").toggleClass( "openbox-up" );
+			});
+		
+		$(".opensays-1").click(function(e) {
+ 			  
+ 			  e.preventDefault();
+			  $(".textbox-1").toggleClass( "openbox-up" );
+			});
+
+
+	
  		$(function() {
 			var fixadent = $(".topnav"), pos = fixadent.offset();
 			$(window).scroll(function() {
@@ -272,7 +285,7 @@
 	</head> 
 	
 	
-<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page() || is_single()) { ?> class="single page"<?php } ?>>
+<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page() || is_single()) { ?> class="single page"<?php } ?>>
 
 
 	<section class="navigate">
@@ -290,167 +303,171 @@
 			
 			
 			<ul class="supernav">
-		
+			
+			
 			<li class="dropsub">
-				<a href="/rownyc.com/united/page-amenities.html"><span class="hotel"></span><p>Hotel</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=6"><span class="hotel"></span><p>Hotel</p></a>
 				
 					<ul class="dropdown">
-					
-						<li>
-							<a href="#">This is a title</a>
-						</li>
-						<li>
-							<a href="#">This is a title</a>
-						</li>
 						
-						<li>
-							<a href="#">This is a title</a>
-						</li>
+						<?php wp_nav_menu( array( 'menu' => 'hotel' ,  'items_wrap' => '%3$s', 'container' => '') ); ?>
 						
 					</ul>
 			</li>
 			
 			<li>
-				<a href="#"><span class="reserve"></span><p>Reservations</p></a>
+				<a href="<?php echo get_option('cebo_genbooklink'); ?>"><span class="reserve"></span><p>Reservations</p></a>
 </li>
 
 			<li class="subinside">
-				<a href="/rownyc.com/united/rooms.html"><span class="rooms"></span><p>Rooms</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p>Rooms</p></a>
 				
 					<ul id="dropbox" class="dropbox">
 					
 						<li class="drop-intro">
 							
-							<h1>Rooms</h1>
+							<?php query_posts('post_type=page&p=86'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+								
+								<h1><?php the_title(); ?></h1>
 							
-							<p>Aquae. Nam a doluptat Ut et qatempor at omnis dolupti captataur.</p>
+								<p><?php echo excerpt(13); ?></p>
+								
+							<?php endwhile; endif; wp_reset_query(); ?>	
 							
-						</li>
-						<li>
-							<a href="/rownyc.com/united/master-suite.html"><img src="<?php bloginfo ('template_url'); ?>/images/rooms/nav-master-suite.jpg" alt="#"></a>
-							<h3>Master Suite</h3>
 						</li>
 						
+						<?php query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						
+						
 						<li>
-							<a href="#"><img src="<?php bloginfo ('template_url'); ?>/images/rooms/nav-junior-suite.jpg" alt="#"></a>
-							<h3>Junior Suite</h3>
-						</li>
-						<li>
-							<a href="#"><img src="<?php bloginfo ('template_url'); ?>/images/rooms/nav-king-bed.jpg" alt="#"></a>
-							<h3>1 King Bed</h3>
-						</li>
-						<li>
-							<a href="#"><img src="<?php bloginfo ('template_url'); ?>/images/rooms/nav-queen-bed.jpg" alt="#"></a>
-							<h3>1 Queen Bed</h3>
-						</li>
-						<li>
-							<a href="#"><img src="<?php bloginfo ('template_url'); ?>/images/rooms/nav-double-beds.jpg" alt="#"></a>
-							<h3>2 Double Beds</h3>
-						</li>
-						<li>
-							<a href="#"><img src="<?php bloginfo ('template_url'); ?>/images/rooms/nav-double-bed.jpg" alt="#"></a>
-							<h3>1 Double Bed</h3>
-						</li>
-						<li>
-							<a href="#"><img src="<?php bloginfo ('template_url'); ?>/images/rooms/nav-twin-beds.jpg" alt="#"></a>
-							<h3>2 Twin Beds</h3>
+						
+						
+							<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+							
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+							
+							<?php } elseif($imgsrc) { ?>
+							
+							
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+							
+							<?php } else { ?>
+												
+							<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" alt="<?php the_title(); ?>"></a>
+							
+							
+							<?php } ?>							
+
+							<h3><?php the_title(); ?></h3>
 						</li>
 						
+						<?php endwhile; endif; wp_reset_query(); ?>		
+						
+										
 					</ul>
 			</li>
+			
+			
 			<li>
-				<a href="#"><span class="gallery"></span><p>Gallery</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=89"><span class="gallery"></span><p>Gallery</p></a>
 			</li>
 			
 			<li class="dropsub">
-				<a href="/rownyc.com/united/page-deals.html"><span class="deals"></span><p>Deals</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p>Deals</p></a>
 				
 					<ul class="dropdown">
-					
-						<li>
-							<a href="#">This is a title</a>
-						</li>
-						<li>
-							<a href="#">This is a title</a>
-						</li>
+						
+						<?php query_posts('post_type=specials&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<li>
-							<a href="#">This is a title</a>
+							
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							
+							
 						</li>
+						<?php endwhile; endif; wp_reset_query(); ?>	
 						
 					</ul>
 			</li>
 			
 			<li class="dropsub">
-				<a href="/rownyc.com/united/page-eat-drink.html"><span class="eats"></span><p>Eat & Drink</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p>Eat & Drink</p></a>
 				
 					<ul class="dropdown">
 					
-						<li>
-							<a href="#">This is a title</a>
-						</li>
-						<li>
-							<a href="#">This is a title</a>
-						</li>
+						<?php query_posts('post_type=amenities&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<li>
-							<a href="#">This is a title</a>
+							
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							
+							
 						</li>
-						
+						<?php endwhile; endif; wp_reset_query(); ?>							
 					</ul>
 			</li>
 			
 			<li class="subinside">
-				<a href="/rownyc.com/united/explore.html"><span class="explore"></span><p>Explore NYC</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p>Explore NYC</p></a>
 				
 					<ul class="dropbox">
 					
 						<li class="drop-intro">
 							
-							<h1>Rooms</h1>
+							<?php query_posts('post_type=page&p=148'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+								
+								<h1><?php the_title(); ?></h1>
 							
-							<p>Aquae. Nam a doluptat Ut et qatempor at omnis dolupti captataur.</p>
-							
-						</li>
-						<li>
-							<a href="#"><img src="images/movie.jpg" alt="#"></a>
-							<h3>1 Queen Bed</h3>
+								<p><?php echo excerpt(13); ?></p>
+								
+							<?php endwhile; endif; wp_reset_query(); ?>								
 						</li>
 						
+						<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page')); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						
+						
 						<li>
-							<a href="#"><img src="images/movie.jpg" alt="#"></a>
-							<h3>1 Queen Bed</h3>
-						</li>
-						<li>
-							<a href="#"><img src="images/movie.jpg" alt="#"></a>
-							<h3>1 Queen Bed</h3>
-						</li>
-						<li>
-							<a href="#"><img src="images/movie.jpg" alt="#"></a>
-							<h3>1 Queen Bed</h3>
-						</li>
-						<li>
-							<a href="#"><img src="images/movie.jpg" alt="#"></a>
-							<h3>1 Queen Bed</h3>
+						
+						
+							<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+							
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+							
+							<?php } elseif($imgsrc) { ?>
+							
+							
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+							
+							<?php } else { ?>
+												
+							<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" alt="<?php the_title(); ?>"></a>
+							
+							
+							<?php } ?>							
+
+							<h3><?php the_title(); ?></h3>
 						</li>
 						
+						<?php endwhile; endif; wp_reset_query(); ?>	
+						
+												
 					</ul>
 					
 			</li>
 			
 			<li>
-				<a href="/rownyc.com/united/page-contact.html"><span class="contact"></span><p>Contact</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=68"><span class="contact"></span><p>Contact</p></a>
 			</li>
 			
-			<li>
+			<!--<li>
 				<a href="#"><span class="blog"></span><p>Apple Blog</p></a>
-			</li>
+			</li>-->
 		
 		</ul>
 		
 		<div class="finished">
 			
-			<div class="weatherbox">
+			<!--<div class="weatherbox">
 			
 			
 			</div>
@@ -460,7 +477,7 @@
 			
 				<h1>Upcoming Event</h1>
 				
-			</div>
+			</div>-->
 			
 			
 			<div class="socials">
@@ -498,7 +515,7 @@
 
 					<div class="inner">
 						
-						<form action="https://rownyc.reztrip.com/search?" target="_blank">
+						<form action="<?php echo get_option('cebo_genbooklink'); ?>/search?" target="_blank">
 
 							
 							<div class="calspacer">

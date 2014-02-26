@@ -93,7 +93,7 @@
 								<?php } elseif($imgsrc) { ?>
 								
 								
-								<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+								<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 								
 								<?php } else { ?>
 													
@@ -144,7 +144,7 @@
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -192,7 +192,7 @@
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -262,7 +262,7 @@
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -310,7 +310,7 @@
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -349,7 +349,7 @@
 				
 					
 					
-					<?php query_posts('post_type=specials&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=specials&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<div class="suboverlay narrow">
@@ -369,7 +369,7 @@
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -413,7 +413,7 @@
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -471,7 +471,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -505,7 +505,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -536,7 +536,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -571,7 +571,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -602,7 +602,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -633,7 +633,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -667,7 +667,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -700,7 +700,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -731,7 +731,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -764,7 +764,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -795,7 +795,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -828,7 +828,7 @@
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>

@@ -25,63 +25,60 @@
 					
 					
 			
-					<div class="fourth-level">
-					
-					
-						<div class="fullspan" style="">
-						
-						
-							
-							
-								<div class="suboverlay narrow">
-							
-									<h1><?php the_title(); ?></h1>
-									<h4><?php echo get_post_meta($post->ID, 'cebo_footage', true); ?> SQ.FT.</h4>
-
-								
-								</div>
-							
-								<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-								
-								<a href="<?php the_permalink(); ?>">
+			<div class="fourth-level">
+			
+			
+				<div class="fullspan" style="">
 				
-								<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
-								
-								<?php } elseif($imgsrc) { ?>
-								
-								
-								<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
-								
-								<?php } else { ?>
-													
-								<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-								
-								
-								<?php } ?>							
-								
-								</div>
-								
-								</a>
+				
+					
+					
+						<div class="suboverlay narrow">
+					
+							<h1><?php the_title(); ?></h1>
+							<h4><?php echo get_post_meta($post->ID, 'cebo_footage', true); ?> SQ.FT.</h4>
 
-							<div class="rooms-book-now">
+						
+						</div>
+						
+						
+						
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+		
+						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+						
+						<?php } elseif($imgsrc) { ?>
+						
+						
+						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+						
+						<?php } else { ?>
+											
+						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+						
+						
+						<?php } ?>							
+						
+						</div>
+					
 
-								<div class="left">
-									<h4><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?>  - <?php echo get_post_meta($post->ID, 'cebo_footage', true); ?>  sq.ft.</h4>
-								</div>
+					<div class="rooms-book-now">
 
-								<div class="right">
-									<a href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>">Book Now</a>
-								</div>
-									
-							</div>
-
-							<img src="<?php echo $imgsrc; ?>" style="" alt="#">
+						<div class="left">
+							<h4><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?>  - <?php echo get_post_meta($post->ID, 'cebo_footage', true); ?>  sq.ft.</h4>
 						</div>
 
-					
+						<div class="right">
+							<a href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>">Book Now</a>
+						</div>
+							
 					</div>
 
-				</ul>
+					<img src="<?php echo $imgsrc[0]; ?>" style="position: absolute; left: -2000px;" alt="#">
+				</div>
+
+			
+			</div>
 			
 			
 			<?php endwhile; endif; wp_reset_query(); ?>	

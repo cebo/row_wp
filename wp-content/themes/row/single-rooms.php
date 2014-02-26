@@ -10,12 +10,7 @@
 
 
 	<section class="contentarea">
-			
-						
-			
-			
-			
-			
+
 			<!-- begin room details -->
 			
 			
@@ -28,27 +23,45 @@
 			
 		<div class="stretch"  style="min-height: 500px; background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);">
 		
-			<div class="suboverlay narrow">
+			<!--<div class="suboverlay narrow">
 					
 					<h1>STAY 5 NIGHTS <br>& SAVE 20% OFF YOUR ENTIRE STAY!</h1>
 					<h4>Save up to 20% when you stay for 5 nights or more in the Heart of New York City.</h4>
 												
+				</div>-->
+				<div class="slide-booking rooms-book-now">
+					<div class="left">
+						<?php the_content(); ?>
+					</div>
+					<div class="right">
+						<a href="<?php if(get_post_meta($post->ID,'cebo_booklink',true)) { echo get_post_meta($post->ID,'cebo_booklink',true); } else { echo get_option('cebo_genbooklink'); } ?>">Book Now</a>
+					</div>
 				</div>
+		
 		
 		</div>
 		
 		<?php } elseif($imgsrc) { ?>
 		
 		
-		<div class="stretch"  style="min-height: 500px; background-image: url(<?php echo $imgsrc; ?>);">
+		<div class="stretch"  style="min-height: 500px; background-image: url(<?php echo $imgsrc[0]; ?>);">
 		
-			<div class="suboverlay narrow">
+			<!--<div class="suboverlay narrow">
 					
 					<h1>STAY 5 NIGHTS <br>& SAVE 20% OFF YOUR ENTIRE STAY!</h1>
 					<h4>Save up to 20% when you stay for 5 nights or more in the Heart of New York City.</h4>
 												
+				</div>-->
+				<div class="slide-booking rooms-book-now">
+					<div class="left">
+						<?php the_content(); ?>
+					</div>
+					<div class="right">
+						<a href="<?php if(get_post_meta($post->ID,'cebo_booklink',true)) { echo get_post_meta($post->ID,'cebo_booklink',true); } else { echo get_option('cebo_genbooklink'); } ?>">Book Now</a>
+					</div>
 				</div>
-				
+		</div>
+		
 				
 		</div>
 		
@@ -56,16 +69,28 @@
 							
 		<div class="stretch"  style="min-height: 500px; background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);">
 		
-			<div class="suboverlay narrow">
+			<!--<div class="suboverlay narrow">
 					
 					<h1>STAY 5 NIGHTS <br>& SAVE 20% OFF YOUR ENTIRE STAY!</h1>
 					<h4>Save up to 20% when you stay for 5 nights or more in the Heart of New York City.</h4>
 												
-				</div>
+				</div>-->
 				
+				<div class="slide-booking rooms-book-now">
+					<div class="left">
+						<?php the_content(); ?>
+					</div>
+					<div class="right">
+						<a href="<?php if(get_post_meta($post->ID,'cebo_booklink',true)) { echo get_post_meta($post->ID,'cebo_booklink',true); } else { echo get_option('cebo_genbooklink'); } ?>">Book Now</a>
+					</div>
+				</div>
+		
+		
+		
 		</div>
 		
-		
+	
+							
 		<?php } ?>
 		
 		

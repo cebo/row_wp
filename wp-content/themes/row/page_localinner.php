@@ -1,53 +1,91 @@
 <?php 
 
-/* Template Name: Contact Page
+/* Template Name: Explore (location) Inner List
 
 */
  get_header(); ?>
-	
+
+ <div class="time-square">
+
+<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+
 
 	<div class="home-intro">
 							
+		
 		<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 		
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+		
+		<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+		
+		<?php } elseif($imgsrc) { ?>
+		
+		
+		<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+		
+		<?php } else { ?>
+							
+		<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+		
+		
+		<?php } ?>
+
+
+		<div class="textbox">
 						
-						<?php } elseif($imgsrc) { ?>
-						
-						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
-						
-						<?php } else { ?>
-											
-						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
-						
-						
-						<?php } ?>		
+			<div class="innerbox">
+
+				<div class="textbox-header">
+
+					<div class="left">
+						<h1><?php the_title(); ?></h1>
+					</div>
+
+					<div class="right">
+						<a class="opensays-up" href="#"><i class="fa fa-chevron-down"></i></a>
+						<a class="opensays-up" href="#"><i class="fa fa-chevron-up"></i></a>
+					</div>
+					
+					<div class="clear"></div>
+					
+					
+				</div>
+			
+				<?php the_content(); ?>
+				
+				
+			
+			</div>
+
+		</div>
 	
 	</div>	
-	
-	
-	
+
+
+<?php endwhile; endif; wp_reset_query(); ?>	
+
+
 	
 	<section class="contentarea">
 						
 		<div class="page-content">
+			
+			
+			<div id="maparea"></div>
+			
+			
 
-			<div class="main-page-content inverted-location left">
-
-				<h1>Get in Touch</h1>
-
-							
-			<div id="maparea" class="maparea left" style="width: 400px;"></div>
-				
-<ul style="display: none;" class="right-links right" id="toggles"> 
+	<ul style="display: none;" class="right-links right" id="toggles"> 
 
 		<?php $ptitle = get_post_meta($post->ID, 'cebo_localtype', true); $page = get_page_by_title( 'Echo ' . $ptitle ); ?>
 										
-		<li class=""><a class="linkerd active" href="<?php bloginfo('url');?>/?page_id=9000" title="Dining"><?php echo $ptitle; ?></a></li>
+		<li class=""><a class="linkerd active" href="<?php bloginfo('url');?>/?page_id=<?php echo $page->ID; ?>" title="Dining"><?php echo $ptitle; ?></a></li>
 			
-	</ul>				
-				<!-- Google Map API Files -->
+	</ul>
+	
+	
+
+<!-- Google Map API Files -->
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
 	
@@ -233,16 +271,16 @@
       e.preventDefault();
     });
     
-
+    <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
     
     $("#maparea").gmap3({
       marker:{
-      	address:"700 8 Ave New York, NY 10036", data:"R", options:{icon: "<?php bloginfo('template_url'); ?>/images/map_logo.png"}
+      	address:"<?php echo get_option('cebo_address'); ?>", data:"<?php bloginfo('name'); ?>", options:{icon:<?php if(get_option('cebo_mapmarker')) { ?>"<?php echo get_option('cebo_mapmarker'); ?>"<?php } else { ?>"http://maps.google.com/mapfiles/marker_green.png"<?php } ?>}
       },
       map: {
       action: 'init',
       options: {
-          center:[40.7587904,-73.9885025],
+          center:[<?php echo get_post_meta($post->ID, 'cebo_localcoordinates', true); ?>],
           scrollwheel: false,
           zoom: 14,
           mapTypeId: "style2",
@@ -251,7 +289,7 @@
            }
          }   
     },
-   
+    <?php endwhile; endif; wp_reset_query(); ?>
     styledmaptype:{
       id: "style1",
       options:{
@@ -601,51 +639,65 @@
 	<script src="js/libs/dd_belatedpng.js"></script>
 	<script> DD_belatedPNG.fix('img, .png_bg');</script>
 	<![endif]-->
-
 			
 			
-				<h4>Subway:</h4>
-
-				<p>Access to the subway is across the street on 44th and 8th avenue to the Times Square station from where you can connect and/or transfer to all trains going uptown, downtown and the east side Grand Central station:</p>
-
-				<ul class="subway-buttons">
-					<li class="subway-button-1"><a href="#">1</a></li>
-					<li class="subway-button-2"><a href="#">2</a></li>
-					<li class="subway-button-3"><a href="#">3</a></li>
-					<li class="subway-button-4"><a href="#">7</a></li>
-					<li class="subway-button-5"><a href="#">S</a></li>
-					<li class="subway-button-6"><a href="#">N</a></li>
-					<li class="subway-button-7"><a href="#">Q</a></li>
-					<li class="subway-button-8"><a href="#">R</a></li>
-					<li class="subway-button-9"><a href="#">A</a></li>
-					<li class="subway-button-10"><a href="#">C</a></li>
-					<li class="subway-button-11"><a href="#">E</a></li>
-					<li class="subway-button-12"><a href="#">B</a></li>
-					<li class="subway-button-13"><a href="#">D</a></li>
-					<li class="subway-button-14"><a href="#">F</a></li>
-					<li class="subway-button-15"><a href="#">M</a></li>
-				</ul>
-
-			</div>
-			
-			<div class="text-content right">
 				
-			<?php if(have_posts()) : while(have_posts()) : the_post(); ?>	
+				<?php $filler = get_post_meta($post->ID, 'cebo_localtype', true); ?>
 				
-				<h3 style="margin-bottom: 23px;"><?php the_title(); ?></h3>
+			
 				
-				<?php the_content(); ?>
+				<?php $mystring = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $filler))); ?>
+				
+				
+				
+				
+				<?php query_posts(array(
+						'post_type' => 'locations',
+    					'taxonomy' => 'loctype',
+    					'term' => $mystring,
+    					'posts_per_page' => -1)
+    					); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+				
+				
+				
+				<div class="listed-content">
+					
+					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+		
+		
+					<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" width="212" /></a>
+					
+					<?php } elseif($imgsrc) { ?>
+					
+					
+					<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" width="212" /></a>
+					
+					<?php } else { ?>
+										
+					<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" width="212" /></a>
+					
+					
+					<?php } ?>
+
+					<div>
+
+						<h3><?php the_title(); ?></h3>
+					
+						<p><?php echo excerpt(18); ?></p>
+
+						<a href="<?php the_permalink(); ?>">Learn More ></a>
+
+					</div>
+
+				</div>
+				
+				<?php endwhile; endif; wp_reset_query(); ?>	
 
 				
-			<?php endwhile; endif; wp_reset_query(); ?>	
-			
-			
-			</div>
-
 		</div>
 		
 		
-		
+		</div>
 		
 		<div class="clear"></div>
 		
@@ -655,4 +707,4 @@
 		
 		
 		
-		<?php get_footer(); ?>
+	<?php get_footer(); ?>

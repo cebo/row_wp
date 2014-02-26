@@ -36,7 +36,7 @@ $pagetypes = array('Two Column', 'Full Width', 'With Sidebar');
 
 $meta_boxel = array(
 	'id' => 'CUSTOM FIELDS',
-	'title' => 'Additional Variations for Your Posts',
+	'title' => 'Additional Variations for Your Pages',
 	// 'page' => determines where the custom field is supposed to show up.
 	// here it is desplaying Testimonials, but other options are
 	// page or post
@@ -52,40 +52,48 @@ $meta_boxel = array(
 	          "type" => "text",
 	          "std" => ""
               )
- 		,
- 		array( 
-              "name" => "Is This A Location Heading?",
-	          "desc" => "If so, select the location taxonomy to create the list",
-	          "id" => $prefix."_loctype",
-	          "type" => "select",
-	          'options' => $type,
-	          "std" => "0"
-              )
 		,
-		array( 
-              "name" => "Full screen banner image (hit INSERT INTO POST)",
-	          "desc" => "Wide and narrow is optimum for this image. Try ratios of 16:9, like 800 x 450 or 2000 x 800. ",
-	          "id" => $prefix."_fullpic",
-	          "type" => "upload",
-	          "std" => ""
-              )
- 		,
  		array( 
-              "name" => "General Thumbnail",
-	          "desc" => "If you do not wish to use the featured image.",
+              "name" => "Square details image #1",
+	          "desc" => "This will also be the thumbnail when a square is required",
 	          "id" => $prefix."_thumbone",
 	          "type" => "upload",
 	          "std" => ""
               )
  		,
  		array( 
-              "name" => "Vimeo ID",
-	          "desc" => "You put your VIMEO video id here to display a vimeo instead, ex: '43423014'",
-	          "id" => $prefix."_vimeo",
+              "name" => "Square details image #2",
+	          "desc" => "hit insert into post",
+	          "id" => $prefix."_thumbtwo",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "Square details image #3",
+	          "desc" => "hit insert into post",
+	          "id" => $prefix."_thumbthree",
+	          "type" => "upload",
+	          "std" => ""
+              )
+		,
+		 array( 
+              "name" => "Is this a location interior page?",
+	          "desc" => "If so, select the taxonomy to associate locations",
+	          "id" => $prefix."_localtype",
+	          "type" => "select",
+	          'options' => $type,
+	          "std" => "0"
+              )
+         ,
+         array( 
+              "name" => "Central Coordinates",
+	          "desc" => "If this is a Location page, place the page map's central coordinates here ex: 34.409937,-119.692079",
+	          "id" => $prefix."_localcoordinates",
 	          "type" => "text",
 	          "std" => ""
               )
-
+ 		,     
        	)
 );
 

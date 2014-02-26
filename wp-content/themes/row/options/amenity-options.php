@@ -34,93 +34,129 @@ $prefix = 'cebo';
 $numbers = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9+');
 $pagetypes = array('Two Column', 'Full Width', 'With Sidebar');
 
-$meta_localer = array(
+$meta_boxoryl = array(
 	'id' => 'CUSTOM FIELDS',
-	'title' => 'Additional Variations for Your Posts',
+	'title' => 'Additional Variations For Specials',
 	// 'page' => determines where the custom field is supposed to show up.
 	// here it is desplaying Testimonials, but other options are
 	// page or post
-	'page' => 'post',
+	'page' => 'project',
 	'context' => 'normal',
 	'priority' => 'high',
 	'fields' => array(
 				
 		array( 
-              "name" => "What type of location?",
-	          "desc" => "Add a simple tag like 'Asian Cuisine, or Art Museum ",
-	          "id" => $prefix."_category",
-	          "type" => "text",
-	          "std" => "",
+              "name" => "Logo instead of title?",
+	          "desc" => "If you would like to use a logo instead of a title upload it here",
+	          "id" => $prefix."_titlogo",
+	          "type" => "upload",
+	          "std" => ""
               )
-		,
-		array( 
-              "name" => "General Thumbnail (hit INSERT INTO POST)",
-	          "desc" => "Generic thumbnail associated with each location",
-	          "id" => $prefix."_genthumb",
+ 		,	
+ 		array( 
+              "name" => "Subtitle (optional)",
+	          "desc" => "Shorter Tag such as 'Shop N' Stay' or 'Big Savings'. Will override the title",
+	          "id" => $prefix."_subtagline",
+	          "type" => "text",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "Thumbnail option rather than the featured image (hit INSERT INTO POST)",
+	          "desc" => "This thumb should be panoramic. A good size is 520w X 350h. ",
+	          "id" => $prefix."_homethumb",
 	          "type" => "upload",
 	          "std" => ""
               )
  		,
-
-		array( 
-              "name" => "Outbound Location Link",
-	          "desc" => "Please put the outgoing link for this location here.",
-	          "id" => $prefix."_link",
+ 		array( 
+              "name" => "Square details image #1",
+	          "desc" => "This will also be the thumbnail when a square is required",
+	          "id" => $prefix."_thumbone",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "Square details image #2",
+	          "desc" => "hit insert into post",
+	          "id" => $prefix."_thumbtwo",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,	
+ 		array( 
+              "name" => "Full screen banner image (hit INSERT INTO POST)",
+	          "desc" => "Wide and narrow is optimum for this image. Try ratios of 16:9, like 800 x 450 or 2000 x 800. ",
+	          "id" => $prefix."_fullpic",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "List Column One",
+	          "desc" => "Separate each one by a comma. I.E: red, yellow, blue",
+	          "id" => $prefix."_details",
 	          "type" => "text",
 	          "std" => ""
               )
-		,
-		array( 
-              "name" => "Property Address",
-	          "desc" => "This address will only be used visually. The coordinates will determine the mapping",
-	          "id" => $prefix."_address",
+ 		,
+ 		array( 
+              "name" => "List Column Two",
+	          "desc" => "Separate each one by a comma. I.E: red, yellow, blue",
+	          "id" => $prefix."_workdetails",
 	          "type" => "text",
 	          "std" => ""
               )
-		,
-		array( 
-              "name" => "Property Phone Number",
-	          "desc" => "Put telephone number here",
-	          "id" => $prefix."_phone",
+ 		,
+ 		array( 
+              "name" => "List Column Three",
+	          "desc" => "Separate each one by a comma. I.E: red, yellow, blue",
+	          "id" => $prefix."_entdetails",
 	          "type" => "text",
 	          "std" => ""
               )
-		,
-		array( 
-              "name" => "Map Coordinates",
-	          "desc" => "If necessary, please put the property coordinates here.",
-	          "id" => $prefix."_coordinates",
-	          "type" => "text",
+ 		,
+ 		array( 
+              "name" => "Hours",
+	          "desc" => "Write your HTML (mostly break points) here",
+	          "id" => $prefix."_hours",
+	          "type" => "textarea",
 	          "std" => ""
               )
-       )
+ 		,
+ 		array( 
+              "name" => "Contact",
+	          "desc" => "Write your HTML (mostly break points) here",
+	          "id" => $prefix."_contact",
+	          "type" => "textarea",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "Reservation",
+	          "desc" => "Write your HTML (mostly break points) here",
+	          "id" => $prefix."_reserv",
+	          "type" => "textarea",
+	          "std" => ""
+              )
+ 		,
+       	)
 );
-
-
-
-
-
-
-	wp_enqueue_style('color-picker', get_template_directory_uri().'/options/colorpicker.css');
-wp_enqueue_script('color-picker', get_template_directory_uri().'/options/js/colorpicker.js', array('jquery'));
-
-
-
-
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */
-add_action('admin_menu', 'mythemeee_add_localer');
-// Add meta localer
-function mythemeee_add_localer() {
-	global $meta_localer;
-	foreach ( array( 'locations', 'event' ) as $page )
-	add_meta_box($meta_localer['id'], $meta_localer['title'], 'mythemeee_show_localer', $page, $meta_localer['context'], 			$meta_localer['priority']);
+add_action('admin_menu', 'mythemeyl_add_box');
+// Add meta box
+function mythemeyl_add_box() {
+	global $meta_boxoryl;
+	foreach ( array('amenities', 'dolo' ) as $page )
+	add_meta_box($meta_boxoryl['id'], $meta_boxoryl['title'], 'mythemeyl_show_box', $page, $meta_boxoryl['context'], 			$meta_boxoryl['priority']);
 }
-// Callback function to show fields in meta localer
-function mythemeee_show_localer() {
-	global $meta_localer, $post;
+// Callback function to show fields in meta box
+function mythemeyl_show_box() {
+	global $meta_boxoryl, $post;
 	// Use nonce for verification
 	
-	echo '
+		echo '
 
 	<script type="text/javascript">			
 			
@@ -182,31 +218,22 @@ jQuery(document).ready(function() {
 		</script>
 		
 		';
-		
-	echo '<input type="hidden" name="mythemeee_meta_localer_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+
+
+	echo '<input type="hidden" name="mythemeyl_meta_boxoryl_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	echo '<table class="form-table">';
-	foreach ($meta_localer['fields'] as $field) {
+	foreach ($meta_boxoryl['fields'] as $field) {
 		// get current post meta data
 		$meta = get_post_meta($post->ID, $field['id'], true);
 		echo '<tr>',
-				'<td class="localerer" style="border-bottom: 1px solid #DFDFDF; box-shadow: 0 1px 0 #FFFFFF; width: 100%; padding-bottom: 20px;">';
+				'<td class="boxer">';
 		switch ($field['type']) {
-			
-			
 			case 'text':
-				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px 0;" />';
+				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width: 102%" />';
 				break;
-			
-			
-			case 'color':
-				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<div id="color_picker" class="colorSelector"></div></div></div><input class="of-color" name="'. $field['id'] .'" id="'. $field['id'] .'" type="text" value="', $meta ? $meta : $field['std'], '" />';
-				break;
-							
-				
 			case 'upload':
 				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" class="upload_image" name="', $field['id'], '" id="', $field['id'], '"  value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px 0;" /><input class="upload_image_button" type="button" value="Upload Image" />';
 				break;
-			
 			case 'textarea':
 				echo '<div class="title">' ,$field['name'], '</div><div class="descriptive">', $field['desc'], '</div>', '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:47%">', $meta ? $meta : $field['std'], '</textarea>';
 				break;
@@ -219,9 +246,9 @@ jQuery(document).ready(function() {
 				echo '</select>';
 				break;
 			case 'radio':
-				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2; margin-bottom: 6px;" class="descriptive">', $field['desc'], '</div>';
+				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>';
 				foreach ($field['options'] as $option) {
-					echo '<input type="radio" name="', $field['id'], '" value="', $option['value'], '"', $meta == $option['value'] ? ' checked="checked"' : '', ' />&nbsp;', $option, '&nbsp;&nbsp;';
+					echo '<input type="radio" name="', $field['id'], '" value="', $option['value'], '"', $meta == $option['value'] ? ' checked="checked"' : '', ' />', $option, '<br>';
 				}
 				break;
 			case 'checkbox':
@@ -235,12 +262,12 @@ jQuery(document).ready(function() {
 	echo '</table>';
 }
 
-add_action('save_post', 'mythemeee_save_data');
-// Save data from meta localer
-function mythemeee_save_data($post_id) {
-	global $meta_localer;	
+add_action('save_post', 'mythemeyl_save_data');
+// Save data from meta box
+function mythemeyl_save_data($post_id) {
+	global $meta_boxoryl;	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['mythemeee_meta_localer_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['mythemeyl_meta_boxoryl_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 	// check autosave
@@ -254,7 +281,7 @@ function mythemeee_save_data($post_id) {
 	} elseif (!current_user_can('edit_post', $post_id)) {
 		return $post_id;
 	}
-	foreach ($meta_localer['fields'] as $field) {
+	foreach ($meta_boxoryl['fields'] as $field) {
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];		
 		if ($new && $new != $old) {

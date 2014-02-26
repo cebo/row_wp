@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: echo arts
+ * Template Name: echo broadway
  
  
  
@@ -9,7 +9,7 @@
  
   query_posts(
 		array(
-			'loctype' => 'arts-museums',
+			'loctype' => 'broadway',
 			'post_type' => 'locations',
   			'posts_per_page' => -1,
   			'order' => 'ASC'

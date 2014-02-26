@@ -47,6 +47,10 @@ include(TEMPLATEPATH . '/options/project-options.php');
 include(TEMPLATEPATH . '/options/local-options.php'); 
 
 
+ /* ................. SOME OPTIONS FOR PROJECTS .................... */
+/* Below is an include to a few options for your projects.*/
+include(TEMPLATEPATH . '/options/amenity-options.php'); 
+
 
 
  /* ................. CUSTOM FIELDS .................... */
@@ -64,7 +68,7 @@ include(TEMPLATEPATH . '/library/shortcodes.php');
 include(TEMPLATEPATH . '/library/widgets.php');
 
 
-
+add_filter('show_admin_bar', '__return_false');
 
 function is_subpage() {
     global $post;                              // load details about this page

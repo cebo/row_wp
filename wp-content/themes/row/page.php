@@ -19,7 +19,7 @@
 		<?php } elseif($imgsrc) { ?>
 		
 		
-		<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+		<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 		
 		<?php } else { ?>
 							

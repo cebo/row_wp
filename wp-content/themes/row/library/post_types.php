@@ -75,7 +75,7 @@ function createl_post_types() {
         'singular_name' => __( 'Amenities' )
       ),
       'public' => true,
-      'rewrite' => array('slug' => 'locations'),
+      'rewrite' => array('slug' => 'amenities'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
       'supports' => array('title','custom-fields','editor','category','author','thumbnail')
     )

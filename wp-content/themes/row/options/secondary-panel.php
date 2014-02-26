@@ -36,7 +36,7 @@ $pagetypes = array('Two Column', 'Full Width', 'With Sidebar');
 
 $meta_box = array(
 	'id' => 'CUSTOM FIELDS',
-	'title' => 'Additional Variations For Page Layout',
+	'title' => 'Additional Variations For Specials',
 	// 'page' => determines where the custom field is supposed to show up.
 	// here it is desplaying Testimonials, but other options are
 	// page or post
@@ -85,7 +85,22 @@ $meta_box = array(
 	          "std" => ""
               )
  		,
- 				
+ 			array( 
+              "name" => "Square details image #1",
+	          "desc" => "This will also be the thumbnail when a square is required",
+	          "id" => $prefix."_thumbone",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "Square details image #2",
+	          "desc" => "hit insert into post",
+	          "id" => $prefix."_thumbtwo",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,	
  		array( 
               "name" => "Full screen banner image (hit INSERT INTO POST)",
 	          "desc" => "Wide and narrow is optimum for this image. Try ratios of 16:9, like 800 x 450 or 2000 x 800. ",
@@ -101,7 +116,7 @@ add_action('admin_menu', 'mytheme_add_box');
 // Add meta box
 function mytheme_add_box() {
 	global $meta_box;
-	foreach ( array( 'specials', 'dolo' ) as $page )
+	foreach ( array( 'specials','dolo' ) as $page )
 	add_meta_box($meta_box['id'], $meta_box['title'], 'mytheme_show_box', $page, $meta_box['context'], 			$meta_box['priority']);
 }
 // Callback function to show fields in meta box
