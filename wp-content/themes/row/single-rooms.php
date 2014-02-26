@@ -221,7 +221,7 @@
 
 							<ul>
 							
-								<?php $details = get_post_meta ($post->ID, 'cebo_enterdetails', true);
+								<?php $details = get_post_meta ($post->ID, 'cebo_entdetails', true);
 			             		$detailer = explode(',', $details);
 								
 								foreach($detailer as $d) {

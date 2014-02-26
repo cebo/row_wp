@@ -12,6 +12,7 @@
 		// Add a page number if necessary:
 		if ( $paged >= 2 || $page >= 2 )
 			echo ' | ' . sprintf( __( 'Page %s', 'cebolang' ), max( $paged, $page ) );
+
 		?>
 	</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -72,6 +73,57 @@
 
 <!-- Scripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
+
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+	
+		
+	  $('#arrival_date').live('keyup',function() {
+	        var pronameval = $(this).val();
+	        $('#departure_date').val(pronameval.replace(/ /g, '-').toLowerCase());
+	    });
+
+		
+		$('.supernav li.subinside').hover(function() {
+      
+       			$('.navigate').stop().addClass("slipnot");
+  			
+  			}, function() {
+      	
+      			$('.navigate').stop().removeClass("slipnot");
+ 			
+ 		});
+ 		
+ 		$('#selectUl li:not(":first")').addClass('unselected');
+			$('#selectUl').hover(
+			    function(){
+			        $(this).find('li').click(
+			            function(){
+			                $('.unselected').removeClass('unselected');
+			                $(this).addClass("bignumber");
+			                $(this).siblings('li').addClass('unselected');
+			                $(this).siblings('li').removeClass('bignumber');
+			                var index = $(this).index();
+			                $('select[name=size]')
+			                    .find('option:eq(' + index + ')')
+			                    .attr('selected',true);
+			            });
+			    },
+			    function(){
+			    });
+	
+ 		$(function() {
+			var fixadent = $(".topnav"), pos = fixadent.offset();
+			$(window).scroll(function() {
+			if($(this).scrollTop() > (pos.top + 10) && fixadent.css('position') == 'absolute') { fixadent.addClass('fixed'); }
+			else if($(this).scrollTop() <= pos.top && fixadent.hasClass('fixed')){ fixadent.removeClass('fixed'); }
+			})
+			});
+		 				
+	});	
+	
+</script>
 
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js?ver=3.5.2'></script>
 	<script type="text/javascript">
@@ -281,7 +333,7 @@
 			</li>
 			
 			<li>
-				<a href="<?php echo get_option('cebo_genbooklink'); ?>"><span class="reserve"></span><p>Reservations</p></a>
+				<a href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank"><span class="reserve"></span><p>Reservations</p></a>
 			</li>
 
 			<li class="subinside">
@@ -402,6 +454,10 @@
 							
 							
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+
+							<?php } elseif( has_post_thumbnail() ) { ?>
+
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>							
 							
 							<?php } else { ?>
 												
@@ -421,7 +477,7 @@
 			</li>
 			
 			<li>
-				<a href="<?php bloginfo ('url'); ?>/?page_id=68"><span class="contact"></span><p>Contact</p></a>
+				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p>Contact</p></a>
 			</li>
 			
 			<!--<li>
@@ -620,7 +676,7 @@
 
 						</li>
 						
-						<li><a class="booking-link" href="#"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
+						<li><a class="booking-link" href="/locations/the-frying-pan/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
 						
 						<li><a class="booking-link" href="#"><i class="fa  fa-envelope"></i><span class="offer">Exclusive<br>Offers</span></a></li>
 
@@ -646,7 +702,7 @@
 				</li>
 				
 				<li>
-					<a href="<?php echo get_option('cebo_genbooklink'); ?>"><span class="reserve"></span><p>Reservations</p></a>
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank"><span class="reserve"></span><p>Reservations</p></a>
 				</li>
 
 				<li>
@@ -744,6 +800,10 @@
 								
 								
 								<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+
+								<?php } elseif( has_post_thumbnail() ) { ?>
+
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
 								
 								<?php } else { ?>
 													
@@ -763,7 +823,7 @@
 				</li>
 				
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=68"><span class="contact"></span><p>Contact</p></a>
+					<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p>Contact</p></a>
 				</li>
 				
 				<!--<li>
@@ -915,7 +975,7 @@
 
 			</li>
 			
-			<li><a class="booking-link" href="#"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
+			<li><a class="booking-link" href="/locations/the-frying-pan/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
 			
 			<li><a class="booking-link" href="#"><i class="fa  fa-envelope"></i><span class="offer">Exclusive<br>Offers</span></a></li>
 
@@ -925,7 +985,7 @@
 	
 	<div class="banner"> 
 		
-		<p>700 8th Avenue, New York, NY 10036 <a href="#">info@rowhotel.com</a></p>
+		<p>700 8th Avenue, New York, NY 10036 <a href="mailto:info@rowhotel" target="_blank">info@rowhotel.com</a></p>
 		
 		<p class="contacto">Reservations <span>888.353.3650</span></p>
 		

@@ -454,11 +454,14 @@ p {
 	-o-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
 }
+
 .navigate .supernav li.dropsub:hover {
-	background: none repeat scroll 0 0 #DFDFDF;
-	z-index: 999;
-	height: 250px;
+    background: none repeat scroll 0 0 #DFDFDF;
+    height: 250px;
+    overflow: hidden;
+    z-index: 999;
 }
+
 .navigate .supernav li ul.dropbox {
 	position: fixed;
 	left: 85px;
@@ -498,7 +501,7 @@ p {
 	-o-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
 	overflow: scroll;
-	padding: 30px 0 0 0;
+	padding: 10px 0 0;
 }
 
 .navigate .supernav li.dropsub ul.dropdown {
@@ -512,8 +515,9 @@ p {
 	height: inherit;
 }
 .navigate .supernav li:hover ul.dropdown {
-	visibility: visible;
-	opacity: 1;
+    opacity: 1;
+    overflow-y: scroll;
+    visibility: visible;
 }
 
 
@@ -549,9 +553,9 @@ p {
 }
 
 .navigate .supernav li ul.dropdown li {
-	padding: 3px 0 0px 40px;
-	z-index: 1 !important;
-	height: auto;
+    height: auto;
+    padding: 2px 0 0 25px;
+    z-index: 1 !important;
 }
 
 .navigate .supernav li ul.dropdown li:hover {
@@ -559,17 +563,18 @@ p {
 }
 
 .navigate .supernav li ul.dropdown li a {
-	font-family: 'GothamBold';
-	font-size: 11px;
-	text-transform: none;
-	letter-spacing: -1px;
-	font-weight: 700;
-	line-height: 10px;
-	color: #fff;
 		-webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
+    color: #FFFFFF;
+    font-family: 'Gothambook';
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none;
 }
+
 .navigate .supernav li ul.dropdown li:hover a {
 	color: #fa9c03;
 }
@@ -819,6 +824,10 @@ p {
 .navigate .supernav li:hover .blog {
 	background-position: -52px -493px;
 	border: 2px solid #000;
+}
+
+.finished .socials a:hover i {
+    color: #FA9C03;
 }
 
 
@@ -2283,7 +2292,7 @@ ul#selectUl li.unselected:hover {
 
 
 
-/* Rooms Page Styles ---------------------------------------------------- */
+/* PAGE - Rooms ---------------------------------------------------- */
 
 .rooms .fourth-level {
 	margin: 0;
@@ -2333,6 +2342,7 @@ ul#selectUl li.unselected:hover {
     text-align: center;
     text-transform: uppercase;
     width: 100%;
+    display: inline-block;
 }
 	.rooms-book-now .right a:hover {
 		background: none repeat scroll 0 0 rgba(250, 156, 3, 1);
@@ -2345,6 +2355,10 @@ ul#selectUl li.unselected:hover {
     max-width: 100%;
     overflow: hidden;
     padding-right: 4%;
+}
+
+.rooms .suboverlay h4:hover {
+	color: #000000;
 }
 
 
@@ -2663,9 +2677,11 @@ ul#selectUl li.unselected:hover {
     margin-bottom: 20px;
     margin-right: 15px;
     width: 212px;
+    max-height: 315px;
+    min-height: 285px;
 }
 
-.listed-content:nth-child(8) {
+.page-content .listed-content:nth-child(6n+2) {
     clear: left;
 }
 
@@ -2896,7 +2912,7 @@ ul#selectUl li.unselected:hover {
 
 .page .fullvertical .textbox,.page .fullvertical .textbox-1 {
 	min-height: 20%;
-    top: 35%;
+    top: 20%;
     transition: height 1s ease-in-out;
     -moz-transition: height 1s ease-in-out;
     -webkit-transition: height 1s ease-in-out;
@@ -2904,7 +2920,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .page .fullvertical .textbox.openbox, .page .fullvertical .textbox-1.openbox-1 {
-    height: 60%;
+    height: 80%;
 }
 
 .page .fullvertical .innerbox .fa {

@@ -17,7 +17,7 @@
 			</li>
 			
 			<li>
-				<a href="<?php echo get_option('cebo_genbooklink'); ?>"><span class="reserve"></span><p>Reservations</p></a>
+				<a href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank"><span class="reserve"></span><p>Reservations</p></a>
 			</li>
 
 			<li>
@@ -41,7 +41,7 @@
 			</li>
 			
 			<li>
-				<a href="<?php bloginfo ('url'); ?>/?page_id=68"><span class="contact"></span><p>Contact</p></a>
+				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p>Contact</p></a>
 			</li>
 			
 			<!--<li>

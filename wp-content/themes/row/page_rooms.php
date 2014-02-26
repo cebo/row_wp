@@ -34,8 +34,10 @@
 					
 						<div class="suboverlay narrow">
 					
-							<h1><?php the_title(); ?></h1>
-							<h4><?php echo get_post_meta($post->ID, 'cebo_footage', true); ?> SQ.FT.</h4>
+							<a href="<?php the_permalink(); ?>">
+								<h1><?php the_title(); ?></h1>
+								<h4><?php echo get_post_meta($post->ID, 'cebo_footage', true); ?> SQ.FT.</h4>
+							</a>
 
 						
 						</div>

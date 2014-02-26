@@ -40,6 +40,24 @@ $(document).ready(function(){
 			  e.preventDefault();
 		  $(".textbox").toggleClass( "openbox" );
 		});
+
+		$(".opensays").click(function(e) {
+ 			  
+			  e.preventDefault();
+		  $(".textbox").toggleClass( "openbox" );
+		});
+ 		
+ 		$(".opensays-up").click(function(e) {
+ 			  
+			  e.preventDefault();
+		  $(".textbox").toggleClass( "openbox-up" );
+		});
+		
+		$(".opensays-1").click(function(e) {
+ 			  
+			  e.preventDefault();
+		  $(".textbox-1").toggleClass( "openbox-1" );
+		});
 		
 		
 		$(function() {
@@ -110,7 +128,7 @@ $(function() {
 	$('.ui-spinner-down .ui-button-text').html('<span class="ui-icon ui-icon-triangle-1-n fa fa-angle-down"></span>');
 				
 
-				
+
 	// Jscrollpane ////////////////////////////////////////////////////////////
 	// the element we want to apply the jScrollPane
 	var $el					= $('.dropbox').jScrollPane({
