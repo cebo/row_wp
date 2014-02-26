@@ -53,6 +53,22 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
+<!-- the mousewheel plugin -->
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.mousewheel.js"></script>
+
+<!-- the jScrollPane script -->
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scroll-startstop.events.jquery.js"></script>
+
+<!-- Jquery Spinner -->
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.core.min.js"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.widget.js"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.button.js"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.spinner.min.js"></script>
+
+<!-- Scripts -->
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
+
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js?ver=3.5.2'></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -136,95 +152,6 @@
 		
 		
 	</script> 
-
-
-<!-- the mousewheel plugin -->
-<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.mousewheel.js"></script>
-
-<!-- the jScrollPane script -->
-<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.jscrollpane.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scroll-startstop.events.jquery.js"></script>
-
-<!-- Jquery Spinner -->
-<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.core.min.js"></script>
-<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.widget.js"></script>
-<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.button.js"></script>
-<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.spinner.min.js"></script>
-
-<!-- Scripts -->
-<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
-
-<script type="text/javascript">
-	
-	$(document).ready(function() {
-	
-		
-	  $('#arrival_date').live('keyup',function() {
-        var pronameval = $(this).val();
-        $('#departure_date').val(pronameval.replace(/ /g, '-').toLowerCase());
-    });
-
-		
-		$('.supernav li.subinside').hover(function() {
-      
-       			$('.navigate').stop().addClass("slipnot");
-  			
-  			}, function() {
-      	
-      			$('.navigate').stop().removeClass("slipnot");
- 			
- 		});
- 		
- 		$('#selectUl li:not(":first")').addClass('unselected');
-			$('#selectUl').hover(
-			    function(){
-			        $(this).find('li').click(
-			            function(){
-			                $('.unselected').removeClass('unselected');
-			                $(this).addClass("bignumber");
-			                $(this).siblings('li').addClass('unselected');
-			                $(this).siblings('li').removeClass('bignumber');
-			                var index = $(this).index();
-			                $('select[name=size]')
-			                    .find('option:eq(' + index + ')')
-			                    .attr('selected',true);
-			            });
-			    },
-			    function(){
-			    });
- 		
- 		$(".opensays").click(function(e) {
- 			  
- 			  e.preventDefault();
-			  $(".textbox").toggleClass( "openbox" );
-			});
- 		
- 		$(".opensays-up").click(function(e) {
- 			  
- 			  e.preventDefault();
-			  $(".textbox").toggleClass( "openbox-up" );
-			});
-		
-		$(".opensays-1").click(function(e) {
- 			  
- 			  e.preventDefault();
-			  $(".textbox-1").toggleClass( "openbox-up" );
-			});
-
-
-	
- 		$(function() {
-			var fixadent = $(".topnav"), pos = fixadent.offset();
-			$(window).scroll(function() {
-			if($(this).scrollTop() > (pos.top + 10) && fixadent.css('position') == 'absolute') { fixadent.addClass('fixed'); }
-			else if($(this).scrollTop() <= pos.top && fixadent.hasClass('fixed')){ fixadent.removeClass('fixed'); }
-			})
-			});
-		 				
-	});	
-	
-</script>
-
 
 <!-- Lightbox -->	
 <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />

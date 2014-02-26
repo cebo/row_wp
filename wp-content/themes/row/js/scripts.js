@@ -1,3 +1,106 @@
+$(document).ready(function(){
+
+
+
+	// Mmenu
+		   
+   if ($(window).width() < 940) {
+			   
+	   var pos 	= 'mm-top mm-right mm-bottom',
+			zpos	= 'mm-front mm-next';
+
+		var $html 	= $('html'),
+			$menu	= $('nav#menu.mobile'),
+			$both	= $html.add( $menu );
+
+		$menu.mmenu();
+
+		//	Add the position-classnames onChange
+		$('input[name="pos"]').change(function() {
+			$both.removeClass( pos ).addClass( 'mm-' + this.value );
+		});
+		$('input[name="zpos"]').change(function() {
+			$both.removeClass( zpos ).addClass( 'mm-' + this.value );
+		});
+
+	}
+
+	$('.supernav li.subinside').hover(function() {
+      
+   			$('.navigate').stop().addClass("slipnot");
+			
+			}, function() {
+  	
+  			$('.navigate').stop().removeClass("slipnot");
+			
+		});
+		
+		$(".opensays").click(function(e) {
+			  
+			  e.preventDefault();
+		  $(".textbox").toggleClass( "openbox" );
+		});
+		
+		
+		$(function() {
+		var fixadent = $(".topnav"), pos = fixadent.offset();
+		$(window).scroll(function() {
+		if($(this).scrollTop() > (pos.top + 10) && fixadent.css('position') == 'absolute') { fixadent.addClass('fixed'); }
+		else if($(this).scrollTop() <= pos.top && fixadent.hasClass('fixed')){ fixadent.removeClass('fixed'); }
+		})
+	});
+
+ 	$( window ).resize(function() {
+
+		if ($(window).width() > 940) {
+
+			var $menu	= $('nav#menu.mobile');
+			$menu.removeClass()
+			$('nav#menu.mobile ul').removeClass()
+			$('#primary-nav .container').prepend($menu);
+
+		} else {
+
+			var $menu	= $('nav#menu.mobile');
+			$menu.addClass('fl mm-menu mm-horizontal mm-ismenu')
+			$('nav#menu.mobile ul').addClass('mm-list mm-panel mm-opened mm-current')
+			$('html').prepend($menu);
+
+		}
+
+	});
+
+	if ($(window).width() > 640) {
+
+	$('.supernav li.subinside').hover(function() {
+  
+   			$('.navigate').stop().addClass("slipnot");
+			
+			}, function() {
+  	
+  			$('.navigate').stop().removeClass("slipnot");
+			
+		});
+		
+		$(function() {
+			var fixadent = $(".topnav"), pos = fixadent.offset();
+			$(window).scroll(function() {
+			if($(this).scrollTop() > (pos.top + 10) && fixadent.css('position') == 'absolute') { fixadent.addClass('fixed'); }
+			else if($(this).scrollTop() <= pos.top && fixadent.hasClass('fixed')){ fixadent.removeClass('fixed'); }
+			})
+		});
+		 				
+	}
+
+
+
+
+
+
+});
+
+
+
 // Jscrollpane ////////////////////////////////////////////////////////////
 
 $(function() {
@@ -150,8 +253,6 @@ $(function() {
 	// extend the jScollPane by merging	
 	$.extend( true, jspapi, extensionPlugin );
 	jspapi.addHoverFunc();
-
-
 
 	
 
