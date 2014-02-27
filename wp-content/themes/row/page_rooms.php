@@ -67,7 +67,7 @@
 					</div>
 
 					<div class="right">
-						<a href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) {  echo get_post_meta($post->ID, 'cebo_booklink', true); } else { echo get_option('cebo_genbooklink'); } ?>">Book Now</a>
+						<a href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) {  echo get_post_meta($post->ID, 'cebo_booklink', true); } else { echo get_option('cebo_genbooklink'); } ?>" target="_blank">Book Now</a>
 					</div>
 						
 				</div>

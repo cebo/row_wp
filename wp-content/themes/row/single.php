@@ -16,7 +16,7 @@
 <div class="fullpic">
 
 	<div class="slide-header">
-		<a class="button" href="<?php echo get_option('cebo_fullpic'); ?>"><?php _e('RESERVE NOW', 'cebolang'); ?></a>
+		<a class="button" href="<?php echo get_option('cebo_fullpic'); ?>" target="_blank"><?php _e('RESERVE NOW', 'cebolang'); ?></a>
 	</div>
 	<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" />
 

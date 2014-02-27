@@ -61,7 +61,7 @@ html {
 
 /* By default the selection color is pink */
 ::-moz-selection{ background: #468ab1; color:#fff; text-shadow: none; }
-::selection { background:#468ab1; color:#fff; text-shadow: none; }
+::selection { background-color:#468ab1; color:#fff; text-shadow: none; }
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
 
@@ -269,6 +269,16 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 
 
 
+/* Optimizing Legibility -----------------------------------------------------------*/
+
+.navigate .supernav li ul.dropdown li a, 
+.tier-two ul li,
+.tier-two ul li a {
+	text-rendering: optimizeLegibility;
+}
+
+
+
 
 
 
@@ -380,13 +390,13 @@ p {
 
 .navigate.mobile {
 	display: none;
+	overflow: visible !important;
 }
 
 
 
 
 .slipnot {
-	width: 85px !important;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
@@ -403,6 +413,10 @@ p {
 
 .navigate.mobile .jspVerticalBar {
     display: none;
+}
+
+.navigate.mobile .jspContainer, .navigate.mobile .jspPane {
+	overflow: visible;
 }
 
 .navigate .supernav {
@@ -543,7 +557,7 @@ p {
 }
 .navigate .supernav li:hover ul.dropdown {
     opacity: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
     visibility: visible;
 }
 
@@ -598,13 +612,15 @@ p {
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
     color: #FFFFFF;
+    display: inline-block;
     font-family: 'Gothambook';
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0;
     line-height: 1;
-    text-transform: none;
+    margin: 3px 0;
     padding-left: 25px;
+    text-transform: none;
 }
 
 .navigate .supernav li ul.dropdown li:hover a {
@@ -987,7 +1003,7 @@ p {
 }
 
 .calspacer span select {
-	width: 60px;
+	width: auto;
 	position: relative;
 	z-index: 99999;
 	padding: 0;
@@ -1010,9 +1026,16 @@ p {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	text-overflow: '';
+	text-indent: 0.01px;
 }
 
 .calspacer span:hover select {
+	color: #fff;
+}
+
+.calspacer span select option {
+	background: orange;
 	color: #fff;
 }
 
@@ -1182,15 +1205,16 @@ ul#selectUl li.unselected:hover {
 
 
 .lilly {
-	width: 100%;
-	padding: 8px 5px;
-	border: 2px solid #000
+    border: 2px solid #666666;
+    margin-bottom: 5px;
+    padding: 8px 5px;
+    width: 100%;
 }
 
 
 #submitr {
 	font-family: 'GothamBold';
-	font-size: 14px;
+	font-size: 15px;
 	text-transform: uppercase;
 	letter-spacing: 0px;
 	font-weight: 700;
@@ -1201,6 +1225,8 @@ ul#selectUl li.unselected:hover {
 	text-align: right;
 	letter-spacing: -1px;
 	float: right;
+	cursor: pointer;
+	margin-top: 7px;
 }
 
 .contentarea {
@@ -2264,7 +2290,7 @@ ul#selectUl li.unselected:hover {
 	font-family: 'GothamLight';
 	margin:  0 0 0 10px;
 	color: #fff;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: bold;
 	letter-spacing: -1px;
 }
@@ -2465,7 +2491,7 @@ ul#selectUl li.unselected:hover {
 .rooms-book-now.slide-booking .right a {
     display: block;
     height: 100%;
-    line-height: 100px;
+    line-height: 120px;
 }
 
 .room-more-details {
