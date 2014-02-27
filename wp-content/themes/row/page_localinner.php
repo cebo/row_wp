@@ -649,49 +649,49 @@
 				<?php $mystring = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $filler))); ?>
 				
 				
+				<div class="listed-content-wrapper">
 				
+    				<?php query_posts(array(
+    						'post_type' => 'locations',
+        					'taxonomy' => 'loctype',
+        					'term' => $mystring,
+        					'posts_per_page' => -1)
+        					); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 				
-				<?php query_posts(array(
-						'post_type' => 'locations',
-    					'taxonomy' => 'loctype',
-    					'term' => $mystring,
-    					'posts_per_page' => -1)
-    					); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-				
-				
-				
-				<div class="listed-content">
-					
-					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-		
-		
-					<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" width="212" /></a>
-					
-					<?php } elseif($imgsrc) { ?>
-					
-					
-					<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" width="212" /></a>
-					
-					<?php } else { ?>
-										
-					<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" width="212" /></a>
-					
-					
-					<?php } ?>
+    				<div class="listed-content">
+    					
+    					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+    		
+    		
+    					<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" width="212" /></a>
+    					
+    					<?php } elseif($imgsrc) { ?>
+    					
+    					
+    					<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" width="212" /></a>
+    					
+    					<?php } else { ?>
+    										
+    					<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" width="212" /></a>
+    					
+    					
+    					<?php } ?>
 
-					<div>
+    					<div>
 
-						<h3><?php the_title(); ?></h3>
-					
-						<p><?php echo excerpt(18); ?></p>
+    						<h3><?php the_title(); ?></h3>
+    					
+    						<p><?php echo excerpt(18); ?></p>
 
-						<a href="<?php the_permalink(); ?>">Learn More ></a>
+    						<a href="<?php the_permalink(); ?>">Learn More ></a>
 
-					</div>
+    					</div>
 
-				</div>
-				
-				<?php endwhile; endif; wp_reset_query(); ?>	
+    				</div>
+    				
+    				<?php endwhile; endif; wp_reset_query(); ?>	
+
+                </div>
 
 				
 		</div>

@@ -2328,6 +2328,10 @@ ul#selectUl li.unselected:hover {
     width: 0;
 }
 
+.welcomebox {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
+}
+
 
 
 /* PAGE - Rooms ---------------------------------------------------- */
@@ -2715,10 +2719,10 @@ ul#selectUl li.unselected:hover {
     margin-right: 15px;
     width: 212px;
     max-height: 315px;
-    min-height: 285px;
+    min-height: 315px;
 }
 
-.page-content .listed-content:nth-child(6n+2) {
+.page-content .listed-content:nth-child(3n+1) {
     clear: left;
 }
 
@@ -3288,6 +3292,10 @@ ul#selectUl li.unselected:hover {
 	.gallery-categories a:hover {
 	    color: #FFA500;
 	}
+	
+/*.flexslider {
+	height: 550px !important;
+}*/
 
 
 

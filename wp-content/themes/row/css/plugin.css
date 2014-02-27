@@ -1,6 +1,11 @@
 /* Flexslider ---------------------------------------------------- */
 
 .flexslider {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
 	border: 0;
 	overflow: hidden;
 	height: 500px;

@@ -21,12 +21,12 @@ and (max-width : 1439px) {
 
 	/* Page - Time Square */
 
-	.listed-content:nth-child(6) {
-	    clear: left;
+	.page-content .listed-content:nth-child(3n+1) {
+	    clear: none;
 	}
 
-	.listed-content:nth-child(8) {
-	    clear: none;
+	.page-content .listed-content:nth-child(2n+1) {
+	    clear: left;
 	}
 
 
@@ -820,6 +820,10 @@ and (max-width : 640px) {
 		display: none;
 	}
 
+	.footer .navigate.mobile {
+	    height: auto;
+	}
+
 	.navigate.mobile {
 	    display: block;
 	    height: 150px;
@@ -860,9 +864,15 @@ and (max-width : 640px) {
 
 	.navigate.mobile .languages {
 	    float: none;
-	    margin-top: 0;
+	    margin-top: 5px;
 	    overflow: hidden;
 	    width: auto;
+	    background-position: 20px 0;
+	    display: block;
+	}
+
+	.navigate.mobile .logobox .languages {
+		display: none;
 	}
 
 	.navigate.mobile .mmenu-icon {
@@ -871,12 +881,6 @@ and (max-width : 640px) {
 	    float: left;
 	    font-size: 20px;
 	    padding-right: 15px;
-	}
-
-	.navigate.mobile .languages {
-	    background-position: 20px 0;
-	    display: block;
-	    margin-top: 5px;
 	}
 
 	.navigate.mobile .banner {
@@ -1166,6 +1170,22 @@ and (max-width : 640px) {
 	    clear: none;
 	}
 
+	.page-content .listed-content:nth-child(2n+1) {
+	    clear: none;
+	}
+
+	.page-content .listed-content:nth-child(3) {
+	    clear: left;
+	}
+
+	.page-content .listed-content:nth-child(4) {
+	    clear: none;
+	}
+
+	.page-content .listed-content:nth-child(3n+1) {
+	    clear: none;
+	}
+
 
 
 	/* Single - Explore */
@@ -1325,6 +1345,216 @@ and (max-width : 640px) {
 	}
 
 
+
+
+
+}
+
+
+
+/* ================================================ MAX WIDTH 480 ======================================= */
+
+@media only screen 
+and (max-width : 480px) {
+
+
+
+	/* Header */
+
+	.navigate.mobile {
+		height: 146px;
+	}
+
+	.navigate.mobile .topnav li a.booking-link {
+	    font-size: 13px;
+	}
+
+	.navigate.mobile .banner p.contacto, .navigate.mobile .banner p.contacto span {
+	    font-size: 13px;
+	}
+
+	.navigate.mobile .mmenu-icon {
+		font-size: 15px;
+	}
+
+	.navigate.mobile .languages {
+	    background-size: 70% auto;
+	}
+
+
+
+	/* Calendar */
+
+	.dropout {
+		width: 320px;
+	}
+
+	.calspacer {
+	    padding: 10px 20px;
+	}
+
+	.calspacer span {
+	    margin: 10px;
+	}
+
+	.calspacer button {
+	    font-size: 14px;
+	    margin-top: 10px;
+	}
+
+	.calspacer span input#arv, .calspacer span input#arv-1,
+	.calspacer span input#dep, .calspacer span input#dep-1 {
+		font-size: 11px;
+	}
+
+	.calspacer span label {
+	    display: block;
+	    font-size: 12px;
+	    margin-bottom: 5px;
+	}
+
+	.calspacer span select {
+		padding-top: 23px 0 0;
+	}
+
+	.calspacer span input,
+	.calspacer span select {
+		font-size: 65px;
+	}
+
+	.datepicker, .datepickerr {
+		left: 120%;
+	}
+		.calspacer span:hover .datepicker, .calspacer span:hover .datepickerr {
+		    left: 120%;
+		    top: 160px;
+		}
+
+	.departdatepicker, .departdatepickerr {
+		left: 0;
+	}
+		.calspacer span:hover .departdatepicker, .calspacer span:hover .departdatepickerr {
+		    left: 0;
+		    top: 160px;
+		}
+
+
+
+	/* HOMEPAGE */
+
+	.shorter {
+		height: 350px;
+	}
+
+	.blogposts {
+		-moz-column-count: 1;
+		-webkit-column-count: 1;
+		column-count: 1;
+	}
+
+
+
+	/* PAGE - General Settings */
+
+	.page .page-content {
+		padding: 20px 10px;
+	}
+
+	#maparea {
+	    width: 100% !important;
+	}
+
+	
+	.suboverlay {
+	    left: 27%;
+	    top: 20%;
+	    width: 70%;
+    }
+
+
+
+    /* PAGE - Explore */
+
+    .page-content .listed-content {
+	    float: none;
+	    margin: 0 auto;
+	    width: 80%;
+	}
+
+	.deal {
+	    float: none;
+	    min-height: 550px;
+	    width: 100%;
+	}
+
+	.deal-photo {
+	    height: 200px;
+	}
+
+
+
+	/* PAGE - Gallery */
+
+	.gallery .flexslider {
+	    height: 390px;
+	}
+
+	.gallery .flexslider .slides > li {
+	    height: 360px;
+	}
+
+	.gallery .flex-direction-nav a:before {
+	    font-size: 30px;
+	}
+
+	.gallery .flex-direction-nav a {
+		height: 30px;
+	}
+
+	
+
+
+
+}
+
+
+
+/* ================================================ MAX WIDTH 380 ======================================= */
+
+@media only screen 
+and (max-width : 380px) {
+
+
+
+	/* Header */
+
+	.navigate.mobile .topnav li a.booking-link {
+	    font-size: 11px;
+	}
+
+	.navigate.mobile .banner p.contacto, .navigate.mobile .banner p.contacto span {
+	    font-size: 11px;
+	}
+
+	.navigate.mobile .mmenu-icon {
+		font-size: 12px;
+	}
+
+
+
+	/* HOMEPAGE */
+
+	.bigover h1 {
+		font-size: 27px;
+	}
+
+
+
+	/* PAGE - Gallery */
+
+	.gallery .flex-direction-nav {
+	    margin-top: -75% !important;
+	}
 
 
 

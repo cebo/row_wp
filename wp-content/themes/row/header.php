@@ -45,6 +45,7 @@
 <!-- Plugin CSS -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/jscrollpane.css">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/jquery.mmenu.css">
+<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/js/flexslider/flexslider.css" type="text/css" media="screen" />
 <!-- <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/ui-lightness/jquery.ui.all.css"> -->
 
 
@@ -283,7 +284,6 @@
 
 <?php if(get_post_type() == 'imagegalleries') { ?>
 	<!-- Flex Slider -->
-<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/js/flexslider/flexslider.css" type="text/css" media="screen" />
 <script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -315,7 +315,7 @@
 	</head> 
 	
 	
-<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page() || is_single()) { ?> class="single page"<?php } ?>>
+<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } ?>>
 
 
 <div>
@@ -994,43 +994,41 @@
 			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/explore-nyc-2/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
 			
 			<li><a class="booking-link" href="#"><i class="fa  fa-envelope"></i><span class="offer">Exclusive<br>Offers</span></a>
-							<div class="dropout oranger">
+				<div class="dropout oranger">
 
-								<div class="inner" style="padding: 40px;">
-									
-										<div id="contactform">
-											<div id="messager" class="messager"></div>
-											<form method="post" action="<?php bloginfo('template_url'); ?>/library/contact_three.php" name="cformr" id="cformr" class="sleek cformr">
-												
-												<input class="lilly" id="namer" type="text" placeholder="First Name*" name="namer" value="" />
-												
-												<input class="lilly" id="emailr" type="text" placeholder="Last Name*" name="namers" value="" />
-												
-												<input class="lilly" id="namer" type="text" placeholder="Your Zip*" name="zipper" value="" />
-												
-												<input class="lilly" id="emailr" type="text" placeholder="Your Email*" name="emailr" value="" />
-							
-												<input class="lilly" type="hidden" name="subjectr" id="subjectr" value="<?php get_option('cebo_email'); ?>" />
-												<input class="lilly" type="hidden" name="honeypot" id="honeypot" />
-												
-												<input class="lilly" type="text" style="display: none;" name="myemailr" id="myemailr" value="<?php get_option('cebo_email'); ?>" />
-												
-											
-												
-										        <input type="submit" name="sends" value="Sign Up" id="submitr" class="nudge"/>
-										        
-										        
-											</form>		
-										</div><!--end contactform-->
-										
-									</div>
-
+					<div class="inner" style="padding: 40px;">
+						
+						<div id="contactform">
+							<div id="messager" class="messager"></div>
+							<form method="post" action="<?php bloginfo('template_url'); ?>/library/contact_three.php" name="cformr" id="cformr" class="sleek cformr">
 								
-								</div>			
+								<input class="lilly" id="namer" type="text" placeholder="First Name*" name="namer" value="" />
+								
+								<input class="lilly" id="emailr" type="text" placeholder="Last Name*" name="namers" value="" />
+								
+								<input class="lilly" id="namer" type="text" placeholder="Your Zip*" name="zipper" value="" />
+								
+								<input class="lilly" id="emailr" type="text" placeholder="Your Email*" name="emailr" value="" />
+			
+								<input class="lilly" type="hidden" name="subjectr" id="subjectr" value="<?php get_option('cebo_email'); ?>" />
+								<input class="lilly" type="hidden" name="honeypot" id="honeypot" />
+								
+								<input class="lilly" type="text" style="display: none;" name="myemailr" id="myemailr" value="<?php get_option('cebo_email'); ?>" />
+								
 							
-							</div>
+								
+						        <input type="submit" name="sends" value="Sign Up" id="submitr" class="nudge"/>
+						        
+						        
+							</form>		
+						</div><!--end contactform-->
+						
+					</div>
 
-</li>
+					
+				</div>			
+				
+			</li>
 
 		</ul>
 		
