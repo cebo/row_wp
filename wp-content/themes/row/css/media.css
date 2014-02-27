@@ -915,7 +915,7 @@ and (max-width : 640px) {
 	}
 
 	.navigate.mobile .topnav > ul {
-	    height: 55px;
+	    height: 53px;
 	    padding-bottom: 0;
 	}
 
@@ -1365,8 +1365,13 @@ and (max-width : 480px) {
 		height: 146px;
 	}
 
+	.navigate.mobile .logobox {
+	    padding-top: 45px;
+	}
+
 	.navigate.mobile .topnav li a.booking-link {
 	    font-size: 13px;
+	    line-height: 1;
 	}
 
 	.navigate.mobile .banner p.contacto, .navigate.mobile .banner p.contacto span {
@@ -1509,6 +1514,31 @@ and (max-width : 480px) {
 
 	.gallery .flex-direction-nav a {
 		height: 30px;
+	}
+
+
+
+	/* SINGLE - Room */
+
+	.room-more-details {
+		margin-top: 10px;
+	}
+
+	.room-detail > img {
+	    max-height: 159px;
+	    min-height: 159px;
+	    width: 100%;
+	}
+
+	.room-details li.room-detail {
+	    float: none;
+	    margin-bottom: 20px;
+	    margin-right: 0;
+	    width: 100%;
+	}
+
+	.rooms-book-now.slide-booking .left {
+		display: none;
 	}
 
 	

@@ -568,7 +568,7 @@
 
 						<li>
 
-							<a class="booking-link" href="#"><i class="fa fa-calendar"></i><span class="book">Book</span></a>
+							<a class="booking-link" href="#"><span class="book">Book</span></a>
 									
 							<div class="dropout">
 
@@ -692,9 +692,9 @@
 
 						</li>
 						
-						<li><a class="booking-link" href="<?php bloginfo('url'); ?>/explore-nyc-2/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
+						<li><a class="booking-link" href="<?php bloginfo('url'); ?>/explore-nyc-2/"><span class="locale">Location</span></a></li>
 						
-						<li><a class="booking-link" href="#"><i class="fa  fa-envelope"></i><span class="offer">Exclusive<br>Offers</span></a></li>
+						<li><a class="booking-link" href="#"><span class="offer">Exclusive<br>Offers</span></a></li>
 
 					</ul>
 					
