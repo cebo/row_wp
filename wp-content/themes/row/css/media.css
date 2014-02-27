@@ -350,6 +350,10 @@ and (max-width : 1279px) {
 	    margin-bottom: 20px;
 	}
 
+	.deal {
+	    min-height: 692px;
+	}
+
 
 
 	/* PAGE - Concierge */
@@ -583,6 +587,10 @@ and (max-width : 900px) {
 
 	.fourth-level {
 		margin: 0 0 12px;
+	}
+
+	#maparea {
+	    width: 100% !important;
 	}
 
 
@@ -835,6 +843,15 @@ and (max-width : 900px) {
 	    background-size: 15px auto;
 	}
 
+	.rooms-book-now.slide-booking {
+	    height: 70px;
+	    max-height: 70px;
+	}
+
+	.rooms-book-now.slide-booking .right a {
+	    line-height: 70px;
+	}
+
 
 
 }
@@ -1053,6 +1070,19 @@ and (max-width : 640px) {
 
 	/* FOOTER */
 
+	.footer {
+	    margin-left: 0;
+	}
+
+	.tier-one ul {
+	    text-align: center;
+	}
+
+	.tier-one ul li {
+	    display: inline-block;
+	    float: none;
+	}
+
 	.footer .navigate {
 	    display: block;
 	    position: relative;
@@ -1185,6 +1215,10 @@ and (max-width : 640px) {
 
 	.page .third-level {
 		width: auto;
+	}
+
+	#maparea {
+		width: 100% !important;
 	}
 
 
@@ -1412,6 +1446,14 @@ and (max-width : 640px) {
 
 
 
+	/* PAGE - Deals */
+
+	.deal {
+	    min-height: 632px;
+	}
+
+
+
 
 
 }
@@ -1634,6 +1676,14 @@ and (max-width : 480px) {
 
 	.rooms-book-now.slide-booking .left {
 		display: none;
+	}
+
+
+
+	/* PAGE - Deals */
+
+	.deal {
+	    min-height: 480px;
 	}
 
 	
