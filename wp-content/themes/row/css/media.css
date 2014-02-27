@@ -1476,6 +1476,26 @@ and (max-width : 480px) {
 	    width: 70%;
     }
 
+    .gallery-categories {
+	    background: none repeat scroll 0 0 #FFFFFF;
+	    padding: 20px 0;
+	}
+
+	.gallery-categories > ul {
+	    padding-bottom: 0;
+	    text-align: center;
+	}
+
+	.gallery-categories li {
+	    clear: both;
+	    display: block;
+	    float: none;
+	    font-size: 13px;
+	    font-weight: normal;
+	    line-height: 2;
+	    margin: 0;
+	}
+
 
 
     /* PAGE - Explore */
