@@ -401,6 +401,10 @@ p {
     width: auto !important;
 }
 
+.navigate.mobile .jspVerticalBar {
+    display: none;
+}
+
 .navigate .supernav {
 	width: 100%;
 	position: relative;
@@ -2827,6 +2831,7 @@ ul#selectUl li.unselected:hover {
     height: 207px;
     margin-bottom: 10px;
     width: 100%;
+    overflow: hidden;
 }
 	.concierge-box:hover .concierge-box-photo {
 	    transform: scale(1.05);
@@ -2841,9 +2846,9 @@ ul#selectUl li.unselected:hover {
 }
 
 .concierge-box .right {
-   overflow: hidden;
-	padding: 3% 5% 3.7%;
-	width: 45%;
+    overflow: hidden;
+    padding: 3% 6% 3.7%
+    width: 34%;
 }
 
 .concierge-box-photo {

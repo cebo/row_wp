@@ -382,6 +382,12 @@ and (max-width : 1279px) {
 	    margin-right: 25px;
 	}
 
+	.concierge-box .right {
+	    overflow: hidden;
+	    padding: 10px;
+	    width: 40%;
+	}
+
 	.concierge-box.box-style-4 .right {
 	    padding: 12px 37px;
 	}
@@ -678,10 +684,12 @@ and (max-width : 900px) {
 
 	.concierge-box .right {
 	    padding: 5% 3.7% 3.7%;
+	    width: 170px;
 	}
 
 	.concierge-box .right p {
-	    font-size: 12px;
+	    font-size: 11px;
+	    line-height: 1.5;
 	}
 
 	.concierge-box.box-style-4 .right {
@@ -1333,6 +1341,7 @@ and (max-width : 640px) {
 
 	.concierge-box .right {
 	    padding: 5% 3.7% 3.7%;
+	    width: 220px;
 	}
 
 	.concierge-box.box-style-4 .right {
@@ -1684,6 +1693,34 @@ and (max-width : 480px) {
 
 	.deal {
 	    min-height: 480px;
+	}
+
+
+
+	/* PAGE - Concierge */
+
+	.concierge-box-photo {
+		height: 200px;
+	}
+
+	.concierge-box {
+	    height: auto;
+	    margin-bottom: 10px;
+	    overflow: hidden;
+	    width: 100%;
+	}
+
+	.concierge-box .left {
+	    margin-left: 0;
+	    width: 100%;
+	}
+
+	.concierge-box .right {
+	    float: none;
+	    margin: 0 auto;
+	    padding: 5% 3.7% 3.7%;
+	    position: relative;
+	    width: 85%;
 	}
 
 	
