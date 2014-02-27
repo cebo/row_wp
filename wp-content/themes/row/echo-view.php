@@ -30,10 +30,11 @@
   	  }
   	  
   	  $taxonomy = strip_tags( get_the_term_list($post->ID, 'loctype') );
+  	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
   	  
   	  
   	  $results["places"][$key]["name"] = get_the_title();
-  	  $results["places"][$key]["photo"] = get_post_meta($post->ID, 'cebo_genthumb', true);
+  	  $results["places"][$key]["photo"] = $imgsrc[0];
   	  $results["places"][$key]["desc"] = get_the_content();
   	  $results["places"][$key]["cater"] = $taxonomy;
   	  $results["places"][$key]["coords"] = get_post_meta ($post->ID, 'cebo_coordinates', $single = true);

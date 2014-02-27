@@ -79,7 +79,7 @@
 				
 					<ul>
 						<li>Reservations<span>888.352.3650</span></li>
-						<li>EMAIL<span><a href="mailto:info@rowhotel.com">info@rowhotel.com</a></span></li>
+						<li>EMAIL<span><a href="mailto:info@rownyc.com">info@rownyc.com</a></span></li>
 						<li class="widest">A Times Square Hotel<span>700 8th Avenue, New York, NY 10036</span></li>
 					</ul>
 				
@@ -94,6 +94,48 @@
 	</section>
 
 </div>
+
+
+<script type="text/javascript">
+	 $(window).load(function(){	
+	
+	$('#cformr').submit(function(){
+
+		var action = $(this).attr('action');
+
+		$("#messager").slideUp(750,function() {
+		$('#messager').hide();
+
+ 		$('#submitr')
+			.after('<img src="images/nivo-preloader.gif" class="contact-loader" />')
+			.attr('disabled','disabled');
+
+		$.post(action, {
+			namer: $('#namer').val(),
+			namers: $('#namers').val(),
+			emailr: $('#emailr').val(),
+			subjectr: $('#subjectr').val(),
+			emailerr: $('#myemailr').val(),
+			commentr: $('#commentr').val()
+		},
+			function(data){
+				document.getElementById('messager').innerHTML = data;
+				$('#messager').slideDown('slow');
+				$('#cformr img.contact-loader').fadeOut('slow',function(){$(this).remove()});
+				$('#submitr').removeAttr('disabled');
+				if(data.match('success') != null) $('#cformr').slideUp('slow');
+			}
+		);
+
+		});
+
+		return false;
+
+	});
+	
+	});
+	</script>
+
 
 <?php wp_footer(); ?>
 

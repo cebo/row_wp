@@ -65,7 +65,7 @@ function sp_get_image_id($num = 0) {
         $count++;
     }
 	if(isset($images[$num]))
-		return $images[$num]->ID;
+		return $images[$num]->post_title;
 	else
 		return false;
 }

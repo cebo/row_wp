@@ -32,7 +32,7 @@ function project_items()
     'publicly_queryable' => true,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'rooms' ),
+    'rewrite' => array( 'slug' => 'hotel-rooms-times-square-new-york' ),
     'capability_type' => 'post',
     'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
     'hierarchical' => false,
@@ -58,7 +58,7 @@ function creates_post_types() {
         'singular_name' => __( 'Galleries' )
       ),
       'public' => true,
-      'rewrite' => array('slug' => 'galleries'),
+      'rewrite' => array('slug' => 'gallery'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
       'supports' => array('title','custom-fields','editor','category','author','thumbnail')
     )
@@ -75,7 +75,23 @@ function createl_post_types() {
         'singular_name' => __( 'Amenities' )
       ),
       'public' => true,
-      'rewrite' => array('slug' => 'amenities'),
+      'rewrite' => array('slug' => 'hotel-amenities'),
+      'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
+      'supports' => array('title','custom-fields','editor','category','author','thumbnail')
+    )
+  );
+}
+
+add_action( 'init', 'createle_post_types' );
+function createle_post_types() {
+  register_post_type( 'concierge',
+    array(
+      'labels' => array(
+        'name' => __( 'Concierge' ),
+        'singular_name' => __( 'Concierge' )
+      ),
+      'public' => true,
+      'rewrite' => array('slug' => 'concierge'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
       'supports' => array('title','custom-fields','editor','category','author','thumbnail')
     )
@@ -93,7 +109,7 @@ function creater_post_types() {
         'singular_name' => __( 'Specials' )
       ),
       'public' => true,
-      'rewrite' => array('slug' => 'specials'),
+      'rewrite' => array('slug' =>  'time-square-hotel-deals'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
       'supports' => array('title','custom-fields','editor','category','author','thumbnail')
     )

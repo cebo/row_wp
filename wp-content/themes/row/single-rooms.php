@@ -29,6 +29,19 @@
 					<h4>Save up to 20% when you stay for 5 nights or more in the Heart of New York City.</h4>
 												
 				</div>-->
+				
+				
+						<div class="suboverlay narrow">
+					
+							<a href="<?php the_permalink(); ?>">
+								<h1><?php the_title(); ?></h1>
+								<h4><?php echo get_post_meta($post->ID, 'cebo_footage', true); ?> SQ.FT.</h4>
+							</a>
+
+						
+						</div>
+						
+						
 				<div class="slide-booking rooms-book-now">
 					<div class="left">
 						<?php the_content(); ?>
@@ -257,8 +270,23 @@
 
 			</div>
 
-
+			
 			<?php endwhile; endif; wp_reset_query(); ?>	
+				<div class="gallery-categories">
+					<ul>
+						
+						<?php $currentid = $post->ID; query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						
+						<?php $thersd = $id = get_the_ID(); ?>
+						
+						
+				
+						<li><a style="<?php if($currentid == $thersd) { echo 'color: #fa9c03;'; } ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+												
+						<?php endwhile; endif; wp_reset_query(); ?>	
+					</ul>
+				</div>
+			
 			
 			
 			

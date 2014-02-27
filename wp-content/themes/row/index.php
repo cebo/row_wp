@@ -125,7 +125,7 @@
 							<?php the_content(); ?>
 							
 							
-							<?php $projects = get_page_with_template('page_dining');
+							<?php $projects = get_page_with_template('page-eat-drink');
 						 	 $projecturl= get_permalink($projects);
 						  	if($projects) { ?>
 						  
@@ -173,12 +173,12 @@
 							<?php the_content(); ?>
 							
 							
-							<?php $projects = get_page_with_template('page_dining');
+							<?php $projects = get_page_with_template('explore_page');
 						 	 $projecturl= get_permalink($projects);
 						  	if($projects) { ?>
 						  
 						  
-							<a class="gone" href="<?php echo $projecturl; ?>">View Row NYC Gallery ></a>
+							<a class="gone" href="<?php echo $projecturl; ?>">Explore NYC ></a>
 							
 							<?php } ?>
 						
@@ -242,15 +242,12 @@
 							<h1><?php the_title(); ?></h1>
 							<?php the_content(); ?>
 							
-							
-							<?php $projects = get_page_with_template('page_dining');
-						 	 $projecturl= get_permalink($projects);
-						  	if($projects) { ?>
+				
 						  
 						  
-							<a class="gone" href="<?php echo $projecturl; ?>">Explore Our Interiors ></a>
+							<a class="gone" href="<?php bloginfo('url'); ?>/galleries/guest-rooms/">Explore Our Interiors ></a>
 							
-							<?php } ?>
+						
 						
 						</div>
 						
@@ -290,15 +287,10 @@
 							<h1><?php the_title(); ?></h1>
 							<?php the_content(); ?>
 							
+						
+							<a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/">View Row NYC ></a>
 							
-							<?php $projects = get_page_with_template('page_dining');
-						 	 $projecturl= get_permalink($projects);
-						  	if($projects) { ?>
-						  
-						  
-							<a class="gone" href="<?php echo $projecturl; ?>">View Row NYC Gallery ></a>
 							
-							<?php } ?>
 						
 						</div>
 						
@@ -357,7 +349,7 @@
 							<h1><?php the_title(); ?></h1>
 							<h4><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h4>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Book Now ></a>
+							<a class="gone" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>">Book Now ></a>
 						
 						</div>
 					

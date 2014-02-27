@@ -281,7 +281,23 @@
 		});
 	</script>
 
+<?php if(get_post_type() == 'imagegalleries') { ?>
+	<!-- Flex Slider -->
+<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/js/flexslider/flexslider.css" type="text/css" media="screen" />
+<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	  $('.flexslider').flexslider({
+	    animation: "slide",
+	    animationSpeed: 800,
+	    pauseOnAction: false,
+	    controlNav: true,
+	    startAt: 0,
+	  });
+	});
+</script>
 
+<?php } ?>
 
 	<!-- Plugin CSS -->
 	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/plugin.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"/>
@@ -299,7 +315,7 @@
 	</head> 
 	
 	
-<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page() || is_single()) { ?> class="single page"<?php } ?>>
+<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page() || is_single()) { ?> class="single page"<?php } ?>>
 
 
 <div>
@@ -314,7 +330,7 @@
 				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
 				
 				
-				<div class="languages"></div>
+				<!--<div class="languages"></div>-->
 			
 			</div>
 			
@@ -323,7 +339,7 @@
 			
 			
 			<li class="dropsub">
-				<a href="<?php bloginfo ('url'); ?>/?page_id=6"><span class="hotel"></span><p>Hotel</p></a>
+				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p>Hotel</p></a>
 				
 					<ul class="dropdown">
 						
@@ -386,7 +402,7 @@
 			
 			
 			<li>
-				<a href="<?php bloginfo ('url'); ?>/?page_id=89"><span class="gallery"></span><p>Gallery</p></a>
+				<a href="<?php bloginfo ('url'); ?>/galleries/guest-rooms/"><span class="gallery"></span><p>Gallery</p></a>
 			</li>
 			
 			<li class="dropsub">
@@ -394,7 +410,7 @@
 				
 					<ul class="dropdown">
 						
-						<?php query_posts('post_type=specials&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts('post_type=specials&posts_per_page=4'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<li>
 							
@@ -412,7 +428,7 @@
 				
 					<ul class="dropdown">
 					
-						<?php query_posts('post_type=amenities&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts(array('post_type' => 'amenities', 'posts_per_page' => 3, 'post__not_in' => array(32))); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<li>
 							
@@ -502,11 +518,11 @@
 			
 			
 			<div class="socials">
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-pinterest"></i></a>
-				<a href="#"><i class="fa fa-instagram"></i></a>
-				<a href="#"><i class="fa fa-youtube"></i></a>
+				<a href="<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="<?php echo get_option('cebo_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
+				<a href="<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
+				<a href="<?php echo get_option('cebo_youtube'); ?>" target="_blank"><i class="fa fa-youtube"></i></a>
 			</div>
 		
 		</div>
@@ -676,7 +692,7 @@
 
 						</li>
 						
-						<li><a class="booking-link" href="/locations/the-frying-pan/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
+						<li><a class="booking-link" href="<?php bloginfo('url'); ?>/explore-nyc-2/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
 						
 						<li><a class="booking-link" href="#"><i class="fa  fa-envelope"></i><span class="offer">Exclusive<br>Offers</span></a></li>
 
@@ -692,7 +708,7 @@
 				
 				
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=6"><span class="hotel"></span><p>Hotel</p></a>
+					<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p>Hotel</p></a>
 					
 						<ul class="dropdown">
 							
@@ -751,7 +767,7 @@
 					
 						<ul class="dropdown">
 							
-							<?php query_posts('post_type=specials&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<?php query_posts('post_type=specials&posts_per_page=4'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 							
 							<li>
 								
@@ -975,9 +991,46 @@
 
 			</li>
 			
-			<li><a class="booking-link" href="/locations/the-frying-pan/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
+			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/explore-nyc-2/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
 			
-			<li><a class="booking-link" href="#"><i class="fa  fa-envelope"></i><span class="offer">Exclusive<br>Offers</span></a></li>
+			<li><a class="booking-link" href="#"><i class="fa  fa-envelope"></i><span class="offer">Exclusive<br>Offers</span></a>
+							<div class="dropout oranger">
+
+								<div class="inner" style="padding: 40px;">
+									
+										<div id="contactform">
+											<div id="messager" class="messager"></div>
+											<form method="post" action="<?php bloginfo('template_url'); ?>/library/contact_three.php" name="cformr" id="cformr" class="sleek cformr">
+												
+												<input class="lilly" id="namer" type="text" placeholder="First Name*" name="namer" value="" />
+												
+												<input class="lilly" id="emailr" type="text" placeholder="Last Name*" name="namers" value="" />
+												
+												<input class="lilly" id="namer" type="text" placeholder="Your Zip*" name="zipper" value="" />
+												
+												<input class="lilly" id="emailr" type="text" placeholder="Your Email*" name="emailr" value="" />
+							
+												<input class="lilly" type="hidden" name="subjectr" id="subjectr" value="<?php get_option('cebo_email'); ?>" />
+												<input class="lilly" type="hidden" name="honeypot" id="honeypot" />
+												
+												<input class="lilly" type="text" style="display: none;" name="myemailr" id="myemailr" value="<?php get_option('cebo_email'); ?>" />
+												
+											
+												
+										        <input type="submit" name="sends" value="Sign Up" id="submitr" class="nudge"/>
+										        
+										        
+											</form>		
+										</div><!--end contactform-->
+										
+									</div>
+
+								
+								</div>			
+							
+							</div>
+
+</li>
 
 		</ul>
 		
@@ -985,9 +1038,9 @@
 	
 	<div class="banner"> 
 		
-		<p>700 8th Avenue, New York, NY 10036 <a href="mailto:info@rowhotel" target="_blank">info@rowhotel.com</a></p>
+		<p>700 8th Avenue, New York, NY 10036 <a style="visibility: hidden; width: 0; display: inline-block;" href="mailto:info@rowhotel" target="_blank">info@rowhotel.com</a></p>
 		
-		<p class="contacto">Reservations <span>888.353.3650</span></p>
+		<p class="contacto">Reservations <span>888.352.3650</span></p>
 		
 		
 		<div class="clear"></div>
