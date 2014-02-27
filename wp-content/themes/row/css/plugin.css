@@ -98,13 +98,18 @@ div.dark_square .pp_details {
 /* Scrollbar ---------------------------------------------------- */
 
 .jspVerticalBar {
-    z-index: 99;
+    z-index: 99999;
     opacity: .7;
     width: 9px;
 }
 
-.jspDrag {
+.navigate #dropbox .jspDrag {
     background: rgba(0,0,0,.6);
+}
+
+.navigate .jspDrag {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+    z-index: 9999999;
 }
 
 

@@ -106,6 +106,38 @@ $(document).ready(function(){
 
 
 
+	// Touch hover effect
+
+	if (Modernizr.touch) {
+
+	    $('.hover').click(function(e) {
+	        e.preventDefault();
+	        $(this).toggleClass('hover-effect');
+	    });
+
+	}
+
+
+
+	// Slidebar scroll with window
+
+	//GET BROWSER WINDOW HEIGHT
+	// var currHeight = $(window).height();
+	// //SET HEIGHT OF SIDEBAR AND CONTENT ELEMENTS
+	// $('.navigate, .contentarea').css('height', currHeight);
+
+	// //ON RESIZE OF WINDOW
+	// $(window).resize(function() {
+
+	// 	//GET NEW HEIGHT
+	// 	var currHeight = $(window).height();	
+	// 	//RESIZE BOTH ELEMENTS TO NEW HEIGHT
+	// 	$('.navigate, .contentarea').css('height', currHeight);
+
+	// });
+
+
+
 
 
 
@@ -125,7 +157,7 @@ $(function() {
 
 	// Jscrollpane ////////////////////////////////////////////////////////////
 	// the element we want to apply the jScrollPane
-	var $el					= $('.dropbox').jScrollPane({
+	var $el					= $('.dropbox, .navigate').jScrollPane({
 		verticalGutter 	: -16
 	}),
 			

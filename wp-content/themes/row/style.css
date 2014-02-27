@@ -344,6 +344,11 @@ p {
 		color: #000;
 	}
 
+.hover {
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;        
+}
+
 
 
 
@@ -361,6 +366,7 @@ p {
 	position: relative;
 	position: fixed;
 	z-index: 999;
+	overflow-y: scroll;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
@@ -375,15 +381,20 @@ p {
 
 
 .slipnot {
-	width: 85px;
+	width: 85px !important;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
 
+.navigate.slipnot .jspPane {
+	width: 85px !important;
+}
 
-
+.navigate.slipnot .subinside .jspPane {
+    width: auto !important;
+}
 
 .navigate .supernav {
 	width: 100%;
@@ -455,10 +466,11 @@ p {
 	transition: all 0.4s ease-in-out;
 }
 
-.navigate .supernav li.dropsub:hover {
+.navigate .supernav li.dropsub:hover, .navigate .supernav li.hover-effect {
     background: none repeat scroll 0 0 #DFDFDF;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
+    padding-bottom: 0;
     z-index: 999;
 }
 
@@ -477,6 +489,10 @@ p {
 	-o-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
 	overflow: scroll;
+}
+
+.navigate .supernav li ul.dropbox .jspContainer {
+	height: 100% !important;
 }
 
 
@@ -505,7 +521,9 @@ p {
 }
 
 .navigate .supernav li.dropsub ul.dropdown {
+    height: 200px;
     overflow: hidden;
+    padding-bottom: 20px;
 }
 
 .navigate .supernav li ul.dropdown li {
@@ -536,6 +554,10 @@ p {
 	transition: all 0.5s ease-in-out;
 }
 
+.navigate .supernav li ul.dropbox li:last-child {
+    padding-bottom: 100px;
+}
+
 .slipnot .supernav li ul.dropbox li {
 	margin-left: 0px;
 	visibility: visible;
@@ -554,7 +576,7 @@ p {
 
 .navigate .supernav li ul.dropdown li {
     height: auto;
-    padding: 2px 0 0 25px;
+    padding: 2px 0 0 0;
     z-index: 1 !important;
 }
 
@@ -573,6 +595,7 @@ p {
     letter-spacing: 0;
     line-height: 1;
     text-transform: none;
+    padding-left: 25px;
 }
 
 .navigate .supernav li ul.dropdown li:hover a {
@@ -626,9 +649,8 @@ p {
 	max-width: 60%;
 }
 .finished {
-	z-index: 999999;
 	position: relative;
-	min-height: 300px;
+	min-height: 70px;
 }
 
 

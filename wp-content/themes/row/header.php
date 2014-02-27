@@ -56,6 +56,9 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
+<!-- Modernizr -->
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/modernizr.js"></script>
+
 <!-- the mousewheel plugin -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.mousewheel.js"></script>
 
@@ -338,7 +341,7 @@
 			<ul class="supernav">
 			
 			
-			<li class="dropsub">
+			<li class="dropsub hover">
 				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p>Hotel</p></a>
 				
 					<ul class="dropdown">
