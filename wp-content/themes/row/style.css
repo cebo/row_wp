@@ -2332,6 +2332,10 @@ ul#selectUl li.unselected:hover {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
 }
 
+.gallery-categories > ul {
+    padding: 10px 0;
+}
+
 
 
 /* PAGE - Rooms ---------------------------------------------------- */
@@ -2368,7 +2372,9 @@ ul#selectUl li.unselected:hover {
 
 .rooms-book-now .right {
     float: none;
+    height: 100%;
     overflow: hidden;
+    position: relative;
     width: auto;
 }
 
@@ -2408,10 +2414,13 @@ ul#selectUl li.unselected:hover {
 /* Single - Rooms ---------------------------------------------------- */
 
 .rooms-book-now.slide-booking {
-    height: auto;
+    height: 120px;
+    max-height: 120px;
 }
 
 .rooms-book-now.slide-booking .left {
+    height: 90px;
+    overflow: hidden;
     padding: 15px;
     width: 67.3%;
 }
@@ -2423,8 +2432,9 @@ ul#selectUl li.unselected:hover {
 }
 
 .rooms-book-now.slide-booking .right a {
-    line-height: 4.6;
     display: block;
+    height: 100%;
+    line-height: 100px;
 }
 
 .room-more-details {
@@ -2441,7 +2451,7 @@ ul#selectUl li.unselected:hover {
 .room-details li.room-detail {
     float: left;
     margin-right: 42px;
-    width: 30.8%;
+    width: 31.1%;
 }
 
 .room-details li.room-detail:last-child {
@@ -3292,7 +3302,7 @@ ul#selectUl li.unselected:hover {
 	.gallery-categories a:hover {
 	    color: #FFA500;
 	}
-	
+
 /*.flexslider {
 	height: 550px !important;
 }*/

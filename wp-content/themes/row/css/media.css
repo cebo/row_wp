@@ -498,16 +498,27 @@ and (max-width : 900px) {
 
 	.banner p a {
 		margin-left: 0;
+		display: none !important;
 	}
 
 	.banner p {
+	    line-height: 4;
 	    padding: 5px 4% 5px 0;
 	    width: 45%;
+	    font-size: 11px;
+	}
+
+	.banner p.contacto {
+	    line-height: 3.4;
+	}
+
+	.contacto span {
+	    font-size: 13px;
 	}
 
 	.topnav {
 	    max-width: 356px;
-	    top: 52px;
+	    top: 54px;
 	    width: 50%;
 	}
 
@@ -796,6 +807,36 @@ and (max-width : 900px) {
 
 
 
+	/* SINGLE - Room */
+
+	.room-more-details {
+		margin-top: 10px;
+	}
+
+	.room-detail > img {
+	    max-height: 159px;
+	    min-height: 159px;
+	    width: 100%;
+	}
+
+	.room-details li.room-detail {
+	    float: none;
+	    margin-bottom: 20px;
+	    margin-right: 0;
+	    width: 100%;
+	}
+
+	.rooms-book-now.slide-booking .left {
+		display: none;
+	}
+
+	.room-details-content .detail-features ul li {
+	    background-position: 6px center !important;
+	    background-size: 15px auto;
+	}
+
+
+
 }
 
 
@@ -895,6 +936,8 @@ and (max-width : 640px) {
 	    padding-right: 0;
 	    text-align: center;
 	    width: 100%;
+	    line-height: 1;
+	    padding: 5.8px 0;
 	}
 
 	.navigate.mobile .banner p.contacto span {
@@ -927,6 +970,11 @@ and (max-width : 640px) {
 
 	.navigate.mobile .topnav li:last-child {
 		border-right: 0;
+	}
+
+	.navigate.mobile .topnav li:last-child a.booking-link {
+	    padding-bottom: 4px;
+	    padding-top: 16px;
 	}
 
 	.navigate.mobile .topnav li a.booking-link {
@@ -1291,6 +1339,24 @@ and (max-width : 640px) {
 	    padding-left: 40px;
 	}
 
+	.room-more-details {
+	    margin-top: 0;
+	}
+
+	.room-details li.room-detail {
+	    float: left;
+	    margin-bottom: 20px;
+	    margin-right: 0;
+	    width: 33%;
+	}
+
+	.room-detail > img {
+	    height: auto;
+	    max-height: 199px;
+	    min-height: 199px;
+	    width: 100%;
+	}
+
 
 
 	/* PAGE - Events */
@@ -1369,9 +1435,18 @@ and (max-width : 480px) {
 	    padding-top: 45px;
 	}
 
+	.navigate.mobile .banner {
+	    padding: 13.8px 0;
+	}
+
 	.navigate.mobile .topnav li a.booking-link {
 	    font-size: 13px;
 	    line-height: 1;
+	}
+
+	.navigate.mobile .topnav li:last-child a.booking-link {
+	    padding-bottom: 6px;
+	    padding-top: 21px;
 	}
 
 	.navigate.mobile .banner p.contacto, .navigate.mobile .banner p.contacto span {
@@ -1590,7 +1665,14 @@ and (max-width : 380px) {
 		font-size: 12px;
 	}
 
+	.navigate.mobile .topnav li:last-child a.booking-link {
+	    padding-bottom: 12px;
+	    padding-top: 21px;
+	}
 
+	.topnav li a.booking-link {
+		padding: 22px 0;
+	}
 
 	/* HOMEPAGE */
 
