@@ -46,6 +46,11 @@ body {
 	width: 100%;
 	height: 100%;
 }
+
+body > div {
+    height: 100%;
+}
+
 html {
 	width: 100%;
 	height: 100%;
@@ -2995,7 +3000,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .page .fullvertical .textbox.openbox, .page .fullvertical .textbox-1.openbox-1 {
-    height: 80%;
+    height: 75%;
 }
 
 .page .fullvertical .innerbox .fa {
