@@ -28,11 +28,11 @@
 								<h1><?php the_title(); ?></h1>
 								
 								<?php echo content(150); ?>
-									
-								<a class="opensays" href="#"><i class="fa fa-chevron-down"></i></a>
-								<a class="opensays" href="#"><i class="fa fa-chevron-up"></i></a>
 														
 							</div>
+
+							<a class="opensays" href="#"><i class="fa fa-chevron-down"></i></a>
+							<a class="opensays" href="#"><i class="fa fa-chevron-up"></i></a>
 
 						</div>
 
@@ -72,11 +72,11 @@
 								<h1><?php the_title(); ?></h1>
 								
 								<?php echo content(150); ?>
-	
-								<a class="opensays-1" href="#"><i class="fa fa-chevron-down"></i></a>
-								<a class="opensays-1" href="#"><i class="fa fa-chevron-up"></i></a>
 														
 							</div>
+
+							<a class="opensays-1" href="#"><i class="fa fa-chevron-down"></i></a>
+							<a class="opensays-1" href="#"><i class="fa fa-chevron-up"></i></a>
 
 						</div>
 
