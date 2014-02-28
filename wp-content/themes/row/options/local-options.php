@@ -86,6 +86,23 @@ $meta_localer = array(
 	          "std" => ""
               )
 		,
+		
+		array( 
+              "name" => "Hours",
+	          "desc" => "Output for hours (can be html)",
+	          "id" => $prefix."_hours",
+	          "type" => "textarea",
+	          "std" => ""
+              )
+		,
+		array( 
+              "name" => "Zoom Level",
+	          "desc" => "Map has a default zoom of 12 but you can go up or down",
+	          "id" => $prefix."_zoom",
+	          "type" => "text",
+	          "std" => ""
+              )
+        ,
 		array( 
               "name" => "Map Coordinates",
 	          "desc" => "If necessary, please put the property coordinates here.",

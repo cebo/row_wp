@@ -87,13 +87,20 @@ $meta_boxel = array(
               )
          ,
          array( 
+              "name" => "Zoom Level",
+	          "desc" => "Map has a default zoom of 12 but you can go up or down",
+	          "id" => $prefix."_zoom",
+	          "type" => "text",
+	          "std" => ""
+              )
+        ,
+         array( 
               "name" => "Central Coordinates",
 	          "desc" => "If this is a Location page, place the page map's central coordinates here ex: 34.409937,-119.692079",
 	          "id" => $prefix."_localcoordinates",
 	          "type" => "text",
 	          "std" => ""
-              )
- 		,     
+              )    
        	)
 );
 

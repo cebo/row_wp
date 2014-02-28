@@ -108,7 +108,14 @@ $meta_box = array(
 	          "type" => "upload",
 	          "std" => ""
               )
- 
+ 		,
+ 		array( 
+              "name" => "Outbound Room Booking Link",
+	          "desc" => "If a special link to book this room exists, else it will default to general booking link",
+	          "id" => $prefix."_booklink",
+	          "type" => "text",
+	          "std" => ""
+              )
        	)
 );
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */

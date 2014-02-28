@@ -1551,14 +1551,14 @@ $options[] = array( "name" => __('Socialize','cebolang'),
 			"type" => "heading");	
 			
 										
-$options[] = array( "name" => __('Your Facebook Username ex: (http://facebook.com/) -> somethinghere','cebolang'),
-			"desc" => "DO NOT USE HTTP://FACEBOOK.COM, JUST THE HANDLE By entering your facebook link, you create the links to all facebook icons or else they will not appear",
+$options[] = array( "name" => __('Your Facebook Link','cebolang'),
+			"desc" => "By entering your facebook link, you create the links to all facebook icons or else they will not appear",
 			"id" => $shortname."_facebook",
 			"std" => "",
 			"type" => "text");
 
-$options[] = array( "name" => __('Twitter Username, @ ex: cebocampbell','cebolang'),
-			"desc" => "DO NOT USE HTTP://TWITTER.COM, JUST THE HANDLE By entering your twitter ID you activate the twitter updates on the sidebar and various links to twitter.",
+$options[] = array( "name" => __('Twitter Link','cebolang'),
+			"desc" => "By entering your twitter ID you activate the twitter updates on the sidebar and various links to twitter.",
 			"id" => $shortname."_twitter",
 			"std" => "",
 			"type" => "text");
@@ -1591,8 +1591,8 @@ $options[] = array( "name" => __('Twitter User Secret','cebolang'),
 
 
 
-$options[] = array( "name" => __('Instagram Username','cebolang'),
-			"desc" => "DO NOT USE HTTP://INSTAGRAM.COM, Create your instagram link with the ID: ex: cebocampbell.",
+$options[] = array( "name" => __('Instagram link','cebolang'),
+			"desc" => "Create your instagram.",
 			"id" => $shortname."_instagram",
 			"std" => "",
 			"type" => "text");
@@ -1612,14 +1612,18 @@ $options[] = array( "name" => __('Instagram Access Token','cebolang'),
 			"type" => "text");
 						
 					
-$options[] = array( "name" => __('Youtbe Username, @ ex: cebocampbell','cebolang'),
-			"desc" => "DO NOT USE HTTP://YOUTUBE.COM, JUST THE HANDLE.",
+$options[] = array( "name" => __('Youtube Link','cebolang'),
+			"desc" => "Paste in your youtube link.",
 			"id" => $shortname."_youtube",
 			"std" => "",
 			"type" => "text");					
 					
 
-
+$options[] = array( "name" => __('Pinterest Link','cebolang'),
+			"desc" => "Paste in your pinterest link.",
+			"id" => $shortname."_pinterest",
+			"std" => "",
+			"type" => "text");		
 
 
 

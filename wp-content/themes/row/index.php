@@ -7,7 +7,7 @@
 			
 			
 
-			<div class="home-intro">
+			<div id="div_demo">
 			
 				<div class="wideover overlay">
 					
@@ -17,18 +17,6 @@
 				</div>
 				
 				
-				<?php if(get_option('cebo_homebanner')) { ?>
-		
-		
-				<div class="stretch"  style="background-image: url(<?php echo get_option('cebo_homebanner'); ?>);"></div>
-				
-				<?php } else { ?>
-									
-				<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-				
-				
-				<?php } ?>
-
 				
 				
 			

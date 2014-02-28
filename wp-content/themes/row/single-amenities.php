@@ -127,11 +127,7 @@
 					<div class="amenity-featured-image" style="background-image: url(<?php echo get_post_meta ($post->ID, 'cebo_thumbone', true); ?>);"></div>
 					
 					<?php } ?>
-					<?php if(get_post_meta($post->ID, 'cebo_thumbtwo', true)) { ?>
-
-					<div class="amenity-featured-image" style="background-image: url(<?php echo get_post_meta ($post->ID, 'cebo_thumbtwo', true); ?>);"></div>
 					
-					<?php } ?>
 
 				</div>
 

@@ -6,12 +6,8 @@
 ///////////////////////////////////////////////////////////////////////////// Please Do Not Edit Unless You Know What You Are Doing
 
 $fp_boxes = array (
-	'Team Member Information' => array (
-			array( 'bigtitle', 'Title ex Designer' , 'text'),
-			array( 'twitlink', 'Twitter Link ex: http://twitter.com/username' , 'text'),
-			array( 'faclink', 'Facebook Link  ex: http://facebook.com/username' , 'text'),
-			array( 'googlink', 'Google + Link  ex: http://google.com' , 'text'),
-			array( 'linlink', 'Linkedin Link  ex: http://linkedin.com' , 'text'),
+	'Concierge Information' => array (
+			array( 'bigtitle', 'Outbound Link' , 'text'),
 		),
 );
 			// Do not edit past this point.
@@ -26,7 +22,7 @@ $fp_boxes = array (
 			if ( function_exists( 'add_meta_box' ) ) {
 		foreach ( array_keys( $fp_boxes ) as $box_name ) {
 			
-			add_meta_box( $box_name, __( $box_name, 'fp' ), 'fp_post_custom_box', 'team', 'side', 'high' );
+			add_meta_box( $box_name, __( $box_name, 'fp' ), 'fp_post_custom_box', 'concierge', 'normal', 'high' );
 			}
 		}
 		}

@@ -748,6 +748,37 @@ p {
 	opacity: 0;
 }
 
+#div_demo {
+	width:100%;
+	height:490px;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+#div_demo:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #000;
+	opacity: 0.3;
+	width: 100%;
+	content: '';
+	z-index: 1;
+}
+
+#div_demo span {
+	display: block;
+	position: relative;
+	margin:0 auto;
+	color:#fff;
+	font-size:3em;
+	padding-top:40px;
+	font-weight: bold;
+	text-align: center;
+	width:250px;
+	
+}
 
 .navigate .supernav li.subinside:hover li.drop-intro p {
     color: #555555;
@@ -1681,7 +1712,9 @@ ul#selectUl li.unselected:hover {
 
 
 
+.wideover a {
 
+}
 .narrow {
 	width: 60%;
 	margin-left: -30%;
@@ -2873,8 +2906,9 @@ ul#selectUl li.unselected:hover {
 
 .concierge-box .right {
     overflow: hidden;
-    padding: 3% 6% 3.7%;
-    width: 34%;
+    padding: 30px 20px 0 0;
+width: 35%;
+
 }
 
 .concierge-box-photo {
