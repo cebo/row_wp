@@ -330,7 +330,24 @@
 			wp_enqueue_script( 'comment-reply' );
 		wp_head();
 	?>
-	</head> 
+
+<script>
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-10318674-1', 'rownyc.com' 'auto', {
+	  'allowLinker': true
+	});
+	ga('require', 'linker');
+	ga('linker:autoLink', ['reztrip.com'] );
+	ga('send', 'pageview');
+
+</script>
+
+</head> 
 	
 	
 <body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?> class="page concierge"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } ?>>
