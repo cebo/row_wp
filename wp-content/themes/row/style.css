@@ -1652,7 +1652,7 @@ ul#selectUl li.unselected:hover {
 
 .appearman .overlay {
 	position: absolute;
-	background: rgba(255,255,255,0.7);
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
 	width: 45%;
 	padding: 20px;
 	top: 30%;
@@ -1682,7 +1682,7 @@ ul#selectUl li.unselected:hover {
 
 .wideover {
 	position: absolute;
-	background: rgba(255,255,255,0.7);
+	background: rgba(255,255,255,0.85);
 	width: 45%;
 	padding: 20px;
 	top: 30%;
@@ -1762,7 +1762,7 @@ ul#selectUl li.unselected:hover {
 
 .suboverlay {
 	position: absolute;
-	background: rgba(255,255,255,0.7);
+	background: rgba(255,255,255,0.85);
 	width: 35%;
 	padding: 20px;
 	top: 30%;
@@ -1824,7 +1824,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .bigover p {
-	background: rgba(255,255,255,0.7);
+	background: rgba(255,255,255,0.85);
 	padding: 20px;
 	
 }
@@ -1847,7 +1847,7 @@ ul#selectUl li.unselected:hover {
 
 .littleover {
 	position: absolute;
-	background: rgba(255,255,255,0.7);
+	background: rgba(255,255,255,0.85);
 	width: 65%;
 	padding: 12px 20px 12px 12px;
 	bottom: 0%;
@@ -2419,7 +2419,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .welcomebox {
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
 }
 
 .gallery-categories > ul {
@@ -2473,7 +2473,7 @@ ul#selectUl li.unselected:hover {
     -moz-transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
-    background: none repeat scroll 0 0 rgba(250, 156, 3, 0.7);
+    background: none repeat scroll 0 0 rgba(250, 156, 3, 0.85);
     color: #FFFFFF;
     height: 100%;
     line-height: 2.5;
@@ -2528,7 +2528,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .room-more-details {
-	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
     overflow: hidden;
     position: relative;
 }
@@ -2632,7 +2632,7 @@ ul#selectUl li.unselected:hover {
 /* Page - Explore ---------------------------------------------------- */
 
 .page-intro {
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
     padding: 50px 20px 20px;
 }
 
@@ -2753,7 +2753,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .page.time-square .textbox {
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
     bottom: 0;
     height: 140px;
     left: 0;
@@ -3036,7 +3036,7 @@ width: 35%;
     -moz-transition: none;
     -webkit-transition: none;
     -ms-transition: none;
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.75);
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
     left: 40%;
     max-height: 100%;
     position: absolute;
@@ -3123,7 +3123,7 @@ width: 35%;
 
 .photo-list {
     overflow: auto;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.85);
 }
 
 .photo-list li {
@@ -3142,7 +3142,7 @@ width: 35%;
 }
 
 .single.eat-drink .page-content {
-	background: rgba(255,255,255,0.7);
+	background: rgba(255,255,255,0.85);
 }
 
 .single.eat-drink .main-page-content.left {
@@ -3213,7 +3213,7 @@ width: 35%;
 }
 
 .rate-box {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.85);
     margin: 0 auto;
     max-height: 90%;
     overflow: hidden;
@@ -3799,7 +3799,7 @@ width: 35%;
 /* Slide Properties ---------------------------------------------------- */
 
 .slide-bottom-title {
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.70);
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
     bottom: 0;
     padding: 10px 20px;
     position: absolute;
