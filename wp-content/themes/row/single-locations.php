@@ -272,6 +272,8 @@
     });
     
     <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+    if ($(window).width() < 640) {
     
     $("#maparea").gmap3({
       marker:{
@@ -283,7 +285,7 @@
       		
       	
           center:[<?php echo get_post_meta($post->ID, 'cebo_coordinates', true); ?>],
-          
+          draggable: false,
           scrollwheel: false,
           zoom: <?php if(get_post_meta($post->ID, 'cebo_zoom',true)) { echo get_post_meta($post->ID, 'cebo_zoom',true); } else { echo '12'; } ?>,
           mapTypeId: "style2",
@@ -292,7 +294,6 @@
            }
          }   
     },
-    <?php endwhile; endif; wp_reset_query(); ?>
     styledmaptype:{
       id: "style1",
       options:{
@@ -343,6 +344,81 @@
     }
   }
 );
+
+} else {
+
+  $("#maparea").gmap3({
+      marker:{
+        address:"<?php echo get_post_meta($post->ID, 'cebo_address', true);?>", data:"R", options:{icon: "<?php bloginfo('template_url'); ?>/images/gen_map_logo.png"}
+      },
+      map: {
+      action: 'init',
+      options: {
+          
+        
+          center:[<?php echo get_post_meta($post->ID, 'cebo_coordinates', true); ?>],
+          draggable: true,
+          scrollwheel: false,
+          zoom: <?php if(get_post_meta($post->ID, 'cebo_zoom',true)) { echo get_post_meta($post->ID, 'cebo_zoom',true); } else { echo '12'; } ?>,
+          mapTypeId: "style2",
+          mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1", "style2"]
+           }
+         }   
+    },
+    <?php endwhile; endif; wp_reset_query(); ?>
+    styledmaptype:{
+      id: "style1",
+      options:{
+        name: "Style 1"
+      },
+      styles: [
+        {
+          featureType: "road.highway",
+          elementType: "geometry",
+          stylers: [
+            { hue: "#ff0022" },
+            { saturation: 60 },
+            { lightness: -20 }
+          ]
+        }
+      ]
+    }
+  },
+  { styledmaptype:{
+      id: "style2",
+      options:{
+        name: "Style 2"
+      },
+      styles: [
+        {
+          featureType: "all",
+      stylers: [
+        { hue: "#000000" },
+            { saturation: -100 },
+            { lightness: -0 }
+        
+        ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { hue: "#000000" },
+      { saturation: -100 }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+      ]
+    }
+  }
+);
+
+}
     
     getPlaces();
     

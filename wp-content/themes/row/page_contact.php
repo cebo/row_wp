@@ -237,7 +237,9 @@
     
 
     
-    $("#maparea").gmap3({
+    if ($(window).width() < 640) {
+
+      $("#maparea").gmap3({
       marker:{
       	address:"700 8 Ave New York, NY 10036", data:"R", options:{icon: "<?php bloginfo('template_url'); ?>/images/map_logo.png"}
       },
@@ -246,6 +248,7 @@
       options: {
           center:[40.7587904,-73.9885025],
           scrollwheel: false,
+          draggable: false,
           zoom: 14,
           mapTypeId: "style2",
           mapTypeControlOptions: {
@@ -304,6 +307,79 @@
     }
   }
 );
+
+} else {
+
+  $("#maparea").gmap3({
+      marker:{
+        address:"700 8 Ave New York, NY 10036", data:"R", options:{icon: "<?php bloginfo('template_url'); ?>/images/map_logo.png"}
+      },
+      map: {
+      action: 'init',
+      options: {
+          center:[40.7587904,-73.9885025],
+          scrollwheel: false,
+          draggable: true,
+          zoom: 14,
+          mapTypeId: "style2",
+          mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1", "style2"]
+           }
+         }   
+    },
+   
+    styledmaptype:{
+      id: "style1",
+      options:{
+        name: "Style 1"
+      },
+      styles: [
+        {
+          featureType: "road.highway",
+          elementType: "geometry",
+          stylers: [
+            { hue: "#ff0022" },
+            { saturation: 60 },
+            { lightness: -20 }
+          ]
+        }
+      ]
+    }
+  },
+  { styledmaptype:{
+      id: "style2",
+      options:{
+        name: "Style 2"
+      },
+      styles: [
+        {
+          featureType: "all",
+      stylers: [
+        { hue: "#000000" },
+            { saturation: -100 },
+            { lightness: -0 }
+        
+        ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { hue: "#000000" },
+      { saturation: -100 }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+      ]
+    }
+  }
+);
+
+}
     
     getPlaces();
     

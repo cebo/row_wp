@@ -477,6 +477,10 @@ p {
 	border-top:  2px solid #373637;
 }
 
+.navigate .supernav .subinside li {
+	background: none repeat scroll 0 0 #DFDFDF;
+}
+
 .navigate .supernav li:hover {
 	background: none repeat scroll 0 0 #DFDFDF;
 	z-index: 999;
