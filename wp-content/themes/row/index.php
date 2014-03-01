@@ -7,7 +7,7 @@
 			
 			
 
-			<div id="div_demo">
+			<div id="div_demo" class="desktop">
 			
 				<div class="wideover overlay">
 					
@@ -21,6 +21,8 @@
 				
 			
 			</div>
+
+			<div id="div_demo" class="mobile" style="display: none;"></div>
 			
 			
 			
@@ -233,7 +235,7 @@
 				
 						  
 						  
-							<a class="gone" href="<?php bloginfo('url'); ?>/galleries/guest-rooms/">Explore Our Interiors ></a>
+							<a class="gone" href="<?php bloginfo('url'); ?>/gallery/row-nyc-photos/">Explore Our Interiors ></a>
 							
 						
 						

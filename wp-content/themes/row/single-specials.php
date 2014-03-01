@@ -45,7 +45,7 @@
 			
 			<div class="clear"></div>
 
-			<div class="button-wrapper" style="margin: 20px 0;"><a class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>" target="_blank">Book Now</a></div>
+			<div class="button-wrapper" style="margin: 20px 0;"><a class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>">Book Now</a></div>
 
 			<div class="clear"></div>
 

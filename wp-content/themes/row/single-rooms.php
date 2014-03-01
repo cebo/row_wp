@@ -34,7 +34,7 @@
 						<div class="suboverlay narrow">
 					
 								<h1><?php the_title(); ?></h1>
-								<h4><?php echo get_post_meta($post->ID, 'cebo_footage', true); ?> SQ.FT.</h4>
+								<!-- <h4><?php echo get_post_meta($post->ID, 'cebo_footage', true); ?> SQ.FT.</h4> -->
 						
 						</div>
 						
@@ -44,7 +44,7 @@
 						<?php the_content(); ?>
 					</div>
 					<div class="right">
-						<a href="<?php if(get_post_meta($post->ID,'cebo_booklink',true)) { echo get_post_meta($post->ID,'cebo_booklink',true); } else { echo get_option('cebo_genbooklink'); } ?>" target="_blank">Book Now</a>
+						<a href="<?php if(get_post_meta($post->ID,'cebo_booklink',true)) { echo get_post_meta($post->ID,'cebo_booklink',true); } else { echo get_option('cebo_genbooklink'); } ?>">Book Now</a>
 					</div>
 				</div>
 		
@@ -67,7 +67,7 @@
 						<?php the_content(); ?>
 					</div>
 					<div class="right">
-						<a href="<?php if(get_post_meta($post->ID,'cebo_booklink',true)) { echo get_post_meta($post->ID,'cebo_booklink',true); } else { echo get_option('cebo_genbooklink'); } ?>" target="_blank">Book Now</a>
+						<a href="<?php if(get_post_meta($post->ID,'cebo_booklink',true)) { echo get_post_meta($post->ID,'cebo_booklink',true); } else { echo get_option('cebo_genbooklink'); } ?>">Book Now</a>
 					</div>
 				</div>
 		</div>
@@ -88,7 +88,7 @@
 						<?php the_content(); ?>
 					</div>
 					<div class="right">
-						<a href="<?php if(get_post_meta($post->ID,'cebo_booklink',true)) { echo get_post_meta($post->ID,'cebo_booklink',true); } else { echo get_option('cebo_genbooklink'); } ?>" target="_blank">Book Now</a>
+						<a href="<?php if(get_post_meta($post->ID,'cebo_booklink',true)) { echo get_post_meta($post->ID,'cebo_booklink',true); } else { echo get_option('cebo_genbooklink'); } ?>">Book Now</a>
 					</div>
 				</div>
 		

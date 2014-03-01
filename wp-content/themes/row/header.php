@@ -95,6 +95,11 @@
 		scale:true,
 		zIndex:0
 	});
+
+	if(Modernizr.touch) {
+		$('#div_demo.mobile').show(),
+		$('#div_demo.desktop').hide()
+	}
 	
 	
 		
@@ -175,7 +180,7 @@
 			    dateFormat: 'yy-mm-dd',
 			    altField  : '#depee',
     			altFormat : 'dd',
-    			minDate: 3,
+    			minDate: 0,
 			    onSelect: function(event, ui) {
 			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
 			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
@@ -204,7 +209,7 @@
 			    dateFormat: 'yy-mm-dd',
 			    altField  : '#depee-1',
     			altFormat : 'dd',
-    			minDate: 3,
+    			minDate: 0,
 			    onSelect: function(event, ui) {
 			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
 			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
@@ -694,7 +699,7 @@
 
 				<div class="banner"> 
 							
-					<p class="contacto">Reservations <span>888.353.3650</span></p>
+					<p class="contacto">Reservations <span>888.352.3650</span></p>
 					
 					<div class="clear"></div>
 					
@@ -935,11 +940,6 @@
 									                    <option value="2">2</option>
 									                    <option value="3">3</option>
 									                    <option value="4">4</option>                                
-									                    <option value="5">5</option>
-									                    <option value="6">6</option>
-									                    <option value="7">7</option>
-									                    <option value="8">8</option>                                
-									                    <option value="9">9</option>
 													</select>
 													
 													<!--<ul id="selectUl">
@@ -982,12 +982,6 @@
 														 <option value="1">1</option>
 										                    <option value="2">2</option>
 										                    <option value="3">3</option>
-										                    <option value="4">4</option>                                
-										                    <option value="5">5</option>
-										                    <option value="6">6</option>
-										                    <option value="7">7</option>
-										                    <option value="8">8</option>                                
-										                    <option value="9">9</option>
 													</select>
 												</div>
 												<i class="fa fa-chevron-down"></i>

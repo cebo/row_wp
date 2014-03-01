@@ -67,11 +67,11 @@
 						
 						
 						<div class="littleover">
-							<h1>Upcoming Events</h1>
+							<h1>Coming Soon</h1>
 							
-							<p>Et eum invenim eos prae provid eos aut occullabore laborum.</p>
+							<!-- <p>Et eum invenim eos prae provid eos aut occullabore laborum.</p> -->
 							
-							<a class="gone" href="<?php bloginfo('url'); ?>/events/">Learn More ></a>
+							<!-- <a class="gone" href="<?php bloginfo('url'); ?>/events/">Learn More ></a> -->
 						</div>
 						
 					</li>

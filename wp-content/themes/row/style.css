@@ -764,6 +764,14 @@ p {
 	margin-bottom: 10px;
 }
 
+#div_demo.mobile {
+    background: none repeat scroll 0 0 #000000;
+    background-image: url("http://localhost/row/wp-content/uploads/2014/02/row-nyc-time-square-hotel.jpg");
+    background-size: cover;
+    background-position: center center;
+   	background-repeat: no-repeat;
+}
+
 #div_demo:before {
 	position: absolute;
 	top: 0;
