@@ -405,12 +405,19 @@ p {
 	transition: all 0.2s ease-in-out;
 }
 
+.navigate .supernav li ul.dropbox .jspContainer,
+.navigate.slipnot .subinside .jspPane {
+	background-color: #DFDFDF;
+}
+
+
 .navigate.slipnot .jspPane {
 	width: 85px !important;
 }
 
 .navigate.slipnot .subinside .jspPane {
     width: auto !important;
+    height: 100%;
 }
 
 .navigate.mobile .jspVerticalBar {
@@ -545,10 +552,10 @@ p {
 	background: #000;
 	visibility: hidden;
 	opacity: 0;
-	-webkit-transition: all 0.4s ease-in-out;
+	/*-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
-	transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;*/
 	overflow: scroll;
 	padding: 10px 0 0;
 }
@@ -581,10 +588,10 @@ p {
     padding: 10px 0;
     visibility: hidden;
     z-index: 1 !important;
-	-webkit-transition: all 0.5s ease-in-out;
+	/*-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;*/
 }
 
 .navigate .supernav li ul.dropbox li:last-child {
@@ -595,16 +602,17 @@ p {
 	margin-left: 0px;
 	visibility: visible;
 	opacity: 1;
-	-webkit-transition: all 0.5s ease-in-out;
+	/*-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;*/
 	
 }
 
 .slipnot .supernav li ul.dropbox li.drop-intro {
-    padding: 25px 15px 15px;
-    width: 83.4%;
+	padding: 25px 6% 15px;
+	width: 88%;
+	margin: 0;
 }
 
 .navigate .supernav li ul.dropdown li {
