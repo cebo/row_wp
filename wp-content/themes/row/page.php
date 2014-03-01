@@ -9,6 +9,10 @@
 <?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 
 
+	
+	
+	<section class="contentarea">
+
 	<div class="home-intro">
 	
 		<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -29,8 +33,6 @@
 		<?php } ?>
 	
 	</div>	
-	
-	<section class="contentarea">
 						
 		<div class="page-content alt-page-content">
 
