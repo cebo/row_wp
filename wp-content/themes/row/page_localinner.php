@@ -5,7 +5,6 @@
 */
  get_header(); ?>
 
- <div class="time-square">
 
 
 	
@@ -772,9 +771,8 @@
 		</div>
 		
 		
-		</div>
 		
-		<div class="clear"></div>
+		<div class="clear">
 		
 		
 		<!-- begin fifth level -->

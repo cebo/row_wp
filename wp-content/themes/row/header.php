@@ -180,7 +180,7 @@
 			    dateFormat: 'yy-mm-dd',
 			    altField  : '#depee',
     			altFormat : 'dd',
-    			minDate: 0,
+    			minDate: 1,
 			    onSelect: function(event, ui) {
 			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
 			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
@@ -661,11 +661,11 @@
 			
 			
 			<div class="socials">
-				<a href="<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
-				<a href="<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
-				<a href="<?php echo get_option('cebo_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
-				<a href="<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
-				<a href="<?php echo get_option('cebo_youtube'); ?>" target="_blank"><i class="fa fa-youtube"></i></a>
+				<a href="http://www.facebook.com/RowNYC" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="http://www.twitter.com/rownyc" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="www.pinterest.com/rownyc" target="_blank"><i class="fa fa-pinterest"></i></a>
+				<a href="http://www.instagram.com/rownyc" target="_blank"><i class="fa fa-instagram"></i></a>
+				<a href="http://www.youtube.com/RowNYC" target="_blank"><i class="fa fa-youtube"></i></a>
 			</div>
 		
 		</div>
@@ -699,7 +699,7 @@
 
 				<div class="banner"> 
 							
-					<p class="contacto">Reservations <span>888.352.3650</span></p>
+					<p class="contacto">Reservations 888.352.3650</p>
 					
 					<div class="clear"></div>
 					

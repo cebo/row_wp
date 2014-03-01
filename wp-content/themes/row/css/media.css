@@ -1001,6 +1001,7 @@ and (max-width : 640px) {
 	    width: 100%;
 	    line-height: 1;
 	    padding: 5.8px 0;
+	    float: none;
 	}
 
 	.navigate.mobile .banner p.contacto span {
