@@ -75,8 +75,6 @@
 				<a class="button" href="#">Make A Reservation</a>
 
 			</div>
-
-		</div>
 		
 		
 		

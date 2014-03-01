@@ -672,7 +672,6 @@
 
 		</div>
 <?php endwhile; endif; wp_reset_query(); ?>			
-		</section>
 		
 		
 		<div class="clear"></div>
