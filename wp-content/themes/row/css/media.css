@@ -938,6 +938,7 @@ and (max-width : 640px) {
 	}
 
 	.mobile-menu-section {
+		overflow: auto;
 		padding: 10px;
 	}
 
@@ -954,14 +955,24 @@ and (max-width : 640px) {
 	    display: block;
 	    width: 100%;
 	}
-
+	
 	.navigate.mobile .languages {
-	    float: none;
-	    margin-top: 5px;
-	    overflow: hidden;
-	    width: auto;
-	    background-position: 20px 0;
+	    background-image: none;
+	    background-size: 70% auto;
+	    color: #FFFFFF;
 	    display: block;
+	    float: left;
+	    font-family: gothambook;
+	    font-size: 14px;
+	    line-height: 1.9;
+	    margin: 0 0 0 10px;
+	    padding-left: 13px;
+	    width: auto;
+	}
+
+	.navigate.mobile .languages p {
+		font-size: 13px;
+		color: #fff;
 	}
 
 	.navigate.mobile .logobox .languages {
@@ -1540,7 +1551,7 @@ and (max-width : 480px) {
 	}
 
 	.navigate.mobile .languages {
-	    background-size: 70% auto;
+	    font-size: 11px;
 	}
 
 
@@ -1794,6 +1805,11 @@ and (max-width : 380px) {
 
 	.topnav li a.booking-link {
 		padding: 22px 0;
+	}
+
+	.navigate.mobile .languages {
+	    font-size: 10px;
+	    padding-left: 4px;
 	}
 
 	/* HOMEPAGE */

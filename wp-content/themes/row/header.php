@@ -693,7 +693,7 @@
 
 					<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i> MENU</a>
 
-					<div class="languages"></div>
+					<div class="languages">700 8TH AVENUE, NYC</div>
 
 				</div>
 
