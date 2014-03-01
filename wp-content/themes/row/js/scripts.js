@@ -157,7 +157,7 @@ $(function() {
 
 	// Jscrollpane ////////////////////////////////////////////////////////////
 	// the element we want to apply the jScrollPane
-	var $el					= $('.dropbox, .navigate').jScrollPane({
+	var $el					= $('.dropbox').jScrollPane({
 		verticalGutter 	: -16
 	}),
 			

@@ -381,7 +381,7 @@ p {
 	position: relative;
 	position: fixed;
 	z-index: 999;
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
@@ -396,7 +396,8 @@ p {
 
 
 
-.slipnot {
+.slipnot, .logobox, .finished,
+.slipnot .logobox, .slipnot .finished {
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
@@ -413,6 +414,10 @@ p {
 
 .navigate.mobile .jspVerticalBar {
     display: none;
+}
+
+.navigate.slipnot .supernav, .navigate.slipnot .logobox, .navigate.slipnot .finished {
+    width: 85px;
 }
 
 .navigate.mobile .jspContainer, .navigate.mobile .jspPane {
@@ -3792,6 +3797,8 @@ width: 35%;
     height: 480px;
     position: relative;
     width: 100%;
+    background-size: cover;
+    background-position: center center;
 }
 
 .gallery-categories a {
