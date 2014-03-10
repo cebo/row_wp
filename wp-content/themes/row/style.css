@@ -2241,14 +2241,15 @@ ul#selectUl li.unselected:hover {
 
 
 .blogposts {
-		-moz-column-count: 3;
+	/*	-moz-column-count: 3;
     -moz-column-gap: 0px;
     -webkit-column-count: 3;
     -webkit-column-gap: 0px;
     column-count: 3;
-    column-gap: 0px;
+    column-gap: 0px;*/
     padding-top: 0px;
     padding: 0px;
+    overflow: hidden;
     -webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
 		-o-column-break-inside:avoid;
@@ -2272,11 +2273,12 @@ ul#selectUl li.unselected:hover {
 
 .blogposts li {
 	overflow: hidden;
-	display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+	display: block; /* Display inline-block, and absolutely NO FLOATS! */
     margin-bottom: 0px;
     vertical-align:top;
-    width: 100%; 
     position: relative;
+    width: 33.367876%;
+    float: left;
     -webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
 		-o-column-break-inside:avoid;
