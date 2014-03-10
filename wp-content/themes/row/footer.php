@@ -147,13 +147,51 @@ var google_custom_params = window.google_tag_params;
 var google_remarketing_only = true;
 /* ]]> */
 </script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+<script type="text/javascript" src="htpp://www.googleadservices.com/pagead/conversion.js">
 </script>
 <noscript>
 <div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1044598228/?value=0&amp;guid=ON&amp;script=0"/>
+<img height="1" width="1" style="border-style:none;" alt="" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1044598228/?value=0&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
 
+
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-10318674-1']);
+
+_gaq.push(['_setAllowLinker', true]);
+
+_gaq.push(['_setDomainName', 'rownyc.com']);
+
+_gaq.push(['_trackPageview']);
+
+
+
+_gaq.push(['secondTracker._setAccount', 'UA-10318674-10']);
+
+_gaq.push(['secondTracker._setAllowLinker', true]);
+
+_gaq.push(['secondTracker._setDomainName', 'rownyc.com']);
+
+_gaq.push(['secondTracker._trackPageview']);
+
+
+
+
+
+(function() {
+
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+})();
+
+</script> 
 </body>
 </html>

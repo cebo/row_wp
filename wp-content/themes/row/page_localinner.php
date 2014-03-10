@@ -19,12 +19,20 @@
     <?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
     
     
-    <div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+    <div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);">
+    
+   
+
+    </div>
     
     <?php } elseif($imgsrc) { ?>
     
     
-    <div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+    <div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);">
+    
+
+
+    </div>
     
     <?php } else { ?>
               
@@ -45,8 +53,8 @@
           </div>
 
           <div class="right">
-            <a class="opensays-up" href="#"><i class="fa fa-chevron-down"></i></a>
-            <a class="opensays-up" href="#"><i class="fa fa-chevron-up"></i></a>
+            <a class="opensays-up" href="#"><i style="background: transparent;" class="fa fa-chevron-down"></i></a>
+            <a class="opensays-up" href="#"><i style="background: transparent;" class="fa fa-chevron-up"></i></a>
           </div>
           
           <div class="clear"></div>

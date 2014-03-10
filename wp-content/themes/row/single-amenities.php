@@ -12,24 +12,29 @@
 
 
 	<div class="home-intro">
+	
+		<?php if(get_post_meta($post->ID, 'cebo_fullbannerpic', true)) { ?>
+								
+								
+		<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullbannerpic', true); ?>);"></div>
+		
+		<?php } elseif(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+								
+		<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+		
+		<?php } elseif($imgsrc) { ?>
+		
+		
+		<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+		
+		<?php } else { ?>
 							
-	<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-								
-								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
-						
-						<?php } elseif($imgsrc) { ?>
-						
-						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
-						
-						<?php } else { ?>
-											
-						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-						
-						
-					
-					<?php } ?>
+		<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+		
+		
+	
+	<?php } ?>
 	
 	</div>	
 	
@@ -91,20 +96,29 @@
 					<div class="wonderline"></div>
 
 					<div class="amenity-contact">
-
+							
+							<?php if(get_post_meta ($post->ID, 'cebo_hours', true)) { ?>
+							
 							<div>
 								
 								<h4>Hours:</h4>
 								<p><?php echo get_post_meta ($post->ID, 'cebo_hours', true); ?></p>
 
 							</div>
-
+							<?php } ?>
+							
+							<?php if(get_post_meta ($post->ID, 'cebo_contact', true)) { ?>
+							
+							
 							<div>
 								
 								<h4>Contact:</h4>
 								<p><?php echo get_post_meta ($post->ID, 'cebo_contact', true); ?></p>
 
 							</div>
+							
+							<?php } ?>
+							<?php if(get_post_meta ($post->ID, 'cebo_reserv', true)) { ?>
 
 							<div>
 
@@ -112,6 +126,8 @@
 								<p><?php echo get_post_meta ($post->ID, 'cebo_reserv', true); ?></p>
 
 							</div>
+							
+							<?php } ?>
 
 						</div>
 

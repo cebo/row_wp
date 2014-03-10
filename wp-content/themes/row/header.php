@@ -1,20 +1,9 @@
 <!DOCTYPE HTML>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<title>
-		<?php global $page, $paged; wp_title( '|', true, 'right' ); bloginfo( 'name' );
-	
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) )
-			echo " | $site_description";
-	
-		// Add a page number if necessary:
-		if ( $paged >= 2 || $page >= 2 )
-			echo ' | ' . sprintf( __( 'Page %s', 'cebolang' ), max( $paged, $page ) );
 
-		?>
-	</title>
+	<title><?php wp_title(''); ?></title>
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	
@@ -336,26 +325,52 @@
 		wp_head();
 	?>
 
-<script>
 
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-10318674-1', 'rownyc.com' 'auto', {
-	  'allowLinker': true
-	});
-	ga('require', 'linker');
-	ga('linker:autoLink', ['reztrip.com'] );
-	ga('send', 'pageview');
+
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-10318674-1']);
+
+_gaq.push(['_setAllowLinker', true]);
+
+_gaq.push(['_setDomainName', 'rownyc.com']);
+
+_gaq.push(['_trackPageview']);
+
+
+
+_gaq.push(['secondTracker._setAccount', 'UA-10318674-10']);
+
+_gaq.push(['secondTracker._setAllowLinker', true]);
+
+_gaq.push(['secondTracker._setDomainName', 'rownyc.com']);
+
+_gaq.push(['secondTracker._trackPageview']);
+
+
+
+
+
+(function() {
+
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+})();
 
 </script>
+
 
 </head> 
 	
 	
-<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?> class="page concierge"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } ?>>
+<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?> class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?> class="page time-square"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } ?>>
 
 
 <div>
@@ -432,7 +447,7 @@
 					</ul>			</li>
 			
 			<li>
-				<a href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank"><span class="reserve"></span><p>Reservations</p></a>
+				<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p>Reservations</p></a>
 			</li>
 
 			<li class="subinside">
@@ -485,7 +500,7 @@
 			
 			
 			<li>
-				<a href="<?php bloginfo ('url'); ?>/gallery/guest-rooms/"><span class="gallery"></span><p>Gallery</p></a>
+				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p>Gallery</p></a>
 			</li>
 			
 			<li class="subinside">
@@ -614,9 +629,7 @@
 							
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
 
-							<?php } elseif( has_post_thumbnail() ) { ?>
-
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>							
+													
 							
 							<?php } else { ?>
 												
@@ -661,11 +674,11 @@
 			
 			
 			<div class="socials">
-				<a href="http://www.facebook.com/RowNYC" target="_blank"><i class="fa fa-facebook"></i></a>
-				<a href="http://www.twitter.com/rownyc" target="_blank"><i class="fa fa-twitter"></i></a>
-				<a href="www.pinterest.com/rownyc" target="_blank"><i class="fa fa-pinterest"></i></a>
-				<a href="http://www.instagram.com/rownyc" target="_blank"><i class="fa fa-instagram"></i></a>
-				<a href="http://www.youtube.com/RowNYC" target="_blank"><i class="fa fa-youtube"></i></a>
+				<a href="<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="<?php echo get_option('cebo_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
+				<a href="<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
+				<a href="<?php echo get_option('cebo_youtube'); ?>" target="_blank"><i class="fa fa-youtube"></i></a>
 			</div>
 		
 		</div>
@@ -693,7 +706,7 @@
 
 					<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i> MENU</a>
 
-					<div class="languages">700 8TH AVENUE, NYC</div>
+					<div class="languages"><a href="https://goo.gl/maps/5OpGS" style="color:#fff;">700 8TH AVENUE, NYC</a></div>
 
 				</div>
 
@@ -711,13 +724,13 @@
 
 						<li>
 
-							<a class="booking-link" href="https://rownyc.reztrip.com" target="_blank"><span class="book">Book</span></a>
+							<a class="booking-link" href="https://rownyc.reztrip.com" onclick="_gaq.push(['_link', this.href]);return false;"><span class="book">Book</span></a>
 
 						</li>
 						
 						<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><span class="locale">Location</span></a></li>
 						
-						<li><a class="booking-link" href="#"><span class="offer">Exclusive<br>Offers</span></a></li>
+						<li><a class="booking-link" href="http://eepurl.com/PteA1" target="_blank"><span class="offer">Stay<br>Connected</span></a></li>
 
 					</ul>
 					
@@ -741,7 +754,7 @@
 				</li>
 				
 				<li>
-					<a href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank"><span class="reserve"></span><p>Reservations</p></a>
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p>Reservations</p></a>
 				</li>
 
 				<li>
@@ -779,10 +792,9 @@
 											
 						</ul>
 				</li>
-				
-				
+		
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=89"><span class="gallery"></span><p>Gallery</p></a>
+					<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc"><span class="gallery"></span><p>Gallery</p></a>
 				</li>
 				
 				<li>
@@ -890,13 +902,13 @@
 
 			<li>
 
-				<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>"><i class="fa fa-calendar"></i><span class="book">Book</span></a>
+				<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book">Book</span></a>
 						
 				<div class="dropout">
 
 					<div class="inner">
 						
-						<form action="<?php echo get_option('cebo_genbooklink'); ?>/search?">
+						<form action="<?php echo get_option('cebo_genbooklink'); ?>/search?" onsubmit="_gaq.push(['_linkByPost', this]);">
 
 										
 										<div class="calspacer">
@@ -935,7 +947,7 @@
 												<div class="squaredance">
 													<p class="topping">How Many?</p>
 													
-													<select name="Adults">
+													<select name="adults[]">
 													 	<option value="1">1</option>
 									                    <option value="2">2</option>
 									                    <option value="3">3</option>
@@ -990,7 +1002,7 @@
 											<div class="clear"></div>
 											
 											
-											<button class="button">See Availability</button>
+											<button onsubmit="_gaq.push(['_linkByPost', this]);" class="button">See Availability</button>
 											
 										</div>
 									
@@ -1004,13 +1016,13 @@
 			
 			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
 			
-			<li><a class="booking-link" href="#"><i class="fa  fa-envelope"></i><span class="offer">Exclusive<br>Offers</span></a>
+			<li><a class="booking-link" href="http://eepurl.com/PteA1" target="_blank"><i class="fa  fa-envelope"></i><span class="offer">Stay<br>Connected</span></a>
 				<div class="dropout oranger">
 
 					<div class="inner" style="padding: 40px;">
 						
 						<div id="contactform">
-							<div id="messager" class="messager"></div>
+							<!--<div id="messager" class="messager"></div>
 							<form method="post" action="<?php bloginfo('template_url'); ?>/library/contact_three.php" name="cformr" id="cformr" class="sleek cformr">
 								
 								<input class="lilly" id="namer" type="text" placeholder="First Name*" name="namer" value="" />
@@ -1031,7 +1043,242 @@
 						        <input type="submit" name="sends" value="Sign Up" id="submitr" class="nudge"/>
 						        
 						        
-							</form>		
+							</form>	-->
+							
+							<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="http://sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<h2>Subscribe Today</h2>
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE1">First Name  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="MMERGE1" class="required" id="mce-MMERGE1">
+</div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE2">Last Name  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="MMERGE2" class="required" id="mce-MMERGE2">
+</div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE3">Your Zip  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="MMERGE3" class="required" id="mce-MMERGE3">
+</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_ae5d0eb33650e5a9963ca5a3e_1054dd91b3" value=""></div>
+	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<script type="text/javascript">
+var fnames = new Array();var ftypes = new Array();fnames[1]='MMERGE1';ftypes[1]='text';fnames[2]='MMERGE2';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';fnames[0]='EMAIL';ftypes[0]='email';
+try {
+    var jqueryLoaded=jQuery;
+    jqueryLoaded=true;
+} catch(err) {
+    var jqueryLoaded=false;
+}
+var head= document.getElementsByTagName('head')[0];
+if (!jqueryLoaded) {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
+    head.appendChild(script);
+    if (script.readyState && script.onload!==null){
+        script.onreadystatechange= function () {
+              if (this.readyState == 'complete') mce_preload_check();
+        }    
+    }
+}
+
+var err_style = '';
+try{
+    err_style = mc_custom_error_style;
+} catch(e){
+    err_style = '#mc_embed_signup input.mce_inline_error{border-color:#6B0505;} #mc_embed_signup div.mce_inline_error{margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff;}';
+}
+var head= document.getElementsByTagName('head')[0];
+var style= document.createElement('style');
+style.type= 'text/css';
+if (style.styleSheet) {
+  style.styleSheet.cssText = err_style;
+} else {
+  style.appendChild(document.createTextNode(err_style));
+}
+head.appendChild(style);
+setTimeout('mce_preload_check();', 250);
+
+var mce_preload_checks = 0;
+function mce_preload_check(){
+    if (mce_preload_checks>40) return;
+    mce_preload_checks++;
+    try {
+        var jqueryLoaded=jQuery;
+    } catch(err) {
+        setTimeout('mce_preload_check();', 250);
+        return;
+    }
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
+    head.appendChild(script);
+    try {
+        var validatorLoaded=jQuery("#fake-form").validate({});
+    } catch(err) {
+        setTimeout('mce_preload_check();', 250);
+        return;
+    }
+    mce_init_form();
+}
+function mce_init_form(){
+    jQuery(document).ready( function($) {
+      var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
+      var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
+      $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
+      options = { url: 'http://sphericalcommunications.us4.list-manage.com/subscribe/post-json?u=ae5d0eb33650e5a9963ca5a3e&id=1054dd91b3&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+                    beforeSubmit: function(){
+                        $('#mce_tmp_error_msg').remove();
+                        $('.datefield','#mc_embed_signup').each(
+                            function(){
+                                var txt = 'filled';
+                                var fields = new Array();
+                                var i = 0;
+                                $(':text', this).each(
+                                    function(){
+                                        fields[i] = this;
+                                        i++;
+                                    });
+                                $(':hidden', this).each(
+                                    function(){
+                                        var bday = false;
+                                        if (fields.length == 2){
+                                            bday = true;
+                                            fields[2] = {'value':1970};//trick birthdays into having years
+                                        }
+                                    	if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
+                                    		this.value = '';
+									    } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
+                                    		this.value = '';
+									    } else {
+									        if (/\[day\]/.test(fields[0].name)){
+    	                                        this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;									        
+									        } else {
+    	                                        this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
+	                                        }
+	                                    }
+                                    });
+                            });
+                        $('.phonefield-us','#mc_embed_signup').each(
+                            function(){
+                                var fields = new Array();
+                                var i = 0;
+                                $(':text', this).each(
+                                    function(){
+                                        fields[i] = this;
+                                        i++;
+                                    });
+                                $(':hidden', this).each(
+                                    function(){
+                                        if ( fields[0].value.length != 3 || fields[1].value.length!=3 || fields[2].value.length!=4 ){
+                                    		this.value = '';
+									    } else {
+									        this.value = 'filled';
+	                                    }
+                                    });
+                            });
+                        return mce_validator.form();
+                    }, 
+                    success: mce_success_cb
+                };
+      $('#mc-embedded-subscribe-form').ajaxForm(options);
+      
+      
+    });
+}
+function mce_success_cb(resp){
+    $('#mce-success-response').hide();
+    $('#mce-error-response').hide();
+    if (resp.result=="success"){
+        $('#mce-'+resp.result+'-response').show();
+        $('#mce-'+resp.result+'-response').html(resp.msg);
+        $('#mc-embedded-subscribe-form').each(function(){
+            this.reset();
+    	});
+    } else {
+        var index = -1;
+        var msg;
+        try {
+            var parts = resp.msg.split(' - ',2);
+            if (parts[1]==undefined){
+                msg = resp.msg;
+            } else {
+                i = parseInt(parts[0]);
+                if (i.toString() == parts[0]){
+                    index = parts[0];
+                    msg = parts[1];
+                } else {
+                    index = -1;
+                    msg = resp.msg;
+                }
+            }
+        } catch(e){
+            index = -1;
+            msg = resp.msg;
+        }
+        try{
+            if (index== -1){
+                $('#mce-'+resp.result+'-response').show();
+                $('#mce-'+resp.result+'-response').html(msg);            
+            } else {
+                err_id = 'mce_tmp_error_msg';
+                html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
+                
+                var input_id = '#mc_embed_signup';
+                var f = $(input_id);
+                if (ftypes[index]=='address'){
+                    input_id = '#mce-'+fnames[index]+'-addr1';
+                    f = $(input_id).parent().parent().get(0);
+                } else if (ftypes[index]=='date'){
+                    input_id = '#mce-'+fnames[index]+'-month';
+                    f = $(input_id).parent().parent().get(0);
+                } else {
+                    input_id = '#mce-'+fnames[index];
+                    f = $().parent(input_id).get(0);
+                }
+                if (f){
+                    $(f).append(html);
+                    $(input_id).focus();
+                } else {
+                    $('#mce-'+resp.result+'-response').show();
+                    $('#mce-'+resp.result+'-response').html(msg);
+                }
+            }
+        } catch(e){
+            $('#mce-'+resp.result+'-response').show();
+            $('#mce-'+resp.result+'-response').html(msg);
+        }
+    }
+}
+
+</script>
+<!--End mc_embed_signup-->	
+
+
+
 						</div><!--end contactform-->
 						
 					</div>

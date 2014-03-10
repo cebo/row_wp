@@ -88,6 +88,14 @@ $meta_boxoryl = array(
  		array( 
               "name" => "Full screen banner image (hit INSERT INTO POST)",
 	          "desc" => "Wide and narrow is optimum for this image. Try ratios of 16:9, like 800 x 450 or 2000 x 800. ",
+	          "id" => $prefix."_fullbannerpic",
+	          "type" => "upload",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "Tall Image for list page (hit INSERT INTO POST)",
+	          "desc" => "tall is optimum for this image. Try ratios of 16:9, like 800 x 450 or 2000 x 800. ",
 	          "id" => $prefix."_fullpic",
 	          "type" => "upload",
 	          "std" => ""

@@ -49,6 +49,7 @@
 
 				<div class="extra-details right">
 					
+					<?php if(get_post_meta($post->ID, 'cebo_hours', true)) { ?>
 					<div class="time-hours-list">
 						
 						<h4>Time & Hours</h4>
@@ -56,6 +57,9 @@
 						<?php echo get_post_meta($post->ID, 'cebo_hours', true);?>
 						
 					</div>
+					
+					<?php } ?>
+					<?php if(get_post_meta($post->ID, 'cebo_address', true)) { ?>
 
 					<div class="address-details">
 
@@ -68,6 +72,7 @@
 						</ul>
 
 					</div>
+					<?php } ?>
 
 				</div>
 

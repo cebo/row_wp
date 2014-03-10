@@ -1514,7 +1514,9 @@ and (max-width : 640px) {
 and (max-width : 480px) {
 
 
-
+	.slide-image {
+		height: 400px;
+	}
 	/* Header */
 
 	.navigate.mobile {
