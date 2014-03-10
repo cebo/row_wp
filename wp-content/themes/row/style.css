@@ -259,7 +259,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .topnav .calsec > a,
 .finished.mobile .right i,
 .footer .navigate .supernav li a,
-.gallery-categories a
+.gallery-categories a,
+.page .suboverlay h1
 {
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -2521,6 +2522,10 @@ ul#selectUl li.unselected:hover {
 
 .page .suboverlay h1 {
     margin-bottom: 14px;
+}
+
+.page .suboverlay a:hover h1 {
+    opacity: 0.7;
 }
 
 .wonder-vertical {

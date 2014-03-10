@@ -25,7 +25,7 @@
 
 							<div class="innerbox">
 											
-								<h1><?php the_title(); ?></h1>
+								<a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
 								
 								<?php echo content(150); ?>
 														
