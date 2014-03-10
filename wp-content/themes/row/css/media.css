@@ -909,6 +909,10 @@ and (max-width : 640px) {
 		display: none;
 	}
 
+	.mobile-menu .banner p.contacto a {
+		display: inline !important;
+	}
+
 	.footer .navigate.mobile {
 	    height: auto;
 	}
@@ -1520,7 +1524,8 @@ and (max-width : 480px) {
 	/* Header */
 
 	.navigate.mobile {
-		height: 146px;
+		height: auto;
+		overflow: hidden !important;
 	}
 
 	.navigate.mobile .logobox {
@@ -1528,7 +1533,7 @@ and (max-width : 480px) {
 	}
 
 	.logobox img {
-	    margin-left: 20px;
+	    margin-left: 0;
 	}
 
 	.navigate.mobile .banner {
@@ -1538,6 +1543,14 @@ and (max-width : 480px) {
 	.navigate.mobile .topnav li a.booking-link {
 	    font-size: 13px;
 	    line-height: 1;
+	}
+
+	.navigate.mobile .topnav li:first-child, .navigate.mobile .topnav li {
+	    width: 30%;
+	}
+
+	.navigate.mobile .topnav li:last-child {
+		width: 36%;
 	}
 
 	.navigate.mobile .topnav li:last-child a.booking-link {
@@ -1785,12 +1798,17 @@ and (max-width : 380px) {
 
 	/* Header */
 
+	.navigate.mobile .logobox {
+	    padding-top: 0;
+	}
+
 	.logobox img {
-	    margin-left: 15px;
+	    margin-left: 0;
+	    padding: 48px 0;
 	}
 
 	.navigate.mobile .topnav li a.booking-link {
-	    font-size: 11px;
+	    font-size: 9px;
 	}
 
 	.navigate.mobile .banner p.contacto, .navigate.mobile .banner p.contacto span {
