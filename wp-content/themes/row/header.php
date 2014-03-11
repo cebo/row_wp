@@ -96,21 +96,6 @@
 	        var pronameval = $(this).val();
 	        $('#departure_date').val(pronameval.replace(/ /g, '-').toLowerCase());
 	    });
-
-		
-		// $('.supernav').hover(function() {
-      
-  //     			$('.supernav').mouseenter( function() {
-  //     				$('.navigate').stop().addClass("slipnot");
-  //     			});
-  			
-  // 			}, function() {
-      	
-  //     			$('.supernav').mouseleave( function() {
-  //     				$('.navigate').stop().removeClass("slipnot");
-  //     			});
- 			
- 	// 	});
  		
  		$('#selectUl li:not(":first")').addClass('unselected');
 			$('#selectUl').hover(
