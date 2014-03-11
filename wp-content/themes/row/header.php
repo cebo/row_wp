@@ -98,15 +98,19 @@
 	    });
 
 		
-		$('.supernav li.subinside').hover(function() {
+		// $('.supernav').hover(function() {
       
-       			$('.navigate').stop().addClass("slipnot");
+  //     			$('.supernav').mouseenter( function() {
+  //     				$('.navigate').stop().addClass("slipnot");
+  //     			});
   			
-  			}, function() {
+  // 			}, function() {
       	
-      			$('.navigate').stop().removeClass("slipnot");
+  //     			$('.supernav').mouseleave( function() {
+  //     				$('.navigate').stop().removeClass("slipnot");
+  //     			});
  			
- 		});
+ 	// 	});
  		
  		$('#selectUl li:not(":first")').addClass('unselected');
 			$('#selectUl').hover(

@@ -25,15 +25,19 @@ $(document).ready(function(){
 
 	}
 
-	$('.supernav li.subinside').hover(function() {
+	// $('.supernav').hover(function() {
       
-   			$('.navigate').stop().addClass("slipnot");
-			
-			}, function() {
-  	
-  			$('.navigate').stop().removeClass("slipnot");
-			
-		});
+ //      			$('.supernav').mouseenter( function() {
+ //      				$('.navigate').stop().addClass("slipnot");
+ //      			});
+  			
+ //  			}, function() {
+      	
+ //      			$('.supernav').mouseleave( function() {
+ //      				$('.navigate').stop().removeClass("slipnot");
+ //      			});
+ 			
+ // 		});
 		
 		$(".opensays").click(function(e) {
 			  
@@ -84,15 +88,25 @@ $(document).ready(function(){
 
 	if ($(window).width() > 640) {
 
-		$('.supernav li.subinside').hover(function() {
+		// $('.supernav li.subinside').hover(function() {
   
-   			$('.navigate').stop().addClass("slipnot");
+  //  			$('.navigate').stop().addClass("slipnot");
 			
-			}, function() {
+		// 	}, function() {
   	
-  			$('.navigate').stop().removeClass("slipnot");
+  // 			$('.navigate').stop().removeClass("slipnot");
 			
-		});
+		// });
+
+			$('.supernav li.subinside ul, .supernav li.subinside').hover(function() {
+      
+  				$('.navigate').stop().addClass("slipnot");
+  			
+  			}, function() {
+      	
+      				$('.navigate').stop().removeClass("slipnot");
+ 			
+ 		});
 		
 		$(function() {
 			var fixadent = $(".topnav"), pos = fixadent.offset();
