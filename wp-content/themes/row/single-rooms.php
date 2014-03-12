@@ -284,10 +284,10 @@
 								<h4>Features</h4>
 							
 								<ul>
+									<li class="ico-wifi">Complimentary Wi-Fi</li>
 									<li class="ico-mobile">iPod Docking Station</li>
 									<li class="ico-tv">Flat screen LCD TVs</li>
 									<li class="ico-cable">Cable and HBO</li>
-									<li class="ico-wifi">Internet/wireless services</li>
 									<li class="ico-desk">Desk and Ergonomic chair</li>
 								</ul>
 
