@@ -736,8 +736,37 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p>Hotel</p></a>
 					
 						<ul class="dropdown">
+						
 							
-							<?php wp_nav_menu( array( 'menu' => 'hotel' ,  'items_wrap' => '%3$s', 'container' => '') ); ?>
+							<?php $bloblor =  array(60,331,353,12); query_posts(array(
+												'post_type' => 'page',
+												'post__in' => $bloblor)
+												
+												); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							
+							
+							<li>
+							
+							
+								<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+								<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+
+								<?php } elseif( has_post_thumbnail() ) { ?>
+
+										<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>							
+								
+								<?php } else { ?>
+													
+								<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" alt="<?php the_title(); ?>"></a>
+								
+								
+								<?php } ?>							
+
+								<h3><?php the_title(); ?></h3>
+							</li>
+							
+							<?php endwhile; endif; wp_reset_query(); ?>	
 							
 						</ul>
 				</li>
@@ -789,19 +818,36 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				<li>
 					<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p>Deals</p></a>
 					
-						<ul class="dropdown">
+					<ul class="dropdown">
+						
+						<?php query_posts(array('showposts' => 20, 'post_type' => 'specials')); if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+
+						<li>
+
+
+							<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 							
-							<?php query_posts('post_type=specials&posts_per_page=4'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+
+							<?php } elseif( has_post_thumbnail() ) { ?>
+
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>							
 							
-							<li>
-								
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								
-								
-							</li>
-							<?php endwhile; endif; wp_reset_query(); ?>	
+							<?php } else { ?>
+												
+							<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" alt="<?php the_title(); ?>"></a>
 							
-						</ul>
+							
+							<?php } ?>							
+
+							<h3><?php the_title(); ?></h3>
+						</li>
+
+						<?php endwhile; endif; wp_reset_query(); ?>	
+						
+					</ul>
+
 				</li>
 				
 				<li>
@@ -809,15 +855,26 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<ul class="dropdown">
 						
-							<?php query_posts('post_type=amenities&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
-							
+							<?php query_posts(array('post_type' => 'amenities', 'posts_per_page' => 3, 'post__not_in' => array(32,33))); if(have_posts()) : while(have_posts()) : the_post(); 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>						
+						
 							<li>
 								
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<?php if(get_post_meta($post->ID, 'cebo_thumbtwo', true)) { ?>
 								
+								<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_thumbtwo', true); ?>" alt="<?php the_title(); ?>"></a>
 								
+								<?php } elseif($imgsrc) { ?>
+
+														
+								<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+
+								<?php } ?>			
+
+								<h3><?php the_title(); ?></h3>
 							</li>
-							<?php endwhile; endif; wp_reset_query(); ?>							
+							
+							<?php endwhile; endif; wp_reset_query(); ?>
+													
 						</ul>
 				</li>
 				
@@ -832,18 +889,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							<li>
 							
 							
-								<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-								
-								<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+								<?php if(get_post_meta($post->ID, 'cebo_thumbtwo', true)) { ?>
+							
+								<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_thumbtwo', true); ?>" alt="<?php the_title(); ?>"></a>
 								
 								<?php } elseif($imgsrc) { ?>
 								
 								
 								<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
 
-								<?php } elseif( has_post_thumbnail() ) { ?>
-
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+														
 								
 								<?php } else { ?>
 													
