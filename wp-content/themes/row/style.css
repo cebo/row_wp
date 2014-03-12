@@ -79,10 +79,17 @@ ul li {
 }
 
 p {
-	font-family: Arial;
+	-webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+	font-family: 'helvetica';
 	color: #2e2d2d;
-	font-size: 13px;
-	line-height: 22px;	
+	line-height: 22px;
+	font-size: 14px;
 }
 
 a {
@@ -325,14 +332,6 @@ h4 {
 	font-size: 20px;
 	margin-bottom: 5px;
 	color: #000;
-}
-
-p {
-	font-family: 'GothamBook';
-	font-size: 14px;
-	-webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
 }
 
 
