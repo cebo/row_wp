@@ -528,13 +528,13 @@ p {
 
 .navigate .supernav li ul.dropbox {
 	position: fixed;
-	left: 85px;
+	left: -100%;
 	width: 215px;
 	height: 100%;
 	z-index: 0;
 	top: 0;
 	background: #DFDFDF;
-	visibility: hidden;
+	/*visibility: hidden;*/
 	/*opacity: 0;*/
 	/*-webkit-transition: all .5s ease-in;
 	-moz-transition: all .5s ease-in;
@@ -553,7 +553,8 @@ p {
 
 
 .navigate.slipnot .supernav li.subinside:hover ul.dropbox {
-	visibility: visible;
+	left: 85px;
+	/*visibility: visible; */
 	/*opacity: 1;*/
 	/*-webkit-transition: all 0.5s linear;
 	-moz-transition: all 0.5s linear;
@@ -2277,7 +2278,7 @@ ul#selectUl li.unselected:hover {
     margin-bottom: 0px;
     vertical-align:top;
     position: relative;
-    width: 33.367876%;
+    width: 33.3348%;
     float: left;
     -webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
