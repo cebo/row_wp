@@ -251,7 +251,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .suboverlay h4,
 .topnav li a,
 .social-media-details i,
-#submitr
+#submitr,
+.amenity-featured-images.right img
 {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -3654,7 +3655,7 @@ width: 35%;
     display: block;
     height: 100%;
     position: relative;
-    width: 350px;
+    width: 35%;
 }
 
 .amenity-featured-image {
@@ -3664,6 +3665,13 @@ width: 35%;
     margin-bottom: 10px;
     width: 100%;
 }
+
+.amenity-featured-images.right img {
+	opacity: .7;
+}
+	.amenity-featured-images.right img:hover {
+	    opacity: 1;
+	}
 
 
 

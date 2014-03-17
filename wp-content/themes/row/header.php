@@ -359,7 +359,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </head> 
 	
 	
-<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?> class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?> class="page time-square"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } elseif(is_home() || is_frontpage()) { ?> class="home"<?php } ?>>
+<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?> class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?> class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?> class="page single amenity"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } elseif(is_home() || is_frontpage()) { ?> class="home"<?php } ?>>
 
 
 <div>

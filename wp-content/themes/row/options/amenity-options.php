@@ -149,6 +149,14 @@ $meta_boxoryl = array(
 	          "std" => ""
               )
  		,
+ 		array( 
+              "name" => "Yelp Link",
+	          "desc" => "Enter in here the link to yelp.",
+	          "id" => $prefix."_amenity_yelp",
+	          "type" => "text",
+	          "std" => ""
+              )
+ 		,
        	)
 );
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */

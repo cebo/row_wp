@@ -817,7 +817,8 @@ and (max-width : 900px) {
 	/* SINGLE - Amenity */
 
 	.amenity-featured-images.right {
-		display: none;
+		/*display: none;*/
+		margin-bottom: 20px;
 	}
 
 	.amenity .main-page-content.left {
@@ -924,7 +925,7 @@ and (max-width : 640px) {
 
 	.navigate.mobile {
 	    display: block;
-	    height: 150px;
+	    height: 155px;
 	    position: relative;
 	    width: 100%;
 	}
@@ -933,10 +934,7 @@ and (max-width : 640px) {
 	    float: left;
 	    min-height: 101px;
 	    width: 30%;
-	}
-
-	.logobox img {
-	    margin-left: 23px;
+	    padding-top: 40px;
 	}
 
 	.mobile-menu.right {
@@ -1036,7 +1034,7 @@ and (max-width : 640px) {
 	}
 
 	.navigate.mobile .topnav li:first-child, .navigate.mobile .topnav li {
-	    width: 33%;
+	    width: 33.1882%;
 	    border-right: 1px solid #666;
 	    line-height: 1.1;
 	}
@@ -1046,12 +1044,13 @@ and (max-width : 640px) {
 	}
 
 	.navigate.mobile .topnav li:last-child a.booking-link {
-	    padding-bottom: 4px;
-	    padding-top: 16px;
+	    padding-bottom: 12px;
+	    padding-top: 19px;
 	}
 
 	.navigate.mobile .topnav li a.booking-link {
-	    font-size: 18px;
+	    font-size: 14px;
+	    padding: 22px 0;
 	}
 
 	.navigate.mobile .topnav a i:after, .navigate.mobile .topnav a i:before {
@@ -1555,7 +1554,7 @@ and (max-width : 480px) {
 	}
 
 	.navigate.mobile .topnav li:last-child {
-		width: 36%;
+		width: 40%;
 	}
 
 	.navigate.mobile .topnav li:last-child a.booking-link {

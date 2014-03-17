@@ -42,6 +42,22 @@
 						
 		<div class="page-content">
 
+			<div class="amenity-featured-images right">
+						
+				<?php if(get_post_meta($post->ID, 'cebo_thumbone', true)) { ?>
+				
+				<div class="amenity-featured-image" style="background-image: url(<?php echo get_post_meta ($post->ID, 'cebo_thumbone', true); ?>);"></div>
+				
+				<?php } ?>
+
+				<?php if(get_post_meta($post->ID, 'cebo_amenity_yelp', true)) { ?>
+
+					<a href="<?php echo get_post_meta ($post->ID, 'cebo_amenity_yelp', true); ?>" target="_blank"><img src="<?php bloginfo('template_url') ?>/images/yelp.png"></a>
+
+				<?php } ?>					
+
+			</div>
+
 			<div class="main-page-content left">
 
 				<div class="text-content no-content-sidebar left">
@@ -132,17 +148,6 @@
 						</div>
 
 					</div>
-					
-
-				</div>
-
-				<div class="amenity-featured-images right">
-					
-					<?php if(get_post_meta($post->ID, 'cebo_thumbone', true)) { ?>
-					
-					<div class="amenity-featured-image" style="background-image: url(<?php echo get_post_meta ($post->ID, 'cebo_thumbone', true); ?>);"></div>
-					
-					<?php } ?>
 					
 
 				</div>
