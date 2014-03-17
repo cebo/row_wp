@@ -122,12 +122,14 @@ $(document).ready(function(){
 
 	// Touch hover effect
 
-	if (Modernizr.touch) {
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
-	    $('.hover').click(function(e) {
-	        e.preventDefault();
-	        $(this).toggleClass('hover-effect');
-	    });
+	    // $('.hover').click(function(e) {
+	    //     e.preventDefault();
+	    //     $(this).toggleClass('hover-effect');
+	    // });
+
+	    $('.topnav li:last-child').addClass('mobile');
 
 	}
 

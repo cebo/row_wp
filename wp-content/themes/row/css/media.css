@@ -530,7 +530,7 @@ and (max-width : 900px) {
 
 	.banner p a {
 		margin-left: 0;
-		display: none !important;
+		display: none;
 	}
 
 	.banner p {
@@ -878,6 +878,14 @@ and (max-width : 900px) {
 
 	.rooms-book-now.slide-booking .right a {
 	    line-height: 70px;
+	}
+
+
+
+	/* FLEXSLIDER */
+
+	.flex-direction-nav a::before {
+		font-size: 35px;
 	}
 
 

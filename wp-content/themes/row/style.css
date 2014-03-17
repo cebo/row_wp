@@ -1372,6 +1372,7 @@ ul#selectUl li.unselected:hover {
 	color: #000;
 	width: inherit;
 	font-family: 'GothamBold';
+	padding: 4px 20px 5px 0;
 }
 
 .contacto span {
@@ -1499,6 +1500,12 @@ ul#selectUl li.unselected:hover {
 	visibility: visible;
 	top: 55px;
 }
+
+.topnav li.mobile:hover .dropout {
+	opacity: 0;
+	visibility: hidden;
+}
+
 .topnav a:hover {
  	background: #fa9c03;
 }
