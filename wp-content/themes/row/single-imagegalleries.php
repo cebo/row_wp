@@ -40,9 +40,9 @@
 					
 					<li>
 							<div class="slide-image" style="background-image:url(<?php echo sp_get_image($i) ?>);"></div>
-							<div class="gallery-description">
+							<!-- <div class="gallery-description">
 								<p><?php echo sp_get_image_id($i) ?></p>
-							</div>
+							</div> -->
 						</li>
 						
 						

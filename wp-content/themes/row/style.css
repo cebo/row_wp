@@ -1094,7 +1094,6 @@ h4 {
 	font-size: 85px;
 	color: #fa9d04;
 	font-family: 'GothamBold';
-	letter-spacing: -6px;
 	margin-left: 2px;
 	text-transform: uppercase;
 	text-align: center;
@@ -1108,7 +1107,6 @@ h4 {
 	-moz-appearance: none;
 	appearance: none;
 	text-overflow: '';
-	text-indent: 0.01px;
 }
 
 .calspacer span:hover select {
@@ -2291,14 +2289,15 @@ ul#selectUl li.unselected:hover {
 
 
 .blogposters {
-		-moz-column-count: 3;
+/*		-moz-column-count: 3;
     -moz-column-gap: 0px;
     -webkit-column-count: 3;
     -webkit-column-gap: 0px;
     column-count: 3;
-    column-gap: 0px;
+    column-gap: 0px;*/
     padding-top: 0px;
     padding: 0px;
+    overflow: hidden;
   }
 
 .blogposters li:hover {
@@ -2307,10 +2306,11 @@ ul#selectUl li.unselected:hover {
 
 .blogposters li {
 	overflow: hidden;
-	display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+	display: block; /* Display inline-block, and absolutely NO FLOATS! */
     margin-bottom: 0px;
+    float: left;
+	width: 33.33471%;
     vertical-align:top;
-    width: 100%; 
     position: relative;
     -webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
@@ -2321,7 +2321,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .blogposters li img {
-	width: 100% !important;
+	/*width: 100% !important;*/
 	/*height: 33%  !important;*/
 	display: block;
 	 vertical-align:top;
@@ -3570,7 +3570,7 @@ width: 35%;
     color: #000
 }
 	.subway-buttons li a:hover {
-		background-color: #ee3a43 !important;
+		/*background-color: #ee3a43 !important;*/
 	}
 
 .subway-buttons li:nth-child(1) a,
@@ -6178,3 +6178,11 @@ a.detailsAnchor {
 		    top: 45px;
 		    width: 100px;
         }
+
+
+
+/* ======================================================= REFINEMENTS =====================================================  */
+
+.home .rightside .wideover.overlay.narrow > h1 {
+    font-size: 28px;
+}

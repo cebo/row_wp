@@ -37,10 +37,10 @@
 
 			<div class="main-page-content inverted-location left">
 
-				<h1>Get in Touch</h1>
+				<h1 style="clear: both;">Get in Touch</h1>
 
 							
-			<div id="maparea" class="maparea left" style="width: 400px;"></div>
+			<div id="maparea" class="maparea left" style="width: 100%;"></div>
 				
 <ul style="display: none;" class="right-links right" id="toggles"> 
 
@@ -687,21 +687,21 @@
 				<p>Access to the subway is across the street on 44th and 8th avenue to the Times Square station from where you can connect and/or transfer to all trains going uptown, downtown and the east side Grand Central station:</p>
 
 				<ul class="subway-buttons">
-					<li class="subway-button-1"><a href="#">1</a></li>
-					<li class="subway-button-2"><a href="#">2</a></li>
-					<li class="subway-button-3"><a href="#">3</a></li>
-					<li class="subway-button-4"><a href="#">7</a></li>
-					<li class="subway-button-5"><a href="#">S</a></li>
-					<li class="subway-button-6"><a href="#">N</a></li>
-					<li class="subway-button-7"><a href="#">Q</a></li>
-					<li class="subway-button-8"><a href="#">R</a></li>
-					<li class="subway-button-9"><a href="#">A</a></li>
-					<li class="subway-button-10"><a href="#">C</a></li>
-					<li class="subway-button-11"><a href="#">E</a></li>
-					<li class="subway-button-12"><a href="#">B</a></li>
-					<li class="subway-button-13"><a href="#">D</a></li>
-					<li class="subway-button-14"><a href="#">F</a></li>
-					<li class="subway-button-15"><a href="#">M</a></li>
+					<li class="subway-button-1"><a>1</a></li>
+					<li class="subway-button-2"><a>2</a></li>
+					<li class="subway-button-3"><a>3</a></li>
+					<li class="subway-button-4"><a>7</a></li>
+					<li class="subway-button-5"><a>S</a></li>
+					<li class="subway-button-6"><a>N</a></li>
+					<li class="subway-button-7"><a>Q</a></li>
+					<li class="subway-button-8"><a>R</a></li>
+					<li class="subway-button-9"><a>A</a></li>
+					<li class="subway-button-10"><a>C</a></li>
+					<li class="subway-button-11"><a>E</a></li>
+					<li class="subway-button-12"><a>B</a></li>
+					<li class="subway-button-13"><a>D</a></li>
+					<li class="subway-button-14"><a>F</a></li>
+					<li class="subway-button-15"><a>M</a></li>
 				</ul>
 
 			</div>
