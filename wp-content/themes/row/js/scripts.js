@@ -129,7 +129,7 @@ $(document).ready(function(){
 	    //     $(this).toggleClass('hover-effect');
 	    // });
 
-	    $('.topnav li:last-child').addClass('mobile');
+	    $('.topnav li:last-child, .topnav li:first-child').addClass('mobile');
 
 	}
 

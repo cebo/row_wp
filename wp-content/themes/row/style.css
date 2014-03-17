@@ -2283,7 +2283,7 @@ ul#selectUl li.unselected:hover {
     margin-bottom: 0px;
     vertical-align:top;
     position: relative;
-    width: 33.3348%;
+    width: 33.3346%;
     float: left;
     -webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
@@ -3178,6 +3178,10 @@ width: 35%;
     overflow: hidden;
     position: relative;
    padding: 0 20px;
+}
+
+.page .fullvertical .openbox .innerbox {
+	overflow-y: scroll;
 }
 
 .page .fullvertical .suboverlay p {
