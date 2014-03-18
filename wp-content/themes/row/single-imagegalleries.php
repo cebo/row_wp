@@ -24,7 +24,7 @@
 								
 			<div class="fourth-level room-slider">
 			
-				<div class="flexslider">
+				<div class="flexslider-gallery flexslider">
 					<ul class="slides">
 						
 						

@@ -288,6 +288,14 @@
 <script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+
+		$('.flexslider-gallery').flexslider({
+			animation: "slide",
+			animationSpeed: 1500,
+			controlNav: true,
+			startAt: 0,
+		});
+
 	  $('.flexslider').flexslider({
 	    animation: "slide",
 	    animationSpeed: 800,
@@ -295,6 +303,7 @@
 	    controlNav: true,
 	    startAt: 0,
 	  });
+
 	});
 </script>
 
@@ -701,7 +710,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 				<div class="banner"> 
 							
-					<p class="contacto">Reservations 888.352.3650</p>
+					<p class="contacto">Reservations <span>888.352.3650</span></p>
 					
 					<div class="clear"></div>
 					
@@ -1338,7 +1347,7 @@ function mce_success_cb(resp){
 	
 	<div class="banner"> 
 		
-		<p>700 8th Avenue, New York, NY 10036 <a style="visibility: hidden; width: 0; display: inline-block;" href="mailto:info@rowhotel" target="_blank">info@rowhotel.com</a></p>
+		<p>700 8th Avenue, New York, NY 10036 <a href="mailto:info@rowhotel" target="_blank">info@rowhotel.com</a></p>
 		
 		<p class="contacto">Reservations <span>888.352.3650</span></p>
 		

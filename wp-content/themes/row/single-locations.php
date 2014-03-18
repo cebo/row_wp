@@ -36,6 +36,8 @@
 						
 		<div class="page-content">
 
+      <div id="maparea" class="maparea right" style="width: 35%;"></div>
+
 			<div class="main-page-content left">
 
 				<div class="text-content left">
@@ -80,8 +82,6 @@
 			
 			
 			<?php endwhile; endif; wp_reset_query(); ?>	
-			
-			<div id="maparea" class="maparea right" style="width: 35%;"></div>
 			
 				<ul style="display: none;" class="right-links right" id="toggles"> 
 
