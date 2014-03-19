@@ -71,9 +71,9 @@ $(document).ready(function(){
 		if ($(window).width() > 940) {
 
 			var $menu	= $('nav#menu.mobile');
-			$menu.removeClass()
-			$('nav#menu.mobile ul').removeClass()
-			$('#primary-nav .container').prepend($menu);
+			$('body').prepend($menu);
+			// $menu.removeClass()
+			// $('nav#menu.mobile ul').removeClass()
 
 		} else {
 
