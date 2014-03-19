@@ -221,6 +221,16 @@ and (max-width : 1260px) {
 		margin-left: 250px;
 	}
 
+	.shorter {
+		height: 270px;
+	}
+
+	.bigover h1 {
+	    font-size: 45px;
+	    line-height: 1.1;
+	    padding: 10px;
+	}
+
 
 
 	/* Footer */
@@ -676,12 +686,6 @@ and (max-width : 900px) {
 	    height: 310px;
 	    margin-bottom: 10px;
 	    overflow: hidden;
-	}
-
-	.bigover h1 {
-	    font-size: 45px;
-	    line-height: 1.1;
-	    padding: 10px;
 	}
 
 	.blogposts li {

@@ -13,7 +13,7 @@
 		<ul class="supernav">
 			
 			<li>
-				<a href="<?php bloginfo ('url'); ?>/?page_id=6"><span class="hotel"></span><p>Hotel</p></a>
+				<a href="<?php bloginfo ('url'); ?>/times-square-hotels"><span class="hotel"></span><p>Hotel</p></a>
 			</li>
 			
 			<li>
@@ -25,7 +25,7 @@
 			</li>
 			
 			<li>
-				<a href="<?php bloginfo ('url'); ?>/?page_id=89"><span class="gallery"></span><p>Gallery</p></a>
+				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc"><span class="gallery"></span><p>Gallery</p></a>
 			</li>
 			
 			<li>
