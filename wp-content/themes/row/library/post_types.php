@@ -118,6 +118,24 @@ function creater_post_types() {
 
 
 
+add_action( 'init', 'create_press_post_types' );
+function create_press_post_types() {
+  register_post_type( 'press-releases',
+    array(
+      'labels' => array(
+        'name' => __( 'Press Release' ),
+        'singular_name' => __( 'Press Release' )
+      ),
+      'public' => true,
+      'rewrite' => array('slug' =>  'press-releases'),
+      'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
+      'supports' => array('title','custom-fields','editor','category','author','thumbnail')
+    )
+  );
+}
+
+
+
 
 add_action( 'init', 'create_post_types' );
 function create_post_types() {

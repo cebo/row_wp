@@ -52,6 +52,10 @@ include(TEMPLATEPATH . '/options/local-options.php');
 include(TEMPLATEPATH . '/options/amenity-options.php'); 
 
 
+ /* ................. SOME OPTIONS FOR PRESS .................... */
+/* Below is an include to a few options for press releases.*/
+include(TEMPLATEPATH . '/options/press-options.php'); 
+
 
  /* ................. CUSTOM FIELDS .................... */
 /* Below is an include to a few options for your projects.*/
