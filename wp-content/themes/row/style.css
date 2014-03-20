@@ -1386,6 +1386,11 @@ ul#selectUl li.unselected:hover {
 	margin: 2px 0 0 10px;
 	font-family: 'GothamBook';
 }
+
+.contacto span a {
+	display: inline;
+}
+
 .topnav {
 	position: relative;
 	position: absolute;
