@@ -1608,11 +1608,11 @@ and (max-width : 480px) {
 	}
 
 	.navigate.mobile .topnav li:first-child, .navigate.mobile .topnav li {
-	    width: 30%;
+	    width: 29%;
 	}
 
 	.navigate.mobile .topnav li:last-child {
-		width: 40%;
+		width: 42%;
 	}
 
 	.navigate.mobile .topnav li:last-child a.booking-link {
