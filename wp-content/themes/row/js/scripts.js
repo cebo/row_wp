@@ -79,8 +79,8 @@ $(document).ready(function(){
 
 			var $menu	= $('nav#menu.mobile');
 			$menu.addClass('fl mm-menu mm-horizontal mm-ismenu')
-			$('nav#menu.mobile ul').addClass('mm-list mm-panel mm-opened mm-current')
-			$('html').prepend($menu);
+			$('nav#menu.mobile ul').addClass('mm-list mm-panel')
+			$('body').prepend($menu);
 
 		}
 
@@ -104,9 +104,9 @@ $(document).ready(function(){
   			
   			}, function() {
       	
-      				$('.navigate').stop().removeClass("slipnot");
+  				$('.navigate').stop().removeClass("slipnot");
  			
- 		});
+	 		});
 		
 		$(function() {
 			var fixadent = $(".topnav"), pos = fixadent.offset();

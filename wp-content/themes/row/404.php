@@ -5,72 +5,37 @@
 */
  get_header(); ?>
 
-
-<div id="undefined-sticky-wrapper" class="my-wrapper sticky" style="height: 70px; position: fixed; z-index: 99; width: 100%;">
-
-<?php include (TEMPLATEPATH . '/library/navigation.php'); ?>
-
-</div>
-
 <section class="contentarea">
 
 	<div class="home-intro">
 									
-		<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+		<div class="stretch"  style="background-image: url(<?php bloginfo('url'); ?>/wp-content/uploads/2014/02/space4_1060x800.jpg);"></div>
 			
 	</div>	
 	
 	<!-- Start Basic Page -->	
 	<div class="page-content alt-page-content" style="padding: 30px;">
 			
-		<h1><?php _e('Oh No&hellip;','cebolang'); ?></h1>
+		<h1>Sorry.</h1>
 		
-		<span class="fourohfour"><?php _e('404','cebolang'); ?></span>
+		<p>The page you are looking for is not available and/or the link you clicked is temporarily broken. 
+		<br />Please give us a call 888.352.3650 and we'll help you find what you're looking for.</p>
+
+		<strong>Other Options:</strong>
 		
-		<p><?php _e('The page you are looking for is not available. Please try your search again', 'cebolang'); ?></p>
-		<p><a class="button fuschia second" href="/contact"><?php _e('Contact Us','cebolang'); ?></a> <a class="button"href="http://twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank"><?php _e('Follow Us On Twitter','cebolang'); ?></a></p></p>
+		<div style="margin-top: 10px;">
+
+			<a class="button four-o-four first" href="<?php bloginfo('url'); ?>"><?php _e('Visit our homepage','cebolang'); ?></a>
+			<a class="button four-o-four second" href="/contact"><?php _e('Visit contact page','cebolang'); ?></a> 
+			<a class="button four-o-four third"href="https://rownyc.reztrip.com"><?php _e('Book a hotel room','cebolang'); ?></a>
+
+		</div>
 
 		<div class="clear"></div>
 						
 	</div>
 	<!-- End Basic Page -->
 	
-
-<?php if(get_option('cebo_twitter')) { ?>
-
-	<!-- Start Twitter Section  -->
-	
-	
-	<?php include (TEMPLATEPATH . '/library/twitter.php'); ?>
-	
-	
-	<!-- End Twitter Section  -->
-	
-<? } ?>
-<?php if(get_option('cebo_showoffice') == 'true') { ?>
-
-	<!-- Parallax Footer Background -->
-	
-	
-	<?php include (TEMPLATEPATH . '/library/parallax.php'); ?>
-	
-	
-	<!-- End Parallax Section -->
-	
-<? } ?>
-
-<?php if(get_option('cebo_showmap') == 'true') { ?>
-
-	<!-- Map Footer Background -->
-	
-	
-	<?php include (TEMPLATEPATH . '/library/maps.php'); ?>
-	
-		
-	<!-- End Map Footer Background  -->
-	
-<? } ?>
-
 	
 					
 <?php get_footer(); ?>

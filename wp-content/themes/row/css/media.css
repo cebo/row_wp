@@ -974,6 +974,10 @@ and (max-width : 640px) {
 	    width: 100%;
 	}
 
+	nav#menu.mobile {
+		display: block;
+	}
+
 	.navigate.mobile .logobox {
 	    float: left;
 	    min-height: 101px;
