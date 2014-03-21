@@ -72,6 +72,25 @@
 
 <script type="text/javascript">
 	
+	
+	function createURL() {
+	var checkin = jQuery("#arrival_date").val();
+	var checkout = jQuery("#departure_date").val();
+	var adults = jQuery("#adults").val();
+	var children = jQuery("#children").val();
+	
+	var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+										"&arrival_date=" + checkin + 
+										"&departure_date=" + checkout + 
+										"&adults[]=" + adults + 
+										"&children[]=" + children;
+
+	return bookinglink;
+}
+
+
+
+
 	$(document).ready(function() {
 		
 		
@@ -219,6 +238,16 @@
 			$("#dep").attr("placeholder", n);
 			$("#arv-1").attr("placeholder", n);
 			$("#dep-1").attr("placeholder", n);
+			
+			
+			
+			jQuery('form a.button').click(function(e) {
+				e.preventDefault();
+				_gaq.push(['_link', createURL() ]);
+				return false;
+			});
+
+
 
 			
 		});
@@ -368,7 +397,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </head> 
 	
 	
-<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92) || is_page_template('page_press.php')) { ?> class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?> class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?> class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?> class="page single amenity"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } elseif(is_home() || is_front_page()) { ?> class="home"<?php } ?>>
+<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?> class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?> class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?> class="page single amenity"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } elseif(is_home() || is_front_page()) { ?> class="home"<?php } ?>>
 
 
 <div>
@@ -1000,7 +1029,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 												<div class="squaredance">
 													<p class="topping">How Many?</p>
 													
-													<select name="adults[]">
+													<select id="adults" name="adults[]">
 													 	<option value="1">1</option>
 									                    <option value="2">2</option>
 									                    <option value="3">3</option>
@@ -1042,7 +1071,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 												
 												<div class="squaredance">
 													<p class="topping">How Many?</p>
-													 <select name="children[]" >
+													 <select id="children" name="children[]" >
 													 	<option value="0">0</option>
 														 <option value="1">1</option>
 										                    <option value="2">2</option>
@@ -1054,8 +1083,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 											
 											<div class="clear"></div>
 											
-											
-											<button onsubmit="_gaq.push(['_linkByPost', this]);" class="button">See Availability</button>
+											<a href="#" class="button">See Availability</a>
+										
 											
 										</div>
 									
