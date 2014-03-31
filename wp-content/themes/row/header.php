@@ -338,6 +338,24 @@
 
 <?php } ?>
 
+<?php if(is_home()) { ?>
+
+	<!-- Sojern -->
+<script>
+(function () {
+    var pl = document.createElement('script');
+    pl.type = 'text/javascript';
+    pl.async = true;
+    pl.src = 'https://beacon.sojern.com/pixel/p/2067';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+})();
+</script>
+<!-- End Sojern -->
+
+
+
+<?php } ?>
+
 	<!-- Plugin CSS -->
 	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/plugin.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"/>
 
@@ -422,6 +440,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			
 			<li class="subinside">
 				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p>Hotel</p></a>
+				
 				<ul class="dropbox">
 					
 						<li class="drop-intro">
@@ -706,6 +725,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				<a href="<?php echo get_option('cebo_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
 				<a href="<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
 				<a href="<?php echo get_option('cebo_youtube'); ?>" target="_blank"><i class="fa fa-youtube"></i></a>
+				<?php if(is_home()) { ?>
+					<a href="https://plus.google.com/107905524889134524417" rel="publisher"><i class="fa fa-google-plus-square"></i></a>
+				<?php } ?>
 			</div>
 		
 		</div>
