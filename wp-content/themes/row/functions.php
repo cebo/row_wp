@@ -57,6 +57,16 @@ include(TEMPLATEPATH . '/options/amenity-options.php');
 include(TEMPLATEPATH . '/options/press-options.php'); 
 
 
+ /* ................. SOME OPTIONS FOR Imagegalleries .................... */
+/* Below is an include to a few options for press releases.*/
+include(TEMPLATEPATH . '/options/imagegalleries-options.php'); 
+
+
+ /* ................. METABOXES .................... */
+/* Below is an include to a few options for your projects.*/
+include(TEMPLATEPATH . '/library/metaboxes/meta_box.php'); 
+
+
  /* ................. CUSTOM FIELDS .................... */
 /* Below is an include to a few options for your projects.*/
 include(TEMPLATEPATH . '/library/custom_fields.php'); 
