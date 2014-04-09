@@ -67,7 +67,7 @@
 		
 			<?php query_posts(array(
 				
-				'post_type' => 'press',
+				'post_type' => 'press-releases',
 				'offset' => 1,
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
