@@ -94,3 +94,6 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+define('WP_MEMORY_LIMIT', '256M');
+set_time_limit (300); // 300 secs = 5min.

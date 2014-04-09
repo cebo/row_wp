@@ -31,6 +31,8 @@
 						
 						
 				
+						<?php if(sp_get_image(1)) : ?>
+
 								
 						<?php if(sp_get_image(1)) : ?>   
 							<?php $i = 0; while($i <= 10) : ?>
