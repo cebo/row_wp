@@ -7186,6 +7186,22 @@ class SitePress
 				}
 				$q->query_vars[ 'post__in' ] = $pid;
 			}
+
+			// if(isset($q->query_vars['post__in']) && !empty($q->query_vars['post__in'])){
+			//     $pid = array();
+			//     foreach($q->query_vars['post__in'] as $p){
+			//         if(is_array($post_type)){
+			//             foreach($post_type as $pt){
+			//                 $pid[] = icl_object_id($p, $pt, true);
+			//             }
+			//         }
+			//         else{
+			//             $pid[] = icl_object_id($p, $post_type, true);
+			//         }
+			//     }
+			//     $q->query_vars['post__in'] = $pid;
+			// }
+
 			// post__not_in
 			if ( isset( $q->query_vars[ 'post__not_in' ] ) && !empty( $q->query_vars[ 'post__not_in' ] ) ) {
 				$pid = array();

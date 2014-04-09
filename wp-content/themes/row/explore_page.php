@@ -42,7 +42,7 @@
 				<ul class="blogposters">
 					
 					
-					<?php query_posts(array('post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 1) ); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts(array('post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 1, 'suppress_filters' => 1,) ); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 										
 					<li>
@@ -81,7 +81,7 @@
 					
 					<?php $this_page_id=$wp_query->post->ID; ?>
 					
-					<?php query_posts(array('showposts' => 20, 'post_parent' => $this_page_id, 'post_type' => 'page')); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts(array('showposts' => 20, 'post_parent' => $this_page_id, 'post_type' => 'page', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>

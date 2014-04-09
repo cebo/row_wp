@@ -10,6 +10,7 @@
 				
 				'post_type' => 'specials',
 				'posts_per_page' => 1,
+				'suppress_filters' => 1,
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
  
@@ -66,6 +67,7 @@
 				
 				'post_type' => 'specials',
 				'offset' => 1,
+				'suppress_filters' => 1,
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 

@@ -1901,6 +1901,17 @@ and (max-width : 380px) {
 
 	.navigate.mobile .mmenu-icon {
 		font-size: 12px;
+		border-right: 0;
+	}
+
+	.navigate.mobile .languages {
+	    display: block;
+	    float: left;
+	    font-size: 10px;
+	    margin-left: 0;
+	    margin-top: 13px;
+	    overflow: hidden;
+	    padding-left: 0;
 	}
 
 	.navigate.mobile .topnav li:last-child a.booking-link {

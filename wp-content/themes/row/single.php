@@ -82,7 +82,8 @@ if( count( $children ) != 0 ) { ?>
 					array(
 					'post_type' => 'page',
 					'post_parent' => $parent,
-					'posts_per_page'=> 8
+					'posts_per_page'=> 8,
+					'suppress_filters' => 1,
 					
 					)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
@@ -113,7 +114,7 @@ if( count( $children ) != 0 ) { ?>
 				
 				<ul class="thumbgal">
 						
-						<?php query_posts('post_type=specials&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); 
+						<?php query_posts('post_type=specials&posts_per_page=1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); 
 						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 							
 							<li>
@@ -149,7 +150,7 @@ if( count( $children ) != 0 ) { ?>
 							<?php endwhile; endif; wp_reset_query(); ?>
 							
 							
-							<?php query_posts('post_type=page&p=40'); if(have_posts()) : while(have_posts()) : the_post(); 
+							<?php query_posts('post_type=page&p=40&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); 
 					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
