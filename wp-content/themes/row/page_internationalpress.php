@@ -10,6 +10,7 @@
 				
 				'post_type' => 'press-releases',
 				'posts_per_page' => 1,
+				'presstype' => 'international'
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
  
@@ -69,6 +70,7 @@
 				
 				'post_type' => 'press-releases',
 				'offset' => 1,
+				'presstype' => 'international'
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 

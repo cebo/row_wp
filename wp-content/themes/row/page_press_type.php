@@ -6,7 +6,7 @@
  get_header(); ?>
  
  
-<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
  
  
 	<div class="home-intro">
@@ -60,10 +60,13 @@
 		
 		<ul class="deal-boxes">
 		
-			<?php query_posts(array(
+			<?php 
 				
-				'post_type' => 'press-releases',
-				'offset' => 1,
+				$pages = array(1387,1389);
+				query_posts(array(
+				
+				'post_type' => 'page',
+				'post__in' => $pages
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
@@ -94,11 +97,11 @@
 	
 						<p><?php echo excerpt(40); ?></p>
 	
-						<?php if(get_post_meta($post->ID, 'cebo_presslink', true)) { ?>
+					
 
-							<div class="button-wrapper" style="margin: 20px 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php echo get_post_meta($post->ID, 'cebo_presslink', true); ?>">Read More</a></div>
+							<div class="button-wrapper" style="margin: 20px 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php the_permalink(); ?>">See All</a></div>
 
-						<?php } ?>
+						
 
 						<div class="wonder-vertical"></div>
 
