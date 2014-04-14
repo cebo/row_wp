@@ -24,6 +24,18 @@
 								
 			<div class="fourth-level room-slider">
 			
+			<?php if(get_post_meta($post->ID, 'youtube', true)) { ?>
+			
+				<div class="video-container">
+							
+								<iframe  src="http://www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'youtube', $single = true); ?>" allowfullscreen></iframe>
+								
+							</div>
+
+			
+			
+			<?php } else { ?>
+			
 				<div class="flexslider-gallery flexslider">
 					<ul class="slides">
 						
@@ -31,28 +43,26 @@
 						
 						
 				
-						<?php if(sp_get_image(1)) : ?>
-
 								
-						<?php if(sp_get_image(1)) : ?>   
-							<?php $i = 0; while($i <= 10) : ?>
-						    <?php if(sp_get_image($i)) : ?> 
+								<?php if(sp_get_image(1)) : ?>   
+					<?php $i = 0; while($i <= 10) : ?>
+				    <?php if(sp_get_image($i)) : ?> 
 				    
 										
 					
-							<li>
-								<div class="slide-image" style="background-image:url(<?php echo sp_get_image($i) ?>);"></div>
-								<!-- <div class="gallery-description">
-									<p><?php //echo sp_get_image_id($i) ?></p>
-								</div> -->
-							</li>
+					<li>
+							<div class="slide-image" style="background-image:url(<?php echo sp_get_image($i) ?>);"></div>
+							<!-- <div class="gallery-description">
+								<p><?php echo sp_get_image_id($i) ?></p>
+							</div> -->
+						</li>
 						
 						
 					
-						<?php else : break; endif; ?>
-			            <?php $i++; ?>
-						<?php endwhile; ?>
-			            <?php endif; ?>	  
+					<?php else : break; endif; ?>
+		            <?php $i++; ?>
+					<?php endwhile; ?>
+		            <?php endif; ?>	  
 				
 								
 						<!--<li>
@@ -66,11 +76,15 @@
 					
 					</ul>
 				</div>
+				
+				<?php } ?>
+				
+				
 				<?php endwhile; endif; wp_reset_query(); ?>	
 				<div class="gallery-categories">
 					<ul>
 						
-						<?php $currentid = $post->ID; query_posts('post_type=imagegalleries&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php $currentid = $post->ID; query_posts('post_type=imagegalleries&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<?php $thersd = $id = get_the_ID(); ?>
 						
