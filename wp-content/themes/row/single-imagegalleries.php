@@ -24,6 +24,20 @@
 								
 			<div class="fourth-level room-slider">
 			
+			<?php if(get_post_meta($post->ID, 'cebo_youtube', true)) { ?>
+			
+				
+					
+							<div class="video-container">
+							
+								<iframe width="720" height="394" src="http://www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'cebo_youtube', true); ?>" allowfullscreen></iframe>
+								
+							</div>
+			
+			
+			<?php } else { ?> 
+			
+			
 				<div class="flexslider-gallery flexslider">
 					<ul class="slides">
 						
@@ -64,6 +78,10 @@
 					
 					</ul>
 				</div>
+				
+				<?php } ?>
+				
+				
 				<?php endwhile; endif; wp_reset_query(); ?>	
 				<div class="gallery-categories">
 					<ul>
