@@ -13,11 +13,17 @@
 	
 		<div id="maparea" class="maparea left" style="width: 100%; height: 500px;"></div>
 				
-<ul style="display: none;" class="right-links right" id="toggles"> 
+	
+	
+	<ul style="display: none;" class="right-links right" id="toggles"> 
 
 		<?php $ptitle = get_post_meta($post->ID, 'cebo_localtype', true); $page = get_page_by_title( 'Echo ' . $ptitle ); ?>
 										
-		<li class=""><a class="linkerd active" href="<?php bloginfo('url');?>/?page_id=9000" title="Dining"><?php echo $ptitle; ?></a></li>
+		<li class=""><a class="linkerd active" href="<?php bloginfo('url');?>/?page_id=632" title="Dining"><?php echo $ptitle; ?></a></li>
+		<li class=""><a class="linkerd active" href="<?php bloginfo('url');?>/?page_id=601" title="Dining"><?php echo $ptitle; ?></a></li>
+		<li class=""><a class="linkerd active" href="<?php bloginfo('url');?>/?page_id=646" title="Dining"><?php echo $ptitle; ?></a></li>
+		<li class=""><a class="linkerd active" href="<?php bloginfo('url');?>/?page_id=648" title="Dining"><?php echo $ptitle; ?></a></li>
+		<li class=""><a class="linkerd active" href="<?php bloginfo('url');?>/?page_id=650" title="Dining"><?php echo $ptitle; ?></a></li>
 			
 	</ul>				
 				<!-- Google Map API Files -->
@@ -217,7 +223,7 @@
             options: {
                 center:[40.7587904,-73.9885025],
                 scrollwheel: false,
-                zoom: 14,
+                zoom: 16,
                 draggable: false,
                 mapTypeId: "style2",
                 mapTypeControlOptions: {
@@ -288,7 +294,7 @@
             options: {
                 center:[40.7587904,-73.9885025],
                 scrollwheel: false,
-                zoom: 14,
+                zoom: 16,
                 draggable: true,
                 mapTypeId: "style2",
                 mapTypeControlOptions: {

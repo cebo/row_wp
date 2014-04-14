@@ -5796,9 +5796,11 @@ a.detailsAnchor {
    .placeMark a .infobox span {
 	 	color: #000000;
 	    display: block;
-	   font-family: didot, georgia;
-		font-size: 16px;
-	    font-weight: bolder;
+	   font-family: 'GothamBold';
+	   -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+		font-size: 14px;
 	    margin: 0px 0 0;
 	    padding: 10px 10px 5px 10px;
 	    text-align: left;

@@ -1118,7 +1118,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			</li>
 			
-			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a></li>
+			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a>
+			
+				<div class="dropout" style="width: 600px;">
+
+					<a style="background: transparent !important; color: #fff !important;" href="<?php bloginfo('url'); ?>/row-nyc-address/"><img style="max-width: 90%; padding: 20px 0; margin: auto; text-align: center;" src="<?php bloginfo('template_url'); ?>/images/shot.jpg" /><br>Explore NYC</a>
+				</div>
+
+			
+			</li>
 			
 			<li><a class="booking-link" href="http://eepurl.com/PteA1" target="_blank"><i class="fa  fa-envelope"></i><span class="offer">Stay<br>Connected</span></a>
 				<div class="dropout oranger">
