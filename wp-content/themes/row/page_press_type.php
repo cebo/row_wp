@@ -1,17 +1,12 @@
 <?php 
 
-/* Template Name: Press
+/* Template Name: Press Type
 
 */
  get_header(); ?>
  
  
-<?php query_posts(array(
-				
-				'post_type' => 'press-releases',
-				'posts_per_page' => 1,
-
-				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
+<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
  
  
 	<div class="home-intro">

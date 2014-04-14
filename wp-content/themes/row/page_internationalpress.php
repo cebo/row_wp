@@ -1,6 +1,6 @@
 <?php 
 
-/* Template Name: Press
+/* Template Name: International Press
 
 */
  get_header(); ?>

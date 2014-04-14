@@ -182,4 +182,37 @@ function create_loctype_taxonomies()
 
 }
 
+
+
+
+create_presstype_taxonomies();
+function create_presstype_taxonomies()
+{
+  // Taxonomy for Location
+  $labels = array(
+    'name' => _x( 'Press Type', 'taxonomy general name' ),
+    'singular_name' => _x( 'Press Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Press Types' ),
+    'all_items' => __( 'All Press Types' ),
+    'parent_item' => __( 'Parent Press Type' ),
+    'parent_item_colon' => __( 'Parent Press Type:' ),
+    'edit_item' => __( 'Edit Press Type' ),
+    'update_item' => __( 'Update Press Type' ),
+    'add_new_item' => __( 'Add New Press Type' ),
+    'new_item_name' => __( 'New Press Type Name' ),
+  ); 	
+
+  register_taxonomy('presstype', array('press-releases'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'press-type' ),
+  ));
+
+}
+
+
+
+
 ?>
