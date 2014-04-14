@@ -454,7 +454,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							<?php endwhile; endif; wp_reset_query(); ?>								
 						</li>
 						
-						<?php $bloblor =  array(60,331,353,12); query_posts(array(
+						<?php $bloblor =  array(60,331,353,12,10); query_posts(array(
 											'post_type' => 'page',
 											'post__in' => $bloblor)
 											
@@ -798,7 +798,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						<ul class="dropdown">
 						
 							
-							<?php $bloblor =  array(60,331,353,12); query_posts(array(
+							<?php $bloblor =  array(60,331,353,12,10); query_posts(array(
 												'post_type' => 'page',
 												'post__in' => $bloblor)
 												
