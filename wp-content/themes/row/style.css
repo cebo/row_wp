@@ -253,7 +253,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .social-media-details i,
 #submitr,
 .amenity-featured-images.right img,
-.logobox img
+.logobox img,
+.video-play i
 {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -1951,6 +1952,19 @@ ul#selectUl li.unselected:hover {
     position: relative;
     width: 100%;
 }
+
+.video-play i {
+	color: #FFFFFF;
+	font-size: 35px;
+	margin-left: 50%;
+	opacity: 0.7;
+	position: absolute;
+	top: 65%;
+	z-index: 99;
+}
+	.video-play i:hover {
+		opacity: 1;
+	}
 
 .littleover {
 	position: absolute;

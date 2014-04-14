@@ -15,7 +15,8 @@
 					<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
 				
 				</div>
-				
+
+				<a class="video-play" href="http://youtu.be/UrcUu0Z5xRo" rel="prettyPhoto-video"><i class="fa fa-play-circle-o"></i></a>		
 				
 				<?php if(get_option('cebo_homebanner')) { ?>
 		

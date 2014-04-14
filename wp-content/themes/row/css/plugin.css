@@ -43,7 +43,7 @@
 /* Prettyphoto ---------------------------------------------------- */
 
 div.pp_pic_holder {
-	z-index: 999999;
+	z-index: 2147483647;
 }
 
 .pp_inline {
@@ -93,6 +93,21 @@ div.dark_square .pp_details {
     top: 0;
 }
 
+#pp_full_res > iframe {
+    margin-top: 50px;
+}
+   
+.home .pp_expand {
+    display: none !important;
+}
+
+.home .pp_content {
+    height: 100% !important;
+}
+
+.home .pp_pic_holder {
+    top: 5% !important;
+}
 
 
 /* Scrollbar ---------------------------------------------------- */
