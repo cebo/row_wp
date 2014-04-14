@@ -44,7 +44,17 @@ $meta_box_imagegalleries = array(
 	'context' => 'normal',
 	'priority' => 'high',
 	'fields' => array(
+		
 				
+		array( 
+              "name" => "Youtube Video ID",
+	          "desc" => "Paste in your youtube video ID, ex: UrcUu0Z5xRo",
+	          "id" => $prefix."_youtube",
+	          "type" => "text",
+	          "std" => ""
+              )
+              
+        ,
 		array( 
               "name" => "Video embed",
 	          "desc" => "This video will display in the gallery slider",
