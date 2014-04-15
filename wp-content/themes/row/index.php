@@ -16,7 +16,7 @@
 				
 				</div>
 
-				<a class="video-play" href="http://youtu.be/UrcUu0Z5xRo" rel="prettyPhoto-video"><i class="fa fa-play-circle-o"></i></a>		
+				<a class="video-play" href="http://youtu.be/FJw3fH7kzRs" rel="prettyPhoto-video"><i class="fa fa-play-circle-o"></i></a>		
 				
 				<?php if(get_option('cebo_homebanner')) { ?>
 		
