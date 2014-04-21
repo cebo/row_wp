@@ -2075,7 +2075,8 @@ ul#selectUl li.unselected:hover {
 	
 }
 
-.textbox h3, .textbox-1 h3 {
+.textbox h3, .textbox-1 h3,
+.textbox h1 {
 	font-family: 'GothamBold';
 	line-height: 22px;
 	font-size: 19px;
