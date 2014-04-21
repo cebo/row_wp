@@ -46,7 +46,7 @@
 			
 			<div class="tem">
 			
-			<?php query_posts('post_type=team&posts_per_page=8'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+			<?php query_posts('post_type=team&posts_per_page=8&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 			<div class="five columns teamers">
 				
 				<div class="he-wrap tpl2">

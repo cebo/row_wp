@@ -16,28 +16,22 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
-    include( dirname( __FILE__ ) . '/local-config.php' );
-}
-else {
-    // ** MySQL settings - You can get this info from your web host ** //
-	define('DB_NAME', 'rowdev');
+define('DB_NAME', 'database_name_here');
 
-	/** MySQL database username */
-	define('DB_USER', 'root');
+/** MySQL database username */
+define('DB_USER', 'username_here');
 
-	/** MySQL database password */
-	define('DB_PASSWORD', 'root');
+/** MySQL database password */
+define('DB_PASSWORD', 'password_here');
 
-	/** MySQL hostname */
-	define('DB_HOST', 'localhost');
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
 
-	/** Database Charset to use in creating database tables. */
-	define('DB_CHARSET', 'utf8');
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
 
-	/** The Database Collate type. Don't change this if in doubt. */
-	define('DB_COLLATE', '');
-}
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -94,6 +88,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
-define('WP_MEMORY_LIMIT', '256M');
-set_time_limit (300); // 300 secs = 5min.

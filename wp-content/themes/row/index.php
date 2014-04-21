@@ -15,7 +15,8 @@
 					<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
 				
 				</div>
-				
+
+				<a class="video-play" href="http://youtu.be/FJw3fH7kzRs" rel="prettyPhoto-video"><i class="fa fa-play-circle-o"></i></a>		
 				
 				<?php if(get_option('cebo_homebanner')) { ?>
 		
@@ -61,7 +62,7 @@
 					</div>
 					
 					
-					<?php query_posts('post_type=page&p=449'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=449&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 
 					<div class="guestrooms">
 						
@@ -114,7 +115,7 @@
 				
 				<div class="rightside">
 					
-					<?php query_posts('post_type=page&p=443'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=443&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<div class="picone">
@@ -162,7 +163,7 @@
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
-					<?php query_posts('post_type=page&p=445'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=445&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<div class="picone">
@@ -200,15 +201,14 @@
 						
 						
 						<?php } ?>
-						
+
+					</div>						
 						
 					<?php endwhile; endif; wp_reset_query(); ?>	
 				
-				</div>
-				
-				<div class="clear"></div>
+					<div class="clear"></div>
 
-			</div>
+				</div>
 			
 			
 			</div>
@@ -232,7 +232,7 @@
 				<div class="leftside">
 					
 					
-					<?php query_posts('post_type=page&p=453'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=453&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<div class="picone">
@@ -277,7 +277,7 @@
 				</div>
 				
 				<div class="rightside">
-				<?php query_posts('post_type=page&p=451'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+				<?php query_posts('post_type=page&p=451&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<div class="picone">
@@ -310,16 +310,14 @@
 						
 						
 						<?php } ?>
-						
+
+					</div>						
 						
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
-				
-				</div>
-				
-				<div class="clear"></div>
+					<div class="clear"></div>
 
-			</div>
+				</div>
 			
 			
 			</div>
@@ -341,7 +339,7 @@
 				
 					
 					
-					<?php query_posts('post_type=specials&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=specials&posts_per_page=1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<div class="suboverlay narrow">
@@ -384,7 +382,7 @@
 				<div class="fullspan shorter">
 				
 					
-					<?php query_posts('post_type=page&p=457'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=457&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 						
 					<img src="<?php bloginfo ('template_url'); ?>/images/street.jpg" alt="#">
 					
@@ -487,7 +485,7 @@
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
-					<?php query_posts('post_type=page&p=285'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=285&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -518,104 +516,7 @@
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
-					<?php query_posts('post_type=page&p=260'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-					
-					<li>
-						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
-						
-						
-						<?php } elseif($imgsrc) { ?>
-						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
-						
-						
-						<?php } else { ?>
-											
-						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
-						
-						<?php } ?>
-						
-						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
-							
-							<p><?php echo excerpt(20); ?></p>
-							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
-						</div>
-						
-					</li>
-					
-					<?php endwhile; endif; wp_reset_query(); ?>	
-					
-					
-					
-					
-					
-					<?php query_posts('post_type=page&p=271'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-					
-					<li>
-						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
-						
-						
-						<?php } elseif($imgsrc) { ?>
-						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
-						
-						
-						<?php } else { ?>
-											
-						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
-						
-						<?php } ?>
-						
-						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
-							
-							<p><?php echo excerpt(20); ?></p>
-							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
-						</div>
-						
-					</li>
-					
-					<?php endwhile; endif; wp_reset_query(); ?>	
-					
-					<?php query_posts('post_type=page&p=128'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-					
-					<li>
-						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
-						
-						
-						<?php } elseif($imgsrc) { ?>
-						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
-						
-						
-						<?php } else { ?>
-											
-						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
-						
-						<?php } ?>
-						
-						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
-							
-							<p><?php echo excerpt(20); ?></p>
-							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
-						</div>
-						
-					</li>
-					
-					<?php endwhile; endif; wp_reset_query(); ?>	
-					
-					<?php query_posts('post_type=page&p=242'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=260&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -649,7 +550,70 @@
 					
 					
 					
-					<?php query_posts('post_type=page&p=377'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					
+					<?php query_posts('post_type=page&p=271&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					
+					<li>
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						
+						
+						<?php } elseif($imgsrc) { ?>
+						
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						
+						
+						<?php } else { ?>
+											
+						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
+						
+						<?php } ?>
+						
+						<div class="littleover">
+							<h1><?php the_title(); ?></h1>
+							
+							<p><?php echo excerpt(20); ?></p>
+							
+							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+						</div>
+						
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>	
+					
+					<?php query_posts('post_type=page&p=128&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					
+					<li>
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						
+						
+						<?php } elseif($imgsrc) { ?>
+						
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						
+						
+						<?php } else { ?>
+											
+						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
+						
+						<?php } ?>
+						
+						<div class="littleover">
+							<h1><?php the_title(); ?></h1>
+							
+							<p><?php echo excerpt(20); ?></p>
+							
+							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+						</div>
+						
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>	
+					
+					<?php query_posts('post_type=page&p=242&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -682,7 +646,8 @@
 					
 					
 					
-					<?php query_posts('post_type=page&p=220'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					
+					<?php query_posts('post_type=page&p=377&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -713,7 +678,40 @@
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
-					<?php query_posts('post_type=page&p=96'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					
+					
+					<?php query_posts('post_type=page&p=220&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					
+					<li>
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						
+						
+						<?php } elseif($imgsrc) { ?>
+						
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						
+						
+						<?php } else { ?>
+											
+						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
+						
+						<?php } ?>
+						
+						<div class="littleover">
+							<h1><?php the_title(); ?></h1>
+							
+							<p><?php echo excerpt(20); ?></p>
+							
+							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+						</div>
+						
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>	
+					
+					<?php query_posts('post_type=page&p=96&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -746,7 +744,7 @@
 					
 					
 					
-					<?php query_posts('post_type=page&p=371'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=371&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -777,7 +775,7 @@
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
-					<?php query_posts('post_type=page&p=373'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=373&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -810,7 +808,7 @@
 					
 					
 					
-					<?php query_posts('post_type=page&p=375'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=375&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>

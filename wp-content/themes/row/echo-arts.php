@@ -12,7 +12,8 @@
 			'loctype' => 'arts-museums',
 			'post_type' => 'locations',
   			'posts_per_page' => -1,
-  			'order' => 'ASC'
+  			'order' => 'ASC',
+        'suppress_filters' => 1,
 		)
 	);
 	

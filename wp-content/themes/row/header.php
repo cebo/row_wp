@@ -272,7 +272,7 @@
 	</script> 
 
 <!-- Lightbox -->	
-<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -283,6 +283,14 @@
     	theme: 'dark_square',
     	opacity: 0.8,
     });
+
+    $("a[rel^='prettyPhoto-video']").prettyPhoto({
+	   	social_tools: false,
+	   	default_height: 344,
+	   	theme: 'dark_square',
+	   	opacity: 0.8,
+	   	allow_resize: true,
+	});
 			 	 
   });
 </script>
@@ -415,7 +423,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </head> 
 	
 	
-<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?> class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?> class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?> class="page single amenity"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } elseif(is_home() || is_front_page()) { ?> class="home"<?php } ?>>
+<body<?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?> class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?> class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?> class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?> class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?> class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?> class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?> class="page single amenity"<?php } elseif(is_page() || is_single()) { ?> class="page single"<?php } elseif(is_home() || is_front_page()) { ?> class="home"<?php } ?>>
 
 
 <div>
@@ -430,7 +438,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
 				
 				
-				<!--<div class="languages"></div>-->
+				<div class="languages"><?php language_selector_flags(); ?></div>
 			
 			</div>
 			
@@ -445,7 +453,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<li class="drop-intro">
 							
-							<?php query_posts('post_type=page&p=353'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<?php query_posts('post_type=page&p=353&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 								<h1><?php the_title(); ?></h1>
 							
@@ -456,7 +464,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						
 						<?php $bloblor =  array(60,331,353,12,10); query_posts(array(
 											'post_type' => 'page',
-											'post__in' => $bloblor)
+											'post__in' => $bloblor,
+											'suppress_filters' => 1)
 											
 											); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
@@ -503,7 +512,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<li class="drop-intro">
 							
-							<?php query_posts('post_type=page&p=86'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<?php query_posts('post_type=page&p=86&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 								<h1><?php the_title(); ?></h1>
 							
@@ -513,7 +522,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							
 						</li>
 						
-						<?php query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts('post_type=rooms&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						
 						<li>
@@ -556,7 +565,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<li class="drop-intro">
 							
-							<?php query_posts('post_type=page&p=92'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<?php query_posts('post_type=page&p=92&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 								<h1><?php the_title(); ?></h1>
 							
@@ -565,7 +574,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							<?php endwhile; endif; wp_reset_query(); ?>								
 						</li>
 						
-						<?php query_posts(array('showposts' => 20, 'post_type' => 'specials')); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts(array('showposts' => 20, 'post_type' => 'specials', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						
 						<li>
@@ -608,7 +617,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<li class="drop-intro">
 							
-							<?php query_posts('post_type=page&p=54'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<?php query_posts('post_type=page&p=54&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 								<h1><?php the_title(); ?></h1>
 							
@@ -617,7 +626,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							<?php endwhile; endif; wp_reset_query(); ?>								
 						</li>
 						
-						<?php query_posts(array('post_type' => 'amenities', 'posts_per_page' => 3, 'post__not_in' => array(32,33))); if(have_posts()) : while(have_posts()) : the_post(); 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>						
+						<?php query_posts(array('post_type' => 'amenities', 'posts_per_page' => 3, 'post__not_in' => array(32,33), 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>						
 						
 						<li>
 							
@@ -651,7 +660,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<li class="drop-intro">
 							
-							<?php query_posts('post_type=page&p=148'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<?php query_posts('post_type=page&p=148&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 								<h1><?php the_title(); ?></h1>
 							
@@ -660,7 +669,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							<?php endwhile; endif; wp_reset_query(); ?>								
 						</li>
 						
-						<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page')); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						
 						<li>
@@ -745,7 +754,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
 				
 				
-				<div class="languages"></div>
+				<!-- <div class="languages"></div> -->
 			
 			</div>
 
@@ -755,7 +764,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 					<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i> MENU</a>
 
-					<div class="languages"><a href="https://goo.gl/maps/5OpGS" style="color:#fff;">700 8TH AVENUE, NYC</a></div>
+					<!-- <div class="languages"><a href="https://goo.gl/maps/5OpGS" style="color:#fff;">700 8TH AVENUE, NYC</a></div> -->
+
+					<div class="languages"><?php language_selector_flags(); ?></div>
 
 				</div>
 
@@ -797,10 +808,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<ul class="dropdown">
 						
-							
 							<?php $bloblor =  array(60,331,353,12,10); query_posts(array(
 												'post_type' => 'page',
-												'post__in' => $bloblor)
+												'post__in' => $bloblor,
+												'suppress_filters' => 1,
+											)
 												
 												); if(have_posts()) : while(have_posts()) : the_post(); ?>
 							
@@ -840,7 +852,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<ul>
 							
-							<?php query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<?php query_posts('post_type=rooms&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 							
 							
 							<li>
@@ -880,7 +892,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 					<ul class="dropdown">
 						
-						<?php query_posts(array('showposts' => 20, 'post_type' => 'specials')); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts(array('showposts' => 20, 'post_type' => 'specials', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 
 						<li>
@@ -915,7 +927,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<ul class="dropdown">
 						
-							<?php query_posts(array('post_type' => 'amenities', 'posts_per_page' => 3, 'post__not_in' => array(32,33))); if(have_posts()) : while(have_posts()) : the_post(); 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>						
+							<?php query_posts(array('post_type' => 'amenities', 'posts_per_page' => 3, 'post__not_in' => array(32,33), 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>						
 						
 							<li>
 								
@@ -943,7 +955,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<ul>
 							
-							<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page')); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 							
 							
 							<li>

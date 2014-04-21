@@ -37,7 +37,6 @@
 			
 			<?php } else { ?> 
 			
-			
 				<div class="flexslider-gallery flexslider">
 					<ul class="slides">
 						
@@ -46,25 +45,25 @@
 						
 				
 								
-						<?php if(sp_get_image(1)) : ?>   
-							<?php $i = 0; while($i <= 10) : ?>
-						    <?php if(sp_get_image($i)) : ?> 
+								<?php if(sp_get_image(1)) : ?>   
+					<?php $i = 0; while($i <= 10) : ?>
+				    <?php if(sp_get_image($i)) : ?> 
 				    
 										
 					
-							<li>
-								<div class="slide-image" style="background-image:url(<?php echo sp_get_image($i) ?>);"></div>
-								<!-- <div class="gallery-description">
-									<p><?php //echo sp_get_image_id($i) ?></p>
-								</div> -->
-							</li>
+					<li>
+							<div class="slide-image" style="background-image:url(<?php echo sp_get_image($i) ?>);"></div>
+							<!-- <div class="gallery-description">
+								<p><?php echo sp_get_image_id($i) ?></p>
+							</div> -->
+						</li>
 						
 						
 					
-						<?php else : break; endif; ?>
-			            <?php $i++; ?>
-						<?php endwhile; ?>
-			            <?php endif; ?>	  
+					<?php else : break; endif; ?>
+		            <?php $i++; ?>
+					<?php endwhile; ?>
+		            <?php endif; ?>	  
 				
 								
 						<!--<li>
