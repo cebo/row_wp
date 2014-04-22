@@ -11,7 +11,7 @@
 			
 				<div class="wideover overlay">
 					
-					<h1><?php echo get_option('cebo_hblineone'); ?></h1>
+					<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
 					<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
 				
 				</div>
@@ -69,7 +69,7 @@
 						<div class="wideover overlay narrow">
 							
 						
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 							
 							
@@ -122,7 +122,7 @@
 					
 						<div class="wideover overlay narrow">
 					
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 							
 							
@@ -170,7 +170,7 @@
 					
 						<div class="wideover overlay narrow">
 					
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 							
 							
@@ -239,7 +239,7 @@
 					
 						<div class="wideover overlay narrow">
 					
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 							
 				
@@ -284,7 +284,7 @@
 					
 						<div class="wideover overlay narrow">
 					
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 							
 						
@@ -344,7 +344,7 @@
 					
 					<div class="suboverlay narrow">
 					
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							<h4><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h4>
 							
 							<a class="gone" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>">Book Now ></a>
@@ -388,7 +388,7 @@
 					
 					<div class="bigover">
 					
-						<h1 class="lumber"><?php the_title(); ?></h1>
+						<h2 class="lumber h1"><?php the_title(); ?></h2>
 						
 						<?php the_content(); ?>
 						
@@ -474,7 +474,7 @@
 						
 						
 						<div class="littleover">
-							<h1>Coming Soon</h1>
+							<h2 class="h1">Coming Soon</h2>
 							
 							<!-- <p>Et eum invenim eos prae provid eos aut occullabore laborum.</p> -->
 							
@@ -505,7 +505,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -536,7 +536,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -571,7 +571,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -602,7 +602,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -633,7 +633,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -667,7 +667,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -700,7 +700,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -731,7 +731,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -764,7 +764,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -795,7 +795,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							
@@ -828,7 +828,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							

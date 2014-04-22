@@ -44,7 +44,7 @@ and (max-width : 1260px) {
 
 	/* FONT SIZES - Home & General */
 
-	h1 {
+	h1, h2.h1 {
 		font-size: 25px;
 		line-height: 1.2;
 	}
@@ -70,11 +70,11 @@ and (max-width : 1260px) {
 		font-size: 13px;
 	}
 
-	.overlay h1 {
+	.overlay h1, .overlay h2.h1 {
 		font-size: 25px;
 	}
 
-	.overlay h1 {
+	.overlay h1, .overlay h2.h1 {
 	    font-size: 22px;
 	    line-height: 1.5;
 	}
@@ -100,7 +100,7 @@ and (max-width : 1260px) {
 	    font-size: 12px;
 	}
 
-	.littleover > h1 {
+	.littleover > h1, .littleover > h2.h1 {
 	    font-size: 18px;
 	    line-height: 1.1;
 	}
@@ -122,7 +122,7 @@ and (max-width : 1260px) {
 	    padding: 8px 16px;
 	}
 
-	.page-content > h1 {
+	.page-content > h1, .page-content > h2.h1 {
 	    font-size: 30px;
 	}
 
@@ -130,7 +130,7 @@ and (max-width : 1260px) {
 		padding: 15px;
 	}
 
-	.text-content.left > h1 {
+	.text-content.left > h1, .text-content.left > h2.h1 {
 	    font-size: 33px;
 	    line-height: 1;
 	    margin-bottom: 20px;
@@ -148,7 +148,7 @@ and (max-width : 1260px) {
 	    width: 27%;
 	}
 
-	.page-intro > h1 {
+	.page-intro > h1, .page-intro > h2.h1 {
 	    font-size: 30px;
 	    margin-bottom: 10px;
 	}
@@ -225,7 +225,7 @@ and (max-width : 1260px) {
 		height: 270px;
 	}
 
-	.bigover h1 {
+	.bigover h1, .bigover h2.h1 {
 	    font-size: 45px;
 	    line-height: 1.1;
 	    padding: 10px;
@@ -287,7 +287,7 @@ and (max-width : 1260px) {
 
 	/* PAGE - Amenities */
 
-	.page .suboverlay h1 {
+	.page .suboverlay h1, .page .suboverlay h2.h1 {
 	    margin-bottom: 7px;
 	}
 
@@ -1930,7 +1930,7 @@ and (max-width : 380px) {
 
 	/* HOMEPAGE */
 
-	.bigover h1 {
+	.bigover h1, .bigover h2.h1 {
 		font-size: 27px;
 	}
 

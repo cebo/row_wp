@@ -316,7 +316,7 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 
 
 
-h1 {
+h1, .littleover h2.h1, .fourth-level .suboverlay h2.h1, .bigover h2.h1, h2.h1 {
     font-family: 'GothamBold';
 	font-size: 30px;
 	text-transform: uppercase;
@@ -1842,7 +1842,7 @@ ul#selectUl li.unselected:hover {
 	margin-left: -30%;
 	padding: 20px 15px;
 }
-.overlay h1 {
+.overlay h1, .overlay h2.h1 {
 	 font-family: 'GothamBold';
 	font-size: 30px;
 	text-transform: uppercase;
@@ -1953,7 +1953,7 @@ ul#selectUl li.unselected:hover {
 	
 }
 
-.bigover h1 {
+.bigover h1, .bigover h2.h1 {
 	font-size: 65px;
 	line-height: 90px;
 	color: #fff;
@@ -2083,6 +2083,11 @@ ul#selectUl li.unselected:hover {
 	margin-bottom: 5px;
 	text-transform: uppercase;
 }
+
+.textbox h1 {
+	font-weight: normal;
+}
+
 .textbox h4, .textbox-1 h4 {
 	font-family: 'GothamCondensedMedium';
 	font-size: 20px;
