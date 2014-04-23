@@ -70,7 +70,7 @@ and (max-width : 1260px) {
 		font-size: 13px;
 	}
 
-	.overlay h1, .overlay h2.h1 {
+	.overlay h1, .overlay h2.h1, .fourth-level .suboverlay h2.h1 {
 	    font-size: 22px;
 	    line-height: 1.5;
 	}
@@ -1171,6 +1171,14 @@ and (max-width : 640px) {
 
 
 
+	/* HOMEPAGE */
+
+	.leftside, .rightside {
+		height: auto;
+	}
+
+
+
 	/* FOOTER */
 
 	.footer {
@@ -1938,12 +1946,12 @@ and (max-width : 380px) {
 		font-size: 27px;
 	}
 
-	.overlay h1, .overlay h2.h1 {
+	.overlay h1, .overlay h2.h1, .fourth-level .suboverlay h2.h1 {
 		font-size: 20px;
 	}
 
 	.second-level .rightside .picone {
-	    height: 420px;
+	    height: 340px;
 	}
 
 	.second-level .rightside .picone .overlay {
