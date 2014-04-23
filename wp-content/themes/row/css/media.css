@@ -649,6 +649,10 @@ and (max-width : 900px) {
 
 	/* Homepage content */
 
+	.video-play i {
+		top: 75%;
+	}
+
 	.leftside, .rightside {
 		width: 100%;
 	}
@@ -1260,6 +1264,10 @@ and (max-width : 640px) {
 
 	.home-intro {
 		height: 340px;
+	}
+
+	.video-play {
+		display: none;
 	}
 
 	/* Supposedly give no spacing to homepage - only uncomment if necessary */
