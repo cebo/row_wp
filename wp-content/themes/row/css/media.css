@@ -75,6 +75,11 @@ and (max-width : 1260px) {
 	    line-height: 1.5;
 	}
 
+	.fourth-level .suboverlay h2.h1 {
+	    line-height: 1.2;
+	    margin-bottom: 10px;
+	}
+
 	.overlay h2 {
 	    font-size: 25px;
 	    line-height: 1.1;
@@ -1948,6 +1953,11 @@ and (max-width : 380px) {
 
 	.overlay h1, .overlay h2.h1, .fourth-level .suboverlay h2.h1 {
 		font-size: 20px;
+	}
+
+	.fourth-level .suboverlay h2.h1 {
+	    line-height: 1.2;
+	    margin-bottom: 10px;
 	}
 
 	.second-level .rightside .picone {
