@@ -103,9 +103,17 @@ $meta_box_press = array(
  		,
  		array( 
               "name" => "Outbound Press Link",
-	          "desc" => "If a special link to book this press release exists.",
+	          "desc" => "If a special link this press release exists.",
 	          "id" => $prefix."_presslink",
 	          "type" => "text",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
+              "name" => "Is the Press Link External?",
+	          "desc" => "If a special link to press release leads to an external site.",
+	          "id" => $prefix."_external_link",
+	          "type" => "checkbox",
 	          "std" => ""
               )
        	)
