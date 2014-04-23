@@ -71,10 +71,6 @@ and (max-width : 1260px) {
 	}
 
 	.overlay h1, .overlay h2.h1 {
-		font-size: 25px;
-	}
-
-	.overlay h1, .overlay h2.h1 {
 	    font-size: 22px;
 	    line-height: 1.5;
 	}
@@ -1932,6 +1928,18 @@ and (max-width : 380px) {
 
 	.bigover h1, .bigover h2.h1 {
 		font-size: 27px;
+	}
+
+	.overlay h1, .overlay h2.h1 {
+		font-size: 20px;
+	}
+
+	.second-level .rightside .picone {
+	    height: 420px;
+	}
+
+	.second-level .rightside .picone .overlay {
+	    top: 20%;
 	}
 
 
