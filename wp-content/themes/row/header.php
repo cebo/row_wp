@@ -445,64 +445,65 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			
 			<ul class="supernav">
 			
-			
+			<li>
+				<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p>Reservations</p></a>
+			</li>
+
 			<li class="subinside">
 				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p>Hotel</p></a>
 				
 				<ul class="dropbox">
 					
-						<li class="drop-intro">
-							
-							<?php query_posts('post_type=page&p=353&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
-								
-								<h1><?php the_title(); ?></h1>
-							
-								<p><?php echo excerpt(13); ?></p>
-								
-							<?php endwhile; endif; wp_reset_query(); ?>								
-						</li>
+					<li class="drop-intro">
 						
-						<?php $bloblor =  array(60,331,353,12,10); query_posts(array(
-											'post_type' => 'page',
-											'post__in' => $bloblor,
-											'suppress_filters' => 1)
+						<?php query_posts('post_type=page&p=353&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							
+							<h1><?php the_title(); ?></h1>
+						
+							<p><?php echo excerpt(13); ?></p>
+							
+						<?php endwhile; endif; wp_reset_query(); ?>								
+					</li>
+					
+					<?php $bloblor =  array(353,60,12,10,331); query_posts(array(
+										'post_type' => 'page',
+										'post__in' => $bloblor,
+										'suppress_filters' => 1)
+										
+										); if(have_posts()) : while(have_posts()) : the_post(); ?>
+					
+					
+					<li>
+					
+					
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+						
+						<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+						
+						<?php } elseif($imgsrc) { ?>
+						
+						
+						<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+
+						<?php } elseif( has_post_thumbnail() ) { ?>
+
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>							
+						
+						<?php } else { ?>
 											
-											); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" alt="<?php the_title(); ?>"></a>
 						
 						
-						<li>
-						
-						
-							<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-							
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
-							
-							<?php } elseif($imgsrc) { ?>
-							
-							
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+						<?php } ?>							
 
-							<?php } elseif( has_post_thumbnail() ) { ?>
+						<h3><?php the_title(); ?></h3>
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>	
+					
+											
+				</ul>			
 
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>							
-							
-							<?php } else { ?>
-												
-							<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" alt="<?php the_title(); ?>"></a>
-							
-							
-							<?php } ?>							
-
-							<h3><?php the_title(); ?></h3>
-						</li>
-						
-						<?php endwhile; endif; wp_reset_query(); ?>	
-						
-												
-					</ul>			</li>
-			
-			<li>
-				<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p>Reservations</p></a>
 			</li>
 
 			<li class="subinside">
@@ -738,6 +739,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					<a href="https://plus.google.com/107905524889134524417" rel="publisher"><i class="fa fa-google-plus-square"></i></a>
 				<?php } ?>
 			</div>
+
+			<p>Complimentary WiFi</p>
 		
 		</div>
 		
@@ -802,7 +805,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		
 			<ul>
 				
-				
+				<li>
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p>Reservations</p></a>
+				</li>
+
 				<li>
 					<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p>Hotel</p></a>
 					
@@ -841,10 +847,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							<?php endwhile; endif; wp_reset_query(); ?>	
 							
 						</ul>
-				</li>
-				
-				<li>
-					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p>Reservations</p></a>
 				</li>
 
 				<li>
