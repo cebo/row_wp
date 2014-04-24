@@ -769,7 +769,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 					<!-- <div class="languages"><a href="https://goo.gl/maps/5OpGS" style="color:#fff;">700 8TH AVENUE, NYC</a></div> -->
 
-					<div class="languages"><?php language_selector_flags(); ?></div>
+					<div class="languages"><?php //language_selector_flags(); ?></div>
 
 				</div>
 
@@ -814,7 +814,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<ul class="dropdown">
 						
-							<?php $bloblor =  array(60,331,353,12,10); query_posts(array(
+							<?php $bloblor =  array(353,60,12,10,331); query_posts(array(
 												'post_type' => 'page',
 												'post__in' => $bloblor,
 												'suppress_filters' => 1,
