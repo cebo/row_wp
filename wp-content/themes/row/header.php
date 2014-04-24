@@ -465,9 +465,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						<?php endwhile; endif; wp_reset_query(); ?>								
 					</li>
 					
-					<?php $bloblor =  array(353,60,12,10,331); query_posts(array(
+					<?php $bloblor =  array(353,60,12,10,1387,331); query_posts(array(
 										'post_type' => 'page',
 										'post__in' => $bloblor,
+										'orderby' => 'menu_order',
 										'suppress_filters' => 1)
 										
 										); if(have_posts()) : while(have_posts()) : the_post(); ?>
@@ -555,10 +556,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 			
 			
-			<li class="subinside">
+			<!-- <li class="subinside">--><li> 
 				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p>Gallery</p></a>
 
-				<ul id="dropbox" class="dropbox">
+				<!-- <ul id="dropbox" class="dropbox">
 
 					<li class="drop-intro">
 							
@@ -581,6 +582,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 						
 						<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+
+						<?php } elseif( has_post_thumbnail() ) { ?>
+
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>	
 						
 						<?php } elseif($imgsrc) { ?>
 						
@@ -600,7 +605,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					<?php endwhile; endif; wp_reset_query(); ?>		
 					
 									
-				</ul>
+				</ul> -->
 			</li>
 			
 			<li class="subinside">
@@ -858,9 +863,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					
 						<ul class="dropdown">
 						
-							<?php $bloblor =  array(353,60,12,10,331); query_posts(array(
+							<?php $bloblor =  array(353,60,12,10,1387,331); query_posts(array(
 												'post_type' => 'page',
 												'post__in' => $bloblor,
+												'orderby' => 'menu_order',
 												'suppress_filters' => 1,
 											)
 												
@@ -932,7 +938,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				<li>
 					<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc"><span class="gallery"></span><p>Gallery</p></a>
 
-					<ul id="dropbox" class="dropbox">
+					<!-- <ul id="dropbox" class="dropbox">
 						
 						<?php query_posts('post_type=imagegalleries&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
@@ -943,6 +949,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 							
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
+
+							<?php } elseif( has_post_thumbnail() ) { ?>
+
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
 							
 							<?php } elseif($imgsrc) { ?>
 							
@@ -962,7 +972,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						<?php endwhile; endif; wp_reset_query(); ?>		
 						
 										
-					</ul>
+					</ul> -->
 
 				</li>
 				

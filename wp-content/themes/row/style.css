@@ -3564,6 +3564,10 @@ width: 35%;
 	margin-top: 0;
 }
 
+.fourth-level.room-slider {
+    overflow: hidden;
+}
+
 .gallery .flexslider {
 	box-shadow: none;
 	-webkit-box-shadow: none;

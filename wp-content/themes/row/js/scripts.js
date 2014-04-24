@@ -152,13 +152,13 @@ $(function() {
 				
 
 	$(window).load(function(){
-	// Jscrollpane ////////////////////////////////////////////////////////////
-	// the element we want to apply the jScrollPane
-	var $el					= $('.dropbox').jScrollPane({
-		verticalGutter 	: -16
-	}),
-			
-	// the extension functions and options 	
+		// Jscrollpane ////////////////////////////////////////////////////////////
+		// the element we want to apply the jScrollPane
+		var $el					= $('.dropbox').jScrollPane({
+			verticalGutter 	: -16
+		}),
+				
+		// the extension functions and options 	
 		extensionPlugin 	= {
 			
 			extPluginOpts	: {
@@ -291,12 +291,12 @@ $(function() {
 		
 		// the jScrollPane instance
 		jspapi 			= $el.data('jsp');
-		
-	// extend the jScollPane by merging	
-	$.extend( true, jspapi, extensionPlugin );
-	jspapi.addHoverFunc();
+			
+		// extend the jScollPane by merging	
+		$.extend( true, jspapi, extensionPlugin );
+		jspapi.addHoverFunc();
 
-});
+	});
 
 	
 
