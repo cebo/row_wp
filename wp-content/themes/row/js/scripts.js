@@ -151,7 +151,7 @@ $(function() {
 	$('.ui-spinner-down .ui-button-text').html('<span class="ui-icon ui-icon-triangle-1-n fa fa-angle-down"></span>');
 				
 
-
+	$(window).load(function(){
 	// Jscrollpane ////////////////////////////////////////////////////////////
 	// the element we want to apply the jScrollPane
 	var $el					= $('.dropbox').jScrollPane({
@@ -295,6 +295,8 @@ $(function() {
 	// extend the jScollPane by merging	
 	$.extend( true, jspapi, extensionPlugin );
 	jspapi.addHoverFunc();
+
+});
 
 	
 
