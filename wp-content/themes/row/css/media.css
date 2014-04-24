@@ -1178,7 +1178,7 @@ and (max-width : 640px) {
 
 	/* HOMEPAGE */
 
-	.leftside, .rightside {
+	.third-level .leftside, .third-level .rightside {
 		height: auto;
 	}
 
