@@ -1982,13 +1982,13 @@ ul#selectUl li.unselected:hover {
 }
 
 .video-play i {
-	color: #FFFFFF;
-	font-size: 35px;
-	margin-left: 50%;
-	opacity: 0.7;
-	position: absolute;
-	top: 65%;
-	z-index: 99;
+    color: #FFFFFF;
+    font-size: 60px;
+    margin-left: 50%;
+    opacity: 0.7;
+    position: absolute;
+    top: 74%;
+    z-index: 99;
 }
 	.video-play i:hover {
 		opacity: 1;
@@ -2453,9 +2453,10 @@ ul#selectUl li.unselected:hover {
 }
 
 .tier-one ul li {
-	list-style: none;
-	display: table-cell;
-	text-align: center;
+    display: inline-block;
+    list-style: none outside none;
+    margin: 0 15px;
+    text-align: center;
 }
 
 .tier-one ul li a {
