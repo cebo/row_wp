@@ -3967,6 +3967,7 @@ width: 35%;
 	bottom:0;
 	left:0;
 	z-index:-1000;
+	color: #fff;
 }
 
 .gallery .flexslider .slides img {
