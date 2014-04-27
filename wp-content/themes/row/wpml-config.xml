@@ -1,0 +1,6 @@
+<wpml-config>   
+    <admin-texts>
+        <key name="cebo_hometext" />
+        <key name="cebo_hblinetwo" />
+    </admin-texts>    
+</wpml-config>

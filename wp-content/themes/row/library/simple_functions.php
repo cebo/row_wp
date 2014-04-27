@@ -321,5 +321,15 @@ function language_selector_flags(){
 
 
 
+function lang_category_id($id){
+  if(function_exists('icl_object_id')) {
+    return icl_object_id($id,'category',true);
+  } else {
+    return $id;
+  }
+}
+
+
+
 
 ?>
