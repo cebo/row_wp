@@ -46,53 +46,14 @@ $meta_box_press = array(
 	'fields' => array(
 				
 		array( 
-              "name" => "Is This A Featured Press Release",
-	          "desc" => "Slide Out Press on the home page",
-	          "id" => $prefix."_available_on_header",
+              "name" => "Is This A Featured Special",
+	          "desc" => "It will be showcased on the big section on the press page",
+	          "id" => $prefix."_featuredpress",
 	          "type" => "checkbox",
 	          "std" => ""
-              )
- 		,
-		array( 
-              "name" => "Big Tag Line",
-	          "desc" => "This tagline will display in different places and will override the page title as well.",
-	          "id" => $prefix."_tagline",
-	          "type" => "text",
-	          "std" => ""
-              )
- 		,
- 		array( 
-              "name" => "Subtitle (optional)",
-	          "desc" => "Shorter Tag such as 'Shop N' Stay' or 'Big Savings'. Will override the title",
-	          "id" => $prefix."_subtagline",
-	          "type" => "text",
-	          "std" => ""
-              )
- 		,
- 		array( 
-              "name" => "Thumbnail option rather than the featured image (hit INSERT INTO POST)",
-	          "desc" => "This thumb should be panoramic. A good size is 520w X 350h. ",
-	          "id" => $prefix."_homethumb",
-	          "type" => "upload",
-	          "std" => ""
-              )
- 		,
- 			array( 
-              "name" => "Square details image #1",
-	          "desc" => "This will also be the thumbnail when a square is required",
-	          "id" => $prefix."_thumbone",
-	          "type" => "upload",
-	          "std" => ""
-              )
- 		,
- 		array( 
-              "name" => "Square details image #2",
-	          "desc" => "hit insert into post",
-	          "id" => $prefix."_thumbtwo",
-	          "type" => "upload",
-	          "std" => ""
-              )
- 		,	
+              )	
+        ,		
+		
  		array( 
               "name" => "Full screen banner image (hit INSERT INTO POST)",
 	          "desc" => "Wide and narrow is optimum for this image. Try ratios of 16:9, like 800 x 450 or 2000 x 800. ",
@@ -102,21 +63,13 @@ $meta_box_press = array(
               )
  		,
  		array( 
-              "name" => "Outbound Press Link",
-	          "desc" => "If a special link this press release exists.",
-	          "id" => $prefix."_presslink",
+              "name" => "Outbound Room Booking Link",
+	          "desc" => "If a special link to book this room exists, else it will default to general booking link",
+	          "id" => $prefix."_booklink",
 	          "type" => "text",
 	          "std" => ""
               )
- 		,
- 		array( 
-              "name" => "Is the Press Link External?",
-	          "desc" => "If a special link to press release leads to an external site.",
-	          "id" => $prefix."_external_link",
-	          "type" => "checkbox",
-	          "std" => ""
-              )
-       	)
+		)
 );
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */
 add_action('admin_menu', 'mytheme_press_add_box');

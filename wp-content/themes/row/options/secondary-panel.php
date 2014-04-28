@@ -47,7 +47,7 @@ $meta_box = array(
 				
 		array( 
               "name" => "Is This A Featured Special",
-	          "desc" => "Slide Out Special on the home page",
+	          "desc" => "This will featured it at the top of the specials page",
 	          "id" => $prefix."_available_on_header",
 	          "type" => "checkbox",
 	          "std" => ""

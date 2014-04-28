@@ -5,12 +5,17 @@
 */
  get_header(); ?>
  
- 
+
 <?php query_posts(array(
 				
 				'post_type' => 'specials',
 				'posts_per_page' => 1,
-				'suppress_filters' => 1,
+				'meta_query' => array(
+					array(
+						'key' => 'cebo_available_on_header',
+						'value' => 'on',
+						)
+				)
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
  
@@ -67,7 +72,12 @@
 				
 				'post_type' => 'specials',
 				'offset' => 1,
-				'suppress_filters' => 1,
+				'meta_query' => array(
+			        array(
+			            'key' => 'cebo_available_on_header',
+			            'compare' => 'NOT EXISTS'
+			        )
+			    )
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 

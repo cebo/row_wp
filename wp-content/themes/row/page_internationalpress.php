@@ -10,7 +10,13 @@
 				
 				'post_type' => 'press-releases',
 				'posts_per_page' => 1,
-				'presstype' => 'international'
+				'presstype' => 'international',
+				'meta_query' => array(
+					array(
+						'key' => 'cebo_featuredpress',
+						'value' => 'on',
+						)
+				)
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
  
@@ -69,8 +75,14 @@
 			<?php query_posts(array(
 				
 				'post_type' => 'press-releases',
-				'offset' => 1,
-				'presstype' => 'international'
+				'posts_per_page' => -1,
+				'presstype' => 'international',
+				'meta_query' => array(
+			        array(
+			            'key' => 'cebo_featuredpress',
+			            'compare' => 'NOT EXISTS'
+			        )
+			    )
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
