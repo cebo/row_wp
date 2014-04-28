@@ -770,7 +770,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 						<?php
 							
-							} endwhile; wp_reset_query(); //$sitepress->switch_lang($current_lang);
+							} endwhile; wp_reset_query(); $sitepress->switch_lang($current_lang);
 
 							//query_posts(array('post_type' => 'amenities', 'posts_per_page' => 3, 'post__not_in' => icl_object_id(array(32,33), true), 'suppress_filters' => 0,)); if(have_posts()) : while(have_posts()) : the_post(); 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 
