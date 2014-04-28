@@ -75,13 +75,11 @@
 							
 							<?php $projects = get_page_with_template('page_rooms');
 						 	 $projecturl= get_permalink($projects);
-						  	if($projects) { ?>
+						  	//if($projects) { ?>
 						  
 						  
 							<a class="gone" href="<?php echo $projecturl; ?>">Tour The Rooms ></a>
-							
-							<?php } ?>
-						
+													
 						</div>
 						
 					
@@ -128,13 +126,11 @@
 							
 							<?php $projects = get_page_with_template('page-eat-drink');
 						 	 $projecturl= get_permalink($projects);
-						  	if($projects) { ?>
+						  	//if($projects) { ?>
 						  
 						  
 							<a class="gone" href="<?php echo $projecturl; ?>">Visit Our Restaurant Bar ></a>
-							
-							<?php } ?>
-						
+													
 						</div>
 						
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
