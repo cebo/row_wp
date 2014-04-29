@@ -604,7 +604,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							
 								<p><?php echo excerpt(13); ?></p>
 																							
-							<?php } endwhile; wp_reset_query(); ?>	
+							<?php } endwhile; wp_reset_query(); $sitepress->switch_lang($current_lang); ?>	
 
 						</li>
 
