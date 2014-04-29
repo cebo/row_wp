@@ -1634,7 +1634,7 @@ function mce_success_cb(resp){
 	
 	<div class="banner"> 
 		
-		<p>700 8th Avenue, New York, NY 10036 <a href="mailto:info@rowhotel" target="_blank">info@rowhotel.com</a></p>
+		<p>700 8th Avenue, New York, NY 10036 <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a></p>
 		
 		<p class="contacto"><?php _e('Reservations','row-theme-text'); ?> <span>888.352.3650</span></p>
 		
