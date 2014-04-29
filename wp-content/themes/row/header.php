@@ -556,10 +556,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 			
 			
-			<!-- <li class="subinside">--><li> 
+			<li class="subinside">
 				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
 
-				<!-- <ul id="dropbox" class="dropbox">
+				<ul id="dropbox" class="dropbox">
 
 					<li class="drop-intro">
 							
@@ -605,7 +605,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					<?php endwhile; endif; wp_reset_query(); ?>		
 					
 									
-				</ul> -->
+				</ul>
 			</li>
 			
 			<li class="subinside">
