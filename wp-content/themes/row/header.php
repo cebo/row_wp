@@ -561,7 +561,54 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 				<ul id="dropbox" class="dropbox">
 
-					<li class="drop-intro">
+					<?php 
+
+							global $sitepress;
+							// save current language
+							$current_lang = $sitepress->get_current_language();
+							//get the default language
+							$default_lang = $sitepress->get_default_language();
+							//fetch posts in default language
+							$sitepress->switch_lang($default_lang);
+							//query args
+							$custom_query_args_two = array(
+							    'post_type' => 'page', 
+							    'page_id' => 89, 
+							);
+
+						?>
+
+
+						<li class="drop-intro">
+
+							<?php
+								//build query
+								$custom_query_two = new wp_query($custom_query_args_two);
+								//loop
+								while ( $custom_query_two->have_posts() ) : $custom_query_two->the_post();
+								    //check if a translation exist
+								    $t_post_id_two = icl_object_id($post->ID, 'post', false, $current_lang);
+								    if(!is_null($t_post_id_two)){
+								        $t_post = get_post( $t_post_id_two);
+						    ?>
+
+								<h1><?php the_title($t_post_id_two); ?></h1>
+							
+								<p><?php echo excerpt(13); ?></p>
+
+							<?php } else {  //no translation? display default language ?>							
+
+								<?php //query_posts('post_type=page&p=54&suppress_filters=0'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+																
+								<h1><?php the_title(); ?></h1>
+							
+								<p><?php echo excerpt(13); ?></p>
+																							
+							<?php } endwhile; wp_reset_query(); ?>	
+
+						</li>
+
+					<!-- <li class="drop-intro">
 							
 						<?php query_posts('post_type=page&p=89&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 							
@@ -571,7 +618,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							
 						<?php endwhile; endif; wp_reset_query(); ?>	
 						
-					</li>
+					</li> -->
 						
 					<?php query_posts('post_type=imagegalleries&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 					
@@ -1018,7 +1065,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				<li>
 					<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
 
-					<!-- <ul id="dropbox" class="dropbox">
+					<ul id="dropbox" class="dropbox">
 						
 						<?php query_posts('post_type=imagegalleries&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
@@ -1052,7 +1099,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						<?php endwhile; endif; wp_reset_query(); ?>		
 						
 										
-					</ul> -->
+					</ul>
 
 				</li>
 				
