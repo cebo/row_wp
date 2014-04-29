@@ -10,11 +10,11 @@
 
   <ul style="top: 660px;" class="right-links right" id="toggles">
 										
-		<li class="dine"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=48" title="Dining">Dine</a></li>
-		<li class="shop"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=68" title="Dining">Shop</a></li>
-		<li class="arts"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=66" title="Dining">Arts</a></li>
-		<li class="sights"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=160" title="Dining">Sights</a></li>
-		<li class="events"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=157" title="Dining">Events</a></li>	
+		<li class="dine"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=48"><?php _e('Dine','row-theme-text'); ?></a></li>
+		<li class="shop"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=68"><?php _e('Shop','row-theme-text'); ?></a></li>
+		<li class="arts"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=66"><?php _e('Arts','row-theme-text'); ?></a></li>
+		<li class="sights"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=160"><?php _e('Sights','row-theme-text'); ?></a></li>
+		<li class="events"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=157"><?php _e('Events','row-theme-text'); ?></a></li>	
 		
 	</ul>
 
@@ -77,10 +77,10 @@
 		<div class="tabs-wrapper">
 		
 			<ul class="tabs">
-				<li><a href="#tab1">Dining</a></li>
-				<li><a href="#tab2">Shopping</a></li>
-				<li><a href="#tab3">Sight Seeing</a></li>
-				<li><a href="#tab4">Arts & Culture</a></li>
+				<li><a href="#tab1"><?php _e('Dining','row-theme-text'); ?></a></li>
+				<li><a href="#tab2"><?php _e('Shopping','row-theme-text'); ?></a></li>
+				<li><a href="#tab3"><?php _e('Sight Seeing','row-theme-text'); ?></a></li>
+				<li><a href="#tab4"><?php _e('Arts & Culture','row-theme-text'); ?></a></li>
 			</ul>	
 			<div class="tabs-container">
 				
@@ -171,7 +171,7 @@
 						
 						<div class="widebox">
 						
-							<h2>Dining Around Town</h2>
+							<h2><?php _e('Dining Around Town','row-theme-text'); ?></h2>
 							
 							<div class="townbox">
 							
@@ -306,7 +306,7 @@
 						
 						<div class="widebox">
 						
-							<h2>Shopping Around Town</h2>
+							<h2><?php _e('Shopping Around Town','row-theme-text'); ?></h2>
 							
 							<div class="townbox">
 							
@@ -438,7 +438,7 @@
 						
 						<div class="widebox">
 						
-							<h2>Things to See Around town</h2>
+							<h2><?php _e('Things to See Around town','row-theme-text'); ?></h2>
 							
 							<div class="townbox">
 							
@@ -569,7 +569,7 @@
 						
 						<div class="widebox">
 						
-							<h2>Arts & Culture Around Town</h2>
+							<h2><?php _e('Arts & Culture Around Town','row-theme-text'); ?></h2>
 							
 							<div class="townbox">
 							
@@ -620,7 +620,7 @@
 		
 			<div class="upcoming-events">
 
-				<h2>Upcoming Events</h2>
+				<h2><?php _e('Upcoming Events','row-theme-text'); ?></h2>
 
 				<div class="upcoming-calendar fl"></div>
 
@@ -669,7 +669,7 @@
 
 				<div class="whats-hot">
 	
-					<h2>What's Hot</h2>
+					<h2><?php _e('What\'s Hot','row-theme-text'); ?></h2>
 	
 					<div>
 						<ul>

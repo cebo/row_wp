@@ -46,7 +46,7 @@
 					<div class="right">
 						<?php if(get_the_title() == "Penthouse Suites" || get_the_title() == "Executive Suites") { ?>
 					
-						<a style="background: rgba(74,74,74, 0.8)" href="mailto:reservations@rownyc.com">Contact Reservations</a>
+						<a style="background: rgba(74,74,74, 0.8)" href="mailto:reservations@rownyc.com"><?php _e('Contact Reservations','row-theme-text'); ?></a>
 						
 						<?php } else { ?>
 						
@@ -80,7 +80,7 @@
 					<div class="right">
 						<?php if(get_the_title() == "Penthouse Suites" || get_the_title() == "Executive Suites") { ?>
 					
-						<a style="background: rgba(74,74,74, 0.8)" href="mailto:reservations@rownyc.com">Contact Reservations</a>
+						<a style="background: rgba(74,74,74, 0.8)" href="mailto:reservations@rownyc.com"><?php _e('Contact Reservations','row-theme-text'); ?></a>
 						
 						<?php } else { ?>
 						
@@ -112,7 +112,7 @@
 					<div class="right">
 						<?php if(get_the_title() == "Penthouse Suites" || get_the_title() == "Executive Suites") { ?>
 					
-						<a style="background: rgba(74,74,74, 0.8)" href="mailto:reservations@rownyc.com">Contact Reservations</a>
+						<a style="background: rgba(74,74,74, 0.8)" href="mailto:reservations@rownyc.com"><?php _e('Contact Reservations','row-theme-text'); ?></a>
 						
 						<?php } else { ?>
 						
@@ -221,7 +221,7 @@
 
 						<div class="room-details-content">
 
-							<h4>For Your Comfort</h4>
+							<h4><?php _e('For Your Comfort','row-theme-text'); ?></h4>
 
 							<ul>
 								<?php $details = get_post_meta ($post->ID, 'cebo_details', true);
@@ -244,7 +244,7 @@
 
 						<div class="room-details-content">
 
-							<h4>FOR YOUR WORKLIFE</h4>
+							<h4><?php _e('FOR YOUR WORKLIFE','row-theme-text'); ?></h4>
 
 							<ul>
 							
@@ -257,7 +257,7 @@
 
 							</ul>
 
-							<h4>FOR YOUR ENTERTAINMENT</h4>
+							<h4><?php _e('FOR YOUR ENTERTAINMENT','row-theme-text'); ?></h4>
 
 							<ul>
 							
@@ -284,11 +284,11 @@
 								<h4>Features</h4>
 							
 								<ul>
-									<li class="ico-wifi">Complimentary Wi-Fi</li>
-									<li class="ico-mobile">iPod Docking Station</li>
-									<li class="ico-tv">Flat screen LCD TVs</li>
-									<li class="ico-cable">Cable and HBO</li>
-									<li class="ico-desk">Desk and Ergonomic chair</li>
+									<li class="ico-wifi"><?php _e('Complimentary Wi-Fi','row-theme-text'); ?></li>
+									<li class="ico-mobile"><?php _e('iPod Docking Station','row-theme-text'); ?></li>
+									<li class="ico-tv"><?php _e('Flat screen LCD TVs','row-theme-text'); ?></li>
+									<li class="ico-cable"><?php _e('Cable and HBO','row-theme-text'); ?></li>
+									<li class="ico-desk"><?php _e('Desk and Ergonomic chair','row-theme-text'); ?></li>
 								</ul>
 
 							</div>

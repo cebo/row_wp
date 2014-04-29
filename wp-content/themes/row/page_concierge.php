@@ -81,7 +81,7 @@
 					
 					<?php the_content(); ?>
 					
-					<a href="<?php echo get_post_meta($post->ID, 'bigtitle', true); ?>">MORE ></a>
+					<a href="<?php echo get_post_meta($post->ID, 'bigtitle', true); ?>"><?php _e('MORE >','row-theme-text'); ?></a>
 
 				</div>
 				

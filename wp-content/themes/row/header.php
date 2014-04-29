@@ -450,7 +450,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 
 			<li class="subinside">
-				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p>Hotel</p></a>
+				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
 				
 				<ul class="dropbox">
 					
@@ -508,7 +508,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 
 			<li class="subinside">
-				<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p>Rooms</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>
 				
 					<ul id="dropbox" class="dropbox">
 					
@@ -557,7 +557,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			
 			
 			<!-- <li class="subinside">--><li> 
-				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p>Gallery</p></a>
+				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
 
 				<!-- <ul id="dropbox" class="dropbox">
 
@@ -609,7 +609,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 			
 			<li class="subinside">
-				<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p>Deals</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p><?php _e('Deals','row-theme-text'); ?></p></a>
 				
 					<ul class="dropbox">
 					
@@ -660,7 +660,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 			
 			<li class="subinside">
-				<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p>Eat & Drink</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>
 					
 					
 						<ul class="dropbox">
@@ -784,7 +784,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 			
 			<li class="subinside">
-				<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p>Explore NYC</p></a>
+				<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>
 				
 					<ul class="dropbox">
 					
@@ -834,7 +834,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 			
 			<li>
-				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p>Contact</p></a>
+				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
 			</li>
 			
 			<!--<li>
@@ -894,7 +894,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 				<div class="mobile-menu-section">
 
-					<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i> MENU</a>
+					<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i> <?php _e('MENU','row-theme-text'); ?></a>
 
 					<!-- <div class="languages"><a href="https://goo.gl/maps/5OpGS" style="color:#fff;">700 8TH AVENUE, NYC</a></div> -->
 
@@ -904,7 +904,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 				<div class="banner"> 
 							
-					<p class="contacto">Reservations <span>888.352.3650</span></p>
+					<p class="contacto"><?php _e('Reservations','row-theme-text'); ?> <span>888.352.3650</span></p>
 					
 					<div class="clear"></div>
 					
@@ -916,13 +916,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 						<li>
 
-							<a class="booking-link" href="https://rownyc.reztrip.com" onclick="_gaq.push(['_link', this.href]);return false;"><span class="book">Book</span></a>
+							<a class="booking-link" href="https://rownyc.reztrip.com" onclick="_gaq.push(['_link', this.href]);return false;"><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 						</li>
 						
-						<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><span class="locale">Location</span></a></li>
+						<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><span class="locale"><?php _e('Location','row-theme-text'); ?></span></a></li>
 						
-						<li><a class="booking-link" href="http://eepurl.com/PteA1" target="_blank"><span class="offer">Stay<br>Connected</span></a></li>
+						<li><a class="booking-link" href="http://eepurl.com/PteA1" target="_blank"><span class="offer"><?php _e('Stay','row-theme-text'); ?><br><?php _e('Connected','row-theme-text'); ?></span></a></li>
 
 					</ul>
 					
@@ -935,11 +935,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<ul>
 				
 				<li>
-					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p>Reservations</p></a>
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
 				</li>
 
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p>Hotel</p></a>
+					<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
 					
 						<ul class="dropdown">
 						
@@ -980,7 +980,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				</li>
 
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p>Rooms</p></a>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>
 					
 						<ul>
 							
@@ -1016,7 +1016,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				</li>
 		
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc"><span class="gallery"></span><p>Gallery</p></a>
+					<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
 
 					<!-- <ul id="dropbox" class="dropbox">
 						
@@ -1057,7 +1057,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				</li>
 				
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p>Deals</p></a>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p><?php _e('Deals','row-theme-text'); ?></p></a>
 					
 					<ul class="dropdown">
 						
@@ -1092,7 +1092,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				</li>
 				
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p>Eat & Drink</p></a>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>
 					
 						<ul class="dropdown">
 						
@@ -1120,7 +1120,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				</li>
 				
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p>Explore NYC</p></a>
+					<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>
 					
 						<ul>
 							
@@ -1159,7 +1159,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				</li>
 				
 				<li>
-					<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p>Contact</p></a>
+					<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
 				</li>
 				
 				<!--<li>
@@ -1187,7 +1187,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			<li>
 
-				<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book">Book</span></a>
+				<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 						
 				<div class="dropout">
 
@@ -1199,7 +1199,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 										<div class="calspacer">
 											<span>
 												
-												<label for="arrival">Arriving Date</label>
+												<label for="arrival"><?php _e('Arriving Date','row-theme-text'); ?></label>
 												
 												<div class="squaredance">
 													<input type="hidden" name="arrival_date" id="arrival_date" placeholder="" class="calendarsection" />
@@ -1213,7 +1213,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 											</span>
 											
 											<span>
-												<label for="arrival">Departing Date</label>
+												<label for="arrival"><?php _e('Departing Date','row-theme-text'); ?></label>
 												
 												<div class="squaredance">
 													<input name="departure_date" type="hidden" id="departure_date" placeholder="" class="calendarsection" />
@@ -1227,7 +1227,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 											</span>
 											
 											<span class="lowselect">
-												<label for="arrival">Adults</label>
+												<label for="arrival"><?php _e('Adults','row-theme-text'); ?></label>
 												
 												<div class="squaredance">
 													<p class="topping">How Many?</p>
@@ -1270,10 +1270,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 											</span>
 											
 											<span class="lowselect">
-												<label for="arrival">Children</label>
+												<label for="arrival"><?php _e('Children','row-theme-text'); ?></label>
 												
 												<div class="squaredance">
-													<p class="topping">How Many?</p>
+													<p class="topping"><?php _e('How Many?','row-theme-text'); ?></p>
 													 <select id="children" name="children[]" >
 													 	<option value="0">0</option>
 														 <option value="1">1</option>
@@ -1286,7 +1286,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 											
 											<div class="clear"></div>
 											
-											<a href="#" class="button">See Availability</a>
+											<a href="#" class="button"><?php _e('See Availability','row-theme-text'); ?></a>
 										
 											
 										</div>
@@ -1299,17 +1299,17 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			</li>
 			
-			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><i class="fa fa-map-marker"></i><span class="locale">Location</span></a>
+			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><i class="fa fa-map-marker"></i><span class="locale"><?php _e('Location','row-theme-text'); ?></span></a>
 			
 				<div class="dropout" style="width: 600px;">
 
-					<a style="background: transparent !important; color: #fff !important;" href="<?php bloginfo('url'); ?>/row-nyc-address/"><img style="max-width: 90%; padding: 20px 0; margin: auto; text-align: center;" src="<?php bloginfo('template_url'); ?>/images/shot.jpg" /><br>Explore NYC</a>
+					<a style="background: transparent !important; color: #fff !important;" href="<?php bloginfo('url'); ?>/row-nyc-address/"><img style="max-width: 90%; padding: 20px 0; margin: auto; text-align: center;" src="<?php bloginfo('template_url'); ?>/images/shot.jpg" /><br><?php _e('Explore NYC','row-theme-text'); ?></a>
 				</div>
 
 			
 			</li>
 			
-			<li><a class="booking-link" href="http://eepurl.com/PteA1" target="_blank"><i class="fa  fa-envelope"></i><span class="offer">Stay<br>Connected</span></a>
+			<li><a class="booking-link" href="http://eepurl.com/PteA1" target="_blank"><i class="fa  fa-envelope"></i><span class="offer"><?php _e('Stay','row-theme-text'); ?><br><?php _e('Connected','row-theme-text'); ?></span></a>
 				<div class="dropout oranger">
 
 					<div class="inner" style="padding: 40px;">
@@ -1347,25 +1347,25 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </style>
 <div id="mc_embed_signup">
 <form action="http://sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-	<h2>Subscribe Today</h2>
-<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+	<h2><?php _e('Subscribe Today','row-theme-text'); ?></h2>
+<div class="indicates-required"><span class="asterisk">*</span> <?php _e('indicates required','row-theme-text'); ?></div>
 <div class="mc-field-group">
-	<label for="mce-MMERGE1">First Name  <span class="asterisk">*</span>
+	<label for="mce-MMERGE1"><?php _e('First Name','row-theme-text'); ?>  <span class="asterisk">*</span>
 </label>
 	<input type="text" value="" name="MMERGE1" class="required" id="mce-MMERGE1">
 </div>
 <div class="mc-field-group">
-	<label for="mce-MMERGE2">Last Name  <span class="asterisk">*</span>
+	<label for="mce-MMERGE2"><?php _e('Last Name','row-theme-text'); ?>  <span class="asterisk">*</span>
 </label>
 	<input type="text" value="" name="MMERGE2" class="required" id="mce-MMERGE2">
 </div>
 <div class="mc-field-group">
-	<label for="mce-MMERGE3">Your Zip  <span class="asterisk">*</span>
+	<label for="mce-MMERGE3"><?php _e('Your Zip','row-theme-text'); ?>  <span class="asterisk">*</span>
 </label>
 	<input type="text" value="" name="MMERGE3" class="required" id="mce-MMERGE3">
 </div>
 <div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+	<label for="mce-EMAIL"><?php _e('Email Address','row-theme-text'); ?>  <span class="asterisk">*</span>
 </label>
 	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 </div>
@@ -1589,7 +1589,7 @@ function mce_success_cb(resp){
 		
 		<p>700 8th Avenue, New York, NY 10036 <a href="mailto:info@rowhotel" target="_blank">info@rowhotel.com</a></p>
 		
-		<p class="contacto">Reservations <span>888.352.3650</span></p>
+		<p class="contacto"><?php _e('Reservations','row-theme-text'); ?> <span>888.352.3650</span></p>
 		
 		
 		<div class="clear"></div>

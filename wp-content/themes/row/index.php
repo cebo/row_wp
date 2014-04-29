@@ -78,7 +78,7 @@
 						  	//if($projects) { ?>
 						  
 						  
-							<a class="gone" href="<?php echo $projecturl; ?>">Tour The Rooms ></a>
+							<a class="gone" href="<?php echo $projecturl; ?>"><?php _e('Tour The Rooms >','row-theme-text'); ?></a>
 													
 						</div>
 						
@@ -129,7 +129,7 @@
 						  	//if($projects) { ?>
 						  
 						  
-							<a class="gone" href="<?php echo $projecturl; ?>">Visit Our Restaurant Bar ></a>
+							<a class="gone" href="<?php echo $projecturl; ?>"><?php _e('Visit Our Restaurant Bar >','row-theme-text'); ?></a>
 													
 						</div>
 						
@@ -284,7 +284,7 @@
 							<?php the_content(); ?>
 							
 						
-							<a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/">View Row NYC ></a>
+							<a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/"><?php _e('View Row NYC >','row-theme-text'); ?></a>
 							
 							
 						
@@ -343,7 +343,7 @@
 							<h2 class="h1"><?php the_title(); ?></h2>
 							<h4><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h4>
 							
-							<a class="gone" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>">Book Now ></a>
+							<a class="gone" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Book Now >','row-theme-text'); ?></a>
 						
 						</div>
 					
@@ -470,7 +470,7 @@
 						
 						
 						<div class="littleover">
-							<h2 class="h1">Coming Soon</h2>
+							<h2 class="h1"><?php _e('Coming Soon','row-theme-text'); ?></h2>
 							
 							<!-- <p>Et eum invenim eos prae provid eos aut occullabore laborum.</p> -->
 							
@@ -505,7 +505,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -536,7 +536,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -571,7 +571,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -602,7 +602,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -633,7 +633,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -667,7 +667,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -700,7 +700,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -731,7 +731,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -764,7 +764,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -795,7 +795,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
@@ -828,7 +828,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>

@@ -71,11 +71,11 @@
 					
 					<?php if(get_the_title() == "Penthouse Suites" || get_the_title() == "Executive Suites") { ?>
 					
-						<a style="background: rgba(74,74,74, 0.8)" href="mailto:reservations@rownyc.com">Contact Reservations</a>
+						<a style="background: rgba(74,74,74, 0.8)" href="mailto:reservations@rownyc.com"><?php _e('Contact Reservations','row-theme-text'); ?></a>
 						
 						<?php } else { ?>
 						
-						<a onclick="_gaq.push(['_link', this.href]);return false;" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) {  echo get_post_meta($post->ID, 'cebo_booklink', true); } else { echo get_option('cebo_genbooklink'); } ?>">Book Now</a>
+						<a onclick="_gaq.push(['_link', this.href]);return false;" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) {  echo get_post_meta($post->ID, 'cebo_booklink', true); } else { echo get_option('cebo_genbooklink'); } ?>"><?php _e('Book Now','row-theme-text'); ?></a>
 
 
 

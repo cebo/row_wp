@@ -11,7 +11,7 @@
 
 			<div class="rate-box">
 		
-				<h1>How long will your group stay?</h1>
+				<h1><?php _e('How long will your group stay?','row-theme-text'); ?></h1>
 	
 				<div class="group-details">
 	
@@ -42,7 +42,7 @@
 
 				<div class="clear"></div>
 	
-				<div class="button-wrapper"><a class="button" href="">Check Your Rate</a></div>
+				<div class="button-wrapper"><a class="button" href=""><?php _e('Check Your Rate','row-theme-text'); ?></a></div>
 
 				<div class="clear"></div>
 	

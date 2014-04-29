@@ -109,7 +109,7 @@ if( count( $children ) != 0 ) { ?>
 
 			<div class="sidebar fr">
 				
-				<a class="button" href="#">RESERVE NOW</a>
+				<a class="button" href="#"><?php _e('RESERVE NOW','row-theme-text'); ?></a>
 				
 				
 				<ul class="thumbgal">

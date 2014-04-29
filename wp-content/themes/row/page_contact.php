@@ -37,7 +37,7 @@
 
 			<div class="main-page-content inverted-location left">
 
-				<h1 style="clear: both;">Get in Touch</h1>
+				<h1 style="clear: both;"><?php _e('Get in Touch','row-theme-text'); ?></h1>
 
 							
 			<div id="maparea" class="maparea left" style="width: 100%;"></div>

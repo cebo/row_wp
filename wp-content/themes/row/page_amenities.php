@@ -41,7 +41,7 @@
 						<h1><?php the_title(); ?></h1>
 						
 			
-							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>">MORE ></a></p>
+							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
 							
 							
 						</div>
