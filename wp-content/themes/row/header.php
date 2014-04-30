@@ -1,3 +1,10 @@
+<?php
+
+	global $sitepress;
+	$current_lang = $sitepress->get_current_language();
+	$default_lang = $sitepress->get_default_language();
+
+?>
 <!DOCTYPE HTML>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -79,7 +86,24 @@
 	var adults = jQuery("#adults").val();
 	var children = jQuery("#children").val();
 	
-	var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+	<?php if( $current_lang == 'en' ) { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+
+	<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" + 
+
+	<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' || 'pt' ) { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" + 
+
+	<?php } else { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+
+	<?php }  ?>
+	
 										"&arrival_date=" + checkin + 
 										"&departure_date=" + checkout + 
 										"&adults[]=" + adults + 
@@ -1234,13 +1258,49 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			<li>
 
-				<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				<?php if( $current_lang == 'en') { ?>
+
+					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+
+				<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+
+				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' || 'pt' ) { ?>
+
+					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+
+				<?php } else { ?>
+
+					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+
+				<?php } ?>
 						
 				<div class="dropout">
 
 					<div class="inner">
 						
-						<form action="<?php echo get_option('cebo_genbooklink'); ?>/search?" onsubmit="_gaq.push(['_linkByPost', this]);">
+						<form 
+
+							<?php if( $current_lang == 'en') { ?>
+
+								action="<?php echo get_option('cebo_genbooklink'); ?>/search?"
+
+							<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+								action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?"
+
+							<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' || 'pt' ) { ?>
+
+								action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?"
+
+							<?php } else { ?>
+
+								action="<?php echo get_option('cebo_genbooklink'); ?>/search?"
+
+							<?php } ?>
+
+						onsubmit="_gaq.push(['_linkByPost', this]);">
 
 										
 										<div class="calspacer">
