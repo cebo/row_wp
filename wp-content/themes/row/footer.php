@@ -3,6 +3,11 @@
  * The template for displaying the footer.
  *
 **/
+
+ 	global $sitepress;
+	$current_lang = $sitepress->get_current_language();
+	$default_lang = $sitepress->get_default_language();
+	
 ?>
 
 	
@@ -17,7 +22,29 @@
 			</li>
 			
 			<li>
-				<a href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php if( $current_lang == 'en') { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } elseif( $current_lang == 'pt-br') { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>/pt" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } else { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } ?>
+
 			</li>
 
 			<li>
