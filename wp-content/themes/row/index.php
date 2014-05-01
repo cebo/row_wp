@@ -172,12 +172,12 @@
 							
 							<?php $projects = get_page_with_template('explore_page');
 						 	 $projecturl= get_permalink($projects);
-						  	if($projects) { ?>
+						  	//if($projects) { ?>
 						  
 						  
-							<a class="gone" href="<?php echo $projecturl; ?>">Explore NYC ></a>
+							<a class="gone" href="<?php echo $projecturl; ?>"><?php _e('Explore NYC >','row-theme-text'); ?></a>
 							
-							<?php } ?>
+							<?php// } ?>
 						
 						</div>
 						
@@ -241,7 +241,7 @@
 				
 						  
 						  
-							<a class="gone" href="<?php bloginfo('url'); ?>/gallery/row-nyc-photos/">Explore Our Interiors ></a>
+							<a class="gone" href="<?php bloginfo('url'); ?>/gallery/row-nyc-photos/"><?php _e('Explore Our Interiors >','row-theme-text'); ?></a>
 							
 						
 						

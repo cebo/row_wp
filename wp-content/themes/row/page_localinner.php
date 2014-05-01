@@ -766,7 +766,7 @@
     					
     						<p><?php echo excerpt(18); ?></p>
 
-    						<a href="<?php the_permalink(); ?>">Learn More ></a>
+    						<a href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 
     					</div>
 

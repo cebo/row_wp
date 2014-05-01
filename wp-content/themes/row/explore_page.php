@@ -105,7 +105,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php the_permalink(); ?>">Learn More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
 					</li>
