@@ -3767,9 +3767,10 @@ width: 35%;
 
 .deal {
     float: left;
-    width: 50%;
+    max-height: 611px;
     min-height: 611px;
     overflow: hidden;
+    width: 50%;
 }
 
 .deal-photo {

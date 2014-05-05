@@ -1312,15 +1312,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 				<?php } elseif( $current_lang == 'zh-hans') { ?>
 
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'pt-br') { ?>
 
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/pt" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
 
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } else { ?>
 
