@@ -71,7 +71,7 @@
 			<?php query_posts(array(
 				
 				'post_type' => 'specials',
-				'offset' => 1,
+				// 'offset' => 1,
 				'meta_query' => array(
 			        array(
 			            'key' => 'cebo_available_on_header',
