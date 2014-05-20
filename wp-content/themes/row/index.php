@@ -332,12 +332,30 @@
 			
 			
 				<div class="fullspan" style="">
+
+					<?php 
+
+						query_posts(array(
 				
-					
-					
-					<?php query_posts('post_type=specials&posts_per_page=1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-					
-					
+							'post_type' => 'specials',
+							'posts_per_page' => 1,
+							'suppress_filters' => 1,
+							'meta_query' => array(
+								array(
+									'key' => 'cebo_available_on_homepage',
+									'value' => 'on',
+								)
+							),								
+							
+
+						)); 
+
+						if(have_posts()) : while(have_posts()) : the_post();
+
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+
+					?>
+
 					<div class="suboverlay narrow">
 					
 							<h2 class="h1"><?php the_title(); ?></h2>

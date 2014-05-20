@@ -47,8 +47,16 @@ $meta_box = array(
 				
 		array( 
               "name" => "Is This A Featured Special",
-	          "desc" => "This will featured it at the top of the specials page",
+	          "desc" => "This will be featured it at the top of the specials page",
 	          "id" => $prefix."_available_on_header",
+	          "type" => "checkbox",
+	          "std" => ""
+              )	
+        ,
+        array( 
+              "name" => "Send this to the homepage",
+	          "desc" => "This will be featured on the homepage",
+	          "id" => $prefix."_available_on_homepage",
 	          "type" => "checkbox",
 	          "std" => ""
               )	
