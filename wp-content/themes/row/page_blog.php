@@ -1,8 +1,8 @@
 <?php 
 
-/* Category Template
+/* Template Name: Blog */
 
-*/
+
 include(TEMPLATEPATH . '/header_alt.php'); ?>
 	
 	<div class="wrapper">
@@ -18,7 +18,14 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 					
 					
 							
-				<?php 
+				<?php  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+						
+						query_posts(
+						array(
+								'post_type' => 'post',
+								'paged' => $paged
+								
+							));
 						if(have_posts()) :
 					    $postcount=1;
 					    while(have_posts()) : the_post();

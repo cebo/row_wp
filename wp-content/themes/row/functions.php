@@ -95,6 +95,89 @@ function is_subpage() {
     }
 }
 
+function get_avatar_url($author_id, $size){
+    $get_avatar = get_avatar( $author_id, $size );
+    preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+    return ( $matches[1] );
+}
+
+
+
+// Removed shortcodes from the content
+function  strip_shortcode_gallery( $content ) {
+    preg_match_all( '/'. get_shortcode_regex() .'/s', $content, $matches, PREG_SET_ORDER );
+    if ( ! empty( $matches ) ) {
+        foreach ( $matches as $shortcode ) {
+            if ( 'gallery' === $shortcode[2] ) {
+                $pos = strpos( $content, $shortcode[0] );
+                if ($pos !== false)
+                    return substr_replace( $content, '', $pos, strlen($shortcode[0]) );
+            }
+        }
+    }
+    return $content;
+};
+
+// Get attached images & spits out a list of them.
+function nerdy_get_images($size = 'thumbnail', $limit = '0', $offset = '0') {
+    global $post;
+    $images = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID') );
+    if ($images) {
+        $num_of_images = count($images);
+        if ($offset > 0) : $start = $offset--; else : $start = 0; endif;
+        if ($limit > 0) : $stop = $limit+$start; else : $stop = $num_of_images; endif;
+        $i = 0;
+        foreach ($images as $image) {
+            if ($start <= $i and $i < $stop) {
+            $img_title = $image->post_title;   // title.
+            $img_description = $image->post_content; // description.
+            $img_caption = $image->post_excerpt; // caption.
+            $img_url = wp_get_attachment_url($image->ID); // url of the full size image.
+            $preview_array = image_downsize( $image->ID, $size );
+            $img_preview = $preview_array[0]; // thumbnail or medium image to use for preview.
+            ?>
+            <li>
+                <a href="<?php echo $img_url; ?>"><img src="<?php echo $img_preview; ?>" alt="<?php echo $img_caption; ?>" title="<?php echo $img_title; ?>"></a>
+            </li>
+            <?
+            }
+            $i++;
+        }
+    }
+}
+
+function get_post_gallery_imagess() {
+    $attachment_ids = array();
+    $pattern = get_shortcode_regex();
+    $images = array();
+    if (preg_match_all( '/'. $pattern .'/s', get_the_content(), $matches ) ) {
+        //finds the "gallery" shortcode and puts the image ids in an associative array at $matches[3]
+        $count = count($matches[3]);      //in case there is more than one gallery in the post.
+        for ($i = 0; $i < $count; $i++){
+            $atts = shortcode_parse_atts( $matches[3][$i] );
+            if ( isset( $atts['ids'] ) ){
+                $attachment_ids = explode( ',', $atts['ids'] );
+                $attachementsCount = count($attachment_ids);
+                if ($attachementsCount > 0){
+                    for ($j = 0; $j < $attachementsCount ; $j++) { 
+                        $image = array();
+                        $attachmentId = intval($attachment_ids[$j]);
+                        $image['id'] = $attachmentId;
+                        $image['full'] = wp_get_attachment_image_src($attachmentId, 'full');
+                        $image['medium'] = wp_get_attachment_image_src($attachmentId, 'medium');
+                        $image['thumbnail'] = wp_get_attachment_image_src($attachmentId, 'thumbnail');
+                        $image['captioner'] = wp_get_attachment_metadata($attachmentId, true);
+                        array_push($images, $image);
+                    }
+                }
+            }
+        }
+    }
+    return $images;
+}
+
+
+
 
 
  /* ................. ADDITIONAL INFO FOR SHORTCODES .................... */

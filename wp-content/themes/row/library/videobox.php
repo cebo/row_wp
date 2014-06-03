@@ -7,9 +7,8 @@
 
 $videobox = array (
 	'Slide Configuration' => array (
-			array( 'bigtitle', 'If you would like to add a  slide main heading, put it here. .. but keep it short' , 'textfield'),
-			array( 'littletitle', 'If you would like to add a slide small heading, put it here. .. but keep it short" ' , 'textfield'),
-			array( 'logopic', 'If you would like to add an image or logo, upload it, copy and paste the link here." ' , 'textfield'),
+			array( 'imagecred', 'Your photo credit name' , 'textfield'),
+			array( 'imagelink', 'Your photo credit link ex: http://example.com' , 'textfield'),
 				),
 		
 );
@@ -24,7 +23,7 @@ $videobox = array (
 		global $videobox;
 			if ( function_exists( 'add_meta_box' ) ) {
 		foreach ( array_keys( $videobox ) as $box_name ) {
-			add_meta_box( $box_name, __( $box_name, 'video' ), 'video_post_custom_box', 'slides', 'normal', 'high' );
+			add_meta_box( $box_name, __( $box_name, 'video' ), 'video_post_custom_box', 'post', 'normal', 'high' );
 			}
 		}
 		}
