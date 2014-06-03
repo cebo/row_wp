@@ -180,6 +180,29 @@
 
 <?php wp_footer(); ?>
 
+<script type="text/javascript">
+	 var fliptoSettings = {
+		 code: '1S-NYCMILANN',
+		 reviewCode: 'NYCMIL',
+		 language: 'en',
+		 pageType: 2, 
+		 parent: 'fliptoContent',
+		 isSignupAllowed: true
+	 };
+
+	 (function () {
+		 var fn = function (k) {
+			 var r = (k == 'trk') ? (new RegExp('(?:^|;)\\s?flipto' + fliptoSettings.code + '=(.*?)(?:;|$)', 'i')).exec(document.cookie) : (new RegExp('[\\?&]' + k + '=([^&#]*)')).exec(window.location.href);
+			 return (null === r) ? '' : '&' + k + '=' + encodeURIComponent(r[1]);
+		 };
+		 if (fliptoSettings.code !== '' || (fn('flipto') !== '' && fliptoSettings.isSignupAllowed)) {
+			 var ft = document.createElement('script'); ft.type = 'text/javascript';
+			 ft.src = 'https://flip.to/external/signup.js?&c=' + fliptoSettings.code + '&revcode=' + fliptoSettings.reviewCode + '&lang=' + fliptoSettings.language + '&loc=' + fliptoSettings.parent + '&pt=' + fliptoSettings.pageType + fn('debug') + fn('trk') + (fliptoSettings.isSignupAllowed ? fn('flipto') : '');
+			 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ft, s);
+		 }
+	 })();
+</script>
+
 <!-- Google Code for Remarketing Tag -->
 <script type="text/javascript">
 /* <![CDATA[ */
