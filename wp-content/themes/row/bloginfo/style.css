@@ -208,11 +208,12 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 	position: absolute;
 	top: 20px;
 	left: 0;
+	width: 47%;
 }
 
 .rightsort {
 	position: absolute;
-	top: 20px;
+	top: 13px;
 	right: 0;
 }
 
@@ -254,7 +255,9 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 }
 
 .leftsort fieldset input[type=radio] {
-	display: none;
+	position: absolute;
+	z-index: 99999;
+	opacity: 0;
 }
 
 
@@ -265,7 +268,7 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 
 .leftsort i {
 	position: absolute;
-	right: 0;
+	left: 370px;
 	top: -4px;
 	color: #fff;
 	font-size: 28px;
@@ -302,18 +305,17 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 	margin-right: 10px;
 	position: absolute;
 	left: 0;
-	top: 2px;
+	top: 3px;
 	background-color: #fff;
-	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
 }
 
 .leftsort fieldset input[type=radio]:checked + label:before {  
-    content: "\2022";  
-    color: #01c3de;  
-    font-size: 30px;  
-    text-align: center;  
-    line-height: 18px;  
-    padding: 0;
+	content: "";
+	background: #666666;
+	font-size: 51px;
+	text-align: center;
+	line-height: 23px;
+	padding: 0;
 }  
 
 
@@ -351,7 +353,7 @@ fieldset select {
 	border: none;
 	appearance: none;
 	-webkit-appearance: none;
-	padding: 7px 20px 7px 15px;
+	padding: 7px 72px 7px 15px;
 	border-left: 1px solid #ddd;
 	border-radius: 0;
 	position: relative;
@@ -363,13 +365,13 @@ fieldset select {
 
 .reservations {
 	position: absolute;
-	top: 80px;
+	top: 75px;
 	right: 0;
 }
 
 .rightsort a {
 	color: #fff;
-	font-size: 15px;
+	font-size: 20px;
 	padding: 0 3px;
 		-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
@@ -419,7 +421,7 @@ fieldset select {
 
 .rightsort .sosocial {
 	float: right;
-	width: 150px;
+	width: 175px;
 	padding: 6px 0 0 0;
 }
 
@@ -475,7 +477,7 @@ fieldset select {
 	font-family: 'Playfair Display', serif;
 	font-size: 14px;
 	line-height: 24px;
-	font-weight: 700;
+	font-weight: 400;
 	padding: 0 0 15px 0;
 	color: #000;
 	-webkit-font-smoothing: antialiased;
@@ -615,9 +617,9 @@ fieldset select {
 	font-weight: 700;
 }
 .datebox span.date {
-	font-size: 60px;
-	line-height: 35px;
-	margin-top: -17px;
+	font-size: 50px;
+	line-height: 39px;
+	margin-top: -12px;
 }
 
 .datebox span.moyear {
@@ -671,11 +673,46 @@ fieldset select {
 	width: 100%;
 }
 
+.rightcolumn #lang_sel {
+	width: calc(100% - 17px);
+}
 
+.rightcolumn #lang_sel li {
+	width: 100%;
+}
+
+.rightcolumn #lang_sel a.lang_sel_sel {
+	color: #444;
+	width: 98%;
+	padding: 6px;
+	border: 2px solid #ddd;
+}
 /* Sidebar Styles -------------- */
 
 
+.rightcolumn input {
+	width: calc(100% - 31px);
+	padding: 10px;
+	margin: 10px 0;
+	border: 2px solid #ddd;
+	background: transparent;
+	position: relative;
+	z-index: 3;
+}
 
+
+.rightcolumn fieldset {
+	position: relative;
+}
+
+.rightcolumn i {
+	position: absolute;
+	right: 14px;
+	z-index: 0;
+	top: 16px;
+	font-size: 21px;
+	color: #ddd;
+}
 .rightcolumn .sidehead {
 	font-family: 'Playfair Display', serif;
 	font-size: 35px;
@@ -938,7 +975,10 @@ fieldset select {
 
 
 
-
+.postcont {
+	position: relative;
+	padding: 0 0 0 60px;
+}
 
 .postfull .introimage {
 	width: 100%;
@@ -1002,6 +1042,20 @@ fieldset select {
 	padding-left: 5px;
 }
 
+.authorsection p span a {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: #000;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-weight: 700;
+	padding-left: 0px;
+}
 
 
 .postfull p, .postfull a {
@@ -1260,7 +1314,8 @@ fieldset select {
 	border-top: 1px solid #222;
 	border-bottom: 1px solid #222;
 	text-align: center;
-	margin: 12px 0;
+	margin: 12px auto 12px;
+	max-width: 650px;
 }
 .underline ul {
 	padding: 0;
@@ -1324,6 +1379,38 @@ fieldset select {
 	width: 39%;
 	margin:0 0px;
 }
+
+.reservationform span.shortercal {
+	width: 17%;
+	height: 100%;
+	-webkit-appearance: none;
+	border: none;
+	padding:0;
+	border-radius: 0;
+	color: #001E3A;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	position: relative;
+	z-index: 999;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	margin: 0px 0 0 0;
+	height: 37px;
+	overflow: hidden;
+}
+.reservationform span.shortercal:after {
+	position: absolute;
+	content: '';
+	right: 9px;
+	top: 21px;
+	width: 0;
+	height: 0;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 3px solid #222;
+	z-index: 999;
+}
 .reservationform span.dropsec {
 	
 	float: left;
@@ -1341,7 +1428,7 @@ fieldset select {
 	border: 0;
 	position: relative;
 	background: #fff;
-	padding: 9px;
+	padding: 6px 9px;
 }
 .reservationform span i {
 	border-left: 1px solid #111;
@@ -1384,13 +1471,15 @@ fieldset select {
 
 }
 
+.caldago {
+	overflow: hidden;
+	width: 95px;
+}
 .reservationform select {
-	width: 22%;
-	height: 100%;
 	background: #fff;
 	-webkit-appearance: none;
 	border: none;
-	padding: 5px 10px;
+	padding: 5px 37px 5px 20px;
 	border-radius: 0;
 	color: #001E3A;
 	font-family: Trebuchet MS;
@@ -1400,8 +1489,8 @@ fieldset select {
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	margin: 11px 0 0 0;
-	height: 30px;
+	margin: 1px 0 0 0;
+	width: 100%;
 }
 
 .reservationform .button {
@@ -1411,7 +1500,7 @@ fieldset select {
 	padding: 6px 15px;
 	background: #e51a9b;
 	font-size: 16px;
-	margin: 21px 10px 0 0;
+	margin: 6px 16px 0 0;
 	text-align: right;
 	font-family: 'Montserrat', sans-serif;
 	color: #fff;
@@ -2279,7 +2368,7 @@ body .ui-tooltip {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-	padding: 13px 10px;
+	padding: 9px 10px;
 	border: 0;
 	font-weight: lighter;
 	color: #222;
@@ -2335,7 +2424,7 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-highlight {
 	border: 1px solid #fcd3a1;
 	background: #e51a9b url(images/ui-bg_glass_55_fbf8ee_1x400.png) 50% 50% repeat-x;
-	color: #444444;
+	color: #fff;
 }
 .ui-state-highlight {
 	border: none !important;
@@ -2701,3 +2790,247 @@ body .ui-tooltip {
 }
 
 
+
+
+
+
+
+
+
+.slippernav a {
+	font-family: 'Playfair Display', serif;
+	font-size: 20px;
+	line-height: 45px;
+	font-weight: 400;
+	padding: 15px 0 30px 0;
+	margin: 15px 0 10px 0;
+	margin-bottom: 0px;
+	font-style: italic;
+	color: #000;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+#comments h4 {
+	font-family: 'Playfair Display', serif;
+	font-size: 40px;
+	line-height: 45px;
+	font-weight: 400;
+	padding: 15px 0;
+	margin: 0 0 10px 0;
+	margin-bottom: 0px;
+	font-style: italic;
+	color: #000;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+#comments textarea, #comments input  {
+	width: calc(100% - 20px);
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+
+#comments input[type=submit] {
+	border: 0;
+	border: 0;
+	padding: 6px 15px;
+	background: #e51a9b;
+	font-size: 16px;
+	margin: 6px 16px 0 0;
+	text-align: right;
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 400;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	max-width: 80px;
+}
+
+#respond #submit:hover {
+	background: transparent;
+}
+
+#sleek {
+	position: relative;
+}
+.usercomments li:after {
+	top: 66px !important;
+}
+.commentlist li #sleek {
+	width: 95%;
+}
+.messenger .i {
+	right: -81px;
+	top: 18px;
+}
+.usercomments h4 {
+	position: relative;
+}
+.usercomments h4 i {
+	font-size: 16px;
+	position: absolute;
+	right: 15px;
+	bottom: 0;
+}
+
+.usercomments h4 i a {
+	color: #0E98DF;
+}
+
+
+.pagecontent p.comment-notes {
+	text-align: center;
+}
+
+#cancel-comment-reply-link {
+	font-size: 24px;
+}
+.comment-body {
+	min-height: 115px;
+}
+.comment-author img {
+	border: 5px solid #CCCCCC;
+	margin: 30px 0 0 0;
+	width: auto;
+}
+.comment-author {
+	float: left;
+	width: 100px;
+	height: 100%;
+	display: block;
+	margin: -43px 0 0 0;
+}
+
+.usercomments ul li {
+	padding: 30px 0 45px 0px;
+	margin: 15px 0 25px 0;
+	border-bottom: 1px solid #CCCCCC;
+	position: relative;
+	list-style: none;
+}
+
+.usercomments li .reply:before {
+	content: '\f086';
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #ddd;
+	position: absolute;
+	font-size: 30px;
+	top: -26px;
+	right: 7px;
+}
+
+.usercomments li .reply {
+	position: relative;
+	position: absolute;
+	right: 20px;
+	top: 50px;
+}
+.says {
+	display: none;
+	
+}
+.fn {
+	position: absolute;
+	left: 102px;
+	top: 33px;
+	font-family: 'Montserrat', sans-serif;
+	color: #3a3a3a;
+	text-transform: uppercase;
+	font-size: 25px;
+	line-height: 30px;
+	font-weight: 100;
+	color: #333;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	margin: 15px 0 20px 0;
+	font-style: normal;
+}
+
+#comments a {
+	font-family: 'Montserrat', sans-serif;
+	color: #3a3a3a;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+.fn a {
+	
+	font-family: 'Montserrat', sans-serif;
+	color: #3a3a3a;
+	text-transform: uppercase;
+	font-size: 25px;
+	line-height: 30px;
+	font-weight: 100;
+	color: #333;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	margin: 15px 0 20px 0;
+	font-style: normal;
+}
+
+.comment-meta {
+	margin-top: 60px;
+}
+
+.comment-meta a {
+	text-transform: lowercase;
+	font-size: 12px;
+	padding: 8px 0;
+	display: block;
+}
+.usercomments ul li:hover {
+	
+}
+
+.usercomments ul li ul {
+	position: relative;
+}
+
+.usercomments ul li ul:before {
+	content: '';
+	position: absolute;
+	left: 30px;
+	top: 0;
+		width: 0; 
+	height: 0; 
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	
+	border-top: 15px solid #ddd;
+}
+
+.usercomments ul li ul li {
+	border-bottom: none;
+	padding: 30px 0 0px 15px;
+	margin: 0;
+}
+
+.usercomments ul li ul li:after {
+	color: #0E98DF;
+}
+.usercomments ul li:before {
+	display: none;
+}
+
+.commentlist p {
+	text-transform: none;
+}

@@ -1623,8 +1623,63 @@ $options[] = array( "name" => __('Pinterest Link','cebolang'),
 			"desc" => "Paste in your pinterest link.",
 			"id" => $shortname."_pinterest",
 			"std" => "",
+
+
+
+
+
+
+
 			"type" => "text");		
 
+/* Option Page 2 - Sample Page */
+$options[] = array( "name" => __('Sidebar Ads','cebolang'),
+			"type" => "heading");
+
+
+$options[] = array( "name" => __('Ad 1 Code','cebolang'),
+			"desc" => "Paste in your adspeed code or whatever you would like to use",
+			"id" => $shortname."_ad1code",
+			"std" => "",
+			"type" => "textarea");
+
+$options[] = array( "name" => __('Upload Ad 1 Image instead','cebolang'),
+			"desc" => __('The primary locations icon on the map','cebolang'),
+			"id" => $shortname."_ad1image",
+			"std" => "",
+			"type" => "upload");	
+
+
+
+$options[] = array( "name" => __('Upload Ad 1 Image Link','cebolang'),
+			"desc" => "Paste in full Ad link: ex: http://example.com.",
+			"id" => $shortname."_ad1link",
+			"std" => "",
+			"type" => "text");					
+					
+
+			
+
+$options[] = array( "name" => __('Ad 2 Code','cebolang'),
+			"desc" => "Paste in your adspeed code or whatever you would like to use",
+			"id" => $shortname."_ad2code",
+			"std" => "",
+			"type" => "textarea");
+
+$options[] = array( "name" => __('Upload Ad 2 Image instead','cebolang'),
+			"desc" => __('The primary locations icon on the map','cebolang'),
+			"id" => $shortname."_ad2image",
+			"std" => "",
+			"type" => "upload");	
+
+
+
+$options[] = array( "name" => __('Upload Ad 2 Image Link','cebolang'),
+			"desc" => "Paste in full Ad link: ex: http://example.com.",
+			"id" => $shortname."_ad2ink",
+			"std" => "",
+			"type" => "text");											
+					
 
 
 /* Option Page 2 - Sample Page */

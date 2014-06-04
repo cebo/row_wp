@@ -4,7 +4,6 @@
 
 */
  
-
 include(TEMPLATEPATH . '/header_alt.php'); ?>
 	
 	<div class="wrapper">
@@ -30,7 +29,7 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 					
 					
 					?>
-
+					<?php wpb_set_post_views(get_the_ID()); ?>
 					
 						<div class="postfull">
 						
@@ -56,7 +55,7 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 						
 						<h1><?php the_title(); ?></h1>
 						
-						<p class="postmeta"><?php echo the_time("n j,y"); ?>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Categories: <?php $project_terms = wp_get_object_terms($post->ID, 'category'); if(!empty($project_terms)) { if(!is_wp_error( $project_terms )) { echo ''; $count = 0; foreach($project_terms as $term){ if($count > 0) { echo ', '; } echo '<a href="'.get_term_link($term->slug, 'category'). '">'.$term->name. '</a>';  $count++; }  } } ?></p>	
+						<p class="postmeta"><?php echo the_time("F j, Y"); ?>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Categories: <?php $project_terms = wp_get_object_terms($post->ID, 'category'); if(!empty($project_terms)) { if(!is_wp_error( $project_terms )) { echo ''; $count = 0; foreach($project_terms as $term){ if($count > 0) { echo ', '; } echo '<a href="'.get_term_link($term->slug, 'category'). '">'.$term->name. '</a>';  $count++; }  } } ?></p>	
 						
 						<?php $galleryImages = get_post_gallery_imagess(); 
 							   $imagesCount = count($galleryImages);
@@ -81,20 +80,24 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 					
 							      </ul>
 							    </div>
+							    
+							    <div class="postcont">
 
-							<?php
-					        $gallery = get_post_gallery();
-					
-					        $content = strip_shortcode_gallery( get_the_content() );                                        
-					        $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) ); 
-					        echo $content;
-					
-					        ?>								
-					
+										<?php
+								        $gallery = get_post_gallery();
+								
+								        $content = strip_shortcode_gallery( get_the_content() );                                        
+								        $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) ); 
+								        echo $content;
+								
+								        ?>								
+								</div>
 					</div><!-- end postclip -->
 
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
+					
+					 <?php comments_template(); ?>
 				
 				</div>
 				

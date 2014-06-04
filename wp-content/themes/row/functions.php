@@ -178,7 +178,55 @@ function get_post_gallery_imagess() {
 
 
 
+function wpb_get_post_views($postID){
+    $count_key = 'wpb_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "";
+    }
+    return $count.' ';
+}
 
+
+function wpb_set_post_views($postID) {
+    $count_key = 'wpb_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+//To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function wpb_track_post_views ($post_id) {
+    if ( !is_single() ) return;
+    if ( empty ( $post_id) ) {
+        global $post;
+        $post_id = $post->ID;    
+    }
+    wpb_set_post_views($post_id);
+}
+add_action( 'wp_head', 'wpb_track_post_views');
+
+function click_taxonomy_dropdown($taxonomy) { ?>
+	<form action="/" class="caldago" method="post">
+	<select name="cat" id="cat" class="postform">
+	<option value="-1">Category</option>
+	<?php
+	$terms = get_terms($taxonomy);
+	foreach ($terms as $term) {
+		printf( '<option class="level-0" value="%s">%s</option>', $term->slug, $term->name );
+	}
+	echo '</select></form>';
+	?>
+<?php }
 
  /* ................. ADDITIONAL INFO FOR SHORTCODES .................... */
 /* Below is an include to a few options for your projects.*/

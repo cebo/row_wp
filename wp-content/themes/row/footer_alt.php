@@ -71,7 +71,7 @@
 		        numberOfMonths: 1,
 		        minDate: 0,
 		        altField  : '#arv',
-    			altFormat : 'yymmdd',
+    			altFormat : 'yy-mm-dd',
     			format    : 'mm-dd-yy',
     			//minDate: new Date(2014, 00, 15),
 		        onSelect: function(selected) {
@@ -82,7 +82,7 @@
 		        numberOfMonths: 1,
 		        minDate: 0,
 		        altField  : '#dep',
-    			altFormat : 'yymmdd',
+    			altFormat : 'yy-mm-dd',
     			format    : 'mm-dd-yy',
     			//minDate: new Date(2014, 00, 15),
 		        onSelect: function(selected) {
@@ -97,6 +97,18 @@
         inst.dpDiv.css({marginTop: -input.offsetHeight + 'px', marginLeft: input.offsetWidth + 'px'});
     }
 }); 
+
+
+	
+			jQuery('form a.button').click(function(e) {
+				e.preventDefault();
+				_gaq.push(['_link', createURL() ]);
+				return false;
+			});
+
+
+
+
 		});
 	</script>
 

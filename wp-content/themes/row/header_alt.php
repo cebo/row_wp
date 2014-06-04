@@ -34,7 +34,50 @@
 <!-- responsive style -->
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/bloginfo/css/media.css">
+<script type="text/javascript">
+	
+	
+	function createURL() {
+	var checkin = jQuery("#arrival_date").val();
+	var checkout = jQuery("#departure_date").val();
+	var adults = jQuery("#adults").val();
+	var children = jQuery("#children").val();
+	
+	<?php if( $current_lang == 'en' ) { ?>
 
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+
+	<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" + 
+
+	<?php } elseif( $current_lang == 'pt-br') { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" + 
+
+	<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" + 
+
+	<?php } else { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+
+	<?php }  ?>
+	
+										"&arrival_date=" + checkin + 
+										"&departure_date=" + checkout + 
+										"&adults[]=" + adults + 
+										"&children[]=" + children;
+
+	return bookinglink;
+	
+
+
+
+}
+
+</script>
 
 	<?php
 		/****************** DO NOT REMOVE **********************
