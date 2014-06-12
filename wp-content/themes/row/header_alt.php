@@ -131,5 +131,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </script>
 
 
-</head> 
-	
+</head>
+
+<body <?php body_class(); ?>>
+			
+	<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/bloginfo/images/logo.png" alt="Row NYC" /></a>
+				

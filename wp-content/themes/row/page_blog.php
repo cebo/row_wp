@@ -79,13 +79,17 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 							
 							<p><?php echo excerpt(45); ?> </p>
 							
-							<div class="sharebox"><span><?php _e('Share:',''); ?></span><a href="<?php bloginfo('url'); ?>/feed/"><i class="fa fa-rss"></i></a><a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&via=rownyc" target="_blank"><i class="fa fa-twitter"></i></a>
-						<a href="http://www.facebook.com/sharer.php?s= 100&amp;p[title]=<?php the_title(); ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php echo $imgsrc[0]; ?>&amp;p[summary]=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
-							
-						<?php $perm = get_permalink(); $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a></div>
-							
-							<a href="<?php the_permalink(); ?>" class="readon"><?php _e('Read More',''); ?> ></a>
-						
+							<div class="post-bottom">
+
+								<div class="sharebox"><span><?php _e('Share:',''); ?></span><a href="<?php bloginfo('url'); ?>/feed/"><i class="fa fa-rss"></i></a><a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&via=rownyc" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a href="http://www.facebook.com/sharer.php?s= 100&amp;p[title]=<?php the_title(); ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php echo $imgsrc[0]; ?>&amp;p[summary]=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+								
+							<?php $perm = get_permalink(); $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a></div>
+
+								<a href="<?php the_permalink(); ?>" class="readon"><?php _e('Read More',''); ?> ></a>
+
+							</div>
+													
 						</div>
 						
 						<div class="clear"></div>
@@ -181,14 +185,18 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 							<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 							
 							<p><?php echo excerpt(45); ?> </p>
-							
+						
+						</div>
+
+						<div class="post-bottom">
+
 							<div class="sharebox"><span><?php _e('Share:',''); ?></span><a href="<?php bloginfo('url'); ?>/feed/"><i class="fa fa-rss"></i></a><a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&via=rownyc" target="_blank"><i class="fa fa-twitter"></i></a>
 						<a href="http://www.facebook.com/sharer.php?s= 100&amp;p[title]=<?php the_title(); ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php echo $imgsrc[0]; ?>&amp;p[summary]=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
 							
 						<?php $perm = get_permalink(); $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a></div>
-							
+
 							<a href="<?php the_permalink(); ?>" class="readon"><?php _e('Read More',''); ?> ></a>
-						
+
 						</div>
 						
 						<div class="clear"></div>
