@@ -3,64 +3,35 @@
 /* Basic Single Post Template 
 
 */
- get_header(); ?>
-
-
-
-
-
-<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-
-<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-
-<div class="fullpic">
-
-	<div class="slide-header">
-		<a class="button" href="<?php echo get_option('cebo_fullpic'); ?>" target="_blank"><?php _e('RESERVE NOW', 'cebolang'); ?></a>
-	</div>
-	<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" />
-
-
-</div>
-
-
-<?php endwhile; endif; wp_reset_query(); ?>	
-
-<?php } ?>
-
-
-	<div id="page-content" class="section">
+ 
+include(TEMPLATEPATH . '/header_alt.php'); ?>
+	
+	<div class="wrapper">
 		
-		<div class="container">
-
-			<div class="post-title section-header">
-
-				<div class="fl">
-	
-					<?php if(get_option('cebo_shorttitle')) { ?>
-					
-					<h2 class="section-pre-title fl"><?php echo get_option('cebo_shorttitle'); ?></h2>
-
-					<div class="section-header-divider fl"></div>
-					
-					<?php } ?>
-
+		<?php include(TEMPLATEPATH . '/bloginfo/filter.php'); ?>
 		
-					<h2 class="section-title fr"><?php the_title(); ?></h2>
-	
-				</div>
-	
-				<div class="fr">
+
+		<section class="midsect"> 
+			
+			<div class="container">
+				
+				<div class="leftcolumn">
 					
-					<ul class="social-buttons">
-					<?php if(get_option('cebo_facebook')) { ?>
+					<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php $attachments = get_children(
+					    array(
+					        'post_type' => 'attachment',
+					        'post_mime_type' => 'image',
+					        'post_parent' => $post->ID
+					    ));
 					
-						<li class="facebook"><a href="http://facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook fa-2x"></i><span>facebook</span></a></li>
-						
-					<?php } ?>
-					<?php if(get_option('cebo_twitter')) { ?>
+					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 					
-						<li class="twitter"><a href="http://twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter fa-2x"></i><span>twitter</span></a></li>
+					
+					?>
+					<?php wpb_set_post_views(get_the_ID()); ?>
+					
+						<div class="postfull">
 						
 					<?php } ?>
 					</ul>
@@ -146,51 +117,88 @@ if( count( $children ) != 0 ) { ?>
 								<?php } ?>
 								
 							</li>
+
+						<!-- <div class="authorsection">
+							<div class="authavi" style="background-image:url(<?php echo get_avatar_url ( get_the_author_meta('ID'), $size = '50' ); ?>);">
+								<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"></a>
+							</div> -->
 							
-							<?php endwhile; endif; wp_reset_query(); ?>
+							<p class="firstp">By<span><?php the_author_meta('display_name'); ?></span></p>
 							
+							<p>Photo By<span><?php if(get_post_meta($post->ID, 'imagelink', $single = true)) { ?>
+			       				<a href="<?php echo get_post_meta($post->ID, 'imagelink', $single = true); ?>" target="_blank">
+			       				<?php } ?>
+			       				
+			       				<?php echo get_post_meta($post->ID, 'imagecred', $single = true); ?>
+			       				
+			       				<?php if(get_post_meta($post->ID, 'imagelink', $single = true)) { ?>
+			       				</a>
+			       				<? } ?></span></p>
 							
-							<?php query_posts('post_type=page&p=40&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); 
-					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-					
-					
-					
-					
-					
-					
-					
-					<!-- Amenities -->
-					
-					<li>
-						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
+							<div class="clear"></div>
+						</div>
 						
-						<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>"></a>
+						<h1><?php the_title(); ?></h1>
 						
-						<?php } else { ?>
+						<p class="postmeta"><?php echo the_time("F j, Y"); ?>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Categories: <?php $project_terms = wp_get_object_terms($post->ID, 'category'); if(!empty($project_terms)) { if(!is_wp_error( $project_terms )) { echo ''; $count = 0; foreach($project_terms as $term){ if($count > 0) { echo ', '; } echo '<a href="'.get_term_link($term->slug, 'category'). '">'.$term->name. '</a>';  $count++; }  } } ?></p>	
 						
-						<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"></a>
-						
-						<?php } ?>
-						
-						<h3><?php _e('Amenities', 'cebolang'); ?></h3>
-						
-						
-					</li>
-					
-					<?php endwhile; endif; wp_reset_query(); ?>		
+						<?php $galleryImages = get_post_gallery_imagess(); 
+							   $imagesCount = count($galleryImages);
+		       			 ?>
+		        	
 							
-						</ul>
-		
+							 <!-- Slideshow 4 -->
+							    <div class="callbacks_container">
+							      <ul class="rslides" id="slider4">	
+								<?php if ($imagesCount > 0) : ?>
+              					<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+                  					<?php if (!empty($galleryImages[$i])) :?>							        
+                  					
+                  				<li>
+							          <img src="<?php echo $galleryImages[$i]['full'][0];?>" alt="">
+							        </li>
+							        
+									<?php endif; ?>
+			  					<?php endfor; ?>
+								<?php endif; ?>
+					
+					
+							      </ul>
+							    </div>
+							    
+							    <div class="postcont">
+
+										<?php
+								        $gallery = get_post_gallery();
+								
+								        $content = strip_shortcode_gallery( get_the_content() );                                        
+								        $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) ); 
+								        echo $content;
+								
+								        ?>								
+								</div>
+					</div><!-- end postclip -->
+
+					
+					<?php endwhile; endif; wp_reset_query(); ?>	
+					
+					 <?php comments_template(); ?>
+				
 				</div>
+				
+				
+				<?php get_sidebar(); ?>
+				
+				<div class="clear"></div>
 			
-			<div class="clear"></div>
-
-		</div>
-
-	</div>
-
-
-<div class="clear"></div>
+			</div>
 	
-					
-<?php get_footer(); ?>
+		</section>
+
+
+<?php include (TEMPLATEPATH . '/footer_alt.php'); ?>
+
+
+</body>
+
+</html>
