@@ -4,6 +4,7 @@
 wp-content/debug.log
 # ignore local-config.php
 local-config.php
+Thumbs.db
 
 
 
