@@ -22,11 +22,11 @@
 	
 	<!-- widgetized  -->					
 				
-	<?php if(get_option('cebo_ad1code')) { ?>
+	<?php if(get_option('cebo_ad1code-removethistobringback')) { ?>
 	
 		<?php echo get_option('cebo_ad1code'); ?>
 	
-	<?php } elseif (get_option('cebo_ad1image')) { ?>
+	<?php } elseif (get_option('cebo_ad1image-removethistobringback')) { ?>
 	
 		<a href="<?php echo get_option('cebo_ad1link'); ?>" target="_blank"><img style="border-bottom: 1px dashed #EEEEEE; padding-bottom: 7px;" src="<?php echo get_option('cebo_ad1image'); ?>" alt="" /></a>
 
@@ -66,13 +66,13 @@
 		</div><!-- end popular items -->
 		
 		
-		<?php if(get_option('cebo_ad2code')) { ?>
+	<?php if(get_option('cebo_ad2code-removethistobringback')) { ?>
 	
 	<?php echo get_option('cebo_ad2code'); ?>
 	
-	<?php } elseif (get_option('cebo_ad2image')) { ?>
+	<?php } elseif (get_option('cebo_ad2image-removethistobringback')) { ?>
 	
-	<a href="<?php echo get_option('cebo_ad2link'); ?>" target="_blank"><img src="<?php echo get_option('cebo_ad2image'); ?>" alt="" /></a>
+		<a href="<?php echo get_option('cebo_ad2link'); ?>" target="_blank"><img src="<?php echo get_option('cebo_ad2image'); ?>" alt="" /></a>
 	<?php } ?>
 		
 		
