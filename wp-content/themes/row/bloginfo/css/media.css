@@ -9,11 +9,13 @@ and (max-width : 900px) {
 
 	.logo {
 	    display: block;
+	    float: left;
 	    height: 96px;
+	    left: 80px;
 	    margin: 20px auto 0;
 	    position: relative;
 	    text-align: center;
-	    top: 0;
+	    top: 30px;
 	}
 
 
