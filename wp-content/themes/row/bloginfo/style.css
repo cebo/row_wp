@@ -117,6 +117,22 @@ article ol li {
 }
 
 
+
+/* More control over what uses the transitions -----------------------------------------------------------*/
+
+/* .3s transitions */
+
+.rightsort form input
+{
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+}
+
+
+
 /* remember to define focus styles! */
 :focus {outline: 0;}
 
@@ -397,6 +413,7 @@ fieldset select {
     position: absolute;
     right: 15px;
     top: 2px;
+    line-height: 1.4;
 }
 
 .rightsort form input {
@@ -417,7 +434,13 @@ fieldset select {
 	-moz-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	font-weight: 700;
+	opacity: 0;
+	visibility: hidden;
 }
+	.rightsort form input:hover, .rightsort form fieldset:hover input, .rightsort form input:focus {
+	    opacity: 1;
+	    visibility: visible;
+	}
 
 .rightsort .sosocial {
     float: right;
@@ -462,8 +485,17 @@ fieldset select {
     position: absolute;
     right: 0;
     top: 60px;
-    width: 112px;
+    width: 170px;
     z-index: 9999;
+    text-align: center;
+}
+
+.logo > div {
+    clear: both;
+    color: #FFFFFF;
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
 }
 
 .postclip {
@@ -639,7 +671,7 @@ fieldset select {
 
 .datebox span.day {
 	font-size: 15px;
-	font-weight: 700;
+	font-weight: normal;
 }
 .datebox span.date {
 	font-size: 50px;
@@ -650,7 +682,7 @@ fieldset select {
 .datebox span.moyear {
 	font-size: 15px;
 	text-transform: uppercase;
-	font-weight: 700;	
+	font-weight: normal;	
 	border-bottom: 1px solid #ddd;
 	margin-bottom: 10px;
 }
@@ -741,7 +773,7 @@ fieldset select {
 .rightcolumn .sidehead {
 	font-family: 'Playfair Display', serif;
 	font-size: 35px;
-	line-height: 35px;
+	line-height: 1.5;
 	font-weight: 900;
 	padding: 15px 0;
 	border-bottom: 1px dotted #ddd;

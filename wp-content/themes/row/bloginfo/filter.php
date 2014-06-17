@@ -1,4 +1,9 @@
 <section class="topsect"> 
+
+	<a class="logo" href="<?php bloginfo('url'); ?>">
+		<img src="<?php bloginfo ('template_url'); ?>/bloginfo/images/logo.png" alt="Row NYC" />
+		<div>A Times Square Hotel</div>
+	</a>
 			
 			<div class="container">
 			
@@ -35,19 +40,19 @@
 					
 					
 					
-						<fieldset>
-							<?php click_taxonomy_dropdown( 'category' ); ?>
-					<script type="text/javascript">
-						var dropdown = document.getElementById("cat");
-						function onCatChange() {
-							if ( dropdown.options[dropdown.selectedIndex].value > '' ) {
-								location.href = "<?php echo get_option('home'); ?>/category/"+dropdown.options[dropdown.selectedIndex].value;
-							}
-						}
-					dropdown.onchange = onCatChange;
-					</script>
+						<!--<fieldset>
+							<?php //click_taxonomy_dropdown( 'category' ); ?>
+							 <script type="text/javascript">
+								var dropdown = document.getElementById("cat");
+								function onCatChange() {
+									if ( dropdown.options[dropdown.selectedIndex].value > '' ) {
+										location.href = "<?php echo get_option('home'); ?>/category/"+dropdown.options[dropdown.selectedIndex].value;
+									}
+								}
+							dropdown.onchange = onCatChange;
+							</script> 
 						<i class="fa fa-angle-down"></i>
-						</fieldset>
+						</fieldset> -->
 						<div class="clear"></div>
 					</div>
 				</div>

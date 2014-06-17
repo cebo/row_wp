@@ -56,7 +56,7 @@
 	    var feed = new Instafeed({
 	        get: 'tagged',
 	        limit: 6,
-	        tagName: 'awesome',
+	        tagName: 'MoreNYthanNY',
 	        resolution: 'standard_resolution',
 	        clientId: 'ff29ecc8eea64dc19555c89f8652a2b8'
 	    });

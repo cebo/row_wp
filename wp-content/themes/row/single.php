@@ -57,10 +57,19 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 						
 						<p class="postmeta"><?php echo the_time("F j, Y"); ?>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Categories: <?php $project_terms = wp_get_object_terms($post->ID, 'category'); if(!empty($project_terms)) { if(!is_wp_error( $project_terms )) { echo ''; $count = 0; foreach($project_terms as $term){ if($count > 0) { echo ' '; } echo '<a href="'.get_term_link($term->slug, 'category'). '">'.$term->name. '</a>';  $count++; }  } } ?></p>	
 						
-						<?php $galleryImages = get_post_gallery_imagess(); 
-							   $imagesCount = count($galleryImages);
+						<?php 
+
+							$galleryImages = get_post_gallery_imagess(); 
+							$imagesCount = count($galleryImages);
+
 		       			 ?>
-		        	
+
+
+		       			<div class="introimage" style="background-image:url(<?php echo $imgsrc[0]; ?>);">
+								
+							<a class="postlink" href="<?php the_permalink(); ?>"></a><?php $category = get_the_category(); ?>
+							
+						</div>		        	
 							
 							 <!-- Slideshow 4 -->
 							    <div class="callbacks_container">
