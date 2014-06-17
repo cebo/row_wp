@@ -37,7 +37,7 @@
 			
 			
 			
-			
+			<div id="fliptoContent"></div>
 			<!-- begin second level -->
 			
 			
@@ -159,15 +159,15 @@
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
-					<?php query_posts('post_type=page&p=445&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=3258&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<div class="picone">
 					
 						<div class="wideover overlay narrow">
 					
-							<h2 class="h1"><?php the_title(); ?></h2>
-							<?php the_content(); ?>
+							<h2 class="h1">The World Cup</h2>
+							<p><?php echo excerpt(10); ?></p>
 							
 							
 							<?php $projects = get_page_with_template('explore_page');
@@ -175,7 +175,7 @@
 						  	//if($projects) { ?>
 						  
 						  
-							<a class="gone" href="<?php echo $projecturl; ?>"><?php _e('Explore NYC >','row-theme-text'); ?></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Watch A Match >','row-theme-text'); ?></a>
 							
 							<?php// } ?>
 						
