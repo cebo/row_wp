@@ -164,7 +164,7 @@
 					
 					<div class="picone">
 					
-						<div class="wideover overlay narrow">
+						<div class="wideover overlay narrow" style="top: 16%;">
 					
 							<h2 class="h1">The World Cup</h2>
 							<p><?php echo excerpt(10); ?></p>
@@ -175,7 +175,7 @@
 						  	//if($projects) { ?>
 						  
 						  
-							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Watch A Match >','row-theme-text'); ?></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Watch a match in <br>District M >','row-theme-text'); ?></a>
 							
 							<?php// } ?>
 						
