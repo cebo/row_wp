@@ -35,16 +35,27 @@ and (max-width : 640px) {
 
 	.topsect {
 	    height: auto;
-	    min-height: 340px;
+	    min-height: 300px;
 	    overflow: hidden;
 	    position: relative;
 	}
 
 	.logo {
 	    display: block;
+	    float: none;
+	    left: 0;
 	    margin: 20px auto 0;
 	    position: relative;
+	    right: 0;
 	    top: 0;
+	}
+
+	.logo > img {
+	    width: 90px;
+	}
+
+	.logo > div {
+		font-size: 11px;
 	}
 
 	.rightsort {
@@ -57,7 +68,7 @@ and (max-width : 640px) {
 	.rightsort form {
 	    clear: both;
 	    float: none;
-	    margin: 15px auto;
+	    margin: 0 auto 15px;
 	    opacity: 1;
 	    padding-right: 15px;
 	    position: absolute;

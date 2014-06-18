@@ -460,7 +460,43 @@
 				
 				
 				<ul class="blogposts">
+
+					<?php 
+
+						$query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => 1, 'p' => 3154 ) ); 
+						if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); 
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium"); 
+
+					?>
+										
+					<li>
 					
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+							<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						
+						<?php } elseif($imgsrc) { ?>
+						
+							<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						
+						
+						<?php } else { ?>
+											
+							<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
+						
+						<?php } ?>
+						
+						<div class="littleover">
+							<h2 class="h1"><?php _e('Blog','row-theme-text'); ?></h2>
+							
+							<!-- <p>Et eum invenim eos prae provid eos aut occullabore laborum.</p> -->
+							
+							<a class="gone" href="<?php bloginfo('url'); ?>/row-blog/">Read More ></a>
+						</div>
+						
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>						
 					
 					<?php $query = new WP_Query( array( 'post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 1
 					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>

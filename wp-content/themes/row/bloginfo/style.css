@@ -796,7 +796,7 @@ fieldset select {
 	font-size: 21px;
 	color: #ddd;
 }
-.rightcolumn .sidehead {
+.rightcolumn .sidehead, .sidewidgets h4 {
 	font-family: 'Playfair Display', serif;
 	font-size: 35px;
 	line-height: 1.5;
