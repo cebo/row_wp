@@ -17,7 +17,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if (get_option('cebo_custom_favicon') == '') { ?>
 	
-	<link rel="icon" href="<?php bloginfo ('template_url'); ?>/cebo_options/<?php bloginfo ('template_url'); ?>/images/favicon.ico" type="image/x-ico"/>
+	<link rel="icon" href="<?php bloginfo ('template_url'); ?>/favicon.ico" type="image/x-ico"/>
 	
 	<? } else { ?>
 	
