@@ -882,7 +882,7 @@
 							
 							<p><?php echo excerpt(20); ?></p>
 							
-							<a class="gone" href="<?php bloginfo('url'); ?>/row-blog/">Read More ></a>
+							<a class="gone" href="<?php the_permalink(); ?>">Read More ></a>
 						</div>
 						
 					</li>
