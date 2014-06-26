@@ -38,7 +38,7 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 						<div class="datebox">
 						
 							<span class="day"><?php echo the_time("l"); ?></span>
-							<span class="date"><?php echo the_time("n"); ?></span>
+							<span class="date"><?php echo the_time("j"); ?></span>
 							<span class="moyear"><?php echo the_time("M"); ?>, <?php echo the_time("Y"); ?></span>
 							
 							<!-- <div class="authavi" style="background-image:url(<?php //echo get_avatar_url ( get_the_author_meta('ID'), $size = '50' ); ?>);">

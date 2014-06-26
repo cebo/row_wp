@@ -17,13 +17,13 @@
 					
 					
 						
-				<form action="/row-blog/" method="post">
+				<form action="/blog/" method="post">
 				<fieldset>
 				<input type="radio" name="sales" value="sales" <?php if (isset($_POST['sales']) && $_POST['sales'] == 'saleers') { ?><?php } else { ?>checked='checked'<?php } ?> onclick="this.form.submit();" />
 				<label for='dateed'>Date</label>
 				</fieldset>
 				<fieldset>
-				<input type="radio" name="sales" value="saleers" <?php if (isset($_POST['sales']) && $_POST['sales'] == 'saleers'): ?>checked='checked'<?php endif; ?>onclick="this.form.submit();" />
+				<input type="radio" name="sales" value="saleers" <?php if (isset($_POST['sales']) && $_POST['sales'] == 'saleers'): ?>checked='checked'<?php endif; ?> onclick="this.form.submit();" />
 				<label for='loved'>Most Loved</label>
 					</fieldset>
 				
@@ -34,7 +34,7 @@
 					var dropdown = document.getElementById("filterthis");
 					function onCatChange() {
 						if ( dropdown.options[dropdown.selectedIndex].value > '' ) {
-							location.href = "<?php echo get_option('home'); ?>/row-blog";
+							location.href = "<?php echo get_option('home'); ?>/blog";
 						}
 					}
 				dropdown.onchange = onCatChange;

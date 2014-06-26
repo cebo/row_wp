@@ -123,7 +123,8 @@ article ol li {
 /* .3s transitions */
 
 .rightsort form input,
-.back-to-hotel a
+.back-to-hotel a,
+.postclip .catlink
 {
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -577,7 +578,7 @@ fieldset select {
 	-moz-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	font-weight: 400;
-	background: #000;
+	background: #e51a9b;
 	display: inline-block;
 	text-transform: uppercase;
 	padding: 5px 12px;
@@ -589,6 +590,9 @@ fieldset select {
 	transform-origin: 0 0;
 	-webkit-transform-origin: 0 0;
 }
+	.postclip .catlink:hover {
+		background: #be1982;
+	}
 
 .postclip .readon {
 	-webkit-transition: all 0.5s ease-in-out;
@@ -1079,7 +1083,7 @@ fieldset select {
 
 
 .introimage:hover {
-	opacity: 0.7;
+	opacity: 0.8;
 }
 .authorsection {
 	padding: 20px 0 12px 0;
