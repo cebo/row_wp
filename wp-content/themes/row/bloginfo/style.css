@@ -124,7 +124,8 @@ article ol li {
 
 .rightsort form input,
 .back-to-hotel a,
-.postclip .catlink
+.postclip .catlink,
+.postfull a
 {
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -578,7 +579,8 @@ fieldset select {
 	-moz-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	font-weight: 400;
-	background: #e51a9b;
+	/*background: #e51a9b;*/
+	background: #000;
 	display: inline-block;
 	text-transform: uppercase;
 	padding: 5px 12px;
@@ -590,9 +592,9 @@ fieldset select {
 	transform-origin: 0 0;
 	-webkit-transform-origin: 0 0;
 }
-	.postclip .catlink:hover {
+	/*.postclip .catlink:hover {
 		background: #be1982;
-	}
+	}*/
 
 .postclip .readon {
 	-webkit-transition: all 0.5s ease-in-out;
@@ -1161,7 +1163,7 @@ fieldset select {
 }	
 
 .postfull a {
-	color: 888;
+	color: #e51a9b;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
@@ -1169,7 +1171,7 @@ fieldset select {
 }
 
 .postfull a:hover {
-	color: #e51a9b;
+	color: #be1982;
 }
 
 .postfull .postmeta p {
