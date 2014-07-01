@@ -80,8 +80,11 @@ p {
 }
 
 a {
-	color: #8d3d00;
+	color: #e51a9b;
 }
+	a:hover {
+		color: #be1982;
+	}
 
 article blockquote {
 	border-left: 1px solid #ebe0b5;
@@ -1154,7 +1157,7 @@ fieldset select {
 	font-weight: 400;
 	font-style: normal;
 	padding: 0 0 15px 0;
-	color: #000;
+	color: #be1982;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
