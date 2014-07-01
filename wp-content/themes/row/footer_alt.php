@@ -29,10 +29,10 @@
 				<div class="underline">
 				
 					<ul>
-						<li><a href="http://rownyc.com/times-square-hotels/">About</a></li>
-						<li><a href=" http://rownyc.com/contact/">Contact</a></li>
-						<li><a href="http://rownyc.com/times-square-hotels/press/">Press</a></li>
-						<li><a href="http://rownyc.com/privacy-policy/">Terms & Policy</a></li>
+						<li><a href="<?php bloginfo('url'); ?>/times-square-hotels/">About</a></li>
+						<li><a href="<?php bloginfo('url'); ?>/contact/">Contact</a></li>
+						<li><a href="<?php bloginfo('url'); ?>/times-square-hotels/press/">Press</a></li>
+						<li><a href="<?php bloginfo('url'); ?>/privacy-policy/">Terms & Policy</a></li>
 					</ul>	
 					
 				</div>
