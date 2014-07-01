@@ -8,6 +8,10 @@ register_nav_menus( array(
 	'footer' => __( 'Footer Navigation', 'cebo' ),
 ) );
 
+register_nav_menus( array(
+    'blog-footer' => __( 'Blog Footer Navigation', 'cebo' ),
+) );
+
 
 // Sidebar Activation
 

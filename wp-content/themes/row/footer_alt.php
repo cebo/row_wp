@@ -10,7 +10,7 @@
 			<div class="container">
 				
 				<div class="social">
-					<p>Follow us & Stay Connected</p>
+					<p><?php _e('Follow us & Stay Connected','row-blog-theme-text'); ?></p>
 				
 					<div class="sosocial">
 						
@@ -29,11 +29,10 @@
 				<div class="underline">
 				
 					<ul>
-						<li><a href="<?php bloginfo('url'); ?>/times-square-hotels/">About</a></li>
-						<li><a href="<?php bloginfo('url'); ?>/contact/">Contact</a></li>
-						<li><a href="<?php bloginfo('url'); ?>/times-square-hotels/press/">Press</a></li>
-						<li><a href="<?php bloginfo('url'); ?>/privacy-policy/">Terms & Policy</a></li>
-					</ul>	
+
+						<?php wp_nav_menu( array( icl_object_id(31, 'Blog Footer Navigation'),  'theme_location' => 'blog-footer', 'items_wrap' => '%3$s', 'container' => '') ); ?>
+
+					</ul>
 					
 				</div>
 				<br>
@@ -41,7 +40,7 @@
 				<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/bloginfo/images/logo.png" alt="Row New York City" /></a>
 				<br>
 				<br>
-				<p class="copyright">All Materials @ 2014 Row NYC Hotel</p>
+				<p class="copyright"><?php _e('All Materials @ 2014 Row NYC Hotel','row-blog-theme-text'); ?></p>
 			
 			</div>
 	
