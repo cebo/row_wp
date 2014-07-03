@@ -1149,15 +1149,17 @@ fieldset select {
 	padding-left: 0px;
 }
 
+.postfull p {
+	color: #000;
+}
 
-.postfull p, .postfull a {
+.postfull a {
 	font-family: 'Playfair Display', serif;
 	font-size: 14px;
 	line-height: 24px;
 	font-weight: 400;
 	font-style: normal;
 	padding: 0 0 15px 0;
-	color: #be1982;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
