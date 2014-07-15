@@ -2157,6 +2157,12 @@ ul#selectUl li.unselected:hover {
 	overflow: hidden;
 }
 
+.picone a.blog-link {
+	color: #e51a9b;
+}
+	.picone a.blog-link:hover {
+		color: #be1982;
+	}
 
 
 

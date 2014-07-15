@@ -159,23 +159,27 @@
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
-					<?php query_posts('post_type=page&p=3258&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php query_posts('post_type=page&p=3109&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<div class="picone">
 					
 						<div class="wideover overlay narrow" style="top: 16%;">
 					
-							<h2 class="h1">The World Cup</h2>
-							<p><?php echo excerpt(10); ?></p>
+							<h2 class="h1">The Paparazzi Project</h2>
+							<p>
+								Live the life of a celebrity for a day with our Paparazzi Project, <br>
+								<a class="blog-link" href="http://rownyc.com/paparazzi-project/">as seen on CNN!</array>
+								<?php //echo excerpt(10); ?>
+							</p>							
 							
-							
-							<?php $projects = get_page_with_template('explore_page');
-						 	 $projecturl= get_permalink($projects);
-						  	//if($projects) { ?>
-						  
-						  
-							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Watch a match in <br>District M >','row-theme-text'); ?></a>
+							<?php 
+								$projects = get_page_with_template('explore_page');
+						 		$projecturl= get_permalink($projects);
+						  		//if($projects) { 
+						  	?>
+						  						  
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('BOOK PACKAGE >','row-theme-text'); ?></a>
 							
 							<?php// } ?>
 						
