@@ -179,7 +179,7 @@
 						  		//if($projects) { 
 						  	?>
 						  						  
-							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('BOOK PACKAGE >','row-theme-text'); ?></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Explore Package >','row-theme-text'); ?></a>
 							
 							<?php// } ?>
 						
