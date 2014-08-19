@@ -40,6 +40,24 @@
 
 			<?php the_content(); ?>
 
+			<?php if( is_page(array(3452,2998)) ) { ?>
+
+				<script type="text/javascript">
+					(function(w,d) {
+						function l(){
+							var site = '5457', page = 'row_nyc_landing', s, er = d.createElement('script');
+							er.type = 'text/javascript'; er.async = true;
+							er.src = '//o2.eyereturn.com/?site=' + site + '&;page=' + page;
+							s = d.getElementsByTagName('script')[0];
+							s.parentNode.insertBefore(er, s);
+							}
+							if (w.addEventListener) { w.addEventListener("load", l, false); }
+							else if (w.attachEvent) { w.attachEvent("onload",l); 
+						}
+					})(window,document);
+				</script>
+
+			<?php } ?>
 			
 			<div class="clear"></div>
 
