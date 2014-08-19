@@ -961,9 +961,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				<a href="<?php echo get_option('cebo_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
 				<a href="<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
 				<a href="<?php echo get_option('cebo_youtube'); ?>" target="_blank"><i class="fa fa-youtube"></i></a>
-				<?php if(is_home()) { ?>
-					<a href="https://plus.google.com/107905524889134524417" rel="publisher"><i class="fa fa-google-plus-square"></i></a>
-				<?php } ?>
+
+					<a href="https://plus.google.com/103755241093806177642" target="_blank" rel="publisher"><i class="fa fa-google-plus-square"></i></a>
+
 			</div>
 
 			<p>Complimentary WiFi</p>
