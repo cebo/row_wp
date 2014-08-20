@@ -15,26 +15,60 @@
 	
 		<?php if(get_post_meta($post->ID, 'cebo_fullbannerpic', true)) { ?>
 								
-								
-		<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullbannerpic', true); ?>);"></div>
+			<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullbannerpic', true); ?>);"></div>
 		
 		<?php } elseif(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+										
+			<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+
+		<?php } elseif(get_post_meta($post->ID, 'cebo_pulled_photos', true)) { ?>
+
+			<?php
+
+				/** settings **/
+				$images_dir = '';
+				$thumbs_dir = '';
+				$thumbs_width = 200;
+				$images_per_row = 3;
+
+				/** generate photo gallery **/
+				$image_files = get_files($images_dir);
+				
+				if(count($image_files)) {
+				  $index = 0;
+
+				 //  foreach($image_files as $index=>$file) {
+
+					//     $index++;
+					//     $thumbnail_image = $thumbs_dir.$file;
+					//     if(!file_exists($thumbnail_image)) {
+					//       $extension = get_file_extension($thumbnail_image);
+					//       if($extension) {
+					//         make_thumb($images_dir.$file,$thumbnail_image,$thumbs_width);
+					//       }
+					//     }
+
+					//     echo $thumbnail_image; 
+
+					// }
+
+				 ?>
+
+			  		<div class="stretch"  style="background-image: url(<?php echo $thumbnail_image[0]; ?>);"></div>
+
+				<?php } ?>
 								
-								
-		<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+			
 		
 		<?php } elseif($imgsrc) { ?>
 		
-		
-		<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+			<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
 		
 		<?php } else { ?>
 							
-		<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-		
-		
+			<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
 	
-	<?php } ?>
+		<?php } ?>
 	
 	</div>	
 	
@@ -76,38 +110,41 @@
 					<?php the_content(); ?>
 					
 					
-					
-					<div class="amenity-features">
-						
-						<ul>
-							<?php $details = get_post_meta ($post->ID, 'cebo_details', true);
-			             		$detailer = explode(',', $details);
-								
-								foreach($detailer as $d) {
- 								echo "<li>" . $d . "</li>"; } ?>
- 							
-						</ul>
+					<?php if( get_post_meta ($post->ID, 'cebo_details', true) ) { ?>
 
-						<ul>
-						
-							<?php $details = get_post_meta ($post->ID, 'cebo_workdetails', true);
-			             		$detailer = explode(',', $details);
-								
-								foreach($detailer as $d) {
- 								echo "<li>" . $d . "</li>"; } ?>
- 						
-						</ul>
+						<div class="amenity-features">
+							
+							<ul>
+								<?php $details = get_post_meta ($post->ID, 'cebo_details', true);
+				             		$detailer = explode(',', $details);
+									
+									foreach($detailer as $d) {
+	 								echo "<li>" . $d . "</li>"; } ?>
+	 							
+							</ul>
 
-						<ul>
-						
-							<?php $details = get_post_meta ($post->ID, 'cebo_entdetails', true);
-			             		$detailer = explode(',', $details);
-								
-								foreach($detailer as $d) {
- 								echo "<li>" . $d . "</li>"; } ?>
-													</ul>
+							<ul>
+							
+								<?php $details = get_post_meta ($post->ID, 'cebo_workdetails', true);
+				             		$detailer = explode(',', $details);
+									
+									foreach($detailer as $d) {
+	 								echo "<li>" . $d . "</li>"; } ?>
+	 						
+							</ul>
 
-					</div>
+							<ul>
+							
+								<?php $details = get_post_meta ($post->ID, 'cebo_entdetails', true);
+				             		$detailer = explode(',', $details);
+									
+									foreach($detailer as $d) {
+	 								echo "<li>" . $d . "</li>"; } ?>
+														</ul>
+
+						</div>
+
+					<?php } ?>
 
 					<div class="wonderline"></div>
 

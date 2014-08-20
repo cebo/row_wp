@@ -62,6 +62,14 @@ $meta_boxoryl = array(
               )
  		,
  		array( 
+              "name" => "Enable Pulled Photos",
+	          "desc" => "Check this to enable the pulling of photos from a 3rd party photo storage provider.",
+	          "id" => $prefix."_pulled_photos",
+	          "type" => "checkbox",
+	          "std" => ""
+              ),
+ 		
+ 		array( 
               "name" => "Thumbnail option rather than the featured image (hit INSERT INTO POST)",
 	          "desc" => "This thumb should be panoramic. A good size is 520w X 350h. ",
 	          "id" => $prefix."_homethumb",

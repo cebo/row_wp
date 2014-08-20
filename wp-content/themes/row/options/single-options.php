@@ -100,7 +100,7 @@ $meta_boxel = array(
 	          "id" => $prefix."_localcoordinates",
 	          "type" => "text",
 	          "std" => ""
-              )    
+              )
        	)
 );
 

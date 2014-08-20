@@ -1539,6 +1539,13 @@ $options[] = array( "name" => __('Contact Section Text','cebolang'),
 			"id" => $shortname."_cblurp",
 			"std" => "",
 			"type" => "textarea");
+
+
+$options[] = array( "name" => __('Dropbox Folder Link','cebolang'),
+			"desc" => "The URL to the public dropbox folder.",
+			"id" => $shortname."_dropbox_folder_link",
+			"std" => "",
+			"type" => "text");
 			
 			
 			
