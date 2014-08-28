@@ -814,7 +814,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							//query args
 							$custom_query_args = array(
 							    'post_type' => 'amenities', 
-							    'posts_per_page' => 3, 
+							    'posts_per_page' => 4, 
 							    'post__not_in' => array(32,33), 
 							);
 
