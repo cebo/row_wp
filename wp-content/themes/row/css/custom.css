@@ -3195,3 +3195,13 @@ ul.tabs li:last-child {
 .townbox ul li img {
 	max-width: 100%;
 }
+
+
+
+/* ==================================================  Page specific changes  ===============================================  */]
+
+
+
+.page-id-3491 .page-content > h1 {
+    text-transform: none;
+}
