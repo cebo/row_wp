@@ -6311,3 +6311,13 @@ a.detailsAnchor {
 .home .rightside .wideover.overlay.narrow > h1 {
     font-size: 28px;
 }
+
+
+
+/* ==================================================  Page specific changes  ===============================================  */]
+
+
+
+.page-id-3491 .page-content > h1 {
+    text-transform: none;
+}
