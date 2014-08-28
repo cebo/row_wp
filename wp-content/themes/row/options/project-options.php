@@ -54,6 +54,14 @@ $meta_boxer = array(
               )
  		,
  		array( 
+              "name" => "Reztrip Room Category",
+	          "desc" => "",
+	          "id" => $prefix."_room_code",
+	          "type" => "text",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
               "name" => "Square Footage",
 	          "desc" => "Room Square Footage",
 	          "id" => $prefix."_footage",
