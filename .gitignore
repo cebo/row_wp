@@ -5,8 +5,8 @@ wp-content/debug.log
 # ignore local-config.php
 local-config.php
 Thumbs.db
-
-
+# ignore wp-uploads
+wp-content/uploads
 
 git remote add website ssh://yourusername@www.site.com<script type="text/javascript">
 /* <![CDATA[ */

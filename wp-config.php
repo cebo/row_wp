@@ -21,22 +21,25 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 }
 else {
     // ** MySQL settings - You can get this info from your web host ** //
-	define('DB_NAME', 'rowdev');
+	define('DB_NAME', '543772_rownyctest');
 
 	/** MySQL database username */
-	define('DB_USER', 'root');
+	define('DB_USER', '543772_rowtest');
 
 	/** MySQL database password */
-	define('DB_PASSWORD', 'root');
+	define('DB_PASSWORD', 'V0rXnd58ZlKg');
 
 	/** MySQL hostname */
-	define('DB_HOST', 'localhost');
+	define('DB_HOST', 'mysql51-107.wc2.dfw1.stabletransit.com');
 
 	/** Database Charset to use in creating database tables. */
 	define('DB_CHARSET', 'utf8');
 
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
+	
+	define('WP_HOME','http://www.rownyc.com.php53-13.dfw1-2.websitetestlink.com/');
+	define('WP_SITEURL','http://www.rownyc.com.php53-13.dfw1-2.websitetestlink.com/');
 }
 
 /**#@+

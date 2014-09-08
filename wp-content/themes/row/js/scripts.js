@@ -98,15 +98,15 @@ $(document).ready(function(){
 			
 		// });
 
-			$('.supernav li.subinside ul, .supernav li.subinside').hover(function() {
+			//$('.supernav li.subinside ul, .supernav li.subinside').hover(function() {
       
-  				$('.navigate').stop().addClass("slipnot");
+  				//$('.navigate').stop().addClass("slipnot");
   			
-  			}, function() {
+  			//}, function() {
       	
-  				$('.navigate').stop().removeClass("slipnot");
+  				//$('.navigate').stop().removeClass("slipnot");
  			
-	 		});
+	 		//});
 		
 		$(function() {
 			var fixadent = $(".topnav"), pos = fixadent.offset();

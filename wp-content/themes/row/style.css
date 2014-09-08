@@ -809,6 +809,7 @@ h4 {
 	opacity: 1;
 	float: left;
 	width: 170px;
+	padding: 0;
 }
 
 .navigate .supernav li.dropsub p {
@@ -822,13 +823,18 @@ h4 {
 
 
 .navigate .supernav li.subinside:hover p {
-	-webkit-transition: opacity 0s linear 0s, margin 0s linear 0.25s;
+	/*-webkit-transition: opacity 0s linear 0s, margin 0s linear 0.25s;
 	-moz-transition: opacity 0s linear 0s, margin 0s linear 0.25s;
 	-ms-transition: opacity 0s linear 0s, margin 0s linear 0.25s;
 	-o-transition: opacity 0s linear 0s, margin 0s linear 0.25s;
 	transition: opacity 0s linear 0s, margin 0s linear 0.25s;
 	margin-left: -9999px;
-	opacity: 0;
+	opacity: 0;*/
+	color: #000;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 
 #div_demo {
