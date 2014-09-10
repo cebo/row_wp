@@ -64,10 +64,15 @@ function hhs_repeatable_meta_box_display() {
 	?>
 	<tr>
 		
-		<td><input type="text" class="widefat" name="url[]" value="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" /></td>
+		<td>
+			<input type="text" class="upload_image" name="url[]" value="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" size="30" style="width: 100%; padding: 10px 0;" />
+
+			<input class="upload_image_button" type="button" value="Upload Image" />
+
+		</td>
 
 		<td><input type="text" class="widefat" name="description[]" value="<?php if($field['description'] != '') echo esc_attr( $field['description'] ); ?>" /></td>
-		
+
 		<td><a class="button remove-row" href="#">Remove</a></td>
 	</tr>
 	<?php
@@ -77,7 +82,12 @@ function hhs_repeatable_meta_box_display() {
 	?>
 	<tr>
 	
-		<td><input type="text" class="widefat" name="url[]" value="http://" /></td>
+		<td>
+			<input type="text" class="upload_image" name="url[]" value="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" size="30" style="width: 100%; padding: 10px 0;" />
+
+			<input class="upload_image_button" type="button" value="Upload Image" />
+
+		</td>
 
 		<td><input type="text" class="widefat" name="description[]" /></td>
 	
@@ -88,7 +98,12 @@ function hhs_repeatable_meta_box_display() {
 	<!-- empty hidden one for jQuery -->
 	<tr class="empty-row screen-reader-text">
 		
-		<td><input type="text" class="widefat" name="url[]" value="http://" /></td>
+		<td>
+			<input type="text" class="upload_image" name="url[]" value="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" size="30" style="width: 100%; padding: 10px 0;" />
+
+			<input class="upload_image_button" type="button" value="Upload Image" />
+
+		</td>
 
 		<td><input type="text" class="widefat" name="description[]" /></td>
 		  
