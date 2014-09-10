@@ -56,6 +56,12 @@ include(TEMPLATEPATH . '/options/amenity-options.php');
 /* Below is an include to a few options for press releases.*/
 include(TEMPLATEPATH . '/options/press-options.php'); 
 
+ /* ................. SOME OPTIONS FOR PRESS .................... */
+/* Below is an include to a few options for press releases.*/
+include(TEMPLATEPATH . '/library/repeatable-fields-metabox.php'); 
+
+
+
 
  /* ................. SOME OPTIONS FOR Imagegalleries .................... */
 /* Below is an include to a few options for press releases.*/

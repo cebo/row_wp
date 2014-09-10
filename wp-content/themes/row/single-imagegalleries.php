@@ -24,64 +24,44 @@
 								
 			<div class="fourth-level room-slider">
 			
-			<?php if(get_post_meta($post->ID, 'cebo_youtube', true)) { ?>
-			
+				<?php if(get_post_meta($post->ID, 'cebo_youtube', true)) { ?>
 				
+					<div class="video-container">
 					
-							<div class="video-container">
+						<iframe width="720" height="394" src="http://www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'cebo_youtube', true); ?>" allowfullscreen></iframe>
+						
+					</div>
+				
+				<?php } else { ?> 
+				
+					<div class="flexslider-gallery flexslider">
+						<ul class="slides">
 							
-								<iframe width="720" height="394" src="http://www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'cebo_youtube', true); ?>" allowfullscreen></iframe>
-								
-							</div>
-			
-			
-			<?php } else { ?> 
-			
-				<div class="flexslider-gallery flexslider">
-					<ul class="slides">
-						
-						
-						
-						
-				
-								
-								<?php if(sp_get_image(1)) : ?>   
-					<?php $i = 0; while($i <= 10) : ?>
-				    <?php if(sp_get_image($i)) : ?> 
-				    
-										
+							<?php 
+
+								$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
+								foreach ( $repeatable_fields as $field ) { 
+
+							?>
+
+								<li>
+									<div class="slide-image" style="background-image:url(<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); ?>);"></div>
+									<div class="slide-description"><?php if ($field['description'] != '') echo esc_attr( $field['description'] ); ?></div>
+								</li>								
+
+							<?php
+
+								}
+
+							?>
+
+						</ul>
+					</div>
 					
-					<li>
-							<div class="slide-image" style="background-image:url(<?php echo sp_get_image($i) ?>);"></div>
-							<!-- <div class="gallery-description">
-								<p><?php echo sp_get_image_id($i) ?></p>
-							</div> -->
-						</li>
-						
-						
-					
-					<?php else : break; endif; ?>
-		            <?php $i++; ?>
-					<?php endwhile; ?>
-		            <?php endif; ?>	  
-				
-								
-						<!--<li>
-							<img src="images/gallery/gallery-photo-1.jpg" />
-							<div class="gallery-description">
-								<p>Since 1928, this classic New York City Hotel has been a recognized icon that’s helped define the skyline of the world’s most exciting city - New York.</p>
-							</div>
-						</li>-->
-						
-						
-					
-					</ul>
-				</div>
-				
 				<?php } ?>
-				
-				
+					
 				<?php endwhile; endif; wp_reset_query(); ?>	
+
 				<div class="gallery-categories">
 					<ul>
 						
