@@ -20,7 +20,7 @@ function hhs_get_sample_options() {
 
 add_action('admin_init', 'hhs_add_meta_boxes', 1);
 function hhs_add_meta_boxes() {
-	add_meta_box( 'repeatable-fields', 'Repeatable Fields', 'hhs_repeatable_meta_box_display', 'imagegalleries', 'normal', 'default');
+	add_meta_box( 'repeatable-fields', 'Slider Images', 'hhs_repeatable_meta_box_display', 'imagegalleries', 'normal', 'default');
 }
 
 function hhs_repeatable_meta_box_display() {
@@ -71,7 +71,7 @@ function hhs_repeatable_meta_box_display() {
 
 		</td>
 
-		<td><input type="text" class="widefat" name="description[]" value="<?php if($field['description'] != '') echo esc_attr( $field['description'] ); ?>" /></td>
+		<td><textarea type="text" class="widefat" name="description[]" value="<?php if($field['description'] != '') echo esc_attr( $field['description'] ); ?>" ></textarea></td>
 
 		<td><a class="button remove-row" href="#">Remove</a></td>
 	</tr>
@@ -89,7 +89,7 @@ function hhs_repeatable_meta_box_display() {
 
 		</td>
 
-		<td><input type="text" class="widefat" name="description[]" /></td>
+		<td><textarea type="text" class="widefat" name="description[]" ></textarea></td>
 	
 		<td><a class="button remove-row" href="#">Remove</a></td>
 	</tr>
@@ -105,7 +105,7 @@ function hhs_repeatable_meta_box_display() {
 
 		</td>
 
-		<td><input type="text" class="widefat" name="description[]" /></td>
+		<td><textarea type="text" class="widefat" name="description[]" ></textarea></td>
 		  
 		<td><a class="button remove-row" href="#">Remove</a></td>
 	</tr>
