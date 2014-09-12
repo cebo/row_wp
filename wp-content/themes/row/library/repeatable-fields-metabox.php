@@ -44,14 +44,17 @@ function hhs_repeatable_meta_box_display() {
 			$(this).parents('tr').remove();
 			return false;
 		});
+
+		
 	});
 	</script>
   
 	<table id="repeatable-fieldset-one" width="100%">
 	<thead>
 		<tr>
-			<th width="40%">URL</th>
-			<th width="40%">Description</th>
+			<th width="30%">Preview</th>
+			<th width="30%">URL</th>
+			<th width="30%">Description</th>
 			<th width="8%"></th>
 		</tr>
 	</thead>
@@ -63,9 +66,12 @@ function hhs_repeatable_meta_box_display() {
 	foreach ( $repeatable_fields as $field ) {
 	?>
 	<tr>
+
+		<td><img src="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" style="width: 100%;" /></td>
 		
 		<td>
-			<input type="text" class="upload_image" name="url[]" value="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" size="30" style="width: 100%; padding: 10px 0;" />
+
+			<input type="text" class="upload_image" name="url[]" value="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); ?>" size="30" style="width: 100%; padding: 10px 0;" />
 
 			<input class="upload_image_button" type="button" value="Upload Image" />
 
@@ -81,6 +87,8 @@ function hhs_repeatable_meta_box_display() {
 	// show a blank one
 	?>
 	<tr>
+
+		<td><img src="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" style="width: 100%;" /></td>
 	
 		<td>
 			<input type="text" class="upload_image" name="url[]" value="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" size="30" style="width: 100%; padding: 10px 0;" />
@@ -97,6 +105,8 @@ function hhs_repeatable_meta_box_display() {
 	
 	<!-- empty hidden one for jQuery -->
 	<tr class="empty-row screen-reader-text">
+
+		<td><img src="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" style="width: 100%;" /></td>
 		
 		<td>
 			<input type="text" class="upload_image" name="url[]" size="30" style="width: 100%; padding: 10px 0;" />
