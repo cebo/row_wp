@@ -71,7 +71,7 @@ function hhs_repeatable_meta_box_display() {
 
 		</td>
 
-		<td><textarea type="text" class="widefat" name="description[]" value="<?php if($field['description'] != '') echo esc_attr( $field['description'] ); ?>" ></textarea></td>
+		<td><textarea type="text" class="widefat" name="description[]" ><?php if($field['description'] != '') echo esc_attr( $field['description'] ); ?></textarea></td>
 
 		<td><a class="button remove-row" href="#">Remove</a></td>
 	</tr>
@@ -99,7 +99,7 @@ function hhs_repeatable_meta_box_display() {
 	<tr class="empty-row screen-reader-text">
 		
 		<td>
-			<input type="text" class="upload_image" name="url[]" value="<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); else echo 'http://'; ?>" size="30" style="width: 100%; padding: 10px 0;" />
+			<input type="text" class="upload_image" name="url[]" size="30" style="width: 100%; padding: 10px 0;" />
 
 			<input class="upload_image_button" type="button" value="Upload Image" />
 
