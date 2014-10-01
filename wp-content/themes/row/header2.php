@@ -421,7 +421,7 @@ _gaq.push(['_setDomainName', 'rownyc.com']);
 
 _gaq.push(['_trackPageview']);
 
-/*
+
 
 _gaq.push(['secondTracker._setAccount', 'UA-10318674-10']);
 
@@ -431,7 +431,7 @@ _gaq.push(['secondTracker._setDomainName', 'rownyc.com']);
 
 _gaq.push(['secondTracker._trackPageview']);
 
-*/
+
 
 
 
@@ -1013,7 +1013,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 						<li>
 
-							<a class="booking-link" href="https://rownyc.reztrip.com" onclick="_gaq.push(['_link', this.href]);return false;"><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+							<a target="_blank" class="booking-link" href="https://rownyc.reztrip.com" onclick="_gaq.push(['_link', this.href]);return false;"><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 						</li>
 						
@@ -1307,29 +1307,28 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<li>
 
 				<?php if( $current_lang == 'en') { ?>
-
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'zh-hans') { ?>
-
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'pt-br') { ?>
-
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } else { ?>
-
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } ?>
-				
-				<!-- Commented out the booking widget dropdown here
-				<div class="dropout">
+						
+				<!-- <div class="dropout">
 
 					<div class="inner">
 						
@@ -1403,6 +1402,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 									                    <option value="4">4</option>                                
 													</select>
 													
+													-->
+													
 													<!--<ul id="selectUl">
 													    <li>2</li>
 													    <li>1</li>
@@ -1428,7 +1429,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 										                    <option value="9">9</option>
 										                    <option value="10">10</option> 
 													</select>-->
-												<!--
+						<!--
 												</div>
 												<i class="fa fa-chevron-down"></i>
 											</span>
@@ -1459,8 +1460,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							
 					</div>			
 				
-				</div>
-			-->
+				</div> -->
+
 			</li>
 			
 			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><i class="fa fa-map-marker"></i><span class="locale"><?php _e('Location','row-theme-text'); ?></span></a>

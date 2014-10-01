@@ -222,6 +222,8 @@ var google_remarketing_only = true;
 
 <script type="text/javascript">
 
+/*
+
 var _gaq = _gaq || [];
 
 _gaq.push(['_setAccount', 'UA-10318674-1']);
@@ -255,6 +257,8 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
 })();
+
+*/
 
 </script> 
 </body>
