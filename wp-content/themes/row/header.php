@@ -499,7 +499,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			</li>
 
-			<li class="subinside">
+			<li>
 				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
 				
 				<ul class="dropbox">
@@ -557,7 +557,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			</li>
 
-			<li class="subinside">
+			<li>
 				<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>
 				
 					<ul id="dropbox" class="dropbox">
@@ -606,7 +606,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 			
 			
-			<li class="subinside">
+			<li>
 				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
 
 				<ul id="dropbox" class="dropbox">
@@ -705,7 +705,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				</ul>
 			</li>
 			
-			<li class="subinside">
+			<li>
 				<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p><?php _e('Deals','row-theme-text'); ?></p></a>
 				
 					<ul class="dropbox">
@@ -756,7 +756,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					</ul>
 			</li>
 			
-			<li class="subinside">
+			<li>
 				<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>
 					
 					
@@ -880,7 +880,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				
 			</li>
 			
-			<li class="subinside">
+			<li>
 				<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>
 				
 					<ul class="dropbox">
