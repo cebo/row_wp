@@ -47,8 +47,16 @@ $meta_box = array(
 				
 		array( 
               "name" => "Is This A Featured Special",
-	          "desc" => "Slide Out Special on the home page",
+	          "desc" => "This will be featured it at the top of the specials page",
 	          "id" => $prefix."_available_on_header",
+	          "type" => "checkbox",
+	          "std" => ""
+              )	
+        ,
+        array( 
+              "name" => "Send this to the homepage",
+	          "desc" => "This will be featured on the homepage",
+	          "id" => $prefix."_available_on_homepage",
 	          "type" => "checkbox",
 	          "std" => ""
               )	
@@ -123,7 +131,7 @@ add_action('admin_menu', 'mytheme_add_box');
 // Add meta box
 function mytheme_add_box() {
 	global $meta_box;
-	foreach ( array( 'specials','dolo' ) as $page )
+	foreach ( array( 'specials','dolo','hotel' ) as $page )
 	add_meta_box($meta_box['id'], $meta_box['title'], 'mytheme_show_box', $page, $meta_box['context'], 			$meta_box['priority']);
 }
 // Callback function to show fields in meta box
