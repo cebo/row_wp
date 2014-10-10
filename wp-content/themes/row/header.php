@@ -466,7 +466,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
 				
 				
-				<div class="languages"><?php language_selector_flags(); ?></div>
+				<div class="languages"><?php //language_selector_flags(); ?></div>
 			
 			</div>
 			
