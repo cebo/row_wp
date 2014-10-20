@@ -3792,6 +3792,7 @@ width: 35%;
     min-height: 611px;
     overflow: hidden;
     width: 50%;
+    position: relative;
 }
 
 .deal-photo {
@@ -3813,22 +3814,34 @@ width: 35%;
 }
 
 .deal-wrapper {
-    height: 100%;
-    padding: 20px 60px 30px;
-    position: relative;
-    text-align: center;
-    background: #fff;
-    z-index: 999;
+	background: none repeat scroll 0 0 #fff;
+	height: 100%;
+	padding: 20px 60px 30px;
+	position: relative;
+	text-align: center;
+	z-index: 999;
 }
 
 .deal-wrapper > h1 {
-    font-size: 32px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+	font-size: 19px;
+	line-height: 1.1;
+	margin-bottom: 10px;
 }
 
 .deal-wrapper > p {
     padding-bottom: 10px;
+}
+
+.deal .page-content .button-wrapper {
+	position: relative;
+}
+
+.deal .button-wrapper {
+	bottom: 20px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
 }
 
 
