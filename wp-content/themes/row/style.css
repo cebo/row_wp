@@ -1891,6 +1891,10 @@ ul#selectUl li.unselected:hover {
     -o-font-smoothing: antialiased;
 }
 
+.home-intro .overlay h2 {
+	font-size: 19px;
+	line-height: 21px;
+}
 
 .overlay p {
 	padding: 0 0 5px 0;
