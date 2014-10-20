@@ -6,19 +6,7 @@
  get_header(); ?>
  
  
-<?php query_posts(array(
-				
-				'post_type' => 'press-releases',
-				'posts_per_page' => 1,
-				'presstype' => 'international',
-				'meta_query' => array(
-					array(
-						'key' => 'cebo_featuredpress',
-						'value' => 'on',
-						)
-				)
-
-				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
+<?php  if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");  ?>
  
  
 	<div class="home-intro">

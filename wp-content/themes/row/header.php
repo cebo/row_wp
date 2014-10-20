@@ -43,15 +43,27 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/jquery.mmenu.css">
 <link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/js/flexslider/flexslider.css" type="text/css" media="screen" />
 <!-- <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/ui-lightness/jquery.ui.all.css"> -->
-
+<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl.theme.css">
 
 
 <!-- responsive style -->
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/owl.carousel.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+ 
+  $("#owl-example").owlCarousel({
+ 
+    // Most important owl features
+    items : 3
+    });
+ 
+});
+</script>
 
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.videoBG.js"></script>
 
@@ -74,8 +86,10 @@
 <!-- Jquery Mmenu -->
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.mmenu.min.js"></script>
 
+
 <!-- Scripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
+
 
 <script type="text/javascript">
 	
@@ -466,7 +480,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
 				
 				
-				<div class="languages"><?php //language_selector_flags(); ?></div>
+				<div class="languages"><?php language_selector_flags(); ?></div>
 			
 			</div>
 			

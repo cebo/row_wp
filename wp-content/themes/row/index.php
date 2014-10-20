@@ -324,13 +324,60 @@
 			
 			
 			
-			
+			<?php if ( is_user_logged_in() ) {?>
 			
 			<!-- begin fourth level -->
 			
+			<div class="fourth-level">
 			
 			
+				<div class="fullspan" style="padding-bottom: 15px;">
+					
+					<h2 class="dealhead" style="text-align: center; "><?php _e("Deals", "row-theme-text"); ?></h2>
+				
+					<div id="owl-example" class="owl-carousel">
+					
+					<?php 
+
+						query_posts(array(
+				
+							'post_type' => 'specials',
+							'posts_per_page' => -1,
+
+						)); 
+
+						if(have_posts()) : while(have_posts()) : the_post();
+
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+
+					?>
+					
+					
+					  <div class="dealbox">
+					  
+					  <div class="dealboxin">
+					  
+					  	<div class="dealimage" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
+					  		<a class="anchorfull" href="<?php the_permalink(); ?>"></a>
+					  	</div>
+					  	<div class="dealcopy">
+					  		
+					  		<h3><?php the_title(); ?></h3>
+					  		<a class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Reserve Now >','row-theme-text'); ?></a>
+					  	
+					  	</div>
+					  </div>
+					  </div>
+					
+					
+					<?php endwhile; endif; wp_reset_query(); ?>	
+					<div class="clear"></div>
+					
+				</div>
+			</div>
+			</div>
 			
+			<?php } ?>
 			
 			<div class="fourth-level">
 			
