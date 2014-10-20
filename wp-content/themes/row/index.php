@@ -279,7 +279,7 @@
 				</div>
 				
 				<div class="rightside">
-				<?php query_posts('post_type=page&p=451&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+				<?php query_posts('post_type=page&p=56&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<div class="picone">
@@ -287,13 +287,11 @@
 						<div class="wideover overlay narrow">
 					
 							<h2 class="h1"><?php the_title(); ?></h2>
-							<?php the_content(); ?>
+							<?php //the_content(); ?>
+							<p>Coming Soon</p>
 							
-						
-							<a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/"><?php _e('View Row NYC >','row-theme-text'); ?></a>
-							
-							
-						
+							<!-- <a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/"><?php _e('View Row NYC >','row-theme-text'); ?></a> -->
+													
 						</div>
 						
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -308,7 +306,7 @@
 						
 						<?php } else { ?>
 											
-						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+						<div class="stretch"  style="background-image: url(http://rownyc.com/wp-content/uploads/2014/10/city-kitchen-tile.jpg);"></div>
 						
 						
 						<?php } ?>
