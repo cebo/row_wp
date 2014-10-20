@@ -170,8 +170,8 @@
 					
 							<h2 class="h1">Row Blog</h2>
 							<p>
-								Introducing the Row NYC blog, where New York City comes alive. <br>
-								<a class="blog-link" href="http://rownyc.com/blog/">View More</a>
+								Introducing the Row NYC blog, where New York City comes alive.
+								<!-- <a class="blog-link" href="http://rownyc.com/blog/">View More</a> -->
 								<?php //echo excerpt(10); ?>
 							</p>							
 							
@@ -181,7 +181,7 @@
 						  		//if($projects) { 
 						  	?>
 						  						  
-							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Explore Package >','row-theme-text'); ?></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('View More >','row-theme-text'); ?></a>
 							
 							<?php// } ?>
 						
