@@ -8,13 +8,15 @@
 			
 
 			<div class="home-intro">
-			
+				
+				<a href="/times-square-hotels">
 				<div class="wideover overlay">
 					
 					<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
 					<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
 				
 				</div>
+				</a>
 
 				<a class="video-play" href="http://youtu.be/FJw3fH7kzRs" rel="prettyPhoto-video"><i class="fa fa-play-circle-o"></i></a>		
 				
@@ -78,7 +80,7 @@
 						  	//if($projects) { ?>
 						  
 						  
-							<a class="gone" href="<?php echo $projecturl; ?>"><?php _e('Tour The Rooms >','row-theme-text'); ?></a>
+							<a class="gone" href="<?php echo $projecturl; ?>"><?php _e('Tour our Rooms >','row-theme-text'); ?></a>
 													
 						</div>
 						
