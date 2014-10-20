@@ -247,7 +247,7 @@
 				
 						  
 						  
-							<a class="gone" href="<?php bloginfo('url'); ?>/gallery/row-nyc-photos/"><?php _e('Explore Our Interiors >','row-theme-text'); ?></a>
+							<a class="gone" href="<?php bloginfo('url'); ?>/gallery/row-nyc-photos/"><?php _e('Browse Our Look >','row-theme-text'); ?></a>
 							
 						
 						
