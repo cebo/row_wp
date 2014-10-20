@@ -500,7 +500,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</li>
 
 			<li>
-				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
+				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
 				
 				<ul class="dropbox">
 					
