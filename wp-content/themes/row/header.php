@@ -62,7 +62,9 @@
 	  $("#owl-example").owlCarousel({
 	 
 	    // Most important owl features
-	    items : 3
+	    items : 1,
+	    navigation: true,
+	    navigationText : false
 	    });
 	 
 	});
