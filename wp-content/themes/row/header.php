@@ -1377,7 +1377,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 										<div class="calspacer">
 											<span>
 												
-												<label for="arrival"><?php _e('Arriving Date','row-theme-text'); ?></label>
+												<label for="arrival"><?php _e('Arrival Date','row-theme-text'); ?></label>
 												
 												<div class="squaredance">
 													<input type="hidden" name="arrival_date" id="arrival_date" placeholder="" class="calendarsection" />
@@ -1391,7 +1391,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 											</span>
 											
 											<span>
-												<label for="arrival"><?php _e('Departing Date','row-theme-text'); ?></label>
+												<label for="arrival"><?php _e('Departure Date','row-theme-text'); ?></label>
 												
 												<div class="squaredance">
 													<input name="departure_date" type="hidden" id="departure_date" placeholder="" class="calendarsection" />
