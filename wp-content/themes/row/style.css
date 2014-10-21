@@ -2280,8 +2280,16 @@ ul#selectUl li.unselected:hover {
 	margin-bottom: 10px;
 	position: relative;
 	overflow: hidden;
-	height: 450px;
+	padding-bottom: 65px !important;
+	height: 470px;
 }
+
+.owl-item .fullspan {
+	overflow: visible;
+	height: 450px;
+	padding-bottom: 0px !important;
+}
+
 
 .shorter {
 	width: 100%;
