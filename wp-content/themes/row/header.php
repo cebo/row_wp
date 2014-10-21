@@ -52,18 +52,23 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/owl.carousel.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
- 
-  $("#owl-example").owlCarousel({
- 
-    // Most important owl features
-    items : 3
-    });
- 
-});
-</script>
+
+<?php if( is_home() || is_front_page() ) { ?>
+
+	<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/owl.carousel.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	 
+	  $("#owl-example").owlCarousel({
+	 
+	    // Most important owl features
+	    items : 3
+	    });
+	 
+	});
+	</script>
+
+<?php } ?>
 
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.videoBG.js"></script>
 
