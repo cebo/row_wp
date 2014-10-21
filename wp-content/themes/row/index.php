@@ -9,7 +9,7 @@
 
 			<div class="home-intro">
 				
-				<a href="/times-square-hotels">
+				<a href="/the-hotel/">
 				<div class="wideover overlay">
 					
 					<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
@@ -324,7 +324,7 @@
 			
 			
 			
-			<?php if ( is_user_logged_in() ) {?>
+			
 			
 			<!-- begin fourth level -->
 			
@@ -377,72 +377,11 @@
 			</div>
 			</div>
 			
-			<?php } ?>
+		
 			
 			<div class="fourth-level">
 			
-			
-				<div class="fullspan" style="">
-
-					<?php 
-
-						query_posts(array(
-				
-							'post_type' => 'specials',
-							'posts_per_page' => 1,
-							'suppress_filters' => 1,
-							'meta_query' => array(
-								array(
-									'key' => 'cebo_available_on_homepage',
-									'value' => 'on',
-								)
-							),								
-							
-
-						)); 
-
-						if(have_posts()) : while(have_posts()) : the_post();
-
-						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
-
-					?>
-
-					<div class="suboverlay narrow">
-					
-							<h2 class="h1"><?php the_title(); ?></h2>
-							<h4><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h4>
-							
-							<a class="gone" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Book Now >','row-theme-text'); ?></a>
-						
-						</div>
-					
-						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-								
-								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
-						
-						<?php } elseif($imgsrc) { ?>
-						
-						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
-						
-						<?php } else { ?>
-											
-						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-						
-						
-						<?php } ?>
-						
-						
-						
-					<img src="<?php bloginfo ('template_url'); ?>/images/hall.jpg" style="" alt="#">
-					
-					
-					<?php endwhile; endif; wp_reset_query(); ?>	
-					
-					
-				</div>
-				
+	
 				
 				<div class="fullspan shorter">
 				

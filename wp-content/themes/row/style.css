@@ -320,10 +320,14 @@ h1, .littleover h2.h1, .fourth-level .suboverlay h2.h1, .bigover h2.h1, h2.h1 {
     font-family: 'GothamBold';
 	text-transform: uppercase;
 	letter-spacing: 0px;
-	font-weight: 700;
+	font-weight: lighter;
 	color: #333333;
 	font-size: 19px;
 	line-height: 21px;
+	-webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h2 {
@@ -336,6 +340,7 @@ h2 {
 	-webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: #333333;
 }
 
@@ -2031,7 +2036,8 @@ ul#selectUl li.unselected:hover {
 	background: rgb(255,255,255);
     background: rgba(255,255,255,0.85);
 	padding: 20px;
-	
+	margin: auto;
+	max-width: 75%;	
 }
 
 .bigover h1, .bigover h2.h1 {
@@ -3897,7 +3903,9 @@ width: 35%;
 	text-align: center;
 }
 
-
+.deal .button-wrapper a.button {
+	padding: 20px 20px 10px 20px;
+}
 
 /* Single - Deal ---------------------------------------------------- */
 
