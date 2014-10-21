@@ -95,99 +95,123 @@
 <!-- Scripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
 
+<?php if(get_post_type() == 'imagegalleries') { ?>
+
+	<!-- Flex Slider -->
+	<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.flexslider-gallery').flexslider({
+				animation: "slide",
+				animationSpeed: 1500,
+				controlNav: true,
+				startAt: 0,
+			});
+
+		  $('.flexslider').flexslider({
+		    animation: "slide",
+		    animationSpeed: 800,
+		    pauseOnAction: false,
+		    controlNav: true,
+		    startAt: 0,
+		  });
+
+		});
+	</script>
+
+<?php } ?>
 
 <script type="text/javascript">
 	
 	
 	function createURL() {
-	var checkin = jQuery("#arrival_date").val();
-	var checkout = jQuery("#departure_date").val();
-	var adults = jQuery("#adults").val();
-	var children = jQuery("#children").val();
+		var checkin = jQuery("#arrival_date").val();
+		var checkout = jQuery("#departure_date").val();
+		var adults = jQuery("#adults").val();
+		var children = jQuery("#children").val();
+		
+		<?php if( $current_lang == 'en' ) { ?>
+
+			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+
+		<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" + 
+
+		<?php } elseif( $current_lang == 'pt-br') { ?>
+
+			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" + 
+
+		<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" + 
+
+		<?php } else { ?>
+
+			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+
+		<?php }  ?>
 	
-	<?php if( $current_lang == 'en' ) { ?>
+			"&arrival_date=" + checkin + 
+			"&departure_date=" + checkout + 
+			"&adults[]=" + adults + 
+			"&children[]=" + children;
 
-		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
-
-	<?php } elseif( $current_lang == 'zh-hans') { ?>
-
-		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" + 
-
-	<?php } elseif( $current_lang == 'pt-br') { ?>
-
-		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" + 
-
-	<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-
-		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" + 
-
-	<?php } else { ?>
-
-		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
-
-	<?php }  ?>
-	
-										"&arrival_date=" + checkin + 
-										"&departure_date=" + checkout + 
-										"&adults[]=" + adults + 
-										"&children[]=" + children;
-
-	return bookinglink;
-}
+		return bookinglink;
+	}
 
 
 
 
 	$(document).ready(function() {
 		
+		$('#div_demo').videoBG({
+			mp4:'<?php bloginfo ('template_url'); ?>/assets/row_webber.mp4',
+			ogv:'<?php bloginfo ('template_url'); ?>/assets/row_webber.ogv',
+			webm:'<?php bloginfo ('template_url'); ?>/assets/row_webber.webm',
+			poster:'',
+			scale:true,
+			zIndex:0
+		});
+
+		if(Modernizr.touch) {
+			$('#div_demo.mobile').show(),
+			$('#div_demo.desktop').hide()
+		}
+		
 		
 			
-	$('#div_demo').videoBG({
-		mp4:'<?php bloginfo ('template_url'); ?>/assets/row_webber.mp4',
-		ogv:'<?php bloginfo ('template_url'); ?>/assets/row_webber.ogv',
-		webm:'<?php bloginfo ('template_url'); ?>/assets/row_webber.webm',
-		poster:'',
-		scale:true,
-		zIndex:0
-	});
-
-	if(Modernizr.touch) {
-		$('#div_demo.mobile').show(),
-		$('#div_demo.desktop').hide()
-	}
-	
-	
+		  $('#arrival_date').live('keyup',function() {
+		        var pronameval = $(this).val();
+		        $('#departure_date').val(pronameval.replace(/ /g, '-').toLowerCase());
+		    });
+	 		
+	 		$('#selectUl li:not(":first")').addClass('unselected');
+				$('#selectUl').hover(
+				    function(){
+				        $(this).find('li').click(
+				            function(){
+				                $('.unselected').removeClass('unselected');
+				                $(this).addClass("bignumber");
+				                $(this).siblings('li').addClass('unselected');
+				                $(this).siblings('li').removeClass('bignumber');
+				                var index = $(this).index();
+				                $('select[name=size]')
+				                    .find('option:eq(' + index + ')')
+				                    .attr('selected',true);
+				            });
+				    },
+				    function(){
+				    });
 		
-	  $('#arrival_date').live('keyup',function() {
-	        var pronameval = $(this).val();
-	        $('#departure_date').val(pronameval.replace(/ /g, '-').toLowerCase());
-	    });
- 		
- 		$('#selectUl li:not(":first")').addClass('unselected');
-			$('#selectUl').hover(
-			    function(){
-			        $(this).find('li').click(
-			            function(){
-			                $('.unselected').removeClass('unselected');
-			                $(this).addClass("bignumber");
-			                $(this).siblings('li').addClass('unselected');
-			                $(this).siblings('li').removeClass('bignumber');
-			                var index = $(this).index();
-			                $('select[name=size]')
-			                    .find('option:eq(' + index + ')')
-			                    .attr('selected',true);
-			            });
-			    },
-			    function(){
-			    });
-	
- 		$(function() {
+		$(function() {
 			var fixadent = $(".topnav"), pos = fixadent.offset();
 			$(window).scroll(function() {
 			if($(this).scrollTop() > (pos.top + 10) && fixadent.css('position') == 'absolute') { fixadent.addClass('fixed'); }
 			else if($(this).scrollTop() <= pos.top && fixadent.hasClass('fixed')){ fixadent.removeClass('fixed'); }
 			})
-			});
+		});
 		 				
 	});	
 	
@@ -366,32 +390,6 @@
 			
 		});
 	</script>
-
-<?php if(get_post_type() == 'imagegalleries') { ?>
-	<!-- Flex Slider -->
-<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-
-		$('.flexslider-gallery').flexslider({
-			animation: "slide",
-			animationSpeed: 1500,
-			controlNav: true,
-			startAt: 0,
-		});
-
-	  $('.flexslider').flexslider({
-	    animation: "slide",
-	    animationSpeed: 800,
-	    pauseOnAction: false,
-	    controlNav: true,
-	    startAt: 0,
-	  });
-
-	});
-</script>
-
-<?php } ?>
 
 <?php if(is_home()) { ?>
 
