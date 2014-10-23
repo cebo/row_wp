@@ -64,7 +64,13 @@
 	    // Most important owl features
 	    items : 1,
 	    navigation: true,
-	    navigationText : false
+	    navigationText : false,
+	    itemsDesktop : false,
+	    itemsDesktopSmall : [979,1],
+	    itemsTabletSmall : [768,1],
+	    itemsTablet : [768,1],
+	    itemsMobile : [479,1]
+	    
 	    });
 	 
 	});
