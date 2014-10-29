@@ -1549,12 +1549,15 @@ ul#selectUl li.unselected:hover {
 .dealboxin {
 	padding: 5px;
 }
-.dealhead {
-	margin: 10px 0px;
-	font-family: 'GothamBold';
-	text-transform: uppercase;
 
+.dealhead {
+	color: #e51a9b;
+	font-family: "GothamBold";
+	font-size: 35px;
+	margin: 10px 0;
+	text-transform: uppercase;
 }
+
 .dealimage {
 	background-size: cover;
 	position: relative;
@@ -2285,7 +2288,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .owl-item .fullspan {
-	overflow: visible;
+	overflow: hidden;
 	height: 450px;
 	padding-bottom: 0px !important;
 }
