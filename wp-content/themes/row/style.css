@@ -270,7 +270,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .finished.mobile .right i,
 .footer .navigate .supernav li a,
 .gallery-categories a,
-.page .suboverlay h1
+.page .suboverlay h1,
+.owl-theme .owl-controls .owl-buttons div
 {
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;

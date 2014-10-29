@@ -10,30 +10,29 @@
 
 /* Styling Next and Prev buttons */
 
-.owl-theme .owl-controls .owl-buttons div{
-	position: absolute;
-	color: #FFF;
-	display: inline-block;
-	zoom: 1;
-	margin: 5px;
-	padding: 3px 10px;
-	font-size: 12px;
+.owl-theme .owl-controls .owl-buttons div {
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
-	border-radius: 30px;
-	background: #869791;
 	filter: Alpha(Opacity=50);
-	opacity: 0.5;
-	z-index: 9999999999;
-	background: transparent;
-	top: 37%;
+	background: none repeat scroll 0 0 transparent;
+	border-radius: 30px;
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	margin: -26px 5px 5px;
+	opacity: 1;
+	padding: 3px 10px;
+	position: absolute;
+	top: 50%;
+	z-index: 2147483647;
 }
+
 .owl-theme .owl-controls .owl-buttons div.owl-prev {
-	left: 0;
+	left: 20px;
 }
 
 .owl-theme .owl-controls .owl-buttons div.owl-next {
-	right: 0;
+	right: 20px;
 }
 
 
@@ -50,8 +49,8 @@ content: '\f001';
 /* Clickable class fix problem with hover on touch devices */
 /* Use it for non-touch hover action */
 .owl-theme .owl-controls.clickable .owl-buttons div:hover{
-	filter: Alpha(Opacity=100);/*IE7 fix*/
-	opacity: 1;
+	filter: Alpha(Opacity=50);/*IE7 fix*/
+	opacity: .5;
 	text-decoration: none;
 }
 
