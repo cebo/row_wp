@@ -6,10 +6,13 @@
  get_header(); ?>
  
 
-<?php query_posts(array(
+<?php 
+
+	$query = new wp_query(array(
 				
 				'post_type' => 'hotel',
 				'posts_per_page' => 1,
+				'suppress_filters' => 1,
 				'meta_query' => array(
 					array(
 						'key' => 'cebo_available_on_header',
@@ -17,7 +20,7 @@
 						)
 				)
 
-				)); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+				)); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 			        ?>
  
  
@@ -53,7 +56,7 @@
 
 			<h1><?php the_title(); ?></h1>
 
-			<?php echo content(100); ?>
+			<?php echo the_content(100); ?>
 			
 			
 			<div class="button-wrapper" style="margin: 20px 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Read More','row-theme-text'); ?></a></div>
@@ -69,10 +72,13 @@
 		
 		<ul class="deal-boxes">
 		
-			<?php query_posts(array(
+			<?php 
+
+				$dealboxes_query = new wp_query(array(
 				
 				'post_type' => 'hotel',
 				// 'offset' => 1,
+				'suppress_filters' => 1,
 				'meta_query' => array(
 			        array(
 			            'key' => 'cebo_available_on_header',
@@ -80,7 +86,7 @@
 			        )
 			    )
 
-				)); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+				)); if($dealboxes_query->have_posts()) : while($dealboxes_query->have_posts()) : $dealboxes_query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 			        ?>
 
 				<li class="deal">
