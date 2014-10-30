@@ -53,6 +53,54 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+<script type="text/javascript">
+
+	$(document).ready(function() {
+
+		if( $(window).width() <= 640 ) {
+
+			var boscobox_width = $('body').width();
+			var boscobox_height = $('#bosco-box').height();
+
+			$('#bosco-box').width(boscobox_width);
+			$('#bosco-box').height(boscobox_height);
+
+		} else {
+
+			var boscobox_width = $('body').width() - $('.navigate').width();
+			var boscobox_height = $('#bosco-box').height();
+
+			$('#bosco-box').width(boscobox_width);
+			$('#bosco-box').height(boscobox_height);
+
+		}
+
+		$(window).resize(function() {
+
+			if( $(window).width() <= 640 ) {
+
+				var boscobox_width = $('body').width();
+				var boscobox_height = $('#bosco-box').height();
+
+				$('#bosco-box').width(boscobox_width);
+				$('#bosco-box').height(boscobox_height);
+
+			} else {
+
+				var boscobox_width = $('body').width() - $('.navigate').width();
+				var boscobox_height = $('#bosco-box').height();
+
+				$('#bosco-box').width(boscobox_width);
+				$('#bosco-box').height(boscobox_height);
+
+			}
+			
+		});
+
+	});
+					
+</script>
+
 <?php if( is_home() || is_front_page() ) { ?>
 
 	<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/owl.carousel.js"></script>

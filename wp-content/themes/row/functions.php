@@ -60,6 +60,10 @@ include(TEMPLATEPATH . '/options/press-options.php');
 /* Below is an include to a few options for press releases.*/
 include(TEMPLATEPATH . '/library/repeatable-fields-metabox.php'); 
 
+ /* ................. SOME OPTIONS FOR AMENITIES BOSCOBOX .................... */
+/* Below is an include to a few options for bosco box photos.*/
+include(TEMPLATEPATH . '/options/amenities-options-repeatable-fields.php'); 
+
 
 
 

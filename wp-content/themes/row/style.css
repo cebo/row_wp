@@ -3847,6 +3847,21 @@ width: 35%;
 	    opacity: 1;
 	}
 
+.single .home-intro, .page .home-intro.bosco-box {
+  display: inline-block;
+  height: 448px;
+  margin-left: 300px;
+  width: auto;
+}
+
+.bosco-photo {
+	background-repeat: no-repeat;
+	background-size: cover;
+	float: left;
+	height: 50%;
+	width: 20%;
+}
+
 
 
 /* Page - Deals ---------------------------------------------------- */

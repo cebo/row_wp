@@ -48,6 +48,21 @@ and (max-width : 1439px) {
 
 
 
+/* ================================================  MAX WIDTH 1280px ======================================= */
+
+@media only screen and (max-width : 1280px) {
+
+	/* SINGLE - Amenities */
+
+	.bosco-photo {
+		width: 25%;
+	}
+
+}
+
+
+
+
 /* ================================================ 1024 ======================================= */
 
 @media only screen 
@@ -450,6 +465,10 @@ and (max-width : 1260px) {
 	    width: 190px;
 	}
 
+	.single .home-intro, .page .home-intro.bosco-box {
+		margin-left: 250px;
+	}
+
 
 
 	/* SINGLE - Deal */
@@ -564,6 +583,14 @@ and (max-width : 1024px) {
 
 	.bigover h1, .bigover h2.h1 {
 		font-size: 40px;
+	}
+
+
+
+	/* SINGLE - Amenities */
+
+	.bosco-photo {
+		width: 33.3333%;
 	}
 
 
@@ -1610,6 +1637,14 @@ and (max-width : 640px) {
 
 	.deal {
 	    min-height: 632px;
+	}
+
+
+
+	/* SINGLE - Amenity */
+
+	.single .home-intro, .page .home-intro.bosco-box {
+		margin-left: 0;
 	}
 
 

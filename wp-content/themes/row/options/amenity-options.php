@@ -36,7 +36,7 @@ $pagetypes = array('Two Column', 'Full Width', 'With Sidebar');
 
 $meta_boxoryl = array(
 	'id' => 'CUSTOM FIELDS',
-	'title' => 'Additional Variations For Specials',
+	'title' => 'Additional Variations For Amenities',
 	// 'page' => determines where the custom field is supposed to show up.
 	// here it is desplaying Testimonials, but other options are
 	// page or post
