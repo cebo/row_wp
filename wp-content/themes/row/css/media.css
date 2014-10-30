@@ -173,6 +173,14 @@ and (max-width : 1260px) {
 
 
 
+	/* HOMEPAGE */
+
+	.owl-item .fullspan {
+		height: 440px;
+	}
+
+
+
 	/* Side Navigation */
 
 	.navigate {
@@ -548,6 +556,14 @@ and (max-width : 1024px) {
 
 	#div_demo {
 		display: none;
+	}
+
+
+
+	/* HOMEPAGE */
+
+	.bigover h1, .bigover h2.h1 {
+		font-size: 40px;
 	}
 
 
