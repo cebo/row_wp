@@ -168,7 +168,7 @@
 					
 						<div class="wideover overlay narrow" style="top: 16%;">
 					
-							<h2 class="h1">Row Blog</h2>
+							<h2 class="h1">Row NYC Blog</h2>
 							<p>
 								Introducing the Row NYC blog, where New York City comes alive.
 								<!-- <a class="blog-link" href="http://rownyc.com/blog/">View More</a> -->
