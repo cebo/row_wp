@@ -4130,7 +4130,7 @@ width: 35%;
 }
 
 .slide-description {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+    /* background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7); */
     bottom: 0;
     color: #fff;
     font-size: 15px;
