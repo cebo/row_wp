@@ -48,21 +48,6 @@ and (max-width : 1439px) {
 
 
 
-/* ================================================  MAX WIDTH 1280px ======================================= */
-
-@media only screen and (max-width : 1280px) {
-
-	/* SINGLE - Amenities */
-
-	.bosco-photo {
-		width: 25%;
-	}
-
-}
-
-
-
-
 /* ================================================ 1024 ======================================= */
 
 @media only screen 
@@ -465,10 +450,6 @@ and (max-width : 1260px) {
 	    width: 190px;
 	}
 
-	.single .home-intro, .page .home-intro.bosco-box {
-		margin-left: 250px;
-	}
-
 
 
 	/* SINGLE - Deal */
@@ -585,14 +566,11 @@ and (max-width : 1024px) {
 		font-size: 40px;
 	}
 
+	/* deals page */
 
-
-	/* SINGLE - Amenities */
-
-	.bosco-photo {
-		width: 33.3333%;
+	.deal-wrapper {
+		height: 280px;
 	}
-
 
 
 }
@@ -1639,12 +1617,9 @@ and (max-width : 640px) {
 	    min-height: 632px;
 	}
 
-
-
-	/* SINGLE - Amenity */
-
-	.single .home-intro, .page .home-intro.bosco-box {
-		margin-left: 0;
+	.deal-wrapper {
+		height: 245px;
+		padding: 19px 15px 30px;
 	}
 
 
@@ -1908,6 +1883,9 @@ and (max-width : 480px) {
 	    min-height: 480px;
 	}
 
+	.deal-wrapper {
+		height: 200px;
+	}
 
 
 	/* PAGE - Concierge */
