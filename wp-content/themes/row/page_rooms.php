@@ -71,7 +71,7 @@
 					
 					<?php if(get_the_title() == "Penthouse Suites") { ?>
 					
-						<a style="background: rgba(74,74,74, 0.8)" href="mailto:reservations@rownyc.com"><?php _e('Book Now','row-theme-text'); ?></a>
+						<a href="mailto:reservations@rownyc.com"><?php _e('Book Now','row-theme-text'); ?></a>
 						
 						<?php } else { ?>
 						
