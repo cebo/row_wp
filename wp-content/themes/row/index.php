@@ -322,7 +322,7 @@
 			<div class="fourth-level">
 			
 			
-				<div class="fullspan" style="padding-bottom: 15px;">
+				<div class="fullspan" style="padding-bottom: 65px;">
 					
 					<h2 class="dealhead" style="text-align: center; "><?php _e("Hot Deals!", "row-theme-text"); ?></h2>
 				
