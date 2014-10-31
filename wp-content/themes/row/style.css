@@ -2284,7 +2284,7 @@ ul#selectUl li.unselected:hover {
 	margin-bottom: 10px;
 	position: relative;
 	overflow: hidden;
-	padding-bottom: 65px !important;
+	/* padding-bottom: 65px !important; */
 	height: 470px;
 }
 
