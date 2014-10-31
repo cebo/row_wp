@@ -71,7 +71,7 @@
 						
 						
 				
-						<li><a style="<?php if($currentid == $thersd) { echo 'color: #fa9c03;'; } ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+						<li><a style="<?php if($currentid == $thersd) { echo 'color: #e51a9b;'; } ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 												
 						<?php endwhile; endif; wp_reset_query(); ?>	
 					</ul>
