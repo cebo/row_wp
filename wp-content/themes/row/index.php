@@ -845,8 +845,43 @@
 					</li>
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
+
+					<!-- start new explore post -->
+
+					<?php query_posts('post_type=page&p=3745&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
-					<?php 
+					<li>
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						
+						
+						<?php } elseif($imgsrc) { ?>
+						
+						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						
+						
+						<?php } else { ?>
+											
+						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
+						
+						<?php } ?>
+						
+						<div class="littleover">
+							<h2 class="h1"><?php the_title(); ?></h2>
+							
+							<p><?php echo excerpt(20); ?></p>
+							
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
+						</div>
+						
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>		
+
+					<!-- end new explore post -->									
+					
+					<!-- <?php 
 
 						$query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => 1, 'p' => 3154 ) ); 
 						if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); 
@@ -881,7 +916,7 @@
 						
 					</li>
 					
-					<?php endwhile; endif; wp_reset_query(); ?>	
+					<?php endwhile; endif; wp_reset_query(); ?>	 -->
 					
 					
 					
