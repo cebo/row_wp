@@ -13,7 +13,7 @@
 
 			<div class="third-level">
 			
-				<?php query_posts('post_type=amenities&p=30&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+				<?php query_posts('post_type=amenities&p=30'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 				
 				
 				<div class="leftside">
@@ -27,7 +27,7 @@
 											
 								<a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
 								
-								<?php echo content(150); ?>
+								<?php echo content(114); ?>
 														
 							</div>
 
@@ -59,7 +59,7 @@
 				</div>
 				
 				<?php endwhile; endif; wp_reset_query(); ?>	
-				<?php query_posts('post_type=amenities&p=31&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+				<?php query_posts('post_type=amenities&p=31'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 				
 				<div class="rightside">
 				
