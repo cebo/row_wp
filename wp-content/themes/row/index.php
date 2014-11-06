@@ -324,7 +324,7 @@
 			
 				<div class="fullspan" style="padding-bottom: 65px;">
 					
-					<h2 class="dealhead" style="text-align: center; "><?php _e("Hot Deals!", "row-theme-text"); ?></h2>
+					<h2 class="dealhead" style="text-align: center; "><?php _e("Check Out Our Hot Deals!", "row-theme-text"); ?></h2>
 				
 					<div id="owl-example" class="owl-carousel">
 					
