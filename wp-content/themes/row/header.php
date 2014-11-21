@@ -4,6 +4,22 @@
 	$current_lang = $sitepress->get_current_language();
 	$default_lang = $sitepress->get_default_language();
 
+	if ( file_exists( TEMPLATEPATH . '/library/Mobile_Detect.php' ) ) {
+
+		require_once TEMPLATEPATH . '/library/Mobile_Detect.php';
+		$detect = new Mobile_Detect;
+
+		function redirect() {
+		    $url = 'Location: http://m.rownyc.com';
+		    $statusCode = 303;
+		    header($url, true, $statusCode);
+		    die();
+		}
+
+		$check = $detect->isMobile(); if( $check ): redirect(); endif;
+
+	}
+
 ?>
 <!DOCTYPE HTML>
 <head>
