@@ -114,6 +114,12 @@
 				
 				</div>
 			
+				<!-- save the children start -->
+				<div class="tier-two"><img class="left" width="190px;" src="http://rownyc.com/wp-content/uploads/2014/12/row-save.jpg">
+				  <p style="color: #fff; background-color: #444; padding-top: 10px; font-size: 12px;" class="save">Please join the Stanford Court hotel in supporting Save the Children charity during the holiday season. 
+				  <br>Any donation would be great appreciated.  Please click <a href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&amp;utm_source=Highgate2014&amp;utm_medium=link&amp;utm_campaign=highgatehotels1214">here</a> to be directly linked to the charity’s website for your generous offer.</p>
+				</div>
+				<!-- end save the children -->
 			
 			</div>
 			
