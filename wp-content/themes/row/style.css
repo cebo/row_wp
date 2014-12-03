@@ -2664,6 +2664,7 @@ ul#selectUl li.unselected:hover {
     font-size: 35px;
     font-weight: normal;
     margin-bottom: 20px;
+    line-height: 40px;
 }
 
 .page .main-page-content.left {
