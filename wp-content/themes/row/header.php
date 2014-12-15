@@ -49,7 +49,7 @@
 <!-- fonts style -->
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/fonts.css">
-<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 
@@ -67,7 +67,7 @@
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
 <script type="text/javascript">
 
@@ -290,11 +290,11 @@
 </script>
 
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js?ver=3.5.2'></script>
-	<script type="text/javascript">
+<script type="text/javascript">
 		$(document).ready(function(){
 		   // Datepicker
 		   
-		$.datepicker._defaults.dateFormat = 'yy-mm-dd';
+	$.datepicker._defaults.dateFormat = 'yy-mm-dd';
 		
 		var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
 		var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
@@ -304,23 +304,95 @@
 			    altField  : '#arve',
     			altFormat : 'dd',
     			minDate: new Date(),
+    			gotoCurrent: true,
 			    onSelect: function(event, ui) {
 			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
 			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
+			        var selectednextMonthName = months[$(this).datepicker('getDate').getMonth()+1];
 			        $('#arv').val(selectedMonthName);
 			        $("#arrival_date").val(event);
-			       
+
+			        var d = $(this).datepicker("getDate");
+					var d2 =  (d.getDate() + 1);
+
+					var getthedate = d.getDate();
+					var getthemonth = d.getMonth()+1;
+					var today = new Date();
+					var LastDayOfMonth = new Date(d.getFullYear(),d.getMonth()+1, 0);
+					var LastMonthOfYear = new Date(d.getFullYear(),0,0);
+					var getdateLastDayOfMonth = LastDayOfMonth.getDate();
+					var getdateLastMonthOfYear = LastMonthOfYear.getMonth()+1;
+					var firstOfMonth = new Date(today.getFullYear(),today.getMonth(), 1);
+
+					var d3 = firstOfMonth.getDate();
+
+					// alert(testget);
+
+					$(".departdatepicker").datepicker("option", "minDate", d);
+
+					if( (getthedate == getdateLastDayOfMonth) && (getthemonth != getdateLastMonthOfYear) ) {
+
+						var d1 =  d.getFullYear() + '-' + (d.getMonth() + 2) + '-' + d3;
+
+						$('.departdatepicker').datepicker('setDate',d1);
+
+						if(d3 > 10) {
+							$("#depee").val('0'+d3);
+						} else {
+							$("#depee").val(d3);
+						}
+
+						$("#departure_date").val(d1);
+			        	$('#dep').val(selectednextMonthName);
+
+			        } else if( (getthedate == getdateLastDayOfMonth) && (getthemonth == getdateLastMonthOfYear) ) {
+
+			        	var d1 =  (d.getFullYear()+1) + '-' + '1' + '-' + d3;
+
+						$('.departdatepicker').datepicker('setDate',d1);
+
+						if(d3 > 10) {
+							$("#depee").val('0'+d3);
+						} else {
+							$("#depee").val(d3);
+						}
+
+						$("#departure_date").val(d1);
+			        	$('#dep').val('January');
+
+					} else {
+
+						var d1 =  d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + (d.getDate() + 1);
+
+						$('.departdatepicker').datepicker('setDate',d1);
+
+						if(d2 < 10) {
+							$("#depee").val('0'+d2);
+						} else {
+							$("#depee").val(d2);
+						}
+						
+						$("#departure_date").val(d1);
+			        	$('#dep').val(selectedMonthName);
+					}
+			        
 			    }
 			     
 			});
 			
-			var tester = $("#arrival_date").val();
+			// var tester = $("#arrival_date").val();
 			
 			$('.departdatepicker').datepicker({
 			    dateFormat: 'yy-mm-dd',
 			    altField  : '#depee',
     			altFormat : 'dd',
     			minDate: 1,
+    			gotoCurrent: true,
+    			beforeShowDay: function(date) {
+					var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+					var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+					return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+				},
 			    onSelect: function(event, ui) {
 			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
 			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
@@ -336,10 +408,61 @@
     			altFormat : 'dd',
     			minDate: new Date(),
 			    onSelect: function(event, ui) {
+
 			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
 			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
+			        var selectednextMonthName = months[$(this).datepicker('getDate').getMonth()+1];
 			        $('#arv-1').val(selectedMonthName);
 			        $("#arrival_date-1").val(event);
+
+			        var d = $(this).datepicker("getDate");
+					var d2 =  (d.getDate() + 1);
+
+					var getthedate = d.getDate();
+					var getthemonth = d.getMonth()+1;
+					var today = new Date();
+					var LastDayOfMonth = new Date(d.getFullYear(),d.getMonth()+1, 0);
+					var LastMonthOfYear = new Date(d.getFullYear(),0,0);
+					var getdateLastDayOfMonth = LastDayOfMonth.getDate();
+					var getdateLastMonthOfYear = LastMonthOfYear.getMonth()+1;
+					var firstOfMonth = new Date(today.getFullYear(),today.getMonth(), 1);				
+					
+					// alert(getthemonth);
+
+					var d3 = firstOfMonth.getDate();
+
+					$(".departdatepickerr").datepicker("option", "minDate", d);
+
+					if( (getthedate == getdateLastDayOfMonth) && (getthemonth != getdateLastMonthOfYear) ) {
+
+						var d1 =  d.getFullYear() + '-' + (d.getMonth() + 2) + '-' + d3;
+
+						$('.departdatepickerr').datepicker('setDate',d1);
+
+						$("#depee-1").val(d3);
+						$("#departure_date-1").val(d1);
+			        	$('#dep-1').val(selectednextMonthName);
+
+			        } else if( (getthedate == getdateLastDayOfMonth) && (getthemonth == getdateLastMonthOfYear) ) {
+
+			        	var d1 =  (d.getFullYear()+1) + '-' + '1' + '-' + d3;
+
+			        	$('.departdatepickerr').datepicker('setDate',d1);
+
+						$("#depee-1").val(d3);
+						$("#departure_date-1").val(d1);
+			        	$('#dep-1').val('January');
+
+					} else {
+
+						var d1 =  d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + (d.getDate() + 1);
+
+						$('.departdatepickerr').datepicker('setDate',d1);
+
+						$("#depee-1").val(d2);
+						$("#departure_date-1").val(d1);
+			        	$('#dep-1').val(selectedMonthName);
+					}
 			       
 			    }
 			     
@@ -349,13 +472,47 @@
 			    dateFormat: 'yy-mm-dd',
 			    altField  : '#depee-1',
     			altFormat : 'dd',
-    			minDate: 0,
+    			minDate: 1,
+    			beforeShowDay: function(date) {
+					var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date-1").val());
+					var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date-1").val());
+					return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+				},
 			    onSelect: function(event, ui) {
 			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
 			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
 			        $('#dep-1').val(selectedMonthName);
 			        $("#departure_date-1").val(event);
 			    }
+			});
+
+			$(".datepicker-ressys").datepicker({
+				minDate: 0,
+				numberOfMonths: [2,1],
+				beforeShowDay: function(date) {
+					var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date-nav").val());
+					var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date-nav").val());
+					return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+				},
+				onSelect: function(dateText, inst) {
+					var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date-nav").val());
+					var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date-nav").val());
+	                var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+
+	                
+	                if (!date1 || date2) {
+						$("#arrival_date-nav").val(dateText);
+						$("#departure_date-nav").val("");
+	                    $(this).datepicker();
+	                } else if( selectedDate < date1 ) {
+	                    $("#departure_date-nav").val( $("#arrival_date-nav").val() );
+	                    $("#arrival_date-nav").val( dateText );
+	                    $(this).datepicker();
+	                } else {
+						$("#departure_date-nav").val(dateText);
+	                    $(this).datepicker();
+					}
+				}
 			});
 			
 			
@@ -381,7 +538,53 @@
 			$("#dep").attr("placeholder", n);
 			$("#arv-1").attr("placeholder", n);
 			$("#dep-1").attr("placeholder", n);
+
+
+
+			var todaytwo = new Date();
+		    var monthtwo = todaytwo.getMonth(),
+		        yeartwo = todaytwo.getFullYear();
+		    if (monthtwo < 0) {
+		        monthtwo = 11;
+		        yeartwo -= 1;
+		    }
+		    var tomorrow = new Date(yeartwo, monthtwo, todaytwo.getDate()+1);
+
+			$('#arrival_date').val($.datepicker.formatDate('yy-mm-dd', todaytwo));
+		    $('#departure_date').val($.datepicker.formatDate('yy-mm-dd', tomorrow));
+
 			
+
+		    // var alert = $.datepicker.formatDate('yy-mm-dd', today);
+		    // alert(oneMonthAgo);
+
+			// var d2=new Date();
+			// var month2=new Array();
+			// month[0]='01';
+			// month[1]='02';
+			// month[2]='03';
+			// month[3]='04';
+			// month[4]='05';
+			// month[5]='06';
+			// month[6]='07';
+			// month[7]='08';
+			// month[8]='09';
+			// month[9]='10';
+			// month[10]='11';
+			// month[11]='12';
+			// var n2 = d2.getMonth();
+
+			// $("#arv").val(n2);
+			// ("#dep").val(n2);
+			// $("#arv-1").val(n2);
+			// ("#dep-1").val(n2);
+			
+			
+			// jQuery('form a.button').click(function(e) {
+			// 	e.preventDefault();
+			// 	_gaq.push(['_link', createURL() ]);
+			// 	return false;
+			// });
 			
 			
 			jQuery('form a.button').click(function(e) {
@@ -389,15 +592,51 @@
 				_gaq.push(['_link', createURL() ]);
 				return false;
 			});
-
-
-
+		
+			
 			
 		});
 		
 
+	$(document).ready(function() {
+			
+			
+			$(".datepicker .ui-datepicker-calendar td a").click(function() {
+				    $(".datepicker").css({"opacity" : 0, "visibility" : "hidden"});   
+				    $('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});  
+				});	
+			$(".datepicker").on( "click", function() {	
+				 $(".datepicker").css({"opacity" : 0, "visibility" : "hidden"});   
+				    $('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});
+			});
+				
+			$(".calspacer span.arrv").hover(function() {
+				
+				 $(".datepicker").css({"opacity" : 1, "visibility" : "visible"});
+				 
+				 }, function() {
+				 
+				  $(".datepicker").css({"opacity" : 0, "visibility" : "hidden"});
+			});
+			
+			
+			$(".departdatepicker").mousedown(function() {
+				    $(".departdatepicker").css({"opacity" : 0, "visibility" : "hidden"});   
+				     $(".datepicker").css({"opacity" : 0, "visibility" : "hidden"});  
+				});
+			
+			$(".calspacer span.dept").hover(function() {
+				
+				 $(".departdatepicker").css({"opacity" : 1, "visibility" : "visible"});
+				 
+				 }, function() {
+				 
+				  $(".departdatepicker").css({"opacity" : 0, "visibility" : "hidden"});
+			});
 
+	});
 	</script>
+
 	<script type="text/javascript">
 		//$(function($) {
 		//	$( "#arrival_date" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();
@@ -434,6 +673,33 @@
 	   	opacity: 0.8,
 	   	allow_resize: true,
 	});
+	
+	$(".darkover a").click(function(){
+		$(".darkover").removeClass('blackout');
+		$(".booker").removeClass("opendrop");
+	});
+
+	$(".closethisthing").click(function(){
+		$(".darkover").removeClass('blackout');
+		$(".booker").removeClass("opendrop");
+		$(".datepicker").css('opacity', '').css('visibility', '');
+		$(".departdatepicker").css('opacity', '').css('visibility', '');
+	});
+
+	
+	$(".openboxlink").hover(function(e){
+	e.preventDefault();
+	    var bion = $(".darkover");
+	    var ion =  $(".booker");
+	    if(bion.hasClass('blackout')) {
+	        
+	    } else {
+	        bion.addClass('blackout')
+	        ion.addClass("opendrop");
+	      }
+	});
+
+
 			 	 
   });
 </script>
@@ -543,6 +809,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <body <?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?>class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?>class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?>class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?>class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?>class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?>class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?>class="page single amenity"<?php } elseif(is_page() || is_single()) { body_class('single'); ?><?php } elseif(is_home() || is_front_page()) { ?>class="home"<?php } ?>>
 
 
+<div class="darkover"><a href="#"></a></div>
+<div class="slightover"><a href="#"></a></div>
+
+
 <div>
 
 
@@ -560,8 +830,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</div>
 			
 			
-			<ul class="supernav">
+		<ul class="supernav">
 			
+			
+			<li class="subinside inhotel">
+				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
+			</li>
 			<li>
 
 				<?php if( $current_lang == 'en') { ?>
@@ -588,19 +862,58 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			</li>
 
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
+			<li class="subinside inrooms">
+				<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>		
+			</li>
+			
+			<li class="subinside ingallery">
+				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
+			</li>
+			
+			<li class="subinside indeals">
+				<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p><?php _e('Deals','row-theme-text'); ?></p></a>	
+			</li>
+			
+			<li class="subinside ineats">
+				<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>
 				
-				<ul class="dropbox">
+				
+			</li>
+			
+			<li class="subinside inexplore">
+				<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>
+					
+			</li>
+			
+			<li>
+				<a href="<?php bloginfo ('url'); ?>/blog"><span class="blogxs"></span><p><?php _e('Blog','row-theme-text'); ?></p></a>
+			</li>
+
+			<li>
+				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
+			</li>
+			
+			<!--<li>
+				<a href="#"><span class="blog"></span><p>Apple Blog</p></a>
+			</li>-->
+		
+		</ul>
+		
+		
+		
+		
+		<!-- new sub layers -->
+		
+		
+		
+			<ul class="dropbox inhoteldrop">
 					
 					<li class="drop-intro">
 						
 						<?php query_posts('post_type=page&p=353&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
-							
+							<br>
 							<h1><?php the_title(); ?></h1>
-						
-							<p><?php echo excerpt(13); ?></p>
-							
+							<br>
 						<?php endwhile; endif; wp_reset_query(); ?>								
 					</li>
 					
@@ -642,23 +955,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
 											
-				</ul>			
-
-			</li>
-
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>
+				</ul>
 				
-					<ul id="dropbox" class="dropbox">
+				
+				
+				<ul id="dropbox" class="dropbox inroomdrop">
 					
 						<li class="drop-intro">
 							
 							<?php query_posts('post_type=page&p=86&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
-								<h1><?php the_title(); ?></h1>
-							
-								<p><?php echo excerpt(13); ?></p>
-								
+								<br>
+							<h1><?php the_title(); ?></h1>
+							<br>
+
 							<?php endwhile; endif; wp_reset_query(); ?>	
 							
 						</li>
@@ -692,13 +1002,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						
 										
 					</ul>
-			</li>
-			
-			
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
-
-				<ul id="dropbox" class="dropbox">
+					
+					
+					<ul id="dropbox" class="dropbox ingallerydrop">
 
 					<?php 
 
@@ -730,18 +1036,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 								    if(!is_null($t_post_id_two)){
 								        $t_post = get_post( $t_post_id_two);
 						    ?>
-
+								
+								<br>
 								<h1><?php the_title($t_post_id_two); ?></h1>
 							
-								<p><?php echo excerpt(13); ?></p>
+								<br>
 
 							<?php } else {  //no translation? display default language ?>							
 
 								<?php //query_posts('post_type=page&p=54&suppress_filters=0'); if(have_posts()) : while(have_posts()) : the_post(); ?>
-																
+								
+								<br>								
 								<h1><?php the_title(); ?></h1>
 							
-								<p><?php echo excerpt(13); ?></p>
+								<br>
 																							
 							<?php } endwhile; wp_reset_query(); $sitepress->switch_lang($current_lang); ?>	
 
@@ -759,21 +1067,34 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						
 					</li> -->
 						
-					<?php query_posts('post_type=imagegalleries&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+					<?php query_posts('post_type=imagegalleries&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
 					<li>
+						
+						<?php if($imgsrc) { ?>
+						
+						
+						<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
+						
+						<?php } else { ?>
+											
+						<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" alt="<?php the_title(); ?>"></a>
+						
+						
+						<?php } ?>							
+
+						<h3><?php the_title(); ?></h3>
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>
+
+					<?php query_posts('post_type=amenities&posts_per_page=1&suppress_filters=1&p=3097'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 					
-						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+					<li>
 						
-						<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
-
-						<?php } elseif( has_post_thumbnail() ) { ?>
-
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>	
-						
-						<?php } elseif($imgsrc) { ?>
+						<?php if($imgsrc) { ?>
 						
 						
 						<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
@@ -791,43 +1112,33 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					<?php endwhile; endif; wp_reset_query(); ?>		
 					
 									
-				</ul>
-			</li>
-			
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p><?php _e('Deals','row-theme-text'); ?></p></a>
+				</ul>	
 				
-					<ul class="dropbox">
+				
+				
+				<ul class="dropbox indealsdrop">
 					
 						<li class="drop-intro">
 							
 							<?php query_posts('post_type=page&p=92&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
-								<h1><?php the_title(); ?></h1>
+								<br>
+							<h1><?php the_title(); ?></h1>
+							<br>
 							
-								<p><?php echo excerpt(13); ?></p>
-								
 							<?php endwhile; endif; wp_reset_query(); ?>								
 						</li>
 						
-						<?php query_posts(array('showposts' => 20, 'post_type' => 'specials', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts(array('showposts' => 20, 'post_type' => 'specials', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post();  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 						
 						
 						<li>
 						
-						
-							<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 							
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" alt="<?php the_title(); ?>"></a>
-							
-							<?php } elseif($imgsrc) { ?>
+							<?php if($imgsrc) { ?>
 							
 							
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>"></a>
-
-							<?php } elseif( has_post_thumbnail() ) { ?>
-
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>							
 							
 							<?php } else { ?>
 												
@@ -843,13 +1154,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						
 												
 					</ul>
-			</li>
-			
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>
 					
+						
 					
-						<ul class="dropbox">
+						<ul class="dropbox ineatsdrop">
 						
 						<?php 
 
@@ -882,17 +1190,17 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 								        $t_post = get_post( $t_post_id_two);
 						    ?>
 
-								<h1><?php the_title($t_post_id_two); ?></h1>
+								<br><h1><?php the_title($t_post_id_two); ?></h1>
 							
-								<p><?php echo excerpt(13); ?></p>
+								<br>
 
 							<?php } else {  //no translation? display default language ?>							
 
 								<?php //query_posts('post_type=page&p=54&suppress_filters=0'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 																
-								<h1><?php the_title(); ?></h1>
+								<br><h1><?php the_title(); ?></h1>
 							
-								<p><?php echo excerpt(13); ?></p>
+								<br>
 																							
 							<?php } endwhile; wp_reset_query(); ?>	
 
@@ -904,7 +1212,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							$custom_query_args = array(
 							    'post_type' => 'amenities', 
 							    'posts_per_page' => 4, 
-							    'post__not_in' => array(32,33), 
+							    'post__not_in' => array(32,33,3097), 
 							);
 
 							//build query
@@ -965,22 +1273,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 												
 					</ul>
 					
-					
-				
-			</li>
-			
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>
-				
-					<ul class="dropbox">
+					<ul class="dropbox inexploredrop">
 					
 						<li class="drop-intro">
 							
-							<?php query_posts('post_type=page&p=148&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+							<?php query_posts('post_type=page&p=148&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post();  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 								
-								<h1><?php the_title(); ?></h1>
+								<br>
+							<h1><?php the_title(); ?></h1>
+							<br>
 							
-								<p><?php echo excerpt(13); ?></p>
 								
 							<?php endwhile; endif; wp_reset_query(); ?>								
 						</li>
@@ -1016,19 +1318,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						
 												
 					</ul>
-					
-			</li>
-			
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
-			</li>
-			
-			<!--<li>
-				<a href="#"><span class="blog"></span><p>Apple Blog</p></a>
-			</li>-->
-		
-		</ul>
-		
+						
+						
+						
+								
 		<div class="finished">
 			
 			<!--<div class="weatherbox">
@@ -1397,32 +1690,39 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 				<?php if( $current_lang == 'en') { ?>
 
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'zh-hans') { ?>
 
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'pt-br') { ?>
 
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
 
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } else { ?>
 
-					<a class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } ?>
 				
-				<!-- Commented out the booking widget dropdown here
-				<div class="dropout">
+					<div class="dropout booker">
 
 					<div class="inner">
+					<a href="#" class="closethisthing"><i class="fa fa-close"></i></a>
+						<div class="logoboxer">
+							
+							<a class="logo" href="http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com"><img src="http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com/wp-content/themes/row/images/logo.png" alt="Row NYC" /></a>
+							
+						</div>
 						
 						<form 
+
+
 
 							<?php if( $current_lang == 'en') { ?>
 
@@ -1448,12 +1748,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 						onsubmit="_gaq.push(['_linkByPost', this]);">
 
-										
+								
 										<div class="calspacer">
-											<span>
+										
+											<span class="arrv">
 												
-												<label for="arrival"><?php _e('Arrival Date','row-theme-text'); ?></label>
-												
+												<label for="arrival">Arrival Date</label>
+												<br>
 												<div class="squaredance">
 													<input type="hidden" name="arrival_date" id="arrival_date" placeholder="" class="calendarsection" />
 													<input type="text" id="arv">
@@ -1465,9 +1766,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 												<div class="datepicker"></div>
 											</span>
 											
-											<span>
-												<label for="arrival"><?php _e('Departure Date','row-theme-text'); ?></label>
-												
+											<span class="dept">
+												<label for="arrival">Departure Date</label>
+												<br>
 												<div class="squaredance">
 													<input name="departure_date" type="hidden" id="departure_date" placeholder="" class="calendarsection" />
 													<input type="text" id="dep">
@@ -1479,8 +1780,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 												<div class="departdatepicker"></div>
 											</span>
 											
-											<span class="lowselect">
-												<label for="arrival"><?php _e('Adults','row-theme-text'); ?></label>
+											<select style="display: none;" id="adults" name="adults[]">
+													 	<option value="1">1</option>
+											</select>
+											 <select style="display: none;" id="children" name="children[]" >
+													 	<option value="0">0</option>
+											</select>		 	
+													 	
+											<!--<span class="lowselect">
+												<label for="arrival">Adults</label>
 												
 												<div class="squaredance">
 													<p class="topping">How Many?</p>
@@ -1491,6 +1799,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 									                    <option value="3">3</option>
 									                    <option value="4">4</option>                                
 													</select>
+													
+													
 													
 													<!--<ul id="selectUl">
 													    <li>2</li>
@@ -1516,17 +1826,17 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 										                    <option value="8">8</option>                                
 										                    <option value="9">9</option>
 										                    <option value="10">10</option> 
-													</select>-->
-												<!--
+													</select>
+						
 												</div>
 												<i class="fa fa-chevron-down"></i>
 											</span>
 											
 											<span class="lowselect">
-												<label for="arrival"><?php _e('Children','row-theme-text'); ?></label>
+												<label for="arrival">Children</label>
 												
 												<div class="squaredance">
-													<p class="topping"><?php _e('How Many?','row-theme-text'); ?></p>
+													<p class="topping">How Many?</p>
 													 <select id="children" name="children[]" >
 													 	<option value="0">0</option>
 														 <option value="1">1</option>
@@ -1535,21 +1845,26 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 													</select>
 												</div>
 												<i class="fa fa-chevron-down"></i>
-											</span>
+											</span>-->
 											
 											<div class="clear"></div>
-											
-											<a href="#" class="button"><?php _e('See Availability','row-theme-text'); ?></a>
-										
-											
 										</div>
+										
+										
+										<div class="butonconton">
+											<a href="#" class="button">See Availability</a>
+										</div>
+											
+										
 									
 									</form>
 							
 					</div>			
 				
 				</div>
-			-->
+
+
+
 			</li>
 			
 			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><i class="fa fa-map-marker"></i><span class="locale"><?php _e('Location','row-theme-text'); ?></span></a>
