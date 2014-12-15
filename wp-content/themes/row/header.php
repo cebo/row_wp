@@ -912,7 +912,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						
 						<?php query_posts('post_type=page&p=353&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 							<br>
-							<h1><?php the_title(); ?></h1>
+							<h1>Hotel</h1>
 							<br>
 						<?php endwhile; endif; wp_reset_query(); ?>								
 					</li>
