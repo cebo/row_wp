@@ -917,7 +917,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						<?php endwhile; endif; wp_reset_query(); ?>								
 					</li>
 					
-					<?php $bloblor =  array(353,60,12,10,1387,331); query_posts(array(
+					<?php $bloblor =  array(353,12,10,1387,331); query_posts(array(
 										'post_type' => 'page',
 										'post__in' => $bloblor,
 										'orderby' => 'menu_order',
