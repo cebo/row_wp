@@ -602,6 +602,7 @@ h4 {
 	-o-transition-delay: .0s;
 	transition-delay: .0s;
 	z-index: 1;
+	overflow: visible !important;
 }
 
 .dropbox li:hover {
