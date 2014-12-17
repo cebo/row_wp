@@ -318,17 +318,13 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 
 
 h1, .littleover h2.h1, .fourth-level .suboverlay h2.h1, .bigover h2.h1, h2.h1 {
-    font-family: 'GothamBold';
-	text-transform: uppercase;
-	letter-spacing: 0px;
-	font-weight: lighter;
-	color: #333333;
-	font-size: 19px;
-	line-height: 21px;
-	-webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+font-family: 'GothamBold';
+font-size: 30px;
+text-transform: uppercase;
+letter-spacing: 0px;
+font-weight: 700;
+line-height: 32px;
+color: #333333;
 }
 
 h2 {
@@ -397,18 +393,15 @@ h4 {
 
 
 
-
-
 /* Navigation Styles ---------------------------------------------------- */
 
 
 
 .navigate {
 	background: #000;
-	height: 100%;
+	/*height: 100%;*/
 	width: 300px;
-	position: relative;
-	position: fixed;
+	position: absolute;
 	z-index: 999;
 	/*overflow-y: scroll;*/
 	/*-webkit-transition: all 0.5s ease-in-out;
@@ -460,6 +453,35 @@ h4 {
 	transition: all 0.5s ease-in-out;*/
 }
 
+
+.navigate {
+	/*-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;*/
+}
+.navigate:before {
+	width: 300px;
+	height: 100%;
+	background: #000;
+	position: fixed;
+	left: 0;
+	top: 0;
+	content: '';
+	z-index: 3;
+}
+.narrowed {
+
+    -webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	
+ }
+ 
+ .narrowed .supernav p {
+ 	
+ }
 .navigate.mobile .jspContainer, .navigate.mobile .jspPane {
 	overflow: visible;
 }
@@ -467,10 +489,11 @@ h4 {
 .navigate .supernav {
 	width: 100%;
 	position: relative;
-	background: transparent;
+	background: #000;
+	z-index: 3;
 }
 .behindnavigate  {
-	background: #fff;
+	background: transparent;
 	height: 100%;
 	width: 215px;
 	position: fixed;
@@ -535,6 +558,13 @@ h4 {
 	transition: all 0.5s ease-in-out;
 }
 
+
+
+.navigate .supernav li.activeone {
+	background: none repeat scroll 0 0 #DFDFDF;
+}
+
+
 .navigate .supernav li.dropsub {
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -550,25 +580,68 @@ h4 {
     z-index: 999;
 }
 
-.navigate .supernav li ul.dropbox {
+.dropbox {
 	position: fixed;
 	left: -100%;
-	width: 215px;
+	width: 205px;
+	padding-left: 2px !important;
+	padding-right: 5px  !important;
 	height: 100%;
 	z-index: 0;
 	top: 0;
 	background: #DFDFDF;
 	/*visibility: hidden;*/
 	/*opacity: 0;*/
-	/*-webkit-transition: all .5s ease-in;
-	-moz-transition: all .5s ease-in;
-	-o-transition: all .5s ease-in;
-	transition: all .5s ease-in;*/
+	-webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+	transition: all .8s ease-in-out;
 	overflow: scroll;
 	-webkit-transition-delay: .0s;
 	-moz-transition-delay: .0s;
 	-o-transition-delay: .0s;
 	transition-delay: .0s;
+	z-index: 1;
+}
+
+.dropbox li:hover {
+	opacity: .7;
+}
+
+.dropbox li img {
+	width: 100%;
+}
+.dropbox li h3 {
+	font-size: 16px;
+}
+.navigate .supernav li ul.dropbox {
+	position: fixed;
+	left: -100%;
+	width: 215px;
+	height: 100%;
+	z-index: 2;
+	top: 0;
+	background: #DFDFDF;
+	/*visibility: hidden;*/
+	/*opacity: 0;*/
+	-webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+	transition: all .8s ease-in-out;
+	overflow: scroll;
+	-webkit-transition-delay: .0s;
+	-moz-transition-delay: .0s;
+	-o-transition-delay: .0s;
+	transition-delay: .0s;
+}
+
+.expanded {
+	left: 300px;
+	-webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+	transition: all .8s ease-in-out;
+	overflow: visible !important;
 }
 
 .navigate .supernav li ul.dropbox .jspContainer {
@@ -632,10 +705,10 @@ h4 {
     border: 0 none;
     height: auto;
     margin: 0 0 0 -10px;
-    opacity: 0;
+    opacity: 1;
     overflow: hidden;
     padding: 10px 0;
-    visibility: hidden;
+    visibility: visible;
     z-index: 1 !important;
 	/*-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
@@ -727,6 +800,7 @@ h4 {
 	margin-left: 300px;
 	background: #ddd;
 	height: auto;
+	z-index: 1;
 }
 
 .logobox {
@@ -734,6 +808,7 @@ h4 {
 	position: relative;
 	min-height: 120px;
 	text-align: center;
+	background: #000;
 	padding: 30px 0 0 0;
 }
 
@@ -747,6 +822,7 @@ h4 {
 .finished {
 	position: relative;
 	min-height: 70px;
+	z-index: 4;
 }
 
 .finished > p {
@@ -787,7 +863,7 @@ h4 {
 }
 	
 
-.navigate .supernav li:hover p {
+.navigate .supernav li:hover p, .navigate .supernav li.activeone p {
 	color: #000;
 }
 
@@ -919,7 +995,7 @@ h4 {
 	background-position: -3px 6px;
 }
 
-.navigate .supernav li:hover .hotel {
+.navigate .supernav li:hover .hotel, .navigate .supernav li.activeone .hotel  {
 	background-position: -52px 6px;
 	border: 2px solid #000;
 }
@@ -938,7 +1014,7 @@ h4 {
 	background-position: -3px -119px;
 }
 
-.navigate .supernav li:hover .rooms {
+.navigate .supernav li:hover .rooms, .navigate .supernav li.activeone .rooms {
 	background-position: -52px -119px;
 	border: 2px solid #000;
 }
@@ -949,7 +1025,7 @@ h4 {
 	background-position: -3px -182px;
 }
 
-.navigate .supernav li:hover .gallery {
+.navigate .supernav li:hover .gallery, .navigate .supernav li.activeone .gallery {
 	background-position: -52px -182px;
 	border: 2px solid #000;
 }
@@ -959,7 +1035,7 @@ h4 {
 	background-position: -3px -243px;
 }
 
-.navigate .supernav li:hover .deals {
+.navigate .supernav li:hover .deals, .navigate .supernav li.activeone .deals {
 	background-position: -52px -243px;
 	border: 2px solid #000;
 }
@@ -970,7 +1046,7 @@ h4 {
 	background-position: -3px -306px;
 }
 
-.navigate .supernav li:hover .eats {
+.navigate .supernav li:hover .eats, .navigate .supernav li.activeone .eats {
 	background-position: -52px -306px;
 	border: 2px solid #000;
 }
@@ -982,7 +1058,7 @@ h4 {
 	background-position: -3px -368px;
 }
 
-.navigate .supernav li:hover .explore {
+.navigate .supernav li:hover .explore, .navigate .supernav li.activeone .explore {
 	background-position: -52px -368px;
 	border: 2px solid #000;
 }
@@ -1074,7 +1150,7 @@ nav#menu.mobile {
 	height: 100px;
 	margin-top: 10px;
 	font-size: 85px;
-	color: #fa9d04;
+	color: #e51a9b;
 	font-family: 'GothamBold';
 	letter-spacing: -6px;
 	margin-left: -6px;
@@ -1149,7 +1225,7 @@ nav#menu.mobile {
 	height: 100px;
 	margin-top: 10px;
 	font-size: 85px;
-	color: #fa9d04;
+	color: #e51a9b;
 	font-family: 'GothamBold';
 	margin-left: 2px;
 	text-transform: uppercase;
@@ -1192,7 +1268,7 @@ ul#selectUl li {
 	border: 1px solid #ccc;
 	border-top-width: 0;
 	font-size: 30px;
-	color: #fa9d04;
+	color: #e51a9b;
 	font-family: 'GothamBold';
 	letter-spacing: -6px;
 	text-transform: uppercase;
@@ -1227,7 +1303,7 @@ ul#selectUl:hover li.unselected {
 
 ul#selectUl li.unselected:hover {
     color: #fff;
-    background: #fa9d04;
+    background: #e51a9b;
 }
 
 
@@ -1284,11 +1360,11 @@ ul#selectUl li.unselected:hover {
 	margin-left: -149px;
 	padding: 10px;
 	background: #fff;
-	min-width: 258px;
-	transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
+	min-width: 448px;
+	transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -webkit-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
     box-shadow: 0 0 7px #919191;
 }
 .calspacer span:hover .datepicker, .calspacer span:hover .datepickerr {
@@ -1305,14 +1381,14 @@ ul#selectUl li.unselected:hover {
 	top: 110px;
 	z-index: 999999;
 	left: 50%;
-	margin-left: -149px;
+	margin-left: -338px;
 	padding: 10px;
 	background: #fff;
-	min-width: 258px;
-	transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
+	min-width: 448px;
+	transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
     box-shadow: 0 0 7px #919191;
 }
 .calspacer span:hover .departdatepicker, .calspacer span:hover .departdatepickerr {
@@ -1638,7 +1714,21 @@ ul#selectUl li.unselected:hover {
 	width: 30px;
 	content: '';
 }
-
+.topnav a i.fa-close:after {
+	display: none;
+}
+.topnav a i.fa-close {
+	margin: 0;
+	font-size: 27px;
+}
+.topnav a.closethisthing:hover {
+	background: transparent;
+	color: #fff;
+}
+.topnav a:hover i.fa-close {
+	background: transparent;
+	color: #fff;
+}
 .topnav li i.fa-map-marker:after {
 	top: -8px;
 	left: -12px;
@@ -4641,7 +4731,7 @@ button.ui-button::-moz-focus-inner {
 	text-align: center;
 	font-weight: bold;
 	border: 0;
-	color: #fa9d04;
+	color: #e51a9b;
 }
 .ui-datepicker td {
 	border: 1px solid #e2e2e2;
@@ -5559,10 +5649,10 @@ body .ui-tooltip {
 
 
 
-.dp-highlight .ui-state-default {
-          /* background: #A3A3A3 !important; */
-          color: #FFF;
-        }
+		.ui-widget-content .dp-highlight .ui-state-default {
+		    background: none repeat scroll 0 0 #e51a9b;
+		    color: #fff;
+		}
         .ui-datepicker.ui-datepicker-multi  {
           width: 100% !important;
         }
@@ -5575,9 +5665,6 @@ body .ui-tooltip {
           overflow-x: scroll;
         }
 .ui-widget { font-size: 100% }
-
-
-
 
 
 
@@ -6438,4 +6525,195 @@ a.detailsAnchor {
 
 .page-id-3491 .page-content > h1 {
     text-transform: none;
+}
+
+
+
+
+
+/* ==================================================  Booking widget changes  ===============================================  */
+
+
+
+.darkover {
+	background: rgba(0, 0, 0, .8);
+	position: relative;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999999;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.blackout {
+	opacity: 1;
+	visibility: visible;
+}
+
+.blackout a {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+.slightover {
+	background: rgba(0, 0, 0, .8);
+	position: relative;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.blackout {
+	opacity: 1;
+	visibility: visible;
+}
+
+.blackout a {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.topnav li .booker {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	top: 58px !important;
+}
+.topnav li .opendrop {
+	opacity: 1 !important;
+	visibility: visible !important;
+	-webkit-transition: all 0.8s ease-in-out;
+	-moz-transition: all 0.8s ease-in-out;
+	transition: all 0.8s ease-in-out;
+	transition-delay: .6s;
+	background: transparent;
+}
+
+.calspacer #dep {
+	margin-top: 20px;
+}
+
+.calspacer span .squaredance {
+	background: #fff;
+	position: relative;
+	width: 100%;
+	min-height: 155px;
+	height: 100%;
+}
+
+.calspacer span input#arv, .calspacer span input#arv-1 {
+	margin-top: 20px;
+}
+
+.calspacer span input {
+	margin-top: 25px;
+}
+
+.logoboxer {
+	text-align: center;
+	padding: 13px 0;
+	position: relative;
+	margin-bottom: 1px;
+	background: rgba(0,0,0,.6);
+	display: none;
+}
+
+.closethisthing {
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	z-index: 999;
+	color: #e51a9b;
+	font-size: 20px;
+}
+.logoboxer a:hover {
+	background: transparent;
+}
+
+.logoboxer img {
+	width: 75px;
+}
+
+.departdatepicker, .departdatepickerr {
+	top: 190px !important;
+	z-index: 9999999999;
+}
+.datepicker, .datepickerr {
+	top: 190px !important;
+	z-index: 9999999999;
+}
+.booker .calspacer {
+	background: rgba(0,0,0,.6);
+	margin-bottom: 1px;
+	padding: 30px 40px;
+}
+
+.butonconton {
+	padding: 0px 0;
+	background: rgba(0,0,0,.6);
+}
+
+.butonconton .button {
+	width: 100%;
+	padding: 15px 0;
+}
+
+
+
+@media screen and ( max-width: 1200px ) and ( max-height: 660px ){ 
+    .navigate .supernav li {
+    	height: 20px;
+    	
+    }
+    .navigate .supernav li p {
+    	left: 29px;
+    	top: 2px;
+    	opacity: 1 !important;
+    }
+    .slightover { display: none !important; }
+    .logobox {
+    	min-height: 70px;
+		padding: 20px 0 0;
+    }
+    .logobox img {
+		max-width: 35%;
+	}
+    .languages {
+    	display: none;
+    }
+    .navigate .supernav li.subinside:hover, .navigate .supernav li.narrower {
+    	width: 250px;
+    }
+    .navigate {
+		width: 250px !important;
+	}
+    .navigate .supernav li span {
+    	display: none;
+    }
+    .dropbox {
+    	display: none !important;
+    }
 }

@@ -24,6 +24,179 @@ $(document).ready(function(){
 		});
 
 	}
+	
+	
+	$('.dropbox').hover(function() {
+		$('.navigate').addClass('narrowed');
+		$(this).addClass("expanded");
+		$('.navigate .supernav li').addClass('narrower');
+	
+	}, function() {
+	
+		$('.navigate').removeClass('narrowed');
+		$(this).removeClass('expanded');
+		$('.navigate .supernav li').removeClass('narrower');
+	});
+	
+	
+	
+	
+	
+	$('.inhotel').hover(function() {
+		
+		$('.navigate').addClass('narrowed');
+		$('.inhoteldrop').addClass('expanded');
+		$(".slightover").addClass('blackout');
+		
+	}, function() {
+	
+		$('.navigate').removeClass('narrowed');
+		$('.inhoteldrop').removeClass('expanded');
+		$(".slightover").removeClass('blackout');
+	
+	});
+	$('.inhoteldrop').hover(function() {
+		$('.inhotel').addClass('activeone');
+		$(".slightover").addClass('blackout');
+	
+	}, function() {
+		$('.inhotel').removeClass('activeone');
+		$(".slightover").removeClass('blackout');
+		
+	});
+
+
+
+
+
+	
+	$('.inrooms').hover(function() {
+		
+		$('.navigate').addClass('narrowed');
+		$('.inroomdrop').addClass('expanded');
+		$(".slightover").addClass('blackout');
+		
+	}, function() {
+	
+		$('.navigate').removeClass('narrowed');
+		$('.inroomdrop').removeClass('expanded');
+		$(".slightover").removeClass('blackout');
+	
+	});
+	$('.inroomdrop').hover(function() {
+		$('.inrooms').addClass('activeone');
+		$(".slightover").addClass('blackout');
+	
+	}, function() {
+		$('.inrooms').removeClass('activeone');
+		$(".slightover").removeClass('blackout');
+		
+	});
+	
+	
+	
+	
+	$('.ingallery').hover(function() {
+		
+		$('.navigate').addClass('narrowed');
+		$('.ingallerydrop').addClass('expanded');
+		$(".slightover").addClass('blackout');
+		
+	}, function() {
+	
+		$('.navigate').removeClass('narrowed');
+		$('.ingallerydrop').removeClass('expanded');
+		$(".slightover").removeClass('blackout');
+	
+	});
+	$('.ingallerydrop').hover(function() {
+		$('.ingallery').addClass('activeone');
+		$(".slightover").addClass('blackout');
+	
+	}, function() {
+		$('.ingallery').removeClass('activeone');
+		$(".slightover").removeClass('blackout');
+		
+	});
+	
+	
+	
+	
+	$('.indeals').hover(function() {
+		
+		$('.navigate').addClass('narrowed');
+		$('.indealsdrop').addClass('expanded');
+		$(".slightover").addClass('blackout');
+		
+	}, function() {
+	
+		$('.navigate').removeClass('narrowed');
+		$('.indealsdrop').removeClass('expanded');
+		$(".slightover").removeClass('blackout');
+	
+	});
+	$('.indealsdrop').hover(function() {
+		$('.indeals').addClass('activeone');
+		$(".slightover").addClass('blackout');
+	
+	}, function() {
+		$('.indeals').removeClass('activeone');
+		$(".slightover").removeClass('blackout');
+		
+	});
+	
+	
+	$('.ineats').hover(function() {
+		
+		$('.navigate').addClass('narrowed');
+		$('.ineatsdrop').addClass('expanded');
+		$(".slightover").addClass('blackout');
+		
+	}, function() {
+	
+		$('.navigate').removeClass('narrowed');
+		$('.ineatsdrop').removeClass('expanded');
+		$(".slightover").removeClass('blackout');
+	
+	});
+	$('.ineatsdrop').hover(function() {
+		$('.ineats').addClass('activeone');
+		$(".slightover").addClass('blackout');
+	
+	}, function() {
+		$('.ineats').removeClass('activeone');
+		$(".slightover").removeClass('blackout');
+		
+	});
+	
+	
+	
+	
+	$('.inexplore').hover(function() {
+		
+		$('.navigate').addClass('narrowed');
+		$('.inexploredrop').addClass('expanded');
+		$(".slightover").addClass('blackout');
+		
+	}, function() {
+	
+		$('.navigate').removeClass('narrowed');
+		$('.inexploredrop').removeClass('expanded');
+		$(".slightover").removeClass('blackout');
+	
+	});
+	$('.inexploredrop').hover(function() {
+		$('.inexplore').addClass('activeone');
+		$(".slightover").addClass('blackout');
+	
+	}, function() {
+		$('.inexplore').removeClass('activeone');
+		$(".slightover").removeClass('blackout');
+		
+	});
+
+
+
 
 	// $('.supernav').hover(function() {
       
