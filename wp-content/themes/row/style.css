@@ -270,7 +270,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .finished.mobile .right i,
 .footer .navigate .supernav li a,
 .gallery-categories a,
-.page .suboverlay h1
+.page .suboverlay h1,
+.owl-theme .owl-controls .owl-buttons div
 {
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -317,13 +318,13 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 
 
 h1, .littleover h2.h1, .fourth-level .suboverlay h2.h1, .bigover h2.h1, h2.h1 {
-    font-family: 'GothamBold';
-	font-size: 30px;
-	text-transform: uppercase;
-	letter-spacing: 0px;
-	font-weight: 700;
-	line-height: 32px;
-	color: #333333;
+font-family: 'GothamBold';
+font-size: 30px;
+text-transform: uppercase;
+letter-spacing: 0px;
+font-weight: 700;
+line-height: 32px;
+color: #333333;
 }
 
 h2 {
@@ -336,6 +337,7 @@ h2 {
 	-webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: #333333;
 }
 
@@ -386,8 +388,6 @@ h4 {
 	-webkit-user-select: none;
 	-webkit-touch-callout: none;        
 }
-
-
 
 
 
@@ -602,7 +602,6 @@ h4 {
 	-o-transition-delay: .0s;
 	transition-delay: .0s;
 	z-index: 1;
-	overflow: visible !important;
 }
 
 .dropbox li:hover {
@@ -1553,15 +1552,13 @@ ul#selectUl li.unselected:hover {
 
 .topnav li a.booking-link {
     color: #FFFFFF;
-    font-family: 'GothamBold';
     display: block;
     padding: 20px 0;
     width: 100%;
 }
 
-.topnav li a.booking-link span {
-    color: #FFFFFF;
-    font-family: 'GothamBold';
+.topnav ul li a span {
+	font-weight: bold;
 }
 
 .topnav li:first-child {
@@ -1585,13 +1582,6 @@ ul#selectUl li.unselected:hover {
 	font-size: 15px;
 }
 
-.topnav a i.fa-close {
-	margin: 0;
-	font-size: 27px;
-}
-.topnav a i.fa-close:after {
-	display: none;
-}
 .topnav a i.fa-envelope {
     left: 10px;
     float: left;
@@ -1633,6 +1623,58 @@ ul#selectUl li.unselected:hover {
 	background: none repeat scroll 0 0 rgba(229, 26, 155, 0.8);
 }
 
+.dealboxin {
+	padding: 5px;
+}
+
+.dealhead {
+	color: #e51a9b;
+	font-family: "GothamBold";
+	font-size: 35px;
+	margin: 10px 0;
+	text-transform: uppercase;
+}
+
+.dealimage {
+	background-size: cover;
+	position: relative;
+	height: 250px;
+	width: 100%;
+			transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+.dealimage:hover {
+	opacity: 0.7;
+}
+
+.dealimage a {
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.owl-theme .owl-controls {
+	margin-top: 0 !important;
+} 
+.dealcopy {
+	padding: 30px 15px;
+	text-align: center;
+	background: #fff;
+}
+.dealcopy h3 {
+	font-size: 15px;
+}
+.dealcopy .button {
+	color: #fff;
+	background: #e51a9b;
+	margin: 10px 0 0 0;
+	padding: 10px 15px;
+	font-size: 12px;
+	text-transform: uppercase;
+	display: inline-block;
+}
 #contactform .messager {
     margin-bottom: 10px;
 }
@@ -1651,13 +1693,11 @@ ul#selectUl li.unselected:hover {
 	visibility: visible;
 	top: 55px;
 }
-
 .topnav li:hover .booker {
-	opacity: 0;
-	 top: 46px;
-    visibility: hidden;
-} 
-
+opacity: 0;
+top: 46px;
+visibility: hidden;
+}
 .topnav li.mobile:hover .dropout {
 	opacity: 0;
 	visibility: hidden;
@@ -1665,11 +1705,6 @@ ul#selectUl li.unselected:hover {
 
 .topnav a:hover {
  	background: #e51a9b;
-}
-
-.topnav a.closethisthing:hover {
-	background: transparent;
-    color: #fff;
 }
 
 .topnav a i:after {
@@ -1683,7 +1718,21 @@ ul#selectUl li.unselected:hover {
 	width: 30px;
 	content: '';
 }
-
+.topnav a i.fa-close:after {
+	display: none;
+}
+.topnav a i.fa-close {
+	margin: 0;
+	font-size: 27px;
+}
+.topnav a.closethisthing:hover {
+	background: transparent;
+	color: #fff;
+}
+.topnav a:hover i.fa-close {
+	background: transparent;
+	color: #fff;
+}
 .topnav li i.fa-map-marker:after {
 	top: -8px;
 	left: -12px;
@@ -1698,18 +1747,12 @@ ul#selectUl li.unselected:hover {
 	position: relative;
 	top: -4px;
 	text-align: left;
-	font-weight: bold;
 }
 
 
 .fixed {
     position: fixed;
     top: 0;
-}
-
-#navigate.fixed {
-    position: fixed;
-    top: auto;
 }
 
 /* Text Content */
@@ -1976,11 +2019,16 @@ ul#selectUl li.unselected:hover {
     -webkit-text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     -moz-text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	font-family: 'GothamBold';
-	font-size: 30px;
 	text-transform: uppercase;
 	letter-spacing: 0px;
-	font-weight: 700;
-	line-height:32px;
+	font-weight: normal;
+	font-size: 19px;
+	line-height: 21px;
+}
+
+.home-intro .overlay h2.h1 {
+	font-size: 30px;
+	line-height: 32px;
 }
 
 .overlay h2 {
@@ -1995,6 +2043,10 @@ ul#selectUl li.unselected:hover {
     -o-font-smoothing: antialiased;
 }
 
+.home-intro .overlay h2 {
+	font-size: 19px;
+	line-height: 21px;
+}
 
 .overlay p {
 	padding: 0 0 5px 0;
@@ -2082,7 +2134,8 @@ ul#selectUl li.unselected:hover {
 	background: rgb(255,255,255);
     background: rgba(255,255,255,0.85);
 	padding: 20px;
-	
+	margin: auto;
+	max-width: 75%;	
 }
 
 .bigover h1, .bigover h2.h1 {
@@ -2325,8 +2378,16 @@ ul#selectUl li.unselected:hover {
 	margin-bottom: 10px;
 	position: relative;
 	overflow: hidden;
-	height: 450px;
+	/* padding-bottom: 65px !important; */
+	height: 470px;
 }
+
+.owl-item .fullspan {
+	overflow: hidden;
+	height: 450px;
+	padding-bottom: 0px !important;
+}
+
 
 .shorter {
 	width: 100%;
@@ -2697,6 +2758,7 @@ ul#selectUl li.unselected:hover {
     font-size: 35px;
     font-weight: normal;
     margin-bottom: 20px;
+    line-height: 40px;
 }
 
 .page .main-page-content.left {
@@ -2811,7 +2873,7 @@ ul#selectUl li.unselected:hover {
     display: inline-block;
 }
 	.rooms-book-now .right a:hover {
-		background: none repeat scroll 0 0 rgba(250, 156, 3, 1);
+		background: none repeat scroll 0 0 rgba(229, 26, 155, 0.55);
 	}
 
 .rooms-book-now .left > h4 {
@@ -2980,29 +3042,6 @@ ul#selectUl li.unselected:hover {
 
 .single .home-intro, .page .home-intro {
 	margin-bottom: 0;
-}
-
-.single .home-intro, .page .home-intro.bosco-box {
-  display: inline-block;
-  height: 448px;
-  margin-left: 300px;
-  width: auto;
-}
-
-.gallery .home-intro.bosco-box {
-	height: 672px;
-}
-
-.gallery .bosco-photo {
-	height: 33%;
-}
-
-.bosco-photo {
-	background-repeat: no-repeat;
-	background-size: cover;
-	float: left;
-	height: 50%;
-	width: 20%;
 }
 
 .page-content {
@@ -3919,6 +3958,7 @@ width: 35%;
     min-height: 611px;
     overflow: hidden;
     width: 50%;
+    position: relative;
 }
 
 .deal-photo {
@@ -3940,25 +3980,40 @@ width: 35%;
 }
 
 .deal-wrapper {
-    height: 100%;
-    padding: 20px 60px 30px;
-    position: relative;
-    text-align: center;
-    background: #fff;
-    z-index: 999;
+	background: none repeat scroll 0 0 #fff;
+	height: 100%;
+	padding: 20px 60px 30px;
+	position: relative;
+	text-align: center;
+	z-index: 999;
+	height: 225px;
 }
 
 .deal-wrapper > h1 {
-    font-size: 32px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+	font-size: 19px;
+	line-height: 1.1;
+	margin-bottom: 10px;
 }
 
 .deal-wrapper > p {
     padding-bottom: 10px;
 }
 
+.deal .page-content .button-wrapper {
+	position: relative;
+}
 
+.deal .button-wrapper {
+	bottom: 20px;
+	left: 0;
+	position: relative;
+	right: 0;
+	text-align: center;
+}
+
+.deal .button-wrapper a.button {
+	padding: 20px 20px 10px 20px;
+}
 
 /* Single - Deal ---------------------------------------------------- */
 
@@ -4094,9 +4149,7 @@ width: 35%;
 /* PAGE - Gallery ---------------------------------------------------- */
 
 .gallery .fourth-level {
-  background: none repeat scroll 0 0 #fff;
-  margin-top: 0;
-  min-height: 705px;
+	margin-top: 0;
 }
 
 .gallery .flexslider {
@@ -4172,7 +4225,7 @@ width: 35%;
 }
 
 .slide-description {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+    /* background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7); */
     bottom: 0;
     color: #fff;
     font-size: 15px;
@@ -4192,7 +4245,7 @@ width: 35%;
     text-transform: uppercase;
 }
 	.gallery-categories a:hover {
-	    color: #FFA500;
+	    color: #e51a9b;
 	}
 
 
@@ -5620,9 +5673,6 @@ body .ui-tooltip {
 
 
 
-
-
-
 #maparea {
 	min-height: 200px;
 	min-width: 200px;
@@ -6485,8 +6535,6 @@ a.detailsAnchor {
 
 
 
-
-
 /* ==================================================  Booking widget changes  ===============================================  */
 
 
@@ -6635,6 +6683,7 @@ a.detailsAnchor {
 .butonconton .button {
 	width: 100%;
 	padding: 15px 0;
+	z-index: 999;
 }
 
 
@@ -6678,12 +6727,14 @@ a.detailsAnchor {
 
 
 
-
-
-
 .ghost {
 	opacity: 0 !important;
 	visibility: hidden;
+}
+
+.super-ghost {
+	opacity: 0 !important;
+	z-index: -1;
 }
 
 
