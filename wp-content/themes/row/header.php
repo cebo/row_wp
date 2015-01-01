@@ -4,22 +4,6 @@
 	$current_lang = $sitepress->get_current_language();
 	$default_lang = $sitepress->get_default_language();
 
-	if ( file_exists( TEMPLATEPATH . '/library/Mobile_Detect.php' ) ) {
-
-		require_once TEMPLATEPATH . '/library/Mobile_Detect.php';
-		$detect = new Mobile_Detect;
-
-		function redirect() {
-		    $url = 'Location: http://m.rownyc.com';
-		    $statusCode = 303;
-		    header($url, true, $statusCode);
-		    die();
-		}
-
-		$check = $detect->isMobile(); if( $check ): redirect(); endif;
-
-	}
-
 ?>
 <!DOCTYPE HTML>
 <head>
@@ -59,8 +43,7 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/jquery.mmenu.css">
 <link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/js/flexslider/flexslider.css" type="text/css" media="screen" />
 <!-- <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/ui-lightness/jquery.ui.all.css"> -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl.theme.css">
+
 
 
 <!-- responsive style -->
@@ -117,30 +100,6 @@
 					
 </script>
 
-<?php if( is_home() || is_front_page() ) { ?>
-
-	<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/owl.carousel.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function() {
-	 
-	  $("#owl-example").owlCarousel({
-	 
-	    // Most important owl features
-	    items : 1,
-	    navigation: true,
-	    navigationText : false,
-	    itemsDesktop : false,
-	    itemsDesktopSmall : [979,1],
-	    itemsTabletSmall : [768,1],
-	    itemsTablet : [768,1],
-	    itemsMobile : [479,1]
-	    
-	    });
-	 
-	});
-	</script>
-
-<?php } ?>
 
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.videoBG.js"></script>
 
@@ -163,134 +122,108 @@
 <!-- Jquery Mmenu -->
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.mmenu.min.js"></script>
 
-
 <!-- Scripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
-
-<?php if(get_post_type() == 'imagegalleries') { ?>
-
-	<!-- Flex Slider -->
-	<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-
-			$('.flexslider-gallery').flexslider({
-				animation: "slide",
-				animationSpeed: 1500,
-				controlNav: true,
-				startAt: 0,
-			});
-
-		  $('.flexslider').flexslider({
-		    animation: "slide",
-		    animationSpeed: 800,
-		    pauseOnAction: false,
-		    controlNav: true,
-		    startAt: 0,
-		  });
-
-		});
-	</script>
-
-<?php } ?>
 
 <script type="text/javascript">
 	
 	
 	function createURL() {
-		var checkin = jQuery("#arrival_date").val();
-		var checkout = jQuery("#departure_date").val();
-		var adults = jQuery("#adults").val();
-		var children = jQuery("#children").val();
-		
-		<?php if( $current_lang == 'en' ) { ?>
-
-			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
-
-		<?php } elseif( $current_lang == 'zh-hans') { ?>
-
-			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" + 
-
-		<?php } elseif( $current_lang == 'pt-br') { ?>
-
-			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" + 
-
-		<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-
-			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" + 
-
-		<?php } else { ?>
-
-			var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
-
-		<?php }  ?>
+	var checkin = jQuery("#arrival_date").val();
+	var checkout = jQuery("#departure_date").val();
+	var adults = jQuery("#adults").val();
+	var children = jQuery("#children").val();
 	
-			"&arrival_date=" + checkin + 
-			"&departure_date=" + checkout + 
-			"&adults[]=" + adults + 
-			"&children[]=" + children;
+	<?php if( $current_lang == 'en' ) { ?>
 
-		return bookinglink;
-	}
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+
+	<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" + 
+
+	<?php } elseif( $current_lang == 'pt-br') { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" + 
+
+	<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" + 
+
+	<?php } else { ?>
+
+		var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
+
+	<?php }  ?>
+	
+										"&arrival_date=" + checkin + 
+										"&departure_date=" + checkout + 
+										"&adults[]=" + adults + 
+										"&children[]=" + children;
+
+	return bookinglink;
+}
 
 
 
 
 	$(document).ready(function() {
 		
-		$('#div_demo').videoBG({
-			mp4:'<?php bloginfo ('template_url'); ?>/assets/row_webber.mp4',
-			ogv:'<?php bloginfo ('template_url'); ?>/assets/row_webber.ogv',
-			webm:'<?php bloginfo ('template_url'); ?>/assets/row_webber.webm',
-			poster:'',
-			scale:true,
-			zIndex:0
-		});
-
-		if(Modernizr.touch) {
-			$('#div_demo.mobile').show(),
-			$('#div_demo.desktop').hide()
-		}
-		
 		
 			
-		  $('#arrival_date').live('keyup',function() {
-		        var pronameval = $(this).val();
-		        $('#departure_date').val(pronameval.replace(/ /g, '-').toLowerCase());
-		    });
-	 		
-	 		$('#selectUl li:not(":first")').addClass('unselected');
-				$('#selectUl').hover(
-				    function(){
-				        $(this).find('li').click(
-				            function(){
-				                $('.unselected').removeClass('unselected');
-				                $(this).addClass("bignumber");
-				                $(this).siblings('li').addClass('unselected');
-				                $(this).siblings('li').removeClass('bignumber');
-				                var index = $(this).index();
-				                $('select[name=size]')
-				                    .find('option:eq(' + index + ')')
-				                    .attr('selected',true);
-				            });
-				    },
-				    function(){
-				    });
+	$('#div_demo').videoBG({
+		mp4:'<?php bloginfo ('template_url'); ?>/assets/row_webber.mp4',
+		ogv:'<?php bloginfo ('template_url'); ?>/assets/row_webber.ogv',
+		webm:'<?php bloginfo ('template_url'); ?>/assets/row_webber.webm',
+		poster:'',
+		scale:true,
+		zIndex:0
+	});
+
+	if(Modernizr.touch) {
+		$('#div_demo.mobile').show(),
+		$('#div_demo.desktop').hide()
+	}
+	
+	
 		
-		$(function() {
+	  $('#arrival_date').live('keyup',function() {
+	        var pronameval = $(this).val();
+	        $('#departure_date').val(pronameval.replace(/ /g, '-').toLowerCase());
+	    });
+ 		
+ 		$('#selectUl li:not(":first")').addClass('unselected');
+			$('#selectUl').hover(
+			    function(){
+			        $(this).find('li').click(
+			            function(){
+			                $('.unselected').removeClass('unselected');
+			                $(this).addClass("bignumber");
+			                $(this).siblings('li').addClass('unselected');
+			                $(this).siblings('li').removeClass('bignumber');
+			                var index = $(this).index();
+			                $('select[name=size]')
+			                    .find('option:eq(' + index + ')')
+			                    .attr('selected',true);
+			            });
+			    },
+			    function(){
+			    });
+	
+ 		$(function() {
 			var fixadent = $(".topnav"), pos = fixadent.offset();
 			$(window).scroll(function() {
 			if($(this).scrollTop() > (pos.top + 10) && fixadent.css('position') == 'absolute') { fixadent.addClass('fixed'); }
 			else if($(this).scrollTop() <= pos.top && fixadent.hasClass('fixed')){ fixadent.removeClass('fixed'); }
 			})
-		});
+			});
 		 				
 	});	
 	
 </script>
 
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js?ver=3.5.2'></script>
-<script type="text/javascript">
+	<script type="text/javascript">
 		$(document).ready(function(){
 		   // Datepicker
 		   
@@ -602,13 +535,10 @@
 			
 			
 			$(".datepicker .ui-datepicker-calendar td a").click(function() {
-				    $(".datepicker").css({"opacity" : 0, "visibility" : "hidden"});   
+				    $(".datepicker").addClass("ghost");   
 				    $('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});  
 				});	
-			$(".datepicker").on( "click", function() {	
-				 $(".datepicker").css({"opacity" : 0, "visibility" : "hidden"});   
-				    $('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});
-			});
+			
 				
 			$(".calspacer span.arrv").hover(function() {
 				
@@ -621,8 +551,8 @@
 			
 			
 			$(".departdatepicker").mousedown(function() {
-				    $(".departdatepicker").css({"opacity" : 0, "visibility" : "hidden"});   
-				     $(".datepicker").css({"opacity" : 0, "visibility" : "hidden"});  
+				    $(".departdatepicker").addClass("ghost");  
+				     $(".datepicker").removeClass("ghost").css({"opacity" : 0, "visibility" : "hidden"}); 
 				});
 			
 			$(".calspacer span.dept").hover(function() {
@@ -636,7 +566,6 @@
 
 	});
 	</script>
-
 	<script type="text/javascript">
 		//$(function($) {
 		//	$( "#arrival_date" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();
@@ -674,6 +603,7 @@
 	   	allow_resize: true,
 	});
 	
+	
 	$(".darkover a").click(function(){
 		$(".darkover").removeClass('blackout');
 		$(".booker").removeClass("opendrop");
@@ -698,8 +628,8 @@
 	        ion.addClass("opendrop");
 	      }
 	});
-
-
+	
+	
 			 	 
   });
 </script>
@@ -728,6 +658,32 @@
 			
 		});
 	</script>
+
+<?php if(get_post_type() == 'imagegalleries') { ?>
+	<!-- Flex Slider -->
+<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$('.flexslider-gallery').flexslider({
+			animation: "slide",
+			animationSpeed: 1500,
+			controlNav: true,
+			startAt: 0,
+		});
+
+	  $('.flexslider').flexslider({
+	    animation: "slide",
+	    animationSpeed: 800,
+	    pauseOnAction: false,
+	    controlNav: true,
+	    startAt: 0,
+	  });
+
+	});
+</script>
+
+<?php } ?>
 
 <?php if(is_home()) { ?>
 
@@ -776,7 +732,7 @@ _gaq.push(['_setDomainName', 'rownyc.com']);
 
 _gaq.push(['_trackPageview']);
 
-/*
+
 
 _gaq.push(['secondTracker._setAccount', 'UA-10318674-10']);
 
@@ -786,7 +742,7 @@ _gaq.push(['secondTracker._setDomainName', 'rownyc.com']);
 
 _gaq.push(['secondTracker._trackPageview']);
 
-*/
+
 
 
 
@@ -812,16 +768,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <div class="darkover"><a href="#"></a></div>
 <div class="slightover"><a href="#"></a></div>
 
-
 <div>
 
 
-	<section class="navigate">
+	<section id="navigate" class="navigate">
 		
 			
 			
 			<div class="logobox">
 			
+				
 				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
 				
 				
@@ -830,11 +786,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			</div>
 			
 			
-		<ul class="supernav">
+			<ul class="supernav">
 			
 			
 			<li class="subinside inhotel">
-				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
+				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
 			</li>
 			<li>
 
@@ -900,8 +856,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		</ul>
 		
 		
-		
-		
 		<!-- new sub layers -->
 		
 		
@@ -912,12 +866,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						
 						<?php query_posts('post_type=page&p=353&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 							<br>
-							<h1>Hotel</h1>
+							<h1><?php the_title(); ?></h1>
 							<br>
 						<?php endwhile; endif; wp_reset_query(); ?>								
 					</li>
 					
-					<?php $bloblor =  array(353,12,10,1387,331); query_posts(array(
+					<?php $bloblor =  array(353,60,12,10,1387,331); query_posts(array(
 										'post_type' => 'page',
 										'post__in' => $bloblor,
 										'orderby' => 'menu_order',
@@ -1318,10 +1272,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 						
 												
 					</ul>
-						
-						
-						
-								
+							
+		
 		<div class="finished">
 			
 			<!--<div class="weatherbox">
@@ -1348,7 +1300,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			</div>
 
-			<p><?php _e('Complimentary WiFi','row-theme-text'); ?></p>
+			<p>Complimentary WiFi</p>
 		
 		</div>
 		
@@ -1395,7 +1347,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 						<li>
 
-							<a class="booking-link" href="https://rownyc.reztrip.com" onclick="_gaq.push(['_link', this.href]);return false;"><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+							<a target="_blank" class="openboxlink booking-link" href="#"><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 						</li>
 						
@@ -1689,40 +1641,38 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 			<li>
 
 				<?php if( $current_lang == 'en') { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="openboxlink booking-link" href="#"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'zh-hans') { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'pt-br') { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } else { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
+				
+					<a target="_blank" class="booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
 
 				<?php } ?>
-				
-					<div class="dropout booker">
+						
+				<div class="dropout booker">
 
 					<div class="inner">
 					<a href="#" class="closethisthing"><i class="fa fa-close"></i></a>
 						<div class="logoboxer">
 							
-							<a class="logo" href="http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com"><img src="http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com/wp-content/themes/row/images/logo.png" alt="Row NYC" /></a>
+							<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
 							
 						</div>
 						
 						<form 
-
-
 
 							<?php if( $current_lang == 'en') { ?>
 
@@ -1748,12 +1698,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 						onsubmit="_gaq.push(['_linkByPost', this]);">
 
-								
+										
 										<div class="calspacer">
 										
 											<span class="arrv">
 												
-												<label for="arrival">Arrival Date</label>
+												<label for="arrival"><?php _e('Arrival Date','row-theme-text'); ?></label>
 												<br>
 												<div class="squaredance">
 													<input type="hidden" name="arrival_date" id="arrival_date" placeholder="" class="calendarsection" />
@@ -1767,7 +1717,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 											</span>
 											
 											<span class="dept">
-												<label for="arrival">Departure Date</label>
+												<label for="arrival"><?php _e('Departure Date','row-theme-text'); ?></label>
 												<br>
 												<div class="squaredance">
 													<input name="departure_date" type="hidden" id="departure_date" placeholder="" class="calendarsection" />
@@ -1780,15 +1730,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 												<div class="departdatepicker"></div>
 											</span>
 											
-											<select style="display: none;" id="adults" name="adults[]">
-													 	<option value="1">1</option>
-											</select>
-											 <select style="display: none;" id="children" name="children[]" >
-													 	<option value="0">0</option>
-											</select>		 	
-													 	
 											<!--<span class="lowselect">
-												<label for="arrival">Adults</label>
+												<label for="arrival"><?php _e('Adults','row-theme-text'); ?></label>
 												
 												<div class="squaredance">
 													<p class="topping">How Many?</p>
@@ -1833,10 +1776,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 											</span>
 											
 											<span class="lowselect">
-												<label for="arrival">Children</label>
+												<label for="arrival"><?php _e('Children','row-theme-text'); ?></label>
 												
 												<div class="squaredance">
-													<p class="topping">How Many?</p>
+													<p class="topping"><?php _e('How Many?','row-theme-text'); ?></p>
 													 <select id="children" name="children[]" >
 													 	<option value="0">0</option>
 														 <option value="1">1</option>
@@ -1852,7 +1795,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 										
 										
 										<div class="butonconton">
-											<a href="#" class="button">See Availability</a>
+											<a href="#" class="button"><?php _e('See Availability','row-theme-text'); ?></a>
 										</div>
 											
 										
@@ -1862,8 +1805,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					</div>			
 				
 				</div>
-
-
 
 			</li>
 			
@@ -1883,238 +1824,260 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 					<div class="inner" style="padding: 40px;">
 						
 						<div id="contactform">
-														
+							<!--<div id="messager" class="messager"></div>
+							<form method="post" action="<?php bloginfo('template_url'); ?>/library/contact_three.php" name="cformr" id="cformr" class="sleek cformr">
+								
+								<input class="lilly" id="namer" type="text" placeholder="First Name*" name="namer" value="" />
+								
+								<input class="lilly" id="emailr" type="text" placeholder="Last Name*" name="namers" value="" />
+								
+								<input class="lilly" id="namer" type="text" placeholder="Your Zip*" name="zipper" value="" />
+								
+								<input class="lilly" id="emailr" type="text" placeholder="Your Email*" name="emailr" value="" />
+			
+								<input class="lilly" type="hidden" name="subjectr" id="subjectr" value="<?php get_option('cebo_email'); ?>" />
+								<input class="lilly" type="hidden" name="honeypot" id="honeypot" />
+								
+								<input class="lilly" type="text" style="display: none;" name="myemailr" id="myemailr" value="<?php get_option('cebo_email'); ?>" />
+								
+							
+								
+						        <input type="submit" name="sends" value="Sign Up" id="submitr" class="nudge"/>
+						        
+						        
+							</form>	-->
+							
 							<!-- Begin MailChimp Signup Form -->
-							<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
-							<style type="text/css">
-								#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-								/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-								   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-							</style>
-							<div id="mc_embed_signup">
-							<form action="http://sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-								<h2><?php _e('Subscribe Today','row-theme-text'); ?></h2>
-							<div class="indicates-required"><span class="asterisk">*</span> <?php _e('indicates required','row-theme-text'); ?></div>
-							<div class="mc-field-group">
-								<label for="mce-MMERGE1"><?php _e('First Name','row-theme-text'); ?>  <span class="asterisk">*</span>
-							</label>
-								<input type="text" value="" name="MMERGE1" class="required" id="mce-MMERGE1">
-							</div>
-							<div class="mc-field-group">
-								<label for="mce-MMERGE2"><?php _e('Last Name','row-theme-text'); ?>  <span class="asterisk">*</span>
-							</label>
-								<input type="text" value="" name="MMERGE2" class="required" id="mce-MMERGE2">
-							</div>
-							<div class="mc-field-group">
-								<label for="mce-MMERGE3"><?php _e('Your Zip','row-theme-text'); ?>  <span class="asterisk">*</span>
-							</label>
-								<input type="text" value="" name="MMERGE3" class="required" id="mce-MMERGE3">
-							</div>
-							<div class="mc-field-group">
-								<label for="mce-EMAIL"><?php _e('Email Address','row-theme-text'); ?>  <span class="asterisk">*</span>
-							</label>
-								<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-							</div>
-								<div id="mce-responses" class="clear">
-									<div class="response" id="mce-error-response" style="display:none"></div>
-									<div class="response" id="mce-success-response" style="display:none"></div>
-								</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-							    <div style="position: absolute; left: -5000px;"><input type="text" name="b_ae5d0eb33650e5a9963ca5a3e_1054dd91b3" value=""></div>
-								<div class="clear"><input type="submit" value="<?php _e('Subscribe','row-theme-text'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-							</form>
-							</div>
-							<script type="text/javascript">
-							var fnames = new Array();var ftypes = new Array();fnames[1]='MMERGE1';ftypes[1]='text';fnames[2]='MMERGE2';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';fnames[0]='EMAIL';ftypes[0]='email';
-							try {
-							    var jqueryLoaded=jQuery;
-							    jqueryLoaded=true;
-							} catch(err) {
-							    var jqueryLoaded=false;
-							}
-							var head= document.getElementsByTagName('head')[0];
-							if (!jqueryLoaded) {
-							    var script = document.createElement('script');
-							    script.type = 'text/javascript';
-							    script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
-							    head.appendChild(script);
-							    if (script.readyState && script.onload!==null){
-							        script.onreadystatechange= function () {
-							              if (this.readyState == 'complete') mce_preload_check();
-							        }    
-							    }
-							}
+<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="http://sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<h2><?php _e('Subscribe Today','row-theme-text'); ?></h2>
+<div class="indicates-required"><span class="asterisk">*</span> <?php _e('indicates required','row-theme-text'); ?></div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE1"><?php _e('First Name','row-theme-text'); ?>  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="MMERGE1" class="required" id="mce-MMERGE1">
+</div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE2"><?php _e('Last Name','row-theme-text'); ?>  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="MMERGE2" class="required" id="mce-MMERGE2">
+</div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE3"><?php _e('Your Zip','row-theme-text'); ?>  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="MMERGE3" class="required" id="mce-MMERGE3">
+</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL"><?php _e('Email Address','row-theme-text'); ?>  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_ae5d0eb33650e5a9963ca5a3e_1054dd91b3" value=""></div>
+	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<script type="text/javascript">
+var fnames = new Array();var ftypes = new Array();fnames[1]='MMERGE1';ftypes[1]='text';fnames[2]='MMERGE2';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';fnames[0]='EMAIL';ftypes[0]='email';
+try {
+    var jqueryLoaded=jQuery;
+    jqueryLoaded=true;
+} catch(err) {
+    var jqueryLoaded=false;
+}
+var head= document.getElementsByTagName('head')[0];
+if (!jqueryLoaded) {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
+    head.appendChild(script);
+    if (script.readyState && script.onload!==null){
+        script.onreadystatechange= function () {
+              if (this.readyState == 'complete') mce_preload_check();
+        }    
+    }
+}
 
-							var err_style = '';
-							try{
-							    err_style = mc_custom_error_style;
-							} catch(e){
-							    err_style = '#mc_embed_signup input.mce_inline_error{border-color:#6B0505;} #mc_embed_signup div.mce_inline_error{margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff;}';
-							}
-							var head= document.getElementsByTagName('head')[0];
-							var style= document.createElement('style');
-							style.type= 'text/css';
-							if (style.styleSheet) {
-							  style.styleSheet.cssText = err_style;
-							} else {
-							  style.appendChild(document.createTextNode(err_style));
-							}
-							head.appendChild(style);
-							setTimeout('mce_preload_check();', 250);
+var err_style = '';
+try{
+    err_style = mc_custom_error_style;
+} catch(e){
+    err_style = '#mc_embed_signup input.mce_inline_error{border-color:#6B0505;} #mc_embed_signup div.mce_inline_error{margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff;}';
+}
+var head= document.getElementsByTagName('head')[0];
+var style= document.createElement('style');
+style.type= 'text/css';
+if (style.styleSheet) {
+  style.styleSheet.cssText = err_style;
+} else {
+  style.appendChild(document.createTextNode(err_style));
+}
+head.appendChild(style);
+setTimeout('mce_preload_check();', 250);
 
-							var mce_preload_checks = 0;
-							function mce_preload_check(){
-							    if (mce_preload_checks>40) return;
-							    mce_preload_checks++;
-							    try {
-							        var jqueryLoaded=jQuery;
-							    } catch(err) {
-							        setTimeout('mce_preload_check();', 250);
-							        return;
-							    }
-							    var script = document.createElement('script');
-							    script.type = 'text/javascript';
-							    script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
-							    head.appendChild(script);
-							    try {
-							        var validatorLoaded=jQuery("#fake-form").validate({});
-							    } catch(err) {
-							        setTimeout('mce_preload_check();', 250);
-							        return;
-							    }
-							    mce_init_form();
-							}
-							function mce_init_form(){
-							    jQuery(document).ready( function($) {
-							      var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
-							      var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
-							      $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
-							      options = { url: 'http://sphericalcommunications.us4.list-manage.com/subscribe/post-json?u=ae5d0eb33650e5a9963ca5a3e&id=1054dd91b3&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
-							                    beforeSubmit: function(){
-							                        $('#mce_tmp_error_msg').remove();
-							                        $('.datefield','#mc_embed_signup').each(
-							                            function(){
-							                                var txt = 'filled';
-							                                var fields = new Array();
-							                                var i = 0;
-							                                $(':text', this).each(
-							                                    function(){
-							                                        fields[i] = this;
-							                                        i++;
-							                                    });
-							                                $(':hidden', this).each(
-							                                    function(){
-							                                        var bday = false;
-							                                        if (fields.length == 2){
-							                                            bday = true;
-							                                            fields[2] = {'value':1970};//trick birthdays into having years
-							                                        }
-							                                    	if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
-							                                    		this.value = '';
-																    } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
-							                                    		this.value = '';
-																    } else {
-																        if (/\[day\]/.test(fields[0].name)){
-							    	                                        this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;									        
-																        } else {
-							    	                                        this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
-								                                        }
-								                                    }
-							                                    });
-							                            });
-							                        $('.phonefield-us','#mc_embed_signup').each(
-							                            function(){
-							                                var fields = new Array();
-							                                var i = 0;
-							                                $(':text', this).each(
-							                                    function(){
-							                                        fields[i] = this;
-							                                        i++;
-							                                    });
-							                                $(':hidden', this).each(
-							                                    function(){
-							                                        if ( fields[0].value.length != 3 || fields[1].value.length!=3 || fields[2].value.length!=4 ){
-							                                    		this.value = '';
-																    } else {
-																        this.value = 'filled';
-								                                    }
-							                                    });
-							                            });
-							                        return mce_validator.form();
-							                    }, 
-							                    success: mce_success_cb
-							                };
-							      $('#mc-embedded-subscribe-form').ajaxForm(options);
-							      
-							      
-							    });
-							}
-							function mce_success_cb(resp){
-							    $('#mce-success-response').hide();
-							    $('#mce-error-response').hide();
-							    if (resp.result=="success"){
-							        $('#mce-'+resp.result+'-response').show();
-							        $('#mce-'+resp.result+'-response').html(resp.msg);
-							        $('#mc-embedded-subscribe-form').each(function(){
-							            this.reset();
-							    	});
-							    } else {
-							        var index = -1;
-							        var msg;
-							        try {
-							            var parts = resp.msg.split(' - ',2);
-							            if (parts[1]==undefined){
-							                msg = resp.msg;
-							            } else {
-							                i = parseInt(parts[0]);
-							                if (i.toString() == parts[0]){
-							                    index = parts[0];
-							                    msg = parts[1];
-							                } else {
-							                    index = -1;
-							                    msg = resp.msg;
-							                }
-							            }
-							        } catch(e){
-							            index = -1;
-							            msg = resp.msg;
-							        }
-							        try{
-							            if (index== -1){
-							                $('#mce-'+resp.result+'-response').show();
-							                $('#mce-'+resp.result+'-response').html(msg);            
-							            } else {
-							                err_id = 'mce_tmp_error_msg';
-							                html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
-							                
-							                var input_id = '#mc_embed_signup';
-							                var f = $(input_id);
-							                if (ftypes[index]=='address'){
-							                    input_id = '#mce-'+fnames[index]+'-addr1';
-							                    f = $(input_id).parent().parent().get(0);
-							                } else if (ftypes[index]=='date'){
-							                    input_id = '#mce-'+fnames[index]+'-month';
-							                    f = $(input_id).parent().parent().get(0);
-							                } else {
-							                    input_id = '#mce-'+fnames[index];
-							                    f = $().parent(input_id).get(0);
-							                }
-							                if (f){
-							                    $(f).append(html);
-							                    $(input_id).focus();
-							                } else {
-							                    $('#mce-'+resp.result+'-response').show();
-							                    $('#mce-'+resp.result+'-response').html(msg);
-							                }
-							            }
-							        } catch(e){
-							            $('#mce-'+resp.result+'-response').show();
-							            $('#mce-'+resp.result+'-response').html(msg);
-							        }
-							    }
-							}
+var mce_preload_checks = 0;
+function mce_preload_check(){
+    if (mce_preload_checks>40) return;
+    mce_preload_checks++;
+    try {
+        var jqueryLoaded=jQuery;
+    } catch(err) {
+        setTimeout('mce_preload_check();', 250);
+        return;
+    }
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
+    head.appendChild(script);
+    try {
+        var validatorLoaded=jQuery("#fake-form").validate({});
+    } catch(err) {
+        setTimeout('mce_preload_check();', 250);
+        return;
+    }
+    mce_init_form();
+}
+function mce_init_form(){
+    jQuery(document).ready( function($) {
+      var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
+      var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
+      $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
+      options = { url: 'http://sphericalcommunications.us4.list-manage.com/subscribe/post-json?u=ae5d0eb33650e5a9963ca5a3e&id=1054dd91b3&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+                    beforeSubmit: function(){
+                        $('#mce_tmp_error_msg').remove();
+                        $('.datefield','#mc_embed_signup').each(
+                            function(){
+                                var txt = 'filled';
+                                var fields = new Array();
+                                var i = 0;
+                                $(':text', this).each(
+                                    function(){
+                                        fields[i] = this;
+                                        i++;
+                                    });
+                                $(':hidden', this).each(
+                                    function(){
+                                        var bday = false;
+                                        if (fields.length == 2){
+                                            bday = true;
+                                            fields[2] = {'value':1970};//trick birthdays into having years
+                                        }
+                                    	if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
+                                    		this.value = '';
+									    } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
+                                    		this.value = '';
+									    } else {
+									        if (/\[day\]/.test(fields[0].name)){
+    	                                        this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;									        
+									        } else {
+    	                                        this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
+	                                        }
+	                                    }
+                                    });
+                            });
+                        $('.phonefield-us','#mc_embed_signup').each(
+                            function(){
+                                var fields = new Array();
+                                var i = 0;
+                                $(':text', this).each(
+                                    function(){
+                                        fields[i] = this;
+                                        i++;
+                                    });
+                                $(':hidden', this).each(
+                                    function(){
+                                        if ( fields[0].value.length != 3 || fields[1].value.length!=3 || fields[2].value.length!=4 ){
+                                    		this.value = '';
+									    } else {
+									        this.value = 'filled';
+	                                    }
+                                    });
+                            });
+                        return mce_validator.form();
+                    }, 
+                    success: mce_success_cb
+                };
+      $('#mc-embedded-subscribe-form').ajaxForm(options);
+      
+      
+    });
+}
+function mce_success_cb(resp){
+    $('#mce-success-response').hide();
+    $('#mce-error-response').hide();
+    if (resp.result=="success"){
+        $('#mce-'+resp.result+'-response').show();
+        $('#mce-'+resp.result+'-response').html(resp.msg);
+        $('#mc-embedded-subscribe-form').each(function(){
+            this.reset();
+    	});
+    } else {
+        var index = -1;
+        var msg;
+        try {
+            var parts = resp.msg.split(' - ',2);
+            if (parts[1]==undefined){
+                msg = resp.msg;
+            } else {
+                i = parseInt(parts[0]);
+                if (i.toString() == parts[0]){
+                    index = parts[0];
+                    msg = parts[1];
+                } else {
+                    index = -1;
+                    msg = resp.msg;
+                }
+            }
+        } catch(e){
+            index = -1;
+            msg = resp.msg;
+        }
+        try{
+            if (index== -1){
+                $('#mce-'+resp.result+'-response').show();
+                $('#mce-'+resp.result+'-response').html(msg);            
+            } else {
+                err_id = 'mce_tmp_error_msg';
+                html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
+                
+                var input_id = '#mc_embed_signup';
+                var f = $(input_id);
+                if (ftypes[index]=='address'){
+                    input_id = '#mce-'+fnames[index]+'-addr1';
+                    f = $(input_id).parent().parent().get(0);
+                } else if (ftypes[index]=='date'){
+                    input_id = '#mce-'+fnames[index]+'-month';
+                    f = $(input_id).parent().parent().get(0);
+                } else {
+                    input_id = '#mce-'+fnames[index];
+                    f = $().parent(input_id).get(0);
+                }
+                if (f){
+                    $(f).append(html);
+                    $(input_id).focus();
+                } else {
+                    $('#mce-'+resp.result+'-response').show();
+                    $('#mce-'+resp.result+'-response').html(msg);
+                }
+            }
+        } catch(e){
+            $('#mce-'+resp.result+'-response').show();
+            $('#mce-'+resp.result+'-response').html(msg);
+        }
+    }
+}
 
-							</script>
-							<!--End mc_embed_signup-->	
+</script>
+<!--End mc_embed_signup-->	
 
 
 
