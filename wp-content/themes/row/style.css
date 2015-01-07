@@ -2576,7 +2576,7 @@ visibility: hidden;
 	display: block; /* Display inline-block, and absolutely NO FLOATS! */
     margin-bottom: 0px;
     float: left;
-	width: 33.33471%;
+	width: 33.33%;
     vertical-align:top;
     position: relative;
     -webkit-column-break-inside:avoid;
