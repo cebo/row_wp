@@ -281,7 +281,7 @@
 
 							<div class="detail-features">
 
-								<h4>Features</h4>
+								<h4><?php _e('Features','row-theme-text'); ?></h4>
 							
 								<ul>
 									<li class="ico-wifi"><?php _e('Complimentary Wi-Fi','row-theme-text'); ?></li>
