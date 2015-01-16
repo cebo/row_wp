@@ -16,7 +16,15 @@
 		    die();
 		}
 
-		$check = $detect->isMobile(); if( $check ): redirect(); endif;
+		$check = $detect->isMobile(); 
+
+		if( $check && get_post_meta($post->ID,'cebo_redirect_url', true) ) {
+			header("HTTP/1.1 301 Moved Permanently");
+			header( 'Location: ' .  get_post_meta($post->ID,'cebo_redirect_url', true) );
+			exit();
+		} 
+
+		elseif( $check ) { redirect(); }
 
 	}
 

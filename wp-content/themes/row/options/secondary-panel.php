@@ -123,7 +123,15 @@ $meta_box = array(
 	          "id" => $prefix."_booklink",
 	          "type" => "text",
 	          "std" => ""
-              )
+              ),
+
+		array( 
+			"name" => "Redirect URL",
+			"id" => $prefix."_redirect_url",
+			"type" => "text",
+			"std" => ""
+		),
+
        	)
 );
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */
@@ -212,7 +220,7 @@ jQuery(document).ready(function() {
 				'<td class="boxer">';
 		switch ($field['type']) {
 			case 'text':
-				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width: 109%" />';
+				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px;" />';
 				break;
 			case 'upload':
 				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" class="upload_image" name="', $field['id'], '" id="', $field['id'], '"  value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px 0;" /><input class="upload_image_button" type="button" value="Upload Image" />';
