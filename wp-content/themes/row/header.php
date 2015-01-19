@@ -1355,7 +1355,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			</div>
 
-			<p><?php _e('Complimentary WiFi','row-theme-text'); ?></p>
+			<p><?php _e('High Speed Wifi Access Available','row-theme-text'); ?></p>
 		
 		</div>
 		
