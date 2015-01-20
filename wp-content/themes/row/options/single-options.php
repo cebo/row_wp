@@ -100,7 +100,15 @@ $meta_boxel = array(
 	          "id" => $prefix."_localcoordinates",
 	          "type" => "text",
 	          "std" => ""
-              )
+              ),
+
+         array( 
+			"name" => "Redirect URL",
+			"id" => $prefix."_redirect_url",
+			"type" => "text",
+			"std" => ""
+		),
+         
        	)
 );
 

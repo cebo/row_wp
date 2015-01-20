@@ -109,7 +109,15 @@ $meta_localer = array(
 	          "id" => $prefix."_coordinates",
 	          "type" => "text",
 	          "std" => ""
-              )
+              ),
+
+		array( 
+			"name" => "Redirect URL",
+			"id" => $prefix."_redirect_url",
+			"type" => "text",
+			"std" => ""
+		),
+		
        )
 );
 

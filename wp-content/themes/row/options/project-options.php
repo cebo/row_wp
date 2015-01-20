@@ -131,7 +131,14 @@ $meta_boxer = array(
 	          "id" => $prefix."_booklink",
 	          "type" => "text",
 	          "std" => ""
-              )
+              ),
+
+ 		array( 
+			"name" => "Redirect URL",
+			"id" => $prefix."_redirect_url",
+			"type" => "text",
+			"std" => ""
+		),
 		
        	)
 );

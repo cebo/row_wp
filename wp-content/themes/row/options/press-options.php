@@ -68,7 +68,15 @@ $meta_box_press = array(
 	          "id" => $prefix."_booklink",
 	          "type" => "text",
 	          "std" => ""
-              )
+              ),
+
+ 		array( 
+			"name" => "Redirect URL",
+			"id" => $prefix."_redirect_url",
+			"type" => "text",
+			"std" => ""
+		),
+		
 		)
 );
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */

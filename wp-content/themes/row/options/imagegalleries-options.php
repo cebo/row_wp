@@ -61,7 +61,14 @@ $meta_box_imagegalleries = array(
 	          "id" => $prefix."_gallery_video",
 	          "type" => "textarea",
 	          "std" => ""
-              )
+              ),
+
+		array( 
+			"name" => "Redirect URL",
+			"id" => $prefix."_redirect_url",
+			"type" => "text",
+			"std" => ""
+		),
 	)
 );
 

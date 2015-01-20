@@ -163,8 +163,15 @@ $meta_boxoryl = array(
 	          "id" => $prefix."_amenity_yelp",
 	          "type" => "text",
 	          "std" => ""
-              )
- 		,
+              ),
+
+ 		array( 
+			"name" => "Redirect URL",
+			"id" => $prefix."_redirect_url",
+			"type" => "text",
+			"std" => ""
+		),
+		
        	)
 );
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */

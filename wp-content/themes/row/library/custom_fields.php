@@ -7,7 +7,10 @@
 
 $fp_boxes = array (
 	'Concierge Information' => array (
+		
 			array( 'bigtitle', 'Outbound Link' , 'text'),
+			array( $prefix."_redirect_url", "Redirect URL", 'text' ),
+
 		),
 );
 			// Do not edit past this point.
