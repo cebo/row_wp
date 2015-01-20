@@ -62,7 +62,11 @@
 		</div>
 		
 		
-		<?php endwhile; endif; wp_reset_query(); ?>	
+		<?php endwhile; else : ?>
+
+			<section class="contentarea">
+						
+		<?php endif; wp_reset_query(); ?>	
 		
 		
 		
