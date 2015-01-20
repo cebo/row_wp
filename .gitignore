@@ -7,6 +7,7 @@ local-config.php
 Thumbs.db
 # ignore wp-uploads
 wp-content/uploads
+.htaccess
 
 git remote add website ssh://yourusername@www.site.com<script type="text/javascript">
 /* <![CDATA[ */
