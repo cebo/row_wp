@@ -40,6 +40,7 @@
 				dropdown.onchange = onCatChange;
 				</script>
 				
+
 				
 				
 					<!--<fieldset>
@@ -54,7 +55,14 @@
 						dropdown.onchange = onCatChange;
 						</script> 
 					<i class="fa fa-angle-down"></i>
-					</fieldset> -->
+					</fieldset> -->	
+
+					<div class="category-dropdown">
+
+						<a class="ctgy-bt" href="#">Category<i class="fa fa-angle-down"></i></a>	
+							
+					</div>
+
 					<div class="clear"></div>
 				</div>
 			</div>
@@ -79,7 +87,52 @@
 				</div>
 			</div>
 			
-			<div class="reservations">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script type="text/javascript">
+				$( ".ctgy-bt" ).click(function() {
+				  $( "#cat-container" ).slideToggle( "slow" );
+				});
+			</script>
+
+
+
+			<div id="cat-container" class="category-container">
+					
+					<div class="category-title">
+						<p>filter by categories</p>
+					</div>
+
+			        <?php
+
+						echo '<div class="category-list">';
+							echo '<ul>';
+
+								$cats = get_categories();
+					            $custom = 0;
+
+				            foreach ($cats as $cat) {
+
+				                if ($custom % 3 == 0 && $custom != 0) {
+				                		echo '</ul>';
+				                	echo '</div>';
+				                	echo '<div class="category-list">';
+				                		echo '<ul>';
+					                   		echo "<li>".$cat->name." (".$cat->count.")"."</li>";
+
+				                } else {
+
+				                    echo "<li>".$cat->name." (".$cat->count.")"."</li>"; 
+
+				                } $custom++; 
+
+				            } 
+			                	
+			            echo '</div>'; 
+			        ?>
+
+			</div> 
+
+			<!-- <div class="reservations">
 				<div class="reservationform">
 				<form action="<?php echo get_option('cebo_genbooklink'); ?>/search?"  method="get" target="_blank">
 
@@ -121,7 +174,7 @@
 			
 			
 			
-			</div>
+			</div>-->
 			
 			
 		</div>
