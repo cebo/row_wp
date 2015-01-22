@@ -59,7 +59,7 @@
 
 					<div class="category-dropdown">
 
-						<a class="ctgy-bt" href="#">Category<i class="fa fa-angle-down"></i></a>	
+						<a id="cat-trigger">Category<i class="fa fa-angle-down"></i></a>	
 							
 					</div>
 
@@ -87,16 +87,31 @@
 				</div>
 			</div>
 			
+
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			
 			<script type="text/javascript">
-				$( ".ctgy-bt" ).click(function() {
-				  $( "#cat-container" ).slideToggle( "slow" );
+				$( "#cat-trigger" ).click(function() {
+					$( ".category-container" ).slideToggle("slow");		
+
+					var a = $(".topsect").css("height");
+					var b = $(".logo").css("top");
+
+						if (a == "200px" && b == "60px" ) {						
+							$(".topsect").animate({ "height": "310px" }, "slow" );
+							$(".logo").animate({ "top": "170px" }, "slow" );	
+
+						} else {
+							$(".topsect").animate({ "height": "200px" }, "slow" );
+							$(".logo").animate({ "top": "60px" }, "slow" );
+								
+						}
+
 				});
 			</script>
 
 
-
-			<div id="cat-container" class="category-container">
+			<div class="category-container">
 					
 					<div class="category-title">
 						<p>filter by categories</p>
@@ -112,16 +127,19 @@
 
 				            foreach ($cats as $cat) {
 
+				            	$category_link = get_category_link($cat->cat_ID);
+				            	$cat_url = esc_url( $category_link );
+
 				                if ($custom % 3 == 0 && $custom != 0) {
 				                		echo '</ul>';
 				                	echo '</div>';
 				                	echo '<div class="category-list">';
 				                		echo '<ul>';
-					                   		echo "<li>".$cat->name." (".$cat->count.")"."</li>";
-
+					                   		echo "<li><a href=".$cat_url.">".$cat->name." (".$cat->count.")"."</a></li>";
+					                   	
 				                } else {
 
-				                    echo "<li>".$cat->name." (".$cat->count.")"."</li>"; 
+				                    echo "<li><a href=".$cat_url.">".$cat->name." (".$cat->count.")"."</a></li>";
 
 				                } $custom++; 
 
@@ -130,7 +148,7 @@
 			            echo '</div>'; 
 			        ?>
 
-			</div> 
+			</div>
 
 			<!-- <div class="reservations">
 				<div class="reservationform">
