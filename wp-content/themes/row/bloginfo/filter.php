@@ -59,7 +59,7 @@
 
 					<div class="category-dropdown">
 
-						<a id="cat-trigger">Category<i class="fa fa-angle-down"></i></a>	
+						<a id="cat-trigger" class="close">Category<i class="fa fa-angle-down"></i></a>	
 							
 					</div>
 
@@ -91,22 +91,12 @@
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 			
 			<script type="text/javascript">
-				$( "#cat-trigger" ).click(function() {
-					$( ".category-container" ).slideToggle("slow");		
-
-					var a = $(".topsect").css("height");
-					var b = $(".logo").css("top");
-
-						if (a == "200px" && b == "60px" ) {						
-							$(".topsect").animate({ "height": "310px" }, "slow" );
-							$(".logo").animate({ "top": "170px" }, "slow" );	
-
-						} else {
-							$(".topsect").animate({ "height": "200px" }, "slow" );
-							$(".logo").animate({ "top": "60px" }, "slow" );
-								
-						}
-
+				$( document ).ready(function() {
+    				$( "#cat-trigger" ).click(function() {
+						$( ".category-container" ).slideToggle("slow");
+						$( ".topsect .logo" ).toggleClass('open-logo', "slow", "swing");
+						$( ".topsect" ).toggleClass('open-body', "slow", "swing");
+					});
 				});
 			</script>
 
