@@ -64,6 +64,14 @@ and (max-width : 640px) {
 	    right: auto;
 	    top: 0;
 	}
+	
+	.topsect.open-body {
+		min-height: 300px !important;
+	}
+	
+	.logo.open-logo {
+		top: 0;
+	}
 
 	.rightsort form {
 	    clear: both;
@@ -225,6 +233,14 @@ and (max-width : 855px)
 	.rightcolumn { display: none; }
 	.leftcolumn { width: 100%; }
 	.category-container { display: none !important; }
+	
+	.open-body {
+		min-height: 200px !important;
+	}
+	
+	.open-logo {
+		top: 60px;
+	}
 
 }
 
