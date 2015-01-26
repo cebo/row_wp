@@ -57,11 +57,10 @@
 					<i class="fa fa-angle-down"></i>
 					</fieldset> -->	
 
-					<div class="category-dropdown">
-
-						<a id="cat-trigger" class="close">Category<i class="fa fa-angle-down"></i></a>	
-							
-					</div>
+			
+					<span class="category-dropdown">
+						<a id="cat-trigger">Category<i class="fa fa-angle-down"></i></a>	
+					</span>		
 
 					<div class="clear"></div>
 				</div>

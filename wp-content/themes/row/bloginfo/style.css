@@ -3131,7 +3131,7 @@ body .ui-tooltip {
 
 
 /* custom css for category drop down */
-.leftsort .category-dropdown a {
+.leftsort .category-dropdown #cat-trigger {
 		font-family: 'Montserrat', sans-serif;
 	font-size: 13px;
 	text-transform: uppercase;
@@ -3144,19 +3144,32 @@ body .ui-tooltip {
 	font-weight: 700;
 	float: left;
 	line-height: 18px;
-	padding: 0 15px 0 20px;
 	position: relative;
 	cursor: pointer;
+}
+
+.leftsort .category-dropdown {
 	border-left: 1px solid #fff;
+	padding: 0 15px 0 20px;
+	font-style: normal;
 }
 
 .leftsort i {
 	position: absolute;
-	left: 100px;
+	left: 80px;
 	top: -3px;
 	color: #fff;
 	font-size: 24px;
 	z-index: 0;
+}
+
+.leftsort fieldset label {
+	cursor: auto;
+}
+
+.leftsort fieldset input[type=radio] {
+	cursor: pointer;
+	margin-left: 0;
 }
 
 .category-container {
