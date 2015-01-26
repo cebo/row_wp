@@ -3196,6 +3196,10 @@ body .ui-tooltip {
 	font-family: 'Montserrat', sans-serif;
 }
 
+.category-list a:hover {
+	text-decoration: underline;
+}
+
 .open-logo {
 	top: 142px;
 }

@@ -7,7 +7,7 @@ and (max-width : 900px) {
 
 	/* Blog Header */
 
-	.logo {
+	/*.logo {
 	    display: block;
 	    float: left;
 	    height: 96px;
@@ -16,7 +16,7 @@ and (max-width : 900px) {
 	    position: relative;
 	    text-align: center;
 	    top: 30px;
-	}
+	}*/
 
 
 
@@ -224,6 +224,7 @@ and (max-width : 855px)
 	.leftsort { display: none; }
 	.rightcolumn { display: none; }
 	.leftcolumn { width: 100%; }
+	.category-container { display: none !important; }
 
 }
 
