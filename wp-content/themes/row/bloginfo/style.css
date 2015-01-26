@@ -273,6 +273,7 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 	-moz-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	font-weight: 700;
+	position: relative;
 }
 
 .leftsort fieldset input[type=radio] {
@@ -3167,8 +3168,9 @@ body .ui-tooltip {
 	cursor: auto;
 }
 
-.leftsort fieldset input[type=radio] {
+.leftsort fieldset input[type="radio"] {
 	cursor: pointer;
+	left: 0;
 	margin-left: 0;
 }
 
