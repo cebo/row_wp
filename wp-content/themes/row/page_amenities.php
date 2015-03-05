@@ -49,7 +49,7 @@
 					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_listimage', true); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
