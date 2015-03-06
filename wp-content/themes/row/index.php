@@ -233,8 +233,9 @@
 						<div class="wideover overlay narrow">
 					
 							<h2 class="h1"><?php the_title(); ?></h2>
+							<p>Featuring 9 of NYC’s most buzzed about restaurants!</p>
 							<?php //the_content(); ?>
-							<br />
+							
 							<p><a class="gone" href="http://citykitchen.rownyc.com/">Visit City Kitchen &gt;</a></p>
 							
 							<!-- <a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/"><?php _e('View Row NYC >','row-theme-text'); ?></a> -->
