@@ -1236,7 +1236,7 @@ window.onload = function(){
 							$custom_query_args = array(
 							    'post_type' => 'amenities', 
 							    'posts_per_page' => 4, 
-							    'post__not_in' => array(32,33,3097), 
+							    'post__not_in' => array(32,33,3097,5819), 
 							);
 
 							//build query

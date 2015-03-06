@@ -234,7 +234,8 @@
 					
 							<h2 class="h1"><?php the_title(); ?></h2>
 							<?php //the_content(); ?>
-							<p>Coming Soon</p>
+							<br />
+							<p><a class="gone" href="http://citykitchen.rownyc.com/">Visit City Kitchen &gt;</a></p>
 							
 							<!-- <a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/"><?php _e('View Row NYC >','row-theme-text'); ?></a> -->
 													
