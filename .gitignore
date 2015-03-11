@@ -9,110 +9,21 @@ Thumbs.db
 wp-content/uploads
 .htaccess
 
-git remote add website ssh://yourusername@www.site.com<script type="text/javascript">
-/* <![CDATA[ */
-(function(){try{var s,a,i,j,r,c,l,b=document.getElementsByTagName("script");l=b[b.length-1].previousSibling;a=l.getAttribute('data-cfemail');if(a){s='';r=parseInt(a.substr(0,2),16);for(j=2;a.length-j;j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}s=document.createTextNode(s);l.parentNode.replaceChild(s,l);}}catch(e){}})();
-/* ]]> */
-</script>/home/yourusername/site.git
+# ignore wordpress themes
+wp-content/wp-content/themes/classic/
+wp-content/wp-content/themes/twentyfourteen/
+wp-content/wp-content/themes/twentythirteen/
+wp-content/wp-content/themes/twentytwelve/
 
+# ignore other themes
+wp-content/wp-content/themes/default/
 
-		    $("#arrival_date").datepicker({
-		        numberOfMonths: 2,
-		        minDate: 0,
-		        altField  : '#arv',
-    			altFormat : 'yy-mm-dd',
-    			format    : 'mm-dd-yy',
-		        onSelect: function(selected) {
-		          $("#departure_date").datepicker("option","minDate", selected)
-		        }
-		    });
-		    $("#departure_date").datepicker({ 
-		        numberOfMonths: 1,
-		        minDate: 0,
-		        altField  : '#dep',
-    			altFormat : 'yy-mm-dd',
-    			format    : 'mm-dd-yy',
-		        onSelect: function(selected) {
-		           $("#arrival_date").datepicker("option","maxDate", selected)
-		        }
-		    });  
-	
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-		$(document).ready(function(){
-		   // Datepicker
-		$.datepicker._defaults.dateFormat = 'yy-mm-dd';
-		
-		$(".datepicker").datepicker({
-			minDate: 0,
-			numberOfMonths: [2,1],
-			beforeShowDay: function(date) {
-				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
-				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
-				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-			},
-			onSelect: function(dateText, inst) {
-				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
-				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
-                var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
-                var selectedDates = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
-
-                
-                if (!date1 || date2) {
-					$("#arrival_date").val(dateText);
-					$("#arv").val(selectedDates);
-					$("#departure_date").val("");
-                    $(this).datepicker();
-                } else if( selectedDate < date1 ) {
-                    $("#departure_date").val( $("#arrival_date").val() );
-                    $("#arrival_date").val( dateText );
-                    $(this).datepicker();
-                } else {
-					$("#departure_date").val(dateText);
-                    $(this).datepicker();
-				}
-			}
-			
-					
-			
-		});
-		});
-	</script>
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-		$(document).ready(function(){
-		   // Datepicker
-		var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
-		var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
-		
-			$('#arrival_date').datepicker({
-			    dateFormat: 'mm/dd/y',
-			    altField  : '#arve',
-    			altFormat : 'dd',
-			    onSelect: function(event, ui) {
-			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
-			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
-			        $('#arv').val(selectedMonthName);
-			    }
-			});
-		});
-		
-
-
-	</script>
+# Custom individual ignores
+wp-content/plugins/wp-google-maps/1markers.xml
+tmp/
+blogs/
+.DS_Store
+test/
+*timthumb.txt
+cache/
+.htaccess
