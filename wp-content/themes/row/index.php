@@ -233,8 +233,8 @@
 						<div class="wideover overlay narrow">
 					
 							<h2 class="h1"><?php the_title(); ?></h2>
-							<p>Featuring 9 of NYC’s most buzzed about restaurants!</p>
-							<?php //the_content(); ?>
+							<p><?php the_content(); ?></p>
+							
 							
 							<p><a class="gone" href="http://citykitchen.rownyc.com/">Visit City Kitchen &gt;</a></p>
 							
