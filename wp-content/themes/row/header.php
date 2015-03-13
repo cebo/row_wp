@@ -69,6 +69,8 @@
 <!-- <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/ui-lightness/jquery.ui.all.css"> -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl.theme.css">
+<!-- Consolidated this css into one file. This styles the notification -->
+<link rel='stylesheet' id='style-css' href='<?php bloginfo('template_url'); ?>/css/ns-style.css' type='text/css' media='all' />
 
 
 <!-- responsive style -->
@@ -174,6 +176,8 @@
 
 <!-- Scripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
+
+<?php include(TEMPLATEPATH . '/library/scripts.php'); ?>
 
 <?php if(get_post_type() == 'imagegalleries') { ?>
 
@@ -828,8 +832,7 @@ window.onload = function(){
 </script>
 
 </head> 
-	
-	
+
 <body <?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?>class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?>class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?>class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?>class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?>class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?>class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?>class="page single amenity"<?php } elseif(is_page() || is_single()) { body_class('single'); ?><?php } elseif(is_home() || is_front_page()) { ?>class="home"<?php } ?>>
 
 
@@ -839,15 +842,11 @@ window.onload = function(){
 
 <div>
 
-
 	<section class="navigate">
-		
-			
 			
 			<div class="logobox">
 			
 				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
-				
 				
 				<div class="languages"><?php language_selector_flags(); ?></div>
 			
@@ -2155,7 +2154,29 @@ window.onload = function(){
 		
 	</div>
 	
-	<div class="banner"> 
+	<?php query_posts('post_type=weather&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+		<?php if( $post->post_content != "" && get_post_meta($post->ID,'cebo_weather_live', true) ) { ?>
+
+			<div class="ns-box ns-bar ns-effect-slidetop ns-type-notice ns-show">
+
+				<i class="fa fa-exclamation-triangle"></i>
+
+				<div class="ns-box-inner">
+
+					<?php the_content(); ?>
+
+				</div>
+
+				<span class="ns-close" onClick="sessionStorage.setItem('id', '1')"></span>
+
+			</div>
+
+		<?php } ?>
+
+	<?php endwhile; endif; wp_reset_query(); ?>
+
+	<div class="banner desktop"> 
 		
 		<p>700 8th Avenue, New York, NY 10036 <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a></p>
 		

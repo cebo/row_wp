@@ -332,5 +332,65 @@ $(function() {
 
 
 </script> 
+
+<!-- There are the scripts need for the pushdown. -->
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/classie.js'></script>
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/modernizr.custom.js'></script>
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/notificationFx.js'></script>
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/snap.svg-min.js'></script>
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/cbpAnimatedHeader.js'></script>
+
+	<script>
+		(function() {
+
+			<?php if( is_home() || is_front_page() ) { ?>
+
+				$(window).on( 'load', function() {
+
+					if (!sessionStorage.getItem('id')) {
+					    
+					    setTimeout( function() {
+						
+							$('.ns-box').addClass('ns-show'),
+							$('#notification-trigger').attr('disabled','disabled');
+
+						}, 1300 );
+
+					}
+					
+				});	
+
+			<?php } else { ?>
+
+				$(document).ready(function() {
+
+					if (!sessionStorage.getItem('id')) {
+					    
+					    $('.ns-box').addClass('ns-show-page'),
+						$('#notification-trigger').attr('disabled','disabled');
+
+					}
+					
+				});		
+
+			<?php } ?>	
+
+			$('.ns-close').click(function(){
+				$('.ns-box').removeClass('ns-show'),
+				$('.ns-box').removeClass('ns-show-page'),
+				$('.ns-box').addClass('ns-hide'),
+				$('.menu-wrapper').addClass('ns-closed'),
+				$('#notification-trigger').removeAttr('disabled','disabled');
+			});
+
+			$('#notification-trigger').click(function(){
+				$('.ns-box').removeClass('ns-hide'),
+				$('.ns-box').addClass('ns-show'),
+				$(this).attr('disabled','disabled');
+			});
+
+		})();
+	</script>
+	
 </body>
 </html>

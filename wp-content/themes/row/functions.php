@@ -55,6 +55,7 @@ include(TEMPLATEPATH . '/options/amenity-options.php');
  /* ................. SOME OPTIONS FOR PRESS .................... */
 /* Below is an include to a few options for press releases.*/
 include(TEMPLATEPATH . '/options/press-options.php'); 
+include(TEMPLATEPATH . '/options/weather-options.php');
 
  /* ................. SOME OPTIONS FOR PRESS .................... */
 /* Below is an include to a few options for press releases.*/

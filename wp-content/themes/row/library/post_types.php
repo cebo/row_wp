@@ -231,5 +231,23 @@ function create_presstype_taxonomies()
 
 
 
+add_action( 'init', 'create_weather_post_types' );
+function create_weather_post_types() {
+  register_post_type( 'weather',
+    array(
+      'labels' => array(
+        'name' => __( 'Weather Alert' ),
+        'singular_name' => __( 'Weather Alert' )
+      ),
+      'public' => true,
+      'rewrite' => array('slug' =>  'weather-alert'),
+      'menu_icon' => 'dashicons-cloud',
+      'supports' => array('title','author','revision', 'editor')
+    )
+  );
+}
+
+
+
 
 ?>
