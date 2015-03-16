@@ -10,10 +10,14 @@
 	color: #333;
 	font-size: 90%;
 	font-family: 'GothamBook', Helvetica, Arial, sans-serif;
+	margin-top: 0;
 }
 
 .ns-box.ns-show {
 	pointer-events: auto;
+	/*display: block !important;*/
+	visibility: visible !important;
+	opacity: 1 !important;
 }
 
 .ns-box a {
@@ -195,7 +199,7 @@
 }
 
 .ns-effect-slidetop.ns-show {
-	margin-top: 0;
+	margin-top: 0 !important;
 }
 
 /*.ns-effect-slidetop.ns-hide {

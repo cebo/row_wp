@@ -842,6 +842,28 @@ window.onload = function(){
 
 <div>
 
+	<?php query_posts('post_type=weather&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+		<?php if( $post->post_content != "" && get_post_meta($post->ID,'cebo_weather_live', true) ) { ?>
+
+			<div class="ns-box ns-bar ns-effect-slidetop ns-type-notice" style="visibility: hidden; opacity: 0;">
+
+				<i class="fa fa-exclamation-triangle"></i>
+
+				<div class="ns-box-inner">
+
+					<?php the_content(); ?>
+
+				</div>
+
+				<span class="ns-close" onClick="sessionStorage.setItem('nsclose_id', '1')"></span>
+
+			</div>
+
+		<?php } ?>
+
+	<?php endwhile; endif; wp_reset_query(); ?>
+
 	<section class="navigate">
 			
 			<div class="logobox">
@@ -2153,28 +2175,6 @@ window.onload = function(){
 		</ul>
 		
 	</div>
-	
-	<?php query_posts('post_type=weather&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
-
-		<?php if( $post->post_content != "" && get_post_meta($post->ID,'cebo_weather_live', true) ) { ?>
-
-			<div class="ns-box ns-bar ns-effect-slidetop ns-type-notice ns-show">
-
-				<i class="fa fa-exclamation-triangle"></i>
-
-				<div class="ns-box-inner">
-
-					<?php the_content(); ?>
-
-				</div>
-
-				<span class="ns-close" onClick="sessionStorage.setItem('id', '1')"></span>
-
-			</div>
-
-		<?php } ?>
-
-	<?php endwhile; endif; wp_reset_query(); ?>
 
 	<div class="banner desktop"> 
 		
