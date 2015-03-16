@@ -98,8 +98,17 @@
 	background: transparent;
 	top: 50%;
 	right: 20px;
+	
+}
+
+.ns-bar .ns-close {
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+	background: none repeat scroll 0 0 transparent;
+	float: none;
+	left: auto;
+	right: 10px;
+	top: 20px;
 }
 
 .ns-bar .ns-close::before,
@@ -137,12 +146,12 @@
 .ns-effect-slidetop .ns-close::before,
 .ns-effect-slidetop .ns-close::after {
 	width: 2px;
-	background: #fff;
+	background: #777;
 }
 
 .ns-effect-slidetop .ns-close:hover::before,
 .ns-effect-slidetop .ns-close:hover::after {
-	background: #fff;
+	background: #333;
 }
 
 .ns-effect-slidetop.ns-show .icon,
@@ -189,9 +198,9 @@
 	margin-top: 0;
 }
 
-.ns-effect-slidetop.ns-hide {
+/*.ns-effect-slidetop.ns-hide {
 	margin-top: -67px;
-}
+}*/
 
 @-webkit-keyframes animSlideTop {
 	0% { -webkit-transform: translate3d(0,-100%,0); }
@@ -266,7 +275,7 @@
 .ns-close {
 	color: #3c3c3c;
 	float: left;
-	display: none;
+	/*display: none;*/
 }
 
 

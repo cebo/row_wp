@@ -380,14 +380,15 @@ $(function() {
 				$('.ns-box').removeClass('ns-show-page'),
 				$('.ns-box').addClass('ns-hide'),
 				$('.menu-wrapper').addClass('ns-closed'),
-				$('#notification-trigger').removeAttr('disabled','disabled');
+				$('#notification-trigger').removeAttr('disabled','disabled'),
+				$('.ns-box').css('margin-top', $('.ns-box').outerHeight()*-1);
 			});
 
-			$('#notification-trigger').click(function(){
-				$('.ns-box').removeClass('ns-hide'),
-				$('.ns-box').addClass('ns-show'),
-				$(this).attr('disabled','disabled');
-			});
+			// $('#notification-trigger').click(function(){
+			// 	$('.ns-box').removeClass('ns-hide'),
+			// 	$('.ns-box').addClass('ns-show'),
+			// 	$(this).attr('disabled','disabled');
+			// });
 
 		})();
 	</script>
