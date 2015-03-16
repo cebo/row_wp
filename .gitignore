@@ -7,7 +7,6 @@ local-config.php
 Thumbs.db
 # ignore wp-uploads
 wp-content/uploads
-.htaccess
 
 # ignore wordpress themes
 wp-content/wp-content/themes/classic/
@@ -26,4 +25,5 @@ blogs/
 test/
 *timthumb.txt
 cache/
-.htaccess
+*.htaccess
+*.htaccess
