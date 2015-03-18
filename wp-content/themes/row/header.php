@@ -685,30 +685,30 @@
 	   	allow_resize: true,
 	});
 	
-	$(".darkover a").click(function(){
-		$(".darkover").removeClass('blackout');
-		$(".booker").removeClass("opendrop");
-	});
+	// $(".darkover a").click(function(){
+	// 	$(".darkover").removeClass('blackout');
+	// 	$(".booker").removeClass("opendrop");
+	// });
 
-	$(".closethisthing").click(function(){
-		$(".darkover").removeClass('blackout');
-		$(".booker").removeClass("opendrop");
-		$(".datepicker").css('opacity', '').css('visibility', '');
-		$(".departdatepicker").css('opacity', '').css('visibility', '');
-	});
+	// $(".closethisthing").click(function(){
+	// 	$(".darkover").removeClass('blackout');
+	// 	$(".booker").removeClass("opendrop");
+	// 	$(".datepicker").css('opacity', '').css('visibility', '');
+	// 	$(".departdatepicker").css('opacity', '').css('visibility', '');
+	// });
 
 	
-	$(".openboxlink").hover(function(e){
-	e.preventDefault();
-	    var bion = $(".darkover");
-	    var ion =  $(".booker");
-	    if(bion.hasClass('blackout')) {
+	// $(".openboxlink").hover(function(e){
+	// e.preventDefault();
+	//     var bion = $(".darkover");
+	//     var ion =  $(".booker");
+	//     if(bion.hasClass('blackout')) {
 	        
-	    } else {
-	        bion.addClass('blackout')
-	        ion.addClass("opendrop");
-	      }
-	});
+	//     } else {
+	//         bion.addClass('blackout')
+	//         ion.addClass("opendrop");
+	//       }
+	// });
 
 
 			 	 
