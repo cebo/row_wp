@@ -25,7 +25,7 @@
 
 							<div class="innerbox">
 											
-								<a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
+								<a href="<?php the_permalink(); ?>"><h1 style="font-size: 29px; padding-top: 5px;"><?php the_title(); ?></h1></a>
 								
 								<?php echo content(114); ?>
 														
@@ -69,7 +69,7 @@
 
 							<div class="innerbox">
 											
-								<h1><?php the_title(); ?></h1>
+								<a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
 								
 								<?php echo content(150); ?>
 														
