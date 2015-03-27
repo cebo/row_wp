@@ -110,7 +110,7 @@
 					
 						<h1><?php the_title(); ?></h1>
 	
-						<p><?php echo content(200); ?></p>
+						<p><?php echo content(65); ?></p>
 
 						<div class="wonder-vertical"></div>
 
