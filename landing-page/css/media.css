@@ -1,0 +1,404 @@
+/* ================================================  MOBILES BELOW 399 ======================================= */
+
+
+@media only screen 
+and (max-width : 399px) 
+{	
+
+
+	.welcometext { display: none; }
+	.whotext { display: none; }
+	.searchable { width: 100%; margin: 7px 0 0 0; 
+			-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.logo { float: none; padding-top: 0; }
+	.reservationform span.calsec { display: none; }
+	.reservationform .button { float: none; margin: auto; }
+	
+	.spot { display: block; }
+	
+	.mute { display: none; }
+	.footer { position: fixed; }
+	.footer p { display: none; }
+
+	.footer p.addresser { display: block; margin-bottom: 10px; bottom: 7px; }
+	
+	.desktop {display: none;}
+}
+
+
+
+
+/* ================================================  MOBILES BELOW 480 to 400 ======================================= */
+
+
+@media only screen 
+and (min-width : 400px) 
+and (max-width : 479px) 
+{	
+	
+
+	.welcometext { display: none; }
+	.whotext { display: none; }
+	.searchable { width: 100%; margin: 7px 0 0 0; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.logo { float: none; padding-top: 0; }
+	.reservationform span.calsec { display: none; }
+	.reservationform .button { float: none;  margin: auto; }
+	
+	.spot { display: block; }
+	
+	.mute { display: none; }
+	.footer p { display: none; }
+	.footer { position: fixed; }
+	.footer p.addresser { display: block; margin-bottom: 10px; bottom: 7px; }
+
+	.desktop {display: none;}
+
+}
+
+
+
+/* ================================================  MOBILES BELOW 480 to 640 ======================================= */
+
+
+@media only screen 
+and (min-width : 480px) 
+and (max-width : 639px) 
+{	
+	
+	
+		.welcometext { display: none; }
+	.whotext { display: none; }
+	.searchable { width: 100%; margin: 7px 0 0 0; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.logo { float: none; padding-top: 0; }
+	.reservationform span.calsec { display: none; }
+	.reservationform .button { float: none;  margin: auto; }
+	
+	.spot { display: block; }
+	
+	.mute { display: none; }
+	.footer p { display: none; }
+	.footer { position: fixed; }
+	.footer p.addresser { display: block; margin-bottom: 10px; bottom: 7px; padding-top: 8px; text-align: center;}
+
+	.desktop {display: none;}
+
+		
+}
+
+
+
+/* ================================================  LARGE MOBILE DEVICES AND SMALL TABLETS BELOW 799  ======================================= */
+
+
+@media only screen 
+and (min-width : 640px) 
+and (max-width : 799px) 
+{	
+	
+	.welcometext { display: none; }
+	.mute { display: none; }
+	.searchable { width: 40%; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.whotext { width: 30%; }
+	.reservationform span.calsec { display: none; }
+
+	.desktop {display: none;}
+
+
+}
+/* ================================================  SLIGHTLY SMALLER RESOLUTIONS, BUT NOT QUITE IPHONE ======================================= */
+
+
+@media only screen 
+and (min-width : 800px) 
+and (max-width : 854px) 
+{	
+	
+		.welcometext { display: none; }
+	.mute { display: none; }
+	.searchable { width: 40%; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.whotext { width: 30%; }
+	.reservationform span.calsec { display: none; }
+	
+	.desktop {display: none;}
+
+}
+
+
+
+
+
+/* ================================================  LARGE PHONE SCREENS SMALLER RESOLUTIONS  ======================================= */
+
+
+@media only screen 
+and (min-width : 855px) 
+and (max-width : 960px) 
+{	
+
+	
+
+
+	.mute { display: none; }
+	.welcometext { width: 45%; }
+	.footer p.addresser { display: block; margin-bottom: 0px; bottom: 7px; }
+	.whotext { display: none; }
+	.searchable { width: 30%; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.reservationform span.calsec { display: none; }
+
+	.desktop {display: none;}
+
+}
+
+
+
+/* ================================================  IPADS AT LANDSCAPE WIDTH 1024  ======================================= */
+
+
+@media only screen 
+and (min-width : 961px) 
+and (max-width : 1024px) 
+{	
+
+
+	.mute { display: none; }
+	.welcometext { width: 45%; }
+	.footer p.addresser { display: block; margin-bottom: 0px; bottom: 7px; }
+	.whotext { display: none; }
+	.searchable { width: 30%; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.reservationform span.calsec { display: none; }
+		
+	.desktop {display: none;}
+
+}
+
+
+
+/* ================================================  FIRST STAGE LARGER THAN 1024PX UP TO LARGER BROWSERS  ======================================= */
+
+
+
+@media only screen 
+and (min-width : 1025px) 
+and (max-width : 1223px) 
+{		
+		
+	.whotext {
+		width: 20%
+	}
+	.searchable {
+		width: 22%;
+	}
+		.reservationform span i {
+		right: -3px;
+	}
+	
+	.reservationform span {
+		position: relative;
+		display: block;
+		float: left;
+		width: 42%;
+		margin: 0 7px;
+	}
+		
+	.wraplin .welcometext {
+	margin-left: 9%;
+	}
+	.desktop {display: none;}
+	
+	
+}
+
+
+
+/* #Narrow Screen, Below 1400px (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+
+	
+
+@media only screen 
+and (min-width : 1224px) 
+and (max-width : 1399px) 
+{
+
+	
+	.reservationform span i {
+		right: -3px;
+	}
+	
+	.reservationform span {
+		position: relative;
+		display: block;
+		float: left;
+		width: 42%;
+		margin: 0 7px;
+	}
+		
+.tablet {display: none;}	
+                
+}
+	
+	
+	
+
+
+@media only screen and (min-width: 1400px) and (max-width: 1450px) {
+		
+		
+
+.tablet {display: none;}	
+
+
+
+
+
+}
+
+
+@media only screen and (min-width: 1400px) {
+ 
+ 
+ .tablet {display: none;}	
+
+ 
+ 
+                
+    } 
+
+
+
+
