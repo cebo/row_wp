@@ -21,16 +21,16 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 }
 else {
     // ** MySQL settings - You can get this info from your web host ** //
-	define('DB_NAME', '543772_rownyctest');
+	define('DB_NAME', '915273_rownyc');
 
 	/** MySQL database username */
-	define('DB_USER', '543772_rowtest');
+	define('DB_USER', '915273_rownyc');
 
 	/** MySQL database password */
-	define('DB_PASSWORD', 'V0rXnd58ZlKg');
+	define('DB_PASSWORD', '56xIH7CshT09');
 
 	/** MySQL hostname */
-	define('DB_HOST', 'mysql51-107.wc2.dfw1.stabletransit.com');
+	define('DB_HOST', 'mysql51-129.wc1.ord1.stabletransit.com');
 
 	/** Database Charset to use in creating database tables. */
 	define('DB_CHARSET', 'utf8');
@@ -38,8 +38,8 @@ else {
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 	
-	define('WP_HOME','http://www.rownyc.com.php53-13.dfw1-2.websitetestlink.com/');
-	define('WP_SITEURL','http://www.rownyc.com.php53-13.dfw1-2.websitetestlink.com/');
+	define('WP_HOME','http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com');
+	define('WP_SITEURL','http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com');
 }
 
 /**#@+
@@ -51,14 +51,15 @@ else {
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         'q?7.IEG3YyY]/a+ZuEmKVnKD506E0gR*@Ww-q~`-<NoEX+=%{h=Cxm%PCcfwV0gu');
+define('SECURE_AUTH_KEY',  'g@#=P]7Eig2KIZxbLqliUMv/Nf}#mx4}pxR/SZ*@-oL#wn+ll$?3)r) ZX_k8h2:');
+define('LOGGED_IN_KEY',    'UXU]04aVRCrt].s:aP,pBb_-T<S5GP=Rmos25O_J.Pl&*r$W-3i}8n/#_91H}p![');
+define('NONCE_KEY',        'xmQ(*5~U0TdUEL UT7v/0>uGFdm|6%JuB=B]*I=#}YBI1 ^-L@nVI-K$ltonKCC5');
+define('AUTH_SALT',        'TZJ*k4-|v1S_]njiqnv ?YPx=Fgbsvfsa0GlL|;!#C?A-FNQ4AEri14wgn8m,!Py');
+define('SECURE_AUTH_SALT', 'hE@P;BBd,<fX_kV1m2ir2r*`oqqP:d|g FSl@&O&B1xN6f=dZ0=y$YK 3{MnMH3[');
+define('LOGGED_IN_SALT',   ' JwKHI~H1~H]n#3Kv=u}{X_8$Ouw98*?&{5JL%!G84])r+`/Wy_vQQ2RZ1;e~k@y');
+define('NONCE_SALT',       'gfq!B/Fo5}gM-DdZu7BwUU2>TI {232!N/MJ0j8Ta1Bg/pDb,{y#$K7ooLE$!Z)W');
+
 
 /**#@-*/
 
