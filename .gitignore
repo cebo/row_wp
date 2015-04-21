@@ -41,3 +41,4 @@ test/
 cache/
 *.htaccess
 *.htaccess
+wp-config.php
