@@ -261,3 +261,6 @@ if ( !function_exists('ss_framework_admin_scripts') ) {
 	
 }
 
+function tt($image,$width,$height){
+    return bloginfo('template_url') . "/library/thumb.php?src=$image&w=$width&h=$height";
+}

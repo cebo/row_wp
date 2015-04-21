@@ -89,12 +89,12 @@
 								<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-								<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+								<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),657,420); ?>);"></div>
 								
 								<?php } elseif($imgsrc) { ?>
 								
 								
-								<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+								<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],657,420); ?>);"></div>
 								
 								<?php } else { ?>
 													
@@ -138,12 +138,12 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,289); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,289); ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -190,12 +190,12 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,289); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,289); ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -245,12 +245,12 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),657,400); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],657,400); ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -289,12 +289,12 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,400); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,400); ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -357,12 +357,12 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),1200,450); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],1200,450); ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -408,12 +408,12 @@
 					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),1200,400); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],1200,240); ?>);"></div>
 						
 						<?php } else { ?>
 											
@@ -465,12 +465,12 @@
 					
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -499,12 +499,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -530,12 +530,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -565,12 +565,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -596,12 +596,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -627,12 +627,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -661,12 +661,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -694,12 +694,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -725,12 +725,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -758,12 +758,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -789,12 +789,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -822,12 +822,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
@@ -855,12 +855,12 @@
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
 						
 						
 						<?php } elseif($imgsrc) { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
 						
 						<?php } else { ?>
