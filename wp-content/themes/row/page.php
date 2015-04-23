@@ -39,6 +39,15 @@
 			<h1><?php the_title(); ?></h1>
 
 			<?php the_content(); ?>
+			
+			
+			<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { ?>
+			
+			<a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>"><?php _e('Reserve Now','row-theme-text'); ?></a>
+			
+			<?php } ?>
+			
+			
 
 			<!-- script placement on 1192 -->
 
