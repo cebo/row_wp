@@ -128,7 +128,7 @@
 </script>
 
 
-arketing Tag -->
+<!-- Marketing Tag -->
 <script type="text/javascript">
 /* <![CDATA[ */
 var google_conversion_id = 1044598228;
@@ -186,5 +186,150 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 */
 
 </script> 
+
+<!-- Email signup popup -->
+<?php wp_reset_query(); ?>
+<?php if ( is_single() || is_page( 'blog' ) ) { ?>
+
+	<?php query_posts('post_type=email-signup-form&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+	<?php if( get_post_meta($post->ID,'misfit_signup_box', true) && $post->post_content != "" ) { ?>
+
+		<div class="lb-overlay">
+
+			<div class="the-popup">
+			
+				<span class="ns-close" onClick="sessionStorage.setItem('id', '1')"></span>
+
+				<div class="popup-logo-area">
+					
+					<img class="popup-logo" src="<?php bloginfo('template_url'); ?>/bloginfo/images/logo.png" alt="NU Hotel logo">
+
+				</div>
+
+				<div class="popup-contents">
+
+					<?php the_content(); ?>
+
+				</div>
+				
+				<div class="signup-form">
+				
+					<form method="post" action="http://rownyc.us4.list-manage1.com/subscribe?u=ae5d0eb33650e5a9963ca5a3e&id=cf8da27740">
+						<input class="signup-field" type="email" required="" placeholder="<?php echo get_post_meta($post->ID,'misfit_signup_placeholder', true); ?>" id="mce-EMAIL" name="MERGE0" value="">
+						<input class="signup-button" id="mc-embedded-subscribe" type="submit" value="<?php echo get_post_meta($post->ID,'misfit_signup_buttontext', true); ?>">
+					</form>
+					
+					<!--
+						<style type="text/css">
+							.hidden-from-view { left: -5000px; position: absolute; }
+						</style>
+
+						<form name="surveys" method="get" action="http://zmaildirect.com/app/new/MTIzNTQzMjYx" target="_blank">
+
+							<input type="hidden" name="formId" value="MTIzNTQzMjYx">
+							<input type="text" name="email" value="" size="25" placeholder="<?php echo get_post_meta($post->ID,'misfit_signup_placeholder', true); ?>">
+							<input type="submit" value="<?php echo get_post_meta($post->ID,'misfit_signup_buttontext', true); ?>" class="button">
+						</form>
+					-->
+					
+				</div>
+
+			</div>
+				
+		</div>
+		
+		<script>
+
+			(function() {
+
+				<?php if( get_post_meta($post->ID,'misfit_signup_box_pageview', true) ) { ?>
+
+					<?php if( get_post_meta($post->ID,'misfit_signup_box_pageview', true) ) { ?>
+						var rand_time = Math.floor(Math.random()*(10000-5000+1)+5000);						
+					<?php } else { ?>
+						var rand_time = 1300;
+					<?php } ?>
+
+					// alert(rand_time);
+
+					$(window).on( 'load', function() {
+
+						if (!sessionStorage.getItem('id')) {
+						    
+						    setTimeout( function() {
+							
+								$('.lb-overlay').addClass('ns-show');
+								// $('#notification-trigger').attr('disabled','disabled');
+
+							}, rand_time );
+
+						}
+						
+					});	
+
+				<?php } ?>
+
+				$('.ns-close').click(function(){
+					$('.lb-overlay').addClass('ns-hide'),
+					$('.lb-overlay').removeClass('ns-show'),
+					// vvv This is so it won't transition differently than expected
+					setTimeout( function() {
+						$('.lb-overlay').removeClass('ns-hide');
+					}, 1300 );	
+					// $('#notification-trigger').removeAttr('disabled','disabled');
+				});
+
+
+
+				<?php if( get_post_meta($post->ID,'misfit_signup_box_scroll', true) ) { ?>
+
+					// When user scrolls past 1/3 of page
+
+					var doc_height = $(document).height();
+					// alert(doc_height);
+
+					$(window).scroll(function() {
+						scroll_height = $(document).scrollTop(),
+						scroll_percent = scroll_height / doc_height;
+
+							if (scroll_percent > 0.3 && !sessionStorage.getItem('id')) {
+								$('.lb-overlay').addClass('ns-show');
+							}
+					});
+
+				<?php } ?>
+
+			})();
+
+			<?php if( get_post_meta($post->ID,'misfit_signup_box_visit', true) ) { ?>
+
+				if( !$.cookie('visit') ) {
+						$.cookie('visit', '1');
+					} else {
+						$.cookie('visit', $.cookie('visit', Number) + 1);
+					}
+
+				// alert($.cookie('visit', Number));
+
+				if ( $.cookie('visit', Number) >= 2 && !sessionStorage.getItem('id') ) {
+
+						setTimeout( function() {
+							$('.lb-overlay').addClass('ns-show');
+						}, 1300);
+				}
+
+			<?php } ?>
+
+		</script>
+
+	<?php } ?>
+
+	<?php endwhile; endif; wp_reset_query(); ?>
+	
+<?php } ?>
+	
+<!-- End Email signup popup -->
+
 </body>
 </html>
