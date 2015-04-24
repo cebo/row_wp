@@ -313,7 +313,7 @@
 		
 			$('.datepicker').datepicker({
 			    dateFormat: 'yy-mm-dd',
-			    altField  : '#arve',
+			    // altField  : '#arve',
     			altFormat : 'dd',
     			minDate: new Date(),
     			gotoCurrent: true,
@@ -321,7 +321,7 @@
 			        var dayOfWeek = $(this).datepicker('getDate').getUTCDay();
 			        var selectedMonthName = months[$(this).datepicker('getDate').getMonth()];
 			        var selectednextMonthName = months[$(this).datepicker('getDate').getMonth()+1];
-			        $('#arv').val(selectedMonthName);
+			        // $('#arv').val(selectedMonthName);
 			        $("#arrival_date").val(event);
 
 			        var d = $(this).datepicker("getDate");
@@ -551,8 +551,8 @@
 			month[11]="December";
 			var n = month[d.getMonth()];
 			
-			$("#arv").attr("placeholder", n);
-			$("#dep").attr("placeholder", n);
+			// $("#arv").attr("placeholder", n);
+			// $("#dep").attr("placeholder", n);
 			$("#arv-1").attr("placeholder", n);
 			$("#dep-1").attr("placeholder", n);
 
@@ -867,8 +867,6 @@ window.onload = function(){
 	<section class="navigate">
 			
 			<div class="logobox">
-			
-				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
 				
 				<div class="languages"><?php language_selector_flags(); ?></div>
 			
@@ -1393,6 +1391,15 @@ window.onload = function(){
 
 			</div>
 
+			<div class="exclusive-offer">
+
+				<form>
+					<input type="text" placeholder="<?php _e('Exclusive Offer Signup', 'row-theme-text'); ?>">
+					<button type="submit" value=""><i class="fa fa-caret-right"></i></button>
+				</form>
+
+			</div>
+
 			<p><?php _e('High Speed Wifi Access Available','row-theme-text'); ?></p>
 		
 		</div>
@@ -1434,7 +1441,7 @@ window.onload = function(){
 					
 				</div>
 
-				<div class="topnav">
+				<!-- <div class="topnav">
 			
 					<ul>
 
@@ -1450,7 +1457,7 @@ window.onload = function(){
 
 					</ul>
 					
-				</div>
+				</div> -->
 
 			</div>
 
@@ -1727,7 +1734,7 @@ window.onload = function(){
 
 	<!-- BEGIN CONTENT AREA -->
 	
-	<div class="topnav">
+	<!-- <div class="topnav">
 			
 		<ul>
 
@@ -1764,145 +1771,6 @@ window.onload = function(){
 							<a class="logo" href="http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com"><img src="http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com/wp-content/themes/row/images/logo.png" alt="Row NYC" /></a>
 							
 						</div>
-						
-						<form 
-
-
-
-							<?php if( $current_lang == 'en') { ?>
-
-								action="<?php echo get_option('cebo_genbooklink'); ?>/search?"
-
-							<?php } elseif( $current_lang == 'zh-hans') { ?>
-
-								action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?"
-
-							<?php } elseif( $current_lang == 'pt-br') { ?>
-
-								action="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?"
-
-							<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-
-								action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?"
-
-							<?php } else { ?>
-
-								action="<?php echo get_option('cebo_genbooklink'); ?>/search?"
-
-							<?php } ?>
-
-						onsubmit="_gaq.push(['_linkByPost', this]);">
-
-								
-										<div class="calspacer">
-										
-											<span class="arrv">
-												
-												<label for="arrival">Arrival Date</label>
-												<br>
-												<div class="squaredance">
-													<input type="hidden" name="arrival_date" id="arrival_date" placeholder="" class="calendarsection" />
-													<input type="text" id="arv">
-													<input type="text" id="arve">
-													
-													<i class="fa fa-chevron-down"></i>
-												</div>
-												
-												<div class="datepicker"></div>
-											</span>
-											
-											<span class="dept">
-												<label for="arrival">Departure Date</label>
-												<br>
-												<div class="squaredance">
-													<input name="departure_date" type="hidden" id="departure_date" placeholder="" class="calendarsection" />
-													<input type="text" id="dep">
-													<input type="text" id="depee">
-													
-													<i class="fa fa-chevron-down"></i>
-												</div>
-												
-												<div class="departdatepicker"></div>
-											</span>
-											
-											<select style="display: none;" id="adults" name="adults[]">
-													 	<option value="1">1</option>
-											</select>
-											 <select style="display: none;" id="children" name="children[]" >
-													 	<option value="0">0</option>
-											</select>		 	
-													 	
-											<!--<span class="lowselect">
-												<label for="arrival">Adults</label>
-												
-												<div class="squaredance">
-													<p class="topping">How Many?</p>
-													
-													<select id="adults" name="adults[]">
-													 	<option value="1">1</option>
-									                    <option value="2">2</option>
-									                    <option value="3">3</option>
-									                    <option value="4">4</option>                                
-													</select>
-													
-													
-													
-													<!--<ul id="selectUl">
-													    <li>2</li>
-													    <li>1</li>
-													    <li>2</li>
-													    <li>3</li>
-													    <li>4</li>
-													    <li>5</li>
-													    <li>6</li>
-													    <li>7</li>
-													    <li>8</li>
-													    <li>9</li>
-													</ul>
-													<select name="Adults">
-													 		<option value="2">2</option>
-														 	<option value="1">1</option>
-										                    <option value="2">2</option>
-										                    <option value="3">3</option>
-										                    <option value="4">4</option>                                
-										                    <option value="5">5</option>
-										                    <option value="6">6</option>
-										                    <option value="7">7</option>
-										                    <option value="8">8</option>                                
-										                    <option value="9">9</option>
-										                    <option value="10">10</option> 
-													</select>
-						
-												</div>
-												<i class="fa fa-chevron-down"></i>
-											</span>
-											
-											<span class="lowselect">
-												<label for="arrival">Children</label>
-												
-												<div class="squaredance">
-													<p class="topping">How Many?</p>
-													 <select id="children" name="children[]" >
-													 	<option value="0">0</option>
-														 <option value="1">1</option>
-										                    <option value="2">2</option>
-										                    <option value="3">3</option>
-													</select>
-												</div>
-												<i class="fa fa-chevron-down"></i>
-											</span>-->
-											
-											<div class="clear"></div>
-										</div>
-										
-										
-										<div class="butonconton">
-											<a href="#" class="button">See Availability</a>
-										</div>
-											
-										
-									
-									</form>
 							
 					</div>			
 				
@@ -1929,12 +1797,9 @@ window.onload = function(){
 						
 						<div id="contactform">
 														
-							<!-- Begin MailChimp Signup Form -->
 							<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
 							<style type="text/css">
 								#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-								/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-								   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 							</style>
 							<div id="mc_embed_signup">
 							<form action="http://sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -1963,7 +1828,7 @@ window.onload = function(){
 								<div id="mce-responses" class="clear">
 									<div class="response" id="mce-error-response" style="display:none"></div>
 									<div class="response" id="mce-success-response" style="display:none"></div>
-								</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+								</div>    
 							    <div style="position: absolute; left: -5000px;"><input type="text" name="b_ae5d0eb33650e5a9963ca5a3e_1054dd91b3" value=""></div>
 								<div class="clear"><input type="submit" value="<?php _e('Subscribe','row-theme-text'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 							</form>
@@ -2032,7 +1897,7 @@ window.onload = function(){
 							    jQuery(document).ready( function($) {
 							      var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
 							      var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
-							      $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
+							      $("#mc-embedded-subscribe-form").unbind('submit');
 							      options = { url: 'http://sphericalcommunications.us4.list-manage.com/subscribe/post-json?u=ae5d0eb33650e5a9963ca5a3e&id=1054dd91b3&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
 							                    beforeSubmit: function(){
 							                        $('#mce_tmp_error_msg').remove();
@@ -2159,11 +2024,10 @@ window.onload = function(){
 							}
 
 							</script>
-							<!--End mc_embed_signup-->	
 
 
 
-						</div><!--end contactform-->
+						</div>
 						
 					</div>
 
@@ -2174,14 +2038,131 @@ window.onload = function(){
 
 		</ul>
 		
-	</div>
+	</div> -->
 
 	<div class="banner desktop"> 
 		
-		<p>700 8th Avenue, New York, NY 10036 <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a></p>
+		<div class="header-contact">
+			
+			<p class="contacto"><?php _e('Reservations:','row-theme-text'); ?> <span>888.352.3650</span></p>
+			<p><i class="fa fa-map-marker"></i> 700 8th Avenue, New York, NY 10036</p>
+			<!-- <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a> -->
+
+		</div>
 		
-		<p class="contacto"><?php _e('Reservations','row-theme-text'); ?> <span>888.352.3650</span></p>
-		
-		
-		<div class="clear"></div>
+		<a class="logo" href="<?php bloginfo('url'); ?>">
+			<img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" />
+			<p>A Times Square Hotel</p>
+		</a>
+
+		<div class="booking">
+
+			<form
+
+				<?php if( $current_lang == 'en') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+				<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" 
+
+				<?php } elseif( $current_lang == 'pt-br') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" 
+
+				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" 
+
+				<?php } else { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+				<?php } ?>
+
+				onsubmit="_gaq.push(['_linkByPost', this]);">
+
+					
+				<div class="calspacer">
+				
+					<span class="arrv">
+						<div class="squaredance">
+							<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" class="calendarsection" />
+							<!-- <input type="text" id="arv"> -->
+							<!-- <input type="text" id="arve"> -->
+							
+							<i class="fa fa-calendar"></i>
+						</div>
+						
+						<div class="datepicker"></div>
+					</span>		 	
+							 	
+					<span class="lowselect">
+						<div class="squaredance select">
+							<select id="adults" name="adults[]">
+							 	<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
+			                    <option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
+			                    <option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
+			                    <option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>                                
+							</select>
+							<i class="fa fa-caret-down"></i>
+						</div>
+					</span>
+					
+					<span class="lowselect">						
+						<div class="squaredance select">
+							 <select id="children" name="children[]">
+							 	<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
+								<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
+			                    <option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
+			                    <option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
+							</select>
+							<i class="fa fa-caret-down"></i>
+						</div>
+					</span>
+
+					<div class="butonconton">
+						<a href="#" class="button"><?php _e('Reserve Now','row-theme-text'); ?></a>
+					</div>
+
+					<span class="dept">
+						<div class="squaredance">
+							<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" class="calendarsection" />
+							<!-- <input type="text" id="dep"> -->
+							<!-- <input type="text" id="depee"> -->
+							
+							<i class="fa fa-calendar"></i>
+						</div>
+						
+						<div class="departdatepicker"></div>
+					</span>
+
+					<span class="lowselect">
+						<div class="squaredance select">
+						<select  id="children" name="rooms" class="halfsies">
+							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+						</div>
+					</span>
+
+					<span>
+						<div class="squaredance">
+						<input class="calendarsection" id="offercode" name="offercode" placeholder="<?php _e('Offer Code','row-theme-text'); ?>">
+						</div>
+					</span>
+
+					<div class="butonconton">
+						<a href="#" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					</div>
+					
+					<div class="clear"></div>
+				</div>						
+						
+			</form>
+
+		</div>
 	</div>	
