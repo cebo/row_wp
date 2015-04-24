@@ -230,6 +230,12 @@ $(document).ready(function(){
 		  $(".textbox-1").toggleClass( "openbox-1" );
 		});
 		
+		$(".wideopensays").click(function(e) {
+			  
+			  e.preventDefault();
+		  $(".paperbox").toggleClass( "paperdup" );
+		});
+		
 		
 		$(function() {
 		var fixadent = $(".topnav"), pos = fixadent.offset();
