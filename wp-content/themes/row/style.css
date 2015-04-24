@@ -836,20 +836,22 @@ h4 {
 }
 
 .languages {
-	width: 100%;
-	height: 16px;
-	/*background: url(images/languages.png) center top no-repeat;*/
-	background-color: transparent;
-	margin-top: 10px;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
-	opacity: 1;
-	visibility: visible;
-	text-align: center;
-	margin-bottom: 10px;
-	/*display: none;*/
+  width: 100%;
+  height: 16px;
+  /* background: url(images/languages.png) center top no-repeat; */
+  background-color: transparent;
+  margin-top: 10px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+  text-align: center;
+  margin-bottom: 10px;
+  position: absolute;
+  display: block;
+  top: 112px;
 }
 
 .languages > img {
@@ -1340,11 +1342,11 @@ ul#selectUl li.unselected:hover {
 
 
 ::-webkit-input-placeholder {
-   color: #333;
+   color: #ddd;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #333;  
+   color: #ddd;  
 }
 
 *::-moz-placeholder {
@@ -1353,7 +1355,7 @@ ul#selectUl li.unselected:hover {
 }
 
 :-ms-input-placeholder {  
-   color: #333;  
+   color: #ddd;  
 }
 
 .squaredance {
@@ -1371,7 +1373,7 @@ ul#selectUl li.unselected:hover {
 .squaredance.select {
     border: 0 none;
     overflow: hidden;
-    padding: 10px 11px;
+    padding: 8px 11px;
 }
 
 .squaredance i {
@@ -1573,14 +1575,15 @@ ul#selectUl li.unselected:hover {
     padding: 27px 0;
     position: relative;
     z-index: 9999;
+    border-bottom: 1px solid #373637
 }
 
 .banner .header-contact {
-    padding-top: 20px;
-    position: relative;
-    text-align: center;
-    top: -9px;
-    width: 310px;
+  padding-top: 20px;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  width: 310px;
 }
 
 .banner .logo {
@@ -1617,7 +1620,7 @@ ul#selectUl li.unselected:hover {
     position: relative;
     right: 0;
     width: 530px;
-    top: -63px;
+    top: -9px;
 }
 
 .banner p {
@@ -2308,7 +2311,7 @@ visibility: hidden;
 }
 
 .home-intro {
-    height: 420px;
+    height: 545px;
     margin-bottom: 10px;
     max-height: 800px;
     overflow: hidden;
