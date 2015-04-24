@@ -1482,6 +1482,11 @@ ul#selectUl li.unselected:hover {
     z-index: 999999;
 }
 
+.datepicker {
+  top: 2px;
+  left: -320px;
+  right: auto;
+}
 /*.calspacer span:hover .datepicker, .calspacer span:hover .datepickerr {
 	opacity: 1;
 	visibility: visible;

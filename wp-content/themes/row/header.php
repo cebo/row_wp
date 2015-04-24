@@ -389,7 +389,7 @@
 
 			        	$(".datepicker").addClass("super-ghost");   
 				  		$('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});
-
+						$(".departdatepicker").removeClass("super-ghost");   
 					}
 			        
 			    }
@@ -617,33 +617,26 @@
 
 	$(document).ready(function() {
 			
-		$(".calspacer span.arrv").hover(function() {
+		$(".calspacer span.arrv input").click(function() {
 				
-			 $(".datepicker").css({"opacity" : 1, "visibility" : "visible"});
+			 $(".datepicker").removeClass("super-ghost").css({"opacity" : 1, "visibility" : "visible"});
 			 
-			 }, function() {
-			 
-			  $(".datepicker").css({"opacity" : 0, "visibility" : "hidden"});
+			
 		});
 		
 		
-		$(".departdatepicker").mousedown(function() {
+		$(".departdatepicker").click(function() {
 				 $(".datepicker").removeClass("super-ghost").css({"opacity" : 0, "visibility" : "hidden"}); 
-			     $(".departdatepicker").removeClass("super-ghost");
+			     $(".departdatepicker").addlass("super-ghost").css({"opacity" : 0, "visibility" : "hidden"}); 
 			});
 		
-		$(".calspacer span.dept").hover(function() {
+		$(".calspacer span.dept").click(function() {
 			
 			 $(".departdatepicker").css({"opacity" : 1, "visibility" : "visible"});
 			 
-			 }, function() {
-			 
-			  $(".departdatepicker").css({"opacity" : 0, "visibility" : "hidden"});
 		});
 
-		$(".calspacer span .squaredance").hover(function() {
-			$(".departdatepicker").removeClass("super-ghost");
-		});
+		
 
 	});
 	</script>
