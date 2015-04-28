@@ -21,7 +21,7 @@ else {
  
 	// ** MySQL settings - You can get this info from your web host ** //
 	/** The name of the database for WordPress */
-	define('DB_NAME', 'row');
+	define('DB_NAME', 'spherical_row_wp');
 
 	/** MySQL database username */
 	define('DB_USER', 'root');
@@ -38,8 +38,8 @@ else {
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
 
-	define('WP_HOME','http://localhost/row');
-	define('WP_SITEURL','http://localhost/row');
+	define('WP_HOME','http://localhost/row_wp');
+	define('WP_SITEURL','http://localhost/row_wp');
 
 }
 
