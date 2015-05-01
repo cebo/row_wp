@@ -101,15 +101,24 @@ $meta_boxel = array(
 	          "type" => "text",
 	          "std" => ""
               ),
-
-         array( 
+		
+		array( 
+              "name" => "Outbound Room Booking Link",
+	          "desc" => "If a special link to book this room exists",
+	          "id" => $prefix."_booklink",
+	          "type" => "text",
+	          "std" => ""
+              ),
+		
+		array( 
 			"name" => "Redirect URL",
 			"id" => $prefix."_redirect_url",
 			"type" => "text",
 			"std" => ""
 		),
-         
-       	)
+		
+		)
+		
 );
 
 

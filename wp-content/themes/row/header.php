@@ -69,6 +69,8 @@
 <!-- <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/ui-lightness/jquery.ui.all.css"> -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl.theme.css">
+<!-- Consolidated this css into one file. This styles the notification -->
+<link rel='stylesheet' id='style-css' href='<?php bloginfo('template_url'); ?>/css/ns-style.css' type='text/css' media='all' />
 
 
 <!-- responsive style -->
@@ -174,6 +176,8 @@
 
 <!-- Scripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
+
+<?php include(TEMPLATEPATH . '/library/scripts.php'); ?>
 
 <?php if(get_post_type() == 'imagegalleries') { ?>
 
@@ -681,30 +685,30 @@
 	   	allow_resize: true,
 	});
 	
-	$(".darkover a").click(function(){
-		$(".darkover").removeClass('blackout');
-		$(".booker").removeClass("opendrop");
-	});
+	// $(".darkover a").click(function(){
+	// 	$(".darkover").removeClass('blackout');
+	// 	$(".booker").removeClass("opendrop");
+	// });
 
-	$(".closethisthing").click(function(){
-		$(".darkover").removeClass('blackout');
-		$(".booker").removeClass("opendrop");
-		$(".datepicker").css('opacity', '').css('visibility', '');
-		$(".departdatepicker").css('opacity', '').css('visibility', '');
-	});
+	// $(".closethisthing").click(function(){
+	// 	$(".darkover").removeClass('blackout');
+	// 	$(".booker").removeClass("opendrop");
+	// 	$(".datepicker").css('opacity', '').css('visibility', '');
+	// 	$(".departdatepicker").css('opacity', '').css('visibility', '');
+	// });
 
 	
-	$(".openboxlink").hover(function(e){
-	e.preventDefault();
-	    var bion = $(".darkover");
-	    var ion =  $(".booker");
-	    if(bion.hasClass('blackout')) {
+	// $(".openboxlink").hover(function(e){
+	// e.preventDefault();
+	//     var bion = $(".darkover");
+	//     var ion =  $(".booker");
+	//     if(bion.hasClass('blackout')) {
 	        
-	    } else {
-	        bion.addClass('blackout')
-	        ion.addClass("opendrop");
-	      }
-	});
+	//     } else {
+	//         bion.addClass('blackout')
+	//         ion.addClass("opendrop");
+	//       }
+	// });
 
 
 			 	 
@@ -809,10 +813,26 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 </script>
 
+<script type="text/javascript">
+adroll_adv_id = "NQP2TEBPSVGKHDHDXCYZE7";
+adroll_pix_id = "VTF4TELHUNH7XEJGXJRNQS";
+(function () {
+var oldonload = window.onload;
+window.onload = function(){
+   __adroll_loaded=true;
+   var scr = document.createElement("script");
+   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+   scr.setAttribute('async', 'true');
+   scr.type = "text/javascript";
+   scr.src = host + "/j/roundtrip.js";
+   ((document.getElementsByTagName('head') || [null])[0] ||
+    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+   if(oldonload){oldonload()}};
+}());
+</script>
 
 </head> 
-	
-	
+
 <body <?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?>class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?>class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?>class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?>class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?>class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?>class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?>class="page single amenity"<?php } elseif(is_page() || is_single()) { body_class('single'); ?><?php } elseif(is_home() || is_front_page()) { ?>class="home"<?php } ?>>
 
 
@@ -822,15 +842,33 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 <div>
 
+	<?php query_posts('post_type=weather&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+		<?php if( $post->post_content != "" && get_post_meta($post->ID,'cebo_weather_live', true) ) { ?>
+
+			<div class="ns-box ns-bar ns-effect-slidetop ns-type-notice" style="visibility: hidden; opacity: 0;">
+
+				<i class="fa fa-exclamation-triangle"></i>
+
+				<div class="ns-box-inner">
+
+					<?php the_content(); ?>
+
+				</div>
+
+				<span class="ns-close" onClick="sessionStorage.setItem('nsclose_id', '1')"></span>
+
+			</div>
+
+		<?php } ?>
+
+	<?php endwhile; endif; wp_reset_query(); ?>
 
 	<section class="navigate">
-		
-			
 			
 			<div class="logobox">
 			
 				<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
-				
 				
 				<div class="languages"><?php language_selector_flags(); ?></div>
 			
@@ -1219,7 +1257,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 							$custom_query_args = array(
 							    'post_type' => 'amenities', 
 							    'posts_per_page' => 4, 
-							    'post__not_in' => array(32,33,3097), 
+							    'post__not_in' => array(32,33,3097,5819), 
 							);
 
 							//build query
@@ -2137,8 +2175,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		</ul>
 		
 	</div>
-	
-	<div class="banner"> 
+
+	<div class="banner desktop"> 
 		
 		<p>700 8th Avenue, New York, NY 10036 <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a></p>
 		

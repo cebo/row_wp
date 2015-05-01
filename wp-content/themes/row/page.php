@@ -39,6 +39,17 @@
 			<h1><?php the_title(); ?></h1>
 
 			<?php the_content(); ?>
+			
+			
+			<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { ?>
+			
+			<a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>"><?php _e('Reserve Now','row-theme-text'); ?></a>
+			
+			<?php } ?>
+			
+			
+
+			<!-- script placement on 1192 -->
 
 			<?php if( is_page(array(1192)) ) { ?>
 
@@ -59,6 +70,8 @@
 
 			<?php } ?>
 
+			<!-- script placement on 2998 -->
+
 			<?php if( is_page(array(2998)) ) { ?>
 
 				<script type="text/javascript">
@@ -77,6 +90,45 @@
 				</script>
 
 			<?php } ?>
+
+			<!-- script placement on 3934 -->
+
+			<?php if( is_page(array(3934)) ) { ?>
+
+				<script type="text/javascript">
+
+				(function l(d){
+				                var site = '5457', page = 'br_breakfast', s, er = d.createElement('script');
+				                er.type = 'text/javascript';
+				                er.async = true;
+				                er.src = '//o2.eyereturn.com/?site=' + site + '&page=' + page;
+				                s = d.getElementsByTagName('script')[0];
+				                s.parentNode.insertBefore(er, s);
+				})(document);
+
+				</script>
+
+			<?php } ?>		
+
+			<!-- script placement on 3862 -->	
+
+			<?php if( is_page(array(3862)) ) { ?>
+
+				<script type="text/javascript">
+
+				(function l(d){
+				                var site = '5457', page = 'br_save_nyc', s, er = d.createElement('script');
+				                er.type = 'text/javascript';
+				                er.async = true;
+				                er.src = '//o2.eyereturn.com/?site=' + site + '&page=' + page;
+				                s = d.getElementsByTagName('script')[0];
+				                s.parentNode.insertBefore(er, s);
+				})(document);
+
+				</script>
+
+			<?php } ?>
+
 			
 			<div class="clear"></div>
 

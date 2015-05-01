@@ -49,7 +49,7 @@
 					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_listimage', true); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
@@ -243,7 +243,44 @@
 
 				</div>
 			
-			<?php endwhile; endif; wp_reset_query(); ?>				
+			<?php endwhile; endif; wp_reset_query(); ?>	
+
+			<!-- fitness center -->
+			<?php query_posts('post_type=amenities&p=5819&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+			
+				<div class="fourth-level">
+				
+					<div class="fullspan">
+					
+						<div class="suboverlay narrow">
+						
+							<h1><?php the_title(); ?></h1>
+				
+							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
+										
+						</div>
+						
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+									
+							<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+							
+							<?php } elseif($imgsrc) { ?>
+							
+							
+							<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+							
+							<?php } else { ?>
+												
+							<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+						
+						<?php } ?>
+
+					</div>					
+
+				</div>
+			
+			<?php endwhile; endif; wp_reset_query(); ?>
+			<!-- end fitness center -->			
 			
 
 

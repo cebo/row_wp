@@ -48,7 +48,7 @@ and (max-width : 1439px) {
 
 
 
-/* ================================================ 1024 ======================================= */
+/* ================================================ 0 - 1260px ======================================= */
 
 @media only screen 
 and (max-width : 1260px) {
@@ -536,6 +536,36 @@ and (max-width : 1260px) {
 	}
 
 
+
+}
+
+/* ================================================ 641 - 1260px ======================================= */
+
+@media only screen 
+and (min-width : 641px) 
+and (max-width : 1260px) {
+
+	.banner {
+	    margin-left: 250px;
+	    font-size: 12px;
+		position: relative;
+		z-index: 9999;
+	}
+	
+	.home-intro {
+	  margin-left: 250px;
+	  width: auto;
+	  z-index: 9999;
+	}
+	
+	.contentarea {
+		margin-left: 250px;
+		z-index: 9999;
+	}
+	
+	.contentarea .home-intro {
+		margin-left: 0;
+	}
 
 }
 

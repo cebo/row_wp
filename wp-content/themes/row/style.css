@@ -271,7 +271,10 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .footer .navigate .supernav li a,
 .gallery-categories a,
 .page .suboverlay h1,
-.owl-theme .owl-controls .owl-buttons div
+.owl-theme .owl-controls .owl-buttons div,
+.ns-box-inner a,
+.ns-effect-slidetop .ns-close::before,
+.ns-effect-slidetop .ns-close::after
 {
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -1752,7 +1755,7 @@ visibility: hidden;
 
 .fixed {
     position: fixed;
-    top: 0;
+    top: 0 !important;
 }
 
 /* Text Content */

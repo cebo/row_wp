@@ -231,5 +231,40 @@ function create_presstype_taxonomies()
 
 
 
+add_action( 'init', 'create_weather_post_types' );
+function create_weather_post_types() {
+  register_post_type( 'weather',
+    array(
+      'labels' => array(
+        'name' => __( 'Weather Alert' ),
+        'singular_name' => __( 'Weather Alert' )
+      ),
+      'public' => true,
+      'rewrite' => array('slug' =>  'weather-alert'),
+      'menu_icon' => 'dashicons-cloud',
+      'supports' => array('title','author','revision', 'editor')
+    )
+  );
+}
+
+// CREATE POST TYPE : EMAIL SIGNUP FORM
+add_action( 'init', 'email_signup_form' );
+function email_signup_form() {
+  register_post_type( 'email-signup-form',
+    array(
+      'labels' => array(
+        'name' => __( 'Email Signup Form' ),
+        'singular_name' => __( 'Email Signup Form' )
+      ),
+      'public' => true,
+      'rewrite' => array('slug' => 'email-signup-form'),
+      'menu_icon' => 'dashicons-welcome-write-blog',
+      'supports' => array('title','custom-fields', 'author', 'revision', 'editor')
+    )
+  );
+}
+
+
+
 
 ?>

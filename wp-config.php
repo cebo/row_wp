@@ -3,9 +3,9 @@
  * The base configurations of the WordPress.
  *
  * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, WordPress Language, and ABSPATH. You can find more information
- * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
- * wp-config.php} Codex page. You can get the MySQL settings from your web host.
+ * Secret Keys, and ABSPATH. You can find more information by visiting
+ * {@link http://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
+ * Codex page. You can get the MySQL settings from your web host.
  *
  * This file is used by the wp-config.php creation script during the
  * installation. You don't have to use the web site, you can just copy this file
@@ -14,32 +14,33 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
 if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
     include( dirname( __FILE__ ) . '/local-config.php' );
 }
 else {
-    // ** MySQL settings - You can get this info from your web host ** //
-	define('DB_NAME', '543772_rownyctest');
+ 
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'spherical_row_wp');
 
 	/** MySQL database username */
-	define('DB_USER', '543772_rowtest');
+	define('DB_USER', 'root');
 
 	/** MySQL database password */
-	define('DB_PASSWORD', 'V0rXnd58ZlKg');
+	define('DB_PASSWORD', '');
 
 	/** MySQL hostname */
-	define('DB_HOST', 'mysql51-107.wc2.dfw1.stabletransit.com');
+	define('DB_HOST', 'localhost');
 
 	/** Database Charset to use in creating database tables. */
 	define('DB_CHARSET', 'utf8');
 
 	/** The Database Collate type. Don't change this if in doubt. */
 	define('DB_COLLATE', '');
-	
-	define('WP_HOME','http://www.rownyc.com.php53-13.dfw1-2.websitetestlink.com/');
-	define('WP_SITEURL','http://www.rownyc.com.php53-13.dfw1-2.websitetestlink.com/');
+
+	define('WP_HOME','http://localhost/row_wp');
+	define('WP_SITEURL','http://localhost/row_wp');
+
 }
 
 /**#@+
@@ -71,16 +72,6 @@ define('NONCE_SALT',       'put your unique phrase here');
 $table_prefix  = 'wp_';
 
 /**
- * WordPress Localized Language, defaults to English.
- *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
- */
-define('WPLANG', '');
-
-/**
  * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.
@@ -97,6 +88,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
-define('WP_MEMORY_LIMIT', '256M');
-set_time_limit (300); // 300 secs = 5min.

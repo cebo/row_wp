@@ -1,0 +1,439 @@
+/* ================================================  MOBILES BELOW 399 ======================================= */
+
+
+@media only screen 
+and (max-width : 399px) 
+{	
+
+
+	.wraplin .welcometext h2 { font-size: 12px; margin: 21px 7px 30px 0; text-align: center; }
+	section.welcome { background: #000; height: 265px; }
+	
+	.sicbutton {
+	float: none; display: block; margin: 10px auto auto; 
+	}
+	.wraplin .welcometext { width: 97%; text-align: center;  }
+	.whotext { display: none; }
+	.searchable { width: 100%; margin: 7px 0 0 0; 
+			-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.logo { float: none; padding-top: 0; }
+	.reservationform span.calsec { display: none; }
+	.reservationform .button { float: none; margin: auto; }
+	
+	.spot { display: block; height: 0; padding: 45px 0 0 0; }
+	
+	.mute { display: none; }
+	.footer { z-index: 99999999;
+position: relative;text-align: center; }
+	.footer p { display: none; }
+
+	.footer p.addresser { display: block; margin-bottom: 10px; bottom: 7px; }
+	
+	.desktop {display: none;}
+	
+	.videocontainer { height: 0; }
+	
+	.readon { display: none; }
+	.contentcontainer {  padding: 40px 0 0 0; }
+	 .wraplin .welcometext {
+	margin-left: 0%;
+	}
+}
+
+
+
+
+/* ================================================  MOBILES BELOW 480 to 400 ======================================= */
+
+
+@media only screen 
+and (min-width : 400px) 
+and (max-width : 479px) 
+{	
+	
+
+	.wraplin .welcometext h2 { font-size: 14px; text-align: center; }
+	section.welcome { background: #000; height: 210px; }
+	
+	.sicbutton {
+	float: none; display: block; margin: 10px auto auto; 
+	}
+	.wraplin .welcometext { width: 97%; text-align: center;  }
+	.whotext { display: none; }
+	.searchable { width: 100%; margin: 7px 0 0 0; 
+			-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.logo { float: none; padding-top: 0; }
+	.reservationform span.calsec { display: none; }
+	.reservationform .button { float: none; margin: auto; }
+	
+	.spot { display: block; height: 0; padding: 45px 0 0 0; }
+	
+	.mute { display: none; }
+	.footer { z-index: 99999999;
+position: relative;text-align: center; }
+	.footer p { display: none; }
+
+	.footer p.addresser { display: block; margin-bottom: 10px; bottom: 7px; }
+	
+	.desktop {display: none;}
+	
+	.videocontainer { height: 0; }
+	
+	.readon { display: none; }
+	.contentcontainer {  padding: 40px 0 0 0; }
+	 .wraplin .welcometext {
+	margin-left: 0%;
+	}
+
+}
+
+
+
+/* ================================================  MOBILES BELOW 480 to 640 ======================================= */
+
+
+@media only screen 
+and (min-width : 480px) 
+and (max-width : 639px) 
+{	
+	
+	
+	.wraplin .welcometext h2 { font-size: 14px; text-align: center; }
+	section.welcome { background: #000; height: 210px; }
+	.videocontainer {
+height: 175px; }
+	.sicbutton {
+	float: none; display: block; margin: 10px auto auto; 
+	}
+	.wraplin .welcometext { width: 97%; text-align: center;  }
+	.whotext { display: none; }
+	.searchable { width: 100%; margin: 7px 0 0 0; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.logo { float: none; padding-top: 0; }
+	.reservationform span.calsec { display: none; }
+	.reservationform .button { float: none;  margin: auto; }
+	
+	.spot { display: block; }
+	
+	.mute { display: none; }
+	.footer p { display: none; }
+	.footer { position: relative; }
+	.footer p.addresser { display: block; margin-bottom: 10px; bottom: 7px; padding-top: 8px; text-align: center;}
+
+	.desktop {display: none;}
+ .wraplin .welcometext {
+	margin-left: 0%;
+	}
+	
+	.readon { display: none; }
+	.contentcontainer {  padding: 40px 0 0 0; }
+		
+}
+
+
+
+/* ================================================  LARGE MOBILE DEVICES AND SMALL TABLETS BELOW 799  ======================================= */
+
+
+@media only screen 
+and (min-width : 640px) 
+and (max-width : 799px) 
+{	
+	
+	.wraplin .welcometext h2 { font-size: 14px; text-align: center; }
+	section.welcome { background: #000; height: 210px; }
+	
+	.sicbutton {
+	float: none; display: block; margin: 10px auto auto; 
+	}
+	.wraplin .welcometext { width: 97%; text-align: center;  }
+	.logo { float: none; }
+	.whotext { display: none; }
+	.searchable { width: 40%; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.whotext { width: 30%; }
+	.reservationform span.calsec { display: none; }
+
+	.desktop {display: none;}
+
+.videocontainer {
+height: 175px; }
+ .wraplin .welcometext {
+	margin-left: 0%;
+	}
+
+}
+/* ================================================  SLIGHTLY SMALLER RESOLUTIONS, BUT NOT QUITE IPHONE ======================================= */
+
+
+@media only screen 
+and (min-width : 800px) 
+and (max-width : 854px) 
+{	
+	
+	.mute { display: none; }
+	.wraplin .welcometext h2 { width: 371px;
+font-size: 15px; float: left; } 
+	.wraplin .welcometext { width: 560px; }
+	.sicbutton {
+	float: right; display: block; margin: 20px auto auto; 
+	}
+	.whotext { display: none; }
+	.searchable { width: 40%; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.whotext { width: 30%; }
+	.reservationform span.calsec { display: none; }
+	
+	.desktop {display: none;}
+	
+	 .wraplin .welcometext {
+	margin-left: 0%;
+	}
+
+}
+
+
+
+
+
+/* ================================================  LARGE PHONE SCREENS SMALLER RESOLUTIONS  ======================================= */
+
+
+@media only screen 
+and (min-width : 855px) 
+and (max-width : 960px) 
+{	
+
+	
+
+
+	.mute { display: none; }
+	.wraplin .welcometext h2 { width: 371px;
+font-size: 15px; float: left; } 
+	.wraplin .welcometext { width: 560px; }
+	.sicbutton {
+	float: right; display: block; margin: 20px auto auto; 
+	}
+	.whotext { display: none; }
+	.searchable { width: 30%; 
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+	-webkit-animation-duration:1.5s;
+	-moz-animation-duration:1.5s;
+	-ms-animation-duration:1.5s;
+	-o-animation-duration:1.5s;
+	animation-duration:1.5s;
+	-webkit-animation-name:fadeIn;
+	-moz-animation-name:fadeIn;
+	-o-animation-name:fadeIn;
+	animation-name:fadeIn;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-ms-animation-delay: .5s;
+	-o-animation-delay: .5s;
+	}
+	.reservationform span.calsec { display: none; }
+
+	.desktop {display: none;}
+	
+	 .wraplin .welcometext {
+	margin-left: 0%;
+	}
+
+}
+
+
+
+/* ================================================  IPADS AT LANDSCAPE WIDTH 1024  ======================================= */
+
+
+@media only screen 
+and (min-width : 961px) 
+and (max-width : 1024px) 
+{	
+
+
+.wraplin .welcometext h2 { width: 471px;
+font-size: 16px; float: left; } 
+ .wraplin .welcometext { width: 408px }
+ 
+ .wraplin .welcometext {
+	margin-left: 0%;
+	}
+
+}
+
+
+
+/* ================================================  FIRST STAGE LARGER THAN 1024PX UP TO LARGER BROWSERS  ======================================= */
+
+
+
+
+
+@media only screen 
+and (min-width : 961px) 
+and (max-width : 1174px) 
+{	
+
+
+.wraplin .welcometext h2 { width: 471px;
+font-size: 16px; float: left; } 
+ .wraplin .welcometext { width: 408px }
+ 
+ .wraplin .welcometext {
+	margin-left: 0%;
+	}
+
+}
+
+
+
+
+@media only screen 
+and (min-width : 1175px) 
+and (max-width : 1240px) 
+{		
+		
+
+.wraplin .welcometext {
+	margin-left: 7%;
+	}
+}
+
+
+
+/* #Narrow Screen, Below 1400px (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+
+	
+
+@media only screen 
+and (min-width : 1241px) 
+and (max-width : 1399px) 
+{
+
+
+	
+
+                
+}
+	
+	
+	
+
+
+@media only screen and (min-width: 1400px) and (max-width: 1450px) {
+		
+		
+
+
+}
+
+
+@media only screen and (min-width: 1400px) {
+ 
+
+ 
+                
+    } 
+
+
+
+

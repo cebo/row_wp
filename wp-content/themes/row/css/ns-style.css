@@ -1,0 +1,285 @@
+/* Common, default styles for the notification box */
+
+.ns-box {
+	position: relative;
+	background: none repeat scroll 0 0 #fff;
+	padding: 15px;
+	line-height: 1.4;
+	z-index: 1000;
+	pointer-events: none;
+	color: #333;
+	font-size: 90%;
+	font-family: 'GothamBook', Helvetica, Arial, sans-serif;
+	margin-top: 0;
+}
+
+.ns-box.ns-show {
+	pointer-events: auto;
+	/*display: block !important;*/
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+.ns-box a {
+	color: inherit;
+	font-weight: 700;
+}
+
+.ns-box a:hover,
+.ns-box a:focus {
+	opacity: 1;
+}
+
+.ns-box p {
+	margin: 0;
+}
+
+.ns-box.ns-show,
+.ns-box.ns-visible,
+.ns-box.ns-bar.ns-show-page {
+	pointer-events: auto;
+}
+
+.ns-close {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 300px;
+	top: 5px;
+	overflow: hidden;
+	text-indent: 100%;
+	cursor: pointer;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.ns-close:hover, 
+.ns-close:focus {
+	outline: none;
+}
+
+.ns-close::before,
+.ns-close::after {
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 60%;
+	top: 50%;
+	left: 30%;
+	background: #6e6e6e;
+}
+
+.ns-close:hover::before,
+.ns-close:hover::after {
+	background: #fff;
+}
+
+.ns-close::before {
+	-webkit-transform: translate(-50%,-50%) rotate(45deg);
+	transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.ns-close::after {
+	-webkit-transform: translate(-50%,-50%) rotate(-45deg);
+	transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+/* Top bar notifications */
+
+.ns-box.ns-bar {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 10px solid #3d3c3c;
+	left: 0;
+	margin-left: 300px;
+	overflow: hidden;
+	top: 0;
+	width: auto;
+}
+
+.ns-bar .ns-close {
+	background: transparent;
+	top: 50%;
+	right: 20px;
+	
+}
+
+.ns-bar .ns-close {
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background: none repeat scroll 0 0 transparent;
+	float: none;
+	left: auto;
+	right: 10px;
+	top: 20px;
+}
+
+.ns-bar .ns-close::before,
+.ns-bar .ns-close::after {
+	background: #b7b5b3;
+}
+
+[class^="ns-effect-"].ns-bar.ns-hide,
+[class*=" ns-effect-"].ns-bar.ns-hide {
+	-webkit-animation-direction: reverse;
+	animation-direction: reverse;
+}
+
+/* Slide on top */
+.ns-effect-slidetop {
+	box-shadow: none;
+}
+
+.ns-effect-slidetop .icon {
+	position: absolute;
+	display: block;
+	font-size: 109%;
+	top: 50%;
+	left: 1em;
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+}
+
+.ns-effect-slidetop p {
+	padding: 0 3.2em;
+	font-size: 1.2em;
+	display: inline-block;
+}
+
+.ns-effect-slidetop .ns-close::before,
+.ns-effect-slidetop .ns-close::after {
+	width: 2px;
+	background: #777;
+}
+
+.ns-effect-slidetop .ns-close:hover::before,
+.ns-effect-slidetop .ns-close:hover::after {
+	background: #333;
+}
+
+.ns-effect-slidetop.ns-show .icon,
+.ns-effect-slidetop.ns-show p {
+	-webkit-animation-name: animScaleUp;
+	animation-name: animScaleUp;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-delay: 0.3s;
+	animation-delay: 0.3s; 
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.ns-effect-slidetop.ns-show p {
+	-webkit-animation-name: animFade;
+	animation-name: animFade;
+}
+
+@-webkit-keyframes animScaleUp {
+	0% { opacity: 0; -webkit-transform: translate3d(0,-50%,0) scale3d(0,0,1); }
+	100% { opacity 1; -webkit-transform: translate3d(0,-50%,0) scale3d(1,1,1); }
+}
+
+@keyframes animScaleUp {
+	0% { opacity: 0; -webkit-transform: translate3d(0,-50%,0) scale3d(0,0,1); transform: translate3d(0,-50%,0) scale3d(0,0,1); }
+	100% { opacity 1; -webkit-transform: translate3d(0,-50%,0) scale3d(1,1,1); transform: translate3d(0,-50%,0) scale3d(1,1,1); }
+}
+
+.ns-effect-slidetop.ns-show,
+.ns-effect-slidetop.ns-hide {
+	/*-webkit-animation-name: animSlideTop;
+	animation-name: animSlideTop;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;*/
+	transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+}
+
+.ns-effect-slidetop.ns-show {
+	margin-top: 0 !important;
+}
+
+/*.ns-effect-slidetop.ns-hide {
+	margin-top: -67px;
+}*/
+
+@-webkit-keyframes animSlideTop {
+	0% { -webkit-transform: translate3d(0,-100%,0); }
+	100% { -webkit-transform: translate3d(0,0,0); }
+}
+
+@keyframes animSlideTop {
+	0% { -webkit-transform: translate3d(0,-100%,0); transform: translate3d(0,-100%,0); }
+	100% { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
+}
+
+/* Growl-style notifications */
+.ns-growl {
+	top: 30px;
+	left: 30px;
+	max-width: 300px;
+	border-radius: 5px;
+}
+
+.ns-growl p {
+	margin: 0;
+	line-height: 1.3;
+}
+
+/*[class^="ns-effect-"].ns-growl.ns-hide,
+[class*=" ns-effect-"].ns-growl.ns-hide {
+	-webkit-animation-direction: reverse;
+	animation-direction: reverse;
+}*/
+
+/* ADDED TO NS CSS */
+
+.ns-box .fa-exclamation-triangle {
+  float: left;
+  font-size: 20px;
+  margin-top: 7px;
+}
+
+.ns-box-inner {
+  float: left;
+  margin-left: 15px;
+  width: 90%;
+}
+
+.ns-box-inner p {
+  color: #333;
+  display: inline-block;
+  font-size: 15px;
+  padding: 0;
+  text-rendering: optimizelegibility;
+  top: 18px;
+  line-height: 1.6;
+}
+
+.ns-box-inner a {
+	border-bottom: 1px solid #333;
+	color: #000;
+}
+	.ns-box-inner a:hover {
+		border-bottom: 1px solid transparent;
+	}
+
+.ns-box-inner i {
+	font-size: 24px;
+	color: #3c3c3c;
+}
+
+.fa-bell {
+	padding: 0px 0px 0px 5px;
+}
+
+.ns-close {
+	color: #3c3c3c;
+	float: left;
+	/*display: none;*/
+}
+
+

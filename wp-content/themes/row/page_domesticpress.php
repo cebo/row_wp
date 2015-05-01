@@ -47,7 +47,7 @@
 	
 	
 	
-	<section class="contentarea">
+	<?php /*<section class="contentarea">
 						
 		<div class="page-content">
 
@@ -66,9 +66,29 @@
 		</div>
 		
 		
-		<?php endwhile; endif; wp_reset_query(); ?>	
+		<?php endwhile; endif; wp_reset_query(); ?>	*/ ?>
+		
+			<section class="contentarea">
+						
+		<div class="page-content">
+
+			<h1><?php the_title(); ?></h1>
+
+			<?php the_content(); ?>
+			
+			
+			<div class="button-wrapper" style="margin: 20px 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Reserve Now','row-theme-text'); ?></a></div>
+
+			<div class="clear"></div>
+
+		</div>
 		
 		
+		<?php endwhile; else : ?>
+
+			<section class="contentarea">
+						
+		<?php endif; wp_reset_query(); ?>	
 		
 		<ul class="deal-boxes">
 		

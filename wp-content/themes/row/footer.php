@@ -332,5 +332,88 @@ $(function() {
 
 
 </script> 
+
+<!-- There are the scripts need for the pushdown. -->
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/classie.js'></script>
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/modernizr.custom.js'></script>
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/notificationFx.js'></script>
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/snap.svg-min.js'></script>
+<script type='text/javascript' src='<?php bloginfo('template_url'); ?>/js/cbpAnimatedHeader.js'></script>
+
+	<script>
+		(function() {
+
+			<?php if( is_home() || is_front_page() ) { ?>
+
+				$(document).ready(function() {
+
+					if (!sessionStorage.getItem('nsclose_id')) {
+					    
+					    setTimeout( function() {
+						
+							$('.ns-box').addClass('ns-show'),
+							$('.navigate').css('margin-top', $('.ns-box').outerHeight()*-1);
+							$('.ns-box').css('margin-top', '0');
+
+						}, 1300 );
+
+					} else {
+
+						$('.ns-box').css('margin-top', $('.ns-box').outerHeight()*-1),
+						$('.topnav').css('top', '32px');
+
+					}
+					
+				});	
+
+			<?php } else { ?>
+
+				$(document).ready(function() {
+
+					if (!sessionStorage.getItem('nsclose_id')) {
+					    
+					    $('.ns-box').addClass('ns-show-page'),
+					    $('.navigate').css('margin-top', $('.ns-box').outerHeight()*-1);
+						$('.ns-box').css('margin-top', '0');
+
+					} else {
+
+						$('.ns-box').css('margin-top', $('.ns-box').outerHeight()*-1),
+						$('.topnav').css('top', '32px');
+
+					}
+					
+				});		
+
+			<?php } ?>	
+
+			$('.ns-close').click(function(){
+				$('.ns-box').addClass('ns-hide');
+				$('.ns-box').removeClass('ns-show'),
+				$('.navigate').css('margin-top', '0'),
+				$('.ns-box').removeClass('ns-show-page'),
+				$('.menu-wrapper').addClass('ns-closed'),
+				$('#notification-trigger').removeAttr('disabled','disabled');
+				$('.ns-box').css('margin-top', $('.ns-box').outerHeight()*-1);
+			});
+
+			// $('#notification-trigger').click(function(){
+			// 	$('.ns-box').removeClass('ns-hide'),
+			// 	$('.ns-box').addClass('ns-show'),
+			// 	$(this).attr('disabled','disabled');
+			// });
+
+		})();
+	</script>
+	
+	<?php $postid = get_the_ID(); 
+		if ($postid == 1238){ ?>
+			<img	src="http://www.clkmg.com/api/e/pixel/?uid=16863&att=1&ref=rownycemail"	height="1" width="1"/>
+		<?php } 
+
+		else{ ?>
+			<img src="http://www.clkmg.com/api/e/pixel/?uid=16863&att=1&ref=rownycvisit" height="1" width="1"/>
+		<?php }
+	?> 
 </body>
 </html>

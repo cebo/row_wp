@@ -284,7 +284,7 @@
 								<h4><?php _e('Features','row-theme-text'); ?></h4>
 							
 								<ul>
-									<li class="ico-wifi"><?php _e('Complimentary Wi-Fi','row-theme-text'); ?></li>
+									<!-- <li class="ico-wifi"><?php _e('Complimentary Wi-Fi','row-theme-text'); ?></li> -->
 									<li class="ico-mobile"><?php _e('iPod Docking Station','row-theme-text'); ?></li>
 									<li class="ico-tv"><?php _e('Flat screen LCD TVs','row-theme-text'); ?></li>
 									<li class="ico-cable"><?php _e('Cable and HBO','row-theme-text'); ?></li>

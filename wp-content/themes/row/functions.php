@@ -39,7 +39,7 @@ include(TEMPLATEPATH . '/library/videobox.php');
  /* ................. SOME OPTIONS FOR PROJECTS .................... */
 /* Below is an include to a few options for your projects.*/
 include(TEMPLATEPATH . '/options/project-options.php'); 
-
+include(TEMPLATEPATH . '/options/email-signup-options.php'); 
 
 
  /* ................. SOME OPTIONS FOR PROJECTS .................... */
@@ -55,6 +55,7 @@ include(TEMPLATEPATH . '/options/amenity-options.php');
  /* ................. SOME OPTIONS FOR PRESS .................... */
 /* Below is an include to a few options for press releases.*/
 include(TEMPLATEPATH . '/options/press-options.php'); 
+include(TEMPLATEPATH . '/options/weather-options.php');
 
  /* ................. SOME OPTIONS FOR PRESS .................... */
 /* Below is an include to a few options for press releases.*/
@@ -260,3 +261,6 @@ if ( !function_exists('ss_framework_admin_scripts') ) {
 	
 }
 
+function tt($image,$width,$height){
+    return bloginfo('template_url') . "/library/thumb.php?src=$image&w=$width&h=$height";
+}
