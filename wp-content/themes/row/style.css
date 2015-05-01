@@ -2193,7 +2193,7 @@ visibility: hidden;
 
 
 .home-intro .wideover {
-	top: 50%;
+	top: 60%;
 	width: 55%;
 	margin-left: -27.5%;
 }
@@ -2464,7 +2464,7 @@ visibility: hidden;
 }
 
 .home-intro {
-    height: 545px;
+    height: 670px;
     margin-bottom: 10px;
     max-height: 800px;
     overflow: hidden;
