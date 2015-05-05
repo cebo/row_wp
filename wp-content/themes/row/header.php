@@ -356,6 +356,10 @@
 
 						$("#departure_date").val(d1);
 			        	$('#dep').val(selectednextMonthName);
+			        	
+			        	$(".datepicker").addClass("super-ghost");   
+				  		$('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});
+						$(".departdatepicker").removeClass("super-ghost");  
 
 			        } else if( (getthedate == getdateLastDayOfMonth) && (getthemonth == getdateLastMonthOfYear) ) {
 
@@ -371,6 +375,10 @@
 
 						$("#departure_date").val(d1);
 			        	$('#dep').val('January');
+			        	
+			        	$(".datepicker").addClass("super-ghost");   
+				  		$('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});
+						$(".departdatepicker").removeClass("super-ghost");  
 
 					} else {
 
@@ -620,7 +628,7 @@
 		$(".calspacer span.arrv input").click(function() {
 				
 			 $(".datepicker").removeClass("super-ghost").css({"opacity" : 1, "visibility" : "visible"});
-			 
+			 $(".shutdown").addClass("alldown");
 			
 		});
 		
@@ -635,7 +643,16 @@
 			 $(".departdatepicker").css({"opacity" : 1, "visibility" : "visible"});
 			 
 		});
-
+		
+		$(".shutdown").click(function() {
+			$(".datepicker").addClass("super-ghost");
+			$(".departdatepicker").addClass("super-ghost");
+		});
+		
+		$(".cls").click(function() {
+			$(".datepicker").addClass("super-ghost");
+			$(".departdatepicker").addClass("super-ghost");
+		});
 		
 
 	});
@@ -828,7 +845,7 @@ window.onload = function(){
 
 <body <?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?>class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?>class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?>class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?>class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?>class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?>class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?>class="page single amenity"<?php } elseif(is_page() || is_single()) { body_class('single'); ?><?php } elseif(is_home() || is_front_page()) { ?>class="home"<?php } ?>>
 
-
+<a class="shutdown" href="#"></a>
 <div class="darkover"><a href="#"></a></div>
 <div class="slightover"><a href="#"></a></div>
 
@@ -1776,7 +1793,9 @@ window.onload = function(){
 							<i class="fa fa-calendar"></i>
 						</div>
 						
-						<div class="datepicker"></div>
+						<div class="datepicker">
+							<a href="#" class="cls">X</a>
+						</div>
 					</span>		 	
 							 	
 					<span class="lowselect">
@@ -1816,7 +1835,9 @@ window.onload = function(){
 							<i class="fa fa-calendar"></i>
 						</div>
 						
-						<div class="departdatepicker"></div>
+						<div class="departdatepicker">
+							<a href="#" class="cls">X</a>
+						</div>
 					</span>
 
 					<span class="lowselect">
@@ -1837,7 +1858,30 @@ window.onload = function(){
 					</span>
 
 					<div class="butonconton">
-						<a href="#" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php if( $current_lang == 'en' ) { ?>
+
+								<a target="_blank" href="https://rownyc.reztrip.com/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php } elseif( $current_lang == 'zh-hans') { ?>
+					
+								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php } elseif( $current_lang == 'pt-br') { ?>
+					
+								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+					
+								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php } else { ?>
+					
+								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php }  ?>
+
+						
 					</div>
 					
 					<div class="clear"></div>
