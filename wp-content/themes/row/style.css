@@ -1397,6 +1397,7 @@ ul#selectUl li.unselected:hover {
     position: absolute;
     right: 11px;
     top: 7px;
+    z-index: 1;
 }
 
 .squaredance .calendarsection {
@@ -1404,6 +1405,24 @@ ul#selectUl li.unselected:hover {
     border: 0 none;
     color: #fff;
     text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+
+.cls {
+  z-index: 99;
+  position: absolute;
+  top: 0px;
+  lefT: -51px;
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+}
+
+.cls:hover {
+	background: #e51a9b;
+	color: #fff !important;
 }
 
 .squaredance > select {
@@ -1416,6 +1435,7 @@ ul#selectUl li.unselected:hover {
     width: 130%;
     text-transform: uppercase;
     font-size: 12px;
+    -webkit-appearance: none;
 }
 
 .booking .button, .booking .check-rates {
@@ -1598,7 +1618,7 @@ ul#selectUl li.unselected:hover {
 }
 
 .banner .header-contact {
-  padding-top: 20px;
+  padding-top: 0px;
   position: absolute;
   text-align: center;
   top: 20px;
@@ -1688,7 +1708,7 @@ ul#selectUl li.unselected:hover {
     color: #ff27ab;
     font-weight: bold;
     font-family: "GothamBold";
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 .banner p.contacto span {
@@ -1697,9 +1717,9 @@ ul#selectUl li.unselected:hover {
 
 .contacto span {
     color: #fff;
-    font-family: "GothamBold";
+    /* font-family: "GothamBold"; */
     font-size: 12px;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin: 2px 0 0 3px;
 }
 
@@ -2139,7 +2159,7 @@ visibility: hidden;
 	z-index: 99999;
 	left: 50%;
 	text-align: center;
-	margin-left: -26.5%;
+	margin-left: -31.5%;
 	-webkit-animation-fill-mode: both;
 	-moz-animation-fill-mode:both;
 	-ms-animation-fill-mode:both;
@@ -7116,7 +7136,7 @@ a.detailsAnchor {
 /* ==================== banner edits =========================== */
 
 .logo p {
-	font-family: "GothamMedium";
+	font-family: "GothamBook";
 	letter-spacing: 0.2px; 
 }
 

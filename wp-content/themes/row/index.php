@@ -192,12 +192,12 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,400); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),1055,1000); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,400); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],1055,1000); ?>);"></div>
 						
 						<?php } else { ?>
 											

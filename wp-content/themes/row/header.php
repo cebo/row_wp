@@ -356,6 +356,10 @@
 
 						$("#departure_date").val(d1);
 			        	$('#dep').val(selectednextMonthName);
+			        	
+			        	$(".datepicker").addClass("super-ghost");   
+				  		$('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});
+						$(".departdatepicker").removeClass("super-ghost");  
 
 			        } else if( (getthedate == getdateLastDayOfMonth) && (getthemonth == getdateLastMonthOfYear) ) {
 
@@ -371,6 +375,10 @@
 
 						$("#departure_date").val(d1);
 			        	$('#dep').val('January');
+			        	
+			        	$(".datepicker").addClass("super-ghost");   
+				  		$('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});
+						$(".departdatepicker").removeClass("super-ghost");  
 
 					} else {
 
@@ -389,7 +397,7 @@
 
 			        	$(".datepicker").addClass("super-ghost");   
 				  		$('.departdatepicker').css({"opacity" : 1, "visibility" : "visible"});
-
+						$(".departdatepicker").removeClass("super-ghost");   
 					}
 			        
 			    }
@@ -617,33 +625,35 @@
 
 	$(document).ready(function() {
 			
-		$(".calspacer span.arrv").hover(function() {
+		$(".calspacer span.arrv input").click(function() {
 				
-			 $(".datepicker").css({"opacity" : 1, "visibility" : "visible"});
-			 
-			 }, function() {
-			 
-			  $(".datepicker").css({"opacity" : 0, "visibility" : "hidden"});
+			 $(".datepicker").removeClass("super-ghost").css({"opacity" : 1, "visibility" : "visible"});
+			 $(".shutdown").addClass("alldown");
+			
 		});
 		
 		
-		$(".departdatepicker").mousedown(function() {
+		$(".departdatepicker").click(function() {
 				 $(".datepicker").removeClass("super-ghost").css({"opacity" : 0, "visibility" : "hidden"}); 
-			     $(".departdatepicker").removeClass("super-ghost");
+			     $(".departdatepicker").addlass("super-ghost").css({"opacity" : 0, "visibility" : "hidden"}); 
 			});
 		
-		$(".calspacer span.dept").hover(function() {
+		$(".calspacer span.dept").click(function() {
 			
 			 $(".departdatepicker").css({"opacity" : 1, "visibility" : "visible"});
 			 
-			 }, function() {
-			 
-			  $(".departdatepicker").css({"opacity" : 0, "visibility" : "hidden"});
 		});
-
-		$(".calspacer span .squaredance").hover(function() {
-			$(".departdatepicker").removeClass("super-ghost");
+		
+		$(".shutdown").click(function() {
+			$(".datepicker").addClass("super-ghost");
+			$(".departdatepicker").addClass("super-ghost");
 		});
+		
+		$(".cls").click(function() {
+			$(".datepicker").addClass("super-ghost");
+			$(".departdatepicker").addClass("super-ghost");
+		});
+		
 
 	});
 	</script>
@@ -835,7 +845,7 @@ window.onload = function(){
 
 <body <?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?>class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?>class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?>class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?>class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?>class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?>class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?>class="page single amenity"<?php } elseif(is_page() || is_single()) { body_class('single'); ?><?php } elseif(is_home() || is_front_page()) { ?>class="home"<?php } ?>>
 
-
+<a class="shutdown" href="#"></a>
 <div class="darkover"><a href="#"></a></div>
 <div class="slightover"><a href="#"></a></div>
 
@@ -1728,324 +1738,13 @@ window.onload = function(){
 	
 	<div class="behindnavigate"></div>
 
-
-
-
-
-	<!-- BEGIN CONTENT AREA -->
-	
-	<!-- <div class="topnav">
-			
-		<ul>
-
-			<li>
-
-				<?php if( $current_lang == 'en') { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
-
-				<?php } elseif( $current_lang == 'zh-hans') { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
-
-				<?php } elseif( $current_lang == 'pt-br') { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
-
-				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
-
-				<?php } else { ?>
-
-					<a class="openboxlink booking-link" href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><i class="fa fa-calendar"></i><span class="book"><?php _e('Book','row-theme-text'); ?></span></a>
-
-				<?php } ?>
-				
-					<div class="dropout booker">
-
-					<div class="inner">
-					<a href="#" class="closethisthing"><i class="fa fa-close"></i></a>
-						<div class="logoboxer">
-							
-							<a class="logo" href="http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com"><img src="http://www.rownyc.com.php54-3.ord1-1.websitetestlink.com/wp-content/themes/row/images/logo.png" alt="Row NYC" /></a>
-							
-						</div>
-							
-					</div>			
-				
-				</div>
-
-
-
-			</li>
-			
-			<li><a class="booking-link" href="<?php bloginfo('url'); ?>/row-nyc-address/"><i class="fa fa-map-marker"></i><span class="locale"><?php _e('Location','row-theme-text'); ?></span></a>
-			
-				<div class="dropout" style="width: 600px;">
-
-					<a style="background: transparent !important; color: #fff !important;" href="<?php bloginfo('url'); ?>/row-nyc-address/"><img style="max-width: 90%; padding: 20px 0; margin: auto; text-align: center;" src="<?php bloginfo('template_url'); ?>/images/shot.jpg" /><br><?php _e('Explore NYC','row-theme-text'); ?></a>
-				</div>
-
-			
-			</li>
-			
-			<li><a class="booking-link" href="http://eepurl.com/PteA1" target="_blank"><i class="fa  fa-envelope"></i><span class="offer"><?php _e('Stay','row-theme-text'); ?><br><?php _e('Connected','row-theme-text'); ?></span></a>
-				<div class="dropout oranger">
-
-					<div class="inner" style="padding: 40px;">
-						
-						<div id="contactform">
-														
-							<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
-							<style type="text/css">
-								#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-							</style>
-							<div id="mc_embed_signup">
-							<form action="http://sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-								<h2><?php _e('Subscribe Today','row-theme-text'); ?></h2>
-							<div class="indicates-required"><span class="asterisk">*</span> <?php _e('indicates required','row-theme-text'); ?></div>
-							<div class="mc-field-group">
-								<label for="mce-MMERGE1"><?php _e('First Name','row-theme-text'); ?>  <span class="asterisk">*</span>
-							</label>
-								<input type="text" value="" name="MMERGE1" class="required" id="mce-MMERGE1">
-							</div>
-							<div class="mc-field-group">
-								<label for="mce-MMERGE2"><?php _e('Last Name','row-theme-text'); ?>  <span class="asterisk">*</span>
-							</label>
-								<input type="text" value="" name="MMERGE2" class="required" id="mce-MMERGE2">
-							</div>
-							<div class="mc-field-group">
-								<label for="mce-MMERGE3"><?php _e('Your Zip','row-theme-text'); ?>  <span class="asterisk">*</span>
-							</label>
-								<input type="text" value="" name="MMERGE3" class="required" id="mce-MMERGE3">
-							</div>
-							<div class="mc-field-group">
-								<label for="mce-EMAIL"><?php _e('Email Address','row-theme-text'); ?>  <span class="asterisk">*</span>
-							</label>
-								<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-							</div>
-								<div id="mce-responses" class="clear">
-									<div class="response" id="mce-error-response" style="display:none"></div>
-									<div class="response" id="mce-success-response" style="display:none"></div>
-								</div>    
-							    <div style="position: absolute; left: -5000px;"><input type="text" name="b_ae5d0eb33650e5a9963ca5a3e_1054dd91b3" value=""></div>
-								<div class="clear"><input type="submit" value="<?php _e('Subscribe','row-theme-text'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-							</form>
-							</div>
-							<script type="text/javascript">
-							var fnames = new Array();var ftypes = new Array();fnames[1]='MMERGE1';ftypes[1]='text';fnames[2]='MMERGE2';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';fnames[0]='EMAIL';ftypes[0]='email';
-							try {
-							    var jqueryLoaded=jQuery;
-							    jqueryLoaded=true;
-							} catch(err) {
-							    var jqueryLoaded=false;
-							}
-							var head= document.getElementsByTagName('head')[0];
-							if (!jqueryLoaded) {
-							    var script = document.createElement('script');
-							    script.type = 'text/javascript';
-							    script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
-							    head.appendChild(script);
-							    if (script.readyState && script.onload!==null){
-							        script.onreadystatechange= function () {
-							              if (this.readyState == 'complete') mce_preload_check();
-							        }    
-							    }
-							}
-
-							var err_style = '';
-							try{
-							    err_style = mc_custom_error_style;
-							} catch(e){
-							    err_style = '#mc_embed_signup input.mce_inline_error{border-color:#6B0505;} #mc_embed_signup div.mce_inline_error{margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff;}';
-							}
-							var head= document.getElementsByTagName('head')[0];
-							var style= document.createElement('style');
-							style.type= 'text/css';
-							if (style.styleSheet) {
-							  style.styleSheet.cssText = err_style;
-							} else {
-							  style.appendChild(document.createTextNode(err_style));
-							}
-							head.appendChild(style);
-							setTimeout('mce_preload_check();', 250);
-
-							var mce_preload_checks = 0;
-							function mce_preload_check(){
-							    if (mce_preload_checks>40) return;
-							    mce_preload_checks++;
-							    try {
-							        var jqueryLoaded=jQuery;
-							    } catch(err) {
-							        setTimeout('mce_preload_check();', 250);
-							        return;
-							    }
-							    var script = document.createElement('script');
-							    script.type = 'text/javascript';
-							    script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
-							    head.appendChild(script);
-							    try {
-							        var validatorLoaded=jQuery("#fake-form").validate({});
-							    } catch(err) {
-							        setTimeout('mce_preload_check();', 250);
-							        return;
-							    }
-							    mce_init_form();
-							}
-							function mce_init_form(){
-							    jQuery(document).ready( function($) {
-							      var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
-							      var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
-							      $("#mc-embedded-subscribe-form").unbind('submit');
-							      options = { url: 'http://sphericalcommunications.us4.list-manage.com/subscribe/post-json?u=ae5d0eb33650e5a9963ca5a3e&id=1054dd91b3&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
-							                    beforeSubmit: function(){
-							                        $('#mce_tmp_error_msg').remove();
-							                        $('.datefield','#mc_embed_signup').each(
-							                            function(){
-							                                var txt = 'filled';
-							                                var fields = new Array();
-							                                var i = 0;
-							                                $(':text', this).each(
-							                                    function(){
-							                                        fields[i] = this;
-							                                        i++;
-							                                    });
-							                                $(':hidden', this).each(
-							                                    function(){
-							                                        var bday = false;
-							                                        if (fields.length == 2){
-							                                            bday = true;
-							                                            fields[2] = {'value':1970};//trick birthdays into having years
-							                                        }
-							                                    	if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
-							                                    		this.value = '';
-																    } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
-							                                    		this.value = '';
-																    } else {
-																        if (/\[day\]/.test(fields[0].name)){
-							    	                                        this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;									        
-																        } else {
-							    	                                        this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
-								                                        }
-								                                    }
-							                                    });
-							                            });
-							                        $('.phonefield-us','#mc_embed_signup').each(
-							                            function(){
-							                                var fields = new Array();
-							                                var i = 0;
-							                                $(':text', this).each(
-							                                    function(){
-							                                        fields[i] = this;
-							                                        i++;
-							                                    });
-							                                $(':hidden', this).each(
-							                                    function(){
-							                                        if ( fields[0].value.length != 3 || fields[1].value.length!=3 || fields[2].value.length!=4 ){
-							                                    		this.value = '';
-																    } else {
-																        this.value = 'filled';
-								                                    }
-							                                    });
-							                            });
-							                        return mce_validator.form();
-							                    }, 
-							                    success: mce_success_cb
-							                };
-							      $('#mc-embedded-subscribe-form').ajaxForm(options);
-							      
-							      
-							    });
-							}
-							function mce_success_cb(resp){
-							    $('#mce-success-response').hide();
-							    $('#mce-error-response').hide();
-							    if (resp.result=="success"){
-							        $('#mce-'+resp.result+'-response').show();
-							        $('#mce-'+resp.result+'-response').html(resp.msg);
-							        $('#mc-embedded-subscribe-form').each(function(){
-							            this.reset();
-							    	});
-							    } else {
-							        var index = -1;
-							        var msg;
-							        try {
-							            var parts = resp.msg.split(' - ',2);
-							            if (parts[1]==undefined){
-							                msg = resp.msg;
-							            } else {
-							                i = parseInt(parts[0]);
-							                if (i.toString() == parts[0]){
-							                    index = parts[0];
-							                    msg = parts[1];
-							                } else {
-							                    index = -1;
-							                    msg = resp.msg;
-							                }
-							            }
-							        } catch(e){
-							            index = -1;
-							            msg = resp.msg;
-							        }
-							        try{
-							            if (index== -1){
-							                $('#mce-'+resp.result+'-response').show();
-							                $('#mce-'+resp.result+'-response').html(msg);            
-							            } else {
-							                err_id = 'mce_tmp_error_msg';
-							                html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
-							                
-							                var input_id = '#mc_embed_signup';
-							                var f = $(input_id);
-							                if (ftypes[index]=='address'){
-							                    input_id = '#mce-'+fnames[index]+'-addr1';
-							                    f = $(input_id).parent().parent().get(0);
-							                } else if (ftypes[index]=='date'){
-							                    input_id = '#mce-'+fnames[index]+'-month';
-							                    f = $(input_id).parent().parent().get(0);
-							                } else {
-							                    input_id = '#mce-'+fnames[index];
-							                    f = $().parent(input_id).get(0);
-							                }
-							                if (f){
-							                    $(f).append(html);
-							                    $(input_id).focus();
-							                } else {
-							                    $('#mce-'+resp.result+'-response').show();
-							                    $('#mce-'+resp.result+'-response').html(msg);
-							                }
-							            }
-							        } catch(e){
-							            $('#mce-'+resp.result+'-response').show();
-							            $('#mce-'+resp.result+'-response').html(msg);
-							        }
-							    }
-							}
-
-							</script>
-
-
-
-						</div>
-						
-					</div>
-
-					
-				</div>			
-				
-			</li>
-
-		</ul>
-		
-	</div> -->
-
 	<div class="banner desktop"> 
 		
 		<div class="header-contact">
 			
-			<p class="contacto"><?php _e('Reservations:','row-theme-text'); ?> <span>888.352.3650</span></p>
-			<p><i class="fa fa-map-marker"></i> 700 8th Avenue, New York, NY 10036</p>
+			<p class="contacto"><?php _e('Reservations:','row-theme-text'); ?> <span style="font-family: 'GothamBold';">888.352.3650</span></p>
+			<p class="contacto"><i class="fa fa-map-marker"></i> <span>700 8th Avenue, New York, NY 10036</span></p>			
+			<p class="contacto"><a style="color: #fff;" target="_blank" href="https://rownyc.groupize.com/properties/25047/groups">Group Booking (10+)</a></p>
 			<!-- <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a> -->
 
 		</div>
@@ -2095,7 +1794,9 @@ window.onload = function(){
 							<i class="fa fa-calendar"></i>
 						</div>
 						
-						<div class="datepicker"></div>
+						<div class="datepicker">
+							<a href="#" class="cls">X</a>
+						</div>
 					</span>		 	
 							 	
 					<span class="lowselect">
@@ -2125,7 +1826,7 @@ window.onload = function(){
 					<div class="butonconton">
 						<a href="#" class="button"><?php _e('Reserve Now','row-theme-text'); ?></a>
 					</div>
-
+					<div class="clear"></div>
 					<span class="dept">
 						<div class="squaredance">
 							<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" class="calendarsection" />
@@ -2135,7 +1836,9 @@ window.onload = function(){
 							<i class="fa fa-calendar"></i>
 						</div>
 						
-						<div class="departdatepicker"></div>
+						<div class="departdatepicker">
+							<a href="#" class="cls">X</a>
+						</div>
 					</span>
 
 					<span class="lowselect">
@@ -2156,7 +1859,30 @@ window.onload = function(){
 					</span>
 
 					<div class="butonconton">
-						<a href="#" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php if( $current_lang == 'en' ) { ?>
+
+								<a target="_blank" href="https://rownyc.reztrip.com/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php } elseif( $current_lang == 'zh-hans') { ?>
+					
+								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php } elseif( $current_lang == 'pt-br') { ?>
+					
+								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+					
+								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php } else { ?>
+					
+								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
+					
+							<?php }  ?>
+
+						
 					</div>
 					
 					<div class="clear"></div>
