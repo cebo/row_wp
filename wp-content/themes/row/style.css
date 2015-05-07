@@ -406,6 +406,7 @@ h4 {
 	width: 300px;
 	position: absolute;
 	z-index: 999;
+	top: 25px;
 	/*overflow-y: scroll;*/
 	/*-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
@@ -1373,7 +1374,7 @@ ul#selectUl li.unselected:hover {
 .squaredance.select {
     border: 0 none;
     overflow: hidden;
-    padding: 8px 11px;
+    padding: 10px 11px;
 }
 
 .squaredance i {
@@ -1608,7 +1609,7 @@ ul#selectUl li.unselected:hover {
 	
 .banner {
     background: none repeat scroll 0 0 #000;
-    height: 61px;
+    height: 80px;
     padding: 27px 0;
    /* position: relative; */
    	position: fixed;
@@ -1621,7 +1622,7 @@ ul#selectUl li.unselected:hover {
   padding-top: 0px;
   position: absolute;
   text-align: center;
-  top: 20px;
+  top: 30px;
   z-index: 999;
   /* width: 310px; */
   width: 280px;
@@ -1640,8 +1641,8 @@ ul#selectUl li.unselected:hover {
     margin: 0 auto;
     position: absolute;
     right: 0;
-    width: 87px;
-    height: 58px;
+    width: 107px;
+    height: 78px;
 }
 
 .banner .logo > p {
@@ -1652,7 +1653,7 @@ ul#selectUl li.unselected:hover {
     position: absolute;
     right: 0;
     text-align: center;
-    top: 63px;
+    top: 88px;
 }
 
 .banner .booking {
@@ -1661,7 +1662,7 @@ ul#selectUl li.unselected:hover {
     position: relative;
     right: 0;
     width: 530px;
-    top: -9px;
+    top: 0px;
     z-index: 999999;
 }
 
@@ -1708,7 +1709,7 @@ ul#selectUl li.unselected:hover {
     color: #ff27ab;
     font-weight: bold;
     font-family: "GothamBold";
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 }
 
 .banner p.contacto span {
@@ -7151,6 +7152,15 @@ a.detailsAnchor {
 .innerbox h2 {
   color: #000;
 }
+
+p.contacto a {
+  color: #fff;
+}
+
+.group-booking a:hover {
+	color: #ff27ab;
+}
+
 
 /* ==================== scroller bar ========================== */
 

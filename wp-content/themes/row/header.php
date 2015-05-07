@@ -1744,7 +1744,7 @@ window.onload = function(){
 			
 			<p class="contacto"><?php _e('Reservations:','row-theme-text'); ?> <span style="font-family: 'GothamBold';">888.352.3650</span></p>
 			<p class="contacto"><i class="fa fa-map-marker"></i> <span>700 8th Avenue, New York, NY 10036</span></p>			
-			<p class="contacto"><a style="color: #fff;" target="_blank" href="https://rownyc.groupize.com/properties/25047/groups">Group Booking (10+)</a></p>
+			<p class="contacto"><a class="group-booking" target="_blank" href="https://rownyc.groupize.com/properties/25047/groups">Group Booking (10+)</a></p>
 			<!-- <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a> -->
 
 		</div>
