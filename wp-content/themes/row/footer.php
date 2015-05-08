@@ -70,10 +70,6 @@
 			<li>
 				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
 			</li>
-			
-			<!--<li>
-				<a href="#"><span class="blog"></span><p>Apple Blog</p></a>
-			</li>-->
 
 			<li class="socials">
 				<ul>
@@ -129,6 +125,31 @@
 	</section>
 
 </div>
+
+<!-- Scripts -->
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
+
+<!-- the jScrollPane script -->
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scroll-startstop.events.jquery.js"></script>
+
+<!-- Jquery Spinner -->
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.core.min.js"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.widget.js"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.button.js"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.ui.spinner.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+	    $("input.check").click(function(){
+	        if($(this).is(":checked")){
+	            $(this).parent().addClass("question-box-active");
+	        }
+	    });
+	});		
+	
+</script> 
 
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript">
@@ -228,108 +249,68 @@ var google_remarketing_only = true;
 
 <script type="text/javascript">
 
-/*
+	$(function() {
 
-var _gaq = _gaq || [];
+	    var $window = $(window);
+	    var lastScrollTop = $window.scrollTop();
+	    var wasScrollingDown = true;
 
-_gaq.push(['_setAccount', 'UA-10318674-1']);
+	    var $sidebar = $("#navigate");
+	    if ($sidebar.length > 0) {
 
-_gaq.push(['_setAllowLinker', true]);
+	        var initialSidebarTop = $sidebar.position().top;
 
-_gaq.push(['_setDomainName', 'rownyc.com']);
+	        $window.scroll(function(event) {
 
-_gaq.push(['_trackPageview']);
+	            var windowHeight = $window.height();
+	            var sidebarHeight = $sidebar.outerHeight();
 
+	            var scrollTop = $window.scrollTop();
+	            var scrollBottom = scrollTop + windowHeight;
 
+	            var sidebarTop = $sidebar.position().top;
+	            var sidebarBottom = sidebarTop + sidebarHeight;
 
-_gaq.push(['secondTracker._setAccount', 'UA-10318674-10']);
+	            var heightDelta = Math.abs(windowHeight - sidebarHeight);
+	            var scrollDelta = lastScrollTop - scrollTop;
 
-_gaq.push(['secondTracker._setAllowLinker', true]);
+	            var isScrollingDown = (scrollTop > lastScrollTop);
+	            var isWindowLarger = (windowHeight > sidebarHeight);
 
-_gaq.push(['secondTracker._setDomainName', 'rownyc.com']);
+	            if ((isWindowLarger && scrollTop > initialSidebarTop) || (!isWindowLarger && scrollTop > initialSidebarTop + heightDelta)) {
+	                $sidebar.addClass('fixed');
+	            } else if (!isScrollingDown && scrollTop <= initialSidebarTop) {
+	                $sidebar.removeClass('fixed');
+	            }
 
-_gaq.push(['secondTracker._trackPageview']);
+	            var dragBottomDown = (sidebarBottom <= scrollBottom && isScrollingDown);
+	            var dragTopUp = (sidebarTop >= scrollTop && !isScrollingDown);
 
+	            if (dragBottomDown) {
+	                if (isWindowLarger) {
+	                    $sidebar.css('top', 0);
+	                } else {
+	                    $sidebar.css('top', -heightDelta);
+	                }
+	            } else if (dragTopUp) {
+	                $sidebar.css('top', 0);
+	            } else if ($sidebar.hasClass('fixed')) {
+	                var currentTop = parseInt($sidebar.css('top'), 10);
+	                
+	                var minTop = -heightDelta;
+	                var scrolledTop = currentTop + scrollDelta;
+	                
+	                var isPageAtBottom = (scrollTop + windowHeight >= $(document).height());
+	                var newTop = (isPageAtBottom) ? minTop : scrolledTop;
+	                
+	                $sidebar.css('top', newTop);
+	            }
 
-
-
-
-(function() {
-
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-
-})();
-
-*/
-
-
-$(function() {
-
-    var $window = $(window);
-    var lastScrollTop = $window.scrollTop();
-    var wasScrollingDown = true;
-
-    var $sidebar = $("#navigate");
-    if ($sidebar.length > 0) {
-
-        var initialSidebarTop = $sidebar.position().top;
-
-        $window.scroll(function(event) {
-
-            var windowHeight = $window.height();
-            var sidebarHeight = $sidebar.outerHeight();
-
-            var scrollTop = $window.scrollTop();
-            var scrollBottom = scrollTop + windowHeight;
-
-            var sidebarTop = $sidebar.position().top;
-            var sidebarBottom = sidebarTop + sidebarHeight;
-
-            var heightDelta = Math.abs(windowHeight - sidebarHeight);
-            var scrollDelta = lastScrollTop - scrollTop;
-
-            var isScrollingDown = (scrollTop > lastScrollTop);
-            var isWindowLarger = (windowHeight > sidebarHeight);
-
-            if ((isWindowLarger && scrollTop > initialSidebarTop) || (!isWindowLarger && scrollTop > initialSidebarTop + heightDelta)) {
-                $sidebar.addClass('fixed');
-            } else if (!isScrollingDown && scrollTop <= initialSidebarTop) {
-                $sidebar.removeClass('fixed');
-            }
-
-            var dragBottomDown = (sidebarBottom <= scrollBottom && isScrollingDown);
-            var dragTopUp = (sidebarTop >= scrollTop && !isScrollingDown);
-
-            if (dragBottomDown) {
-                if (isWindowLarger) {
-                    $sidebar.css('top', 0);
-                } else {
-                    $sidebar.css('top', -heightDelta);
-                }
-            } else if (dragTopUp) {
-                $sidebar.css('top', 0);
-            } else if ($sidebar.hasClass('fixed')) {
-                var currentTop = parseInt($sidebar.css('top'), 10);
-                
-                var minTop = -heightDelta;
-                var scrolledTop = currentTop + scrollDelta;
-                
-                var isPageAtBottom = (scrollTop + windowHeight >= $(document).height());
-                var newTop = (isPageAtBottom) ? minTop : scrolledTop;
-                
-                $sidebar.css('top', newTop);
-            }
-
-            lastScrollTop = scrollTop;
-            wasScrollingDown = isScrollingDown;
-        });
-    }
-});
-
+	            lastScrollTop = scrollTop;
+	            wasScrollingDown = isScrollingDown;
+	        });
+	    }
+	});
 
 </script> 
 
@@ -397,12 +378,6 @@ $(function() {
 				$('.ns-box').css('margin-top', $('.ns-box').outerHeight()*-1);
 			});
 
-			// $('#notification-trigger').click(function(){
-			// 	$('.ns-box').removeClass('ns-hide'),
-			// 	$('.ns-box').addClass('ns-show'),
-			// 	$(this).attr('disabled','disabled');
-			// });
-
 		})();
 	</script>
 	
@@ -415,5 +390,101 @@ $(function() {
 			<img src="http://www.clkmg.com/api/e/pixel/?uid=16863&att=1&ref=rownycvisit" height="1" width="1"/>
 		<?php }
 	?> 
+
+	<script src="<?php bloginfo ('template_url'); ?>/js/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript">
+	  $(document).ready(function(){
+
+	    $("a[rel^='prettyPhoto']").prettyPhoto({
+	    	default_width: 800,
+	    	social_tools: false,
+	    	theme: 'dark_square',
+	    	opacity: 0.8,
+	    });
+
+	    $("a[rel^='prettyPhoto-video']").prettyPhoto({
+		   	social_tools: false,
+		   	default_height: 344,
+		   	theme: 'dark_square',
+		   	opacity: 0.8,
+		   	allow_resize: true,
+		});
+					 	 
+	  });
+	</script>
+
+	<script src="<?php bloginfo ('template_url'); ?>/js/view.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		
+			$('.picone').bind('inview', function (event, visible) {
+			  if (visible == true) {
+			    	$(this).addClass("appearman")
+			  	} else {
+			  		$(this).removeClass("appearman")
+			  }
+			});
+			
+			$('.contentcontainer  img').bind('inview', function (event, visible) {
+			  if (visible == true) {
+			    	$(this).addClass("appearmann")
+			  	} else {
+			  		$(this).removeClass("appearmann")
+			  }
+			});
+			
+			
+		});
+	</script>
+
+	<?php if(get_post_type() == 'imagegalleries') { ?>
+
+		<!-- Flex Slider -->
+		<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$('.flexslider-gallery').flexslider({
+					animation: "slide",
+					animationSpeed: 1500,
+					controlNav: true,
+					startAt: 0,
+				});
+
+			  $('.flexslider').flexslider({
+			    animation: "slide",
+			    animationSpeed: 800,
+			    pauseOnAction: false,
+			    controlNav: true,
+			    startAt: 0,
+			  });
+
+			});
+		</script>
+
+	<?php } ?>
+
+	<?php if( is_home() || is_front_page() ) { ?>
+
+		<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/owl.carousel.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			 
+				$("#owl-example").owlCarousel({
+					// Most important owl features
+					items : 1,
+					navigation: true,
+					navigationText : false,
+					itemsDesktop : false,
+					itemsDesktopSmall : [979,1],
+					itemsTabletSmall : [768,1],
+					itemsTablet : [768,1],
+					itemsMobile : [479,1]
+				});
+
+			});
+		</script>
+
+	<?php } ?>
 </body>
 </html>
