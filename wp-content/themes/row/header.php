@@ -647,13 +647,19 @@
 		$(".shutdown").click(function() {
 			$(".datepicker").addClass("super-ghost");
 			$(".departdatepicker").addClass("super-ghost");
+			$(this).removeClass("alldown");
 		});
 		
 		$(".cls").click(function() {
 			$(".datepicker").addClass("super-ghost");
 			$(".departdatepicker").addClass("super-ghost");
+			$(".shutdown").removeClass("alldown");
 		});
 		
+		$( "#departure_date" ).focus(function() {
+  			$(".departdatepicker").removeClass("super-ghost");
+		});
+
 
 	});
 	</script>
@@ -1742,8 +1748,9 @@ window.onload = function(){
 		
 		<div class="header-contact">
 			
-			<p class="contacto"><?php _e('Reservations:','row-theme-text'); ?> <span>888.352.3650</span></p>
-			<p><i class="fa fa-map-marker"></i> 700 8th Avenue, New York, NY 10036</p>
+			<p class="contacto"><?php _e('Reservations:','row-theme-text'); ?> <span style="font-family: 'GothamBold';">888.352.3650</span></p>
+			<p class="contacto"><i class="fa fa-map-marker"></i> <span>700 8th Avenue, New York, NY 10036</span></p>			
+			<p class="contacto"><a class="group-booking" target="_blank" href="https://rownyc.groupize.com/properties/25047/groups">Group Booking (10+)</a></p>
 			<!-- <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a> -->
 
 		</div>
