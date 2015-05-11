@@ -147,9 +147,19 @@
 									
 								
 								
-									<h3><?php the_title(); ?><?php if(get_post_meta($post->ID, 'cebo_callout', true)) { ?>&nbsp;-&nbsp;<span><?php echo get_post_meta($post->ID, 'cebo_callout', true); ?></span><?php } ?></h3>
+									<h3><?php the_title(); ?>
+										<?php if(get_post_meta($post->ID, 'cebo_callout', true)) { ?>
+										&nbsp;-&nbsp;<span>
+										<?php echo get_post_meta($post->ID, 'cebo_callout', true); ?>
+										</span>
+										<?php } ?>
+									</h3>
 								
-									<a href="<?php the_permalink();?>" class="button">Reserve Now</a>
+									<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { ?>
+
+									<a href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>" class="button">Reserve Now</a>
+
+									<?php } ?>
 									
 									<div class="clear"></div>
 									
