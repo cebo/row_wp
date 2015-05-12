@@ -595,7 +595,7 @@
 			
 				<div class="dropout" style="width: 600px;">
 
-					<a style="background: transparent !important; color: #fff !important;" href="<?php bloginfo('url'); ?>/row-nyc-address/"><img style="max-width: 90%; padding: 20px 0; margin: auto; text-align: center;" src="<?php echo tt('http://rownyc.com/wp-content/themes/row/images/shot.jpg',540,200); ?>" /><br><?php _e('Explore NYC','row-theme-text'); ?></a>
+					<a style="background: transparent !important; color: #fff !important;" href="<?php bloginfo('url'); ?>/row-nyc-address/"><img style="max-width: 90%; padding: 20px 0; margin: auto; text-align: center;" src="<?php echo tt('http://rownyc.com/wp-content/themes/row/images/shot.jpg',540,400); ?>" /><br><?php _e('Explore NYC','row-theme-text'); ?></a>
 				</div>
 
 			
