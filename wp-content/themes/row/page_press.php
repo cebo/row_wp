@@ -10,7 +10,6 @@
 				
 				'post_type' => 'press-releases',
 				'posts_per_page' => 1,
-				'suppress_filters' => 1;
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
  
@@ -70,7 +69,6 @@
 				
 				'post_type' => 'press-releases',
 				'offset' => 1,
-				'suppress_filters' => 1;
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 

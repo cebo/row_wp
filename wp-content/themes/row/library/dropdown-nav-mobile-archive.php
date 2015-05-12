@@ -2,7 +2,7 @@
 
 <ul id="dropbox" class="dropbox">
 						
-	<?php query_posts('post_type=imagegalleries&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+	<?php query_posts('post_type=imagegalleries&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 	
 	
 	<li>
@@ -42,7 +42,7 @@
 
 <ul class="dropdown">
 						
-	<?php query_posts(array('showposts' => 20, 'post_type' => 'specials', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
+	<?php query_posts(array('showposts' => 20, 'post_type' => 'specials', ,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 
 	<li>
@@ -76,7 +76,7 @@
 
 <ul class="dropdown">
 						
-	<?php query_posts(array('post_type' => 'amenities', 'posts_per_page' => 3, 'post__not_in' => array(32,33), 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>						
+	<?php query_posts(array('post_type' => 'amenities', 'posts_per_page' => 3, 'post__not_in' => array(32,33), ,)); if(have_posts()) : while(have_posts()) : the_post(); 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>						
 
 	<li>
 		
@@ -108,7 +108,7 @@
 						'post_type' => 'page',
 						'post__in' => $bloblor,
 						'orderby' => 'menu_order',
-						'suppress_filters' => 1,
+						,
 					)
 						
 						); if(have_posts()) : while(have_posts()) : the_post(); ?>
@@ -145,7 +145,7 @@
 
 <ul>
 							
-	<?php query_posts('post_type=rooms&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+	<?php query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 	
 	
 	<li>
@@ -181,7 +181,7 @@
 
 <ul>
 							
-	<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
+	<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page', ,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 	
 	
 	<li>

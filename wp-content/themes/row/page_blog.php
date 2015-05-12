@@ -52,12 +52,7 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 						
 							<span class="day"><?php echo the_time("l"); ?></span>
 							<span class="date"><?php echo the_time("j"); ?></span>
-							<span class="moyear"><?php echo the_time("M"); ?>, <?php echo the_time("Y"); ?></span>
-							
-							<!--<div class="authavi" style="background-image:url(<?php echo get_avatar_url ( get_the_author_meta('ID'), $size = '50' ); ?>);">
-								<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"></a>
-							</div>-->
-					
+							<span class="moyear"><?php echo the_time("M"); ?>, <?php echo the_time("Y"); ?></span>					
 							
 						</div>
 						
@@ -160,12 +155,7 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 							<span class="day"><?php echo the_time("l"); ?></span>
 							<span class="date"><?php echo the_time("j"); ?></span>
 							<span class="moyear"><?php echo the_time("M"); ?>, <?php echo the_time("Y"); ?></span>
-							
-							<!--<div class="authavi" style="background-image:url(<?php echo get_avatar_url ( get_the_author_meta('ID'), $size = '50' ); ?>);">
-								<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"></a>
-							</div>-->
-					
-							
+													
 						</div>
 						
 						<div class="postbox">

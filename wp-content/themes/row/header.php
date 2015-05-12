@@ -87,7 +87,7 @@
 
 <?php include(TEMPLATEPATH . '/library/scripts.php'); ?>
 
-<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js?ver=3.5.2'></script>
+<!-- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script> -->
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/booking.js"></script>
 
 <?php if(is_home()) { ?>

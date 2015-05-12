@@ -5,7 +5,7 @@
 		
 			<!-- loop for the slides -->
 		
-			<?php query_posts('post_type=slides&posts_per_page=5&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); 
+			<?php query_posts('post_type=slides&posts_per_page=5'); if(have_posts()) : while(have_posts()) : the_post(); 
 			$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");?>
 			
 			

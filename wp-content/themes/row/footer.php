@@ -314,6 +314,31 @@ var google_remarketing_only = true;
 		});
 	</script>
 
+
+
+	<?php if( is_home() || is_front_page() ) { ?>
+
+		<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/owl.carousel.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			 
+				$("#owl-example").owlCarousel({
+					// Most important owl features
+					items : 1,
+					navigation: true,
+					navigationText : false,
+					itemsDesktop : false,
+					itemsDesktopSmall : [979,1],
+					itemsTabletSmall : [768,1],
+					itemsTablet : [768,1],
+					itemsMobile : [479,1]
+				});
+
+			});
+		</script>
+
+	<?php } ?>
+
 	<?php if(get_post_type() == 'imagegalleries') { ?>
 
 		<!-- Flex Slider -->
@@ -340,28 +365,6 @@ var google_remarketing_only = true;
 		</script>
 
 	<?php } ?>
-
-	<?php if( is_home() || is_front_page() ) { ?>
-
-		<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/owl.carousel.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-			 
-				$("#owl-example").owlCarousel({
-					// Most important owl features
-					items : 1,
-					navigation: true,
-					navigationText : false,
-					itemsDesktop : false,
-					itemsDesktopSmall : [979,1],
-					itemsTabletSmall : [768,1],
-					itemsTablet : [768,1],
-					itemsMobile : [479,1]
-				});
-
-			});
-		</script>
-
-	<?php } ?>
+	
 </body>
 </html>

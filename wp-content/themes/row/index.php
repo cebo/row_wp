@@ -19,16 +19,13 @@
 				</a>
 
 				<a class="video-play" href="http://youtu.be/FJw3fH7kzRs" rel="prettyPhoto-video"><i class="fa fa-play-circle-o"></i></a>		
-				
-				<?php if(get_option('cebo_homebanner')) { ?>
+				<?php if(get_option('cebo_homebanner')) { ?>		
 		
-		
-				<div class="stretch"  style="background-image: url(<?php echo get_option('cebo_homebanner'); ?>);"></div>
+				<div class="stretch"  style="background-image: url(<?php echo tt(get_option('cebo_homebanner'),1200,420); ?>);"></div>
 				
 				<?php } else { ?>
 									
 				<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-				
 				
 				<?php } ?>
 

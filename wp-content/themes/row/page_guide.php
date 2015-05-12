@@ -90,7 +90,7 @@
 					<div class="container">
 						
 						
-						<?php query_posts('post_type=page&p=48&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts('post_type=page&p=48'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<?php the_content(); ?>
 						
@@ -175,7 +175,7 @@
 							
 							<div class="townbox">
 							
-								<?php query_posts('post_type=page&p=48&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+								<?php query_posts('post_type=page&p=48'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 								
 								<ul>
@@ -225,7 +225,7 @@
 					<div class="container">
 						
 							
-						<?php query_posts('post_type=page&p=68&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts('post_type=page&p=68'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<?php the_content(); ?>
 						
@@ -310,7 +310,7 @@
 							
 							<div class="townbox">
 							
-								<?php query_posts('post_type=page&p=68&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+								<?php query_posts('post_type=page&p=68'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 								
 								<ul>
@@ -357,7 +357,7 @@
 					<div class="container">
 						
 							
-						<?php query_posts('post_type=page&p=160&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts('post_type=page&p=160'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<?php the_content(); ?>
 						
@@ -442,7 +442,7 @@
 							
 							<div class="townbox">
 							
-								<?php query_posts('post_type=page&p=160&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+								<?php query_posts('post_type=page&p=160'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 								
 								<ul>
@@ -488,7 +488,7 @@
 					<div class="container">
 						
 							
-						<?php query_posts('post_type=page&p=66&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php query_posts('post_type=page&p=66'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<?php the_content(); ?>
 						
@@ -573,7 +573,7 @@
 							
 							<div class="townbox">
 							
-								<?php query_posts('post_type=page&p=66&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+								<?php query_posts('post_type=page&p=66'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 								
 								<ul>

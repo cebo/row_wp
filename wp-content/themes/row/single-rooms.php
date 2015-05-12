@@ -305,7 +305,7 @@
 				<div class="gallery-categories">
 					<ul>
 						
-						<?php $currentid = $post->ID; query_posts('post_type=rooms&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+						<?php $currentid = $post->ID; query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						
 						<?php $thersd = $id = get_the_ID(); ?>
 						

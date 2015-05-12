@@ -4,7 +4,7 @@
 		
 	<li class="drop-intro">
 		
-		<?php query_posts('post_type=page&p=353&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+		<?php query_posts('post_type=page&p=353'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 			<br>
 			<h1>Hotel</h1>
 			<br>
@@ -15,7 +15,7 @@
 						'post_type' => 'page',
 						'post__in' => $bloblor,
 						'orderby' => 'menu_order',
-						'suppress_filters' => 1)
+						)
 						
 						); if(have_posts()) : while(have_posts()) : the_post(); ?>
 	
@@ -57,7 +57,7 @@
 	
 	<li class="drop-intro">
 		
-		<?php query_posts('post_type=page&p=86&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+		<?php query_posts('post_type=page&p=86'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 			
 			<br>
 		<h1><?php the_title(); ?></h1>
@@ -67,7 +67,7 @@
 		
 	</li>
 	
-	<?php query_posts('post_type=rooms&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+	<?php query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 	
 	
 	<li>
@@ -149,7 +149,7 @@
 
 		</li>
 		
-	<?php query_posts('post_type=imagegalleries&posts_per_page=-1&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+	<?php query_posts('post_type=imagegalleries&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 	
 	
 	<li>
@@ -171,7 +171,7 @@
 	
 	<?php endwhile; endif; wp_reset_query(); ?>
 
-	<?php query_posts('post_type=amenities&posts_per_page=1&suppress_filters=1&p=3097'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+	<?php query_posts('post_type=amenities&posts_per_page=1&p=3097'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 	
 	
 	<li>
@@ -202,7 +202,7 @@
 	
 	<li class="drop-intro">
 		
-		<?php query_posts('post_type=page&p=92&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+		<?php query_posts('post_type=page&p=92'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 			
 			<br>
 		<h1><?php the_title(); ?></h1>
@@ -211,7 +211,7 @@
 		<?php endwhile; endif; wp_reset_query(); ?>								
 	</li>
 	
-	<?php query_posts(array('showposts' => 20, 'post_type' => 'specials', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post();  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+	<?php query_posts(array('showposts' => 20, 'post_type' => 'specials', ,)); if(have_posts()) : while(have_posts()) : the_post();  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 		
 		
 	<li>
@@ -359,7 +359,7 @@
 
 	<li class="drop-intro">
 		
-		<?php query_posts('post_type=page&p=148&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post();  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+		<?php query_posts('post_type=page&p=148'); if(have_posts()) : while(have_posts()) : the_post();  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 			
 			<br>
 		<h1><?php the_title(); ?></h1>
@@ -369,7 +369,7 @@
 		<?php endwhile; endif; wp_reset_query(); ?>								
 	</li>
 
-	<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page', 'suppress_filters' => 1,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
+	<?php query_posts(array('showposts' => 20, 'post_parent' => 148, 'post_type' => 'page', ,)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 
 	<li>

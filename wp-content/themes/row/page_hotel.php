@@ -12,7 +12,6 @@
 				
 				'post_type' => 'hotel',
 				'posts_per_page' => 1,
-				'suppress_filters' => 1,
 				'meta_query' => array(
 					array(
 						'key' => 'cebo_available_on_header',
