@@ -70,13 +70,34 @@
 		
 		
 		<ul class="deal-boxes">
+
+			<!-- amenities -->
+
+				<li class="deal">
+
+					<div class="deal-photo" style="background-image: url(http://rownyc.com/wp-content/uploads/2014/03/district_m_1140x495.jpg);"></div>	
+
+						<div class="deal-wrapper">
+
+						<h1>Amenities</h1>
+						<p></p><p>Inspired amenities abound at the Row NYC. Our restaurant, District M, is a European express café by day and a Neopolitan pizza bar and cocktail lounge by night, offering a curated selection of delicious food, coffee, cocktails and more…</p><p></p>
+
+						<div class="button-wrapper" style="margin: 10px 0 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="http://rownyc.com/times-square-hotels/amenities/">Read More</a></div>
+
+						<div class="wonder-vertical"></div>
+
+						</div>
+						
+				</li>
+
+			<!-- end amenities -->
 		
 			<?php 
 
 				$dealboxes_query = new wp_query(array(
 				
 				'post_type' => 'hotel',
-				// 'offset' => 1,
+				'offset' => 1,
 				// 'suppress_filters' => 1,
 				'meta_query' => array(
 			        array(
