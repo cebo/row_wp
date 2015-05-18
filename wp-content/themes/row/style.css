@@ -836,20 +836,22 @@ h4 {
 }
 
 .languages {
-	width: 100%;
-	height: 16px;
-	/*background: url(images/languages.png) center top no-repeat;*/
-	background-color: transparent;
-	margin-top: 10px;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
-	opacity: 1;
-	visibility: visible;
-	text-align: center;
-	margin-bottom: 10px;
-	/*display: none;*/
+  width: 100%;
+  height: 16px;
+  /* background: url(images/languages.png) center top no-repeat; */
+  background-color: transparent;
+  margin-top: 10px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+  text-align: center;
+  margin-bottom: 10px;
+  position: absolute;
+  display: block;
+  top: 112px;
 }
 
 .languages > img {
@@ -1109,7 +1111,35 @@ nav#menu.mobile {
 	font-size: 22px;
 	margin: 0 3px;
 }
-.calspacer {
+
+.exclusive-offer > form {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.exclusive-offer input {
+    background: none repeat scroll 0 0 transparent;
+    border: 1px solid #333;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    width: 65%;
+}
+
+.exclusive-offer button i {
+    color: #ff27ab;
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+}
+	.exclusive-offer button i:hover {
+		color: #fff;
+	}
+
+/*.calspacer {
 	padding: 10px 40px;
 }
 
@@ -1169,6 +1199,8 @@ nav#menu.mobile {
 .calspacer span:hover input {
 	color: #fff;
 }
+*/
+
 .calspacer span input#arv, .calspacer span input#arv-1 {
 	font-size: 14px;
 	color: #333;
@@ -1198,7 +1230,6 @@ nav#menu.mobile {
 }
 
 
-
 .topping {
 	font-size: 14px;
 	color: #333;
@@ -1219,7 +1250,7 @@ nav#menu.mobile {
     font-family: 'GothamBold';
 }
 
-.calspacer span select {
+/*.calspacer span select {
 	width: auto;
 	position: relative;
 	z-index: 99999;
@@ -1253,7 +1284,7 @@ nav#menu.mobile {
 	background: orange;
 	color: #fff;
 	font-size: 55px;
-}
+}*/
 
 ul#selectUl {
 	position: absolute;
@@ -1311,23 +1342,123 @@ ul#selectUl li.unselected:hover {
 
 
 ::-webkit-input-placeholder {
-   color: #333;
+   color: #ddd;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #333;  
+   color: #ddd;  
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #333;  
+*::-moz-placeholder {
+    color: #fff;
+    opacity: 1;
 }
 
 :-ms-input-placeholder {  
-   color: #333;  
+   color: #ddd;  
+}
+
+.squaredance {
+    background: none repeat scroll 0 0 #323232;
+    border: 1px solid #3d3d3d;
+    border-radius: 2px;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 7px 10px;
+    width: 100px;
+    position: relative;
+}
+
+.squaredance.select {
+    border: 0 none;
+    overflow: hidden;
+    padding: 8px 11px;
+}
+
+.squaredance i {
+    color: #ff27ab;
+    font-size: 12px;
+    margin-top: 5px;
+    position: relative;
+    top: -3px;
+}
+
+.squaredance i.fa-calendar {
+    bottom: 0;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+}
+
+.squaredance .fa.fa-caret-down {
+    bottom: 0;
+    position: absolute;
+    right: 11px;
+    top: 7px;
+    z-index: 1;
+}
+
+.squaredance .calendarsection {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
 }
 
 
-.calspacer span .squaredance {
+.cls {
+  z-index: 99;
+  position: absolute;
+  top: 0px;
+  lefT: -51px;
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+}
+
+.cls:hover {
+	background: #e51a9b;
+	color: #fff !important;
+}
+
+.squaredance > select {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #fff;
+    float: right;
+    position: relative;
+    right: -28px;
+    width: 130%;
+    text-transform: uppercase;
+    font-size: 12px;
+    -webkit-appearance: none;
+}
+
+.booking .button, .booking .check-rates {
+    text-align: center;
+    width: 110px;
+}
+
+.booking .butonconton {
+    float: left;
+}
+
+.booking .check-rates {
+    background: none repeat scroll 0 0 #323232;
+    border: 1px solid #3d3d3d;
+    border-radius: 2px;
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    padding: 10px 9px 9px;
+    text-transform: uppercase;
+}
+
+/*.calspacer span .squaredance {
 	background: #fff;
 	position: relative;
 	width: 100%;
@@ -1351,50 +1482,67 @@ ul#selectUl li.unselected:hover {
 
 .calspacer span label {
 	display: block;
-} 
+} */
 
+
+.shutdown {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 99999;
+}
+
+.alldown {
+	display: block;
+	cursor: pointer;
+}
 .datepicker, .datepickerr {
-	opacity: 0;
-	visibility: hidden;
-	position: absolute;
-	top: 110px;
-	z-index: 999999;
-	left: 50%;
-	margin-left: -149px;
-	padding: 10px;
-	background: #fff;
-	min-width: 448px;
 	transition: all 0.6s ease-in-out;
     -moz-transition: all 0.6s ease-in-out;
     -webkit-transition: all 0.6s ease-in-out;
     -o-transition: all 0.6s ease-in-out;
+    background: none repeat scroll 0 0 #fff;
     box-shadow: 0 0 7px #919191;
+    margin-left: -149px;
+    min-width: 448px;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    right: 62px;
+    top: 85px;
+    visibility: hidden;
+    z-index: 999999;
 }
-.calspacer span:hover .datepicker, .calspacer span:hover .datepickerr {
+
+.datepicker {
+  top: 40px;
+}
+/*.calspacer span:hover .datepicker, .calspacer span:hover .datepickerr {
 	opacity: 1;
 	visibility: visible;
 	top: 130px;
-}
-
+}*/
 
 .departdatepicker, .departdatepickerr {
-	opacity: 0;
-	visibility: hidden;
-	position: absolute;
-	top: 110px;
-	z-index: 999999;
-	left: 50%;
-	margin-left: -338px;
-	padding: 10px;
-	background: #fff;
-	min-width: 448px;
 	transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
+    background: none repeat scroll 0 0 #fff;
     box-shadow: 0 0 7px #919191;
+    margin-left: -338px;
+    min-width: 448px;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    right: 62px;
+    top: 85px;
+    visibility: hidden;
+    z-index: 999999;
 }
-.calspacer span:hover .departdatepicker, .calspacer span:hover .departdatepickerr {
+
+/*.calspacer span:hover .departdatepicker, .calspacer span:hover .departdatepickerr {
 	opacity: 1;
 	visibility: visible;
 	top: 130px;;
@@ -1411,7 +1559,7 @@ ul#selectUl li.unselected:hover {
 	float: none;
 	width: inherit;
 	margin: 0;
-}
+}*/
 
 
 
@@ -1454,39 +1602,90 @@ ul#selectUl li.unselected:hover {
 
 
 .contentarea {
-	background: url(images/bg.jpg);
+	/* background: url(images/bg.jpg); */
+	background-color: #fff;
 }
 	
 .banner {
-	background: #e51a9b;
-}
-.banner p {
-	float: left;
-	width: 72%;
-	padding: 5px 20px 5px 0;
-	text-align: right;
-	font-family: 'GothamBook';
-	color: #fff;
-	line-height: 20px;
-	letter-spacing: 0px;
-	color: #fff;
-	font-weight: 400;
-	background: #444444;
-	-webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-	text-transform: uppercase;
-	font-size: 14px;
+    background: none repeat scroll 0 0 #000;
+    height: 61px;
+    padding: 27px 0;
+   /* position: relative; */
+   	position: fixed;
+    border-bottom: 1px solid #373637;
+    z-index: 999999999 !important; /* added */
+    width: 100%; /* added */
 }
 
+.banner .header-contact {
+  padding-top: 20px;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  z-index: 999;
+  /* width: 310px; */
+  width: 280px;
+}
+
+.banner .logo {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 18px;
+}
+
+.banner .logo img {
+    display: block;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 87px;
+    height: 58px;
+}
+
+.banner .logo > p {
+    display: block;
+    font-weight: bold;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 63px;
+}
+
+.banner .booking {
+    float: right;
+    height: auto;
+    position: relative;
+    right: 0;
+    width: 530px;
+    top: -9px;
+    z-index: 999999;
+}
+
+.banner p {
+    color: #fff;
+    padding-bottom: 0;
+	font-family: "GothamBook";
+	line-height: 1;
+	letter-spacing: 0px;
+	/* font-weight: 400; */
+	font-weight: bold;
+	margin-left: 10px;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.booking .button {
+    float: left;
+    font-size: 12px;
+    padding: 11px 10px 10px;
+    margin-bottom: 5px;
+}
 
 .banner p a {
-	font-family: 'GothamBook';
-	line-height: 22px;
-	letter-spacing: 0px;
-	color: #fff;
-	font-weight: 400;
-	margin-left: 20px;
 	-webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
@@ -1497,24 +1696,31 @@ ul#selectUl li.unselected:hover {
     -o-transition: all 0.2s ease-in-out;
 }
 
+.banner p i {
+	color: #ff27ab;
+}
+
 .banner p a:hover {
 	color: #e51a9b;
 }
 
 .banner p.contacto {
-	float: right;
-	background: #e51a9b;
-	color: #000;
-	width: inherit;
-	font-family: 'GothamBold';
-	padding: 4px 20px 5px 0;
+    color: #ff27ab;
+    font-weight: bold;
+    font-family: "GothamBold";
+    padding-bottom: 20px;
+}
+
+.banner p.contacto span {
+	color: #fff;
 }
 
 .contacto span {
-	color: #fff;
-	font-size: 18px;
-	margin: 2px 0 0 10px;
-	font-family: 'GothamBook';
+    color: #fff;
+    font-family: "GothamBold";
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2px 0 0 3px;
 }
 
 .banner .contacto span a {
@@ -1946,7 +2152,8 @@ visibility: hidden;
 .appearman .overlay {
 	position: absolute;
 	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
-	width: 45%;
+	/* width: 45%; */
+	width: 60%;
 	padding: 20px;
 	top: 30%;
 	z-index: 99999;
@@ -2005,10 +2212,138 @@ visibility: hidden;
 }
 
 
+.home-intro .wideover {
+	top: 60%;
+	width: 55%;
+	margin-left: -27.5%;
+}
 
+.home-intro .overlay h2 {
+	margin-bottom: 15px;
+}
+
+.paperbox {
+	margin: 0px 65px 0px 67px;
+	padding-right: 10px;
+	text-align: left;
+	height: 45px;
+	overflow: scroll;
+	transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.paperdup {
+
+	text-align: left;
+	height: 115px;
+}
+
+
+.specopy {
+	  position: absolute;
+    top: 190px;
+  	padding: 15px;
+}
+
+.copie {
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	padding: 9px 0px 40px 0px;
+}
+
+.copie .mo {
+	  font-family: 'GothamBold';
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000;
+  	padding: 10px 0 0 0;
+  	display: block;
+}
+
+.leftside .openbox {
+	z-index: 9999999;
+}
+
+.innerbox .copie .fa {
+	left: 0;
+	background: transparent;
+    bottom: -33px;
+    width:100%;
+}
+
+.innerbox .copie .fa:before {
+	position: absolute;
+	bottom:  -6px;
+	left: 50%;
+	margin-left: -7px;
+}
+.copie h2 {
+	  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  -webkit-text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  -moz-text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  font-family: 'GothamBold';
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 21px;
+  padding: 17px 0 13px 0;
+}
+
+.backslide {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	top: 0;
+	left: 0;
+	opacity: 0.2;
+	z-index: 0;
+}
+.textbox .copie h3 {
+	font-size: 16px;
+	margin-bottom: 12px;
+}
+
+.textbox .copie h3 span {
+	letter-spacing: -.5px;
+  font-family: 'GothamBook';
+  font-size: 16px;
+}
 .wideover a {
 
 }
+
+
+.wideover .fa {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  color: #000000;
+  padding-bottom: 10px;
+  position: absolute;
+  text-align: center;
+  width: 82%;
+}
+
+.wideover .fa-chevron-up {
+  display: none;
+}
+
+.paperdup .fa-chevron-up {
+	display: block;
+}
+
+.paperdup .fa-chevron-down {
+  display: none;
+}
+
+
 .narrow {
 	width: 60%;
 	margin-left: -30%;
@@ -2149,7 +2484,7 @@ visibility: hidden;
 }
 
 .home-intro {
-    height: 420px;
+    height: 670px;
     margin-bottom: 10px;
     max-height: 800px;
     overflow: hidden;
@@ -2217,7 +2552,7 @@ visibility: hidden;
 	}
 
 .second-level {
-	height: 600px;
+	height: 740px;
 }
 
 
@@ -2259,7 +2594,10 @@ visibility: hidden;
 
 .innerbox {
 	padding: 20px;
-	
+	height: 100%;
+	background: #fff;
+	z-index: 99;
+	position: relative;
 	
 }
 
@@ -2390,7 +2728,9 @@ visibility: hidden;
 	height: 450px;
 	padding-bottom: 0px !important;
 }
-
+.home-intro .owl-item .fullspan {
+	height: 100%;
+}
 
 .shorter {
 	width: 100%;
@@ -2724,6 +3064,8 @@ visibility: hidden;
 	font-weight: bold;
 	letter-spacing: -1px;
 }
+
+
 
 
 
@@ -3494,6 +3836,51 @@ width: 35%;
     top: 8px;
 }
 
+.innerbox .opensays {
+	position: absolute;
+	width: 100%;
+	bottom: 50px;
+	left: 0;
+	text-align: center;
+	z-index: 9999999;
+	display: block;
+}
+
+.textbox .innerbox .fa {
+	left: 0;
+	width: 100%;
+	background: transparent;
+	left: 0;
+	background: transparent;
+    width:100%;
+      font-size: 13px;
+}
+
+
+.textbox .innerbox h2 {
+	  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  -webkit-text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  -moz-text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  font-family: 'GothamBold';
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 21px;
+  padding: 17px 0 13px 0;
+  text-align: center;
+}
+
+
+.textbox .innerbox .fa:before {
+	position: absolute;
+	bottom:  -6px;
+	left: 50%;
+	margin-left: -7px;
+}
 
 
 
@@ -5224,7 +5611,7 @@ body .ui-tooltip {
 	border: none;
 	background: #A3A3A3 url(images/ui-bg_highlight-hard_100_f6f6f6_1x100.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #fff;
+	color: #777;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
@@ -6603,7 +6990,7 @@ a.detailsAnchor {
 	left: 0;
 }
 
-.topnav li .booker {
+/*.topnav li .booker {
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
@@ -6687,7 +7074,7 @@ a.detailsAnchor {
 	width: 100%;
 	padding: 15px 0;
 	z-index: 999;
-}
+}*/
 
 
 
@@ -6745,3 +7132,28 @@ a.detailsAnchor {
 	opacity: 1 !important;
 	visibility: visible;
 }
+
+/* ==================== banner edits =========================== */
+
+.logo p {
+	font-family: "GothamMedium";
+	letter-spacing: 0.2px; 
+}
+
+.home-intro .wideover .overlay p {
+	text-align: left;
+}
+
+.overlay p {
+	font-size: 13px;
+}
+
+.innerbox h2 {
+  color: #000;
+}
+
+/* ==================== scroller bar ========================== */
+
+
+
+

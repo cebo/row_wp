@@ -126,8 +126,11 @@ and (max-width : 1260px) {
 	.littleover p {
 	    line-height: 1.2;
 	}
-
-
+	
+	.banner .header-contact {
+		display: none;
+	}
+	.banner .logo { right: auto; left: 40px; top: 26px; display: block; width: 175px; }
 
 	/* GENERAL - Generic Page Settings */
 
@@ -212,20 +215,7 @@ and (max-width : 1260px) {
 
 	/* Banner Area */
 
-	.banner {
-	    margin-left: 250px;
-	    font-size: 12px;
-	}
-
-	.banner p {
-		width: 60%;
-		font-size: 13px;
-	}
-
-	.contacto span {
-		font-size: 18px;
-	}
-
+	
 	.topnav {
 	    max-width: 356px;
 	    width: 38.6%;
@@ -545,12 +535,7 @@ and (max-width : 1260px) {
 and (min-width : 641px) 
 and (max-width : 1260px) {
 
-	.banner {
-	    margin-left: 250px;
-	    font-size: 12px;
-		position: relative;
-		z-index: 9999;
-	}
+	
 	
 	.home-intro {
 	  margin-left: 250px;
