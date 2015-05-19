@@ -659,6 +659,11 @@
 		$( "#departure_date" ).focus(function() {
   			$(".departdatepicker").removeClass("super-ghost");
 		});
+		
+		
+		$( "#arrival_date" ).focus(function() {
+  			$(".departdatepicker").addClass("super-ghost");
+		});
 
 
 	});
