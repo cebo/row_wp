@@ -406,6 +406,7 @@ h4 {
 	width: 300px;
 	position: absolute;
 	z-index: 999;
+	top: 25px;
 	/*overflow-y: scroll;*/
 	/*-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
@@ -1608,7 +1609,7 @@ ul#selectUl li.unselected:hover {
 	
 .banner {
     background: none repeat scroll 0 0 #000;
-    height: 61px;
+    height: 80px;
     padding: 27px 0;
    /* position: relative; */
    	position: fixed;
@@ -1618,10 +1619,17 @@ ul#selectUl li.unselected:hover {
 }
 
 .banner .header-contact {
+<<<<<<< HEAD
   padding-top: 20px;
   position: absolute;
   text-align: center;
   top: 20px;
+=======
+  padding-top: 0px;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+>>>>>>> Homepage-Changes
   z-index: 999;
   /* width: 310px; */
   width: 280px;
@@ -1640,8 +1648,8 @@ ul#selectUl li.unselected:hover {
     margin: 0 auto;
     position: absolute;
     right: 0;
-    width: 87px;
-    height: 58px;
+    width: 107px;
+    height: 78px;
 }
 
 .banner .logo > p {
@@ -1652,7 +1660,7 @@ ul#selectUl li.unselected:hover {
     position: absolute;
     right: 0;
     text-align: center;
-    top: 63px;
+    top: 88px;
 }
 
 .banner .booking {
@@ -1661,7 +1669,11 @@ ul#selectUl li.unselected:hover {
     position: relative;
     right: 0;
     width: 530px;
+<<<<<<< HEAD
     top: -9px;
+=======
+    top: 0px;
+>>>>>>> Homepage-Changes
     z-index: 999999;
 }
 
@@ -1717,9 +1729,13 @@ ul#selectUl li.unselected:hover {
 
 .contacto span {
     color: #fff;
+<<<<<<< HEAD
     font-family: "GothamBold";
+=======
+    /* font-family: "GothamBold"; */
+>>>>>>> Homepage-Changes
     font-size: 12px;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin: 2px 0 0 3px;
 }
 
@@ -2159,7 +2175,7 @@ visibility: hidden;
 	z-index: 99999;
 	left: 50%;
 	text-align: center;
-	margin-left: -26.5%;
+	margin-left: -31.5%;
 	-webkit-animation-fill-mode: both;
 	-moz-animation-fill-mode:both;
 	-ms-animation-fill-mode:both;
@@ -7136,7 +7152,11 @@ a.detailsAnchor {
 /* ==================== banner edits =========================== */
 
 .logo p {
+<<<<<<< HEAD
 	font-family: "GothamMedium";
+=======
+	font-family: "GothamBook";
+>>>>>>> Homepage-Changes
 	letter-spacing: 0.2px; 
 }
 
@@ -7152,6 +7172,18 @@ a.detailsAnchor {
   color: #000;
 }
 
+<<<<<<< HEAD
+=======
+p.contacto a {
+  color: #fff;
+}
+
+.group-booking a:hover {
+	color: #ff27ab;
+}
+
+
+>>>>>>> Homepage-Changes
 /* ==================== scroller bar ========================== */
 
 
