@@ -2219,7 +2219,7 @@ visibility: hidden;
 
 
 .home-intro .wideover {
-	top: 60%;
+	top: 40%;
 	width: 55%;
 	margin-left: -27.5%;
 }
@@ -2738,8 +2738,10 @@ visibility: hidden;
 	height: 450px;
 	padding-bottom: 0px !important;
 }
+
 .home-intro .owl-item .fullspan {
-	height: 100%;
+    height: 80%;
+    margin-top: 135px;
 }
 
 .shorter {

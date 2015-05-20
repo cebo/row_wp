@@ -9,6 +9,25 @@
 
 			<div class="home-intro">
 				
+				<!--<a href="/the-hotel/">
+				<div class="wideover overlay">
+					
+					<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
+					<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
+				
+				</div>
+				</a>
+
+				<a class="video-play" href="http://youtu.be/FJw3fH7kzRs" rel="prettyPhoto-video"><i class="fa fa-play-circle-o"></i></a>		
+				
+						
+		
+				<div class="stretch"  style="background-image: url(<?php echo get_option('cebo_homebanner'); ?>);"></div>
+				
+				
+									
+				<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>-->
+				
 				
 
 				
@@ -18,7 +37,9 @@
 						<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
 						
 						<div class="paperbox">
-
+						<!--<h3>How would you create your New York City?</h3> 
+<span style="font-weight: normal; font-family: helvetica;">Start with Times Square. The heart of Manhattan. 24/7 anything and everything.</span>
+<br />-->
 							<?php echo get_option('cebo_hometext'); ?>
 							
 							
@@ -34,27 +55,47 @@
 
 
 					<?php 
-						query_posts(array(				
+
+						query_posts(array(
+				
 							'post_type' => 'page',
 							'p' => 6308,
+
 						)); 
 
 						if(have_posts()) : while(have_posts()) : the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
-							$galleryImages = get_post_gallery_imagess(); 
-							$imagesCount = count($galleryImages);
+
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+
 					?>
 					
+					
+					
+					<?php $galleryImages = get_post_gallery_imagess(); 
+						  $imagesCount = count($galleryImages);
+						  
+	       			 ?>
 	        		<?php if ($imagesCount > 0) : ?>
               		<?php for ($i = 0; $i < $imagesCount; $i++): ?>
                   	<?php if (!empty($galleryImages[$i])) :?>
-						<div class="fullspan" style="padding-bottom: 15px;">						
-							<div class="stretch"  style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></div>
-						</div>
+					<div class="fullspan" style="padding-bottom: 15px;">
+					
+					
+						
+                  
+						
+						<div class="stretch"  style="background-image: url(<?php echo tt($galleryImages[$i]['full'][0],1123,536); ?>);"></div>
+						
+						
+				
+						
+						
+						
+					<img src="<?php bloginfo ('template_url'); ?>/images/hall.jpg" style="" alt="#">
+					</div>
 					<?php endif; ?>
-					<?php endfor; ?>
-					<?php endif; ?>
-
+  						<?php endfor; ?>
+						<?php endif; ?>
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
 				
@@ -96,10 +137,8 @@
 						
 						<div class="innerbox">
 						
-							<?php 
-								$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-								
-								<h2>This Week's Deal</h2>
+							<?php $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+									<h2>This Week's Deal</h2>
 								
 								<?php query_posts('post_type=specials&posts_per_page=5'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
@@ -163,7 +202,7 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),1055,1000); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),657,518); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
@@ -222,32 +261,18 @@
 								<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-								<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),657,420); ?>);"></div>
+								<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,357); ?>);"></div>
 								
 								<?php } elseif($imgsrc) { ?>
 								
-								<div class="copie">
-									
-									<h2>This Week's Deal</h2>
 								
-									<h3><?php the_title(); ?></h3>
+								<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,357); ?>);"></div>
 								
-									<a href="<?php the_permalink();?>" class="button">Reserve Now</a>
-									
-									<div class="clear"></div>
-									<a class="opensays" href="#"><i class="fa fa-chevron-down"><span class="mo">See More</span></i></a>
-									<a class="opensays" href="#"><i class="fa fa-chevron-up"><span class="mo">Close</span></i></a>
-									
-									<div class="specopy">
-										
-										<?php the_content(); ?>
-									
-									</div>
-		
-								</div>
+								<?php } else { ?>
+													
+								<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
 								
 								
-
 								<?php } ?>
 
 				</div>
@@ -255,8 +280,8 @@
 				
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
-								
-
+					
+					
 					<?php query_posts('post_type=page&p=56&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 								
 					<div class="picone">
@@ -264,7 +289,6 @@
 						<div class="wideover overlay narrow">
 					
 							<h2 class="h1"><?php the_title(); ?></h2>
-
 							<p><?php the_content(); ?></p>
 							
 							
@@ -277,18 +301,16 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-
-						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),657,400); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,357); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-
-						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],657,400); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,357); ?>);"></div>
 						
 						<?php } else { ?>
 											
-						<div class="stretch"  style="background-image: url(<?php bloginfo('url'); ?>/wp-content/uploads/2014/10/city-kitchen-tile.jpg);"></div>
+						<div class="stretch"  style="background-image: url(http://rownyc.com/wp-content/uploads/2014/10/city-kitchen-tile.jpg);"></div>
 						
 						
 						<?php } ?>
@@ -299,6 +321,18 @@
 					<div class="clear"></div>
 
 				</div>
+			
+			
+			</div>
+			
+			<div class="clear"></div>
+		
+			<!-- begin third level -->
+			
+			<!-- gallery -->
+			
+			<div class="third-level">
+			
 				
 				<div class="leftside">
 					
@@ -307,22 +341,23 @@
 					
 					
 					<div class="picone">
+					
 						<div class="wideover overlay narrow">
 					
 							<h2 class="h1"><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 							
+							
 							<?php $projects = get_page_with_template('page-eat-drink');
 						 	 $projecturl= get_permalink($projects);
 						  	//if($projects) { ?>
+						  
 						  
 							<a class="gone" href="<?php echo $projecturl; ?>"><?php _e('Visit Our Restaurant Bar >','row-theme-text'); ?></a>
 													
 						</div>
 						
-					
-
-								<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
 						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,289); ?>);"></div>
@@ -414,7 +449,9 @@
 				
 					
 					<?php query_posts('post_type=page&p=457&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-											
+						
+					<img src="<?php bloginfo ('template_url'); ?>/images/street.jpg" alt="#">
+					
 					<div class="bigover">
 					
 						<h2 class="lumber h1"><?php the_title(); ?></h2>
@@ -475,6 +512,43 @@
 				
 				
 				<ul class="blogposts">					
+					
+					<!--
+					<?php $query = new WP_Query( array( 'post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 1
+					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					
+										
+					<li>
+					
+						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+								
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						
+						
+						<?php } elseif($imgsrc) { ?>
+						
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
+						
+						
+						<?php } else { ?>
+											
+						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
+						
+						<?php } ?>
+						
+						
+						
+						
+						<div class="littleover">
+							<h2 class="h1"><?php _e('Coming Soon','row-theme-text'); ?></h2>
+							
+			
+						</div>
+						
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>	
+				-->
 					
 					<?php query_posts('post_type=page&p=285&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
@@ -563,88 +637,75 @@
 						
 						<div class="littleover">
 							<h2 class="h1"><?php the_title(); ?></h2>
-							<p><?php the_content(); ?></p>
 							
+							<p><?php echo excerpt(20); ?></p>
 							
-							<p><a class="gone" href="http://citykitchen.rownyc.com/">Visit City Kitchen &gt;</a></p>
-							
-							<!-- <a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/"><?php _e('View Row NYC >','row-theme-text'); ?></a> -->
-													
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>	
+					
+					<?php query_posts('post_type=page&p=128&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					
+					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-								
-						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),657,400); ?>);"></div>
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						
 						
 						<?php } elseif($imgsrc) { ?>
 						
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
-						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],657,400); ?>);"></div>
 						
 						<?php } else { ?>
 											
-						<div class="stretch"  style="background-image: url(<?php bloginfo('url'); ?>/wp-content/uploads/2014/10/city-kitchen-tile.jpg);"></div>
-						
+						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
 						
 						<?php } ?>
-
-					</div>						
 						
-					<?php endwhile; endif; wp_reset_query(); ?>					
-					<div class="clear"></div>
-
-				</div>
-			
-			
-			</div>
-			
-			<div class="clear"></div>
-			
-			<div class="third-level">
-			
-				
-				<div class="leftside">
-					
-					
-					<?php query_posts('post_type=page&p=443&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-					
-					
-					<div class="picone">
-					
-						<div class="wideover overlay narrow">
-					
+						<div class="littleover">
 							<h2 class="h1"><?php the_title(); ?></h2>
-							<?php the_content(); ?>
 							
+							<p><?php echo excerpt(20); ?></p>
 							
-							<?php $projects = get_page_with_template('page-eat-drink');
-						 	 $projecturl= get_permalink($projects);
-						  	//if($projects) { ?>
-						  
-						  
-							<a class="gone" href="<?php echo $projecturl; ?>"><?php _e('Visit Our Restaurant Bar >','row-theme-text'); ?></a>
-													
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
 						</div>
 						
+					</li>
+					
+					<?php endwhile; endif; wp_reset_query(); ?>	
+					
+					<?php query_posts('post_type=page&p=242&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					
+					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-								
-						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,289); ?>);"></div>
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
+						
 						
 						<?php } elseif($imgsrc) { ?>
 						
+						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
 						
-						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,289); ?>);"></div>
 						
 						<?php } else { ?>
 											
-						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-						
+						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
 						
 						<?php } ?>
 						
-					</div>
+						<div class="littleover">
+							<h2 class="h1"><?php the_title(); ?></h2>
+							
+							<p><?php echo excerpt(20); ?></p>
+							
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('Learn More >','row-theme-text'); ?></a>
+						</div>
+						
+					</li>
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
 
@@ -678,12 +739,18 @@
 					</li>
 					
 					<?php endwhile; endif; wp_reset_query(); ?>						
-													
+					
+					
+									
+								
 				</ul>
 			
 			
 			
 			</div>
+			
+			
+
 
 
 
