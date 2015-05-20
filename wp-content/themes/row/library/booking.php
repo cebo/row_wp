@@ -67,23 +67,7 @@
 
 
 	$(document).ready(function() {
-		
-		$('#div_demo').videoBG({
-			mp4:'<?php bloginfo ('template_url'); ?>/assets/row_webber.mp4',
-			ogv:'<?php bloginfo ('template_url'); ?>/assets/row_webber.ogv',
-			webm:'<?php bloginfo ('template_url'); ?>/assets/row_webber.webm',
-			poster:'',
-			scale:true,
-			zIndex:0
-		});
-
-		if(Modernizr.touch) {
-			$('#div_demo.mobile').show(),
-			$('#div_demo.desktop').hide()
-		}
-		
-		
-			
+					
 		  $('#arrival_date').live('keyup',function() {
 		        var pronameval = $(this).val();
 		        $('#departure_date').val(pronameval.replace(/ /g, '-').toLowerCase());
