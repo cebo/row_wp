@@ -26,8 +26,7 @@
 <?php } ?>
 
 <script type="text/javascript">
-	
-	
+
 	function createURL() {
 		var checkin = jQuery("#arrival_date").val();
 		var checkout = jQuery("#departure_date").val();
@@ -222,9 +221,7 @@
 			    }
 			     
 			});
-			
-			// var tester = $("#arrival_date").val();
-			
+						
 			$('.departdatepicker').datepicker({
 			    dateFormat: 'yy-mm-dd',
 			    altField  : '#depee',
@@ -378,8 +375,6 @@
 			month[11]="December";
 			var n = month[d.getMonth()];
 			
-			// $("#arv").attr("placeholder", n);
-			// $("#dep").attr("placeholder", n);
 			$("#arv-1").attr("placeholder", n);
 			$("#dep-1").attr("placeholder", n);
 
@@ -432,19 +427,13 @@
 		$(".shutdown").click(function() {
 			$(".datepicker").addClass("super-ghost");
 			$(".departdatepicker").addClass("super-ghost");
-			$(this).removeClass("alldown");
 		});
 		
 		$(".cls").click(function() {
 			$(".datepicker").addClass("super-ghost");
 			$(".departdatepicker").addClass("super-ghost");
-			$(".shutdown").removeClass("alldown");
 		});
 		
-		$( "#departure_date" ).focus(function() {
-  			$(".departdatepicker").removeClass("super-ghost");
-		});
-
 
 	});
 	</script>
@@ -456,9 +445,7 @@
 		            $(this).parent().addClass("question-box-active");
 		        }
 		    });
-		});
-		
-		
+		});		
 	</script> 
 
 <!-- Lightbox -->	
@@ -481,7 +468,7 @@
 	   	opacity: 0.8,
 	   	allow_resize: true,
 	});
-				 	 
+			 	 
   });
 </script>
 
@@ -504,8 +491,6 @@
 		  	} else {
 		  		$(this).removeClass("appearmann")
 		  }
-		});
-		
-		
+		});		
 	});
 </script>
