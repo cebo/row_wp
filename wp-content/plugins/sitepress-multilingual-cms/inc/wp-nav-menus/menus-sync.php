@@ -6,6 +6,7 @@ class ICLMenusSync
 	var $menus;
 	var $is_preview = false;
 	var $sync_data = false;
+	var $string_translation_links = array();
 
 	function __construct()
 	{
@@ -16,17 +17,23 @@ class ICLMenusSync
 		}
 	}
 
-	function init()
-	{
-		$this->get_menus_tree();
+    function init() {
+        $action = filter_input( INPUT_POST, 'action' );
+        $nonce = filter_input( INPUT_POST, '_icl_nonce_menu_sync' );
 
-		if ( isset( $_POST[ 'action' ] ) && $_POST[ 'action' ] == 'icl_msync_preview' ) {
-			$this->is_preview = true;
-			$this->sync_data  = isset( $_POST[ 'sync' ] ) ? $_POST[ 'sync' ] : false;
-		} elseif ( isset( $_POST[ 'action' ] ) && $_POST[ 'action' ] == 'icl_msync_confirm' ) {
-			$this->do_sync( $_POST[ 'sync' ] );
-		}
-	}
+	    if ( $action && !wp_verify_nonce( $nonce, '_icl_nonce_menu_sync' ) ) {
+		    die( 'Invalid nonce' );
+	    }
+
+        $this->get_menus_tree();
+
+        if ( $action == 'icl_msync_preview' ) {
+            $this->is_preview = true;
+            $this->sync_data = isset( $_POST[ 'sync' ] ) ? $_POST[ 'sync' ] : false;
+        } elseif ( $action == 'icl_msync_confirm' ) {
+            $this->do_sync( $_POST[ 'sync' ] );
+        }
+    }
 
 	function get_menus_tree()
 	{
@@ -191,8 +198,8 @@ class ICLMenusSync
 							$translated_object_url_t = '';
 
 							if(function_exists('icl_t') && $this->string_translation_default_language_ok()) {
-								$translated_object_title_t = icl_t( $menu_name . ' menu', 'Menu Item Label ' . $item->ID, $item->post_title, $icl_st_label_exists, true );
-								$translated_object_url_t   = icl_t( $menu_name . ' menu', 'Menu Item URL ' . $item->ID, $item->url, $icl_st_url_exists, true );
+								$translated_object_title_t = icl_t( $menu_name . ' menu', 'Menu Item Label ' . $item->ID, $item->post_title, $icl_st_label_exists, true, $language[ 'code' ] );
+								$translated_object_url_t   = icl_t( $menu_name . ' menu', 'Menu Item URL ' . $item->ID, $item->url, $icl_st_url_exists, true, $language[ 'code' ] );
 							} elseif($translated_object_id && isset($item_translations[$language[ 'code' ]])) {
 								$translated_menu_id = $this->get_translated_menu_id($menu_id, $language[ 'code' ]);
 								$translated_menu_items = wp_get_nav_menu_items($translated_menu_id);
@@ -411,6 +418,8 @@ class ICLMenusSync
 		if ( is_array( $this->menus ) ) {
 			foreach ( $this->menus as $menu_id => $menu ) {
 
+                if(!is_array($menu['translations'])) continue;
+
 				foreach ( $menu[ 'translations' ] as $language => $tmenu ) {
 					if ( !empty( $tmenu ) ) {
 						foreach ( $tmenu[ 'items' ] as $titem ) {
@@ -535,7 +544,7 @@ class ICLMenusSync
 						wp_delete_post( $item_id, true );
 						$delete_trid = $sitepress->get_element_trid( $item_id, 'post_nav_menu_item' );
 						if ( $delete_trid ) {
-							$sitepress->delete_element_translation( $delete_trid, 'post_nav_menu_item', $language_code );
+							$sitepress->delete_element_translation( $delete_trid, 'post_nav_menu_item' );
 						}
 					}
 				}
@@ -618,8 +627,12 @@ class ICLMenusSync
 
 								$sitepress->switch_lang( $current_language, false );
 
-								if(!$icl_st_label_exists) icl_register_string($menu_name . ' menu', 'Menu Item Label ' . $item_id, $object_title);
-								if(!$icl_st_url_exists) icl_register_string($menu_name . ' menu', 'Menu Item URL ' . $item_id, $object_url);
+								if( !$icl_st_label_exists ) {
+									icl_register_string($menu_name . ' menu', 'Menu Item Label ' . $item_id, $object_title);
+								}
+								if( !$icl_st_url_exists ) {
+									icl_register_string($menu_name . ' menu', 'Menu Item URL ' . $item_id, $object_url);
+								}
 							} else {
 								$object_title = $name;
 							}
@@ -810,19 +823,21 @@ class ICLMenusSync
 			// deleted items #2 (menu order beyond)
 			static $d2_items = array();
 			$deleted_items = array();
-			foreach ( $this->menus[ $menu_id ][ 'translations' ] as $language => $tmenu ) {
+			if ( isset( $this->menus[ $menu_id ][ 'translation' ] ) && is_array( $this->menus[ $menu_id ][ 'translation' ] ) ) {
+				foreach ( $this->menus[ $menu_id ][ 'translations' ] as $language => $tmenu ) {
 
-				if ( !isset( $d2_items[ $language ] ) )
-					$d2_items[ $language ] = array();
-
-				if ( !empty( $this->menus[ $menu_id ][ 'translations' ][ $language ][ 'deleted_items' ] ) ) {
-					foreach ( $this->menus[ $menu_id ][ 'translations' ][ $language ][ 'deleted_items' ] as $deleted_item ) {
-						if ( !in_array( $deleted_item[ 'ID' ], $d2_items[ $language ] ) && $deleted_item[ 'menu_order' ] > count( $this->menus[ $menu_id ][ 'items' ] ) ) {
-							$deleted_items[ $language ][ ] = $deleted_item;
-							$d2_items[ $language ][ ]      = $deleted_item[ 'ID' ];
-						}
+					if ( ! isset( $d2_items[ $language ] ) ) {
+						$d2_items[ $language ] = array();
 					}
 
+					if ( ! empty( $this->menus[ $menu_id ][ 'translations' ][ $language ][ 'deleted_items' ] ) ) {
+						foreach ( $this->menus[ $menu_id ][ 'translations' ][ $language ][ 'deleted_items' ] as $deleted_item ) {
+							if ( ! in_array( $deleted_item[ 'ID' ], $d2_items[ $language ] ) && $deleted_item[ 'menu_order' ] > count( $this->menus[ $menu_id ][ 'items' ] ) ) {
+								$deleted_items[ $language ][ ] = $deleted_item;
+								$d2_items[ $language ][ ]      = $deleted_item[ 'ID' ];
+							}
+						}
+					}
 				}
 			}
 			if ( $deleted_items ) {
@@ -851,23 +866,25 @@ class ICLMenusSync
 			// show deleted item?
 			static $mo_added = array();
 			$deleted_items = array();
-			foreach ( $this->menus[ $menu_id ][ 'translations' ] as $language => $tmenu ) {
+            if(isset($this->menus[$menu_id]['translation']) && is_array($this->menus[$menu_id]['translation'])) {
+                foreach ( $this->menus[ $menu_id ][ 'translations' ] as $language => $tmenu ) {
 
-				if ( !isset( $mo_added[ $language ] ) )
-					$mo_added[ $language ] = array();
+                    if ( !isset( $mo_added[ $language ] ) )
+                        $mo_added[ $language ] = array();
 
-				if ( !empty( $this->menus[ $menu_id ][ 'translations' ][ $language ][ 'deleted_items' ] ) ) {
-					foreach ( $this->menus[ $menu_id ][ 'translations' ][ $language ][ 'deleted_items' ] as $deleted_item ) {
+                    if ( !empty( $this->menus[ $menu_id ][ 'translations' ][ $language ][ 'deleted_items' ] ) ) {
+                        foreach ( $this->menus[ $menu_id ][ 'translations' ][ $language ][ 'deleted_items' ] as $deleted_item ) {
 
-						if ( !in_array( $item[ 'menu_order' ], $mo_added[ $language ] ) && $deleted_item[ 'menu_order' ] == $item[ 'menu_order' ] ) {
-							$deleted_items[ $language ] = $deleted_item;
-							$mo_added[ $language ][ ]   = $item[ 'menu_order' ];
-							$need_sync++;
-						}
+                            if ( !in_array( $item[ 'menu_order' ], $mo_added[ $language ] ) && $deleted_item[ 'menu_order' ] == $item[ 'menu_order' ] ) {
+                                $deleted_items[ $language ] = $deleted_item;
+                                $mo_added[ $language ][ ]   = $item[ 'menu_order' ];
+                                $need_sync++;
+                            }
 
-					}
-				}
-			}
+                        }
+                    }
+                }
+            }
 
 			if ( $deleted_items ) {
 				?>
@@ -912,24 +929,28 @@ class ICLMenusSync
 									$this->operations[ 'mov' ] = empty( $this->operations[ 'mov' ] ) ? 1 : $this->operations[ 'mov' ]++;
 									$need_sync++;
 								} elseif ( $item_translation[ 'label_missing' ] ) {
+									$this->string_translation_links[$this->menus[$menu_id]['name']] = 1;
 									// item translation does not exist but is a custom item that will be created
 									echo '<span class="icl_msync_item icl_msync_label_missing">' . $item_translation[ 'title' ] . '</span>';
 									echo '<input type="hidden" name="sync[label_missing][' . $menu_id . '][' . $item[ 'ID' ] . '][' . $language[ 'code' ] . ']" value="' . esc_attr( $item_translation[ 'title' ] ) . '" />';
 									$this->operations[ 'label_missing' ] = empty( $this->operations[ 'label_missing' ] ) ? 1 : $this->operations[ 'label_missing' ]++;
 									$need_sync++;
 								} elseif ( $item_translation[ 'label_changed' ] ) {
+									$this->string_translation_links[$this->menus[$menu_id]['name']] = 1;
 									// item translation does not exist but is a custom item that will be created
 									echo '<span class="icl_msync_item icl_msync_label_changed">' . $item_translation[ 'title' ] . '</span>';
 									echo '<input type="hidden" name="sync[label_changed][' . $menu_id . '][' . $item[ 'ID' ] . '][' . $language[ 'code' ] . ']" value="' . esc_attr( $item_translation[ 'title' ] ) . '" />';
 									$this->operations[ 'label_changed' ] = empty( $this->operations[ 'label_changed' ] ) ? 1 : $this->operations[ 'label_changed' ]++;
 									$need_sync++;
 								} elseif ( $item_translation[ 'url_missing' ] ) {
+									$this->string_translation_links[$this->menus[$menu_id]['name']] = 1;
 									// item translation does not exist but is a custom item that will be created
 									echo '<span class="icl_msync_item icl_msync_url_missing">' . $item_translation[ 'url' ] . '</span>';
 									echo '<input type="hidden" name="sync[url_missing][' . $menu_id . '][' . $item[ 'ID' ] . '][' . $language[ 'code' ] . ']" value="' . esc_attr( $item_translation[ 'url' ] ) . '" />';
 									$this->operations[ 'url_missing' ] = empty( $this->operations[ 'url_missing' ] ) ? 1 : $this->operations[ 'url_missing' ]++;
 									$need_sync++;
 								} elseif ( $item_translation[ 'url_changed' ] ) {
+									$this->string_translation_links[$this->menus[$menu_id]['name']] = 1;
 									// item translation does not exist but is a custom item that will be created
 									echo '<span class="icl_msync_item icl_msync_url_changed">' . $item_translation[ 'url' ] . '</span>';
 									echo '<input type="hidden" name="sync[url_changed][' . $menu_id . '][' . $item[ 'ID' ] . '][' . $language[ 'code' ] . ']" value="' . esc_attr( $item_translation[ 'url' ] ) . '" />';

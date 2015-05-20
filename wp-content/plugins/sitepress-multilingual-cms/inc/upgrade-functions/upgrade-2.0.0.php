@@ -74,8 +74,12 @@ function icl_upgrade_2_0_0_steps($step, $stepper){
 
             //loop existing translations
 			if ( isset( $types ) ) {
-				$res = mysql_query("SELECT * FROM {$wpdb->prefix}icl_translations WHERE element_type IN('".join("','", $types)."') AND source_language_code IS NULL LIMIT " . $limit . "  OFFSET " . $offset);
-				while($row = mysql_fetch_object($res)){
+				$res = $wpdb->get_results( $wpdb->prepare(
+								"SELECT * FROM {$wpdb->prefix}icl_translations
+                                 WHERE element_type IN(" . wpml_prepare_in( $types ) . " )
+                                    AND source_language_code IS NULL LIMIT %d  OFFSET %d", array($limit, $offset)
+												)); 
+				foreach( $res as $row){
 					$processing = TRUE;
 					// grab translations
 					$translations = $sitepress->get_element_translations($row->trid, $row->element_type);
@@ -183,7 +187,7 @@ function icl_upgrade_2_0_0_steps($step, $stepper){
                 	$sitepress->save_settings($iclsettings);
 				}
 
-                mysql_query("DROP TABLE {$wpdb->prefix}icl_plugins_texts");
+                $wpdb->query("DROP TABLE {$wpdb->prefix}icl_plugins_texts");
             }
 
             $iclsettings['language_selector_initialized'] = 1;
