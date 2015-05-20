@@ -426,10 +426,7 @@
 				
 					<span class="arrv">
 						<div class="squaredance">
-							<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" class="calendarsection" />
-							<!-- <input type="text" id="arv"> -->
-							<!-- <input type="text" id="arve"> -->
-							
+							<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" class="calendarsection" />							
 							<i class="fa fa-calendar"></i>
 						</div>
 						
@@ -463,7 +460,7 @@
 					</span>
 
 					<div class="butonconton">
-						<a href="#" class="button"><?php _e('Reserve Now','row-theme-text'); ?></a>
+						<button type="submit" class="button"><?php _e('Reserve Now','row-theme-text'); ?></button>
 					</div>
 					<div class="clear"></div>
 					<span class="dept">

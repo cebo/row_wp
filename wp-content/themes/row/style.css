@@ -1374,7 +1374,7 @@ ul#selectUl li.unselected:hover {
 .squaredance.select {
     border: 0 none;
     overflow: hidden;
-    padding: 8px 11px;
+    padding: 10px 11px;
 }
 
 .squaredance i {
@@ -1619,17 +1619,10 @@ ul#selectUl li.unselected:hover {
 }
 
 .banner .header-contact {
-<<<<<<< HEAD
-  padding-top: 20px;
-  position: absolute;
-  text-align: center;
-  top: 20px;
-=======
   padding-top: 0px;
   position: absolute;
   text-align: center;
   top: 30px;
->>>>>>> Homepage-Changes
   z-index: 999;
   /* width: 310px; */
   width: 280px;
@@ -1669,11 +1662,7 @@ ul#selectUl li.unselected:hover {
     position: relative;
     right: 0;
     width: 530px;
-<<<<<<< HEAD
-    top: -9px;
-=======
     top: 0px;
->>>>>>> Homepage-Changes
     z-index: 999999;
 }
 
@@ -1691,10 +1680,15 @@ ul#selectUl li.unselected:hover {
 }
 
 .booking .button {
+    box-sizing: initial;
+	-moz-box-sizing: initial;
+	-webkit-box-sizing: initial;
+	-ms-box-sizing: initial;
     float: left;
     font-size: 12px;
-    padding: 11px 10px 10px;
+    line-height: 1.2;
     margin-bottom: 5px;
+    padding: 11px 10px 10px;
 }
 
 .banner p a {
@@ -1729,11 +1723,7 @@ ul#selectUl li.unselected:hover {
 
 .contacto span {
     color: #fff;
-<<<<<<< HEAD
-    font-family: "GothamBold";
-=======
     /* font-family: "GothamBold"; */
->>>>>>> Homepage-Changes
     font-size: 12px;
     /* font-weight: bold; */
     margin: 2px 0 0 3px;
@@ -2243,11 +2233,15 @@ visibility: hidden;
 	padding-right: 10px;
 	text-align: left;
 	height: 45px;
-	overflow: scroll;
+	overflow: hidden;
 	transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
+}
+
+.paperbox.paperdup {
+	overflow: scroll;
 }
 
 .paperdup {
@@ -7152,11 +7146,7 @@ a.detailsAnchor {
 /* ==================== banner edits =========================== */
 
 .logo p {
-<<<<<<< HEAD
-	font-family: "GothamMedium";
-=======
 	font-family: "GothamBook";
->>>>>>> Homepage-Changes
 	letter-spacing: 0.2px; 
 }
 
@@ -7172,8 +7162,6 @@ a.detailsAnchor {
   color: #000;
 }
 
-<<<<<<< HEAD
-=======
 p.contacto a {
   color: #fff;
 }
@@ -7183,7 +7171,7 @@ p.contacto a {
 }
 
 
->>>>>>> Homepage-Changes
+
 /* ==================== scroller bar ========================== */
 
 

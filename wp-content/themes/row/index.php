@@ -36,7 +36,7 @@
 					<?php 
 						query_posts(array(				
 							'post_type' => 'page',
-							'p' => 6221,
+							'p' => 6308,
 						)); 
 
 						if(have_posts()) : while(have_posts()) : the_post();
