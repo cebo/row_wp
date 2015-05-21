@@ -1605,6 +1605,7 @@ ul#selectUl li.unselected:hover {
 .contentarea {
 	/* background: url(images/bg.jpg); */
 	background-color: #fff;
+	padding-top: 135px;
 }
 	
 .banner {
@@ -2503,6 +2504,7 @@ visibility: hidden;
     overflow: hidden;
     position: relative;
     width: 100%;
+    padding-top: 135px;
 }
 
 .video-play i {
