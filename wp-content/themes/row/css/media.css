@@ -594,12 +594,13 @@ and (max-width : 1024px) {
 
 /* ================================================ 768 ======================================= */
 
-@media only screen 
-and (max-width : 900px) {
-
-
+@media only screen and (max-width : 900px) {
 
 	/* Header */
+
+	.banner .logo {
+		top: 14px;
+	}
 
 	.banner p a:before {
 	    content: "- ";
@@ -611,10 +612,10 @@ and (max-width : 900px) {
 	}
 
 	.banner p {
-	    line-height: 4;
-	    padding: 5px 4% 5px 0;
-	    width: 45%;
 	    font-size: 11px;
+	    line-height: 1;
+	    padding: 5px 0;
+	    width: 100%;
 	}
 
 	.banner p.contacto {
