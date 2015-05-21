@@ -382,7 +382,7 @@
 		<div class="header-contact">
 			
 			<p class="contacto"><?php _e('Reservations:','row-theme-text'); ?> <span style="font-family: 'GothamBold';">888.352.3650</span></p>
-			<p class="contacto"><i class="fa fa-map-marker"></i> <span>700 8th Avenue, New York, NY 10036</span></p>			
+			<p class="contacto"><i class="fa fa-map-marker"></i> <a href="https://www.google.com/maps/place/Row+NYC/@40.758695,-73.988284,17z/data=!3m1!4b1!4m2!3m1!1s0x89c25854799df1f7:0x8890505e02666256" target="_blank"><span>700 8th Avenue, New York, NY 10036</span></a></p>			
 			<p class="contacto"><a class="group-booking" target="_blank" href="https://rownyc.groupize.com/properties/25047/groups">Group Booking (10+)</a></p>
 			<!-- <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a> -->
 

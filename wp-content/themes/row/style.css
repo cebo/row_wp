@@ -1720,6 +1720,9 @@ ul#selectUl li.unselected:hover {
 .banner p.contacto span {
 	color: #fff;
 }
+	p.contacto > a:hover span {
+	    color: #ff27ab;
+	}
 
 .contacto span {
     color: #fff;
