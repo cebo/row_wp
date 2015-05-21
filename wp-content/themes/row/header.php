@@ -85,6 +85,8 @@
 
 <?php } ?>
 
+<!-- Scripts -->
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
 <?php include(TEMPLATEPATH . '/library/scripts.php'); ?>
 <?php include(TEMPLATEPATH . '/library/booking.php'); ?>
 

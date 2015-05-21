@@ -111,8 +111,7 @@
 
 
 
-<!-- Scripts -->
-<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
+
 
 <!-- the jScrollPane script -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.jscrollpane.min.js"></script>
