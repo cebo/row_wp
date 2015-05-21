@@ -738,7 +738,7 @@
         					'taxonomy' => 'loctype',
         					'term' => $mystring,
         					'posts_per_page' => -1,
-                  'suppress_filters' => 1,)
+        					)
         					); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 				
     				<div class="listed-content">
@@ -746,12 +746,12 @@
     					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
     		
     		
-    					<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>" width="212" /></a>
+    					<a href="<?php the_permalink(); ?>"><img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),212,102); ?>" width="212" /></a>
     					
     					<?php } elseif($imgsrc) { ?>
     					
     					
-    					<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" width="212" /></a>
+    					<a href="<?php the_permalink(); ?>"><img src="<?php echo tt($imgsrc[0],212,102); ?>" width="212" /></a>
     					
     					<?php } else { ?>
     										
