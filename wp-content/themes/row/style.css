@@ -7177,8 +7177,10 @@ p.contacto a {
 
 
 
-/* ==================== scroller bar ========================== */
+/* ==================== homepage edits ========================== */
 
-
+.home .contentarea {
+  padding-top: 10px;
+}
 
 
