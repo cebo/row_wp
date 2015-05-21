@@ -405,7 +405,7 @@
 							
 							<p style="padding: 10px 0;"><?php echo excerpt(15); ?></p>
 						  
-							<a class="gone" href="<?php bloginfo('url'); ?>/gallery/row-nyc-photos/"><?php _e('View Post >','row-theme-text'); ?></a>
+							<a class="gone" href="<?php the_permalink(); ?>"><?php _e('View Post >','row-theme-text'); ?></a>
 
 						</div>
 						
