@@ -1127,6 +1127,7 @@ nav#menu.mobile {
     padding: 10px 20px;
     text-transform: uppercase;
     width: 65%;
+    color: #fff;
 }
 
 .exclusive-offer input[type=submit] {
