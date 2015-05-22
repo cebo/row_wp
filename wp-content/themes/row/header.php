@@ -76,6 +76,33 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<?php if(get_post_type() == 'imagegalleries') { ?>
+
+		<!-- Flex Slider -->
+		<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$('.flexslider-gallery').flexslider({
+					animation: "slide",
+					animationSpeed: 1500,
+					controlNav: true,
+					startAt: 0,
+				});
+
+			  $('.flexslider').flexslider({
+			    animation: "slide",
+			    animationSpeed: 800,
+			    pauseOnAction: false,
+			    controlNav: true,
+			    startAt: 0,
+			  });
+
+			});
+		</script>
+
+	<?php } ?>
+	
 
 <?php if( !is_home() || !is_front_page() ) { ?>
 
@@ -275,13 +302,20 @@
 			</div>
 
 			<div class="exclusive-offer">
-
-				<form>
-					<input type="text" placeholder="<?php _e('Exclusive Offer Signup', 'row-theme-text'); ?>">
-					<button type="submit" value=""><i class="fa fa-caret-right"></i></button>
+				
+				<form action="//sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				
+				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required placeholder="<?php _e('Exclusive Offer Signup', 'row-theme-text'); ?>">
+				<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				<div style="position: absolute; left: -5000px;"><input type="text" name="b_ae5d0eb33650e5a9963ca5a3e_1054dd91b3" tabindex="-1" value=""></div>
+				<i class="fa fa-caret-right"></i>
+				<input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="fa fa-caret-right">
+				
 				</form>
 
-			</div>
+
+
+				</div>
 
 			<p><?php _e('High Speed Wifi Access Available','row-theme-text'); ?></p>
 		

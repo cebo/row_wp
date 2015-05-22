@@ -1129,7 +1129,19 @@ nav#menu.mobile {
     width: 65%;
 }
 
-.exclusive-offer button i {
+.exclusive-offer input[type=submit] {
+  position: absolute;
+  padding: 0;
+  width: 24px;
+  right: 15px;
+  height: 37px;
+  z-index: 999;
+  cursor: pointer;
+  border: none;
+}
+  
+  
+.exclusive-offer i {
     color: #ff27ab;
     cursor: pointer;
     font-size: 20px;
