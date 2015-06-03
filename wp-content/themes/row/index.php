@@ -201,7 +201,6 @@
 						
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
-								
 						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),657,518); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
