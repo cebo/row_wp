@@ -338,32 +338,6 @@ var google_remarketing_only = true;
 
 	<?php } ?>
 
-	<?php if(get_post_type() == 'imagegalleries') { ?>
 
-		<!-- Flex Slider -->
-		<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-
-				$('.flexslider-gallery').flexslider({
-					animation: "slide",
-					animationSpeed: 1500,
-					controlNav: true,
-					startAt: 0,
-				});
-
-			  $('.flexslider').flexslider({
-			    animation: "slide",
-			    animationSpeed: 800,
-			    pauseOnAction: false,
-			    controlNav: true,
-			    startAt: 0,
-			  });
-
-			});
-		</script>
-
-	<?php } ?>
-	
 </body>
 </html>
