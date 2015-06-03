@@ -8,94 +8,49 @@
 
 
 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-
-
-
-	<?php if(get_post_meta($post->ID, 'cebo_pulled_photos', true)) { ?>
-
-		<div id="bosco-box" class="home-intro bosco-box">
-
-			<?php
-
-				// include(TEMPLATEPATH . '/library/dropbox-utils.php'); 
-
-				// /** settings **/
-				// $images_dir = 'https://www.dropbox.com/sh/3coxz0uzkhfi9ej/AABpY7uKqCd_kGJWA0tzLYITa';
-				// $thumbs_dir = bloginfo('template_url') . '/images/bosco-box/';
-				// $thumbs_width = 200;
-				// $images_per_row = 3;
-
-				
-				// /** generate photo gallery **/
-				// $image_files = get_files($images_dir);
-				// if(count($image_files)) {
-				//   $index = 0;
-				//   foreach($image_files as $index=>$file) {
-				//     $index++;
-				//     $thumbnail_image = $thumbs_dir.$file;
-				//     if(!file_exists($thumbnail_image)) {
-				//       $extension = get_file_extension($thumbnail_image);
-				//       if($extension) {
-				//         make_thumb($images_dir.$file,$thumbnail_image,$thumbs_width);
-				//       }
-				//     }
-				//     echo '<a href="',$images_dir.$file,'" class="photo-link smoothbox" rel="gallery"><img src="',$thumbnail_image,'" /></a>';
-				//     if($index % $images_per_row == 0) { echo '<div class="clear"></div>'; }
-				//   }
-				//   echo '<div class="clear"></div>';
-				// }
-				// else {
-				//   echo '<p>There are no images in this gallery.</p>';
-				// }
-
-			?>
-
-			<?php 
-
-				$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
-				foreach ( $repeatable_fields as $field ) { 
-
-			?>
-
-				<div class="bosco-photo" style="background-image: url(<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); ?>);"></div>						
-
-			<?php
-
-				}
-
-			?>
-
-			
-
-		<?php } elseif(get_post_meta($post->ID, 'cebo_fullbannerpic', true)) { ?>
-
-			<div class="home-intro">
-								
-			<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullbannerpic', true); ?>);"></div>
-		
-		<?php } elseif(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-
-			<div class="home-intro">
-										
-			<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>			
-		
-		<?php } elseif($imgsrc) { ?>
-
-			<div class="home-intro">
-		
-			<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
-		
-		<?php } else { ?>
-
-			<div class="home-intro">
-							
-			<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-	
-		<?php } ?>
-	
-	</div>	
 	
 	<section class="contentarea">
+
+		<?php if(get_post_meta($post->ID, 'cebo_pulled_photos', true)) { ?>
+
+			<div id="bosco-box" class="home-intro bosco-box">
+
+				<?php 
+					$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
+					foreach ( $repeatable_fields as $field ) { 
+				?>
+
+					<div class="bosco-photo" style="background-image: url(<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); ?>);"></div>						
+
+				<?php } ?>				
+
+			<?php } elseif(get_post_meta($post->ID, 'cebo_fullbannerpic', true)) { ?>
+
+				<div class="home-intro">
+									
+				<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullbannerpic', true); ?>);"></div>
+			
+			<?php } elseif(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+
+				<div class="home-intro">
+											
+				<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>			
+			
+			<?php } elseif($imgsrc) { ?>
+
+				<div class="home-intro">
+			
+				<div class="stretch"  style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+			
+			<?php } else { ?>
+
+				<div class="home-intro">
+								
+				<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+		
+			<?php } ?>
+		
+		</div>	
 						
 		<div class="page-content">
 

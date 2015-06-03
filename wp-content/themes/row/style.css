@@ -800,7 +800,6 @@ h4 {
 	position: relative;
 	margin-left: 300px;
 	background: #ddd;
-	height: auto;
 	z-index: 1;
 }
 
@@ -3063,10 +3062,6 @@ visibility: hidden;
 
 /* General Single Styles ---------------------------------------------------- */
 
-.single .contentarea, .page .contentarea {
-	height: auto;
-}
-
 .single .page-content.alt-page-content {
     background: none repeat scroll 0 0 #FFFFFF;
     padding: 30px;
@@ -3383,7 +3378,7 @@ visibility: hidden;
 
 .page-content {
 	background: none repeat scroll 0 0 #FFFFFF;
-    height: 100%;
+    height: auto;
     overflow: hidden;
     position: relative;
 }

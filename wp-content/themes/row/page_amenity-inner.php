@@ -4,16 +4,15 @@
 
 */
  get_header(); ?>
-
-
-
-	<div class="home-intro">
-							
-		<div class="stretch"  style="background-image: url(images/amenities/amenities-photo-1.jpg);"></div>
 	
-	</div>	
 	
 	<section class="contentarea">
+
+		<div class="home-intro">
+							
+			<div class="stretch"  style="background-image: url(images/amenities/amenities-photo-1.jpg);"></div>
+		
+		</div>
 						
 		<div class="page-content">
 

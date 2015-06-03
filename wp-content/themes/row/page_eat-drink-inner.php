@@ -6,20 +6,20 @@
  get_header(); ?>
 
 
-	<div class="home-intro">
+	<section class="contentarea">
 
-		<div class="wideover overlay">
-					
-			<h1>District M</h1>
-			<h2>www.districtm.com</h2>
+		<div class="home-intro">
+
+			<div class="wideover overlay">
+						
+				<h1>District M</h1>
+				<h2>www.districtm.com</h2>
+			
+			</div>
+								
+			<div class="stretch"  style="background-image: url(images/eat-drink/eat-drink-photo-3.jpg);"></div>
 		
 		</div>
-							
-		<div class="stretch"  style="background-image: url(images/eat-drink/eat-drink-photo-3.jpg);"></div>
-	
-	</div>
-	
-	<section class="contentarea">
 
 		<div class="photo-list">
 			<ul>

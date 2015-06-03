@@ -21,36 +21,32 @@
 
 				)); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 			        ?>
- 
- 
-	<div class="home-intro">
-		
-		
-		<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-		
-		
-		<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
-		
-		<?php } elseif($imgsrc) { ?>
-		
-		
-		<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
-		
-		<?php } else { ?>
-							
-		<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-		
-		
-		<?php } ?>	
-		
-		
-	</div>	
-	
-	
-	
-	
+ 	
 	<section class="contentarea">
-						
+
+		<div class="home-intro">
+		
+		
+			<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+			
+			
+			<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+			
+			<?php } elseif($imgsrc) { ?>
+			
+			
+			<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+			
+			<?php } else { ?>
+								
+			<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+			
+			
+			<?php } ?>	
+			
+			
+		</div>	
+							
 		<div class="page-content">
 
 			<h1><?php the_title(); ?></h1>
@@ -74,16 +70,6 @@
 			<!-- amenities -->
 
 				<li class="deal">
-<<<<<<< HEAD
-
-					<div class="deal-photo" style="background-image: url(http://rownyc.com/wp-content/uploads/2014/03/district_m_1140x495.jpg);"></div>	
-
-						<div class="deal-wrapper">
-
-						<h1>Amenities</h1>
-						<p></p><p>Inspired amenities abound at the Row NYC. Our restaurant, District M, is a European express café by day and a Neopolitan pizza bar and cocktail lounge by night, offering a curated selection of delicious food, coffee, cocktails and more…</p><p></p>
-
-=======
 				
 					<div class="deal-photo" style="background-image: url(http://rownyc.com/wp-content/uploads/2014/03/district_m_1140x495.jpg);"></div>		
 	
@@ -93,18 +79,12 @@
 	
 						<p></p><p>Inspired amenities abound at the Row NYC. Our restaurant, District M, is a European express café by day and a Neopolitan pizza bar and cocktail lounge by night, offering a curated selection of delicious food, coffee, cocktails and more…</p><p></p>
 	
->>>>>>> Homepage-Changes
 						<div class="button-wrapper" style="margin: 10px 0 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="http://rownyc.com/times-square-hotels/amenities/">Read More</a></div>
 
 						<div class="wonder-vertical"></div>
 
-<<<<<<< HEAD
-						</div>
-						
-=======
 					</div>
 
->>>>>>> Homepage-Changes
 				</li>
 
 			<!-- end amenities -->
