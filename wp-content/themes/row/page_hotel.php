@@ -71,9 +71,9 @@
 
 				<li class="deal">
 				
-					<!-- <div class="deal-photo" style="background-image: url(http://rownyc.com/wp-content/uploads/2014/03/district_m_1140x495.jpg);"></div> -->		
+					<div class="deal-photo" style="background-image: url(http://rownyc.com/wp-content/uploads/2014/03/district_m_1140x495.jpg);"></div> 	
 	
-					<div class="">
+					<div class="deal-wrapper">
 					
 						<h1>Amenities</h1>
 	
