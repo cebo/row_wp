@@ -41,7 +41,7 @@
 						<h1><?php the_title(); ?></h1>
 						
 			
-							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
+							<p><?php echo excerpt(18); ?>. <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
 							
 							
 						</div>
@@ -87,7 +87,7 @@
 						<h1><?php the_title(); ?></h1>
 						
 				
-							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>">MORE ></a></p>
+							<p><?php the_content(); ?><a href="<?php the_permalink(); ?>">MORE ></a></p>
 							
 							
 						</div>
@@ -133,7 +133,8 @@
 						<h1><?php the_title(); ?></h1>
 						
 					
-							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>">MORE ></a></p>
+							<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?>.
+							<br /> <a href="<?php the_permalink(); ?>">MORE ></a></p>
 							
 							
 						</div>
@@ -175,15 +176,15 @@
 						<h1><?php the_title(); ?></h1>
 						
 				
-							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>">MORE ></a></p>
+							<p>Iconic M is our one-stop-shop for every day essentials.<br /> <a href="<?php the_permalink(); ?>">MORE ></a></p>
 							
 							
 						</div>
 					
-					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+					<?php if(get_post_meta($post->ID, 'cebo_fullbannerpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),556,320); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullbannerpic', true),556,320); ?>);"><a href="<?php the_permalink(); ?>" style="height: 100%; width: 100%;"></a></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
@@ -220,7 +221,8 @@
 						
 							<h1><?php the_title(); ?></h1>
 				
-							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
+							<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?><br />
+							 <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
 										
 						</div>
 						
@@ -256,7 +258,7 @@
 						
 							<h1><?php the_title(); ?></h1>
 				
-							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
+							<p><?php echo excerpt(15); ?>. <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
 										
 						</div>
 						
@@ -293,7 +295,7 @@
 						
 							<h1><?php the_title(); ?></h1>
 				
-							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
+							<p>An indoor cycling method coming to Row NYC this summer! <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
 										
 						</div>
 						
@@ -330,7 +332,7 @@
 						
 							<h1><?php the_title(); ?></h1>
 				
-							<p><?php echo excerpt(20); ?>. <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
+							<p>An express styling bar for people on the go, coming to Row NYC this summer! <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
 										
 						</div>
 						
