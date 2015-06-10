@@ -7159,3 +7159,27 @@ p.contacto a {
 .group-booking a:hover {
 	color: #ff27ab;
 }
+
+/* SMALL EDITS ++++++++++++++++++++++++++++++++ */
+
+.page .third-level {
+  margin-bottom: 12px;
+}
+
+.home .third-level {
+	margin-bottom: 10px;
+}
+
+
+.leftsider {
+  height: 100%;
+  width: 58.5%;
+  float: left;
+}
+
+.rightsider {
+  height: 100%;
+  width: 40.5%;
+  float: right;
+}
+
