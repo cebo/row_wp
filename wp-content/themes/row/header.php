@@ -117,8 +117,8 @@
 <?php include(TEMPLATEPATH . '/library/scripts.php'); ?>
 <?php include(TEMPLATEPATH . '/library/booking.php'); ?>
 
-<?php if(is_home()) { ?>
-
+<?php if(is_home() || is_front_page()): ?>
+<?php else: ?>
 	<!-- Sojern -->
 	<script>
 	(function () {
@@ -131,7 +131,7 @@
 	</script>
 	<!-- End Sojern -->
 
-<?php } ?>
+<?php endif;  ?>
 
 	<!-- Plugin CSS -->
 	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/plugin.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"/>
