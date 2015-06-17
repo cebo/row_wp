@@ -110,7 +110,76 @@
 </div>
 
 
+<?php
+	if ( is_front_page() && is_home() ) {} 
+	elseif ('rooms' == get_post_type() || 'specials' == get_post_type()){ 
+?>
+	<!-- Sojern Tag v3 -->
+	<script>
+		(function () {
+			// Please fill the following values.
+			var params = {
+				hc1: "New York", // Destination City
+				hpr: "Row NYC Hotel", // Hotel Property
+				hc: "<?php the_title(); ?>", // Room type
+				hpid: "71", // Property ID
+				pn: "<?php the_title(); ?>", // Product Name
+				domain: "http://rownyc.com" // Site Domain
+			};
 
+			// Please do not modify the below code.
+			var cid = [];
+			var version = '3';
+			var paramsArr = ['v=' + version];
+			var cidParams = ["hconfno","hp","hd1","hd2","hpid","hb","hpr","hdc"];
+			var pl = document.createElement('script');
+			var defaultParams = {"vid":"hot","et":"hpr"};
+			for(key in defaultParams) { params[key] = defaultParams[key]; };
+			for(key in cidParams) { cid.push(params[cidParams[key]]); };
+			params.cid = cid.join('|');
+			for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+			pl.type = 'text/javascript';
+			pl.async = true;
+			pl.src = 'https://beacon.sojern.com/pixel/p/5925?' + paramsArr.join('&');
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+		})();
+	</script>
+	<!-- End Sojern Tag -->
+<?php }	else { ?>
+     	<!-- Sojern Tag v3 -->
+	<script>
+		(function () {
+		    // Please fill the following values.
+		    var params = {
+		       pname: "<?php the_title(); ?>", // Page Name
+		       domain: "http://rownyc.com", // Site Domain
+		       pc: "<?php
+						if (has_category()) {
+						    $category = get_the_category();
+						    echo $category[0]->cat_name;
+						} else { echo 'uncategorized'; }
+					?>" // Page Category
+		    };
+
+			// Please do not modify the below code.
+			var cid = [];
+			var version = '3';
+			var paramsArr = ['v=' + version];
+			var cidParams = ["hconfno","hp","hd1","hd2","hpid","hb","hpr","hdc"];
+			var pl = document.createElement('script');
+			var defaultParams = {"vid":"hot"};
+			for(key in defaultParams) { params[key] = defaultParams[key]; };
+			for(key in cidParams) { cid.push(params[cidParams[key]]); };
+			params.cid = cid.join('|');
+			for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+			pl.type = 'text/javascript';
+			pl.async = true;
+			pl.src = 'https://beacon.sojern.com/pixel/p/5923?' + paramsArr.join('&');
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+		})();
+	</script>
+	<!-- End Sojern Tag -->
+<?php } ?>
 
 
 <!-- the jScrollPane script -->
@@ -148,6 +217,79 @@
 			 	 
   });
 </script>
+
+<?php wp_reset_query(); ?>
+<?php if(is_home() || is_front_page()): ?>
+     <!-- Do the things here... -->
+<?php elseif ('rooms' == get_post_type() || 'specials' == get_post_type()) :?>
+	<!-- Sojern Tag v3 -->
+	<script>
+		(function () {
+			// Please fill the following values.
+			var params = {
+				hc1: "New York", // Destination City
+				hpr: "Row NYC Hotel", // Hotel Property
+				hc: "Room / Deal Title", // Room type
+				hpid: "71", // Property ID
+				domain: "http://rownyc.com" // Site Domain
+				pn: "<?php the_title(); ?>", // Product Name
+			};
+
+			// Please do not modify the below code.
+			var cid = [];
+			var version = '3';
+			var paramsArr = ['v=' + version];
+			var cidParams = ["hconfno","hp","hd1","hd2","hpid","hb","hpr","hdc"];
+			var pl = document.createElement('script');
+			var defaultParams = {"vid":"hot","et":"hpr"};
+			for(key in defaultParams) { params[key] = defaultParams[key]; };
+			for(key in cidParams) { cid.push(params[cidParams[key]]); };
+			params.cid = cid.join('|');
+			for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+			pl.type = 'text/javascript';
+			pl.async = true;
+			pl.src = 'https://beacon.sojern.com/pixel/p/5925?' + paramsArr.join('&');
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+		})();
+	</script>
+	<!-- End Sojern Tag -->
+<?php else: ?>
+     	<!-- Sojern Tag v3 -->
+	<script>
+		(function () {
+		    // Please fill the following values.
+		    var params = {
+		       pname: "<?php the_title(); ?>", // Page Name
+		       domain: "http://rownyc.com" // Site Domain
+		       pc: "<?php
+						if (has_category()) {
+						    $category = get_the_category();
+						    echo $category[0]->cat_name;
+						} else { echo 'uncategorized'; }
+					?>" // Page Category
+		    };
+
+			// Please do not modify the below code.
+			var cid = [];
+			var version = '3';
+			var paramsArr = ['v=' + version];
+			var cidParams = ["hconfno","hp","hd1","hd2","hpid","hb","hpr","hdc"];
+			var pl = document.createElement('script');
+			var defaultParams = {"vid":"hot"};
+			for(key in defaultParams) { params[key] = defaultParams[key]; };
+			for(key in cidParams) { cid.push(params[cidParams[key]]); };
+			params.cid = cid.join('|');
+			for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+			pl.type = 'text/javascript';
+			pl.async = true;
+			pl.src = 'https://beacon.sojern.com/pixel/p/5923?' + paramsArr.join('&');
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+		})();
+	</script>
+	<!-- End Sojern Tag -->
+<?php endif;  ?>
+
+
 
 <?php wp_footer(); ?>
 
