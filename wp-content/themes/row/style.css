@@ -2271,10 +2271,6 @@ visibility: hidden;
 	height: 100%;
 }
 
-.textbox {    
-	height: 22% !important;
-}
-
 .innerbox .copie .fa {
 	left: 0;
 	background: transparent;
@@ -2560,7 +2556,7 @@ visibility: hidden;
 	}
 
 .second-level {
-	height: 910px;
+	height: 970px;
 }
 
 
@@ -2663,6 +2659,9 @@ visibility: hidden;
 	overflow: hidden;
 }
 
+.textbox {
+	height: 22%;
+}
 
 .rightside {
 	height: 100%;
