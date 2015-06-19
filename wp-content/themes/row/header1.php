@@ -68,6 +68,7 @@
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.mmenu.min.js"></script>
 
 <!-- Scripts -->
+<script src="https://theguestbook.com/custom_widget.js?w=rownyc" type="text/javascript"></script>
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
 
 <script type="text/javascript">

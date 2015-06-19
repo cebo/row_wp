@@ -114,6 +114,7 @@
 
 <!-- Scripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
+<script src="https://theguestbook.com/custom_widget.js?w=rownyc" type="text/javascript"></script>
 <?php include(TEMPLATEPATH . '/library/scripts.php'); ?>
 <?php include(TEMPLATEPATH . '/library/booking.php'); ?>
 

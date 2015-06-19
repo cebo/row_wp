@@ -136,16 +136,23 @@
 					<div class="textbox">
 						
 						<div class="innerbox">
+
 						
 							<?php $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 									<h2>This Week's Deal</h2>
 								
-								<?php query_posts('post_type=specials&posts_per_page=5'); if(have_posts()) : while(have_posts()) : the_post(); ?>
-								
-								
+								<?php query_posts('post_type=specials&posts_per_page=6'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+								<?php 
+
+									$title = get_the_title();
+									$slug_comp = sanitize_title($title); 
+
+								?>	
+
 								<div class="copie">
 									
-								
+									
 								
 									<h3><?php the_title(); ?>
 										<?php if(get_post_meta($post->ID, 'cebo_callout', true)) { ?>
@@ -161,6 +168,12 @@
 
 									<?php } ?>
 									
+									<?php if( $slug_comp == '5-cash-back' ) { ?>
+
+									<div id="theguestbook_widget"></div>
+
+									<?php } ?> 
+
 									<div class="clear"></div>
 									
 									

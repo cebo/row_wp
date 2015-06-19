@@ -2268,6 +2268,11 @@ visibility: hidden;
 
 .leftside .openbox {
 	z-index: 9999999;
+	height: 100%;
+}
+
+.leftside .textbox {    
+	height: 23%;
 }
 
 .innerbox .copie .fa {
@@ -2555,7 +2560,7 @@ visibility: hidden;
 	}
 
 .second-level {
-	height: 740px;
+	height: 910px;
 }
 
 
@@ -2649,7 +2654,7 @@ visibility: hidden;
 }
 
 .leftside .guestrooms {
-	height: 70%;
+	height: 75%;
 	margin-bottom: 10px;
 	width: 100%;
 	position: absolute;
