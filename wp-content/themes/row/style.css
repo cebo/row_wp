@@ -2271,8 +2271,8 @@ visibility: hidden;
 	height: 100%;
 }
 
-.leftside .textbox {    
-	height: 23%;
+.textbox {    
+	height: 22% !important;
 }
 
 .innerbox .copie .fa {
