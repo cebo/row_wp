@@ -112,9 +112,13 @@
 
 <?php } ?>
 
+<?php if( is_home() || is_front_page() || is_page('times-square-hotel-deals') || is_single('5-cash-back') ) { ?>
+	<script src="https://theguestbook.com/custom_widget.js?w=rownyc" type="text/javascript"></script>
+<?php } ?>
+
 <!-- Scripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/scripts.js"></script>
-<script src="https://theguestbook.com/custom_widget.js?w=rownyc" type="text/javascript"></script>
+
 <?php include(TEMPLATEPATH . '/library/scripts.php'); ?>
 <?php include(TEMPLATEPATH . '/library/booking.php'); ?>
 

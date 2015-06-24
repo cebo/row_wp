@@ -4405,6 +4405,40 @@ width: 35%;
 	text-align: center;
 }
 
+.deal .theguestbook-email-submit-input {
+	background: none repeat scroll 0 0 #e51a9b;
+	border: 0 none;
+	color: #ffffff;
+	display: inline-block;
+	text-align: center;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	transition: all 0.4s ease-in-out 0s;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	font-size: 16px;
+	margin-top: 10px;
+	font-family: "Montserrat",sans-serif;
+
+
+
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+
+	.deal .theguestbook-email-submit-input:hover {
+		color: #000;
+	}
+
+.page.deals #theguestbook_widget .theguestbook-email-submit-input { visibility: hidden; }
+.page.deals #theguestbook_widget #theguestbook_widget_feedback {
+	top: -45px;
+}
+
 .deal .button-wrapper a.button {
 	padding: 20px 20px 10px 20px;
 }

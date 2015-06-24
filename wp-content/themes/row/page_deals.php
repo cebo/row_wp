@@ -77,6 +77,13 @@
 
 				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
+				<?php 
+
+					$title = get_the_title();
+					$slug_comp = sanitize_title($title); 
+
+				?>
+
 				<li class="deal">
 				
 					
@@ -96,7 +103,24 @@
 					
 					
 					<?php } ?>
+					
+					<?php if( $slug_comp == '5-cash-back' ) { ?>
+
+						<div class="deal-wrapper">
+					
+							<h1><?php the_title(); ?></h1>
 		
+							<p><?php echo content(65); ?></p>
+
+							<div id="theguestbook_widget"></div>
+
+							<div class="wonder-vertical"></div>
+
+						</div>
+
+					<div class="button-wrapper" style="margin: 10px 0 0;"><input class="theguestbook-email-submit-input button" type="button" value="Enroll"></div>	
+						
+					<?php } else { ?> 
 	
 					<div class="deal-wrapper">
 					
@@ -109,6 +133,8 @@
 					</div>
 
 					<div class="button-wrapper" style="margin: 10px 0 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Reserve Now','row-theme-text'); ?></a></div>
+
+					<?php } ?>
 
 				</li>
 				
