@@ -446,42 +446,79 @@
 
 
 
-<!-- START cyc fitness and glam go -->
+			<!-- START cyc fitness and glam go -->
 
 
-<div class="third-level">
-	<div class="leftsider">
-		<div class="picone">
-			<div class="suboverlay narrow">
-				<h1>Cyc Fitness</h1>
-				<p>An indoor cycling method coming to Row NYC this summer! <br> 
-					<a href="http://rownyc.com/hotel-amenities/cyc-fitness/">MORE &gt;</a>
-				</p>
+			<div class="third-level">
+
+				<?php $the_query = new WP_Query('post_type=amenities&p=6485'); if( $the_query->have_posts()) : while( $the_query->have_posts()) : $the_query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+
+					<div class="leftsider">
+						<div class="picone">
+							<div class="suboverlay narrow">
+								<h1><?php the_title(); ?></h1>
+								<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?> <br> 
+									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text'); ?></a>
+								</p>
+							</div>
+
+							<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+												
+												
+							<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,400); ?>);"></div>
+							
+							<?php } elseif($imgsrc) { ?>
+							
+							
+							<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,400); ?>);"></div>
+							
+							<?php } else { ?>
+												
+							<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+							
+							<?php } ?>
+						</div>
+					</div>
+
+				<?php endwhile; endif; wp_reset_postdata(); ?>
+
+				<?php $the_query = new WP_Query('post_type=amenities&p=6488'); if( $the_query->have_posts()) : while( $the_query->have_posts()) : $the_query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+
+					<div class="rightsider">
+						<div class="picone">
+							<div class="suboverlay narrow">
+								<h1><?php the_title(); ?></h1>
+								<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?> <br> 
+									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text'); ?></a>
+								</p>
+							</div>
+
+							<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+												
+												
+							<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,400); ?>);"></div>
+							
+							<?php } elseif($imgsrc) { ?>
+							
+							
+							<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,400); ?>);"></div>
+							
+							<?php } else { ?>
+												
+							<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+							
+							<?php } ?>
+						</div>
+					</div>
+					<div class="clear"></div>
+
+				<?php endwhile; endif; wp_reset_postdata(); ?>
+
 			</div>
-			<div class="stretch" style="background-image: url(http://rownyc.com/wp-content/themes/row/library/thumb.php?src=http://rownyc.com/wp-content/uploads/2015/06/row-nyc-cyc-fitness-banner2.jpg&amp;w=556&amp;h=320);">
-				<a href="http://rownyc.com/hotel-amenities/cyc-fitness/" style="height: 100%; width: 100%;"></a>
-			</div>
-		</div>
-	</div>
-	<div class="rightsider">
-		<div class="picone">
-			<div class="suboverlay narrow">
-				<h1>Glam&amp;Go</h1>
-				<p>An express styling bar for people on the go, coming to Row NYC this summer!<br> 
-					<a href="http://rownyc.com/hotel-amenities/glamgo/">MORE &gt;</a>
-				</p>
-			</div>
-			<div class="stretch" style="background-image: url(http://rownyc.com/wp-content/themes/row/library/thumb.php?src=http://rownyc.com/wp-content/uploads/2015/06/row-nyc-cyc-fitness-banner.jpg&amp;w=556&amp;h=320);">
-				<a href="http://rownyc.com/hotel-amenities/glamgo/" style="height: 100%; width: 100%;"></a>
-			</div>
-		</div>
-	</div>
-	<div class="clear"></div>
-</div>
 
 
 
-<!-- END cyc fitness and glam go -->
+			<!-- END cyc fitness and glam go -->
 
 
 
