@@ -956,7 +956,7 @@ h4 {
 }
 
 .navigate .supernav li span {
-	background-image: url(images/icon_grid.png);
+	background-image: url(images/icon_grid_3.png);
 	background-color: transparent;
 	background-position: -3px 6px;
 	background-repeat: no-repeat;
@@ -1023,7 +1023,6 @@ h4 {
 }
 
 
-
 .navigate .supernav li .eats {
 	background-position: -3px -306px;
 }
@@ -1032,8 +1031,6 @@ h4 {
 	background-position: -52px -306px;
 	border: 2px solid #000;
 }
-
-
 
 
 .navigate .supernav li .explore {
@@ -1054,6 +1051,28 @@ h4 {
 	background-position: -52px -431px;
 	border: 2px solid #000;
 }
+
+
+
+
+.navigate .supernav li .glamgo {
+	background-position: -3px -553px;
+}
+
+.navigate .supernav li:hover .glamgo {
+	background-position: -50px -553px;
+	border: 2px solid #000;
+}
+
+.navigate .supernav li .fitness {
+	background-position: -3px -615px;
+}
+
+.navigate .supernav li:hover .fitness {
+	background-position: -50px -615px;
+	border: 2px solid #000;
+}
+
 
 
 .navigate .supernav li .blog {
@@ -1363,7 +1382,7 @@ ul#selectUl li.unselected:hover {
 .squaredance.select {
     border: 0 none;
     overflow: hidden;
-    padding: 10px 11px;
+    padding: 0px 11px;
 }
 
 .squaredance i {
@@ -1376,7 +1395,7 @@ ul#selectUl li.unselected:hover {
 
 .squaredance i.fa-calendar {
     bottom: 0;
-    color: #fff;
+    color: #aaa;
     position: absolute;
     right: 10px;
     top: 6px;
@@ -1393,7 +1412,7 @@ ul#selectUl li.unselected:hover {
 .squaredance .calendarsection {
     background: none repeat scroll 0 0 transparent;
     border: 0 none;
-    color: #fff;
+    color: #aaa;
     text-transform: uppercase;
     position: relative;
     z-index: 2;
@@ -1416,9 +1435,9 @@ ul#selectUl li.unselected:hover {
 }
 
 .squaredance > select {
-    background: none repeat scroll 0 0 transparent;
+    background: transparent;
     border: 0 none;
-    color: #fff;
+    color: #aaa;
     float: right;
     position: relative;
     right: -28px;
@@ -1426,6 +1445,9 @@ ul#selectUl li.unselected:hover {
     text-transform: uppercase;
     font-size: 12px;
     -webkit-appearance: none;
+    display: block;
+	height:35px;
+	z-index: 99999;
 }
 
 .booking .button, .booking .check-rates {
@@ -1441,7 +1463,7 @@ ul#selectUl li.unselected:hover {
     background: none repeat scroll 0 0 #323232;
     border: 1px solid #3d3d3d;
     border-radius: 2px;
-    color: #fff;
+    color: #aaa;
     float: left;
     font-size: 12px;
     padding: 10px 9px 9px;
