@@ -123,7 +123,6 @@
 <?php include(TEMPLATEPATH . '/library/booking.php'); ?>
 
 <?php if(is_home() || is_front_page()): ?>
-<?php else: ?>
 	<!-- Sojern -->
 	<script>
 	(function () {
@@ -135,7 +134,7 @@
 	})();
 	</script>
 	<!-- End Sojern -->
-
+<?php else: ?>
 <?php endif;  ?>
 
 	<!-- Plugin CSS -->
