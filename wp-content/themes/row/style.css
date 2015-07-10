@@ -7157,7 +7157,7 @@ a.detailsAnchor {
 		max-width: 35%;
 	}
     .languages {
-    	display: none;
+    	/**display: none;**/
     }
     .navigate .supernav li.subinside:hover, .navigate .supernav li.narrower {
     	width: 250px;
