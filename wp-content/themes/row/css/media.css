@@ -48,10 +48,10 @@ and (max-width : 1439px) {
 
 
 
-/* ================================================ 0 - 1260px ======================================= */
+/* ================================================ 0 - 1275px ======================================= */
 
 @media only screen 
-and (max-width : 1260px) {
+and (max-width : 1275px) {
 
 
 
@@ -366,7 +366,7 @@ and (max-width : 1260px) {
 	/* PAGE - Deals */
 
 	.deal-wrapper > h1 {
-	    font-size: 25px;
+	    font-size: 19px;
 	    line-height: 1.1;
 	    margin-bottom: 20px;
 	}
@@ -451,6 +451,14 @@ and (max-width : 1260px) {
 
 	.deal-more-detail ul li li {
 	    font-size: 13px;
+	}
+
+	.deal {
+		min-height: 750px;
+	}
+
+	.deal-wrapper {
+		height: 350px;
 	}
 
 
@@ -555,7 +563,6 @@ and (max-width : 1260px) {
 }
 
 
-
 /* ================================================ 1024 ======================================= */
 
 @media only screen 
@@ -584,15 +591,14 @@ and (max-width : 1024px) {
 	/* deals page */
 
 	.deal-wrapper {
-		height: 280px;
+		height: 290px;
 	}
-
 
 }
 
 
 
-/* ================================================ 768 ======================================= */
+/* ================================================ 900 ======================================= */
 
 @media only screen and (max-width : 900px) {
 
@@ -836,13 +842,20 @@ and (max-width : 1024px) {
 	/* PAGE - Deals */
 
 	.deal-wrapper > h1 {
-	    font-size: 20px;
+	    font-size: 19px;
 	}
 
 		.deal-wrapper {
 	    padding: 20px 30px 30px;
 	}
 
+	.deal-wrapper {
+		height: 420px;
+	}
+
+	.deal {
+		min-height: 815px;
+	}
 
 
 	/* PAGE - Events */
@@ -992,7 +1005,36 @@ and (max-width : 1024px) {
 
 }
 
+/* ================================================ 840 ======================================= */
 
+@media only screen 
+and (max-width : 840px) {
+
+	.deal {
+		min-height: 770px;
+	}
+
+	.deal-wrapper {
+		height: 380px;
+	}
+
+}
+
+
+/* ================================================ 770 ======================================= */
+
+@media only screen 
+and (max-width : 770px) {
+
+	.deal {
+		min-height: 955px;
+	}
+
+	.deal-wrapper {
+		height: 555px;
+	}
+	
+}
 
 /* ================================================ MAX WIDTH 640 ======================================= */
 
