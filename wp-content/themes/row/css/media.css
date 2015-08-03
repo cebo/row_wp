@@ -598,6 +598,23 @@ and (max-width : 1024px) {
 		min-height: 780px;
 	}
 
+
+	/* save the children */
+
+	.save-the-children .button {
+    position: relative;
+    float: left;
+    left: 7%;
+    top: -15px;
+	}
+
+	p.save {
+    width: 95%;
+    font-size: 12px;
+    line-height: 22px;
+    color: #fff;
+	}
+
 }
 
 
@@ -1004,6 +1021,22 @@ and (max-width : 1024px) {
 	.flex-direction-nav a::before {
 		font-size: 35px;
 	}
+
+	/* save the children */
+
+	.save-the-children .button {
+    position: relative;
+    float: left;
+    left: 7%;
+    top: -15px;
+	}
+
+	p.save {
+    width: 95%;
+    font-size: 12px;
+    line-height: 22px;
+    color: #fff;
+	}	
 
 
 

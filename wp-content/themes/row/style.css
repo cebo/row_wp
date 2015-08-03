@@ -7243,3 +7243,62 @@ p.contacto a {
   float: right;
 }
 
+/* SAVE THE CHILDREN ########################################################################################## */
+
+.save-the-children {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+      margin-top: 30px;
+}
+
+p.save-the-children {
+  color: #fff; 
+  background-color: #444; 
+  padding-top: 10px; 
+  font-size: 12px;
+}
+
+p.save {
+    width: 80%;
+    font-size: 12px;
+    line-height: 22px;
+    color: #fff;
+}
+
+.left {
+  float: left;
+}
+
+a.donate-btn {
+    float: right;
+    position: relative;
+    top: -50px;
+    color: #000;
+  border: 1px solid #000;
+  padding: 20px 5px 20px 5px;
+}
+
+.donate-btn a:hover {
+  color: #2b2b2b;
+  border: 1px solid #2b2b2b;
+}
+
+.save-the-children .button {
+    position: relative;
+    top: -77px;
+    float: right;
+    right: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
