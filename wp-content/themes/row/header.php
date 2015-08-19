@@ -271,18 +271,17 @@
 				<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>	
 			</li>
 
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/hotel-amenities/glamgo/"><span class="glamgo"></span><p><?php _e('GLAM&GO','row-theme-text'); ?></p></a>
+			<li class="subinside inexplore">
+				<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>	
 			</li>
 
 			<li>
 				<a href="<?php bloginfo ('url'); ?>/hotel-amenities/cyc-fitness/"><span class="fitness"></span><p><?php _e('CYC FITNESS','row-theme-text'); ?></p></a>
-			</li>			
-			
-			<li class="subinside inexplore">
-				<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>
-					
-			</li>
+			</li>	
+
+			<li>
+				<a href="<?php bloginfo ('url'); ?>/hotel-amenities/glamgo/"><span class="glamgo"></span><p><?php _e('GLAM&GO','row-theme-text'); ?></p></a>
+			</li>		
 			
 			<li>
 				<a href="<?php bloginfo ('url'); ?>/blog"><span class="blogxs"></span><p><?php _e('Blog','row-theme-text'); ?></p></a>
