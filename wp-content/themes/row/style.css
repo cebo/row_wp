@@ -7267,10 +7267,10 @@ p.contacto a {
 
 .save-the-children {
   width: 100%;
-  margin: 0 auto;
+  margin: 19px auto 1px;
   position: relative;
-      margin-top: 30px;
-}
+      }
+
 
 p.save-the-children {
   color: #fff; 
@@ -7306,17 +7306,33 @@ a.donate-btn {
 
 .save-the-children .button {
     position: relative;
-    top: -77px;
+    top: -65px;
     float: right;
     right: 5%;
 }
 
 .footer {
 	background-color: #444444;
-	height: 40%;
+	height: 25%;
 }
 
 
+@media only screen and (max-width: 768px){
+
+	.save-the-children .button {
+    position: relative;
+    top: -65px;
+    float: right;
+    right: 5%;
+}
+
+p.save {
+    width: 30%;
+    font-size: 12px;
+    line-height: 22px;
+    color: #fff;
+}
+}
 
 
 
