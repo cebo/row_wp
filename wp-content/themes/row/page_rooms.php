@@ -31,7 +31,7 @@
 					
 					<div class="suboverlay narrow">
 				
-						<a href="<?php the_permalink(); ?>">
+						<a href="<?php get_site_url(); ?>/<?php echo ICL_LANGUAGE_CODE; ?>/hotel-rooms-times-square-new-york/<?php the_slug();?>">
 							<h1><?php the_title(); ?></h1>
 							<!-- <h4><?php echo get_post_meta($post->ID, 'cebo_footage', true); ?> SQ.FT.</h4> -->
 						</a>

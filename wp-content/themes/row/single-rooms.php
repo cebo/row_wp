@@ -304,7 +304,7 @@
 						
 						
 				
-						<li><a style="<?php if($currentid == $thersd) { echo 'color: #fa9c03;'; } ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+						<li><a style="<?php if($currentid == $thersd) { echo 'color: #fa9c03;'; } ?>" href="<?php get_site_url(); ?>/<?php echo ICL_LANGUAGE_CODE; ?>/hotel-rooms-times-square-new-york/<?php the_slug();?>"><?php the_title(); ?></a></li>
 												
 						<?php endwhile; endif; wp_reset_query(); ?>	
 					</ul>
