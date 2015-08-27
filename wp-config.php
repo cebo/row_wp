@@ -14,31 +14,27 @@
  * @package WordPress
  */
 
- if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
-    include( dirname( __FILE__ ) . '/local-config.php' );
-}
-else {
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'spherical_row_wp');
 
-	// ** MySQL settings - You can get this info from your web host ** //
-	/** The name of the database for WordPress */
-	define('DB_NAME', '');
+/** MySQL database username */
+define('DB_USER', 'root');
 
-	/** MySQL database username */
-	define('DB_USER', '');
+/** MySQL database password */
+define('DB_PASSWORD', '');
 
-	/** MySQL database password */
-	define('DB_PASSWORD', '');
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
 
-	/** MySQL hostname */
-	define('DB_HOST', '');
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
 
-	/** Database Charset to use in creating database tables. */
-	define('DB_CHARSET', 'utf8');
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
 
-	/** The Database Collate type. Don't change this if in doubt. */
-	define('DB_COLLATE', '');
-
-}
+define('WP_HOME','http://localhost/row_wp');
+define('WP_SITEURL','http://localhost/row_wp');
 
 /**#@+
  * Authentication Unique Keys and Salts.
