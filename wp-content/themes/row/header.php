@@ -546,7 +546,7 @@
 
 					<span>
 						<div class="squaredance">
-						<input class="calendarsection" id="offercode" name="offercode" placeholder="<?php _e('Offer Code','row-theme-text'); ?>">
+						<input class="calendarsection" id="offercode" name="offer_code" placeholder="<?php _e('Offer Code','row-theme-text'); ?>">
 						</div>
 					</span>
 
