@@ -1112,6 +1112,7 @@ nav#menu.mobile {
     margin-bottom: 10px;
     margin-top: 15px;
     text-align: center;
+	position: relative;
 }
 
 .exclusive-offer input {
@@ -1129,7 +1130,8 @@ nav#menu.mobile {
   position: absolute;
   padding: 0;
   width: 24px;
-  right: 15px;
+  right: 6px;
+  top: 72px;
   height: 37px;
   z-index: 999;
   cursor: pointer;
@@ -1141,13 +1143,31 @@ nav#menu.mobile {
     color: #ff27ab;
     cursor: pointer;
     font-size: 20px;
-    position: relative;
-    top: 3px;
+    position: absolute;
+    top: 80px;
+    right: 14px;
 }
 	.exclusive-offer button i:hover {
 		color: #fff;
 	}
 
+.da-block {
+    position: relative;
+}
+	
+label.error {
+    font-family: Arial;
+    font-size: 11px;
+    clear: both;
+    display: block;
+    text-align: left;
+    left: 35px;
+    bottom: 0px;
+    opacity: 0.9;
+    position: relative;
+    color: red;
+}
+	
 /*.calspacer {
 	padding: 10px 40px;
 }

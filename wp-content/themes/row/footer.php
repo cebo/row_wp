@@ -236,6 +236,43 @@
 
 <?php wp_footer(); ?>
 
+<!-- DA email subscription -->
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/additional-methods.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			$('#eclubCheck').validate(
+			{
+				rules: {
+					// The e-mail address field (aptly ID'd as "email_address")
+					// is required to have content and must also be a valid e-mail.
+					FIRSTNAME: "required",
+					LASTNAME: "required",
+					email: {
+						required: true,
+						email: true
+					}
+				},
+				messages: {
+
+					FIRSTNAME: "Please specify your first name",
+					LASTNAME: "Please specify your last name",
+					email: {
+						required: "We need your email address to contact you",
+						email: "Your email address must be in the format of name@domain.com"
+					}
+
+				},
+				submitHandler: function(form) { // <- pass 'form' argument in
+					$("#form_submit").attr("disabled", true);
+					$("#form_submit").attr("value", "Submitting");
+					return true;
+				}
+			})
+		});
+	</script>
+
 <script type="text/javascript">
 	 var fliptoSettings = {
 		 code: '1S-NYCMILANN',

@@ -314,6 +314,7 @@
 
 			<div class="exclusive-offer">
 				
+				<?php /*
 				<form action="//sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 				
 				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required placeholder="<?php _e('Exclusive Offer Signup', 'row-theme-text'); ?>">
@@ -323,10 +324,40 @@
 				<input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="fa fa-caret-right">
 				
 				</form>
+				
+				*/ ?>
+				
+				<form method="post" id="eclubCheck" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub">
+				
+					<div class="da-block">
+						<input type="text" size="40" name="FIRSTNAME" maxlength="40" value="" id="firstname" placeholder="first name" required="required">
+					</div>
+					<div class="da-block">
+						<input type="text" size="40" name="LASTNAME" maxlength="40" value="" id="lastname" placeholder="last name" required="required">
+					</div>
+					<div class="da-block">
+						<input type="email" size="40" name="email" maxlength="150" id="email_address" placeholder="email address" required="required">
+					</div>
+					
+					<i class="fa fa-caret-right"></i>
+					<input id="form_submit" type="submit" value="" />
+					
+					<input type="HIDDEN" name="PEA"					value="jayme@digital-alchemy.com" />
+					
+					  <input type="HIDDEN" name="PEACC" 				value="" />
+					  <input type="HIDDEN" name="PEABC"					value="" />
+					  <input type="HIDDEN" name="PEASUBJECT" 			value="LOOKUP" />
+					  <INPUT TYPE="HIDDEN" NAME="NewUser" 				VALUE="1">
+					  <INPUT TYPE="HIDDEN" NAME="PrThanksPage" 			VALUE="1">
+					  <INPUT TYPE="HIDDEN" NAME="ftpbox" 				VALUE="01603">
+					  <INPUT TYPE="HIDDEN" NAME="PRThanksTemplate"		VALUE="ETHANKS">
+					  <input type="hidden" name="sys_formtype" 			value="eClub">
+					  <input type="hidden" name="hv_preftype" 			value="eClub" />
+					  <input type="hidden" name="ECWT" 			        value="EWELCOME" />
 
+				</form>
 
-
-				</div>
+			</div>
 
 			<p><?php _e('High Speed Wifi Access Available','row-theme-text'); ?></p>
 		
