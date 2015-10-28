@@ -158,10 +158,15 @@
 	ga('create', 'UA-10318674-1', 'auto', {
 		'allowLinker': true
 	});
+	// Optimizely Universal Analytics Integration 
+	window.optimizely = window.optimizely || []; window.optimizely.push("activateUniversalAnalytics");
+	var dimensionValue = 'optimizely_test';
+	ga('set', 'dimension1', dimensionValue);
 	ga('send', 'pageview');
 	ga('require', 'linker');
 	ga('linker:autoLink', ['reztrip.com'], false, true);
 </script>
+
 
 <script type="text/javascript">
 	adroll_adv_id = "NQP2TEBPSVGKHDHDXCYZE7";
