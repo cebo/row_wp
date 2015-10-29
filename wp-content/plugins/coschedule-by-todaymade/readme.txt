@@ -3,8 +3,8 @@ Contributors: todaymade
 Donate link: http://coschedule.com
 Tags: calendar, schedule, social media, editorial, twitter, facebook, tweets, auto publish, linkedin, tumblr
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 2.2.0
+Tested up to: 4.2.1
+Stable tag: 2.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,7 +50,6 @@ With CoSchedule, you can automate your social media sharing while you blog. When
 * LinkedIn Business Pages
 * LinkedIn Groups
 * Google+ Pages
-* Pinterest
 * Buffer
 * Tumblr
 
@@ -127,6 +126,49 @@ We charge a monthly fee for CoSchedule because we provide an ongoing service tha
 5. **Social Scheduling While You Blog**: Social messages are content, too. Write as many as you need at the same time you write your blog post. Hit publish, and automatically set them all in motion.
 
 == Changelog ==
+
+= 2.3.4 =
+* Preserves Jetpack markdown upon post sync
+
+= 2.3.3 =
+* Improves publishing posts that are backdated
+
+= 2.3.2 =
+* Improve the backend communication with CoSchedule
+
+= 2.3.1 =
+* Authentication improvements
+* Official support for WordPress VIP
+
+= 2.3.0 =
+* Improves publication time accuracy for blogs using caching plugins.
+* Adds save/delete filter hooks usable by third-party plugin developers.
+* Add ability to publish posts that have missed their scheduled publish time.
+* Improve plugin behavior when installed into WordPress older than 3.5.
+
+= 2.2.8 =
+* Fixes a small issue with syncing the plugin version number
+
+= 2.2.7 =
+* Improves URL escaping and compatibility with WordPress VIP standards
+
+= 2.2.6 =
+* Fixes an issue with loading the css for the plugin
+
+= 2.2.5 =
+* Adds compatibility with PHP 5.2.x
+
+= 2.2.4 =
+* Improves security, adds VIP code style enhancements, adds CoSchedule logout during author switching, and fixes a potential problem with image syncing
+
+= 2.2.3 =
+* Fixes issues with certain PHP configurations
+
+= 2.2.2 =
+* Fixes issues with syncing headlines
+
+= 2.2.1 =
+* Improves compatibility with security plugins
 
 = 2.2.0 =
 * Brings plugin code up to speed with WordPress VIP coding standards, adds login to metabox, and improves security
@@ -231,8 +273,47 @@ We charge a monthly fee for CoSchedule because we provide an ongoing service tha
 
 == Upgrade Notice ==
 
+= 2.3.4 =
+* This update preserves Jetpack markdown upon post sync
+
+= 2.3.3 =
+* This update improves publishing posts that are backdated
+
+= 2.3.2 =
+* This update improves the backend communication with CoSchedule
+
+= 2.3.1 =
+* This update improves authentication and enables official support for WordPress VIP
+
+= 2.3.0 =
+* This update improves publication time accuracy for blogs using caching plugins
+
+= 2.2.8 =
+* This update fixes a small issue with syncing the plugin version number
+
+= 2.2.7 =
+* This update improves URL escaping and compatibility with WordPress VIP standards
+
+= 2.2.6 =
+* This update fixes an issue with loading the css for the plugin
+
+= 2.2.5 =
+* This update adds compatibility with PHP 5.2.x
+
+= 2.2.4 =
+* This update improves security, adds VIP code style enhancements, adds CoSchedule logout during author switching, and fixes an issue with partial image misses
+
+= 2.2.3 =
+* This update fixes issues with certain PHP configurations
+
+= 2.2.2 =
+* This update fixes a bug that caused some headlines to sync incorrectly
+
+= 2.2.1 =
+* This update improves compatibility with security plugins
+
 = 2.2.0 =
-* This update brings the plugin code up to speed with WordPress VIP coding standards, adds login to metabox, and improves security.
+* This update brings the plugin code up to speed with WordPress VIP coding standards, adds login to metabox, and improves security
 
 = 2.1.5 =
 * This update adds support for Wordpress version 4.0
