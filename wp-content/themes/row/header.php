@@ -74,7 +74,7 @@
 
 <!-- responsive style -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
-
+<script src="//cdn.optimizely.com/js/3569390496.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<?php if(get_post_type() == 'imagegalleries') { ?>
 
@@ -160,13 +160,12 @@
 	});
 	// Optimizely Universal Analytics Integration 
 	window.optimizely = window.optimizely || []; window.optimizely.push("activateUniversalAnalytics");
-	var dimensionValue = 'optimizely_test';
-	ga('set', 'dimension1', dimensionValue);
+	//var dimensionValue = 'optimizely_test';
+	//ga('set', 'dimension1', dimensionValue);
 	ga('send', 'pageview');
 	ga('require', 'linker');
 	ga('linker:autoLink', ['reztrip.com'], false, true);
 </script>
-
 
 <script type="text/javascript">
 	adroll_adv_id = "NQP2TEBPSVGKHDHDXCYZE7";
@@ -335,13 +334,13 @@
 				<form method="post" id="eclubCheck" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub">
 				
 					<div class="da-block">
-						<input type="text" size="40" name="FIRSTNAME" maxlength="40" value="" id="firstname" placeholder="first name" required="required">
+						<input required type="text" size="40" name="FIRSTNAME" maxlength="40" value="" id="firstname" placeholder="first name">
 					</div>
 					<div class="da-block">
-						<input type="text" size="40" name="LASTNAME" maxlength="40" value="" id="lastname" placeholder="last name" required="required">
+						<input required type="text" size="40" name="LASTNAME" maxlength="40" value="" id="lastname" placeholder="last name">
 					</div>
 					<div class="da-block">
-						<input type="email" size="40" name="email" maxlength="150" id="email_address" placeholder="email address" required="required">
+						<input type="email" required size="40" name="email" maxlength="150" id="email_address" placeholder="email address">
 					</div>
 					
 					<i class="fa fa-caret-right"></i>

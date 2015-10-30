@@ -449,7 +449,6 @@
 			<!-- START cyc fitness and glam go -->
 
 
-<<<<<<< Updated upstream
 			<div class="third-level">
 
 				<?php $the_query = new WP_Query('post_type=amenities&p=6485'); if( $the_query->have_posts()) : while( $the_query->have_posts()) : $the_query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
@@ -515,32 +514,6 @@
 
 				<?php endwhile; endif; wp_reset_postdata(); ?>
 
-=======
-<div class="third-level">
-	<div class="leftsider">
-		<div class="picone">
-			<div class="suboverlay narrow">
-				<h1>Cyc Fitness</h1>
-				<p>An indoor cycling method coming to Row NYC this summer! <br> 
-					<a href="http://rownyc.com/hotel-amenities/cyc-fitness/">MORE &gt;</a>
-				</p>
-			</div>
-			<div class="stretch" style="background-image: url(http://rownyc.com/wp-content/themes/row/library/thumb.php?src=http://rownyc.com/wp-content/uploads/2015/06/row-nyc-cyc-fitness-banner2.jpg&amp;w=556&amp;h=320);">
-				<a href="http://rownyc.com/hotel-amenities/cyc-fitness/" style="height: 100%; width: 100%;"></a>
-			</div>
-		</div>
-	</div>
-	<div class="rightsider">
-		<div class="picone">
-			<div class="suboverlay narrow">
-				<h1>Glam&amp;Go</h1>
-				<p>An express styling bar for people on the go, coming to Row NYC this summer!<br> 
-					<a href="http://rownyc.com/hotel-amenities/glamgo/">MORE &gt;</a>
-				</p>
-			</div>
-			<div class="stretch" style="background-image: url(http://rownyc.com/wp-content/themes/row/library/thumb.php?src=http://rownyc.com/wp-content/uploads/2015/06/row-nyc-glam-and-go1.jpg&amp;w=556&amp;h=320);">
-				<a href="http://rownyc.com/hotel-amenities/glamgo/" style="height: 100%; width: 100%;"></a>
->>>>>>> Stashed changes
 			</div>
 
 

@@ -28,19 +28,23 @@
 				<div class="flexslider-gallery flexslider">
 					<ul class="slides">
 						
-						<?php 
-
-							$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
-							foreach ( $repeatable_fields as $field ) { 
-
-						?>
+						<?php $galleryImages = get_post_gallery_imagess(); 
+						  $imagesCount = count($galleryImages);
+						  
+	       			 ?>
+	        		<?php if ($imagesCount > 0) : ?>
+              		<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+                  	<?php if (!empty($galleryImages[$i])) :?>
+                  	<?php //$attachment_meta = wp_get_attachment($galleryImages[$i]['id']); ?>
 
 							<li>
-								<div class="slide-image" style="background-image:url(<?php if ($field['url'] != '') echo esc_attr( $field['url'] ); ?>);"></div>
-								<div class="slide-description"><?php if ($field['description'] != '') echo esc_attr( $field['description'] ); ?></div>
+								<div class="slide-image" style="background-image:url(<?php echo $galleryImages[$i]['full'][0];?>);"></div>
+								
 							</li>								
 
-						<?php } ?>
+						<?php endif; ?>
+  					<?php endfor; ?>
+					<?php endif; ?>
 
 					</ul>
 				</div>
