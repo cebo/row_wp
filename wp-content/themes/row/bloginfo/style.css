@@ -3282,6 +3282,13 @@ i.ns-close,
   -webkit-transform: translate(-50%, -50%);
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px)and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+	.lb-overlay .the-popup {
+	  width: 330px;
+	  height: 450px;
+	}
+}
+
 .popup-logo-area {
   background-image: url(images/PINK_feather.png);
   background-size: cover;
