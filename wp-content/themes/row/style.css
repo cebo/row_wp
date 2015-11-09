@@ -4348,11 +4348,23 @@ width: 35%;
     float: left;
     margin-right: 20px;
     width: 270px;
+	width: 33%;
+    margin: 0;
 }
 
+.amenity-contact .somespace {
+    margin-right: 20px;
+}
+
+.amenity-contact div:last-child .somespace {
+    margin-right: 0;
+}
+
+/*
 .amenity-contact div:nth-child(3) {
     clear: left;
 }
+*/
 
 /* Amenity Featured images */
 

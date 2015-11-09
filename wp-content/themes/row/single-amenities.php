@@ -129,35 +129,42 @@
 					<div class="amenity-contact">
 							
 							<?php if(get_post_meta ($post->ID, 'cebo_hours', true)) { ?>
-							
 							<div>
-								
-								<h4>Hours:</h4>
-								<p><?php echo get_post_meta ($post->ID, 'cebo_hours', true); ?></p>
-
+								<div class="somespace">
+									<?php if(get_post_meta ($post->ID, 'cebo_hourstitle', true)) { ?>
+										<h4><?php echo get_post_meta ($post->ID, 'cebo_hourstitle', true); ?></h4>
+									<?php } else { ?>
+										<h4>Hours:</h4>
+									<?php } ?>
+									<p><?php echo get_post_meta ($post->ID, 'cebo_hours', true); ?></p>
+								</div>
 							</div>
 							<?php } ?>
 							
 							<?php if(get_post_meta ($post->ID, 'cebo_contact', true)) { ?>
-							
-							
 							<div>
-								
-								<h4>Contact:</h4>
-								<p><?php echo get_post_meta ($post->ID, 'cebo_contact', true); ?></p>
-
+								<div class="somespace">
+									<?php if(get_post_meta ($post->ID, 'cebo_contacttitle', true)) { ?>
+										<h4><?php echo get_post_meta ($post->ID, 'cebo_contacttitle', true); ?></h4>
+									<?php } else { ?>
+										<h4>Contact:</h4>
+									<?php } ?>
+									<p><?php echo get_post_meta ($post->ID, 'cebo_contact', true); ?></p>
+								</div>
 							</div>
-							
 							<?php } ?>
-							<?php if(get_post_meta ($post->ID, 'cebo_reserv', true)) { ?>
-
-							<div>
-
-								<h4>Reservation:</h4>
-								<p><?php echo get_post_meta ($post->ID, 'cebo_reserv', true); ?></p>
-
-							</div>
 							
+							<?php if(get_post_meta ($post->ID, 'cebo_reserv', true)) { ?>
+							<div>
+								<div class="somespace">
+									<?php if(get_post_meta ($post->ID, 'cebo_reservtitle', true)) { ?>
+										<h4><?php echo get_post_meta ($post->ID, 'cebo_reservtitle', true); ?></h4>
+									<?php } else { ?>
+										<h4>Reservation:</h4>
+									<?php } ?>
+									<p><?php echo get_post_meta ($post->ID, 'cebo_reserv', true); ?></p>
+								</div>
+							</div>
 							<?php } ?>
 
 						</div>
