@@ -14,6 +14,11 @@
  * @package WordPress
  */
 
+if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
+    include( dirname( __FILE__ ) . '/local-config.php' );
+}
+else {
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', '915273_rownyc');
@@ -35,6 +40,8 @@ define('DB_COLLATE', '');
 
 define('WP_HOME','http://localhost/projects/row_wp');
 define('WP_SITEURL','http://localhost/projects/row_wp');
+
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.
