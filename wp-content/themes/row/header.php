@@ -1,8 +1,13 @@
 <?php
 
 	global $sitepress;
-	$current_lang = $sitepress->get_current_language();
-	$default_lang = $sitepress->get_default_language();
+	if (function_exists('get_current_language') || function_exists('get_default_language')) { 
+		$current_lang = $sitepress->get_current_language();
+		$default_lang = $sitepress->get_default_language();
+	} else {
+		$current_lang = 'en';
+		$default_lang = 'en';
+	}
 
 	if ( file_exists( TEMPLATEPATH . '/library/Mobile_Detect.php' ) ) {
 
@@ -222,7 +227,7 @@
 			
 			<div class="logobox">
 				
-				<div class="languages"><?php language_selector_flags(); ?></div>
+				<div class="languages"><?php if (function_exists('language_selector_flags')) { language_selector_flags(); } ?></div>
 			
 			</div>
 			

@@ -11,7 +11,8 @@ class WPML_Sticky_Links{
 
 	function __construct( $ext = false ) {
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ), 0 );
-		add_action( 'init', array( $this, 'init' ) );
+		//init WPML_Sticky_Links after init AbsoluteLinks
+		add_action( 'init', array( $this, 'init' ) , 1001 );
 	}
 
 	function __destruct() {
@@ -30,11 +31,6 @@ class WPML_Sticky_Links{
 	}
 
 	function init() {
-		if ( !defined( 'ICL_PLUGIN_PATH' ) ) {
-			return;
-		}
-
-		global $sitepress_settings;
 
 		if ( !defined( 'ICL_SITEPRESS_VERSION' ) || ICL_PLUGIN_INACTIVE ) {
 			if ( !function_exists( 'is_multisite' ) || !is_multisite() ) {
@@ -44,9 +40,15 @@ class WPML_Sticky_Links{
 			add_action( 'admin_notices', array( $this, '_old_wpml_warning' ) );
 		}
 
+		if ( !defined( 'ICL_PLUGIN_PATH' ) ) {
+			return;
+		}
+
+		global $sitepress_settings;
+
 		$this->ajax_responses();
 
-		add_action( 'save_post', array( $this, 'save_default_urls' ), 10, 2 );
+		add_action( 'save_post', array( $this, 'save_default_urls' ), 120, 2 );
 		add_action( 'admin_head', array( $this, 'js_scripts' ) );
 
 		add_filter( 'the_content', array( $this, 'show_permalinks' ) );
@@ -94,27 +96,17 @@ class WPML_Sticky_Links{
     function _no_wpml_warning(){
         ?>
         <div class="message error"><p><?php printf(__('WPML Sticky Links is enabled but not effective. It requires <a href="%s">WPML</a> in order to work.', 'wpml-sticky-links'), 
-            'http://wpml.org/'); ?></p></div>
+            'https://wpml.org/'); ?></p></div>
         <?php
     }
 
     function _old_wpml_warning(){
         ?>
         <div class="message error"><p><?php printf(__('WPML Sticky Links is enabled but not effective. It is not compatible with  <a href="%s">WPML</a> versions prior 2.0.5.', 'wpml-sticky-links'), 
-            'http://wpml.org/'); ?></p></div>
+            'https://wpml.org/'); ?></p></div>
         <?php
     }
-    
-    /* MAKE IT PHP 4 COMPATIBLE */
-    function WPML_Sticky_Links(){
-         //destructor
-         register_shutdown_function(array(&$this, '__destruct'));
 
-         //constructor
-         $argcv = func_get_args();
-         call_user_func_array(array(&$this, '__construct'), $argcv);
-    }    
-    
     function _save_options(){
         if(isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'icl_sticky_save')){
             if (!empty($_POST['icl_sticky_links_widgets'])) {
@@ -138,7 +130,9 @@ class WPML_Sticky_Links{
     }
     
     function ajax_responses(){  
-        if(!isset($_POST['alp_ajx_action'])){
+
+        $nonce = filter_input(INPUT_POST, '_icl_sl_nonce');
+        if(!isset($_POST['alp_ajx_action']) || ! wp_verify_nonce($nonce, 'wpml_sticky_links_nonce')){
             return;
         }
         global $wpdb;
@@ -158,12 +152,16 @@ class WPML_Sticky_Links{
                 $posts_pages = $wpdb->get_col("
                     SELECT SQL_CALC_FOUND_ROWS p1.ID 
                         FROM {$wpdb->posts} p1 
-                        WHERE p1.post_type IN ('".join("','", $post_types)."') AND p1.post_status NOT IN ('auto-draft')  AND p1.ID NOT IN 
+                        WHERE p1.post_type IN (" . wpml_prepare_in( $post_types ) . ")
+                            AND p1.post_status NOT IN ('auto-draft')
+                            AND p1.ID NOT IN
                         
                     (
                         SELECT m.post_id FROM {$wpdb->postmeta} m 
                         JOIN {$wpdb->posts} p2 ON p2.ID = m.post_id
-                        WHERE m.meta_key = '_alp_processed' AND p2.post_type IN ('" . join("','", $post_types) . "') AND p2.post_status NOT IN ('auto-draft')  
+                        WHERE m.meta_key = '_alp_processed'
+                            AND p2.post_type IN (" . wpml_prepare_in( $post_types ) . ")
+                            AND p2.post_status NOT IN ('auto-draft')
                     )
                     ORDER BY p1.ID ASC LIMIT $limit
                 ");
@@ -179,30 +177,34 @@ class WPML_Sticky_Links{
                 }                
                 break;
             case 'rescan_reset':
-                $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE meta_key='_alp_processed'");
-                echo mysql_affected_rows();
+                $affected_rows = $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE meta_key='_alp_processed'");
+                echo $affected_rows; 
                 break;
             case 'use_suggestion':
-                $broken_links = get_post_meta($_POST['post_id'],'_alp_broken_links', true);
+                $post_id  = filter_input(INPUT_POST, 'post_id', FILTER_SANITIZE_NUMBER_INT);
+                $orig_url = filter_input(INPUT_POST, 'orig_url');
+                $broken_links = get_post_meta($post_id,'_alp_broken_links', true);
                 foreach($broken_links as $k=>$bl){
-                    if($k==$_POST['orig_url']){
+                    if($k === $orig_url){
                         $broken = $k;
                         $repl = $bl['suggestions'][$_POST['sug_id']]['absolute'];
                         unset($broken_links[$k]);
                         $c = count($broken_links);
                         if($c){
-                            update_post_meta($_POST['post_id'],'_alp_broken_links', $broken_links);
+                            update_post_meta($post_id,'_alp_broken_links', $broken_links);
                         }else{
-                            delete_post_meta($_POST['post_id'],'_alp_broken_links');
+                            delete_post_meta($post_id,'_alp_broken_links');
                         }
                         echo $c.'|'.$bl['suggestions'][$_POST['sug_id']]['perma'];
                         break;
                     }
                 }
-                if(!empty($broken)){
-                    $post_content = $wpdb->get_var("SELECT post_content FROM {$wpdb->posts} WHERE ID={$_POST['post_id']}");
+                if(!empty($broken) && !empty($repl)){
+										$q = "SELECT post_content FROM {$wpdb->posts} WHERE ID=%d";
+										$q_prepared = $wpdb->prepare($q, $post_id);
+                    $post_content = $wpdb->get_var($q_prepared);
                     $post_content = preg_replace('@href="('.$broken.')"@i', 'href="'.$repl.'"', $post_content);
-                    $wpdb->update($wpdb->posts, array('post_content'=>$post_content), array('ID'=>$_POST['post_id']));
+                    $wpdb->update($wpdb->posts, array('post_content' => $post_content), array('ID'=> $post_id));
                 }
                 break;
             case 'alp_revert_urls':
@@ -210,7 +212,9 @@ class WPML_Sticky_Links{
                 $posts_pages = $wpdb->get_results("
                     SELECT SQL_CALC_FOUND_ROWS p.ID, p.post_content FROM {$wpdb->posts} p
                     JOIN {$wpdb->postmeta} m ON p.ID = m.post_id
-                    WHERE m.meta_key = '_alp_processed' AND p.post_type IN ('" . join("','", $post_types) . "') AND p.post_status NOT IN ('auto-draft')  
+                    WHERE m.meta_key = '_alp_processed'
+                      AND p.post_type IN (" . wpml_prepare_in( $post_types ) . ")
+                      AND p.post_status NOT IN ('auto-draft')
                     ORDER BY p.ID ASC LIMIT $limit
                 ");   
                 
@@ -218,7 +222,9 @@ class WPML_Sticky_Links{
                     $found = $wpdb->get_var("SELECT FOUND_ROWS()");                
                     foreach($posts_pages as $p){
                         $cont = $this->show_permalinks($p->post_content);
-                        $wpdb->update($wpdb->posts, array('post_content'=>$cont), array('ID'=>$p->ID));                        
+						if ( $cont != $p->post_content ) {
+							$wpdb->update($wpdb->posts, array('post_content'=>$cont), array('ID'=>$p->ID));
+						}
                         delete_post_meta($p->ID,'_alp_processed');
                         delete_post_meta($p->ID,'_alp_broken_links');
                     }
@@ -262,7 +268,7 @@ class WPML_Sticky_Links{
                 jQuery.ajax({
                     type: "POST",
                     url: "<?php echo htmlentities($_SERVER['REQUEST_URI']) ?>",
-                    data: "alp_ajx_action=rescan&amp;offset="+offset,
+                    data: "alp_ajx_action=rescan&_icl_sl_nonce=<?php echo wp_create_nonce('wpml_sticky_links_nonce') ?>&offset="+offset,
                     success: function(msg){                        
                         if(-1==msg || msg==0){
                             left = '0';
@@ -290,13 +296,13 @@ class WPML_Sticky_Links{
                 jQuery.ajax({
                     type: "POST",
                     url: "<?php echo htmlentities($_SERVER['REQUEST_URI']) ?>",
-                    data: "alp_ajx_action=rescan_reset",
+                    data: "alp_ajx_action=rescan_reset&_icl_sl_nonce=<?php echo wp_create_nonce('wpml_sticky_links_nonce') ?>",
                     success: function(msg){    
                         if(msg){
                             alp_toogle_scan()
                         }
                     }                                                            
-                });
+                })
             }
             function alp_use_suggestion(){
                 jqthis = jQuery(this);
@@ -308,7 +314,7 @@ class WPML_Sticky_Links{
                 jQuery.ajax({
                     type: "POST",
                     url: "<?php echo htmlentities($_SERVER['REQUEST_URI']) ?>",
-                    data: "alp_ajx_action=use_suggestion&sug_id="+sug_id+"&post_id="+post_id+"&orig_url="+orig_url,
+                    data: "alp_ajx_action=use_suggestion&_icl_sl_nonce=<?php echo wp_create_nonce('wpml_sticky_links_nonce') ?>&sug_id="+sug_id+"&post_id="+post_id+"&orig_url="+orig_url,
                     success: function(msg){                                                    
                         spl = msg.split('|');
                         jqthis.parent().html('<?php echo icl_js_escape(__('fixed', 'wpml-sticky-links')); ?> - ' + spl[1]);
@@ -328,7 +334,7 @@ class WPML_Sticky_Links{
                 jQuery.ajax({
                     type: "POST",
                     url: "<?php echo htmlentities($_SERVER['REQUEST_URI']) ?>",
-                    data: "alp_ajx_action=alp_revert_urls",
+                    data: "alp_ajx_action=alp_revert_urls&_icl_sl_nonce=<?php echo wp_create_nonce('wpml_sticky_links_nonce') ?>",
                     success: function(msg){                                                    
                         if(-1==msg || msg==0){
                             jQuery('#alp_ajx_ldr_2').fadeOut();
@@ -341,10 +347,7 @@ class WPML_Sticky_Links{
                             jQuery('#alp_rev_items_left').html(msg + ' <?php echo icl_js_escape(__('items left', 'wpml-sticky-links')); ?>');
                             req_rev_timer = window.setTimeout(alp_do_revert_urls,3000);
                             jQuery('#alp_ajx_ldr_2').fadeIn();
-                        }                            
-                    },
-                    error: function (msg){
-                        //alert('Something went wrong');
+                        }
                     }                                                            
                 });
             }
@@ -354,6 +357,7 @@ class WPML_Sticky_Links{
     }
     
     function menu(){
+	    if(!defined('ICL_PLUGIN_PATH')) return;
 		global $sitepress;
 		if(!isset($sitepress) || (method_exists($sitepress,'get_setting') && !$sitepress->get_setting( 'setup_complete' ))) return;
 
@@ -364,65 +368,38 @@ class WPML_Sticky_Links{
     }
     
     function menu_content(){
-        global $wpdb;
-        
-        $types = array();
-        foreach($GLOBALS['wp_post_types'] as $key=>$val){
-            if($val->public && !in_array($key, array('attachment'))){
-                $types[] = $key;
-            }
-        }
-        
-        $this->get_broken_links();
-        $total_posts_pages = $wpdb->get_var("
-            SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type IN ('" . join("','", $types) . "') AND post_status NOT IN ('auto-draft') AND ID NOT IN 
-            (
-                SELECT m.post_id FROM {$wpdb->postmeta} m 
-                JOIN {$wpdb->posts} p ON m.post_id = p.ID
-                WHERE m.meta_key = '_alp_processed' AND p.post_type IN ('" . join("','", $types) . "') AND p.post_status NOT IN ('auto-draft')  
-            )
-        ");
-
-        $total_posts_pages_processed = (int) $wpdb->get_var("
-            SELECT COUNT(m.meta_id) FROM {$wpdb->postmeta} m 
-            JOIN {$wpdb->posts} p ON p.ID = m.post_id
-            WHERE m.meta_key = '_alp_processed' 
-                AND p.post_type IN ('" . join("','", $types) . "')              
-                AND p.post_status NOT IN ('auto-draft')  
-        ");   
-        
         include WPML_STICKY_LINKS_PATH . '/menu/management.php';
         
     }
-            
-    function pre_update_option_widget_text($new_value, $old_value){
-        global $sitepress;
 
-		if(isset($sitepress)) {
+	function pre_update_option_widget_text( $new_value, $old_value ) {
+		global $sitepress;
+
+		if ( isset( $sitepress ) ) {
 			global $wpdb;
 			$current_language = $sitepress->get_current_language();
 			$default_language = $sitepress->get_default_language();
-			$sitepress->switch_lang($default_language);
+			$sitepress->switch_lang( $default_language );
 			$alp_broken_links = array();
 
-			if(is_array($new_value)){
-				foreach($new_value as $k=>$w){
-					if(isset($w['text'])){
-							$new_value[$k]['text'] = $this->absolute_links_object->_process_generic_text($w['text'], $alp_broken_links);
+			if ( is_array( $new_value ) ) {
+				foreach ( $new_value as $k => $w ) {
+					if ( isset( $w[ 'text' ] ) ) {
+						$new_value[ $k ][ 'text' ] = $this->absolute_links_object->_process_generic_text( $w[ 'text' ], $alp_broken_links );
 					}
 				}
-				if($new_value !== $old_value){
-					$wpdb->update($wpdb->options, array('option_value'=>$new_value), array('option_name'=>'widget_text'));
+				if ( $new_value !== $old_value ) {
+					$wpdb->update( $wpdb->options, array( 'option_value' => $new_value ), array( 'option_name' => 'widget_text' ) );
 				}
 			}
 
-			$sitepress->switch_lang($current_language);
+			$sitepress->switch_lang( $current_language );
 		}
 
-        return $new_value;
-    }
+		return $new_value;
+	}
 
-    function save_default_urls($post_id, $post){
+	function save_default_urls( $post_id, $post ) {
 		if ( $post->post_status == 'auto-draft' || isset( $_POST[ 'autosave' ] ) ) {
 			return;
 		}
@@ -436,62 +413,65 @@ class WPML_Sticky_Links{
 			return;
 		}
 
-		$this->absolute_links_object->process_post($post_id);
-    }
-    
-    function show_permalinks($cont){
-        if(!isset($GLOBALS['__disable_absolute_links_permalink_filter']) || !$GLOBALS['__disable_absolute_links_permalink_filter']){
-            $home = rtrim(get_option('home'),'/');        
-            $parts = parse_url($home);        
-            $abshome = $parts['scheme'] .'://' . $parts['host'];
-            $path = isset($parts['path']) ? ltrim($parts['path'],'/') : '';    
-            $tx_qvs = join('|',$this->absolute_links_object->taxonomies_query_vars);
-            $reg_ex = '@<a([^>]+)?href="(('.$abshome.')?/'.$path.'/?\?(p|page_id|cat_ID|'.$tx_qvs.')=([0-9a-z-]+))(#?[^"]*)"([^>]+)?>@i';
-			$cont = preg_replace_callback( $reg_ex, array( $this, 'show_permalinks_cb' ), $cont );
+		$this->absolute_links_object->process_post( $post_id );
+	}
+
+	function show_permalinks( $cont ) {
+		if ( !isset( $GLOBALS[ '__disable_absolute_links_permalink_filter' ] ) || !$GLOBALS[ '__disable_absolute_links_permalink_filter' ] ) {
+			$home    = rtrim( get_option( 'home' ), '/' );
+			$parts   = parse_url( $home );
+			$abshome = $parts[ 'scheme' ] . '://' . $parts[ 'host' ];
+			$path    = isset( $parts[ 'path' ] ) ? ltrim( $parts[ 'path' ], '/' ) : '';
+			$tx_qvs  = join( '|', $this->absolute_links_object->taxonomies_query_vars );
+			$reg_ex  = '@<a([^>]+)?href="((' . $abshome . ')?/' . $path . '/?\?(p|page_id|cat_ID|' . $tx_qvs . ')=([0-9a-z-]+))(#?[^"]*)"([^>]+)?>@i';
+			$cont    = preg_replace_callback( $reg_ex, array( $this, 'show_permalinks_cb' ), $cont );
 		}
-        return $cont;
-    }
-       
-    function show_permalinks_cb($matches){
+
+		return $cont;
+	}
+
+	function show_permalinks_cb( $matches ) {
+		global $sitepress;
+
 		$tax = false;
 		if ( isset( $this->absolute_links_object->taxonomies_query_vars ) && is_array( $this->absolute_links_object->taxonomies_query_vars ) ) {
-			$tax = array_search( $matches[ 4 ], array_keys( $this->absolute_links_object->taxonomies_query_vars ) );
+			$tax = array_search( $matches[ 4 ], $this->absolute_links_object->taxonomies_query_vars );
 		}
 
-		if($matches[4]=='cat_ID'){
-            $url = get_category_link($matches[5]);
-        }elseif( $tax ){
-            $url = get_term_link($matches[5], $tax);
-        }else{
-            $url = get_permalink($matches[5]);
-        }
-
-		if(is_wp_error($url) || empty($url)) {
-			return $matches[0];
+		if ( $matches[ 4 ] == 'cat_ID' ) {
+			$url = get_category_link( $matches[ 5 ] );
+		} elseif ( $tax ) {
+			$url = get_term_link( $matches[ 5 ], $tax );
+		} else {
+			$url = get_permalink( $matches[ 5 ] );
 		}
 
-        $fragment = $matches[6];
-        if ($fragment != '') {
-            $fragment = str_replace('&#038;', '&', $fragment);
-            $fragment = str_replace('&amp;', '&', $fragment);
-            if ($fragment[0] == '&') {
-                if (strpos($url, '?') === FALSE) {
-                    $fragment[0] = '?';
-                }
-            }
-        }
-        
-        $trail = '';
-        if (isset($matches[7])) {
-            $trail = $matches[7];
-        }
+		if ( is_wp_error( $url ) || empty( $url ) ) {
+			return $matches[ 0 ];
+		}
 
-		global $sitepress;
-		if(isset($sitepress)) {
+		$fragment = $matches[ 6 ];
+		if ( $fragment != '' ) {
+			$fragment = str_replace( '&#038;', '&', $fragment );
+			$fragment = str_replace( '&amp;', '&', $fragment );
+			if ( $fragment[ 0 ] == '&' ) {
+				if ( strpos( $url, '?' ) === false ) {
+					$fragment[ 0 ] = '?';
+				}
+			}
+		}
+
+		$trail = '';
+		if ( isset( $matches[ 7 ] ) ) {
+			$trail = $matches[ 7 ];
+		}
+
+		if ( isset( $sitepress ) && 'widget_text' == current_filter() ) {
 			$url = $sitepress->convert_url( $url );
 		}
-        return '<a'.$matches[1]. 'href="'. $url . $fragment . '"' . $trail . '>';
-    }
+
+		return '<a' . $matches[ 1 ] . 'href="' . $url . $fragment . '"' . $trail . '>';
+	}
     
     function get_broken_links(){
         global $wpdb;
@@ -531,10 +511,19 @@ class WPML_Sticky_Links{
     function plugin_localization(){
         load_plugin_textdomain( 'wpml-sticky-links', false, WPML_STICKY_LINKS_FOLDER . '/locale');
     }
+	
 }  
 
 global $WPML_Sticky_Links;
 
 if(!isset($WPML_Sticky_Links)) {
 	$WPML_Sticky_Links = new WPML_Sticky_Links();
+}
+
+if(!function_exists('icl_js_escape')) {
+	function icl_js_escape($str){
+	    $str = esc_js($str);
+	    $str = htmlspecialchars_decode($str);
+	    return $str;
+	}  	
 }
