@@ -32,7 +32,10 @@
 
 				
 					<div class="wideover overlay">
-					
+					     <div style="float:left; width:20%;">
+					     		<img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png" style="width:130%;">
+					     </div>
+					      <div style="float:right; width:80%;">
 						<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
 						<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
 						
@@ -43,11 +46,12 @@
 							<?php echo get_option('cebo_hometext'); ?>
 							
 							
-							<a class="wideopensays" href="#"><i class="fa fa-chevron-down"></i></a>
-							<a class="wideopensays" href="#"><i class="fa fa-chevron-up"></i></a>
+							<!--a class="wideopensays" href="#"><i class="fa fa-chevron-down"></i></a>
+							<a class="wideopensays" href="#"><i class="fa fa-chevron-up"></i></a-->
 						</div>
 				
-					</div>				
+					</div>		
+					</div>		
 					<div id="owl-example" class="owl-carousel">
 					
 			
