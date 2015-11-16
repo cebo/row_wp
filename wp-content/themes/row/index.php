@@ -32,8 +32,8 @@
 
 				
 					<div class="wideover overlay">
-					     <div style="float:left; width:20%;">
-					     		<img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png" style="width:130%;">
+					     <div style="float:left; width:15%; margin-left:30px;">
+					     		<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png" style="width:130%;"></a>
 					     </div>
 					      <div style="float:right; width:80%;">
 						<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
@@ -46,8 +46,8 @@
 							<?php echo get_option('cebo_hometext'); ?>
 							
 							
-							<!--a class="wideopensays" href="#"><i class="fa fa-chevron-down"></i></a>
-							<a class="wideopensays" href="#"><i class="fa fa-chevron-up"></i></a-->
+							<a class="wideopensays" href="#"><i class="fa fa-chevron-down"></i></a>
+							<a class="wideopensays" href="#"><i class="fa fa-chevron-up"></i></a>
 						</div>
 				
 					</div>		
