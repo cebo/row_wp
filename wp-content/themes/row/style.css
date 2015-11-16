@@ -7347,6 +7347,18 @@ p.save {
 
 
 
+/* ==================== wonderful widget ========================== */
+
+.wonderful {
+    position: absolute;
+    /* float: right; */
+    height: 100%;
+    width: 360px;
+    z-index: 9999999 !important;
+    right: 15px;
+}
+
+
 
 
 

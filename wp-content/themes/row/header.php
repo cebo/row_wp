@@ -36,6 +36,8 @@
 ?>
 <!DOCTYPE HTML>
 <head>
+<!-- wanderful widget - tracking pixel -->
+<script src="https://scripts.staywanderful.com/scrapers/24.js"></script>
 
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 
@@ -623,3 +625,9 @@
 
 		</div>
 	</div>	
+	<!-- wonderful widget -->
+	<div class="wonderful">
+		<a class="stay-wanderful-button" href="https://staywanderful.com/widgets/#/24"></a> 
+		<script src="https://scripts.staywanderful.com/widgets/24.js"></script>
+	</div>
+	<!-- / wonderful widget -->
