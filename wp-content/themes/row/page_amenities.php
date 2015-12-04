@@ -8,7 +8,7 @@
 	
 	<section class="contentarea">
 			
-		<div class="welcomebox" style="padding: 15px;">
+		<div class="welcomebox" style="padding: 15px 350px 15px 15px;">
 			
 			<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 			
