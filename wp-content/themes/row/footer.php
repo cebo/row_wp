@@ -103,6 +103,20 @@
 			
 			</div>
 
+			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
+			<div class="tier-two">
+			<div style="float:left; width:15%; margin-left:30px;">
+				<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank">
+					<img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png" style="width:80%;"></a>
+			</div>
+			<div style="float:right; width:83%;">
+				<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
+				<h2>CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015</h2>
+				<span style="font-family: 'GothamBook'; text-transform: uppercase; font-size: 12px; color: #fff; font-weight: normal; font-family: helvetica;">Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!</span>
+			</div>
+			</div>
+			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
+
 			<!-- save the children  -->
 
 				<div class="tier-two">
@@ -119,7 +133,7 @@
 
 					<div class="tandl">
 						
-							<img class="left" width="150px" src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png">
+							<img class="left" width="100px" src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png">
 							
 							<p class="bestaward">Travel + Leisure 2016 <br> World’s Best Award.</p>
 
@@ -129,7 +143,6 @@
 				</div>
 
 			<!-- / save the children -->
-					
 					
 		</div>
 				
