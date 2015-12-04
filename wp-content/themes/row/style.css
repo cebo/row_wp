@@ -2283,7 +2283,7 @@ visibility: hidden;
 
 	text-align: left;
 	height: 280px;
-    width: 350px;
+   /* width: 350px;*/
 }
 
 
@@ -7277,10 +7277,12 @@ p.contacto a {
 /* SAVE THE CHILDREN ########################################################################################## */
 
 .save-the-children {
-  width: 100%;
-  margin: 19px auto 1px;
+  width: 50%;
+  margin: 0 auto;
   position: relative;
-      }
+      margin-top: 30px;
+      float: left;
+}
 
 
 p.save-the-children {
@@ -7317,35 +7319,15 @@ a.donate-btn {
 
 .save-the-children .button {
     position: relative;
-    top: -65px;
+    top: -77px;
     float: right;
-    right: 5%;
+  /*  right: 5%;*/
 }
 
 .footer {
 	background-color: #444444;
-	height: 25%;
+	height: 40%;
 }
-
-
-@media only screen and (max-width: 768px){
-
-	.save-the-children .button {
-    position: relative;
-    top: -65px;
-    float: right;
-    right: 5%;
-}
-
-p.save {
-    width: 30%;
-    font-size: 12px;
-    line-height: 22px;
-    color: #fff;
-}
-}
-
-
 
 /* ==================== wonderful widget ========================== */
 
@@ -7357,6 +7339,25 @@ p.save {
     z-index: 9999999 !important;
     right: 15px;
 }
+
+/* ==== T&L Widget ======= */
+
+.tandl
+{
+   width: 45%;
+  margin: 19px auto 1px;
+  position: relative;
+  float:right;
+}
+
+p.bestaward {
+    width: 80%;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    font-family: "GothamBook";
+}
+
 
 
 

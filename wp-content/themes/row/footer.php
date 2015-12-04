@@ -115,9 +115,21 @@
 							<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214">donate now</a>
 
 					</div>
+
+
+					<div class="tandl">
+						
+							<img class="left" width="150px" src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png">
+							
+							<p class="bestaward">Travel + Leisure 2016 <br> World’s Best Award.</p>
+
+							<a class="button" target="_blank" href="http://tlworldsbest.wylei.com/">vote now</a>
+
+					</div>
 				</div>
 
 			<!-- / save the children -->
+					
 					
 		</div>
 				
