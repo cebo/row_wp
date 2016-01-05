@@ -201,6 +201,22 @@
 	}());
 </script>
 
+	<script type="application/ld+json">
+		{
+		"@context": "http://schema.org",
+		"@type": "NewsArticle",
+		"headline": "Article headline",
+		"alternativeHeadline": "The headline of the Article",
+		"image": [
+		"thumbnail1.jpg",
+		"thumbnail2.jpg"
+		],
+		"datePublished": "2015-02-05T08:00:00+08:00",
+		"description": "A most wonderful article",
+		"articleBody": "The full body of the article"
+		}
+	</script> 
+
 </head> 
 
 <body <?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?>class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?>class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?>class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?>class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?>class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?>class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?>class="page single amenity"<?php } elseif(is_page() || is_single()) { body_class('single'); ?><?php } elseif(is_home() || is_front_page()) { ?>class="home"<?php } ?>>
