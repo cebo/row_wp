@@ -120,6 +120,7 @@
 			<!-- save the children  -->
 
 				<div class="tier-two">
+				<!--
 					<div class="save-the-children">
 						
 							<img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo-white.png">
@@ -129,7 +130,7 @@
 							<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214">donate now</a>
 
 					</div>
-
+				-->
 
 					<div class="tandl">
 						
