@@ -25,7 +25,7 @@
 		$parse = parse_url($_SERVER['REQUEST_URI']);
 		//print_r($parse['path']);
 		
-		print_r('http://m.rownyc.com' . $parse['path']);
+		//print_r('http://m.rownyc.com' . $parse['path']);
 		if( $check && !get_post_meta($post->ID,'cebo_redirect_url', true) ) {
 			header("HTTP/1.1 301 Moved Permanently");
 			header( 'Location: http://m.rownyc.com' . $parse['path'] );
