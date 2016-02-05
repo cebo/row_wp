@@ -7359,11 +7359,9 @@ p.bestaward {
     margin-top: 18px;
 }
 
-
-
-
-
-
-
-
-
+a.button.home-vote:hover {
+    color: #000;
+}
+a.button.home-vote {
+    color: #fff;
+}
