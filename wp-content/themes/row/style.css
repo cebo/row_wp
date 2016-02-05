@@ -7365,3 +7365,7 @@ a.button.home-vote:hover {
 a.button.home-vote {
     color: #fff;
 }
+
+a.wideopensays {
+    display: none;
+}
