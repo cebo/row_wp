@@ -140,7 +140,7 @@
 			 <div class="tier-two footer_ads travels">
 				 <div class="tandl">
 							
-								<img class="left" width="100px" src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png">
+								<a href="http://tlworldsbest.wylei.com/" target="_blank"><img class="left" width="100px" src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png"></a>
 								
 								<p class="bestaward">Travel + Leisure 2016 <br> World’s Best Award.</p>
 
