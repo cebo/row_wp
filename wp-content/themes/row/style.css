@@ -7371,7 +7371,12 @@ a.wideopensays {
 }
 .closena{
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 15px;
+    top: 20px;
     cursor:pointer;
+    font-family: 'GothamBold';
+    font-weight: bold;
 }
+.closena img{
+width:60%;
+} 
