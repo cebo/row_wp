@@ -7335,10 +7335,10 @@ a.donate-btn {
 
 .wonderful {
     position: absolute;
-    /* float: right; */
+    /* float: right; 
     height: 100%;
-    width: 360px;
-    z-index: 9999999 !important;
+    width: 360px;*/
+    z-index: 9 !important;
     right: 15px;
 }
 
