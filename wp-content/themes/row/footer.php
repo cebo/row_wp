@@ -115,6 +115,12 @@
 				<span style="font-family: 'GothamBook'; text-transform: uppercase; font-size: 12px; color: #fff; font-weight: normal; font-family: helvetica;">Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!</span>
 			</div>
 			</div>
+			
+			<?php
+				$tiertwooff = false;
+				if ($tiertwooff) {
+			?>
+
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
 
 			<!-- save the children  -->
@@ -122,9 +128,9 @@
 				<div class="tier-two">
 				<!--
 					<div class="save-the-children">
-						
+
 							<img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo-white.png">
-							
+
 							<p class="save">Join us in supporting Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. 100% of your donation benefits Save the Children. Thank you for your support.</p>
 
 							<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214">donate now</a>
@@ -133,9 +139,9 @@
 				-->
 
 					<div class="tandl">
-						
+
 							<img class="left" width="100px" src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png">
-							
+
 							<p class="bestaward">Travel + Leisure 2016 <br> World’s Best Award.</p>
 
 							<a class="button" target="_blank" href="http://tlworldsbest.wylei.com/">vote now</a>
@@ -144,7 +150,9 @@
 				</div>
 
 			<!-- / save the children -->
-					
+
+			<?php } ?>
+			
 		</div>
 				
 	</section>
