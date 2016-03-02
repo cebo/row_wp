@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * The template for displaying the footer.
  *
@@ -104,55 +104,53 @@
 			</div>
 
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
-			<div class="tier-two">
-			<div style="float:left; width:15%; margin-left:30px;">
-				<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank">
-					<img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png" style="width:80%;"></a>
-			</div>
-			<div style="float:right; width:83%;">
-				<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
-				<h2>CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015</h2>
-				<span style="font-family: 'GothamBook'; text-transform: uppercase; font-size: 12px; color: #fff; font-weight: normal; font-family: helvetica;">Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!</span>
-			</div>
-			</div>
 			
-			<?php
-				$tiertwooff = false;
-				if ($tiertwooff) {
-			?>
-
+			<div class="tier-two footer_ads conde">
+				<div style="float:left;/*width:15%; */ margin-left:50px;">
+					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank">
+						<img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png" style="width:38%;"></a>
+				</div>
+				<div style="float:right; width:83%;">
+					<h2 class="h1">ROW NYC</h2>
+					<h2 class="h2">CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015</h2>
+					<span style="font-family: 'GothamBook'; text-transform: uppercase; font-size: 80%; color:#E0DDD9; font-weight: normal; font-family: helvetica;">Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!</span>
+				</div>
+			</div>
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
 
 			<!-- save the children  -->
-
-				<div class="tier-two">
-				<!--
+			
+			<!--
+			<div class="tier-two footer_ads save_children">
 					<div class="save-the-children">
-
-							<img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo-white.png">
-
+						
+							<img class="left" width="270px" style="width: 110%;" src="http://www.rownyc.com/wp-content/themes/row/images/save-the-children-logo-white.png">
+							
 							<p class="save">Join us in supporting Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. 100% of your donation benefits Save the Children. Thank you for your support.</p>
 
-							<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214">donate now</a>
+							<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&amp;utm_source=Highgate2014&amp;utm_medium=link&amp;utm_campaign=highgatehotels1214">donate now</a>
 
 					</div>
-				-->
+					
+			 </div>
+			 -->
+			 
+			 <!-- / save the children -->
+			 
+			 <div class="tier-two footer_ads travels">
+				 <div class="tandl">
+							
+								<a target="_blank" href="http://tlworldsbest.wylei.com/"><img class="left" width="100px" src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png"></a>
+								
+								<p class="bestaward">Travel + Leisure 2016 <br> World’s Best Award.</p>
 
-					<div class="tandl">
+								<a class="button" target="_blank" href="http://tlworldsbest.wylei.com/">vote now</a>
 
-							<img class="left" width="100px" src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png">
+				 </div>
+		     </div>
 
-							<p class="bestaward">Travel + Leisure 2016 <br> World’s Best Award.</p>
-
-							<a class="button" target="_blank" href="http://tlworldsbest.wylei.com/">vote now</a>
-
-					</div>
-				</div>
-
-			<!-- / save the children -->
-
-			<?php } ?>
 			
+					
 		</div>
 				
 	</section>
@@ -355,6 +353,11 @@ var google_remarketing_only = true;
 
 	<script>
 		(function() {
+
+                         $(".closena").click(function(){
+ 				
+				$(this).parent().fadeOut(100);
+                         });
 
 			<?php if( is_home() || is_front_page() ) { ?>
 
