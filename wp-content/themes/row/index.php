@@ -30,11 +30,16 @@
 				
 				
 
+					<?php
+						// Saving it for future use
+						$index_tlnobg = false;
+						if($index_tlnobg) {
+					?>
 				
 					<div class="wideover overlay">
-						 <div class="closena" style="float:left;position:absolute">
- 					      <img src="<?php bloginfo ('template_url'); ?>/images/closena.png" >
-                          </div>
+                                              <div class="closena" style="float:left;position:absolute">X</div>
+ 					     <!-- <img src="<?php bloginfo ('template_url'); ?>/images/closena.png" > !-->
+                                               
 					     <div style="float:left; width:15%; margin-left:30px;">
 					     		<a href="http://tlworldsbest.wylei.com/" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png" style="width:130%;"></a>
 					     </div>
@@ -55,8 +60,10 @@
 				
 					</div>		
 					</div>		
-					<div id="owl-example" class="owl-carousel">
 					
+					<?php } ?>
+					
+					<div id="owl-example" class="owl-carousel">
 			
 
 

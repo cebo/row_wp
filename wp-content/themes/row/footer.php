@@ -116,6 +116,13 @@
 					<span style="font-family: 'GothamBook'; text-transform: uppercase; font-size: 80%; color:#E0DDD9; font-weight: normal; font-family: helvetica;">Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!</span>
 				</div>
 			</div>
+			
+			
+			<?php
+				// Saving it for future use
+				$ftrtlnobg = false;
+				if($ftrtlnobg) {
+			?>
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
 
 			<!-- save the children  -->
@@ -148,7 +155,8 @@
 
 				 </div>
 		     </div>
-
+			 
+			 <?php } ?>
 			
 					
 		</div>
