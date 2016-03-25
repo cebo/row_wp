@@ -166,22 +166,20 @@
 	wp_head();
 ?>
 
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-10318674-1', 'auto', {
-		'allowLinker': true
-	});
-	// Optimizely Universal Analytics Integration 
-	window.optimizely = window.optimizely || []; window.optimizely.push("activateUniversalAnalytics");
-	//var dimensionValue = 'optimizely_test';
-	//ga('set', 'dimension1', dimensionValue);
-	ga('send', 'pageview');
-	ga('require', 'linker');
-	ga('linker:autoLink', ['reztrip.com'], false, true);
+ 
+
+<script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+
+Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-10318674-1', 'auto',{'allowLinker': true });
+
+ga('require', 'linker'); ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);
+
+ga('send', 'pageview');
+
 </script>
+
 
 <script type="text/javascript">
 	adroll_adv_id = "NQP2TEBPSVGKHDHDXCYZE7";
