@@ -56,12 +56,7 @@
 					</div>		
 					</div>		
 					<div id="owl-example" class="owl-carousel">
-					
-			
-
-
-
-					<?php 
+		 		<?php 
 
 						query_posts(array(
 				
