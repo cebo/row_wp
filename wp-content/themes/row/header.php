@@ -1,9 +1,9 @@
-<?php
+ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);<?php
 
 	global $sitepress;
 	if (function_exists('get_current_language') || function_exists('get_default_language')) { 
 		$current_lang = $sitepress->get_current_language();
-		$default_lang = $sitepress->get_default_language();
+		$default_lang = $sitepress->get_default_language();ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);
 	} else {
 		$current_lang = 'en';
 		$default_lang = 'en';
@@ -173,9 +173,8 @@
 Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-10318674-1', 'auto',{'allowLinker': true });
-
 ga('require', 'linker'); ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);
-
+toga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com'], false, true);
 ga('send', 'pageview');
 
 </script>
