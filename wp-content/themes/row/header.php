@@ -173,7 +173,7 @@ ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);<?php
 Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-10318674-1', 'auto',{'allowLinker': true });
-ga('require', 'linker'); ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);
+ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);
 toga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com'], false, true);
 ga('send', 'pageview');
 
