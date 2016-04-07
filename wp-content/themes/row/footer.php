@@ -97,7 +97,7 @@
 			
 				<ul>
 					<li>Reservations<span>888.352.3650</span></li>
-					<li>EMAIL<span><a href="mailto:info@rownyc.com">info@rownyc.com</a></span></li>
+					<!--<li>EMAIL<span><a href="mailto:info@rownyc.com">info@rownyc.com</a></span></li>-->
 					<li class="widest">A Times Square Hotel<span>700 8th Avenue, New York, NY 10036</span></li>
 				</ul>
 			
