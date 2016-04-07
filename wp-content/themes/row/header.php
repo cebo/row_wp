@@ -247,6 +247,7 @@ ga('send', 'pageview');
 
 	<?php endwhile; endif; wp_reset_query(); ?>
 
+	
 	<section class="navigate">
 			
 			<div class="logobox">
@@ -262,7 +263,36 @@ ga('send', 'pageview');
 			<li class="subinside inhotel">
 				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
 			</li>
+
+			<li class="subinside indeals">
+				<a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><span class="deals"></span><p><?php _e('Special Offers','row-theme-text'); ?></p></a>	
+			</li>
+
+			<li class="subinside inrooms">
+				<a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>		
+			</li>
+
+			<li class="subinside ineats">
+				<a href="<?php bloginfo ('url'); ?>/eat-drink/"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>	
+			</li>
+
 			<li>
+				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/amenities/"><span class="fitness"></span><p><?php _e('Amenities','row-theme-text'); ?></p></a>
+			</li>	
+
+			<li class="subinside ingallery">
+				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
+			</li>
+
+			<li>
+				<a href="<?php bloginfo ('url'); ?>/blog"><span class="blogxs"></span><p><?php _e('Blog','row-theme-text'); ?></p></a>
+			</li>
+
+			<li>
+				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
+			</li>
+
+			<!--<li>
 
 				<?php if( $current_lang == 'en') { ?>
 
@@ -286,23 +316,11 @@ ga('send', 'pageview');
 
 				<?php } ?>
 
-			</li>
+			</li>-->
 
-			<li class="subinside inrooms">
-				<a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>		
-			</li>
+
 			
-			<li class="subinside ingallery">
-				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
-			</li>
-			
-			<li class="subinside indeals">
-				<a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><span class="deals"></span><p><?php _e('Deals','row-theme-text'); ?></p></a>	
-			</li>
-			
-			<li class="subinside ineats">
-				<a href="<?php bloginfo ('url'); ?>/eat-drink/"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>	
-			</li>
+<!--
 
 			<li class="subinside inexplore">
 				<a href="<?php bloginfo ('url'); ?>/explore-nyc/"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>	
@@ -316,15 +334,8 @@ ga('send', 'pageview');
 				<a href="<?php bloginfo ('url'); ?>/hotel-amenities/glamgo/"><span class="glamgo"></span><p><?php _e('GLAM&GO','row-theme-text'); ?></p></a>
 			</li>		
 			
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/blog"><span class="blogxs"></span><p><?php _e('Blog','row-theme-text'); ?></p></a>
-			</li>
 
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
-			</li>
-
-
+-->
 			
 			<!--<li>
 				<a href="#"><span class="blog"></span><p>Apple Blog</p></a>
