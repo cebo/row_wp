@@ -174,7 +174,7 @@ Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.p
 
 ga('create', 'UA-10318674-1', 'auto',{'allowLinker': true });
 ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);
-toga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com'], false, true);
+ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com'], false, true);
 ga('send', 'pageview');
 
 </script>
