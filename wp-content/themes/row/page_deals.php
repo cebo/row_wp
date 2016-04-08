@@ -110,7 +110,7 @@
 					
 							<h1><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h1>
 		
-							<p><?php echo content(65); ?></p>
+							<p><?php echo content(30); ?></p>
 
 							<div id="theguestbook_widget"></div>
 
@@ -118,7 +118,10 @@
 
 						</div>
 
-					<div class="button-wrapper" style="margin: 10px 0 0;"><input class="theguestbook-email-submit-input button" type="button" value="Enroll"></div>	
+					<div class="button-wrapper" style="margin: 10px 0 0;">
+						<a style="margin-bottom: 10px;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_learnmore_url', true)) { echo get_post_meta($post->ID, 'cebo_learnmore_url', true); } else { the_permalink(); } ?>"><?php _e('Read More','row-theme-text'); ?></a><br />
+						<input class="theguestbook-email-submit-input button" type="button" value="Enroll">
+					</div>	
 						
 					<?php } else { ?> 
 	
@@ -126,13 +129,16 @@
 					
 						<h1><?php the_title(); ?></h1>
 	
-						<p><?php echo content(65); ?></p>
+						<p><?php echo content(30); ?></p>
 
 						<div class="wonder-vertical"></div>
 
+
 					</div>
 
-					<div class="button-wrapper" style="margin: 10px 0 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Reserve Now','row-theme-text'); ?></a></div>
+					<div class="button-wrapper" style="margin: 10px 0 0;">
+						<a style="margin-bottom: 10px;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_learnmore_url', true)) { echo get_post_meta($post->ID, 'cebo_learnmore_url', true); } else { the_permalink(); } ?>"><?php _e('Read More','row-theme-text'); ?></a><br />
+						<a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Reserve Now','row-theme-text'); ?></a></div>
 
 					<?php } ?>
 
