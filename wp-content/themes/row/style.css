@@ -4405,8 +4405,9 @@ width: 35%;
     max-height: 611px;
     min-height: 611px;
     overflow: hidden;
-    width: 50%;
+    width: calc(33% - 5px);
     position: relative;
+    margin-right: 10px;
 }
 
 .deal-photo {
@@ -4503,7 +4504,7 @@ a.button.moreinfo{
 
 .deal .button-wrapper a.button {
 	padding: 10px 20px;
-    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 /* Single - Deal ---------------------------------------------------- */
