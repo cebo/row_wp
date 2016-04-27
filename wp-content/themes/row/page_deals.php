@@ -119,25 +119,24 @@
 						</div>
 
 					<div class="button-wrapper" style="margin: 10px 0 0;">
-						<a style="margin-right:10px;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_learnmore_url', true)) { echo get_post_meta($post->ID, 'cebo_learnmore_url', true); } else { the_permalink(); } ?>"><?php _e('Read More','row-theme-text'); ?></a>
-						<input style="margin-top: -5px;" class="theguestbook-email-submit-input button" type="button" value="Enroll">
-					</div>	
-						
+						<a class="button" href="<?php if(get_post_meta($post->ID, 'cebo_learnmore_url', true)) { echo get_post_meta($post->ID, 'cebo_learnmore_url', true); } else { the_permalink(); } ?>"><?php _e('Read More','row-theme-text'); ?></a><br />
+						<input style="margin-top: -1px; padding: 10px 37px; background: #fff; color: #000; border: 1px solid #000;" class="theguestbook-email-submit-input button" type="button" value="Enroll">
+					</div>
+
 					<?php } else { ?> 
 	
 					<div class="deal-wrapper">
 					
 						<h1><?php the_title(); ?></h1>
 	
-						<p><?php echo content(60); ?></p>
+						<p><?php echo content(40); ?></p>
 
 						<div class="wonder-vertical"></div>
-
 
 					</div>
 
 					<div class="button-wrapper" style="margin: 10px 0 0;">
-						<a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Book Now','row-theme-text'); ?></a>
+						<a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Book Now','row-theme-text'); ?></a><br/>
 						<a class="button moreinfo" href="<?php if(get_post_meta($post->ID, 'cebo_learnmore_url', true)) { echo get_post_meta($post->ID, 'cebo_learnmore_url', true); } else { the_permalink(); } ?>"><?php _e('More Info','row-theme-text'); ?></a>
 					</div>
 
