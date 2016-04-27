@@ -110,7 +110,7 @@
 					
 							<h1><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h1>
 		
-							<p><?php echo content(45); ?></p>
+							<p><?php echo content(25); ?></p>
 
 							<div id="theguestbook_widget"></div>
 
