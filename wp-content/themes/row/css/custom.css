@@ -3205,3 +3205,6 @@ ul.tabs li:last-child {
 .page-id-3491 .page-content > h1 {
     text-transform: none;
 }
+.footer{
+    margin-top: -25px;
+}

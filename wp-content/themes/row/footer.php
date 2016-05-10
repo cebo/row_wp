@@ -11,7 +11,7 @@
 ?>
 
 	
-		<div class="footer">
+		<div class="footer" style="margin-top:-25px">
 
 			<section class="navigate mobile">
 				
@@ -353,6 +353,12 @@ var google_remarketing_only = true;
 
 	<script>
 		(function() {
+
+			    $(".closena").click(function(){
+ 				
+				$(this).parent().fadeOut(100);
+                         });
+
 
 			<?php if( is_home() || is_front_page() ) { ?>
 
