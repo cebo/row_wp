@@ -65,7 +65,7 @@
 				
 					<div class="picone">
 					
-						<div class="suboverlay narrow textbox-1">
+						<div class="suboverlay narrow textbox-1"  style="height:20%;">
 
 							<div class="innerbox">
 											

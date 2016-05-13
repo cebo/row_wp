@@ -7,7 +7,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video, button, textarea, a {
   	background: transparent;
@@ -19,9 +19,9 @@ time, mark, audio, video, button, textarea, a {
 	text-decoration: none;
 	font-weight: normal;
 	font-family: 'Montserrat', sans-serif;
-}                  
+}
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section { 
+footer, header, hgroup, menu, nav, section {
     display:block;
 }
 blockquote, q { quotes:none; }
@@ -59,7 +59,7 @@ html {
 	height: 100%;
 }
 
-.no-boxshadow input:invalid, 
+.no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid {  }
 
 /* By default the selection color is pink */
@@ -144,9 +144,9 @@ a img {border:0}
 
 /* Float Definitions -----------------------------------------------------------*/
 
-.clear {clear:both;} 
+.clear {clear:both;}
 
-.right {float: right;} 
+.right {float: right;}
 
 .left {float: left;}
 
@@ -290,7 +290,7 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 
 /* Optimizing Legibility -----------------------------------------------------------*/
 
-.navigate .supernav li ul.dropdown li a, 
+.navigate .supernav li ul.dropdown li a,
 .tier-two ul li,
 .tier-two ul li a {
 	text-rendering: optimizeLegibility;
@@ -392,7 +392,7 @@ h4 {
 
 .hover {
 	-webkit-user-select: none;
-	-webkit-touch-callout: none;        
+	-webkit-touch-callout: none;
 }
 
 
@@ -476,11 +476,11 @@ h4 {
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
-	
+
  }
- 
+
  .narrowed .supernav p {
- 	
+
  }
 .navigate.mobile .jspContainer, .navigate.mobile .jspPane {
 	overflow: visible;
@@ -662,7 +662,7 @@ h4 {
 	-moz-transition-delay: .5s;
 	-o-transition-delay: .5s;
 	transition-delay: .5s;*/
-}	
+}
 
 
 .navigate .supernav li ul.dropdown {
@@ -729,7 +729,7 @@ h4 {
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;*/
-	
+
 }
 
 .slipnot .supernav li ul.dropbox li.drop-intro {
@@ -776,7 +776,7 @@ h4 {
 	width: 100%;
 	float: none;
 	clear: both;
-	
+
 }
 
 .navigate .supernav li ul li h3 {
@@ -843,7 +843,7 @@ h4 {
     opacity: 1;
     visibility: visible;
 }
-	
+
 
 .navigate .supernav li:hover p, .navigate .supernav li.activeone p {
 	color: #000;
@@ -938,7 +938,7 @@ h4 {
 	font-weight: bold;
 	text-align: center;
 	width:250px;
-	
+
 }
 
 .navigate .supernav li.subinside:hover li.drop-intro p {
@@ -1137,8 +1137,8 @@ nav#menu.mobile {
   cursor: pointer;
   border: none;
 }
-  
-  
+
+
 .exclusive-offer i {
     color: #ff27ab;
     cursor: pointer;
@@ -1154,7 +1154,7 @@ nav#menu.mobile {
 .da-block {
     position: relative;
 }
-	
+
 label.error {
     font-family: Arial;
     font-size: 11px;
@@ -1167,7 +1167,7 @@ label.error {
     position: relative;
     color: red;
 }
-	
+
 /*.calspacer {
 	padding: 10px 40px;
 }
@@ -1335,7 +1335,7 @@ ul#selectUl li {
 	font-family: 'GothamBold';
 	letter-spacing: -6px;
 	text-transform: uppercase;
-	text-align: center; 
+	text-align: center;
 }
 ul#selectUl li:first-child {
     border: none;
@@ -1375,7 +1375,7 @@ ul#selectUl li.unselected:hover {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #ddd;  
+   color: #ddd;
 }
 
 *::-moz-placeholder {
@@ -1383,8 +1383,8 @@ ul#selectUl li.unselected:hover {
     opacity: 1;
 }
 
-:-ms-input-placeholder {  
-   color: #ddd;  
+:-ms-input-placeholder {
+   color: #ddd;
 }
 
 .squaredance {
@@ -1637,7 +1637,7 @@ ul#selectUl li.unselected:hover {
 	height: 100%;
 	overflow: auto;
 }
-	
+
 .banner {
     background: none repeat scroll 0 0 #000;
     height: 80px;
@@ -1907,7 +1907,7 @@ ul#selectUl li.unselected:hover {
 }
 .owl-theme .owl-controls {
 	margin-top: 0 !important;
-} 
+}
 .dealcopy {
 	padding: 30px 15px;
 	text-align: center;
@@ -2487,6 +2487,7 @@ visibility: hidden;
 	font-size: 12px;
 	text-transform: uppercase;
 	color: #000;
+	padding: 0 10px;
 }
 
 .suboverlay a:hover {
@@ -2520,7 +2521,7 @@ visibility: hidden;
     background: rgba(255,255,255,0.85);
 	padding: 20px;
 	margin: auto;
-	max-width: 75%;	
+	max-width: 75%;
 }
 
 .bigover h1, .bigover h2.h1 {
@@ -2644,7 +2645,7 @@ visibility: hidden;
 	background: #fff;
 	z-index: 99;
 	position: relative;
-	
+
 }
 
 .textbox h3, .textbox-1 h3,
@@ -2826,10 +2827,10 @@ visibility: hidden;
 
 .guestrooms:hover .stretch {
 	-moz-transform: scale(1.05);
-  	-o-transform: scale(1.05); 
-  	-ms-transform: scale(1.05); 
-  	-webkit-transform: scale(1.05);  
-  	transform:scale(1.05); 
+  	-o-transform: scale(1.05);
+  	-ms-transform: scale(1.05);
+  	-webkit-transform: scale(1.05);
+  	transform:scale(1.05);
   	-webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
 		-o-column-break-inside:avoid;
@@ -2840,10 +2841,10 @@ visibility: hidden;
 
 .picone:hover .stretch {
 	-moz-transform: scale(1.05);
-  	-o-transform: scale(1.05); 
-  	-ms-transform: scale(1.05); 
-  	-webkit-transform: scale(1.05);  
-  	transform:scale(1.05); 
+  	-o-transform: scale(1.05);
+  	-ms-transform: scale(1.05);
+  	-webkit-transform: scale(1.05);
+  	transform:scale(1.05);
   	-webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
 		-o-column-break-inside:avoid;
@@ -2853,10 +2854,10 @@ visibility: hidden;
 }
 .fullspan:hover .stretch {
 	-moz-transform: scale(1.05);
-  	-o-transform: scale(1.05); 
-  	-ms-transform: scale(1.05); 
-  	-webkit-transform: scale(1.05);  
-  	transform:scale(1.05); 
+  	-o-transform: scale(1.05);
+  	-ms-transform: scale(1.05);
+  	-webkit-transform: scale(1.05);
+  	transform:scale(1.05);
   	-webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
 		-o-column-break-inside:avoid;
@@ -2867,10 +2868,10 @@ visibility: hidden;
 
 .home-intro:hover .stretch {
 	-moz-transform: scale(1.05);
-  	-o-transform: scale(1.05); 
-  	-ms-transform: scale(1.05); 
-  	-webkit-transform: scale(1.05);  
-  	transform:scale(1.05); 
+  	-o-transform: scale(1.05);
+  	-ms-transform: scale(1.05);
+  	-webkit-transform: scale(1.05);
+  	transform:scale(1.05);
   	-webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
 		-o-column-break-inside:avoid;
@@ -2885,10 +2886,10 @@ visibility: hidden;
 
 .deal:hover .deal-photo {
 	-moz-transform: scale(1.05);
-  	-o-transform: scale(1.05); 
-  	-ms-transform: scale(1.05); 
-  	-webkit-transform: scale(1.05);  
-  	transform:scale(1.05); 
+  	-o-transform: scale(1.05);
+  	-ms-transform: scale(1.05);
+  	-webkit-transform: scale(1.05);
+  	transform:scale(1.05);
   	-webkit-column-break-inside:avoid;
 		-moz-column-break-inside:avoid;
 		-o-column-break-inside:avoid;
@@ -3853,7 +3854,7 @@ width: 35%;
     min-height: 20%;
     padding-bottom: 30px;
     top: 20%;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
 }
 
 .page .fullvertical .textbox.openbox, .page .fullvertical .textbox-1.openbox-1 {
@@ -3953,7 +3954,7 @@ width: 35%;
     overflow: auto;
     background: rgb(255,255,255);
     background: rgba(255,255,255,0.85);
-    
+
 }
 
 .photo-list li {
@@ -4794,7 +4795,7 @@ a.button.moreinfo{
 	border-radius: 0 0 0 0;
     padding: 10px;
     z-index: 2147483647 !important;
-  
+
 }
 
 #ui-datepicker-div {
@@ -5658,7 +5659,7 @@ button.ui-button::-moz-focus-inner {
 	max-width: 300px;
 	-webkit-box-shadow: 0 0 5px #aaa;
 	box-shadow: 0 0 5px #aaa;
-	
+
 }
 body .ui-tooltip {
 	border-width: 2px;
@@ -6101,25 +6102,25 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-	
+
 }
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-	
+
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-	
+
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-	
+
 }
 
 
@@ -6223,7 +6224,7 @@ float: right;
 	background: none repeat scroll 0 0 #048B8F;
     border-bottom: 1px solid #036B6D;
     border-top: 1px solid #03A8AA;
-  
+
     margin-bottom: 30px;
     position: relative;
 }
@@ -6400,7 +6401,7 @@ a.detailsAnchor {
 /* Tweet Markers */
 
   .marker {
-    
+
     color: #ffffff;
     font-family: arial;
     font-size: 10px;
@@ -6422,20 +6423,20 @@ a.detailsAnchor {
    .marker:hover {
     z-index: 100000;
   }
-  
+
   .marker:hover img {
     margin: 0px 5px 5px 0px;
   }
-  
+
   .marker:hover .tweet {
     display: block;
   }
 
 /* place markers */
   .marker {
-    
+
   }
-  
+
   .location {
     background: #faffff;
     border: 2px solid #ffffff;
@@ -6466,7 +6467,7 @@ a.detailsAnchor {
     overflow: hidden;
     position: relative;
     width: 50px;*/
-    z-index: 1; 
+    z-index: 1;
     height: 5px;
 	width: 5px;
 	z-index: 1;
@@ -6483,9 +6484,9 @@ a.detailsAnchor {
   .placeMark:hover {
   }
 	.placeMark {
-	
+
 	}
-  
+
    #maparea .placeMark:before {
   	opacity: 0.2;
 	z-index: 0;
@@ -6544,7 +6545,7 @@ a.detailsAnchor {
 	opacity: 0;
 	visibility: hidden;
    }
-   
+
 .placeMark a:before {
 	background: transparent;
 	z-index: 9999;
@@ -6694,7 +6695,7 @@ a.detailsAnchor {
      #maparea .shop small {
     }
   #maparea .shop:hover {
-  	
+
   }
   .placeMark a {
     display: block;
@@ -6702,7 +6703,7 @@ a.detailsAnchor {
 	height: 18px;
 
   }
-  
+
   .placeMark:hover {
     z-index: 999999999;
     display: block;
@@ -6711,9 +6712,9 @@ a.detailsAnchor {
   }
 
   #toggles .shop {
-  	
+
   }
-  
+
   #toggles li a  {
   	background: #eeefff;
   	height: 100%;
@@ -6727,9 +6728,9 @@ a.detailsAnchor {
   	height: 100%;
   	display: block;
   	width: 100%;
-  	color: #fff;	
+  	color: #fff;
   }
-  
+
   #toggles li {
   	border: 3px solid #fff;
 	padding: 0px 0 0 0;
@@ -6743,7 +6744,7 @@ a.detailsAnchor {
 	overflow: hidden;
 	position: relative;
 	margin-top: 0;
-	
+
 	-webkit-transition: all 0.6s ease-in-out;
 	-moz-transition: all 0.6s ease-in-out;
 	transition: all 0.6s ease-in-out;
@@ -6752,7 +6753,7 @@ a.detailsAnchor {
   #toggles li:hover {
   	top: -3px;
   }
-  
+
    #toggles li a {
    	font-size: 15px;
    	font-family: scala-sans, sans-serif;
@@ -6790,7 +6791,7 @@ a.detailsAnchor {
     top: -10px;
     width: 100%;
     }
-    
+
   .placeData a.closeData {
   	background: url("images/closes.png") no-repeat scroll 0 0 transparent;
     display: block;
@@ -6821,7 +6822,7 @@ a.detailsAnchor {
   	color: #666666;
   	font-size: 12px;
   	margin: 10px 0 0 0;
-  } 
+  }
   .placeData h4 {
   	margin: 0 0 5px 0;
   }
@@ -6848,13 +6849,13 @@ a.detailsAnchor {
   }
    .infoData {
     background: #585858;
-    display: none;    
+    display: none;
     padding: 20px;
     position: relative;
     position: absolute;
     top: 100px;
     right: 10px;
-    min-height:200px;    
+    min-height:200px;
     width: 400px;
     z-index: 10000;
   }
@@ -6877,7 +6878,7 @@ a.detailsAnchor {
     right: 340px;
     z-index: 10000;
   }
-  
+
   #warning {
     background: #000;
     color: #ffffff;
@@ -6897,7 +6898,7 @@ a.detailsAnchor {
     width: 400px;;
     z-index: 100000;
   }
-  
+
   #warning a.closeData {
   	background: url(images/closes.png) no-repeat;
   	position: absolute;
@@ -6908,7 +6909,7 @@ a.detailsAnchor {
   	width: 48px;
   	text-indent: -9999px;
   }
-  
+
   .largebox .linkersonclose {
     background: url("images/bg_dot.png") repeat scroll 0 0 transparent;
    	background: #BABABA;
@@ -6924,7 +6925,7 @@ a.detailsAnchor {
 /*--- 8.4. Toggles ---*/
 
 #toggle-view {
-    list-style:none;    
+    list-style:none;
     font-size:12px;
     margin:0;
     padding:0;
@@ -6966,7 +6967,7 @@ a.detailsAnchor {
 	background: transparent;
 	overflow:hidden;
 	padding:10px 10px 20px 10px;
-}   
+}
 
 #toggle-view .panel img {
 	border: 3px solid #ddd;
@@ -7188,10 +7189,10 @@ a.detailsAnchor {
 
 
 
-@media screen and ( max-width: 1200px ) and ( max-height: 660px ){ 
+@media screen and ( max-width: 1200px ) and ( max-height: 660px ){
     .navigate .supernav li {
     	height: 20px;
-    	
+
     }
     .navigate .supernav li p {
     	left: 29px;
@@ -7247,7 +7248,7 @@ a.detailsAnchor {
 
 .logo p {
 	font-family: "GothamBook";
-	letter-spacing: 0.2px; 
+	letter-spacing: 0.2px;
 }
 
 .home-intro .wideover .overlay p {
@@ -7305,9 +7306,9 @@ p.contacto a {
 
 
 p.save-the-children {
-  color: #fff; 
-  background-color: #444; 
-  padding-top: 10px; 
+  color: #fff;
+  background-color: #444;
+  padding-top: 10px;
   font-size: 12px;
 }
 
@@ -7352,7 +7353,7 @@ a.donate-btn {
 
 .wonderful {
     position: absolute;
-    /* float: right; 
+    /* float: right;
     height: 100%;
     width: 360px;*/
     z-index: 9 !important;
@@ -7397,4 +7398,4 @@ a.wideopensays {
 }
 .closena img{
 width:60%;
-} 
+}
