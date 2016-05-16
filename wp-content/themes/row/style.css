@@ -2487,7 +2487,6 @@ visibility: hidden;
 	font-size: 12px;
 	text-transform: uppercase;
 	color: #000;
-	padding: 0 10px;
 }
 
 .suboverlay a:hover {
@@ -3185,6 +3184,7 @@ visibility: hidden;
 
 .page .suboverlay h1 {
     margin-bottom: 14px;
+    padding-top:35px;
 }
 
 .page .suboverlay a:hover h1 {
@@ -3844,6 +3844,7 @@ width: 35%;
     line-height: 1.4;
     margin-bottom: 5px;
     text-align: left;
+    margin:30px;
 }
 
 .page .fullvertical .textbox, .page .fullvertical .textbox-1 {
