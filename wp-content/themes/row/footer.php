@@ -11,7 +11,7 @@
 ?>
 
 	
-		<div class="footer" style="margin-top:-25px">
+		<div class="footer">
 
 			<section class="navigate mobile">
 				
