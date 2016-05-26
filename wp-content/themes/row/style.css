@@ -4728,17 +4728,19 @@ a.button.moreinfo{
 
 .slide-description {
     /* background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7); */
-    bottom: 0;
     color: #fff;
     font-size: 15px;
-    font-weight: normal;
-    height: auto;
+    font-weight: bold;
     line-height: 1;
-    padding: 15px 0;
-    position: absolute;
-    text-align: center;
+    padding: 15px 0 20px 20px;
+    text-align: left;
+	text-transform: uppercase;
     width: 100%;
-    z-index: 9999;
+	height: auto;
+    
+    position: absolute;
+	bottom: 0;
+	z-index: 9999;
 }
 
 .gallery-categories a {

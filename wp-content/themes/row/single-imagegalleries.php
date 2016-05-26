@@ -35,11 +35,12 @@
 	        		<?php if ($imagesCount > 0) : ?>
               		<?php for ($i = 0; $i < $imagesCount; $i++): ?>
                   	<?php if (!empty($galleryImages[$i])) :?>
-                  	<?php //$attachment_meta = wp_get_attachment($galleryImages[$i]['id']); ?>
+                  	<?php // $attachment_meta = wp_get_attachment($galleryImages[$i]['id']); ?>
+                  	<?php $attachment_meta_title = get_post($galleryImages[$i]['id'])->post_excerpt; ?>
 
 							<li>
 								<div class="slide-image" style="background-image:url(<?php echo $galleryImages[$i]['full'][0];?>);"></div>
-								
+								<div class="slide-description"><?php echo $attachment_meta_title; ?></div>
 							</li>								
 
 						<?php endif; ?>
