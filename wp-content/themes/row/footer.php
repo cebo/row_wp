@@ -105,32 +105,31 @@
 
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
 			
-			<div class="tier-two footer_ads conde">
-				<div style="margin-left:40px; text-align: center; margin-top:30px;">
-					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank">
-						<img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png" style="width:38%; text-align:center;"></a>
-				</div>
-				<div style="float:right; width:83%;">
-					<h2 class="h1">ROW NYC</h2>
-					<h2 class="h2">CONDE NAST TRAVELER READER'S <br> CHOICE AWARDS 2015</h2>
-					<span style="font-family: 'GothamBook'; text-transform: uppercase; font-size: 80%; color:#E0DDD9; font-weight: normal; font-family: helvetica;">Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!</span>
+			<div class="tier-two footer_ads conde conde1" style="display: none;">
+				<div class="conde-block">
+					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png"></a>
+					
+					<div>
+						<h2 class="h1">ROW NYC</h2>
+						<h2 class="h2">CONDE NAST TRAVELER READER'S <br> CHOICE AWARDS 2015</h2>
+						<p>Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!</p>
+					</div>
 				</div>
 			</div>
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
 
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2016  -->
 			
-			<div class="tier-two footer_ads conde">
-				<div style="margin-left:75px; text-align: center; margin-top:30px;">
-					<a href="http://www.cntraveler.com/rca/2016" target="_blank">
-						<img src="http://www.rownyc.com/wp-content/uploads/2016/05/Conde-Nast-Traveler22.png" style="width:42%;"></a>
-				</div>
-				<div style="float:right; width:83%;">
-					<h2 class="h1">ROW NYC</h2>
-					<h2 class="h2">CONDE NAST TRAVEL <br> 2016 READER'S CHOICE AWARDS</h2>
-					<span style="font-family: 'GothamBook'; text-transform: uppercase; font-size: 80%; color:#E0DDD9; font-weight: normal; font-family: helvetica;">VOTE NOW FOR YOUR FAVORITE NEW YORK HOTEL FOR A CHANCE TO WIN A GRAND EUROPEAN TOUR FOR TWO, COURTESY OF @CNTRAVELER</span>
-					<br><br>
-					<a class="button" target="_blank" href="http://www.cntraveler.com/rca/2016">VOTE NOW</a>
+			<div class="tier-two footer_ads conde conde2" style="display: none;">
+				<div class="conde-block">
+					<a href="http://www.cntraveler.com/rca/2016" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2016/05/Conde-Nast-Traveler22.png"></a>
+					
+					<div>
+						<h2 class="h1">ROW NYC</h2>
+						<h2 class="h2">CONDE NAST TRAVEL <br> 2016 READER'S CHOICE AWARDS</h2>
+						<p class="voted">VOTE NOW FOR YOUR FAVORITE NEW YORK HOTEL FOR A CHANCE TO WIN A GRAND EUROPEAN TOUR FOR TWO, COURTESY OF @CNTRAVELER</p>
+						<a class="button" target="_blank" href="http://www.cntraveler.com/rca/2016">VOTE NOW</a>
+					</div>
 				</div>
 			</div>
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2016  -->
@@ -138,14 +137,15 @@
 
 			<!-- ZAGAT  -->
 			
-			<div class="tier-two footer_ads conde">
-				<div style="margin-left:65px; text-align: center; margin-top:70px;">
-					<img src="http://www.rownyc.com/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif" style="width:50%;">
+			<div class="tier-two footer_ads conde conde3" style="display: none;">
+				<div class="conde-block">
+					<img src="http://www.rownyc.com/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif">
+					
+					<div>
+						<h2 class="h1">ZAGAT</h2>
+						<h2 class="h2">RATED AS THE BEST FOOD HALL IN NYC BY ZAGAT</h2>
+					</div>
 				</div>
-				<div style="float:right; width:83%;">
-					<h2 class="h1">ZAGAT</h2>
-					<h2 class="h2">RATED AS THE BEST FOOD HALL IN NYC BY ZAGAT</h2>
-
 			</div>
 			<!-- ZAGAT  -->
 
