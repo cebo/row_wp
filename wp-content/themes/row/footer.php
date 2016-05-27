@@ -105,7 +105,7 @@
 
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
 			
-			<div class="tier-two footer_ads conde conde1" style="display: none;">
+			<div class="tier-two conde conde1">
 				<div class="conde-block">
 					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png"></a>
 					
@@ -120,7 +120,7 @@
 
 			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2016  -->
 			
-			<div class="tier-two footer_ads conde conde2" style="display: none;">
+			<div class="tier-two conde conde2">
 				<div class="conde-block">
 					<a href="http://www.cntraveler.com/rca/2016" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2016/05/Conde-Nast-Traveler22.png"></a>
 					
@@ -137,7 +137,7 @@
 
 			<!-- ZAGAT  -->
 			
-			<div class="tier-two footer_ads conde conde3" style="display: none;">
+			<div class="tier-two conde conde3">
 				<div class="conde-block">
 					<img src="http://www.rownyc.com/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif">
 					
