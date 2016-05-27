@@ -49,9 +49,8 @@ body {
 }
 
 body > div {
-    height: 100%;
+	margin-top: 135px;
     height: calc(100% - 135px);
-    margin-top: 135px;
 }
 
 html {
@@ -4262,7 +4261,10 @@ width: 35%;
 	height: 550px !important;
 }*/
 
-
+.gallery .video-container {
+	height: auto;
+	padding: 0;
+}
 
 /* Page - Contact ---------------------------------------------------- */
 

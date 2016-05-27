@@ -15,11 +15,21 @@
 							
 		<div class="fourth-level room-slider">
 		
-			<?php if(get_post_meta($post->ID, 'cebo_youtube', true)) { ?>
-			
-				<div class="video-container">
+			<?php if(get_post_meta($post->ID, 'cebo_imagegal_video_repeat', true)) { ?>
 				
-					<iframe width="720" height="394" src="http://www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'cebo_youtube', true); ?>" allowfullscreen></iframe>
+				<div class="video-container">
+					
+					<div class="flexslider-gallery flexslider">
+						<ul class="slides">
+						<?php
+							$videohs = get_post_meta($post->ID, 'cebo_imagegal_video_repeat', true);
+							foreach ($videohs as $videoh) {
+						?>
+							<li><iframe style="width: 100%; height: 100%;" src="<?php echo $videoh['video_embed']; ?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+						<?php } ?>
+						
+						</ul>
+					</div>
 					
 				</div>
 			
