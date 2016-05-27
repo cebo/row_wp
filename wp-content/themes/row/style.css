@@ -49,9 +49,8 @@ body {
 }
 
 body > div {
-    height: 100%;
+	margin-top: 135px;
     height: calc(100% - 135px);
-    margin-top: 135px;
 }
 
 html {
@@ -3017,7 +3016,7 @@ visibility: hidden;
 	width: 100%;
 	height: 22px;
 	background: #fff;
-	margin-top: 10px;
+	padding-top: 10px;
 }
 
 
@@ -4262,7 +4261,10 @@ width: 35%;
 	height: 550px !important;
 }*/
 
-
+.gallery .video-container {
+	height: auto;
+	padding: 0;
+}
 
 /* Page - Contact ---------------------------------------------------- */
 
@@ -4728,17 +4730,19 @@ a.button.moreinfo{
 
 .slide-description {
     /* background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7); */
-    bottom: 0;
     color: #fff;
     font-size: 15px;
-    font-weight: normal;
-    height: auto;
+    font-weight: bold;
     line-height: 1;
-    padding: 15px 0;
-    position: absolute;
-    text-align: center;
+    padding: 15px 0 20px 20px;
+    text-align: left;
+	text-transform: uppercase;
     width: 100%;
-    z-index: 9999;
+	height: auto;
+    
+    position: absolute;
+	bottom: 0;
+	z-index: 9999;
 }
 
 .gallery-categories a {
@@ -7347,8 +7351,54 @@ a.donate-btn {
 
 .footer {
 	background-color: #444444;
-	height: 50%;
+	overflow: hidden;
 }
+
+.tier-two.conde {
+	float: left;
+	width: 33.33%;
+	padding: 10px 0 30px;
+	height: auto;
+}
+
+.conde-block {
+	padding: 0 30px;
+	text-align: center;
+}
+
+.conde-block a {
+	display: inline-block;
+	margin-bottom: 30px;
+}
+
+.conde-block img {
+	display: inline-block;
+	max-width: 100%;
+}
+	.conde1 img { width: 95px;}
+	.conde2 img { width: 95px;}
+	.conde3 img { height: 90px; margin-bottom: 30px;}
+
+.conde-block h1, 
+.conde-block h2 {
+	color: #fff;
+}
+	.conde-block h2.h1 { font-size: 16px; margin-bottom: 10px;}
+	.conde-block h2 { font-size: 14px; line-height: 1.3; margin-bottom: 20px;}
+
+.conde-block p {
+	color:#E0DDD9;
+	font-size: 80%;
+	font-family: 'GothamBook', helvetica;
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 1.4;
+	padding: 0;
+}
+.conde-block p.voted { margin-bottom: 30px;}
+.conde-block .button { margin-bottom: 0;}
+
+
 
 /* ==================== wonderful widget ========================== */
 
@@ -7400,3 +7450,5 @@ a.wideopensays {
 .closena img{
 width:60%;
 }
+
+/*delete this comment if you can*/
