@@ -285,7 +285,7 @@ ga('send', 'pageview');
 			</li>
 
 			<li>
-				<a href="<?php bloginfo ('url'); ?>/blog"><span class="hotel"></span><p><?php _e('Blog','row-theme-text'); ?></p></a>
+				<a href="<?php bloginfo ('url'); ?>/blog" target="_blank"><span class="hotel"></span><p><?php _e('Blog','row-theme-text'); ?></p></a>
 			</li>
 
 			<li>
