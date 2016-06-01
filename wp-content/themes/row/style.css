@@ -4739,7 +4739,7 @@ a.button.moreinfo{
 	text-transform: uppercase;
     width: 100%;
 	height: auto;
-    
+
     position: absolute;
 	bottom: 0;
 	z-index: 9999;
@@ -7379,7 +7379,7 @@ a.donate-btn {
 	.conde2 img { width: 95px;}
 	.conde3 img { height: 90px; margin-bottom: 30px;}
 
-.conde-block h1, 
+.conde-block h1,
 .conde-block h2 {
 	color: #fff;
 }
@@ -7452,3 +7452,8 @@ width:60%;
 }
 
 /*delete this comment if you can*/
+
+.gm-style-mtc
+{
+	display:none !important;
+}
