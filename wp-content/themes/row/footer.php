@@ -496,6 +496,10 @@ var google_remarketing_only = true;
 
 	<?php } ?>
 
-
+<script>
+$(document).ready(function () {
+  setTimeout( function(){ $('.flex-control-nav, .flex-direction-nav').css("visibility", "visible"); }, 3000 );
+});
+</script>
 </body>
 </html>
