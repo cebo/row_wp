@@ -2865,7 +2865,7 @@ visibility: hidden;
 }
 
 .home-intro:hover .stretch {
-	-moz-transform: scale(1.05);
+	/*-moz-transform: scale(1.05);
   	-o-transform: scale(1.05);
   	-ms-transform: scale(1.05);
   	-webkit-transform: scale(1.05);
@@ -2875,7 +2875,7 @@ visibility: hidden;
 		-o-column-break-inside:avoid;
 		-ms-column-break-inside:avoid;
 		column-break-inside:avoid;
-		-webkit-backface-visibility:hidden;
+		-webkit-backface-visibility:hidden;*/
 }
 
 .fifth-level {
