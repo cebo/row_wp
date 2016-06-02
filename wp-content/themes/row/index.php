@@ -30,11 +30,16 @@
 				
 				
 
+					<?php
+						// Saving it for future use
+						$index_tlnobg = false;
+						if($index_tlnobg) {
+					?>
 				
 					<div class="wideover overlay">
-						 <div class="closena" style="float:left;position:absolute">X</div>
- 					      <!--<img src="<?php bloginfo ('template_url'); ?>/images/closena.png" >!-->
-                       
+                                              <div class="closena" style="float:left;position:absolute">X</div>
+ 					     <!-- <img src="<?php bloginfo ('template_url'); ?>/images/closena.png" > !-->
+                                               
 					     <div style="float:left; width:15%; margin-left:30px;">
 					     		<a href="http://tlworldsbest.wylei.com/" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png" style="width:130%;"></a>
 					     </div>
@@ -55,8 +60,15 @@
 				
 					</div>		
 					</div>		
+					
+					<?php } ?>
+					
 					<div id="owl-example" class="owl-carousel">
-		 		<?php 
+			
+
+
+
+					<?php 
 
 						query_posts(array(
 				
@@ -276,12 +288,12 @@
 								<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-								<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,357); ?>);"></div>
+								<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),910,714); ?>);"></div>
 								
 								<?php } elseif($imgsrc) { ?>
 								
 								
-								<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,357); ?>);"></div>
+								<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],910,714); ?>);"></div>
 								
 								<?php } else { ?>
 													
@@ -375,12 +387,12 @@
 						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
 								
 								
-						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),455,289); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),910,578); ?>);"></div>
 						
 						<?php } elseif($imgsrc) { ?>
 						
 						
-						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],455,289); ?>);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo tt($imgsrc[0],910,578); ?>);"></div>
 						
 						<?php } else { ?>
 											
