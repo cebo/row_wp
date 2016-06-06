@@ -126,9 +126,7 @@
 					
 					<div>
 						<h2 class="h1">ROW NYC</h2>
-						<h2 class="h2">CONDE NAST TRAVEL <br> 2016 READER'S CHOICE AWARDS</h2>
-						<p class="voted">VOTE NOW FOR YOUR FAVORITE NEW YORK HOTEL FOR A CHANCE TO WIN A GRAND EUROPEAN TOUR FOR TWO, COURTESY OF @CNTRAVELER</p>
-						<a class="button" target="_blank" href="http://www.cntraveler.com/rca/2016">VOTE NOW</a>
+						<h2 class="h2">NOMINATED FOR THE <br> 2016 READER'S CHOICE AWARDS</h2>
 					</div>
 				</div>
 			</div>
