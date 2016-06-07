@@ -7453,7 +7453,12 @@ width:60%;
 
 /*delete this comment if you can*/
 
-.gmnoprint
+div.gm-style-mtc
 {
 	display:none !important;
+}
+
+div.gmnoprint .gm-bundled-control .gm-bundled-control-on-bottom
+{
+	display: block !important;
 }
