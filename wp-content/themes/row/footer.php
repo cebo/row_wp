@@ -496,7 +496,7 @@ var google_remarketing_only = true;
 
 <script>
 $(document).ready(function () {
-  setTimeout( function(){ $('.flex-control-nav, .flex-direction-nav').css("visibility", "visible"); }, 6000 );
+  setTimeout( function(){ $('.flex-control-nav, .flex-direction-nav').css("visibility", "visible"); }, 4000 );
 });
 </script>
 </body>
