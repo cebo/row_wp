@@ -403,9 +403,9 @@ h4 {
 .navigate {
     background: #000 none repeat scroll 0 0;
     height: calc(100% - 135px);
-    overflow-y: scroll;
+    overflow: auto;
     position: absolute;
-  /*  width: 300px;*/
+  	width: 300px;
     z-index: 999;
 }
 

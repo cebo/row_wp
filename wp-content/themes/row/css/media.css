@@ -1,6 +1,6 @@
 /* ================================================  MAX WIDTH 3000 ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 3000px) {
 
 
@@ -8,7 +8,7 @@ and (max-width : 3000px) {
 		width: 33.3333%;
 	}
 
-	
+
 
 }
 
@@ -16,10 +16,10 @@ and (max-width : 3000px) {
 
 /* ================================================  MAX WIDTH 1440px ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 1440px) {
 
-	
+
 
 }
 
@@ -27,7 +27,7 @@ and (max-width : 1440px) {
 
 /* ================================================  MAX WIDTH 1439px ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 1439px) {
 
 
@@ -50,7 +50,7 @@ and (max-width : 1439px) {
 
 /* ================================================ 0 - 1275px ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 1275px) {
 
 
@@ -126,7 +126,7 @@ and (max-width : 1275px) {
 	.littleover p {
 	    line-height: 1.2;
 	}
-	
+
 	.banner .header-contact {
 		display: none;
 	}
@@ -215,7 +215,7 @@ and (max-width : 1275px) {
 
 	/* Banner Area */
 
-	
+
 	.topnav {
 	    max-width: 356px;
 	    width: 38.6%;
@@ -539,23 +539,23 @@ and (max-width : 1275px) {
 
 /* ================================================ 641 - 1260px ======================================= */
 
-@media only screen 
-and (min-width : 641px) 
+@media only screen
+and (min-width : 641px)
 and (max-width : 1260px) {
 
-	
-	
+
+
 	.home-intro {
 	  margin-left: 250px;
 	  width: auto;
 	  z-index: 9999;
 	}
-	
+
 	.contentarea {
 		margin-left: 250px;
 		z-index: 9999;
 	}
-	
+
 	.contentarea .home-intro {
 		margin-left: 0;
 	}
@@ -565,7 +565,7 @@ and (max-width : 1260px) {
 
 /* ================================================ 1024 ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 1024px) {
 
 
@@ -1036,7 +1036,7 @@ and (max-width : 1024px) {
     font-size: 12px;
     line-height: 22px;
     color: #fff;
-	}	
+	}
 
 
 
@@ -1044,7 +1044,7 @@ and (max-width : 1024px) {
 
 /* ================================================ 840 ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 840px) {
 
 	.deal {
@@ -1060,7 +1060,7 @@ and (max-width : 840px) {
 
 /* ================================================ 770 ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 770px) {
 
 	.deal {
@@ -1070,12 +1070,12 @@ and (max-width : 770px) {
 	.deal-wrapper {
 		height: 555px;
 	}
-	
+
 }
 
 /* ================================================ MAX WIDTH 640 ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 640px) {
 
 
@@ -1087,8 +1087,8 @@ and (max-width : 640px) {
 	    width: 100%;
 	}
 	*/
-	.behindnavigate, 
-	.banner, 
+	.behindnavigate,
+	.banner,
 	.navigate {
 		display: none;
 	}
@@ -1144,7 +1144,7 @@ and (max-width : 640px) {
 	    display: block;
 	    width: 100%;
 	}
-	
+
 	.navigate.mobile .languages {
 	    background-image: none;
 	    background-size: 70% auto;
@@ -1727,7 +1727,7 @@ and (max-width : 640px) {
 
 /* ================================================ MAX WIDTH 480 ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 480px) {
 
 
@@ -1870,7 +1870,7 @@ and (max-width : 480px) {
 	    width: 100% !important;
 	}
 
-	
+
 	.suboverlay {
 	    left: 27%;
 	    top: 20%;
@@ -2019,7 +2019,7 @@ and (max-width : 480px) {
 	    width: 80%;
 	}
 
-	
+
 
 
 
@@ -2029,7 +2029,7 @@ and (max-width : 480px) {
 
 /* ================================================ MAX WIDTH 380 ======================================= */
 
-@media only screen 
+@media only screen
 and (max-width : 380px) {
 
 
@@ -2136,9 +2136,9 @@ and (max-width : 380px) {
 /* ================================================  MOBILES BELOW 399 ======================================= */
 
 
-@media only screen 
-and (max-width : 399px) 
-{	
+@media only screen
+and (max-width : 399px)
+{
 
 
 
@@ -2150,10 +2150,10 @@ and (max-width : 399px)
 /* ================================================  MOBILES BELOW 480 to 400 ======================================= */
 
 
-@media only screen 
-and (min-width : 400px) 
-and (max-width : 479px) 
-{	
+@media only screen
+and (min-width : 400px)
+and (max-width : 479px)
+{
 
 
 
@@ -2169,10 +2169,10 @@ and (max-width : 479px)
 /* ================================================  MOBILES BELOW 480 to 640 ======================================= */
 
 
-@media only screen 
-and (min-width : 480px) 
-and (max-width : 639px) 
-{	
+@media only screen
+and (min-width : 480px)
+and (max-width : 639px)
+{
 
 
 
@@ -2181,7 +2181,7 @@ and (max-width : 639px)
 
 
 
-				
+
 }
 
 
@@ -2189,11 +2189,11 @@ and (max-width : 639px)
 /* ================================================  LARGE MOBILE DEVICES AND SMALL TABLETS BELOW 799  ======================================= */
 
 
-@media only screen 
-and (min-width : 640px) 
-and (max-width : 799px) 
-{	
-	
+@media only screen
+and (min-width : 640px)
+and (max-width : 799px)
+{
+
 
 
 
@@ -2201,11 +2201,11 @@ and (max-width : 799px)
 /* ================================================  SLIGHTLY SMALLER RESOLUTIONS, BUT NOT QUITE IPHONE ======================================= */
 
 
-@media only screen 
-and (min-width : 800px) 
-and (max-width : 854px) 
-{	
-	
+@media only screen
+and (min-width : 800px)
+and (max-width : 854px)
+{
+
 
 }
 
@@ -2216,12 +2216,12 @@ and (max-width : 854px)
 /* ================================================  LARGE PHONE SCREENS SMALLER RESOLUTIONS  ======================================= */
 
 
-@media only screen 
-and (min-width : 855px) 
-and (max-width : 960px) 
-{	
+@media only screen
+and (min-width : 855px)
+and (max-width : 960px)
+{
 
-	
+
 
 
 
@@ -2233,16 +2233,34 @@ and (max-width : 960px)
 /* ================================================  IPADS AT LANDSCAPE WIDTH 1024  ======================================= */
 
 
-@media only screen 
-and (min-width : 961px) 
-and (max-width : 1024px) 
+@media only screen
+and (min-width : 961px)
+and (max-width : 1024px)
+{
+
+.navigate .supernav li {
+    padding: 7px 0 !important;
+}
+
+
+
+
+}
+
+/* ================================================  WIDTH 1366  ======================================= */
+
+
+@media only screen
+and (max-width : 1366px)
 {	
 
+.navigate .supernav li {
+    padding: 7px 0 !important;
+}
 
 
 
 
-		
 }
 
 
@@ -2250,17 +2268,17 @@ and (max-width : 1024px)
 
 
 
-@media only screen 
-and (min-width : 1025px) 
-and (max-width : 1223px) 
-{		
-		
-	
-	
-	
-	
-	
-	
+@media only screen
+and (min-width : 1025px)
+and (max-width : 1223px)
+{
+
+
+
+
+
+
+
 }
 
 
@@ -2272,9 +2290,9 @@ and (max-width : 1223px)
 
 
 
-@media only screen 
-and (min-width : 1224px) 
-and (max-width : 1300px) 
+@media only screen
+and (min-width : 1224px)
+and (max-width : 1300px)
 {
 
 
@@ -2285,29 +2303,29 @@ and (max-width : 1300px)
 
 
 }
-	
 
-@media only screen 
-and (min-width : 1224px) 
-and (max-width : 1399px) 
+
+@media only screen
+and (min-width : 1224px)
+and (max-width : 1399px)
 {
 
-	
-	
-	
-	
-	
-	
-                
+
+
+
+
+
+
+
 }
-	
-	
-	
+
+
+
 
 
 @media only screen and (min-width: 1400px) and (max-width: 1450px) {
-		
-		
+
+
 
 
 
@@ -2318,13 +2336,13 @@ and (max-width : 1399px)
 
 
 @media only screen and (min-width: 1451px) {
- 
- 
- 
- 
- 
-                
 
 
 
-} 
+
+
+
+
+
+
+}
