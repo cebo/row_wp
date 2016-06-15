@@ -2287,11 +2287,6 @@ and (max-width : 1366px)
     z-index: 99999;
 }
 
-.navigate:before
-{
-	width: 1%;
-}
-
 
 }
 
