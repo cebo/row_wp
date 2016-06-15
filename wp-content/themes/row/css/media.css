@@ -1731,10 +1731,16 @@ and (max-width : 640px) {
 and (max-width : 480px) {
 
 
+
 	.slide-image {
 		height: 400px;
 	}
 	/* Header */
+
+	.footer_ads {
+     width:100%;
+	}
+
 
 	.navigate.mobile {
 		height: auto;
@@ -2243,6 +2249,19 @@ and (max-width : 1024px)
 }
 
 
+.navigate {
+    background: #000 none repeat scroll 0 0;
+    height: calc(100% - 135px);
+    overflow-y: scroll;
+    position: absolute;
+    width: 251px !important;
+    z-index: 999999;
+}
+
+.navigate:before
+{
+	width: 1%;
+}
 
 
 }
@@ -2252,13 +2271,26 @@ and (max-width : 1024px)
 
 @media only screen
 and (max-width : 1366px)
-{	
+{
 
 .navigate .supernav li {
     padding: 7px 0 !important;
 }
 
 
+.navigate {
+    background: #000 none repeat scroll 0 0;
+    height: calc(100% - 135px);
+    overflow-y: scroll;
+    position: absolute;
+   width: 251px !important;
+    z-index: 99999;
+}
+
+.navigate:before
+{
+	width: 1%;
+}
 
 
 }
