@@ -406,6 +406,7 @@ ga('send', 'pageview');
 			</div>
 
 			<p><?php _e('High Speed Wifi Access Available','row-theme-text'); ?></p>
+			<p style="padding:30px 0;text-align:center;"><a href="http://www.highgate.com" target="_blank"><img style="height:50px;" src="<?php bloginfo('template_url'); ?>/images/highgate-logo-white.png" alt="Highgate" /></a></p>
 		
 		</div>
 		
