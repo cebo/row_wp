@@ -71,7 +71,7 @@ include(TEMPLATEPATH . '/options/amenities-options-repeatable-fields.php');
  /* ................. SOME OPTIONS FOR Imagegalleries .................... */
 /* Below is an include to a few options for press releases.*/
 // include(TEMPLATEPATH . '/options/imagegalleries-options.php'); 
-include(TEMPLATEPATH . '/options/imagegalleries-options2.php'); 
+include(TEMPLATEPATH . '/options/imagegalleries-options.php'); 
 
 
  /* ................. METABOXES .................... */
