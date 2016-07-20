@@ -4409,7 +4409,7 @@ width: 35%;
     max-height: 611px;
     min-height: 611px;
     overflow: hidden;
-    width: calc(33% - 5px);
+    width: calc(33% - 10px);
     position: relative;
     margin-right: 10px;
 }
