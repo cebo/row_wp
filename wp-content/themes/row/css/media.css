@@ -2290,6 +2290,9 @@ and (max-width : 1366px)
 .navigate:before {
     width: 250px;
 }
+.contentarea {
+    margin-left: 250px;
+}
 
 }
 
