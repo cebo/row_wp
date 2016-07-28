@@ -140,7 +140,7 @@
 					<img src="http://www.rownyc.com/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif">
 					
 					<div>
-						<h2 class="h1">ZAGAT</h2>
+						<h2 class="h1">CITY KITCHEN</h2>
 						<h2 class="h2">RATED AS THE BEST FOOD HALL IN NYC BY ZAGAT</h2>
 					</div>
 				</div>
