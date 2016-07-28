@@ -3381,3 +3381,7 @@ span.ns-close {
 	width:100%;
 	height: auto;
 }
+div.wp-caption img {
+    border: 0;
+    width: 54% !important;
+}
