@@ -365,10 +365,12 @@ and (max-width : 1275px) {
 
 	/* PAGE - Deals */
 
-	.deal-wrapper > h1 {
+	.deal-wrapper > h1,
+	.deal-wrapper > h2	{
 	    font-size: 19px;
 	    line-height: 1.1;
 	    margin-bottom: 20px;
+		font-family: 'GothamBold';
 	}
 
 	.deal {
@@ -862,7 +864,8 @@ and (max-width : 1024px) {
 
 	/* PAGE - Deals */
 
-	.deal-wrapper > h1 {
+	.deal-wrapper > h1,
+	.deal-wrapper > h2	{
 	    font-size: 19px;
 	}
 

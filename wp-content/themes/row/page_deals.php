@@ -127,7 +127,7 @@
 	
 					<div class="deal-wrapper">
 					
-						<h1><?php the_title(); ?></h1>
+						<h2><?php the_title(); ?></h2>
 	
 						<p><?php echo content(40); ?></p>
 

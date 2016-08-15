@@ -4442,10 +4442,12 @@ width: 35%;
 	height: 200px;
 }
 
-.deal-wrapper > h1 {
+.deal-wrapper > h1,
+.deal-wrapper > h2 {
 	font-size: 19px;
 	line-height: 1.1;
 	margin-bottom: 10px;
+	font-family: 'GothamBold';
 }
 
 .deal-wrapper > p {
