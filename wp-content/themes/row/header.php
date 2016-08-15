@@ -92,6 +92,7 @@ ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);<?php
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
 <script src="//cdn.optimizely.com/js/3569390496.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
 	<?php if(get_post_type() == 'imagegalleries') { ?>
 
 		<!-- Flex Slider -->
