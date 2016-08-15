@@ -108,7 +108,7 @@
 
 						<div class="deal-wrapper">
 					
-							<h1><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h1>
+							<h2 class="h1"><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h2>
 		
 							<p><?php echo content(25); ?></p>
 
@@ -127,7 +127,7 @@
 	
 					<div class="deal-wrapper">
 					
-						<h2><?php the_title(); ?></h2>
+						<h2 class="h1"><?php the_title(); ?></h2>
 	
 						<p><?php echo content(40); ?></p>
 
