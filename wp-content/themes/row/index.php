@@ -153,7 +153,7 @@
 
 						
 							<?php $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-									<h2>This Week's Deal</h2>
+									<h2>This Week's NYC Deal</h2>
 								
 								<?php query_posts('post_type=specials&posts_per_page=6'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
@@ -470,7 +470,7 @@
 					<div class="leftsider">
 						<div class="picone">
 							<div class="suboverlay narrow">
-								<h1><?php the_title(); ?></h1>
+								<h2 class="h1"><?php the_title(); ?></h2>
 								<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?> <br> 
 									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text'); ?></a>
 								</p>
@@ -501,7 +501,7 @@
 					<div class="rightsider">
 						<div class="picone">
 							<div class="suboverlay narrow">
-								<h1><?php the_title(); ?></h1>
+								<h2 class="h1"><?php the_title(); ?></h2>
 								<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?> <br> 
 									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text'); ?></a>
 								</p>
