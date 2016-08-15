@@ -75,7 +75,7 @@
 	
 					<div class="deal-wrapper">
 					
-						<h1>Amenities</h1>
+						<h2>Amenities</h2>
 	
 						<p></p><p>Inspired amenities abound at the Row NYC. Our restaurant, District M, is a European express café by day and a Neopolitan pizza bar and cocktail lounge by night, offering a curated selection of delicious food, coffee, cocktails and more…</p><p></p>
 	
@@ -129,7 +129,7 @@
 	
 					<div class="deal-wrapper">
 					
-						<h1><?php the_title(); ?></h1>
+						<h2><?php the_title(); ?></h2>
 	
 						<p><?php echo content(40); ?></p>
 	
