@@ -299,7 +299,8 @@ and (max-width : 1275px) {
 
 	/* PAGE - Amenities */
 
-	.page .suboverlay h1, .page .suboverlay h2.h1 {
+	.page .suboverlay h1, .page .suboverlay h2.h1,
+	.page .suboverlay h2 {
 	    margin-bottom: 7px;
 	}
 
@@ -366,7 +367,7 @@ and (max-width : 1275px) {
 	/* PAGE - Deals */
 
 	.deal-wrapper > h1,
-	.deal-wrapper > h2	{
+	.deal-wrapper > h2.h1	{
 	    font-size: 19px;
 	    line-height: 1.1;
 	    margin-bottom: 20px;
@@ -865,7 +866,7 @@ and (max-width : 1024px) {
 	/* PAGE - Deals */
 
 	.deal-wrapper > h1,
-	.deal-wrapper > h2	{
+	.deal-wrapper > h2.h1	{
 	    font-size: 19px;
 	}
 

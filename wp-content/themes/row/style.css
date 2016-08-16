@@ -273,6 +273,7 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .footer .navigate .supernav li a,
 .gallery-categories a,
 .page .suboverlay h1,
+.page .suboverlay h2,
 .owl-theme .owl-controls .owl-buttons div,
 .ns-box-inner a,
 .ns-effect-slidetop .ns-close::before,
@@ -2647,7 +2648,8 @@ visibility: hidden;
 }
 
 .textbox h3, .textbox-1 h3,
-.textbox h1 {
+.textbox h1, 
+.textbox h2, .textbox-1 h2 {
 	font-family: 'GothamBold';
 	line-height: 22px;
 	font-size: 19px;
@@ -2655,7 +2657,9 @@ visibility: hidden;
 	text-transform: uppercase;
 }
 
-.textbox h1 {
+.textbox h1,
+.textbox h2, .textbox-1 h2 {
+	font-size: 30px;
 	font-weight: normal;
 }
 
@@ -3181,9 +3185,17 @@ visibility: hidden;
     font-size: 14px;
 }
 
-.page .suboverlay h1 {
+.page .suboverlay h1,
+.page .suboverlay h2 {
     margin-bottom: 14px;
     padding-top:35px;
+	font-family: 'GothamBold';
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #333333;
 }
 
 .page .suboverlay a:hover h1 {
@@ -3278,6 +3290,16 @@ visibility: hidden;
 
 .rooms .suboverlay h4:hover {
 	color: #000000;
+}
+
+.rooms .suboverlay.narrow h2 {
+    font-family: 'GothamBold';
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #333333;
 }
 
 
@@ -4443,7 +4465,7 @@ width: 35%;
 }
 
 .deal-wrapper > h1,
-.deal-wrapper > h2 {
+.deal-wrapper > h2.h1 {
 	font-size: 19px;
 	line-height: 1.1;
 	margin-bottom: 10px;
