@@ -30,7 +30,7 @@
 					
 						<div class="suboverlay narrow">
 						
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 				
 							<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?> <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
 										
@@ -68,7 +68,7 @@
 					
 						<div class="suboverlay narrow">
 						
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 				
 							<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?><br />
 							 <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
@@ -110,7 +110,7 @@
 					
 							
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 						
 					
 							<p><?php echo excerpt(15); ?>
@@ -154,7 +154,7 @@
 					
 							
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 						
 				
 							<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?>
@@ -206,7 +206,7 @@
 					
 							
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 						
 					
 							<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?>
@@ -250,7 +250,7 @@
 					
 							
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 						
 				
 							<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?><br /> <a href="<?php the_permalink(); ?>">MORE ></a></p>
@@ -301,7 +301,7 @@
 					
 						
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 						
 				
 							<p><?php the_content(); ?><a target="_blank" href="<?php the_permalink(); ?>">MORE ></a></p>
@@ -346,7 +346,7 @@
 					
 			
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 						
 			
 							<p><?php echo excerpt(18); ?> <a href="<?php the_permalink(); ?>"><?php _e('MORE >','row-theme-text'); ?></a></p>
