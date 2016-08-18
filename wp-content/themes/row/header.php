@@ -1,4 +1,4 @@
-ga('linker:autoLink', ['rownyc.reztrip.com','rownyc.reztripmobile.com']);<?php
+<?php
 
 	global $sitepress;
 	if (function_exists('get_current_language') || function_exists('get_default_language')) { 
