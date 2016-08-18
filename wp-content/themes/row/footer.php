@@ -107,7 +107,7 @@
 			
 			<div class="tier-two conde conde1">
 				<div class="conde-block">
-					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/11/NYC_FINALIST1.png"></a>
+					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2015/11/NYC_FINALIST1.png"></a>
 					
 					<div>
 						<h2 class="h1">ROW NYC</h2>
@@ -122,7 +122,7 @@
 			
 			<div class="tier-two conde conde2">
 				<div class="conde-block">
-					<a href="http://www.cntraveler.com/rca/2016" target="_blank"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2016/05/Conde-Nast-Traveler22.png"></a>
+					<a href="http://www.cntraveler.com/rca/2016" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2016/05/Conde-Nast-Traveler22.png"></a>
 					
 					<div>
 						<h2 class="h1">ROW NYC</h2>
@@ -137,7 +137,7 @@
 			
 			<div class="tier-two conde conde3">
 				<div class="conde-block">
-					<img src="<?php bloginfo('url'); ?>/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif">
+					<img src="<?php echo site_url(); ?>/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif">
 					
 					<div>
 						<h2 class="h1">CITY KITCHEN</h2>

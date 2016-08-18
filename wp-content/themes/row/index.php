@@ -40,7 +40,7 @@
  					     <!-- <img src="<?php bloginfo ('template_url'); ?>/images/closena.png" > !-->
                                                
 					     <div style="float:left; width:15%; margin-left:30px;">
-					     		<a href="http://tlworldsbest.wylei.com/" target="_blank"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2015/12/tl_nobg.png" style="width:130%;"></a>
+					     		<a href="http://tlworldsbest.wylei.com/" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2015/12/tl_nobg.png" style="width:130%;"></a>
 					     </div>
 					      <div style="float:right; width:79%;">
 						<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
@@ -336,7 +336,7 @@
 						
 						<?php } else { ?>
 											
-						<div class="stretch"  style="background-image: url(<?php bloginfo('url'); ?>/wp-content/uploads/2014/10/city-kitchen-tile.jpg);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2014/10/city-kitchen-tile.jpg);"></div>
 						
 						
 						<?php } ?>

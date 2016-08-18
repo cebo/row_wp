@@ -71,7 +71,7 @@
 
 				<li class="deal">
 				
-					<div class="deal-photo" style="background-image: url(<?php bloginfo('url'); ?>/wp-content/uploads/2014/10/row-hotel-nyc-amenities.jpg);"></div> 	
+					<div class="deal-photo" style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2014/10/row-hotel-nyc-amenities.jpg);"></div> 	
 	
 					<div class="deal-wrapper">
 					
