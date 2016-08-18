@@ -2011,10 +2011,16 @@ visibility: hidden;
     width: 60%;
 }
 
-.text-content h4, .main-page-content h4 {
+.text-content h4, .main-page-content h4, .main-page-content h2.h4 {
     font-size: 20px;
     line-height: 1;
     text-transform: none;
+}
+
+.main-page-content h2.h4 {
+    font-family: 'GothamCondensedMedium';
+    margin-bottom: 5px;
+    color: #000;
 }
 
 .text-content h3 {
@@ -4295,6 +4301,13 @@ width: 35%;
 }
 
 /* Page - Contact ---------------------------------------------------- */
+
+h2.h4 {
+    font-family: 'GothamCondensedMedium';
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #000;
+}
 
 .page.contact .page-content {
 	padding-top: 25px;
