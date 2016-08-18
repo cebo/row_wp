@@ -153,6 +153,7 @@
 
 						
 							<?php $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+									<!-- This Week's NYC Deal -->
 									<h2>This Week's NYC Deal</h2>
 								
 								<?php query_posts('post_type=specials&posts_per_page=6'); if(have_posts()) : while(have_posts()) : the_post(); ?>
