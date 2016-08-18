@@ -214,7 +214,7 @@
 
 						<div class="room-details-content">
 
-							<h4><?php _e('For Your Comfort','row-theme-text'); ?></h4>
+							<h3><?php _e('For Your Comfort','row-theme-text'); ?></h3>
 
 							<ul>
 								<?php $details = get_post_meta ($post->ID, 'cebo_details', true);
@@ -237,7 +237,7 @@
 
 						<div class="room-details-content">
 
-							<h4><?php _e('FOR YOUR WORKLIFE','row-theme-text'); ?></h4>
+							<h3><?php _e('FOR YOUR WORKLIFE','row-theme-text'); ?></h3>
 
 							<ul>
 							
@@ -250,7 +250,7 @@
 
 							</ul>
 
-							<h4><?php _e('FOR YOUR ENTERTAINMENT','row-theme-text'); ?></h4>
+							<h3><?php _e('FOR YOUR ENTERTAINMENT','row-theme-text'); ?></h3>
 
 							<ul>
 							
@@ -274,7 +274,7 @@
 
 							<div class="detail-features">
 
-								<h4><?php _e('Features','row-theme-text'); ?></h4>
+								<h2><?php _e('Features','row-theme-text'); ?></h2>
 							
 								<ul>
 									<!-- <li class="ico-wifi"><?php _e('Complimentary Wi-Fi','row-theme-text'); ?></li> -->

@@ -3370,9 +3370,15 @@ visibility: hidden;
     list-style: disc outside none;
 }
 
-.room-details-content > h4 {
+.room-details-content > h4, .room-details-content h2, .room-details-content > h3 {
     font-size: 22px;
     text-transform: uppercase;
+}
+
+.room-details-content h2, .room-details-content h3 {
+    font-family: 'GothamCondensedMedium';
+    margin-bottom: 5px;
+    color: #000;
 }
 
 .detail-features {
