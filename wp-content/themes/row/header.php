@@ -629,8 +629,8 @@ ga('send', 'pageview');
 					</span>
 
 					<div class="butonconton">
- +						<a href="" target="_blank"><button type="submit" class="checkrates button"><?php _e('Check Rates','row-theme-text'); ?></button></a>
- +					</div>
+						<a href="" target="_blank"><button type="submit" class="checkrates button"><?php _e('Check Rates','row-theme-text'); ?></button></a>
+					</div>
 
 					<!--<div class="butonconton">
 					
