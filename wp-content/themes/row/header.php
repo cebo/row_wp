@@ -629,6 +629,10 @@ ga('send', 'pageview');
 					</span>
 
 					<div class="butonconton">
+ +						<a href="" target="_blank"><button type="submit" class="checkrates button"><?php _e('Check Rates','row-theme-text'); ?></button></a>
+ +					</div>
+
+					<!--<div class="butonconton">
 					
 							<?php if( $current_lang == 'en' ) { ?>
 
@@ -652,7 +656,7 @@ ga('send', 'pageview');
 					
 							<?php }  ?>
 						
-					</div>
+					</div>-->
 					
 					<div class="clear"></div>
 				</div>						
