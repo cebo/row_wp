@@ -2283,7 +2283,7 @@ and (max-width : 1366px)
     height: calc(100% - 135px);
     overflow-y: scroll;
     position: absolute;
-  /* width: 251px !important;*/
+   width: 250px !important;
     z-index: 99999;
 }
 
