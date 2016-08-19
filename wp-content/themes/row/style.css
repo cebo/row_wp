@@ -1479,7 +1479,7 @@ ul#selectUl li.unselected:hover {
     float: left;
 }
 
-.booking .check-rates {
+.booking .check-rates, button.checkrates.button {
     background: none repeat scroll 0 0 #323232;
     border: 1px solid #3d3d3d;
     border-radius: 2px;

@@ -597,6 +597,8 @@ ga('send', 'pageview');
 					<div class="butonconton">
 						<button type="submit" class="button"><?php _e('Reserve Now','row-theme-text'); ?></button>
 					</div>
+
+					
 					<div class="clear"></div>
 					<span class="dept">
 						<div class="squaredance">
@@ -628,8 +630,10 @@ ga('send', 'pageview');
 						<input class="calendarsection" id="offercode" name="offer_code" placeholder="<?php _e('Offer Code','row-theme-text'); ?>">
 						</div>
 					</span>
-
 					<div class="butonconton">
+						<a href="" target="_blank"><button type="submit" class="checkrates button"><?php _e('Check Rates','row-theme-text'); ?></button></a>
+					</div>
+					<!--<div class="butonconton">
 					
 							<?php if( $current_lang == 'en' ) { ?>
 
@@ -653,7 +657,7 @@ ga('send', 'pageview');
 					
 							<?php }  ?>
 						
-					</div>
+					</div>-->
 					
 					<div class="clear"></div>
 				</div>						
