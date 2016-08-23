@@ -76,6 +76,8 @@
 				$dealboxes_query = new wp_query(array(
 				
 				'post_type' => 'page',
+				'orderby'=> 'id',
+    			'order' => 'asc',
   				'post__in' => array(86,92)
 
 				)); if($dealboxes_query->have_posts()) : while($dealboxes_query->have_posts()) : $dealboxes_query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
