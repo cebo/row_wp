@@ -3208,3 +3208,17 @@ ul.tabs li:last-child {
 .footer{
     margin-top: -25px;
 }
+
+
+.foreign-box .p1 {
+    text-align: left;
+}
+
+li.deal.foreign-box{
+    width: calc(30% - 10px);
+}
+
+.deal.foreign-box .deal-wrapper h2{
+    text-align: left;
+    margin-left: -20px;
+}
