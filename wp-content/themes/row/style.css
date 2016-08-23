@@ -7506,3 +7506,20 @@ div.gmnoprint .gm-bundled-control .gm-bundled-control-on-bottom
 {
 	display: block !important;
 }
+
+.foreign-box .p1 {
+    text-align: left;
+}
+
+li.deal.foreign-box{
+    width: calc(30% - 10px);
+}
+
+.deal.foreign-box .deal-wrapper h2{
+    text-align: left;
+    margin-left: -20px;
+}
+
+.foreign-box .deal-wrapper{
+	height:100%;
+}
