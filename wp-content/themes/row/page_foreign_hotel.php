@@ -59,7 +59,7 @@
 
 				<li class="deal foreign-box">
 				
-					<div class="deal-wrapper">
+					<div style="padding-top:0px;" class="deal-wrapper">
 					
 						<?php echo content(150); ?>
 
