@@ -386,7 +386,8 @@ and (max-width : 1275px) {
 	    width: 370px;
 	}
 
-	.concierge-box .wideover.overlay h1 {
+	.concierge-box .wideover.overlay h1,
+	.concierge-box .wideover.overlay h2 {
 	    font-size: 18px;
 	}
 
@@ -814,7 +815,8 @@ and (max-width : 1024px) {
 	    width: 300px;
 	}
 
-	.concierge-box .wideover.overlay h1 {
+	.concierge-box .wideover.overlay h1,
+	.concierge-box .wideover.overlay h2 {
 	    font-size: 15px;
 	}
 
@@ -1590,7 +1592,8 @@ and (max-width : 640px) {
 	    width: 370px;
 	}
 
-	.concierge-box .wideover.overlay h1 {
+	.concierge-box .wideover.overlay h1,
+	.concierge-box .wideover.overlay h2 {
 	    font-size: 18px;
 	}
 

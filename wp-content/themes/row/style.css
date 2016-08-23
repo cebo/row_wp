@@ -3757,7 +3757,8 @@ width: 35%;
     width: 50%;
 }
 
-.concierge-box .wideover.overlay h1 {
+.concierge-box .wideover.overlay h1,
+.concierge-box .wideover.overlay h2 {
     font-size: 23px;
     line-height: 1.2;
 }

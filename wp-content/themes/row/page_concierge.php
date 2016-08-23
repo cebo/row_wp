@@ -60,7 +60,7 @@
 
 					<div class="wideover overlay">
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 						<a href="<?php echo get_post_meta($post->ID, 'bigtitle', true); ?>"></a>
 					</div>
 					
