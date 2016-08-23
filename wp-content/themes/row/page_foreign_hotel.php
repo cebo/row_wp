@@ -47,6 +47,12 @@
 			
 		</div>	
 
+		<div class="page-content">
+
+			<h1><?php the_title(); ?></h1>
+
+		</div>
+
 		<ul class="deal-boxes">
 
 			<!-- main content -->
@@ -55,8 +61,7 @@
 				
 					<div class="deal-wrapper">
 					
-						<h1><?php the_title(); ?></h1>
-						<?php echo content(100); ?>
+						<?php the_content(); ?>
 
 					</div>
 
