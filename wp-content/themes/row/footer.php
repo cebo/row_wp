@@ -110,9 +110,9 @@
 					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2015/11/NYC_FINALIST1.png"></a>
 					
 					<div>
-						<h2 class="h1"><?php _e('ROW NYC','row-footer1-text'); ?></h2>
-						<h2 class="h2"> <?php _e("CONDE NAST TRAVELER READER'S <br> CHOICE AWARDS 2015",'row-footer1-text'); ?></h2>
-						<p><?php _e('Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!','row-footer1-text'); ?></p>
+						<h2 class="h1"><?php _e('ROW NYC','row-theme-text'); ?></h2>
+						<h2 class="h2"> <?php _e("CONDE NAST TRAVELER READER'S <br> CHOICE AWARDS 2015",'row-theme-text'); ?></h2>
+						<p><?php _e('Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!','row-theme-text'); ?></p>
 					</div>
 				</div>
 			</div>
