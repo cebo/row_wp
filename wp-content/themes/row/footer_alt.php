@@ -17,7 +17,7 @@
 						<a href="#"><i class="fa fa-envelope"></i></a>
 						<a href="http://www.facebook.com/RowNYC" target="_blank"><i class="fa fa-facebook"></i></a>
 						<a href="http://www.twitter.com/rownyc" target="_blank"><i class="fa fa-twitter"></i></a>
-						<a href="www.pinterest.com/rownyc" target="_blank"><i class="fa fa-pinterest"></i></a>
+						<a href="http://www.pinterest.com/rownyc" target="_blank"><i class="fa fa-pinterest"></i></a>
 						<a href="http://www.instagram.com/rownyc" target="_blank"><i class="fa fa-instagram"></i></a>
 						<a href="http://www.youtube.com/RowNYC" target="_blank"><i class="fa fa-youtube"></i></a>
 					
