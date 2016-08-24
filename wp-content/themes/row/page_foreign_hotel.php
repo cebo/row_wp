@@ -10,14 +10,8 @@
 
 	$query = new wp_query(array(
 				
-				'post_type' => 'hotel',
-				'posts_per_page' => 1,
-				'meta_query' => array(
-					array(
-						'key' => 'cebo_available_on_header',
-						'value' => 'on',
-						)
-				)
+				'post_type' => 'page',
+  				'id' => 4165
 
 				)); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 			        ?>
