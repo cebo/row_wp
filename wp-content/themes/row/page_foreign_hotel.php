@@ -11,7 +11,7 @@
 	$query = new wp_query(array(
 				
 				'post_type' => 'page',
-  				'id' => 4165
+  				'id' => array(4165)
 
 				)); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 			        ?>
