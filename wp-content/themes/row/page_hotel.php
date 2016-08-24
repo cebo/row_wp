@@ -75,9 +75,9 @@
 	
 					<div class="deal-wrapper">
 					
-						<h2 class="h1">Amenities</h2>
+						<h2 class="h1"><?php _e('Amenities','row-theme-text'); ?></h2>
 	
-						<p></p><p>Inspired amenities abound at the Row NYC. Our restaurant, District M, is a European express café by day and a Neopolitan pizza bar and cocktail lounge by night, offering a curated selection of delicious food, coffee, cocktails and more…</p><p></p>
+						<p></p><p><?php _e('Inspired amenities abound at the Row NYC. Our restaurant, District M, is a European express café by day and a Neopolitan pizza bar and cocktail lounge by night, offering a curated selection of delicious food, coffee, cocktails and more…','row-theme-text'); ?></p><p></p>
 	
 						<div class="button-wrapper" style="margin: 10px 0 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php bloginfo('url'); ?>/times-square-hotels/amenities/">Read More</a></div>
 

@@ -65,7 +65,7 @@
 		<?php endif; wp_reset_query(); ?>	
 		
 		<div class="title-div">
-			<h1>Special Offers</h1>
+			<h1><?php _e('Special Offers','row-theme-text'); ?></h1>
 		</div>
 		
 		<ul class="deal-boxes">

@@ -152,7 +152,7 @@
 
 						
 							<?php $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-									<h2>This Week's NYC Deal</h2>
+									<h2><?php _e("This Week's NYC Deal",'row-theme-text'); ?></h2>
 								
 								<?php query_posts('post_type=specials&posts_per_page=6'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
@@ -177,7 +177,7 @@
 								
 									<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { ?>
 
-									<a href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>" class="button">Reserve Now</a>
+									<a href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>" class="button"><?php _e('Reserve Now','row-theme-text'); ?></a>
 
 									<?php } ?>
 									
@@ -318,7 +318,7 @@
 							<p><?php the_content(); ?></p>
 							
 							
-							<p><a class="gone" href="http://citykitchen.rownyc.com/">Visit City Kitchen &gt;</a></p>
+							<p><a class="gone" href="http://citykitchen.rownyc.com/"><?php _e('Visit City Kitchen &gt;','row-theme-text'); ?></a></p>
 							
 							<!-- <a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/"><?php _e('View Row NYC >','row-theme-text'); ?></a> -->
 													

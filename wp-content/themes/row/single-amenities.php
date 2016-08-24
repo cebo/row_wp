@@ -138,7 +138,7 @@
 									<?php if(get_post_meta ($post->ID, 'cebo_hourstitle', true)) { ?>
 										<h2 class="h4"><?php echo get_post_meta ($post->ID, 'cebo_hourstitle', true); ?></h2>
 									<?php } else { ?>
-										<h2 class="h4">Hours:</h2>
+										<h2 class="h4"><?php _e('Hours:','row-theme-text'); ?></h2>
 									<?php } ?>
 									<p><?php echo get_post_meta ($post->ID, 'cebo_hours', true); ?></p>
 								</div>
@@ -151,7 +151,7 @@
 									<?php if(get_post_meta ($post->ID, 'cebo_contacttitle', true)) { ?>
 										<h2 class="h4"><?php echo get_post_meta ($post->ID, 'cebo_contacttitle', true); ?></h2>
 									<?php } else { ?>
-										<h2 class="h4">Contact:</h2>
+										<h2 class="h4"><?php _e('Contact:','row-theme-text'); ?></h2>
 									<?php } ?>
 									<p><?php echo get_post_meta ($post->ID, 'cebo_contact', true); ?></p>
 								</div>
@@ -164,7 +164,7 @@
 									<?php if(get_post_meta ($post->ID, 'cebo_reservtitle', true)) { ?>
 										<h2 class="h4"><?php echo get_post_meta ($post->ID, 'cebo_reservtitle', true); ?></h2>
 									<?php } else { ?>
-										<h2 class="h4">Reservation:</h2>
+										<h2 class="h4"><?php _e('Reservation:','row-theme-text'); ?></h2>
 									<?php } ?>
 									<p><?php echo get_post_meta ($post->ID, 'cebo_reserv', true); ?></p>
 								</div>

@@ -34,7 +34,7 @@
 		
 		
 		<div class="populararticles">
-			<h2 class="sidehead">Popular This Week</h2>
+			<h2 class="sidehead"><?php _e('Popular This Week','row-theme-text'); ?></h2>
 			
 			<ul>
 			
@@ -78,7 +78,7 @@
 		
 							
 		<div class="instas">
-			<h2 class="sidehead">Stay connected. Hashtag us!<span>#MoreNYthanNY</span></h2>
+			<h2 class="sidehead"><?php _e('Stay connected. Hashtag us!','row-theme-text'); ?><span><?php _e('#MoreNYthanNY','row-theme-text'); ?></span></h2>
 			
 			<div id="instafeed"></div>
 			
