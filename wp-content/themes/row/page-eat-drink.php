@@ -9,7 +9,9 @@
 	
 	<section class="contentarea fullvertical">
 			
-			
+			<div class="title-div">
+				<h1><?php the_title(); ?></h1>
+			</div>
 
 			<div class="third-level">
 			

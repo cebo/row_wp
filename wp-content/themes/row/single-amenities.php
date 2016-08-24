@@ -11,6 +11,10 @@
 	
 	<section class="contentarea">
 
+		<div class="title-div">
+			<h1><?php the_title(); ?></h1>
+		</div>
+
 		<?php if(get_post_meta($post->ID, 'cebo_pulled_photos', true)) { ?>
 
 			<div id="bosco-box" class="home-intro bosco-box">

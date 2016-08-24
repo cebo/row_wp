@@ -21,6 +21,10 @@
 	
 	<section class="contentarea">
 
+		<div class="title-div">
+			<h1><?php the_title(); ?></h1>
+		</div>
+
 		<div class="home-intro">
 				
 			<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -60,7 +64,9 @@
 						
 		<?php endif; wp_reset_query(); ?>	
 		
-		
+		<div class="title-div">
+			<h1>Special Offers</h1>
+		</div>
 		
 		<ul class="deal-boxes">
 		
