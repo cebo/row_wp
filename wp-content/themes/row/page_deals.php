@@ -134,8 +134,12 @@
 					<div class="deal-wrapper">
 					
 						<h2 class="h1"><?php the_title(); ?></h2>
-	
-						<p><?php echo content(40); ?></p>
+						
+						<?php if(get_post_meta($post->ID, 'cebo_specialshortdesc', true)) { ?>
+							<?php echo get_post_meta($post->ID, 'cebo_specialshortdesc', true); ?>
+						<?php } else { ?>
+							<p><?php echo content(40); ?></p>
+						<?php } ?>
 
 						<div class="wonder-vertical"></div>
 
