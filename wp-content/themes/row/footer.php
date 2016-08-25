@@ -94,11 +94,11 @@
 			</div>
 			
 			<div class="tier-two">
-			
+
 				<ul>
-					<li>Reservations<span>888.352.3650</span></li>
+					<li><?php _e('Reservations','row-theme-text'); ?><span><?php _e('888.352.3650','row-theme-text'); ?></span></li>
 					<!--<li>EMAIL<span><a href="mailto:info@rownyc.com">info@rownyc.com</a></span></li>-->
-					<li class="widest">A Times Square Hotel<span>700 8th Avenue, New York, NY 10036</span></li>
+					<li class="widest"><?php _e('A Times Square Hotel','row-theme-text'); ?><span><?php _e('700 8th Avenue, New York, NY 10036','row-theme-text'); ?></span></li>
 				</ul>
 			
 			</div>
