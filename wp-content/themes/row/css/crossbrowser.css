@@ -4,12 +4,14 @@
 	.squaredance {
 		border: 0;
 	}
-   
-   .booking .button{
-	   padding: 11px 5px 10px;
-   }
-   button.checkrates.button {
+	.booking .button{
+		padding: 11px 5px 10px;
+	}
+	button.checkrates.button {
 		padding: 9px 9px 9px;
+	}
+	.squaredance > select {
+		right: -30px;
 	}
    
 }
