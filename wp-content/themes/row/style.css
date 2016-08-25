@@ -4557,8 +4557,12 @@ a.button.moreinfo{
 		color: #000;
 	}
 
-.page.deals #theguestbook_widget .theguestbook-email-submit-input { visibility: hidden; }
-.page.deals #theguestbook_widget #theguestbook_widget_feedback {
+
+.page.deals #theguestbook_widget .theguestbook-email-submit-input,
+.page.page-template-page_deals #theguestbook_widget .theguestbook-email-submit-input { visibility: hidden; }
+
+.page.deals #theguestbook_widget #theguestbook_widget_feedback,
+.page.page-template-page_deals #theguestbook_widget #theguestbook_widget_feedback {
 	top: -45px;
 }
 
