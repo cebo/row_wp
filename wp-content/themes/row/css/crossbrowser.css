@@ -1,0 +1,36 @@
+/* IE 10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+
+	.squaredance {
+		border: 0;
+	}
+   
+   .booking .button{
+	   padding: 11px 5px 10px;
+   }
+   button.checkrates.button {
+		padding: 9px 9px 9px;
+	}
+   
+}
+
+/* ANY FIREFOX */
+@-moz-document url-prefix(){
+	
+	.cssselector {
+		color:black;
+	}
+	.squaredance {
+		padding: 0 10px;
+		border: 0;
+	}
+	.squaredance .calendarsection {
+		height: 33px;
+	}
+	button.checkrates.button {
+		padding: 7px 9px 9px;
+	}
+
+
+}
+

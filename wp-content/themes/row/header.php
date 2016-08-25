@@ -88,8 +88,12 @@
 <!-- Consolidated this css into one file. This styles the notification -->
 <link rel='stylesheet' id='style-css' href='<?php bloginfo('template_url'); ?>/css/ns-style.css' type='text/css' media='all' />
 
+<!--  style -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/crossbrowser.css">
+
 <!-- responsive style -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
+
 <script src="//cdn.optimizely.com/js/3569390496.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
