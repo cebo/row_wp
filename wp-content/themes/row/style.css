@@ -831,20 +831,6 @@ h4 {
     word-wrap: break-word;
 }
 
-.languages > img {
-    margin: 0 5px;
-}
-
-.languages > a {
-    margin: 0 5px;
-}
-
-.slipnot .languages {
-    opacity: 1;
-    visibility: visible;
-}
-
-
 .navigate .supernav li:hover p, .navigate .supernav li.activeone p {
 	color: #000;
 }
@@ -7264,9 +7250,7 @@ a.detailsAnchor {
     .logobox img {
 		max-width: 35%;
 	}
-    .languages {
-    	/**display: none;**/
-    }
+
     .navigate .supernav li.subinside:hover, .navigate .supernav li.narrower {
     	width: 250px;
     }

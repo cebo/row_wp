@@ -259,7 +259,19 @@ ga('send', 'pageview');
 			
 			<div class="logobox">
 				
-				<div class="languages"><?php if (function_exists('language_selector_flags')) { language_selector_flags(); } ?></div>
+				<div class="languages langdrop">
+
+					<?php if (function_exists('language_selector_flags')) { ?>
+
+						<div class="current-lang">
+							<i class="fa fa-world"></i> <?php echo ICL_LANGUAGE_CODE; ?>
+						</div>
+						
+						<ul><?php language_selector_flags(); ?></ul>
+
+					<?php } ?>
+
+				</div>
 			
 			</div>
 			
