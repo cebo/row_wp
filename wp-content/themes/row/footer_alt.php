@@ -216,10 +216,18 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 				</div>
 				
 				<div class="signup-form">
+
+				<?php
+
+					$signupholder = get_post_meta($post->ID,'misfit_signup_placeholder', true);
+					$signupbuttontext = get_post_meta($post->ID,'misfit_signup_buttontext', true);
+
+
+				?>
 				
 					<form method="post" action="http://rownyc.us4.list-manage1.com/subscribe?u=ae5d0eb33650e5a9963ca5a3e&id=cf8da27740">
-						<input class="signup-field" type="email" required="" placeholder="<?php echo get_post_meta($post->ID,'misfit_signup_placeholder', true); ?>" id="mce-EMAIL" name="MERGE0" value="">
-						<input class="signup-button" id="mc-embedded-subscribe" type="submit" value="<?php echo get_post_meta($post->ID,'misfit_signup_buttontext', true); ?>">
+						<input class="signup-field" type="email" required="" placeholder="<?php _e($signupholder,'row-theme-text'); ?>" id="mce-EMAIL" name="MERGE0" value="">
+						<input class="signup-button" id="mc-embedded-subscribe" type="submit" value="<?php _e($signupbuttontext,'row-theme-text'); ?>">
 					</form>
 					
 					<!--
