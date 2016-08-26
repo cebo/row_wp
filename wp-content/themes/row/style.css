@@ -1507,7 +1507,7 @@ ul#selectUl li.unselected:hover {
 
 .banner {
     background: none repeat scroll 0 0 #000;
-    height: 80px;
+    height: 81px;
     padding: 27px 0;
    /* position: relative; */
    	position: fixed;
@@ -2805,6 +2805,7 @@ visibility: hidden;
     margin-bottom: 0px;
     float: left;
 	width: 33.33%;
+	max-height: 375px;
     vertical-align:top;
     position: relative;
     -webkit-column-break-inside:avoid;
@@ -2816,37 +2817,15 @@ visibility: hidden;
 }
 
 .blogposters li img {
-	/*width: 100% !important;*/
-	/*height: 33%  !important;*/
-	display: block;
-	 vertical-align:top;
-}
-
-.blogposts li img {
-	width: 100% !important;
-	/*height: 33%  !important;*/
-	display: block;
-	 vertical-align:top;
+    width: 100% !important;
+    height: auto!Important;
+    display: block;
+    vertical-align: top;
 }
 
 .blogposters li:hover .littleover {
 	width: 80%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .tier-one {
 	width: 100%;
@@ -2854,9 +2833,6 @@ visibility: hidden;
 	background: #fff;
 	padding-top: 10px;
 }
-
-
-
 
 .tier-one ul {
 	width: 100%;
