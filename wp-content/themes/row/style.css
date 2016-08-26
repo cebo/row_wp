@@ -401,6 +401,83 @@ h4 {
 
 /* Navigation Styles ---------------------------------------------------- */
 
+.logobox:hover .languages ul {
+	opacity: 1 !important;
+	visibility: visible !important;
+	top: 39px;
+}
+
+.languages {
+	position: relative;
+	padding: 5px 0;
+}
+
+.current-lang {
+	display: inline-block;
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+	font-family: 'GothamBook', sans-serif;
+}
+
+.languages .current-lang i.fa-globe {
+	color: #FF00B2;
+	font-size: 22px;
+	vertical-align: bottom;
+	margin-right: 2px;
+}
+
+.languages .current-lang i.fa-caret-down {
+	color: #fff;
+	margin-left: 3px;
+}
+
+.languages ul {
+	position: absolute;
+	border-left: 3px solid #353535;
+	border-right: 3px solid #353535;
+	font-family: 'GothamBook', sans-serif;
+	margin: 0 auto;
+	display: inline-block;
+	top: 29px;
+	min-width: 130px;
+	left: 50%;
+	margin-left: -69px;
+	padding-bottom: 0;
+	border-bottom: 3px solid #353535;
+	-webkit-transition: .4s opacity, .4s top;
+	-moz-transition: .4s opacity, .4s top;
+	-o-transition: .4s opacity, .4s top;
+	transition: .4s opacity, .4s top;
+}
+
+.languages ul li {
+	border-top: 3px solid #353535;
+	display: block;
+	text-align: center;
+}
+
+.languages ul li a {
+	display: inline-block;
+	padding: 15px;
+	background: #000;
+	color: #fff;
+	text-transform: uppercase;
+	width: 100%;
+	font-family: 'GothamBook', sans-serif;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-transition: .4s background-color, .4s color;
+	-moz-transition: .4s background-color, .4s color;
+	-o-transition: .4s background-color, .4s color;
+	transition: .4s background-color, .4s color;
+}
+	.languages ul li a:hover {
+		color: #000;
+		background: #fff;
+	}
+
 .navigate {
     background: #000 none repeat scroll 0 0;
     height: calc(100% - 135px);

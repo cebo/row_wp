@@ -303,7 +303,7 @@ function language_selector_flags(){
     if(!empty($languages)){
         foreach($languages as $l){
             if(!$l['active']) {
-                echo '<li><a href="',$l['url'],'">',$l['language_code'],'</a><li>';
+                echo '<li><a href="',$l['url'],'">',$l['language_code'],'</a></li>';
             }
         }
     }

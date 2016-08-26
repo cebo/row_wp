@@ -264,10 +264,10 @@ ga('send', 'pageview');
 					<?php if (function_exists('language_selector_flags')) { ?>
 
 						<div class="current-lang">
-							<i class="fa fa-world"></i> <?php echo ICL_LANGUAGE_CODE; ?>
+							<i class="fa fa-globe"></i> <?php echo ICL_LANGUAGE_CODE ?> <i class="fa fa-caret-down"></i>
 						</div>
-						
-						<ul><?php language_selector_flags(); ?></ul>
+
+						<ul style="opacity: 0; visibility: hidden;"><?php language_selector_flags(); ?></ul>
 
 					<?php } ?>
 
