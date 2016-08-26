@@ -59,8 +59,7 @@
 				
 				
 				<?php endwhile; endif; wp_reset_query(); ?>	
-				
-											
+														
 				
 			</ul>
 		</div><!-- end popular items -->
