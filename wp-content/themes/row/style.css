@@ -2314,6 +2314,7 @@ visibility: hidden;
 	background: rgb(255,255,255);
     background: rgba(255,255,255,0.85);
 	width: 35%;
+	min-width: 120px;
 	padding: 20px;
 	top: 30%;
 	left: 50%;
