@@ -2778,6 +2778,7 @@ visibility: hidden;
     margin-bottom: 0px;
     vertical-align:top;
     position: relative;
+    max-height: 350px;
     width: 33.3346%;
     float: left;
     -webkit-column-break-inside:avoid;
@@ -2788,6 +2789,11 @@ visibility: hidden;
 		-webkit-backface-visibility:hidden;
 }
 
+
+.blogposts li img {
+    width: 100%!important;
+    height: auto!important;
+}
 
 
 
