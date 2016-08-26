@@ -6,28 +6,7 @@
 			
 			
 
-			<div class="home-intro">
-				
-				<!--<a href="/the-hotel/">
-				<div class="wideover overlay">
-					
-					<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
-					<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
-				
-				</div>
-				</a>
-
-				<a class="video-play" href="http://youtu.be/FJw3fH7kzRs" rel="prettyPhoto-video"><i class="fa fa-play-circle-o"></i></a>		
-				
-						
-		
-				<div class="stretch"  style="background-image: url(<?php echo get_option('cebo_homebanner'); ?>);"></div>
-				
-				
-									
-				<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>-->
-				
-				
+			<div class="home-intro">				
 
 					<?php
 						// Saving it for future use
@@ -36,8 +15,8 @@
 					?>
 				
 					<div class="wideover overlay">
-                                              <div class="closena" style="float:left;position:absolute">X</div>
- 					     <!-- <img src="<?php bloginfo ('template_url'); ?>/images/closena.png" > !-->
+                        
+						<div class="closena" style="float:left;position:absolute">X</div>
                                                
 					     <div style="float:left; width:15%; margin-left:30px;">
 					     		<a href="http://tlworldsbest.wylei.com/" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2015/12/tl_nobg.png" style="width:130%;"></a>
@@ -47,9 +26,7 @@
 						<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
 						
 						<div class="paperbox">
-						<!--<h3>How would you create your New York City?</h3> 
-<span style="font-weight: normal; font-family: helvetica;">Start with Times Square. The heart of Manhattan. 24/7 anything and everything.</span>
-<br />-->
+					
 							<?php echo get_option('cebo_hometext'); ?>
 							
 							
@@ -113,23 +90,6 @@
 					
 				
 				</div>
-		
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 			
 			</div>
 			
@@ -602,47 +562,8 @@
 
 			
 			<div class="fifth-level">
-			
-				
 				
 				<ul class="blogposts">					
-					
-					<!--
-					<?php $query = new WP_Query( array( 'post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 1
-					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-					
-										
-					<li>
-					
-						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-								
-						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
-						
-						
-						<?php } elseif($imgsrc) { ?>
-						
-						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
-						
-						
-						<?php } else { ?>
-											
-						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
-						
-						<?php } ?>
-						
-						
-						
-						
-						<div class="littleover">
-							<h2 class="h1"><?php _e('Coming Soon','row-theme-text'); ?></h2>
-							
-			
-						</div>
-						
-					</li>
-					
-					<?php endwhile; endif; wp_reset_query(); ?>	
-				-->
 					
 					<?php query_posts('post_type=page&p=285&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					

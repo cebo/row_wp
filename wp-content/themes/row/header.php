@@ -298,55 +298,6 @@ ga('send', 'pageview');
 			<li>
 				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
 			</li>
-
-			<!--<li>
-
-				<?php if( $current_lang == 'en') { ?>
-
-					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-				<?php } elseif( $current_lang == 'zh-hans') { ?>
-
-					<a href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-				<?php } elseif( $current_lang == 'pt-br') { ?>
-
-					<a href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-
-					<a href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-				<?php } else { ?>
-
-					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-				<?php } ?>
-
-			</li>-->
-
-
-			
-<!--
-
-			<li class="subinside inexplore">
-				<a href="<?php bloginfo ('url'); ?>/explore-nyc/"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>	
-			</li>
-
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/hotel-amenities/cyc-fitness/"><span class="fitness"></span><p><?php _e('CYC FITNESS','row-theme-text'); ?></p></a>
-			</li>	
-
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/hotel-amenities/glamgo/"><span class="glamgo"></span><p><?php _e('GLAM&GO','row-theme-text'); ?></p></a>
-			</li>		
-			
-
--->
-			
-			<!--<li>
-				<a href="#"><span class="blog"></span><p>Apple Blog</p></a>
-			</li>-->
 		
 		</ul>
 		
@@ -364,19 +315,6 @@ ga('send', 'pageview');
 			</div>
 
 			<div class="exclusive-offer">
-				
-				<?php /*
-				<form action="//sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-				
-				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required placeholder="<?php _e('Exclusive Offer Signup', 'row-theme-text'); ?>">
-				<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-				<div style="position: absolute; left: -5000px;"><input type="text" name="b_ae5d0eb33650e5a9963ca5a3e_1054dd91b3" tabindex="-1" value=""></div>
-				<i class="fa fa-caret-right"></i>
-				<input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="fa fa-caret-right">
-				
-				</form>
-				
-				*/ ?>
 				
 				<form method="post" id="eclubCheck" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub">
 				
@@ -502,11 +440,6 @@ ga('send', 'pageview');
 				<li>
 					<a href="<?php bloginfo ('url'); ?>/hotel-amenities/cyc-fitness/"><span class="fitness"></span><p><?php _e('CYC FITNESS','row-theme-text'); ?></p></a>
 				</li>
-
-												
-				<!--<li>
-					<a href="#"><span class="blog"></span><p>Apple Blog</p></a>
-				</li>-->
 			
 			</ul>
 
@@ -637,32 +570,6 @@ ga('send', 'pageview');
 					<div class="butonconton">
 						<a href="" target="_blank"><button type="submit" class="checkrates button"><?php _e('Check Rates','row-theme-text'); ?></button></a>
 					</div>
-
-					<!--<div class="butonconton">
-					
-							<?php if( $current_lang == 'en' ) { ?>
-
-								<a target="_blank" href="https://rownyc.reztrip.com/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
-					
-							<?php } elseif( $current_lang == 'zh-hans') { ?>
-					
-								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
-					
-							<?php } elseif( $current_lang == 'pt-br') { ?>
-					
-								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
-					
-							<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-					
-								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
-					
-							<?php } else { ?>
-					
-								<a target="_blank" href="<?php echo get_option('cebo_genbooklink'); ?>/search?&arrival_date=<?php echo date('Y-m-d'); ?>&departure_date=<?php $tomorrow = date("Y-m-d", time() + 86400); echo $tomorrow; ?>&adults[]=1&children[]=0" class="check-rates"><?php _e('Check Rates','row-theme-text'); ?></a>
-					
-							<?php }  ?>
-						
-					</div>-->
 					
 					<div class="clear"></div>
 				</div>						
