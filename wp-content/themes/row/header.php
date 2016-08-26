@@ -331,13 +331,13 @@ ga('send', 'pageview');
 				<form method="post" id="eclubCheck" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub">
 				
 					<div class="da-block">
-						<input required type="text" size="40" name="FIRSTNAME" maxlength="40" value="" id="firstname" placeholder="first name">
+						<input required type="text" size="40" name="FIRSTNAME" maxlength="40" value="" id="firstname" placeholder="<?php _e('first name','row-theme-text'); ?>">
 					</div>
 					<div class="da-block">
-						<input required type="text" size="40" name="LASTNAME" maxlength="40" value="" id="lastname" placeholder="last name">
+						<input required type="text" size="40" name="LASTNAME" maxlength="40" value="" id="lastname" placeholder="<?php _e('last name','row-theme-text'); ?>">
 					</div>
 					<div class="da-block">
-						<input type="email" required size="40" name="email" maxlength="150" id="email_address" placeholder="email address">
+						<input type="email" required size="40" name="email" maxlength="150" id="email_address" placeholder="<?php _e('email address','row-theme-text'); ?>">
 					</div>
 					
 					<i class="fa fa-caret-right"></i>
