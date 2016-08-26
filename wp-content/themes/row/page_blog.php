@@ -167,7 +167,8 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 							$category = get_the_category(); 
 							
 							?>
-							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a>
+							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php _e('<?php echo $category[0]->cat_name; ?>','row-theme-text'); ?></a>
+							
 							
 							</div>
 							
