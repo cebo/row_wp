@@ -474,7 +474,7 @@ ga('send', 'pageview');
 		
 		<a class="logo" href="<?php bloginfo('url'); ?>">
 			<img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" />
-			<p>A Times Square Hotel</p>
+			<p><?php _e('A Times Square Hotel','row-theme-text'); ?></p>
 		</a>
 
 		<div class="booking">
