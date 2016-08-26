@@ -209,7 +209,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 				<div class="popup-contents">
 
-					<?php the_content(); ?>
+					<?php $contentstring = the_content(); ?>
+
+					<?php _e($contentstring,'row-theme-text'); ?>
 
 				</div>
 				

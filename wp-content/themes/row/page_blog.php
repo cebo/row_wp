@@ -63,9 +63,10 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 								<a class="postlink" href="<?php the_permalink(); ?>"></a>
 								<?php
 							$category = get_the_category(); 
+							$categorystring = $category[0]->cat_name;
 							
 							?>
-							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php _e('<?php echo $category[0]->cat_name; ?>','row-theme-text'); ?></a>
+							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php _e($categorystring,'row-theme-text'); ?></a>
 							
 							</div>
 							
@@ -165,9 +166,10 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 								<a class="postlink" href="<?php the_permalink(); ?>"></a>
 								<?php
 							$category = get_the_category(); 
+							$categorytext = $category[0]->cat_name;
 							
 							?>
-							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php _e('<?php echo $category[0]->cat_name; ?>','row-theme-text'); ?></a>
+							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php _e($categorytext,'row-theme-text'); ?></a>
 							
 							
 							</div>
