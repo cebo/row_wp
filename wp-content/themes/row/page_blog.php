@@ -50,9 +50,9 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 						
 						<div class="datebox">
 						
-							<span class="day"><?php echo the_time("l"); ?></span>
-							<span class="date"><?php echo the_time("j"); ?></span>
-							<span class="moyear"><?php echo the_time("M"); ?>, <?php echo the_time("Y"); ?></span>					
+							<span class="day"><?php _e('<?php echo the_time("l"); ?>','row-theme-text'); ?></span>
+							<span class="date"><?php _e('<?php echo the_time("j"); ?>','row-theme-text'); ?></span>
+							<span class="moyear"><?php _e('<?php echo the_time("M"); ?>, <?php echo the_time("Y"); ?>','row-theme-text'); ?></span>					
 							
 						</div>
 						
