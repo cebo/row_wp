@@ -7242,7 +7242,10 @@ div.gmnoprint .gm-bundled-control .gm-bundled-control-on-bottom
 }
 
 li.deal.foreign-box{
-    width: calc(30% - 10px);
+    float: none;
+    width: auto;
+	max-height: none;
+	min-height: auto;
 }
 
 .deal.foreign-box .deal-wrapper h2{
