@@ -317,6 +317,8 @@
 			
 			<!-- blog post and district M -->
 			
+			<?php if (false) { ?>
+
 			<div class="third-level">
 			
 				
@@ -414,6 +416,7 @@
 			
 			</div>
 			
+			<?php } ?>
 	
 
 
@@ -421,6 +424,7 @@
 
 			<!-- START cyc fitness and glam go -->
 
+			<?php if (false) { ?>
 
 			<div class="third-level">
 
@@ -489,6 +493,7 @@
 
 			</div>
 
+			<?php } ?>
 
 
 			<!-- END cyc fitness and glam go -->
@@ -505,6 +510,9 @@
 
 
 			<!-- full width call out -->
+			
+			<?php if (false) { ?>
+
 			<div class="fourth-level">
 			
 	
@@ -553,6 +561,8 @@
 
 			
 			</div>
+
+			<?php } ?>
 			
 
 			<div class="clear"></div>
@@ -560,6 +570,7 @@
 			
 			<!-- begin fifth level -->
 
+			<?php if (false) { ?>
 			
 			<div class="fifth-level">
 				
@@ -764,7 +775,7 @@
 			
 			</div>
 			
-			
+			<?php } ?>
 
 
 
