@@ -431,7 +431,7 @@
 							<div class="suboverlay narrow">
 								<h2 class="h1"><?php the_title(); ?></h2>
 								<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?> <br> 
-									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text'); ?></a>
+									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text-two'); ?></a>
 								</p>
 							</div>
 
@@ -462,7 +462,7 @@
 							<div class="suboverlay narrow">
 								<h2 class="h1"><?php the_title(); ?></h2>
 								<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?> <br> 
-									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text'); ?></a>
+									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text-three'); ?></a>
 								</p>
 							</div>
 
