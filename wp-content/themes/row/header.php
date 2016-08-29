@@ -278,7 +278,7 @@ ga('send', 'pageview');
 			
 		<ul class="supernav">
 
-			<?php if( $current_lang == 'en') { ?>
+			<?php if( ICL_LANGUAGE_CODE == 'en') { ?>
 			
 			<li class="subinside inhotel">
 				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
