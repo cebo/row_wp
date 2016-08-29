@@ -1,51 +1,50 @@
 <?php 
 
-/* Template Name:Foreign Hotel Page
+/* Template Name: Foreign Hotel Page v2
 
 */
  get_header(); ?>
  
 
-<?php 
+<?php
 
-	$query = new wp_query(array(
-				
-				'post_type' => 'hotel',
-				'posts_per_page' => 1,
-				'meta_query' => array(
-					array(
-						'key' => 'cebo_available_on_header',
-						'value' => 'on',
-						)
-				)
+	$query_args = array(
+		'post_type' => 'hotel',
+		'posts_per_page' => 1,
+		'meta_query' => array(
+			array(
+				'key' => 'cebo_available_on_header',
+				'value' => 'on',
+			)
+		)
+	);
 
-				)); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
-			        ?>
- 	
+	$query = new wp_query($query_args);
+
+	if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+
+		$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+?>
+
 	<section class="contentarea">
 
 		<div class="home-intro">
-		
-		
-			<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-			
-			
-			<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
-			
-			<?php } elseif($imgsrc) { ?>
-			
-			
-			<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
-			
+
+			<?php if (get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
+
+			<div class="stretch" style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+
+			<?php } elseif ($imgsrc) { ?>
+
+			<div class="stretch" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+
 			<?php } else { ?>
-								
-			<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-			
-			
-			<?php } ?>	
-			
-			
-		</div>	
+
+			<div class="stretch" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+
+			<?php } ?>
+
+		</div>
 
 		<div class="page-content">
 
@@ -55,73 +54,22 @@
 
 		<ul class="deal-boxes">
 
-			<!-- main content -->
-
 				<li class="deal foreign-box">
-				
+
 					<div style="padding-top:0px;" class="deal-wrapper">
-					
-						<?php echo content(150); ?>
+
+						<?php echo the_content(); ?>
 
 					</div>
 
 				</li>
-						
-		<?php endwhile; endif; wp_reset_query(); ?>	
 
-		<!-- rooms -->	
-		
-			<?php 
+		</ul>
 
-				$dealboxes_query = new wp_query(array(
-				
-				'post_type' => 'page',
-				'orderby'=> 'id',
-    			'order' => 'asc',
-  				'post__in' => array(86,92)
-
-				)); if($dealboxes_query->have_posts()) : while($dealboxes_query->have_posts()) : $dealboxes_query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
-			        ?>
-
-				<a href="<?php the_permalink(); ?>">
-				<li class="deal foreign-box">
-				
-					
-					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-		
-		
-					<div class="deal-photo" style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
-					
-					<?php } elseif($imgsrc) { ?>
-					
-					
-					<div class="deal-photo" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
-					
-					<?php } else { ?>
-					
-					<div class="deal-photo" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-					
-					
-					<?php } ?>
-		
-	
-					<div class="deal-wrapper">
-					
-						<h2 class="h1"><?php the_title(); ?></h2>
-	
-					</div>
-
-				</li>
-				</a>
-				
-				<?php endwhile; endif; wp_reset_query(); ?>	
-
-				
-			</ul>
-		
-		
-		
-		
 		<div class="clear"></div>
-		
-	<?php get_footer(); ?>
+
+	</section>
+
+<?php endwhile; endif; wp_reset_query(); ?>	
+
+<?php get_footer(); ?>
