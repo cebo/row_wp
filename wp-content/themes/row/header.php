@@ -277,7 +277,8 @@ ga('send', 'pageview');
 			
 			
 		<ul class="supernav">
-			
+
+			<?php if( $current_lang == 'en') { ?>
 			
 			<li class="subinside inhotel">
 				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
@@ -310,6 +311,26 @@ ga('send', 'pageview');
 			<li>
 				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
 			</li>
+
+			<?php } else { ?>
+
+			<li class="subinside inhotel">
+				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
+			</li>
+
+			<li class="subinside indeals">
+				<a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><span class="deals"></span><p><?php _e('Special Offers','row-theme-text'); ?></p></a>	
+			</li>
+
+			<li class="subinside inrooms">
+				<a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>		
+			</li>
+
+			<li class="subinside ingallery">
+				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
+			</li>
+
+			<?php } ?>
 		
 		</ul>
 		
