@@ -317,7 +317,7 @@
 			
 			<!-- blog post and district M -->
 			
-			<?php if (false) { ?>
+			<?php if ( ICL_LANGUAGE_CODE == 'en' ) { ?>
 
 			<div class="third-level">
 			
@@ -424,7 +424,7 @@
 
 			<!-- START cyc fitness and glam go -->
 
-			<?php if (false) { ?>
+			<?php if ( ICL_LANGUAGE_CODE == 'en' ) { ?>
 
 			<div class="third-level">
 
@@ -511,7 +511,7 @@
 
 			<!-- full width call out -->
 			
-			<?php if (false) { ?>
+			<?php if ( ICL_LANGUAGE_CODE == 'en' ) { ?>
 
 			<div class="fourth-level">
 			
@@ -570,7 +570,7 @@
 			
 			<!-- begin fifth level -->
 
-			<?php if (false) { ?>
+			<?php if ( ICL_LANGUAGE_CODE == 'en' ) { ?>
 			
 			<div class="fifth-level">
 				
