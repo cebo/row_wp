@@ -137,7 +137,7 @@
 
 						</div>
 
-					<div class="button-wrapper" style="margin: 10px 0 0;">
+					<div class="button-wrapper">
 						<a class="button" href="<?php if(get_post_meta($post->ID, 'cebo_learnmore_url', true)) { echo get_post_meta($post->ID, 'cebo_learnmore_url', true); } else { the_permalink(); } ?>"><?php _e('Read More','row-theme-text'); ?></a>
 						<input style="margin-top: -1px; padding: 10px 37px; background: #fff; color: #000; border: 1px solid #000;" class="theguestbook-email-submit-input button" type="button" value="<?php _e('Enroll','row-theme-text'); ?>">
 					</div>
@@ -158,7 +158,7 @@
 
 					</div>
 
-					<div class="button-wrapper" style="margin: 10px 0 0;">
+					<div class="button-wrapper">
 						<a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Book Now','row-theme-text'); ?></a>
 						<a class="button moreinfo" href="<?php if(get_post_meta($post->ID, 'cebo_learnmore_url', true)) { echo get_post_meta($post->ID, 'cebo_learnmore_url', true); } else { the_permalink(); } ?>"><?php _e('More Info','row-theme-text'); ?></a>
 					</div>

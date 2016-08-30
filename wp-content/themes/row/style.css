@@ -4356,6 +4356,10 @@ h2.h4 {
     z-index: 999;
 }
 
+	.deal.deal-no-min-max-height .button-wrapper {
+		margin-bottom: 20px;
+	}
+
 a.button.moreinfo{
 	margin-bottom: 10px;
     background: #fff;
@@ -4414,9 +4418,6 @@ a.button.moreinfo{
     margin-right: 10px;
 }
 
-.deal.deal-no-min-max-height .button-wrapper a.button {
-	margin-bottom: 30px;
-}
 
 /* Single - Deal ---------------------------------------------------- */
 
