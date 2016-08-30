@@ -144,7 +144,7 @@
 
 					<?php } else { ?> 
 
-					<div class="deal-wrapper">
+					<div class="deal-wrapper deal-wrapper-no-height">
 
 						<h2 class="h1"><?php the_title(); ?></h2>
 
