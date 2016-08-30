@@ -69,13 +69,13 @@
 
 	<section class="contentarea">
 
-
-<?php endif; wp_reset_query(); ?>
-
-
 		<div class="title-div">
 			<h1><?php _e('Special Offers','row-theme-text'); ?></h1>
 		</div>
+
+
+<?php endif; wp_reset_query(); ?>
+
 
 		<ul class="deal-boxes">
 
