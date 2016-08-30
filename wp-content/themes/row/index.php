@@ -139,6 +139,11 @@
 
 									<a href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>" class="button"><?php _e('Reserve Now','row-theme-text'); ?></a>
 
+									<?php } elseif ( $slug_comp == '5-cash-back' ) { // DO NOTHING ?>
+									<?php } else { ?>
+
+									<a href="<?php the_permalink(); ?>" class="button"><?php _e('More','row-theme-text'); ?></a>
+
 									<?php } ?>
 									
 									<?php if( $slug_comp == '5-cash-back' ) { ?>
@@ -154,14 +159,15 @@
 								</div>
 								
 								<?php endwhile; endif; wp_reset_query(); ?>	
-								
-								<a class="opensays" href="#"><i class="fa fa-chevron-down"><span class="mo">See More</span></i></a>
-								<a class="opensays" href="#"><i class="fa fa-chevron-up"><span class="mo">Close</span></i></a>
+
 								
 								<div class="backslide" style="background-image: url(<?php bloginfo('template_url'); ?>/images/cash.jpg);"></div>
-								
-							
-						
+
+						</div>
+
+						<div class="opensaysbox">
+							<a class="opensays" href="#"><i class="fa fa-chevron-down"><span class="mo">See More</span></i></a>
+							<a class="opensays" href="#"><i class="fa fa-chevron-up"><span class="mo">Close</span></i></a>
 						</div>
 					</div>
 					
