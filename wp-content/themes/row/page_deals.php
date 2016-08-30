@@ -27,10 +27,6 @@
 
 	<section class="contentarea">
 
-		<div class="title-div">
-			<h1><?php the_title(); ?></h1>
-		</div>
-
 		<div class="home-intro">
 				
 			<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
