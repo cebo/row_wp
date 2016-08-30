@@ -4295,7 +4295,7 @@ h2.h4 {
     position: relative;
     margin-right: 10px;
 }
-	.deal.deal-no-max-min-height {
+	.deal.deal-no-min-max-height {
 		max-height: none;
 		min-height: auto;
 	}
@@ -4327,7 +4327,7 @@ h2.h4 {
 	z-index: 999;
 	height: 200px;
 }
-	.deal-wrapper.deal-wrapper-no-height {
+	.deal.deal-no-min-max-height .deal-wrapper {
 		height: auto;
 	}
 
@@ -4412,6 +4412,10 @@ a.button.moreinfo{
 .deal .button-wrapper a.button {
 	padding: 10px 20px;
     margin-right: 10px;
+}
+
+.deal.deal-no-min-max-height .button-wrapper a.button {
+	margin-bottom: 30px;
 }
 
 /* Single - Deal ---------------------------------------------------- */

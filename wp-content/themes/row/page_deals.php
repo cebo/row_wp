@@ -103,7 +103,7 @@
 
 			?>
 
-				<li class="deal deal-no-max-min-height">
+				<li class="deal deal-no-min-max-height">
 
 
 					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
@@ -125,7 +125,7 @@
 
 					<?php if( $slug_comp == '5-cash-back' ) { ?>
 
-						<div class="deal-wrapper deal-wrapper-no-height">
+						<div class="deal-wrapper">
 
 							<h2 class="h1"><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h2>
 
