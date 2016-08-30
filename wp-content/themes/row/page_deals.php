@@ -6,19 +6,25 @@
  get_header(); ?>
  
 
-<?php query_posts(array(
-				
-				'post_type' => 'specials',
-				'posts_per_page' => 1,
-				'meta_query' => array(
-					array(
-						'key' => 'cebo_available_on_header',
-						'value' => 'on',
-						)
-				)
-
-				)); if(have_posts()) : while(have_posts()) : the_post(); ?>	
+<?php
 	
+	query_posts(
+		array(
+			'post_type' => 'specials',
+			'posts_per_page' => 1,
+			'meta_query' => array(
+				array(
+					'key' => 'cebo_available_on_header',
+					'value' => 'on',
+				)
+			)
+		)
+	);
+
+	if(have_posts()) : while(have_posts()) : the_post();
+?>
+
+
 	<section class="contentarea">
 
 		<div class="title-div">
@@ -37,85 +43,92 @@
 				<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 				
 			<?php } else { ?>
-								
+
 				<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-			
-			<?php } ?>		
-			
-		</div>	
-						
+
+			<?php } ?>
+
+		</div>
+
 		<div class="page-content">
 
 			<h1><?php the_title(); ?></h1>
 
 			<?php the_content(); ?>
-			
-			
+
+
 			<div class="button-wrapper" style="margin: 20px 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Reserve Now','row-theme-text'); ?></a></div>
 
 			<div class="clear"></div>
 
 		</div>
-		
-		
-		<?php endwhile; else : ?>
 
-			<section class="contentarea">
-						
-		<?php endif; wp_reset_query(); ?>	
-		
+
+<?php endwhile; else : ?>
+
+
+	<section class="contentarea">
+
+
+<?php endif; wp_reset_query(); ?>
+
+
 		<div class="title-div">
 			<h1><?php _e('Special Offers','row-theme-text'); ?></h1>
 		</div>
-		
+
 		<ul class="deal-boxes">
-		
-			<?php query_posts(array(
-				
-				'post_type' => 'specials',
-				// 'offset' => 1,
-				'meta_query' => array(
-			        array(
-			            'key' => 'cebo_available_on_header',
-			            'compare' => 'NOT EXISTS'
-			        )
-			    )
 
-				)); if(have_posts()) : while(have_posts()) : the_post(); ?>
+			<?php
 
-				<?php 
+				$count = 1;
+
+				query_posts(
+					array(
+						'post_type' => 'specials',
+						// 'offset' => 1,
+						'meta_query' => array(
+							array(
+								'key' => 'cebo_available_on_header',
+								'compare' => 'NOT EXISTS'
+							)
+						)
+					)
+				);
+
+				if(have_posts()) : while(have_posts()) : the_post();
 
 					$title = get_the_title();
 					$slug_comp = sanitize_title($title); 
 
-				?>
+			?>
 
-				<li class="deal">
-				
-					
+				<li class="deal deal-no-max-min-height">
+
+
 					<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-		
-		
+
+
 					<div class="deal-photo" style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
-					
+
 					<?php } elseif($imgsrc) { ?>
-					
-					
+
+
 					<div class="deal-photo" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
-					
+
 					<?php } else { ?>
-					
+
 					<div class="deal-photo" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-					
-					
+
+
 					<?php } ?>
-					
+
 					<?php if( $slug_comp == '5-cash-back' ) { ?>
 
-						<div class="deal-wrapper">
-					
+						<div class="deal-wrapper deal-wrapper-no-height">
+
 							<h2 class="h1"><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h2>
-		
+
 							<p><?php echo content(25); ?></p>
 
 							<div id="theguestbook_widget"></div>
@@ -130,11 +143,11 @@
 					</div>
 
 					<?php } else { ?> 
-	
+
 					<div class="deal-wrapper">
-					
+
 						<h2 class="h1"><?php the_title(); ?></h2>
-						
+
 						<?php if(get_post_meta($post->ID, 'cebo_specialshortdesc', true)) { ?>
 							<?php echo get_post_meta($post->ID, 'cebo_specialshortdesc', true); ?>
 						<?php } else { ?>
@@ -153,16 +166,14 @@
 					<?php } ?>
 
 				</li>
-				
-				
-				<?php endwhile; endif; wp_reset_query(); ?>	
 
-				
+				<?php if ( $count % 3 == 0 ) { echo '<div class="clear clear3"></div>'; } ?>
+
+				<?php $count++; endwhile; endif; wp_reset_query(); ?>	
+
 			</ul>
-		
-		
-		
-		
+
 		<div class="clear"></div>
-		
-	<?php get_footer(); ?>
+
+
+<?php get_footer(); ?>

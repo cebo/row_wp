@@ -4295,6 +4295,10 @@ h2.h4 {
     position: relative;
     margin-right: 10px;
 }
+	.deal.deal-no-max-min-height {
+		max-height: none;
+		min-height: auto;
+	}
 
 .deal-photo {
     background-position: center center;
@@ -4323,6 +4327,9 @@ h2.h4 {
 	z-index: 999;
 	height: 200px;
 }
+	.deal-wrapper.deal-wrapper-no-height {
+		height: auto;
+	}
 
 .deal-wrapper > h1,
 .deal-wrapper > h2.h1 {
