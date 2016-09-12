@@ -1,5 +1,5 @@
 
-<div id="poststuff" class="sucuriscan-reset-plugins">
+<div class="sucuriscan-panelstuff sucuriscan-reset-plugins">
     <div class="postbox">
         <div class="inside">
             <form action="%%SUCURI.URL.Posthack%%#reset-plugins" method="post">
@@ -24,7 +24,7 @@
                     </p>
                 </div>
 
-                <table class="wp-list-table widefat sucuriscan-table">
+                <table class="wp-list-table widefat sucuriscan-table sucuriscan-reset-plugins-table">
                     <thead>
                         <tr>
                             <th class="manage-column column-cb check-column">
@@ -39,7 +39,11 @@
                     </thead>
 
                     <tbody>
-                        %%SUCURI.ResetPlugin.PluginList%%
+                        <tr>
+                            <td colspan="5">
+                                <span>Loading <em>(may take several seconds)</em>...</span>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -53,6 +57,18 @@
 
                 <input type="submit" value="Process selected items" class="button button-primary" />
             </form>
+
+            <script type="text/javascript">
+            jQuery(function($){
+                $.post('%%SUCURI.AjaxURL.Posthack%%', {
+                    action: 'sucuriscan_posthack_ajax',
+                    sucuriscan_page_nonce: '%%SUCURI.PageNonce%%',
+                    form_action: 'get_plugins_data',
+                }, function(data){
+                    $('.sucuriscan-reset-plugins-table tbody').html( data );
+                });
+            });
+            </script>
         </div>
     </div>
 </div>

@@ -170,7 +170,7 @@ $breadcrumbs_params = array(
 							<span class="sort-handle"></span>
 						</td>
 						<td class="old-replace-col">
-							<input type="text" size="40" name="replace_old[]" class="code" id="old-path" placeholder="Old file path" value="<?php echo esc_attr( $this->absolute_root_file_path ); ?>" autocomplete="off" />
+							<input type="text" size="40" name="replace_old[]" class="code" id="old-path" placeholder="Old file path" value="<?php echo esc_attr( $this->get_absolute_root_file_path() ); ?>" autocomplete="off" />
 						</td>
 						<td class="arrow-col" title="Copy Find to Replace">
 							<span class="right-arrow">&rarr;</span>
@@ -344,13 +344,15 @@ $breadcrumbs_params = array(
 
 		<p class="migrate-db">
 			<input type="hidden" class="remote-json-data" name="remote_json_data" autocomplete="off"/>
-			<input class="button-primary migrate-db-button" type="submit" value="Migrate" name="Submit" autocomplete="off"/>
-			<input class="button save-settings-button" type="submit" value="Save Profile" name="submit_save_profile" autocomplete="off"/>
+			<input class="button-primary migrate-db-button" type="submit" value="<?php echo esc_attr_x( 'Export', 'Download a copy of the database', 'wp-migrate-db' ); ?>" name="Submit" autocomplete="off"/>
+			<input class="button save-settings-button" type="submit" value="<?php echo esc_attr_x( 'Save Profile', 'Save current migration settings', 'wp-migrate-db' ); ?>" name="submit_save_profile" autocomplete="off"/>
 		</p>
 
 	</div>
 
 	</form>
 	<?php $this->template( 'migrate-progress' ); ?>
+
+	<?php $this->template_part( array( 'progress_upgrade' ) ); ?>
 
 </div> <!-- end .migrate-tab -->

@@ -13,7 +13,7 @@
             </th>
         </tr>
         <tr>
-            <th class="manage-column">No.</th>
+            <th class="manage-column">&nbsp;</th>
             <th class="manage-column">User</th>
             <th class="manage-column">IP Address</th>
             <th class="manage-column">Hostname</th>
@@ -23,7 +23,7 @@
     </thead>
 
     <tbody>
-        %%SUCURI.UserList%%
+        %%%SUCURI.UserList%%%
 
         <tr class="sucuriscan-%%SUCURI.UserList.NoItemsVisibility%%">
             <td colspan="6">
@@ -34,7 +34,7 @@
         <tr class="sucuriscan-%%SUCURI.UserList.PaginationVisibility%%">
             <td colspan="6">
                 <ul class="sucuriscan-pagination">
-                    %%SUCURI.UserList.Pagination%%
+                    %%%SUCURI.UserList.Pagination%%%
                 </ul>
             </td>
         </tr>
