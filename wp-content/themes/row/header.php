@@ -216,10 +216,6 @@ ga('send', 'pageview');
 
 	<script> (function(){ var v = document.createElement('script'); var s = document.getElementsByTagName('script')[0]; v.src = '//io.voyat.com/v.js'; v.async = true; s.parentNode.insertBefore(v, s); })(); </script>
 
-	<!-- Wanderful Widget -->
-	<script id="gtsgig-boot" data-hotel-id="rownyc" src="https://widgets.gtsgig.com/boot.js"></script>
-	<!-- Wanderful Widget End -->
-
 </head> 
 
 <body <?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?>class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?>class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?>class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?>class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?>class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?>class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?>class="page single amenity"<?php } elseif(is_page() || is_single()) { body_class('single'); ?><?php } elseif(is_home() || is_front_page()) { ?>class="home"<?php } ?>>
@@ -297,6 +293,55 @@ ga('send', 'pageview');
 			<li>
 				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
 			</li>
+
+			<!--<li>
+
+				<?php if( $current_lang == 'en') { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } elseif( $current_lang == 'pt-br') { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } else { ?>
+
+					<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+
+				<?php } ?>
+
+			</li>-->
+
+
+			
+<!--
+
+			<li class="subinside inexplore">
+				<a href="<?php bloginfo ('url'); ?>/explore-nyc/"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>	
+			</li>
+
+			<li>
+				<a href="<?php bloginfo ('url'); ?>/hotel-amenities/cyc-fitness/"><span class="fitness"></span><p><?php _e('CYC FITNESS','row-theme-text'); ?></p></a>
+			</li>	
+
+			<li>
+				<a href="<?php bloginfo ('url'); ?>/hotel-amenities/glamgo/"><span class="glamgo"></span><p><?php _e('GLAM&GO','row-theme-text'); ?></p></a>
+			</li>		
+			
+
+-->
+			
+			<!--<li>
+				<a href="#"><span class="blog"></span><p>Apple Blog</p></a>
+			</li>-->
 		
 		</ul>
 		
@@ -314,6 +359,19 @@ ga('send', 'pageview');
 			</div>
 
 			<div class="exclusive-offer">
+				
+				<?php /*
+				<form action="//sphericalcommunications.us4.list-manage.com/subscribe/post?u=ae5d0eb33650e5a9963ca5a3e&amp;id=1054dd91b3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				
+				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required placeholder="<?php _e('Exclusive Offer Signup', 'row-theme-text'); ?>">
+				<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				<div style="position: absolute; left: -5000px;"><input type="text" name="b_ae5d0eb33650e5a9963ca5a3e_1054dd91b3" tabindex="-1" value=""></div>
+				<i class="fa fa-caret-right"></i>
+				<input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="fa fa-caret-right">
+				
+				</form>
+				
+				*/ ?>
 				
 				<form method="post" id="eclubCheck" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub">
 				
@@ -606,4 +664,10 @@ ga('send', 'pageview');
 			</form>
 
 		</div>
+	</div>	
+	<!-- wonderful widget -->
+	<div class="wonderful">
+		<a class="stay-wanderful-button" href="https://staywanderful.com/widgets/#/24"></a> 
+		<script src="https://scripts.staywanderful.com/widgets/24.js"></script>
 	</div>
+	<!-- / wonderful widget -->
