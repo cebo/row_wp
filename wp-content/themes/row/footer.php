@@ -94,11 +94,11 @@
 			</div>
 			
 			<div class="tier-two">
-			
+
 				<ul>
-					<li>Reservations<span>888.352.3650</span></li>
+					<li><?php _e('Reservations','row-theme-text'); ?><span><?php _e('888.352.3650','row-theme-text'); ?></span></li>
 					<!--<li>EMAIL<span><a href="mailto:info@rownyc.com">info@rownyc.com</a></span></li>-->
-					<li class="widest">A Times Square Hotel<span>700 8th Avenue, New York, NY 10036</span></li>
+					<li class="widest"><?php _e('A Times Square Hotel','row-theme-text'); ?><span><?php _e('700 8th Avenue, New York, NY 10036','row-theme-text'); ?></span></li>
 				</ul>
 			
 			</div>
@@ -107,12 +107,12 @@
 			
 			<div class="tier-two conde conde1">
 				<div class="conde-block">
-					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2015/11/NYC_FINALIST1.png"></a>
+					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2015/11/NYC_FINALIST1.png"></a>
 					
 					<div>
-						<h2 class="h1">ROW NYC</h2>
-						<h2 class="h2">CONDE NAST TRAVELER READER'S <br> CHOICE AWARDS 2015</h2>
-						<p>Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!</p>
+						<h2 class="h1"><?php _e('ROW NYC','row-footer-text'); ?></h2>
+						<h2 class="h2"> <?php _e("CONDE NAST TRAVELER READER'S <br> CHOICE AWARDS 2015",'row-footer-text'); ?></h2>
+						<p><?php _e('Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!','row-footer-text'); ?></p>
 					</div>
 				</div>
 			</div>
@@ -122,11 +122,11 @@
 			
 			<div class="tier-two conde conde2">
 				<div class="conde-block">
-					<a href="http://www.cntraveler.com/rca/2016" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2016/05/Conde-Nast-Traveler22.png"></a>
+					<a href="http://www.cntraveler.com/rca/2016" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2016/05/Conde-Nast-Traveler22.png"></a>
 					
 					<div>
-						<h2 class="h1">ROW NYC</h2>
-						<h2 class="h2">NOMINATED FOR THE <br> 2016 READER'S CHOICE AWARDS</h2>
+						<h2 class="h1"><?php _e('ROW NYC','row-footer-text'); ?></h2>
+						<h2 class="h2"><?php _e("NOMINATED FOR THE <br> 2016 READER'S CHOICE AWARDS",'row-footer-text'); ?></h2>
 					</div>
 				</div>
 			</div>
@@ -137,11 +137,11 @@
 			
 			<div class="tier-two conde conde3">
 				<div class="conde-block">
-					<img src="http://www.rownyc.com/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif">
+					<img src="<?php echo site_url(); ?>/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif">
 					
 					<div>
-						<h2 class="h1">CITY KITCHEN</h2>
-						<h2 class="h2">RATED AS THE BEST FOOD HALL IN NYC BY ZAGAT</h2>
+						<h2 class="h1"><?php _e('CITY KITCHEN','row-footer-text'); ?></h2>
+						<h2 class="h2"><?php _e('RATED AS THE BEST FOOD HALL IN NYC BY ZAGAT','row-footer-text'); ?></h2>
 					</div>
 				</div>
 			</div>

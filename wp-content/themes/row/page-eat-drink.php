@@ -9,7 +9,9 @@
 	
 	<section class="contentarea fullvertical">
 			
-			
+			<div class="title-div">
+				<h1><?php the_title(); ?></h1>
+			</div>
 
 			<div class="third-level">
 			
@@ -25,7 +27,7 @@
 
 							<div class="innerbox">
 											
-								<a href="<?php the_permalink(); ?>"><h1 style="font-size: 29px;"><?php the_title(); ?></h1></a>
+								<a href="<?php the_permalink(); ?>"><h2 class="h1" style="font-size: 29px;"><?php the_title(); ?></h2></a>
 								
 								<?php echo content(114); ?>
 														
@@ -69,7 +71,7 @@
 
 							<div class="innerbox">
 											
-								<a target="_blank" href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
+								<a target="_blank" href="<?php the_permalink(); ?>"><h2 class="h1"><?php the_title(); ?></h2></a>
 								
 									<?php echo content(150); ?>
 								

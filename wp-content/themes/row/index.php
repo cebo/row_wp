@@ -2,33 +2,11 @@
 
 
 
-
 	<section class="contentarea">
 			
 			
 
-			<div class="home-intro">
-				
-				<!--<a href="/the-hotel/">
-				<div class="wideover overlay">
-					
-					<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
-					<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
-				
-				</div>
-				</a>
-
-				<a class="video-play" href="http://youtu.be/FJw3fH7kzRs" rel="prettyPhoto-video"><i class="fa fa-play-circle-o"></i></a>		
-				
-						
-		
-				<div class="stretch"  style="background-image: url(<?php echo get_option('cebo_homebanner'); ?>);"></div>
-				
-				
-									
-				<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>-->
-				
-				
+			<div class="home-intro">				
 
 					<?php
 						// Saving it for future use
@@ -37,20 +15,18 @@
 					?>
 				
 					<div class="wideover overlay">
-                                              <div class="closena" style="float:left;position:absolute">X</div>
- 					     <!-- <img src="<?php bloginfo ('template_url'); ?>/images/closena.png" > !-->
+                        
+						<div class="closena" style="float:left;position:absolute">X</div>
                                                
 					     <div style="float:left; width:15%; margin-left:30px;">
-					     		<a href="http://tlworldsbest.wylei.com/" target="_blank"><img src="http://www.rownyc.com/wp-content/uploads/2015/12/tl_nobg.png" style="width:130%;"></a>
+					     		<a href="http://tlworldsbest.wylei.com/" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2015/12/tl_nobg.png" style="width:130%;"></a>
 					     </div>
 					      <div style="float:right; width:79%;">
 						<h2 class="h1"><?php echo get_option('cebo_hblineone'); ?></h2>
 						<h2><?php echo get_option('cebo_hblinetwo '); ?></h2>
 						
 						<div class="paperbox">
-						<!--<h3>How would you create your New York City?</h3> 
-<span style="font-weight: normal; font-family: helvetica;">Start with Times Square. The heart of Manhattan. 24/7 anything and everything.</span>
-<br />-->
+					
 							<?php echo get_option('cebo_hometext'); ?>
 							
 							
@@ -114,23 +90,6 @@
 					
 				
 				</div>
-		
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 			
 			</div>
 			
@@ -153,7 +112,7 @@
 
 						
 							<?php $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-									<h2>This Week's Deal</h2>
+									<h2><?php _e("This Week's NYC Deal",'row-theme-text'); ?></h2>
 								
 								<?php query_posts('post_type=specials&posts_per_page=6'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
@@ -178,7 +137,12 @@
 								
 									<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { ?>
 
-									<a href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>" class="button">Reserve Now</a>
+									<a href="<?php echo get_post_meta($post->ID, 'cebo_booklink', true); ?>" class="button"><?php _e('Reserve Now','row-theme-text'); ?></a>
+
+									<?php } elseif ( $slug_comp == '5-cash-back' ) { // DO NOTHING ?>
+									<?php } else { ?>
+
+									<a href="<?php the_permalink(); ?>" class="button"><?php _e('More','row-theme-text'); ?></a>
 
 									<?php } ?>
 									
@@ -195,14 +159,15 @@
 								</div>
 								
 								<?php endwhile; endif; wp_reset_query(); ?>	
-								
-								<a class="opensays" href="#"><i class="fa fa-chevron-down"><span class="mo">See More</span></i></a>
-								<a class="opensays" href="#"><i class="fa fa-chevron-up"><span class="mo">Close</span></i></a>
+
 								
 								<div class="backslide" style="background-image: url(<?php bloginfo('template_url'); ?>/images/cash.jpg);"></div>
-								
-							
-						
+
+						</div>
+
+						<div class="opensaysbox">
+							<a class="opensays" href="#"><i class="fa fa-chevron-down"><span class="mo">See More</span></i></a>
+							<a class="opensays" href="#"><i class="fa fa-chevron-up"><span class="mo">Close</span></i></a>
 						</div>
 					</div>
 					
@@ -319,7 +284,7 @@
 							<p><?php the_content(); ?></p>
 							
 							
-							<p><a class="gone" href="http://citykitchen.rownyc.com/">Visit City Kitchen &gt;</a></p>
+							<p><a class="gone" href="http://citykitchen.rownyc.com/"><?php _e('Visit City Kitchen &gt;','row-theme-text'); ?></a></p>
 							
 							<!-- <a class="gone" href="<?php bloginfo('url'); ?>/times-square-hotels/"><?php _e('View Row NYC >','row-theme-text'); ?></a> -->
 													
@@ -337,7 +302,7 @@
 						
 						<?php } else { ?>
 											
-						<div class="stretch"  style="background-image: url(http://rownyc.com/wp-content/uploads/2014/10/city-kitchen-tile.jpg);"></div>
+						<div class="stretch"  style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2014/10/city-kitchen-tile.jpg);"></div>
 						
 						
 						<?php } ?>
@@ -358,6 +323,8 @@
 			
 			<!-- blog post and district M -->
 			
+			<?php if ( ICL_LANGUAGE_CODE == 'en' ) { ?>
+
 			<div class="third-level">
 			
 				
@@ -455,6 +422,7 @@
 			
 			</div>
 			
+			<?php } ?>
 	
 
 
@@ -462,6 +430,7 @@
 
 			<!-- START cyc fitness and glam go -->
 
+			<?php if ( ICL_LANGUAGE_CODE == 'en' ) { ?>
 
 			<div class="third-level">
 
@@ -470,9 +439,9 @@
 					<div class="leftsider">
 						<div class="picone">
 							<div class="suboverlay narrow">
-								<h1><?php the_title(); ?></h1>
+								<h2 class="h1"><?php the_title(); ?></h2>
 								<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?> <br> 
-									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text'); ?></a>
+									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text-two'); ?></a>
 								</p>
 							</div>
 
@@ -501,9 +470,9 @@
 					<div class="rightsider">
 						<div class="picone">
 							<div class="suboverlay narrow">
-								<h1><?php the_title(); ?></h1>
+								<h2 class="h1"><?php the_title(); ?></h2>
 								<p><?php echo get_post_meta($post->ID, 'cebo_amenitiesblurb', true); ?> <br> 
-									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text'); ?></a>
+									<a href="<?php the_permalink(); ?>"><?php _e('More >','row-theme-text-three'); ?></a>
 								</p>
 							</div>
 
@@ -530,6 +499,7 @@
 
 			</div>
 
+			<?php } ?>
 
 
 			<!-- END cyc fitness and glam go -->
@@ -546,6 +516,9 @@
 
 
 			<!-- full width call out -->
+			
+			<?php if ( ICL_LANGUAGE_CODE == 'en' ) { ?>
+
 			<div class="fourth-level">
 			
 	
@@ -559,7 +532,7 @@
 					
 					<div class="bigover">
 					
-						<h2 class="lumber h1"><?php the_title(); ?></h2>
+						<h1 class="lumber h2"><?php the_title(); ?></h1>
 						
 						<?php the_content(); ?>
 						
@@ -594,6 +567,8 @@
 
 			
 			</div>
+
+			<?php } ?>
 			
 
 			<div class="clear"></div>
@@ -601,49 +576,11 @@
 			
 			<!-- begin fifth level -->
 
+			<?php if ( ICL_LANGUAGE_CODE == 'en' ) { ?>
 			
 			<div class="fifth-level">
-			
-				
 				
 				<ul class="blogposts">					
-					
-					<!--
-					<?php $query = new WP_Query( array( 'post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 1
-					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-					
-										
-					<li>
-					
-						<?php if(get_post_meta($post->ID, 'cebo_fullpic', true)) { ?>
-								
-						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_fullpic', true),325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">		
-						
-						
-						<?php } elseif($imgsrc) { ?>
-						
-						<img src="<?php echo tt($imgsrc[0],325,350); ?>" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">	
-						
-						
-						<?php } else { ?>
-											
-						<img src="<?php bloginfo ('template_url'); ?>/images/watermark.jpg" style="width: 350px; height: 325px" alt="<?php the_title(); ?>">
-						
-						<?php } ?>
-						
-						
-						
-						
-						<div class="littleover">
-							<h2 class="h1"><?php _e('Coming Soon','row-theme-text'); ?></h2>
-							
-			
-						</div>
-						
-					</li>
-					
-					<?php endwhile; endif; wp_reset_query(); ?>	
-				-->
 					
 					<?php query_posts('post_type=page&p=285&suppress_filters=1'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
@@ -844,7 +781,7 @@
 			
 			</div>
 			
-			
+			<?php } ?>
 
 
 

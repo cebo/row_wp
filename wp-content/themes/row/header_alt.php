@@ -130,7 +130,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 </script>
 
-
+<!--GIL-->
 </head>
 
 <body <?php body_class(); ?>>

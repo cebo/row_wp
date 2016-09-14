@@ -11,6 +11,10 @@
 	
 	<section class="contentarea">
 
+		<div class="title-div">
+			<h1><?php the_title(); ?></h1>
+		</div>
+
 		<?php if(get_post_meta($post->ID, 'cebo_pulled_photos', true)) { ?>
 
 			<div id="bosco-box" class="home-intro bosco-box">
@@ -80,7 +84,7 @@
 					
 					<?php } else { ?>
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 						
 					<?php } ?>
 					
@@ -132,9 +136,9 @@
 							<div>
 								<div class="somespace">
 									<?php if(get_post_meta ($post->ID, 'cebo_hourstitle', true)) { ?>
-										<h4><?php echo get_post_meta ($post->ID, 'cebo_hourstitle', true); ?></h4>
+										<h2 class="h4"><?php echo get_post_meta ($post->ID, 'cebo_hourstitle', true); ?></h2>
 									<?php } else { ?>
-										<h4>Hours:</h4>
+										<h2 class="h4"><?php _e('Hours:','row-theme-text'); ?></h2>
 									<?php } ?>
 									<p><?php echo get_post_meta ($post->ID, 'cebo_hours', true); ?></p>
 								</div>
@@ -145,9 +149,9 @@
 							<div>
 								<div class="somespace">
 									<?php if(get_post_meta ($post->ID, 'cebo_contacttitle', true)) { ?>
-										<h4><?php echo get_post_meta ($post->ID, 'cebo_contacttitle', true); ?></h4>
+										<h2 class="h4"><?php echo get_post_meta ($post->ID, 'cebo_contacttitle', true); ?></h2>
 									<?php } else { ?>
-										<h4>Contact:</h4>
+										<h2 class="h4"><?php _e('Contact:','row-theme-text'); ?></h2>
 									<?php } ?>
 									<p><?php echo get_post_meta ($post->ID, 'cebo_contact', true); ?></p>
 								</div>
@@ -158,9 +162,9 @@
 							<div>
 								<div class="somespace">
 									<?php if(get_post_meta ($post->ID, 'cebo_reservtitle', true)) { ?>
-										<h4><?php echo get_post_meta ($post->ID, 'cebo_reservtitle', true); ?></h4>
+										<h2 class="h4"><?php echo get_post_meta ($post->ID, 'cebo_reservtitle', true); ?></h2>
 									<?php } else { ?>
-										<h4>Reservation:</h4>
+										<h2 class="h4"><?php _e('Reservation:','row-theme-text'); ?></h2>
 									<?php } ?>
 									<p><?php echo get_post_meta ($post->ID, 'cebo_reserv', true); ?></p>
 								</div>

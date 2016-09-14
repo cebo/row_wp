@@ -22,6 +22,10 @@
 
 	<section class="contentarea">
 
+		<div class="title-div">
+			<h1><?php the_title(); ?></h1>
+		</div>
+
 		<div class="home-intro">
 		
 			
@@ -63,7 +67,11 @@
 
 			<section class="contentarea">
 						
-		<?php endif; wp_reset_query(); ?>	
+		<?php endif; wp_reset_query(); ?>
+
+		<div class="title-div">
+			<h1><?php the_title(); ?></h1>
+		</div>
 		
 		<ul class="deal-boxes">
 		
@@ -104,7 +112,7 @@
 	
 					<div class="deal-wrapper">
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 	
 						<p><?php echo excerpt(40); ?></p>
 	

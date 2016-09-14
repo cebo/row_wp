@@ -3208,3 +3208,9 @@ ul.tabs li:last-child {
 .footer{
     margin-top: -25px;
 }
+
+/** Hiding H1 on backend */
+
+div#mceu_61 {
+    display: none;
+}
