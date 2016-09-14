@@ -85,13 +85,17 @@
 
 			</section>
 					
-			<div class="tier-one">
-			
-				<ul>							
-					<?php wp_nav_menu( array( icl_object_id(13, 'Footer Navigation'),  'theme_location' => 'footer', 'items_wrap' => '%3$s', 'container' => '') ); ?>					
-				</ul>
-			
-			</div>
+			<?php if(function_exists('icl_object_id') && ICL_LANGUAGE_CODE !='en') {} else { ?>
+
+				<div class="tier-one">
+				
+					<ul>							
+						<?php wp_nav_menu( array( icl_object_id(13, 'Footer Navigation'),  'theme_location' => 'footer', 'items_wrap' => '%3$s', 'container' => '') ); ?>					
+					</ul>
+				
+				</div>
+
+			<?php } ?>
 			
 			<div class="tier-two">
 			
