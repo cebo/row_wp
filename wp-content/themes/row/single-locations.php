@@ -76,6 +76,24 @@
 					</div>
 					<?php } ?>
 
+                      <!-- Exclusive Insider Deals -->
+            <div class="address-details">
+
+                <h4>Exclusive Insider Deals</h4>
+
+                  <ul>
+                  <li>
+                  Book Now with our Exclusive Insider Deals 
+                  </li>
+
+                  <li>
+                  <a class="button" target="_blank" href="<?php bloginfo('url'); ?>/stay-save-exclusive-new-york-city-escape-offers-international-guests/">book now</a>
+                  </li>
+                </ul>
+
+            </div>
+            <!-- Exclusive Insider Deals -->
+
 				</div>
 
 			</div>

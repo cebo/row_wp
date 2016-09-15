@@ -2,10 +2,10 @@
 
 	<a class="logo" href="<?php bloginfo('url'); ?>">
 		<img src="<?php bloginfo ('template_url'); ?>/bloginfo/images/logo.png" alt="Row NYC" />
-		<div>A Times Square Hotel</div>
+		<div><?php _e('A Times Square Hotel','row-theme-text'); ?></div>
 	</a>
 
-	<div class="back-to-hotel"><a href="<?php bloginfo('url'); ?>"><i class="fa fa-angle-left"></i> Back to Hotel</a></div>
+	<div class="back-to-hotel"><a href="<?php bloginfo('url'); ?>"><i class="fa fa-angle-left"></i> <?php _e('Back to Hotel','row-theme-text'); ?></a></div>
 			
 		<div class="container">
 
@@ -13,18 +13,18 @@
 				<div class="sorter">
 				
 				
-					<span>Sort By:</span>
+					<span><?php _e('Sort By','row-theme-text'); ?>:</span>
 					
 					
 						
 				<form action="/blog/" method="post">
 				<fieldset>
 				<input type="radio" name="sales" value="sales" <?php if (isset($_POST['sales']) && $_POST['sales'] == 'saleers') { ?><?php } else { ?>checked='checked'<?php } ?> onclick="this.form.submit();" />
-				<label for='dateed'>Date</label>
+				<label for='dateed'><?php _e('Date','row-theme-text'); ?></label>
 				</fieldset>
 				<fieldset>
 				<input type="radio" name="sales" value="saleers" <?php if (isset($_POST['sales']) && $_POST['sales'] == 'saleers'): ?>checked='checked'<?php endif; ?> onclick="this.form.submit();" />
-				<label for='loved'>Most Loved</label>
+				<label for='loved'><?php _e('Most Loved','row-theme-text'); ?></label>
 					</fieldset>
 				
 				</form>
@@ -59,7 +59,7 @@
 
 			
 					<span class="category-dropdown">
-						<a id="cat-trigger">Category<i class="fa fa-angle-down"></i></a>	
+						<a id="cat-trigger"><?php _e('Category','row-theme-text'); ?><i class="fa fa-angle-down"></i></a>	
 					</span>		
 
 					<div class="clear"></div>
@@ -69,7 +69,7 @@
 			<div class="rightsort">
 				<form action="<?php bloginfo('url'); ?>/" method="get" style="position: relative;">
 				    <fieldset>
-				        <input type="text" name="s" id="search" placeholder="I am searching now" value="<?php the_search_query(); ?>"/>
+				        <input type="text" name="s" id="search" placeholder="<?php _e('I am searching now','row-theme-text'); ?>" value="<?php the_search_query(); ?>"/>
 						<i class="fa fa-search"></i>
 				    </fieldset>
 				</form>
@@ -103,7 +103,7 @@
 			<div class="category-container">
 					
 					<div class="category-title">
-						<p>filter by categories</p>
+						<p><?php _e('filter by categories','row-theme-text'); ?></p>
 					</div>
 
 			        <?php

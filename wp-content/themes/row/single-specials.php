@@ -30,19 +30,35 @@
 			<?php } ?>	
 		
 		</div>		
+
+		<?php 
+
+			$title = get_the_title();
+			$slug_comp = sanitize_title($title); 
+
+		?>		
 						
 		<div class="page-content alt-page-content">
 
-			<h1><?php the_title(); ?></h1>
+			<?php if( $slug_comp == '5-cash-back' ) { ?>
+				
+				<h1><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h1>
+					<?php the_content(); ?>
 
-			<?php the_content(); ?>
-			
-			
-			<div class="clear"></div>
+				<div id="theguestbook_widget"></div>
 
-			<div class="button-wrapper" style="margin: 20px 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Book Now','row-theme-text'); ?></a></div>
+			<?php } else { ?>
 
-			<div class="clear"></div>
+				<h2 class="h1"><?php the_title(); ?></h2>
+					<?php the_content(); ?>
+				
+				<div class="clear"></div>
+
+				<div class="button-wrapper" style="margin: 20px 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Book Now','row-theme-text'); ?></a></div>
+
+				<div class="clear"></div>
+
+			<?php } ?>
 
 		</div>
 		

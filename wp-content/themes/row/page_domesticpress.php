@@ -22,6 +22,10 @@
 
 	<section class="contentarea">
 
+		<div class="title-div">
+			<h1><?php the_title(); ?></h1>
+		</div>
+
 		<div class="home-intro">
 		
 			
@@ -52,7 +56,7 @@
 			<?php the_content(); ?>
 			
 			
-			<div class="button-wrapper" style="margin: 20px 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Reserve Now','row-theme-text'); ?></a></div>
+			<div class="button-wrapper" style="margin: 20px 0;"><a target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php if(get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>"><?php _e('Reserve Now','row-theme-text'); ?></a></div>
 
 			<div class="clear"></div>
 
@@ -63,7 +67,11 @@
 
 			<section class="contentarea">
 						
-		<?php endif; wp_reset_query(); ?>	
+		<?php endif; wp_reset_query(); ?>
+
+		<div class="title-div">
+			<h1><?php the_title(); ?></h1>
+		</div>
 		
 		<ul class="deal-boxes">
 		
@@ -104,13 +112,13 @@
 	
 					<div class="deal-wrapper">
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 	
 						<p><?php echo excerpt(40); ?></p>
 	
 						<?php if(get_post_meta($post->ID, 'cebo_presslink', true)) { ?>
 
-							<div class="button-wrapper" style="margin: 20px 0;"><a onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php echo get_post_meta($post->ID, 'cebo_presslink', true); ?>" <?php if(get_post_meta($post->ID, 'cebo_external_link', true)) { ?>target="_blank"<?php } ?>><?php _e('Read More','row-theme-text'); ?></a></div>
+							<div class="button-wrapper" style="margin: 20px 0;"><a target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" class="button" href="<?php echo get_post_meta($post->ID, 'cebo_presslink', true); ?>" <?php if(get_post_meta($post->ID, 'cebo_external_link', true)) { ?>target="_blank"<?php } ?>><?php _e('Read More','row-theme-text'); ?></a></div>
 
 						<?php } ?>
 

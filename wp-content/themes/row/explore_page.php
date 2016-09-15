@@ -41,7 +41,8 @@
 				
 				<ul class="blogposters">
 					
-					
+					<!-- removed from list
+
 					<?php query_posts(array('post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 1,) ); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
 										
@@ -78,7 +79,8 @@
 					
 					<?php endwhile; endif; wp_reset_query(); ?>	
 					
-					
+					-->
+
 					<?php $this_page_id=$wp_query->post->ID; ?>
 					
 					<?php query_posts(array('showposts' => 20, 'post_parent' => $this_page_id, 'post_type' => 'page')); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
@@ -101,7 +103,7 @@
 						<?php } ?>
 						
 						<div class="littleover">
-							<h1><?php the_title(); ?></h1>
+							<h2 class="h1"><?php the_title(); ?></h2>
 							
 							<p><?php echo excerpt(20); ?></p>
 							

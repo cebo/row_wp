@@ -33,7 +33,7 @@ include(TEMPLATEPATH . '/options/single-options.php');
 
  /* ................. SOME OPTIONS FOR SLIDES .................... */
 /* Below is an include to a few options for your slides.*/
-include(TEMPLATEPATH . '/library/videobox.php'); 
+// include(TEMPLATEPATH . '/library/videobox.php'); 
 
 
  /* ................. SOME OPTIONS FOR PROJECTS .................... */
@@ -70,6 +70,7 @@ include(TEMPLATEPATH . '/options/amenities-options-repeatable-fields.php');
 
  /* ................. SOME OPTIONS FOR Imagegalleries .................... */
 /* Below is an include to a few options for press releases.*/
+// include(TEMPLATEPATH . '/options/imagegalleries-options.php'); 
 include(TEMPLATEPATH . '/options/imagegalleries-options.php'); 
 
 
@@ -263,4 +264,13 @@ if ( !function_exists('ss_framework_admin_scripts') ) {
 
 function tt($image,$width,$height){
     return bloginfo('template_url') . "/library/thumb.php?src=$image&w=$width&h=$height";
+}
+
+function the_slug($echo=true){
+  $slug = basename(get_permalink());
+  do_action('before_slug', $slug);
+  $slug = apply_filters('slug_filter', $slug);
+  if( $echo ) echo $slug;
+  do_action('after_slug', $slug);
+  return $slug;
 }

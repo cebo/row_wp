@@ -1,29 +1,4 @@
-<?php if(get_post_type() == 'imagegalleries') { ?>
 
-	<!-- Flex Slider -->
-	<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-
-			$('.flexslider-gallery').flexslider({
-				animation: "slide",
-				animationSpeed: 1500,
-				controlNav: true,
-				startAt: 0,
-			});
-
-		  $('.flexslider').flexslider({
-		    animation: "slide",
-		    animationSpeed: 800,
-		    pauseOnAction: false,
-		    controlNav: true,
-		    startAt: 0,
-		  });
-
-		});
-	</script>
-
-<?php } ?>
 
 <script type="text/javascript">
 
@@ -64,7 +39,7 @@
 	
 </script>
 
-<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js?ver=3.5.2'></script>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js'></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		   
@@ -339,7 +314,7 @@
 	});
 		
 
-	$(document).ready(function() {
+$(document).ready(function() {
 			
 		$(".calspacer span.arrv input").click(function() {
 				
@@ -363,13 +338,26 @@
 		$(".shutdown").click(function() {
 			$(".datepicker").addClass("super-ghost");
 			$(".departdatepicker").addClass("super-ghost");
+			$(this).removeClass("alldown");
 		});
 		
 		$(".cls").click(function() {
 			$(".datepicker").addClass("super-ghost");
 			$(".departdatepicker").addClass("super-ghost");
+			$(".shutdown").removeClass("alldown");
 		});
 		
+		$( "#departure_date" ).focus(function() {
+  			$(".departdatepicker").removeClass("super-ghost");
+  			$(".shutdown").addClass("alldown");
+		});
+		
+		
+		$( "#arrival_date" ).focus(function() {
+  			$(".departdatepicker").addClass("super-ghost");
+  			
+		});
+
 
 	});
 	</script>

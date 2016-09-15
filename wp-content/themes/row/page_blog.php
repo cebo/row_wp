@@ -50,9 +50,9 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 						
 						<div class="datebox">
 						
-							<span class="day"><?php echo the_time("l"); ?></span>
-							<span class="date"><?php echo the_time("j"); ?></span>
-							<span class="moyear"><?php echo the_time("M"); ?>, <?php echo the_time("Y"); ?></span>					
+							<span class="day"><?php _e('<?php echo the_time("l"); ?>','row-theme-text'); ?></span>
+							<span class="date"><?php _e('<?php echo the_time("j"); ?>','row-theme-text'); ?></span>
+							<span class="moyear"><?php _e('<?php echo the_time("M"); ?>, <?php echo the_time("Y"); ?>','row-theme-text'); ?></span>					
 							
 						</div>
 						
@@ -63,9 +63,10 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 								<a class="postlink" href="<?php the_permalink(); ?>"></a>
 								<?php
 							$category = get_the_category(); 
+							$categorystring = $category[0]->cat_name;
 							
 							?>
-							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a>
+							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php _e($categorystring,'row-theme-text'); ?></a>
 							
 							</div>
 							
@@ -81,7 +82,7 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 								
 							<?php $perm = get_permalink(); $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a></div>
 
-								<a href="<?php the_permalink(); ?>" class="readon"><?php _e('Read More',''); ?> ></a>
+								<a href="<?php the_permalink(); ?>" class="readon"><?php _e('Read More','row-theme-text'); ?> ></a>
 
 							</div>
 													
@@ -165,9 +166,11 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 								<a class="postlink" href="<?php the_permalink(); ?>"></a>
 								<?php
 							$category = get_the_category(); 
+							$categorytext = $category[0]->cat_name;
 							
 							?>
-							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a>
+							<a class="catlink" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php _e($categorytext,'row-theme-text'); ?></a>
+							
 							
 							</div>
 							
@@ -185,7 +188,7 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 							
 						<?php $perm = get_permalink(); $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a></div>
 
-							<a href="<?php the_permalink(); ?>" class="readon"><?php _e('Read More',''); ?> ></a>
+							<a href="<?php the_permalink(); ?>" class="readon"><?php _e('Read More','row-theme-text'); ?> ></a>
 
 						</div>
 						

@@ -18,12 +18,16 @@ include(TEMPLATEPATH . '/header_alt.php'); ?>
 					
 					
 							
-				<?php  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				<?php 
+
+				$s=get_search_query();
+							$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 						
 						query_posts(
 						array(
 
-								'paged' => $paged
+								'paged' => $paged,
+								's' =>$s
 								
 							));
 						if(have_posts()) :

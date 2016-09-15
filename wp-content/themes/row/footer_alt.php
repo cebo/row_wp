@@ -17,7 +17,7 @@
 						<a href="#"><i class="fa fa-envelope"></i></a>
 						<a href="http://www.facebook.com/RowNYC" target="_blank"><i class="fa fa-facebook"></i></a>
 						<a href="http://www.twitter.com/rownyc" target="_blank"><i class="fa fa-twitter"></i></a>
-						<a href="www.pinterest.com/rownyc" target="_blank"><i class="fa fa-pinterest"></i></a>
+						<a href="http://www.pinterest.com/rownyc" target="_blank"><i class="fa fa-pinterest"></i></a>
 						<a href="http://www.instagram.com/rownyc" target="_blank"><i class="fa fa-instagram"></i></a>
 						<a href="http://www.youtube.com/RowNYC" target="_blank"><i class="fa fa-youtube"></i></a>
 					
@@ -29,10 +29,10 @@
 				<div class="underline">
 				
 					<ul>
-						<li><a href="<?php bloginfo('url'); ?>/times-square-hotels/">About</a></li>
-						<li><a href="<?php bloginfo('url'); ?>/contact/">Contact</a></li>
-						<li><a href="<?php bloginfo('url'); ?>/times-square-hotels/press/">Press</a></li>
-						<li><a href="<?php bloginfo('url'); ?>/privacy-policy/">Terms & Policy</a></li>
+						<li><a href="<?php bloginfo('url'); ?>/times-square-hotels/"><?php _e('About','row-theme-text'); ?></a></li>
+						<li><a href="<?php bloginfo('url'); ?>/contact/"><?php _e('Contact','row-theme-text'); ?></a></li>
+						<li><a href="<?php bloginfo('url'); ?>/times-square-hotels/press/"><?php _e('Press','row-theme-text'); ?></a></li>
+						<li><a href="<?php bloginfo('url'); ?>/privacy-policy/"><?php _e('Terms & Policy','row-theme-text'); ?></a></li>
 					</ul>	
 					
 				</div>
@@ -41,7 +41,7 @@
 				<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/bloginfo/images/logo.png" alt="Row New York City" /></a>
 				<br>
 				<br>
-				<p class="copyright">All Materials @ 2014 Row NYC Hotel</p>
+				<p class="copyright"><?php _e('All Materials @ 2014 Row NYC Hotel','row-theme-text'); ?></p>
 			
 			</div>
 	
@@ -209,15 +209,25 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 				<div class="popup-contents">
 
-					<?php the_content(); ?>
+					<?php $contentstring = the_content(); ?>
+
+					<?php _e($contentstring,'row-theme-text'); ?>
 
 				</div>
 				
 				<div class="signup-form">
+
+				<?php
+
+					$signupholder = get_post_meta($post->ID,'misfit_signup_placeholder', true);
+					$signupbuttontext = get_post_meta($post->ID,'misfit_signup_buttontext', true);
+
+
+				?>
 				
 					<form method="post" action="http://rownyc.us4.list-manage1.com/subscribe?u=ae5d0eb33650e5a9963ca5a3e&id=cf8da27740">
-						<input class="signup-field" type="email" required="" placeholder="<?php echo get_post_meta($post->ID,'misfit_signup_placeholder', true); ?>" id="mce-EMAIL" name="MERGE0" value="">
-						<input class="signup-button" id="mc-embedded-subscribe" type="submit" value="<?php echo get_post_meta($post->ID,'misfit_signup_buttontext', true); ?>">
+						<input class="signup-field" type="email" required="" placeholder="<?php _e($signupholder,'row-theme-text'); ?>" id="mce-EMAIL" name="MERGE0" value="">
+						<input class="signup-button" id="mc-embedded-subscribe" type="submit" value="<?php _e($signupbuttontext,'row-theme-text'); ?>">
 					</form>
 					
 					<!--

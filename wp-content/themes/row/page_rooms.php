@@ -9,21 +9,26 @@
 
 	<section class="contentarea">
 			
+			<div class="title-div">
+				<h1><?php the_title(); ?></h1>
+			</div>
 						
-			
-			
-			
-			
 			<!-- begin rooms -->
 			
 			
-			
-					
-					<?php query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); 							  
-					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-					
-					
-			
+				<?php
+					$args = array (
+						'post_type'              => array( 'rooms' ),
+						'suppress_filters' 		 => false,
+						'nopaging' => true,
+					);
+
+					$query = new WP_Query( $args );
+
+					if ( $query->have_posts() ) {
+						while ( $query->have_posts() ) {
+							$query->the_post(); ?>
+
 			<div class="fourth-level">
 			
 			
@@ -31,8 +36,8 @@
 					
 					<div class="suboverlay narrow">
 				
-						<a href="<?php the_permalink(); ?>">
-							<h1><?php the_title(); ?></h1>
+						<a href="<?php get_site_url(); ?>/<?php echo ICL_LANGUAGE_CODE; ?>/hotel-rooms-times-square-new-york/<?php the_slug();?>">
+							<h2 class="h1"><?php the_title(); ?></h2>
 							<!-- <h4><?php echo get_post_meta($post->ID, 'cebo_footage', true); ?> SQ.FT.</h4> -->
 						</a>
 
@@ -90,7 +95,11 @@
 
 			</div>			
 			
-			<?php endwhile; endif; wp_reset_query(); ?>	
+
+			<?php }
+					} 
+
+					wp_reset_postdata(); ?>
 
 
 			<div class="clear"></div>

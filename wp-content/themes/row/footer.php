@@ -75,7 +75,7 @@
 						<ul>
 							<li><a href="http://www.facebook.com/RowNYC" target="_blank"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="http://www.twitter.com/rownyc" target="_blank"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="www.pinterest.com/rownyc" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+							<li><a href="http://www.pinterest.com/rownyc" target="_blank"><i class="fa fa-pinterest"></i></a></li>
 							<li><a href="http://www.instagram.com/rownyc" target="_blank"><i class="fa fa-instagram"></i></a></li>
 							<li><a href="http://www.youtube.com/RowNYC" target="_blank"><i class="fa fa-youtube"></i></a></li>
 						</ul>
@@ -84,25 +84,73 @@
 				</ul>
 
 			</section>
+
+			<?php if(function_exists('icl_object_id') && ICL_LANGUAGE_CODE !='en') {} else { ?>
 					
-			<div class="tier-one">
-			
-				<ul>							
-					<?php wp_nav_menu( array( icl_object_id(13, 'Footer Navigation'),  'theme_location' => 'footer', 'items_wrap' => '%3$s', 'container' => '') ); ?>					
-				</ul>
-			
-			</div>
+				<div class="tier-one">
+				
+					<ul>							
+						<?php wp_nav_menu( array( icl_object_id(13, 'Footer Navigation'),  'theme_location' => 'footer', 'items_wrap' => '%3$s', 'container' => '') ); ?>					
+					</ul>
+				
+				</div>
+
+			<?php } ?>
 			
 			<div class="tier-two">
-			
+
 				<ul>
-					<li>Reservations<span>888.352.3650</span></li>
-					<li>EMAIL<span><a href="mailto:info@rownyc.com">info@rownyc.com</a></span></li>
-					<li class="widest">A Times Square Hotel<span>700 8th Avenue, New York, NY 10036</span></li>
+					<li><?php _e('Reservations','row-theme-text'); ?><span><?php _e('888.352.3650','row-theme-text'); ?></span></li>
+					<!--<li>EMAIL<span><a href="mailto:info@rownyc.com">info@rownyc.com</a></span></li>-->
+					<li class="widest"><?php _e('A Times Square Hotel','row-theme-text'); ?><span><?php _e('700 8th Avenue, New York, NY 10036','row-theme-text'); ?></span></li>
 				</ul>
 			
 			</div>
+
+			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
+			
+			<div class="tier-two conde conde1">
+				<div class="conde-block">
+					<a href="http://www.cntraveler.com/galleries/2014-11-19/top-25-hotels-in-new-york-city-readers-choice-awards-2014/3" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2015/11/NYC_FINALIST1.png"></a>
 					
+					<div>
+						<h2 class="h1"><?php _e('ROW NYC','row-footer-text'); ?></h2>
+						<h2 class="h2"> <?php _e("CONDE NAST TRAVELER READER'S <br> CHOICE AWARDS 2015",'row-footer-text'); ?></h2>
+						<p><?php _e('Conde Nast Traveler readers have selected Row NYC as one of the top 35 hotels in New York City. On behalf of the entire Row NYC team, we thank you for your support!','row-footer-text'); ?></p>
+					</div>
+				</div>
+			</div>
+			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2015  -->
+
+			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2016  -->
+			
+			<div class="tier-two conde conde2">
+				<div class="conde-block">
+					<a href="http://www.cntraveler.com/rca/2016" target="_blank"><img src="<?php echo site_url(); ?>/wp-content/uploads/2016/05/Conde-Nast-Traveler22.png"></a>
+					
+					<div>
+						<h2 class="h1"><?php _e('ROW NYC','row-footer-text'); ?></h2>
+						<h2 class="h2"><?php _e("NOMINATED FOR THE <br> 2016 READER'S CHOICE AWARDS",'row-footer-text'); ?></h2>
+					</div>
+				</div>
+			</div>
+			<!-- CONDE NAST TRAVELER READER'S CHOICE AWARDS 2016  -->
+
+
+			<!-- ZAGAT  -->
+			
+			<div class="tier-two conde conde3">
+				<div class="conde-block">
+					<img src="<?php echo site_url(); ?>/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif">
+					
+					<div>
+						<h2 class="h1"><?php _e('CITY KITCHEN','row-footer-text'); ?></h2>
+						<h2 class="h2"><?php _e('RATED AS THE BEST FOOD HALL IN NYC BY ZAGAT','row-footer-text'); ?></h2>
+					</div>
+				</div>
+			</div>
+			<!-- ZAGAT  -->
+
 		</div>
 				
 	</section>
@@ -110,7 +158,76 @@
 </div>
 
 
+<?php
+	if ( is_front_page() && is_home() ) {} 
+	elseif ('rooms' == get_post_type() || 'specials' == get_post_type()){ 
+?>
+	<!-- Sojern Tag v3 -->
+	<script>
+		(function () {
+			// Please fill the following values.
+			var params = {
+				hc1: "New York", // Destination City
+				hpr: "Row NYC Hotel", // Hotel Property
+				hc: "<?php the_title(); ?>", // Room type
+				hpid: "71", // Property ID
+				pn: "<?php the_title(); ?>", // Product Name
+				domain: "http://rownyc.com" // Site Domain
+			};
 
+			// Please do not modify the below code.
+			var cid = [];
+		    var version = '3';
+		    var paramsArr = ['v=' + version];
+		    var cidParams = ["hconfno","hp","hd1","hd2","hpid","hb","hpr","hdc"];
+		    var pl = document.createElement('script');
+		    var defaultParams = {"vid":"hot","et":"hpr"};
+		    for(key in defaultParams) { params[key] = defaultParams[key]; };
+		    for(key in cidParams) { cid.push(params[cidParams[key]]); };
+		    params.cid = cid.join('|');
+		    for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+		    pl.type = 'text/javascript';
+		    pl.async = true;
+		    pl.src = 'https://beacon.sojern.com/pixel/p/6042?' + paramsArr.join('&');
+		    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+		})();
+	</script>
+	<!-- End Sojern Tag -->
+<?php }	else { ?>
+     	<!-- Sojern Tag v3 -->
+	<script>
+		(function () {
+		    // Please fill the following values.
+		    var params = {
+		       pname: "<?php the_title(); ?>", // Page Name
+		       domain: "http://rownyc.com", // Site Domain
+		       pc: "<?php
+						if (has_category()) {
+						    $category = get_the_category();
+						    echo $category[0]->cat_name;
+						} else { echo 'uncategorized'; }
+					?>" // Page Category
+		    };
+
+			// Please do not modify the below code.
+			var cid = [];
+		    var version = '3';
+		    var paramsArr = ['v=' + version];
+		    var cidParams = ["hconfno","hp","hd1","hd2","hpid","hb","hpr","hdc"];
+		    var pl = document.createElement('script');
+		    var defaultParams = {"vid":"hot"};
+		    for(key in defaultParams) { params[key] = defaultParams[key]; };
+		    for(key in cidParams) { cid.push(params[cidParams[key]]); };
+		    params.cid = cid.join('|');
+		    for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+		    pl.type = 'text/javascript';
+		    pl.async = true;
+		    pl.src = 'https://beacon.sojern.com/pixel/p/6043?' + paramsArr.join('&');
+		    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+		})();
+	</script>
+	<!-- End Sojern Tag -->
+<?php } ?>
 
 
 <!-- the jScrollPane script -->
@@ -150,6 +267,43 @@
 </script>
 
 <?php wp_footer(); ?>
+
+<!-- DA email subscription -->
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/additional-methods.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			$('#eclubCheck').validate(
+			{
+				rules: {
+					// The e-mail address field (aptly ID'd as "email_address")
+					// is required to have content and must also be a valid e-mail.
+					FIRSTNAME: "required",
+					LASTNAME: "required",
+					email: {
+						required: true,
+						email: true
+					}
+				},
+				messages: {
+
+					FIRSTNAME: "Please specify your first name",
+					LASTNAME: "Please specify your last name",
+					email: {
+						required: "We need your email address to contact you",
+						email: "Your email address must be in the format of name@domain.com"
+					}
+
+				},
+				submitHandler: function(form) { // <- pass 'form' argument in
+					$("#form_submit").attr("disabled", true);
+					$("#form_submit").attr("value", "Submitting");
+					return true;
+				}
+			})
+		});
+	</script>
 
 <script type="text/javascript">
 	 var fliptoSettings = {
@@ -199,6 +353,12 @@ var google_remarketing_only = true;
 
 	<script>
 		(function() {
+
+			    $(".closena").click(function(){
+ 				
+				$(this).parent().fadeOut(100);
+                         });
+
 
 			<?php if( is_home() || is_front_page() ) { ?>
 
@@ -338,32 +498,10 @@ var google_remarketing_only = true;
 
 	<?php } ?>
 
-	<?php if(get_post_type() == 'imagegalleries') { ?>
-
-		<!-- Flex Slider -->
-		<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-
-				$('.flexslider-gallery').flexslider({
-					animation: "slide",
-					animationSpeed: 1500,
-					controlNav: true,
-					startAt: 0,
-				});
-
-			  $('.flexslider').flexslider({
-			    animation: "slide",
-			    animationSpeed: 800,
-			    pauseOnAction: false,
-			    controlNav: true,
-			    startAt: 0,
-			  });
-
-			});
-		</script>
-
-	<?php } ?>
-	
+<script>
+$(document).ready(function () {
+  setTimeout( function(){ $('.flex-control-nav, .flex-direction-nav').css("visibility", "visible"); }, 4000 );
+});
+</script>
 </body>
 </html>

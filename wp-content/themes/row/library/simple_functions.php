@@ -293,23 +293,9 @@ add_filter( 'widget_tag_cloud_args', 'custom_tag_cloud_widget' );
 
 if( !is_admin()){
 	wp_deregister_script('jquery');
-	wp_register_script('jquery', (" "), false, '1.6.2');
+	wp_register_script('jquery', (""), false, '1.6.2');
 	wp_enqueue_script('jquery');
 }
-
-
-
-// function language_selector_flags(){
-//     $languages = icl_get_languages('skip_missing=0&orderby=code');
-//     if(!empty($languages)){
-//         foreach($languages as $l){
-//             if(!$l['active']) echo '<a href="'.$l['url'].'">';
-//             echo '<img src="'.$l['country_flag_url'].'" height="12" alt="'.$l['language_code'].'" width="18" />';
-//             if(!$l['active']) echo '</a>';
-//         }
-//     }
-// }
-
 
 
 function language_selector_flags(){
@@ -317,7 +303,7 @@ function language_selector_flags(){
     if(!empty($languages)){
         foreach($languages as $l){
             if(!$l['active']) {
-                echo '<a href="'.$l['url'].'"><img src="'.$l['country_flag_url'].'" height="12" alt="'.$l['language_code'].'" width="18" /></a>';
+                echo '<li><a href="',$l['url'],'">',$l['language_code'],'</a></li>';
             }
         }
     }

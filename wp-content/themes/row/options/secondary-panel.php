@@ -132,6 +132,13 @@ $meta_box = array(
 			"std" => ""
 		),
 
+		array( 
+			"name" => "Learn More URL",
+			"id" => $prefix."_learnmore_url",
+			"type" => "text",
+			"std" => ""
+		),
+
        	)
 );
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */

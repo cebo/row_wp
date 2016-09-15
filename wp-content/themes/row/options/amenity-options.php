@@ -133,24 +133,49 @@ $meta_boxoryl = array(
 	          "std" => ""
               )
  		,
+		
+		array( 
+              "name" => "Hours Title",
+	          "desc" => "Change the Hours Title Header",
+	          "id" => $prefix."_hourstitle",
+	          "type" => "text",
+	          "std" => "Hours:"
+              )
+		,
  		array( 
-              "name" => "Hours",
+              "name" => "Hours Content",
 	          "desc" => "Write your HTML (mostly break points) here",
 	          "id" => $prefix."_hours",
 	          "type" => "textarea",
 	          "std" => ""
               )
  		,
+		array( 
+              "name" => "Contact Title",
+	          "desc" => "Change the Contact Title Header",
+	          "id" => $prefix."_contacttitle",
+	          "type" => "text",
+	          "std" => "Contact:"
+              )
+		,
  		array( 
-              "name" => "Contact",
+              "name" => "Contact Content",
 	          "desc" => "Write your HTML (mostly break points) here",
 	          "id" => $prefix."_contact",
 	          "type" => "textarea",
 	          "std" => ""
               )
  		,
+		array( 
+              "name" => "Reservation Title",
+	          "desc" => "Change the Reservation Title Header",
+	          "id" => $prefix."_reservtitle",
+	          "type" => "text",
+	          "std" => "Reservation:"
+              )
+ 		,
  		array( 
-              "name" => "Reservation",
+              "name" => "Reservation Content",
 	          "desc" => "Write your HTML (mostly break points) here",
 	          "id" => $prefix."_reserv",
 	          "type" => "textarea",
@@ -260,13 +285,13 @@ jQuery(document).ready(function() {
 				'<td class="boxer">';
 		switch ($field['type']) {
 			case 'text':
-				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width: 102%" />';
+				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;" class="descriptive">', $field['desc'], '</div>', '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width: 102%" />';
 				break;
 			case 'upload':
 				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" class="upload_image" name="', $field['id'], '" id="', $field['id'], '"  value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px 0;" /><input class="upload_image_button" type="button" value="Upload Image" />';
 				break;
 			case 'textarea':
-				echo '<div class="title">' ,$field['name'], '</div><div class="descriptive">', $field['desc'], '</div>', '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:47%">', $meta ? $meta : $field['std'], '</textarea>';
+				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;" class="descriptive">', $field['desc'], '</div>', '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:47%">', $meta ? $meta : $field['std'], '</textarea>';
 				break;
 			case 'select':
 				echo '<div class="title">' ,$field['name'], '</div><div class="descriptive">', $field['desc'], '</div>', '<select name="', $field['id'], '" id="', $field['id'], '">';
