@@ -315,31 +315,46 @@ ga('send', 'pageview');
 						<div class="datepicker datepicker-arrival"></div>
 						<div class="datepicker datepicker-departure"></div>
 
-						<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" class="calendarsection" />
+						<div class="schedule-box">
+							<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" class="calendarsection" />
+							<i class="fa fa-calendar"></i>
+						</div>
 
-						<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" class="calendarsection" />
+						<div class="schedule-box">
+							<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" class="calendarsection" />
+							<i class="fa fa-calendar"></i>
+						</div>
 
-						<select name="rooms">
-							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
-							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
-							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
-						</select>
+						<div class="schedule-box">
+							<select name="rooms">
+								<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
+								<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
+								<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
+							</select>
+							<i class="fa fa-caret-down"></i>
+						</div>
 
-						<select name="adults[]">
-							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
-							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
-							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
-							<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>                                
-						</select>
+						<div class="schedule-box">
+							<select name="adults[]">
+								<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
+								<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
+								<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
+								<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
+							</select>
+							<i class="fa fa-caret-down"></i>
+						</div>
 
-						<select name="children[]">
-							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
-							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
-							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
-							<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
-						</select>
+						<div class="schedule-box">
+							<select name="children[]">
+								<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
+								<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
+								<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
+								<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
+							</select>
+							<i class="fa fa-caret-down"></i>
+						</div>
 
-						<button type="submit" class="button"><?php _e('Reserve Now','row-theme-text'); ?></button>				
+						<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
 							
 				</form>
 
@@ -348,6 +363,8 @@ ga('send', 'pageview');
 		</div>
 
 	</div>
+
+	<div class="headernav-block"></div>
 	
 	<?php if ( false ) { ?>
 

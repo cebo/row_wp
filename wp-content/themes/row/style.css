@@ -2369,7 +2369,7 @@ visibility: hidden;
 }
 
 .home-intro {
-    height: 450px;
+    height: 600px;
     margin-bottom: 10px;
     max-height: 800px;
     overflow: hidden;
@@ -7285,12 +7285,21 @@ li.deal.foreign-box{
 	z-index: 1;
 }
 
-
 .headernav {
-	background-color: #000;
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+}
+
+.headernav-block {
+	height: 121px;
 }
 
 .topnav-area {
+	background-color: #000;
 	position: relative;
 }
 
@@ -7418,6 +7427,81 @@ li.deal.foreign-box{
 	text-transform: uppercase;
 }
 
+.bottomnav-area {
+	background-color: rgba(0,0,0,0.8);
+	padding: 9px 0 12px;
+}
+
+.schedulebook {
+	text-align: center;
+}
+
+.schedulebook input,
+.schedulebook select {
+	background-color: #323232;
+	border: 1px solid #414141;
+	box-sizing: border-box;
+	color: #B8B8B8;
+	font-size: 12px;
+	font-family: helvetica;
+	text-transform: uppercase;
+	width: 125px;
+	height: 35px;
+	margin-right: 2px;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.schedulebook input { padding: 8px 20px 8px 10px}
+.schedulebook select { padding: 8px 20px 8px 10px}
+
+.schedulebook select::-ms-expand {
+    display: none;
+}
+
+.schedule-box {
+	display: inline-block;
+	position: relative;
+}
+
+.schedule-box .fa-calendar {
+	color: #B8B8B8;
+	font-size: 14px;
+
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.schedule-box .fa-caret-down {
+	color: #e51a9b;
+	font-size: 14px;
+
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.schedulebook button {
+	background-color: #e51a9b;
+	box-sizing: border-box;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	height: 35px;
+	width: 125px;
+	cursor: pointer;
+
+	position: relative;
+	top: 1px;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 .table-parent { display: table; height: 100%; width: 100%;}
 .table-child { display: table-cell; vertical-align: middle;}
 
@@ -7460,18 +7544,46 @@ li.deal.foreign-box{
 	overflow: auto;
 }
 
+.intro-iconamenities h2 {
+	font-size: 24px;
+	font-family: 'GothamBook', sans-serif;
+	line-height: 1;
+	text-transform: uppercase;
+	padding: 20px 0;
+}
+
 .intro-iconamenities li {
 	float: left;
 	width: 33.33%;
+	height: 80px;
+
+	position: relative;
 }
 
 .intro-iconamenities i {
 	font-size: 30px;
-	margin-right: 10px;
+	line-height: 80px;
+	text-align: center;
+	height: 100%;
+	width: 50px;
+
+	position: absolute;
 }
 
 .intro-iconamenities span {
-	font-family: 'helvetica', sans-serif;
+	display: inline-block;
+	color: #414141;
+	font-family: 'GothamBook', sans-serif;
+	font-size: 16px;
+	padding: 0 10px 0 65px;
+}
+
+.intro-iconamenities a {
+	display: inline-block;
+	color: #e51a9b;
+	font-family: 'GothamBook', sans-serif;
+	font-size: 16px;
+	margin-left: 10px;
 }
 
 .intro-showamenities {

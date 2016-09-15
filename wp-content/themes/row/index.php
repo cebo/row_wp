@@ -70,20 +70,54 @@
 			</div>
 
 			<div class="intro-box right">
-				
+
 				<ul class="intro-iconamenities">
+
+					<h2>Features &amp; Amenities</h2>
 					
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
-					<li><a href="#">DistrictM</a></li>
+					<li>
+						<i class="fa fa-cutlery"></i>
+						<div class="table-parent"><div class="table-child"><span>DistrictM</span></div></div>
+					</li>
+
+					<li>
+						<i class="fa fa-cutlery"></i>
+						<div class="table-parent"><div class="table-child"><span>1 block from Times Square</span></div></div>
+					</li>
+
+					<li>
+						<i class="fa fa-cutlery"></i>
+						<div class="table-parent"><div class="table-child"><span>Cyc Fitness</span></div></div>
+					</li>
+
+					<li>
+						<i class="fa fa-wifi"></i>
+						<div class="table-parent"><div class="table-child"><span>Internet lounge</span></div></div>
+					</li>
+
+					<li>
+						<i class="fa fa-camera"></i>
+						<div class="table-parent"><div class="table-child"><span>Bosco Booth</span></div></div>
+					</li>
+
+					<li>
+						<i class="fa fa-cutlery"></i>
+						<div class="table-parent"><div class="table-child"><span>Glam &amp; Go</span></div></div>
+					</li>
+
+					<li>
+						<i class="fa fa-usd"></i>
+						<div class="table-parent"><div class="table-child"><span>IconicM</span></div></div>
+					</li>
+
+					<li>
+						<i class="fa fa-cutlery"></i>
+						<div class="table-parent"><div class="table-child"><span>Best Food Hall in NYC</span></div></div>
+					</li>
+
+					<li>
+						<div class="table-parent"><div class="table-child"><a href="#">View all amenities</a></div></div>
+					</li>
 
 				</ul>
 
