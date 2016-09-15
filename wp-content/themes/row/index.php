@@ -1,6 +1,186 @@
 <?php get_header(); ?>
 
+	<section class="contentarea">
 
+		<div class="home-intro">
+
+			<div id="owl-example" class="owl-carousel home-intro-theme">
+
+				<?php 
+
+					query_posts(array(
+						'post_type' => 'page',
+						'p' => 6308,
+					));
+
+					if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+
+						$galleryImages = get_post_gallery_imagess(); 
+						$imagesCount = count( $galleryImages );
+
+						if ( $imagesCount > 0 ) :
+						for ( $i = 0; $i < $imagesCount; $i++ ) :
+						if (!empty($galleryImages[$i])) :
+
+				?>
+
+					<div class="owl-block" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+						<div class="table-parent">
+						<div class="table-child">
+							<h2>A Times Square Hotel</h2>
+							<h3>The heart of Manhattan. 24/7 anything and everything</h3>
+							<a href="#">View Rooms</a>
+						</div>
+						</div>
+					</div>
+
+					<?php endif; endfor; endif; ?>
+				<?php endwhile; endif; wp_reset_query(); ?>	
+
+			</div>
+
+		</div>
+
+		<div class="below-intro">
+
+			<div class="intro-box left">
+
+				<div class="intro-pages">
+
+					<h2>The Hotel</h2>
+
+					<p>The Row NYC hotel has pioneered a new era of individuality among Times Square hotels by meeting NYC's signature urban girt with grandeur. Row NYC transforms your stay into a completely contemporary... experience - with a front</p>
+
+					<a href="#">Read more</a>
+
+				</div>
+
+				<div class="intro-pages">
+
+					<h2>The Hotel</h2>
+
+					<p>The Row NYC hotel has pioneered a new era of individuality among Times Square hotels by meeting NYC's signature urban girt with grandeur. Row NYC transforms your stay into a completely contemporary... experience - with a front</p>
+
+					<a href="#">Read more</a>
+
+				</div>
+
+			</div>
+
+			<div class="intro-box right">
+				
+				<ul class="intro-iconamenities">
+					
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><i class="fa fa-cutlery"></i><span>DistrictM</span></li>
+					<li><a href="#">DistrictM</a></li>
+
+				</ul>
+
+				<div class="intro-showamenities">
+					
+					<div class="showamen-box left">
+						<div class="showamen-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+							<div class="showamen-offer">10% OFF</div>
+						</div>
+
+						<h2>Pay Now &amp; Save</h2>
+
+						<p>Commitment isn&rsquo; for eveeryone... but what better reason to commit when you can receive 10% off your entire stay! With all of that money saved you can spend more on all that New York City has to offer such...</p>
+
+						<div class="showamen-links">
+							<a href="#">Book Now</a>
+							<a class="showamen-borderlink" href="#">More Info</a>
+						</div>
+					</div>
+
+					<div class="showamen-box right">
+						<div class="showamen-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+							<div class="showamen-offer">10% OFF</div>
+						</div>
+
+						<h2>City Kitchen Ultimate Breakfast Package</h2>
+
+						<p>Commitment isn&rsquo; for eveeryone... but what better reason to commit when you can receive 10% off your entire stay! With all of that money saved you can spend more on all that New York City has to offer such...</p>
+
+						<div class="showamen-links">
+							<a href="#">Book Now</a>
+							<a class="showamen-borderlink" href="#">More Info</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="home-features">
+
+			<div class="feature-box left" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+
+				<div class="feature-content">
+					<h2>City Kitchen</h2>
+					<p>A Times Square Food Market</p>
+				</div>
+
+			</div>
+
+			<div class="feature-box right" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+
+				<div class="feature-content">
+					<h2>City Kitchen</h2>
+					<p>A Times Square Food Market</p>
+				</div>
+
+			</div>
+
+			<div class="feature-box left" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+
+				<div class="feature-content">
+					<h2>City Kitchen</h2>
+					<p>A Times Square Food Market</p>
+				</div>
+
+			</div>
+
+			<div class="feature-box right" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+
+				<div class="feature-content">
+					<h2>City Kitchen</h2>
+					<p>A Times Square Food Market</p>
+				</div>
+
+			</div>
+
+			<div class="feature-boxfull" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+				
+				<h2>Outside The Row NYC Hotel</h2>
+
+				<div class="feature-contentfull">
+					
+					<p>With so many New York activities and attractions to see, do and enjoy, NYC is every traveler's dream. We at the Row NYC hotel know that choosing what, where, why and how can be a challenge, so we've made things easy with a list of our favorite Manhattan attractions in TImes Square - and beyond.</p>
+
+					<a href="#">Explore our guides below</a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+	<?php if ( false ) { ?>
 
 	<section class="contentarea">
 			
@@ -784,6 +964,6 @@
 			<?php } ?>
 
 
-
+	<?php } ?>
 
 <?php get_footer(); ?>

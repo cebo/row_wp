@@ -13,6 +13,8 @@
 	
 		<div class="footer">
 
+			<?php if ( false ) { ?>
+
 			<section class="navigate mobile">
 				
 				<ul class="supernav">
@@ -84,6 +86,8 @@
 				</ul>
 
 			</section>
+
+			<?php } ?>
 
 			<?php if(function_exists('icl_object_id') && ICL_LANGUAGE_CODE !='en') {} else { ?>
 					
