@@ -293,7 +293,7 @@ add_filter( 'widget_tag_cloud_args', 'custom_tag_cloud_widget' );
 
 if( !is_admin()){
 	wp_deregister_script('jquery');
-	wp_register_script('jquery', (" "), false, '1.6.2');
+	wp_register_script('jquery', (""), false, '1.6.2');
 	wp_enqueue_script('jquery');
 }
 
