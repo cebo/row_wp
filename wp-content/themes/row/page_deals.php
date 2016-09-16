@@ -16,12 +16,14 @@
 				<h1><?php _e('Special Offers','row-theme-text'); ?></h1>
 
 				<div class="toptitle-description">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nisi dolor. Donec sed tempus est. In ut metus ligula. Vestibulum rutrum tristique nibh, et pretium urna dapibus at. Pellentesque a fringilla metus. In pharetra, elit vel consequat iaculis, mauris lacus fringilla turpis, a aliquet lectus mi id augue.</p>
+					
+					<?php echo content(100); ?>
+
 				</div>
 
 			</div>
 
-			<div class="boxlists-main boxlists-threecol boxlists-specialoffers">
+			<div class="boxlists-main boxlists-threecol boxlists-dealspage">
 
 				<?php
 
@@ -51,7 +53,7 @@
 
 				<div class="boxlists-box <?php echo $last; ?>">
 
-					<?php if ( get_post_meta( $post->ID, 'cebo_fullpic', true) ) { ?>
+					<?php if ( get_post_meta( $post->ID, 'cebo_fullpic', true ) ) { ?>
 
 						<div class="boxlists-imagebox">
 							<div class="boxlists-offersign">10% OFF</div>

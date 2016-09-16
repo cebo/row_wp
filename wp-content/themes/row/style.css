@@ -7594,6 +7594,10 @@ li.deal.foreign-box{
 	overflow: auto;
 }
 
+.boxlists-showamen .boxlists-box {
+	margin: 0;
+}
+
 .home-features {
 	overflow: auto;
 }
@@ -7661,13 +7665,33 @@ li.deal.foreign-box{
 }
 
 
-/* PAGE: DEALS / SPECIAL OFFERS */
+/* PAGE: THE HOTEL */
 
-.boxlists-specialoffers .boxlists-box {
-	margin-bottom: 50px;
+.toptitle-hotelpage h1 {
+	text-align: left;
 }
 
-.boxlists-specialoffers .boxlists-content {
+.toptitle-hotelpage .toptitle-description {
+	width: auto;
+	max-width: none;
+	text-align: left;
+}
+
+.boxlists-hotelpage {
+	overflow: auto;
+}
+
+.boxlists-hotelpage .boxlists-content {
+	margin-bottom: 30px;
+}
+
+
+
+
+
+/* PAGE: DEALS / SPECIAL OFFERS */
+
+.boxlists-dealspage .boxlists-content {
 	min-height: 175px;
 }
 
@@ -7722,6 +7746,9 @@ li.deal.foreign-box{
 }
 
 
+/* PAGE: ROOMS */
+
+
 
 
 /* TOPTITLE */
@@ -7754,6 +7781,18 @@ li.deal.foreign-box{
 	line-height: inherit;
 }
 
+.toptitle-links a {
+	display: inline-block;
+	background-color: #e51a9b;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	padding: 10px 20px;
+	margin-right: 5px;
+}
+	.toptitle-links a:last-child { margin-right: 0;}
+
 
 /* BOXLISTS */
 
@@ -7761,6 +7800,7 @@ li.deal.foreign-box{
 
 .boxlists-box {
 	text-align: center;
+	margin-bottom: 50px;
 }
 
 	.boxlists-twocol .boxlists-box {
@@ -7869,6 +7909,145 @@ li.deal.foreign-box{
 		position: relative;
 		top: -2px;
 	}
+
+
+/* ROOMSLIST */
+
+.roomslist-box {
+	height: 470px;
+	position: relative;
+}
+
+.roomslist-view {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.roomslist-image {
+	background: none no-repeat scroll center center transparent;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	-webkit-transition: all 0.5s ease-out 0s;
+	-moz-transition: all 0.5s ease-out 0s;
+	-o-transition: all 0.5s ease-out 0s;
+	-ms-transition: all 0.5s ease-out 0s;
+	transition: all 0.5s ease-out 0s;
+}
+	.roomslist-view:hover .roomslist-image {
+		-webkit-transform: scale(1.05);
+		-moz-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+
+.roomslist-title {
+	background-color: rgba(255,255,255,0.7);
+	box-sizing: border-box;
+	color: #333;
+	font-family: 'GothamBold', sans-serif;
+	font-size: 36px;
+	line-height: 1;
+	text-align: center;
+	width: 100%;
+	max-width: 40%;
+	padding: 20px 20px;
+
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	margin-left: -20%;
+	z-index: 2;
+
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+	.roomslist-title:hover { color: #333; }
+
+.roomslist-title h2 {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.roomslist-panel {
+	width: 100%;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.roomslist-content {
+	background-color: rgba(255,255,255,0.7);
+	box-sizing: border-box;
+	width: 60%;
+	padding: 10px 20px;
+}
+	.roomslist-box-onlybooknow .roomslist-content {
+		width: 75%;
+	}
+
+.roomslist-content p {
+	color: #000;
+	font-family: 'Montserrat', sans-serif;
+	font-family: 16px;
+	padding: 0;
+}
+
+.roomslist-link {
+	background-color: rgba(229,26,155,0.7);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 25%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+	.roomslist-link.roomslist-link-moreinfo {
+		background-color: rgba(255,255,255,0.7);
+		width: 15%;
+
+		right: 25%;
+	}
+
+.roomslist-link span {
+	color: #fff;
+	font-family: inherit;
+	font-size: inherit;
+	width: 100%;
+
+	position: absolute;
+	top: 50%;
+	left: 0;
+
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+	.roomslist-link.roomslist-link-moreinfo span { color: #000; }
+
 
 
 /* OWL CAROUSEL - HOME INTRO THEME */

@@ -1,11 +1,101 @@
 <?php 
 
-/* Template Name: Rooms List Page
+	/* Template Name: Rooms List Page */
 
-*/
- get_header(); ?>
+	get_header();
+
+?>
+
+<section class="contentarea">
+
+	<div class="headernav-block-secondary"></div>
+
+	<div class="roomslist-area">
+
+		<?php
+
+			$args = array (
+				'post_type' => array( 'rooms' ),
+				'suppress_filters' => false,
+				'nopaging' => true,
+			);
+
+			$query = new WP_Query( $args );
+
+			if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+
+				if ( get_post_meta( $post->ID, 'cebo_fullpic', true) ) {
+					$imgsrcuse = 'background-image: url(' . get_post_meta( $post->ID, 'cebo_fullpic', true ) . ');';
+				} elseif ( $imgsrc ) {
+					$imgsrcuse = $imgsrc;
+				} else {
+					$imgsrcuse = 'background-image: url(' . get_bloginfo('template_url') . '/images/watermark.jpg);';
+				}
+
+				$get_permalink = get_site_url() . '/' . ICL_LANGUAGE_CODE . '/hotel-rooms-times-square-new-york/' . $post->post_name;
+
+				if ( get_the_title() == "Penthouse Suites" ) {
+					$only = 'roomslist-box-onlybooknow';
+				} else {
+					$only = '';
+				}
+
+		?>
+
+			<div class="roomslist-box <?php echo $only; ?>">
+
+				<div class="roomslist-view">
+
+					<a class="roomslist-image" href="<?php echo $get_permalink; ?>" style="background-image: url(<?php echo $imgsrcuse; ?>);"></a>
+
+					<a class="roomslist-title" href="<?php echo $get_permalink; ?>"><h2><?php the_title(); ?></h2></a>
+
+				</div>
+
+				<div class="roomslist-panel <?php echo $pent; ?>">
+
+					<div class="roomslist-content">
+
+						<?php the_content(); ?>
+
+					</div>
+
+					<div class="clear"></div>
+
+					<?php if ( get_the_title() == "Penthouse Suites" ) { ?>
+
+						<a class="roomslist-link" href="mailto:reservations@rownyc.com"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+
+					<?php } else {
+
+						if ( get_post_meta($post->ID, 'cebo_booklink', true ) ) {
+
+							$booklink = get_option('cebo_genbooklink') . '/search?selected_room_category=' . get_post_meta($post->ID, 'cebo_room_code', true);
+
+						} else {
+
+							$booklink = get_option('cebo_genbooklink');
+
+						}
+
+					?>
+
+						<a class="roomslist-link roomslist-link-moreinfo" href="<?php echo $get_permalink; ?>"><span><?php _e('More Info','row-theme-text'); ?></span></a>
+
+						<a class="roomslist-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $booklink; ?>"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+
+					<?php } ?>
+
+				</div>
+
+			</div>
+
+		<?php endwhile; endif; wp_reset_postdata(); ?>
+
+	</div>
 
 
+<?php if ( false ) { ?>
 
 	<section class="contentarea">
 			
@@ -103,6 +193,8 @@
 
 
 			<div class="clear"></div>
-			
+
+
+<?php } ?>
 					
 <?php get_footer(); ?>
