@@ -121,35 +121,45 @@
 
 				</ul>
 
-				<div class="intro-showamenities">
+				<div class="intro-showamenities boxlists-twocol boxlists-showamen">
 					
-					<div class="showamen-box left">
-						<div class="showamen-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
-							<div class="showamen-offer">10% OFF</div>
+					<div class="boxlists-box left">
+						<div class="boxlists-imagebox">
+							<div class="boxlists-offersign">10% OFF</div>
+							<div class="boxlists-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);"></div>
 						</div>
 
-						<h2>Pay Now &amp; Save</h2>
+						<h2 class="boxlists-title">Pay Now &amp; Save</h2>
 
-						<p>Commitment isn&rsquo; for eveeryone... but what better reason to commit when you can receive 10% off your entire stay! With all of that money saved you can spend more on all that New York City has to offer such...</p>
+						<div class="boxlists-content">
 
-						<div class="showamen-links">
+							<p>Commitment isn&rsquo; for eveeryone... but what better reason to commit when you can receive 10% off your entire stay! With all of that money saved you can spend more on all that New York City has to offer such...</p>
+
+						</div>
+
+						<div class="boxlists-links">
 							<a href="#">Book Now</a>
-							<a class="showamen-borderlink" href="#">More Info</a>
+							<a class="boxlists-moreinfo" href="#">More Info</a>
 						</div>
 					</div>
 
-					<div class="showamen-box right">
-						<div class="showamen-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
-							<div class="showamen-offer">10% OFF</div>
+					<div class="boxlists-box right">
+						<div class="boxlists-imagebox">
+							<div class="boxlists-offersign">10% OFF</div>
+							<div class="boxlists-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);"></div>
 						</div>
 
-						<h2>City Kitchen Ultimate Breakfast Package</h2>
+						<h2 class="boxlists-title">City Kitchen Ultimate Breakfast Package</h2>
 
-						<p>Commitment isn&rsquo; for eveeryone... but what better reason to commit when you can receive 10% off your entire stay! With all of that money saved you can spend more on all that New York City has to offer such...</p>
+						<div class="boxlists-content">
+							
+							<p>Commitment isn&rsquo; for eveeryone... but what better reason to commit when you can receive 10% off your entire stay! With all of that money saved you can spend more on all that New York City has to offer such...</p>
 
-						<div class="showamen-links">
+						</div>
+
+						<div class="boxlists-links">
 							<a href="#">Book Now</a>
-							<a class="showamen-borderlink" href="#">More Info</a>
+							<a class="boxlists-moreinfo" href="#">More Info</a>
 						</div>
 					</div>
 

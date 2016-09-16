@@ -5,6 +5,158 @@
 */
  get_header(); ?>
  
+	<section class="contentarea">
+
+		<div class="headernav-block-secondary"></div>
+
+		<div class="contentarea-container">
+
+			<div class="toptitle-area">
+				
+				<h1><?php _e('Special Offers','row-theme-text'); ?></h1>
+
+				<div class="toptitle-description">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nisi dolor. Donec sed tempus est. In ut metus ligula. Vestibulum rutrum tristique nibh, et pretium urna dapibus at. Pellentesque a fringilla metus. In pharetra, elit vel consequat iaculis, mauris lacus fringilla turpis, a aliquet lectus mi id augue.</p>
+				</div>
+
+			</div>
+
+			<div class="boxlists-main boxlists-threecol boxlists-specialoffers">
+
+				<?php
+
+					$count = 1;
+
+					query_posts(array(
+						'post_type' => 'specials',
+						// 'offset' => 1,
+						'meta_query' => array(
+							array(
+								'key' => 'cebo_available_on_header',
+								'compare' => 'NOT EXISTS'
+							)
+						)
+					));
+
+					if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+						$title = get_the_title();
+						$slug_comp = sanitize_title($title);
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full" );
+
+						if ( $count % 3 == 0 ) { $last = 'last'; }
+						else { $last = ''; }
+
+				?>
+
+				<div class="boxlists-box <?php echo $last; ?>">
+
+					<?php if ( get_post_meta( $post->ID, 'cebo_fullpic', true) ) { ?>
+
+						<div class="boxlists-imagebox">
+							<div class="boxlists-offersign">10% OFF</div>
+							<div class="boxlists-image" style="background-image: url(<?php echo get_post_meta( $post->ID, 'cebo_fullpic', true ); ?>);"></div>
+						</div>
+
+					<?php } elseif ( $imgsrc ) { ?>
+
+						<div class="boxlists-imagebox">
+							<div class="boxlists-offersign">10% OFF</div>
+							<div class="boxlists-image" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+						</div>
+
+					<?php } else { ?>
+
+						<div class="boxlists-imagebox">
+							<div class="boxlists-offersign">10% OFF</div>
+							<div class="boxlists-image" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+						</div>
+
+					<?php } ?>
+
+					<?php
+
+						if ( $slug_comp == '5-cash-back' ) {
+
+							$learnmore = get_post_meta( $post->ID, 'cebo_learnmore_url', true );
+
+					?>
+
+						<h2 class="boxlists-title"><?php echo get_post_meta( $post->ID, 'cebo_subtagline', true ); ?></h2>
+						<div class="boxlists-content">
+
+							<?php echo content(25); ?>
+
+							<div id="theguestbook_widget"></div>
+							<div class="wonder-vertical"></div>
+
+						</div>
+
+						<div class="boxlists-links">
+							<a href="<?php if ( $learnmore ) { echo $learnmore; } else { the_permalink(); } ?>"><?php _e('Read Now','row-theme-text'); ?></a>
+							<input type="button" class="boxlists-enroll theguestbook-email-submit-input" value="<?php _e('Enroll','row-theme-text'); ?>">
+						</div>
+
+					<?php } else {
+
+						$shordesc = get_post_meta( $post->ID, 'cebo_specialshortdesc', true );
+						$booklink = get_post_meta( $post->ID, 'cebo_booklink', true );
+						$learnmore = get_post_meta( $post->ID, 'cebo_learnmore_url', true );
+
+					?>
+
+						<h2 class="boxlists-title"><?php the_title(); ?></h2>
+						<div class="boxlists-content">
+
+							<?php
+								if ( $shordesc ) { 
+									echo $shordesc;
+								} else {
+									echo content(40);
+								}
+							?>
+
+						</div>
+
+						<div class="boxlists-links">
+							<a onclick="_gaq.push(['_link', this.href]);return false;" href="<?php if ( $booklink ) { echo $booklink; } else { the_permalink(); } ?>"><?php _e('Book Now','row-theme-text'); ?></a>
+							<a class="boxlists-moreinfo" href="<?php if ( $learnmore ) { echo $learnmore; } else { the_permalink(); } ?>"><?php _e('More Info','row-theme-text'); ?></a>
+						</div>
+
+					<?php } ?>
+
+				</div>
+
+				<?php if ( $count % 3 == 0 ) { echo '<div class="clear clear3"></div>'; } ?>
+
+				<?php $count++; endwhile; endif; wp_reset_query(); ?>
+
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if ( false ) { ?>
 
 <?php
 	
@@ -171,5 +323,6 @@
 
 		<div class="clear"></div>
 
+<?php } ?>
 
 <?php get_footer(); ?>
