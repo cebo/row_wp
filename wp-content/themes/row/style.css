@@ -4048,25 +4048,6 @@ width: 35%;
     overflow: hidden;
 }
 
-.gallery .flexslider {
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	-ms-box-shadow: none;
-	-o-box-shadow: none;
-    height: 620px;
-    padding-bottom: 30px;
-}
-
-.gallery .flexslider .slides > li {
-	height: 600px;
-}
-
-.gallery .flexslider .slides img {
-    height: auto;
-    width: 100%;
-}
-
 .gallery .rooms-book-now.slide-booking {
     bottom: auto;
     height: auto;
@@ -4524,34 +4505,6 @@ a.button.moreinfo{
 
 .gallery .fourth-level {
 	margin-top: 0;
-}
-
-.gallery .flexslider {
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	-ms-box-shadow: none;
-	-o-box-shadow: none;
-    height: 620px;
-    padding-bottom: 30px;
-}
-
-.gallery .flexslider .slides > li {
-	height: 600px;
-}
-
-.gallery .flexslider .slides li:after {
-	content: ".";
-	position:absolute;
-	bottom:0;
-	left:0;
-	z-index:-1000;
-	color: #fff;
-}
-
-.gallery .flexslider .slides img {
-    height: auto;
-    width: 100%;
 }
 
 .gallery .rooms-book-now.slide-booking {
@@ -7273,6 +7226,10 @@ li.deal.foreign-box{
 *
 ------------------------------------------------------------------------------------ */
 
+.wrapper {
+	overflow: hidden;
+}
+
 .contentarea {
 	background-color: #fff;
 
@@ -7299,7 +7256,7 @@ li.deal.foreign-box{
 }
 
 .headernav-block-secondary {
-	height: 58px;
+	height: 57px;
 }
 
 .topnav-area {
@@ -7434,6 +7391,7 @@ li.deal.foreign-box{
 .bottomnav-area {
 	background-color: rgba(0,0,0,0.8);
 	padding: 9px 0 12px;
+	height: 36px;
 }
 
 .schedulebook {
@@ -8047,6 +8005,48 @@ li.deal.foreign-box{
 }
 
 	.roomslist-link.roomslist-link-moreinfo span { color: #000; }
+
+/* FLEXSLIDER - GALLERY THEME */
+
+.flexslider.flexslider-gallery-theme {
+	height: auto;
+}
+
+.flexslider-gallery-theme .slides {
+	height: 500px;
+}
+
+.flexslider.flexslider-gallery-theme .slides li {
+	background: none no-repeat scroll center center transparent;
+	background-size: cover;
+	height: 100%;
+}
+
+.flexslider-gallery-theme .flex-direction-nav {
+	position: absolute;
+	top: 250px;
+	width: 100%;
+}
+
+.flexslider-gallery-theme .flex-direction-nav a {
+	color: #fff;
+	text-shadow: 0 0 0 transparent;
+}
+
+.flexslider-gallery-theme .flex-control-thumbs {
+	margin: 2px 0 0;
+}
+
+.flexslider-gallery-theme .flex-control-thumbs li {
+	height: 150px;
+	width: 20%;
+}
+
+.flexslider-gallery-theme .flex-control-thumbs li div {
+	background: none no-repeat scroll center center transparent;
+	background-size: cover;
+	height: 100%;
+}
 
 
 

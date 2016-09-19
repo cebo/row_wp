@@ -101,7 +101,7 @@ $(document).ready(function()
 		});   
 	
 
-  		$('.flexslider').flexslider({
+  		$('.flexslider-js').flexslider({
    			 animation: "slide"
  		 });
  		 

@@ -27,7 +27,7 @@
 				    },
 				    function(){
 				    });
-		
+		/*
 		$(function() {
 			var fixadent = $(".topnav"), pos = fixadent.offset();
 			$(window).scroll(function() {
@@ -35,6 +35,7 @@
 			else if($(this).scrollTop() <= pos.top && fixadent.hasClass('fixed')){ fixadent.removeClass('fixed'); }
 			})
 		});
+*/
 		 				
 	});	
 	

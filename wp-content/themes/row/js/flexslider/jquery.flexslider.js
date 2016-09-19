@@ -144,6 +144,7 @@
         if (!fade || (fade && slider.vars.smoothHeight)) $(window).bind("resize orientationchange focus", methods.resize);
 
         slider.find("img").attr("draggable", "false");
+        slider.find("." + namespace + "itemdiv").attr("draggable", "false");
 
         // API: start() Callback
         setTimeout(function(){
@@ -212,7 +213,8 @@
           if (slider.pagingCount > 1) {
             for (var i = 0; i < slider.pagingCount; i++) {
               slide = slider.slides.eq(i);
-              item = (slider.vars.controlNav === "thumbnails") ? '<img src="' + slide.attr( 'data-thumb' ) + '"/>' : '<a>' + j + '</a>';
+              // item = (slider.vars.controlNav === "thumbnails") ? '<img src="' + slide.attr( 'data-thumb' ) + '"/>' : '<a>' + j + '</a>';
+              item = (slider.vars.controlNav === "thumbnails") ? '<div class="' + namespace + 'itemdiv" style="background-image:url(' + slide.attr( 'data-thumb' ) + ');"></div>' : '<a>' + j + '</a>';
               if ( 'thumbnails' === slider.vars.controlNav && true === slider.vars.thumbCaptions ) {
                 var captn = slide.attr( 'data-thumbcaption' );
                 if ( '' != captn && undefined != captn ) item += '<span class="' + namespace + 'caption">' + captn + '</span>';
@@ -228,12 +230,16 @@
 
           methods.controlNav.active();
 
-          slider.controlNavScaffold.delegate('a, img', eventType, function(event) {
+          // slider.controlNavScaffold.delegate('a, img', eventType, function(event) {
+          slider.controlNavScaffold.delegate('a, div', eventType, function(event) {
             event.preventDefault();
 
             if (watchedEvent === "" || watchedEvent === event.type) {
               var $this = $(this),
                   target = slider.controlNav.index($this);
+                  console.log($this);
+                  console.log(target);
+                  console.log(slider.controlNav);
 
               if (!$this.hasClass(namespace + 'active')) {
                 slider.direction = (target > slider.currentSlide) ? "next" : "prev";
@@ -274,7 +280,8 @@
           });
         },
         set: function() {
-          var selector = (slider.vars.controlNav === "thumbnails") ? 'img' : 'a';
+          // var selector = (slider.vars.controlNav === "thumbnails") ? 'img' : 'a';
+          var selector = (slider.vars.controlNav === "thumbnails") ? 'div' : 'a';
           slider.controlNav = $('.' + namespace + 'control-nav li ' + selector, (slider.controlsContainer) ? slider.controlsContainer : slider);
         },
         active: function() {

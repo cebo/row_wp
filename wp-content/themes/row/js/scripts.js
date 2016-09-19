@@ -49,14 +49,15 @@ $(document).ready(function(){
 		  $(".paperbox").toggleClass( "paperdup" );
 		});
 		
-		
+
+		/*
 		$(function() {
 		var fixadent = $(".topnav"), pos = fixadent.offset();
 		$(window).scroll(function() {
 		if($(this).scrollTop() > (pos.top + 10) && fixadent.css('position') == 'absolute') { fixadent.addClass('fixed'); }
 		else if($(this).scrollTop() <= pos.top && fixadent.hasClass('fixed')){ fixadent.removeClass('fixed'); }
 		})
-	});
+	});*/
 
  	$( window ).resize(function() {
 
@@ -79,7 +80,7 @@ $(document).ready(function(){
 	});
 	
 
-
+/*
 	if ($(window).width() > 640) {
 		
 		$(function() {
@@ -91,6 +92,7 @@ $(document).ready(function(){
 		});
 		 				
 	}
+	*/
 
 
 

@@ -104,14 +104,14 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 
-				$('.flexslider-gallery').flexslider({
+				$('.flexslider-gallery-js').flexslider({
 					animation: "slide",
 					animationSpeed: 1500,
-					controlNav: true,
+					controlNav: "thumbnails",
 					startAt: 0,
 				});
 
-			  $('.flexslider').flexslider({
+			  $('.flexslider-js').flexslider({
 			    animation: "slide",
 			    animationSpeed: 800,
 			    pauseOnAction: false,
