@@ -7704,7 +7704,63 @@ li.deal.foreign-box{
 }
 
 
-/* PAGE: ROOMS */
+/* PAGE: SINGLE SPECIALS */
+
+.toptitle-area.toptitle-singlespecials {
+	text-align: left;
+	margin-bottom: 0;
+}
+
+.single-specials-box {
+	position: relative;
+}
+
+.single-specials-links {
+	text-align: right;
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.single-specials-links a {
+	display: inline-block;
+	background-color: #e51a9b;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	text-align: center;
+	text-transform: uppercase;
+	width: 20%;
+	padding: 15px 0;
+}
+
+.single-specials-content {
+	width: 70%;
+
+	position: relative;
+	z-index: 2;
+}
+
+.single-specials-content h2 {
+	font-family: 'GothamCondensedMedium', sans-serif;
+	font-size: 24px;
+	line-height: 1;
+	margin-bottom: 10px;
+}
+
+.single-specials-content ul {
+	padding-left: 30px;
+}
+
+.single-specials-content ul li {
+	list-style-type: disc;
+	margin-bottom: 5px;
+}
+
 
 
 
@@ -7821,6 +7877,17 @@ li.deal.foreign-box{
 	text-transform: uppercase;
 	padding: 0 10px;
 	margin-bottom: 15px;
+}
+
+.boxlists-content h2 {
+	font-family: 'GothamCondensedMedium', sans-serif;
+	font-size: 24px;
+	line-height: 1;
+	margin-bottom: 10px;
+}
+
+.boxlists-content ul li {
+	margin-bottom: 5px;
 }
 
 .boxlists-content p {
