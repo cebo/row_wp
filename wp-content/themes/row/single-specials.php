@@ -23,19 +23,19 @@
 
 		<div class="headernav-block-secondary"></div>
 
-		<div class="home-intro">
+		<div class="toppage-intro">
 
 			<?php if ( $fullpic ) { ?>
 
-				<div class="stretch"  style="background-image: url(<?php echo $fullpic; ?>);"></div>
+				<div class="toppage-image"  style="background-image: url(<?php echo $fullpic; ?>);"></div>
 
 			<?php } elseif ( $imgsrc ) { ?>
 
-				<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+				<div class="toppage-image"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 
 			<?php } else { ?>
 
-				<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+				<div class="toppage-image"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
 
 			<?php } ?>
 

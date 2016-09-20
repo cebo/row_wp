@@ -1,10 +1,160 @@
 <?php 
 
-/* Single Rooms
+	/* Single Rooms */
+	
+	get_header();
 
-*/
- get_header(); ?>
+?>
 
+<?php
+	
+	if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+		$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full" );
+
+?>
+
+	<section class="contentarea">
+
+		<div class="headernav-block-secondary"></div>
+
+		<div class="toppage-intro toppage-flexslider-backgroundimage toppage-singlerooms">
+			
+			<div class="flexslider-js flexslider">
+
+				<ul class="slides">
+					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
+					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
+					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
+					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
+					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
+				</ul>
+
+			</div>
+
+			<h1 class="roomssingle-title roomssingle-title-desktop"><?php the_title(); ?></h1>
+
+			<div class="roomssingle-panel">
+
+				<div class="roomssingle-content">
+
+					<h1 class="roomssingle-title roomssingle-title-mobile"><?php the_title(); ?></h1>
+
+					<?php the_content(); ?>
+
+				</div>
+
+				<div class="clear"></div>
+
+				<?php if ( get_the_title() == "Penthouse Suites" ) { ?>
+
+					<a class="roomssingle-link" href="mailto:reservations@rownyc.com"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+
+				<?php } else {
+
+					if ( get_post_meta($post->ID, 'cebo_booklink', true ) ) {
+
+						$booklink = get_option('cebo_genbooklink') . '/search?selected_room_category=' . get_post_meta($post->ID, 'cebo_room_code', true);
+
+					} else {
+
+						$booklink = get_option('cebo_genbooklink');
+
+					}
+
+				?>
+
+					<a class="roomssingle-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $booklink; ?>"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+
+				<?php } ?>
+
+			</div>
+
+		</div>
+
+		<div class="browselist-box">
+				
+			<div class="browselist-back"><a href="#"><i class="fa fa-chevron-left"></i>Back</a></div>
+
+			<ul class="browselist-links">
+
+				<li class="browselist-title">Room Types:</li>
+				<li><a href="#">Premium City View</a></li>
+				<li><a href="#">Superior</a></li>
+				<li><a href="#">Deluxe City View</a></li>
+				<li><a href="#">Executive Suites</a></li>
+				<li><a href="#">Penthouse Suites</a></li>
+				<li><a href="#">Standard</a></li>
+
+			</ul>
+
+		</div>
+
+		<div class="roomsdetail-box">
+			
+			<div class="roomsdetail-col">
+				
+				<h2>For your comfort</h2>
+
+				<ul>
+					<li>Sleek work desk with ergonomic chair</li>
+					<li>Incredibly plush Euro Top platform beds with soft cotton linens and superb feather pillows</li>
+					<li>Innovative double windwo shades - regular and blackout - to customize amount of light and privacy</li>
+					<li>Multi-setting shower head</li>
+					<li>Bath towels and signature toiletries by PURE</li>
+					<li>Individual climate controls for comfort</li>
+					<li>Iron and ironing board</li>
+					<li>Hair dryer</li>
+					<li>Safe with keypad entry</li>
+					<li>Full-length mirror</li>
+				</ul>
+
+			</div>
+
+			<div class="roomsdetail-col">
+				
+				<h2>For your worklife</h2>
+
+				<ul>
+					<li>Dedicated high-speed wireless Internet service</li>
+					<li>Cordless phone</li>
+				</ul>
+
+				<h2>For your entertainment</h2>
+
+				<ul>
+					<li>Conveniently located outlets and iHome docking station</li>
+					<li>32-inch flat screen LCD TV</li>
+					<li>complimentary cable and HBO</li>
+				</ul>
+
+			</div>
+
+			<div class="roomsdetail-col roomsdetail-col-features">
+				
+				<h2>Features</h2>
+
+				<ul>
+					<li>iPod Docking Station</li>
+					<li>Flat screen LCD TVs</li>
+					<li>Cable and HBO</li>
+					<li>Desk and Ergonomic chair</li>
+				</ul>
+
+			</div>
+
+		</div>
+
+<?php endwhile; endif; wp_reset_query(); ?>
+
+
+
+
+
+
+
+
+<?php if ( false ) { ?>
 
 	<section class="contentarea">
 
@@ -294,7 +444,7 @@
 			</div>
 
 			
-			<?php endwhile; endif; wp_reset_query(); ?>	
+			<?php endwhile; endif; wp_reset_query(); ?>
 				<div class="gallery-categories">
 					<ul>
 						
@@ -313,6 +463,6 @@
 			
 			
 			
-			
+<?php } ?>
 			 
 <?php get_footer(); ?>

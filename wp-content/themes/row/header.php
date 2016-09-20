@@ -97,32 +97,40 @@
 <script src="//cdn.optimizely.com/js/3569390496.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
-	<?php if(get_post_type() == 'imagegalleries') { ?>
 
-		<!-- Flex Slider -->
-		<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
+<?php
+	if (
+		get_post_type() == 'imagegalleries' ||
+		get_post_type() == 'rooms'
+	) {
+?>
 
-				$('.flexslider-gallery-js').flexslider({
-					animation: "slide",
-					animationSpeed: 1500,
-					controlNav: "thumbnails",
-					startAt: 0,
-				});
+	<!-- Flex Slider -->
+	<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
+	<script type="text/javascript">
 
-			  $('.flexslider-js').flexslider({
-			    animation: "slide",
-			    animationSpeed: 800,
-			    pauseOnAction: false,
-			    controlNav: true,
-			    startAt: 0,
-			  });
+		$(document).ready(function() {
 
+			$('.flexslider-gallery-js').flexslider({
+				animation: "slide",
+				animationSpeed: 1500,
+				controlNav: "thumbnails",
+				startAt: 0,
 			});
-		</script>
 
-	<?php } ?>
+			$('.flexslider-js').flexslider({
+				animation: "slide",
+				animationSpeed: 1500,
+				pauseOnAction: false,
+				controlNav: true,
+				startAt: 0,
+			});
+
+		});
+
+	</script>
+
+<?php } ?>
 	
 
 <?php if( !is_home() || !is_front_page() ) { ?>

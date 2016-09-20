@@ -7762,6 +7762,122 @@ li.deal.foreign-box{
 }
 
 
+/* PAGE: SINGLE ROOMS */
+
+.toppage-singlerooms {
+	position: relative;
+}
+
+.toppage-singlerooms .flex-control-nav {
+	display: none;
+}
+
+.roomssingle-title {
+	color: #333;
+	font-family: 'GothamBold', sans-serif;
+	font-size: 36px;
+	line-height: 1;
+}
+
+.roomssingle-title-desktop {
+	background-color: rgba(255,255,255,0.7);
+	box-sizing: border-box;
+	text-align: center;
+	width: 100%;
+	padding: 20px 20px;
+	max-width: 40%;
+
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	margin-left: -20%;
+	z-index: 2;
+
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.roomssingle-title-mobile {
+	display: none;
+}
+
+.roomssingle-panel {
+	width: 100%;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.roomssingle-content {
+	background-color: rgba(255,255,255,0.7);
+	box-sizing: border-box;
+	width: 70%;
+	padding: 10px 20px;
+}
+
+.roomssingle-content p {
+	color: #000;
+	font-family: 'Montserrat', sans-serif;
+	font-family: 16px;
+	padding: 0;
+}
+
+.roomssingle-link {
+	background-color: rgba(229,26,155,0.7);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 30%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.roomssingle-link span {
+	color: #fff;
+	font-family: inherit;
+	font-size: inherit;
+	width: 100%;
+
+	position: absolute;
+	top: 50%;
+	left: 0;
+
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+
+/* TOPPAGE INTRO */
+
+.toppage-intro {
+	height: 620px;
+}
+
+.toppage-image {
+	background: none no-repeat scroll center center transparent;
+	background-size: cover;
+	height: 100%;
+}
+
+.toppage-flexslider-backgroundimage .flexslider,
+.toppage-flexslider-backgroundimage .flex-viewport,
+.toppage-flexslider-backgroundimage .flexslider .slides,
+.toppage-flexslider-backgroundimage .flexslider .slides li {
+	height: 100%;
+}
 
 
 
@@ -7806,6 +7922,64 @@ li.deal.foreign-box{
 	margin-right: 5px;
 }
 	.toptitle-links a:last-child { margin-right: 0;}
+
+
+/* BROWSELIST */
+
+.browselist-box {
+	position: relative;
+}
+
+.browselist-back {
+	height: 100%;
+
+	position: absolute;
+	top: 15px;
+	left: 15px;
+}
+
+.browselist-back a {
+	color: #000;
+	font-family: 'GothamBold', sans-serif;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+	.browselist-back a:hover {
+		color: #FA9700;
+	}
+
+.browselist-back a i {
+	color: #000;
+	font-size: 14px;
+	padding-right: 5px;
+}
+	.browselist-back a:hover i {
+		color: #FA9700;
+	}
+
+.browselist-links {
+	text-align: right;
+	padding: 15px 20px 15px 100px;
+}
+
+.browselist-links li {
+	display: inline-block;
+	font-family: 'GothamBold', sans-serif;
+	font-size: 14px;
+	margin-right: 10px;
+	text-transform: uppercase;
+}
+
+.browselist-links li:last-child { margin-right: 0; }
+
+.browselist-links a {
+	font-family: 'GothamBook', sans-serif;
+	color: #666;
+}
+	.browselist-links a:hover,
+	.browselist-links a.active {
+		color: #FA9700;
+	}
 
 
 /* BOXLISTS */
@@ -8022,7 +8196,7 @@ li.deal.foreign-box{
 	width: 60%;
 	padding: 10px 20px;
 }
-	.roomslist-box-onlybooknow .roomslist-content {
+	.roomslist-box-booknowonly .roomslist-content {
 		width: 75%;
 	}
 

@@ -25,19 +25,29 @@
 			if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 
 				if ( get_post_meta( $post->ID, 'cebo_fullpic', true) ) {
+
 					$imgsrcuse = 'background-image: url(' . get_post_meta( $post->ID, 'cebo_fullpic', true ) . ');';
+
 				} elseif ( $imgsrc ) {
+
 					$imgsrcuse = $imgsrc;
+
 				} else {
+
 					$imgsrcuse = 'background-image: url(' . get_bloginfo('template_url') . '/images/watermark.jpg);';
+
 				}
 
 				$get_permalink = get_site_url() . '/' . ICL_LANGUAGE_CODE . '/hotel-rooms-times-square-new-york/' . $post->post_name;
 
 				if ( get_the_title() == "Penthouse Suites" ) {
-					$only = 'roomslist-box-onlybooknow';
+
+					$only = 'roomslist-box-booknowonly';
+
 				} else {
+
 					$only = '';
+
 				}
 
 		?>
@@ -52,7 +62,7 @@
 
 				</div>
 
-				<div class="roomslist-panel <?php echo $pent; ?>">
+				<div class="roomslist-panel">
 
 					<div class="roomslist-content">
 

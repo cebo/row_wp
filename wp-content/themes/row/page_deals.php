@@ -44,6 +44,8 @@
 
 						$title = get_the_title();
 						$slug_comp = sanitize_title($title);
+
+						$fullpic = get_post_meta( $post->ID, 'cebo_fullpic', true );
 						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full" );
 
 						if ( $count % 3 == 0 ) { $last = 'last'; }
@@ -53,11 +55,11 @@
 
 				<div class="boxlists-box <?php echo $last; ?>">
 
-					<?php if ( get_post_meta( $post->ID, 'cebo_fullpic', true ) ) { ?>
+					<?php if ( $fullpic ) { ?>
 
 						<div class="boxlists-imagebox">
 							<div class="boxlists-offersign">10% OFF</div>
-							<div class="boxlists-image" style="background-image: url(<?php echo get_post_meta( $post->ID, 'cebo_fullpic', true ); ?>);"></div>
+							<div class="boxlists-image" style="background-image: url(<?php echo $fullpic; ?>);"></div>
 						</div>
 
 					<?php } elseif ( $imgsrc ) { ?>
@@ -81,10 +83,11 @@
 						if ( $slug_comp == '5-cash-back' ) {
 
 							$learnmore = get_post_meta( $post->ID, 'cebo_learnmore_url', true );
+							$subtagline = get_post_meta( $post->ID, 'cebo_subtagline', true );
 
 					?>
 
-						<h2 class="boxlists-title"><?php echo get_post_meta( $post->ID, 'cebo_subtagline', true ); ?></h2>
+						<h2 class="boxlists-title"><?php echo $subtagline; ?></h2>
 						<div class="boxlists-content">
 
 							<?php echo content(25); ?>
@@ -136,21 +139,6 @@
 			</div>
 
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

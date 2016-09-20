@@ -25,23 +25,24 @@
 
 				if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 
+					$fullpic = get_post_meta( $post->ID, 'cebo_fullpic', true );
 					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 
 			?>
 
-				<div class="home-intro">
+				<div class="toppage-intro">
 
-					<?php if ( get_post_meta( $post->ID, 'cebo_fullpic', true) ) { ?>
+					<?php if ( $fullpic ) { ?>
 
-						<div class="stretch"  style="background-image: url(<?php echo get_post_meta($post->ID, 'cebo_fullpic', true); ?>);"></div>
+						<div class="toppage-image" style="background-image: url(<?php echo $fullpic; ?>);"></div>
 
 					<?php } elseif ( $imgsrc ) { ?>
 
-						<div class="stretch"  style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+						<div class="toppage-image" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 
 					<?php } else { ?>
 
-						<div class="stretch"  style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
+						<div class="toppage-image" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
 
 					<?php } ?>
 
