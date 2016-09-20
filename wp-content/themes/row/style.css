@@ -7858,6 +7858,74 @@ li.deal.foreign-box{
 	transform: translateY(-50%);
 }
 
+.browselist-box.browselist-singlerooms {
+	margin: 0 5%;
+}
+
+.browselist-singlerooms .browselist-back {
+	left: 0;
+}
+
+.browselist-singlerooms .browselist-links {
+	padding: 15px 0 15px 100px;
+}
+
+.roomsdetail-box {
+	width: 90%;
+	margin: 30px auto 0;
+
+	overflow: hidden;
+}
+
+	.roomsdetail-box-twoway .roomsdetail-col {
+		box-sizing: border-box;
+		float: left;
+		width: 50%;
+		padding-right: 5%;
+	}
+
+	.roomsdetail-box-threeway .roomsdetail-col {
+		box-sizing: border-box;
+		float: left;
+		width: 33.3333%;
+		padding-right: 5%;
+	}
+
+.roomsdetail-list-content h2,
+.roomsdetail-feature-list-content h2 {
+	color: #000;
+	font-family: 'GothamCondensedMedium', sans-serif;
+	font-size: 24px;
+	margin-bottom: 5px;
+}
+
+.roomsdetail-list-content ul {
+	padding-left: 30px;
+}
+
+.roomsdetail-list-content li {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	margin-bottom: 5px;
+	list-style-type: disc;
+}
+
+.roomsdetail-feature-list-content ul {
+}
+
+.roomsdetail-feature-list-content li {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	padding: 10px 0 10px 50px;
+	margin-bottom: 5px;
+}
+
+.roomsdetail-icon-cable { background: url(images/icons/ico-cable.png) no-repeat scroll 5px center transparent;}
+.roomsdetail-icon-desk { background: url(images/icons/ico-desk.png) no-repeat scroll 6px center transparent;}
+.roomsdetail-icon-phone { background: url(images/icons/ico-mobile.png) no-repeat scroll 8px center transparent;}
+.roomsdetail-icon-television { background: url(images/icons/ico-tv.png) no-repeat scroll 0 center transparent;}
+.roomsdetail-icon-wifi { background: url(images/icons/ico-wifi.png) no-repeat scroll 6px center transparent;}
+
 
 
 /* TOPPAGE INTRO */
@@ -7878,7 +7946,6 @@ li.deal.foreign-box{
 .toppage-flexslider-backgroundimage .flexslider .slides li {
 	height: 100%;
 }
-
 
 
 /* TOPTITLE */
@@ -7931,8 +7998,6 @@ li.deal.foreign-box{
 }
 
 .browselist-back {
-	height: 100%;
-
 	position: absolute;
 	top: 15px;
 	left: 15px;

@@ -4,6 +4,11 @@
 	
 	get_header();
 
+	$acf_fields = get_fields( $post->ID );
+	// var_dump( $acf_fields );
+
+	$gallery_repeater = $acf_fields['roomsdetail_gallery_repeater'];
+
 ?>
 
 <?php
@@ -19,18 +24,28 @@
 		<div class="headernav-block-secondary"></div>
 
 		<div class="toppage-intro toppage-flexslider-backgroundimage toppage-singlerooms">
+
+			<?php if ( false ) { ?>
 			
-			<div class="flexslider-js flexslider">
+				<div class="flexslider-js flexslider">
 
-				<ul class="slides">
-					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
-					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
-					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
-					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
-					<li class="toppage-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg)"></li>
-				</ul>
+					<ul class="slides">
 
-			</div>
+						<?php foreach ( $gallery_repeater as $gallery ) : ?>
+
+							<li class="toppage-image" style="background-image: url(<?php echo $gallery['image']['url']; ?>)"></li>
+
+						<?php endforeach; ?>
+
+					</ul>
+
+				</div>
+
+			<?php } else { ?>
+
+				<div class="toppage-image" style="background-image: url(<?php echo $imgsrc[0]; ?>)"></div>
+
+			<?php } ?>
 
 			<h1 class="roomssingle-title roomssingle-title-desktop"><?php the_title(); ?></h1>
 
@@ -72,7 +87,7 @@
 
 		</div>
 
-		<div class="browselist-box">
+		<div class="browselist-box browselist-singlerooms">
 				
 			<div class="browselist-back"><a href="#"><i class="fa fa-chevron-left"></i>Back</a></div>
 
@@ -90,58 +105,124 @@
 
 		</div>
 
-		<div class="roomsdetail-box">
-			
-			<div class="roomsdetail-col">
+		<?php
+
+			$list_column_flexible = $acf_fields['roomsdetail_list_column_flexible'];
+
+			// Push array according by column
+
+			$first_col = array();
+			$second_col = array();
+			$third_col = array();
+
+			foreach ( $list_column_flexible as $flex ) {
+
+				if ( $flex['placement'] == 'first_col' ) {
+
+					array_push( $first_col, $flex );
+
+				} elseif ( $flex['placement'] == 'second_col' ) {
+
+					array_push( $second_col, $flex );
+
+				} elseif ( $flex['placement'] == 'third_col' ) {
+
+					array_push( $third_col, $flex );
+
+				}
+
+			}
+
+			// Check how many columns are used
+
+			$check = 0;
+			$addclass = '';
+
+			if ( count( $first_col ) > 0 ) { $check++; }
+			if ( count( $second_col ) > 0 ) { $check++; }
+			if ( count( $third_col ) > 0 ) { $check++; }
+
+			if ( $check == 2 ) { $addclass = 'roomsdetail-box-twoway'; }
+			elseif ( $check == 3 ) { $addclass = 'roomsdetail-box-threeway'; }
+		?>
+
+		<div class="roomsdetail-box <?php echo $addclass; ?>">
+
+			<?php
+
+				// START function roomsdetail()
+
+				function roomsdetail( $col_array ) {
+
+					foreach ( $col_array as $col ) :
+
+						if ( $col['acf_fc_layout'] == 'roomsdetail_list_content' ) :
+
+			?>
+
+				<div class="roomsdetail-list-content">
 				
-				<h2>For your comfort</h2>
+					<h2><?php echo $col['title']; ?></h2>
 
-				<ul>
-					<li>Sleek work desk with ergonomic chair</li>
-					<li>Incredibly plush Euro Top platform beds with soft cotton linens and superb feather pillows</li>
-					<li>Innovative double windwo shades - regular and blackout - to customize amount of light and privacy</li>
-					<li>Multi-setting shower head</li>
-					<li>Bath towels and signature toiletries by PURE</li>
-					<li>Individual climate controls for comfort</li>
-					<li>Iron and ironing board</li>
-					<li>Hair dryer</li>
-					<li>Safe with keypad entry</li>
-					<li>Full-length mirror</li>
-				</ul>
+					<ul>
+						<?php foreach ( $col['list_item_repeater'] as $list_item ) : ?>
+							<li><?php echo $list_item['list_item'] ?></li>
+						<?php endforeach; ?>
+					</ul>
 
-			</div>
+				</div>
 
-			<div class="roomsdetail-col">
+			<?php elseif ( $col['acf_fc_layout'] == 'roomsdetail_feature_list_content' ) : ?>
+
+				<div class="roomsdetail-feature-list-content">
+
+					<h2><?php echo $col['title']; ?></h2>
+
+					<ul>
+						<?php foreach ( $col['list_item_repeater'] as $list_item ) : ?>
+							<li class="roomsdetail-icon-<?php echo $list_item['list_icon']; ?>"><?php echo $list_item['list_item'] ?></li>
+						<?php endforeach; ?>
+					</ul>
+
+				</div>
+
+			<?php
 				
-				<h2>For your worklife</h2>
+				endif; endforeach; }
 
-				<ul>
-					<li>Dedicated high-speed wireless Internet service</li>
-					<li>Cordless phone</li>
-				</ul>
+				// END function roomsdetail()
 
-				<h2>For your entertainment</h2>
+			?>
 
-				<ul>
-					<li>Conveniently located outlets and iHome docking station</li>
-					<li>32-inch flat screen LCD TV</li>
-					<li>complimentary cable and HBO</li>
-				</ul>
+			<?php if ( count( $first_col ) > 0 ) { ?>
 
-			</div>
+				<div class="roomsdetail-col">
 
-			<div class="roomsdetail-col roomsdetail-col-features">
-				
-				<h2>Features</h2>
+					<?php roomsdetail( $first_col ); ?>
 
-				<ul>
-					<li>iPod Docking Station</li>
-					<li>Flat screen LCD TVs</li>
-					<li>Cable and HBO</li>
-					<li>Desk and Ergonomic chair</li>
-				</ul>
+				</div>
 
-			</div>
+			<?php } ?>
+
+			<?php if ( count( $second_col ) > 0 ) { ?>
+
+				<div class="roomsdetail-col">
+
+					<?php roomsdetail( $second_col ); ?>
+
+				</div>
+
+			<?php } ?>
+
+			<?php if ( count( $third_col ) > 0 ) { ?>
+
+				<div class="roomsdetail-col">
+
+					<?php roomsdetail( $third_col ); ?>
+
+				</div>
+
+			<?php } ?>
 
 		</div>
 
