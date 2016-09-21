@@ -87,7 +87,7 @@
                   </li>
 
                   <li>
-                  <a class="button" target="_blank" href="http://www.rownyc.com/stay-save-exclusive-new-york-city-escape-offers-international-guests/">book now</a>
+                  <a class="button" target="_blank" href="<?php bloginfo('url'); ?>/stay-save-exclusive-new-york-city-escape-offers-international-guests/">book now</a>
                   </li>
                 </ul>
 

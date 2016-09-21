@@ -299,7 +299,8 @@ and (max-width : 1275px) {
 
 	/* PAGE - Amenities */
 
-	.page .suboverlay h1, .page .suboverlay h2.h1 {
+	.page .suboverlay h1, .page .suboverlay h2.h1,
+	.page .suboverlay h2 {
 	    margin-bottom: 7px;
 	}
 
@@ -365,10 +366,12 @@ and (max-width : 1275px) {
 
 	/* PAGE - Deals */
 
-	.deal-wrapper > h1 {
+	.deal-wrapper > h1,
+	.deal-wrapper > h2.h1	{
 	    font-size: 19px;
 	    line-height: 1.1;
 	    margin-bottom: 20px;
+		font-family: 'GothamBold';
 	}
 
 	.deal {
@@ -383,7 +386,8 @@ and (max-width : 1275px) {
 	    width: 370px;
 	}
 
-	.concierge-box .wideover.overlay h1 {
+	.concierge-box .wideover.overlay h1,
+	.concierge-box .wideover.overlay h2 {
 	    font-size: 18px;
 	}
 
@@ -811,7 +815,8 @@ and (max-width : 1024px) {
 	    width: 300px;
 	}
 
-	.concierge-box .wideover.overlay h1 {
+	.concierge-box .wideover.overlay h1,
+	.concierge-box .wideover.overlay h2 {
 	    font-size: 15px;
 	}
 
@@ -862,7 +867,8 @@ and (max-width : 1024px) {
 
 	/* PAGE - Deals */
 
-	.deal-wrapper > h1 {
+	.deal-wrapper > h1,
+	.deal-wrapper > h2.h1	{
 	    font-size: 19px;
 	}
 
@@ -1586,7 +1592,8 @@ and (max-width : 640px) {
 	    width: 370px;
 	}
 
-	.concierge-box .wideover.overlay h1 {
+	.concierge-box .wideover.overlay h1,
+	.concierge-box .wideover.overlay h2 {
 	    font-size: 18px;
 	}
 
@@ -2265,6 +2272,23 @@ and (max-width : 1024px)
 
 
 }
+
+
+@media only screen
+and (min-width : 1186px)
+and (max-width : 1275px)
+{
+
+
+.copie{
+	    padding: 17px 0px 40px 0px;
+}
+
+
+
+}
+
+
 
 /* ================================================  WIDTH 1366  ======================================= */
 

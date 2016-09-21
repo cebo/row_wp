@@ -9,7 +9,11 @@
 
 
 	<section class="contentarea">			
-						
+		
+	<div class="title-div">
+		<h1><?php the_title(); ?></h1>
+	</div>
+
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 			
 							
@@ -50,7 +54,7 @@
 
 							<li>
 								<div class="slide-image" style="background-image:url(<?php echo $galleryImages[$i]['full'][0];?>);"></div>
-								<div class="slide-description"><?php echo $attachment_meta_title; ?></div>
+								<div class="slide-description"><?php _e( $attachment_meta_title, 'row-theme-text' ); ?></div>
 							</li>								
 
 						<?php endif; ?>

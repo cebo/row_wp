@@ -93,7 +93,7 @@
 	
 					<div class="deal-wrapper">
 					
-						<h1><?php the_title(); ?></h1>
+						<h2 class="h1"><?php the_title(); ?></h2>
 	
 						<p><?php echo excerpt(40); ?></p>
 	

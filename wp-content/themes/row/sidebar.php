@@ -34,7 +34,7 @@
 		
 		
 		<div class="populararticles">
-			<h2 class="sidehead">Popular This Week</h2>
+			<h2 class="sidehead"><?php _e('Popular This Week','row-theme-text'); ?></h2>
 			
 			<ul>
 			
@@ -51,9 +51,11 @@
 					
 													<?php
 				$category = get_the_category(); 
+
+				$categorytext = $category[0]->cat_name;
 				
 				?>
-				<a class="popcat" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a>
+				<a class="popcat" href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php _e($categorytext,'row-theme-text'); ?></a>
 					
 				</li>
 				
@@ -78,7 +80,7 @@
 		
 							
 		<div class="instas">
-			<h2 class="sidehead">Stay connected. Hashtag us!<span>#MoreNYthanNY</span></h2>
+			<h2 class="sidehead"><?php _e('Stay connected. Hashtag us!','row-theme-text'); ?><span><?php _e('#MoreNYthanNY','row-theme-text'); ?></span></h2>
 			
 			<div id="instafeed"></div>
 			

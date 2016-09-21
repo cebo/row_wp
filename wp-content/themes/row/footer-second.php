@@ -85,20 +85,24 @@
 
 			</section>
 					
-			<div class="tier-one">
-			
-				<ul>							
-					<?php wp_nav_menu( array( icl_object_id(13, 'Footer Navigation'),  'theme_location' => 'footer', 'items_wrap' => '%3$s', 'container' => '') ); ?>					
-				</ul>
-			
-			</div>
+			<?php if(function_exists('icl_object_id') && ICL_LANGUAGE_CODE !='en') {} else { ?>
+
+				<div class="tier-one">
+				
+					<ul>							
+						<?php wp_nav_menu( array( icl_object_id(13, 'Footer Navigation'),  'theme_location' => 'footer', 'items_wrap' => '%3$s', 'container' => '') ); ?>					
+					</ul>
+				
+				</div>
+
+			<?php } ?>
 			
 			<div class="tier-two">
 			
 				<ul>
-					<li>Reservations<span>888.352.3650</span></li>
-					<li>EMAIL<span><a href="mailto:info@rownyc.com">info@rownyc.com</a></span></li>
-					<li class="widest">A Times Square Hotel<span>700 8th Avenue, New York, NY 10036</span></li>
+					<li><?php _e('Reservations','row-theme-text'); ?><span><?php _e('888.352.3650','row-theme-text'); ?></span></li>
+					<li><?php _e('EMAIL','row-theme-text'); ?><span><a href="mailto:info@rownyc.com"><?php _e('info@rownyc.com','row-theme-text'); ?></a></span></li>
+					<li class="widest"><?php _e('A Times Square Hotel','row-theme-text'); ?><span><?php _e('700 8th Avenue, New York, NY 10036','row-theme-text'); ?></span></li>
 				</ul>
 			
 			</div>
