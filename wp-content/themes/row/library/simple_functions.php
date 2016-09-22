@@ -133,6 +133,32 @@ function content($limit) {
   return $content;
 }
 
+function content2($string, $limit = null) {
+    if ( isset( $limit ) ) {
+
+        $content = explode( ' ', $string, $limit );
+
+        if ( count( $content ) >= $limit ) {
+            array_pop( $content );
+            $content = implode( ' ', $content ) . '...';
+        } else {
+            $content = implode( ' ', $content );
+        }
+
+    } else {
+
+        $content = $string;
+    
+    }
+
+    $content = preg_replace('/\[.+\]/','', $content);
+    $content = apply_filters('the_content', $content); 
+    $content = str_replace(']]>', ']]&gt;', $content);
+    $content = strip_tags($content);
+    return $content;
+
+}
+
 /* ==================================== */
 
 if ( function_exists( 'add_theme_support' ) ) { // WP 2.9 Post Thumbnail Feature

@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+	
+	get_header();
+
+	ini_set('xdebug.var_display_max_depth', -1);
+	ini_set('xdebug.var_display_max_children', -1);
+	ini_set('xdebug.var_display_max_data', -1);
+
+?>
 
 	<section class="contentarea">
 
@@ -30,7 +38,7 @@
 						<div class="table-parent">
 						<div class="table-child">
 							<h2>A Times Square Hotel</h2>
-							<h3>The heart of Manhattan. 24/7 anything and everything</h3>
+							<p>The heart of Manhattan. 24/7 anything and everything</p>
 							<a href="#">View Rooms</a>
 						</div>
 						</div>
@@ -47,25 +55,29 @@
 
 			<div class="intro-box left">
 
+				<?php
+
+					if ( have_rows('homepage_page_section_repeater', 'options') ) : while ( have_rows('homepage_page_section_repeater', 'options') ) : the_row();
+
+						$page = get_sub_field('page_select');
+						$title = get_sub_field('title');
+
+						if ( $title && $title != '' ) {}
+						else { $title = $page->post_title; }
+
+				?>
+
 				<div class="intro-pages">
 
-					<h2>The Hotel</h2>
+					<h2><?php echo $title; ?></h2>
 
-					<p>The Row NYC hotel has pioneered a new era of individuality among Times Square hotels by meeting NYC's signature urban girt with grandeur. Row NYC transforms your stay into a completely contemporary... experience - with a front</p>
+					<?php echo wpautop( content2( $page->post_content, 50 ) ); ?>
 
-					<a href="#">Read more</a>
+					<a href="<?php echo get_permalink( $page->ID ); ?>"><?php _e( 'Read more', 'row-theme-text' ); ?></a>
 
 				</div>
 
-				<div class="intro-pages">
-
-					<h2>The Hotel</h2>
-
-					<p>The Row NYC hotel has pioneered a new era of individuality among Times Square hotels by meeting NYC's signature urban girt with grandeur. Row NYC transforms your stay into a completely contemporary... experience - with a front</p>
-
-					<a href="#">Read more</a>
-
-				</div>
+				<?php endwhile; endif; ?>
 
 			</div>
 
@@ -73,95 +85,91 @@
 
 				<ul class="intro-iconamenities">
 
-					<h2>Features &amp; Amenities</h2>
+					<h2><?php echo 'test'; ?></h2>
+
+					<?php
+
+						if ( have_rows('homepage_amenities_list_item_repeater', 'options') ) : while ( have_rows('homepage_amenities_list_item_repeater', 'options') ) : the_row();
+
+							$type = get_sub_field('type');
+							$text = get_sub_field('text');
+
+					?>
+
+						<?php if ( $type == 'text' ) {
+
+							$icon = get_sub_field('icon');
+						?>
 					
-					<li>
-						<i class="fa fa-cutlery"></i>
-						<div class="table-parent"><div class="table-child"><span>DistrictM</span></div></div>
-					</li>
+							<li class="intro-amen-ico-<?php echo $icon; ?>">
+								<div class="table-parent"><div class="table-child"><span><?php echo $text; ?></span></div></div>
+							</li>
 
-					<li>
-						<i class="fa fa-cutlery"></i>
-						<div class="table-parent"><div class="table-child"><span>1 block from Times Square</span></div></div>
-					</li>
+						<?php } elseif ( $type == 'link' ) {
 
-					<li>
-						<i class="fa fa-cutlery"></i>
-						<div class="table-parent"><div class="table-child"><span>Cyc Fitness</span></div></div>
-					</li>
+							$link = get_sub_field( 'link' );
+						?>
 
-					<li>
-						<i class="fa fa-wifi"></i>
-						<div class="table-parent"><div class="table-child"><span>Internet lounge</span></div></div>
-					</li>
+							<li>
+								<div class="table-parent"><div class="table-child"><a href="<?php echo $link; ?>"><?php echo $text; ?></a></div></div>
+							</li>
 
-					<li>
-						<i class="fa fa-camera"></i>
-						<div class="table-parent"><div class="table-child"><span>Bosco Booth</span></div></div>
-					</li>
+						<?php } ?>
 
-					<li>
-						<i class="fa fa-cutlery"></i>
-						<div class="table-parent"><div class="table-child"><span>Glam &amp; Go</span></div></div>
-					</li>
-
-					<li>
-						<i class="fa fa-usd"></i>
-						<div class="table-parent"><div class="table-child"><span>IconicM</span></div></div>
-					</li>
-
-					<li>
-						<i class="fa fa-cutlery"></i>
-						<div class="table-parent"><div class="table-child"><span>Best Food Hall in NYC</span></div></div>
-					</li>
-
-					<li>
-						<div class="table-parent"><div class="table-child"><a href="#">View all amenities</a></div></div>
-					</li>
+					<?php endwhile; endif; ?>
 
 				</ul>
 
 				<div class="intro-showamenities boxlists-twocol boxlists-showamen">
-					
-					<div class="boxlists-box left">
-						<div class="boxlists-imagebox">
-							<div class="boxlists-offersign">10% OFF</div>
-							<div class="boxlists-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);"></div>
+
+					<?php
+
+						$count = 1;
+
+						if ( have_rows('homepage_specials_page_select_repeater', 'options') ) : while ( have_rows('homepage_specials_page_select_repeater', 'options') ) : the_row();
+
+							$page = get_sub_field('page_select');
+
+							$title = $page->post_title;
+							$content = $page->post_content;
+
+							$moreinfo = get_permalink( $page->ID );
+							$booklink = get_post_meta( $page->ID, 'cebo_booklink' );
+
+							$fullpic = get_post_meta( $page->ID, 'cebo_fullpic', true );
+
+							if ( $fullpic ) {
+								$imgsrc = $fullpic;
+							} else {
+								$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' )[0];
+							}
+
+							if ( $count % 2 == 0 ) { $addclass = 'right'; }
+							else { $addclass = 'left'; }
+
+					?>
+
+						<div class="boxlists-box <?php echo $addclass; ?>">
+							<div class="boxlists-imagebox">
+								<div class="boxlists-offersign">10% OFF</div>
+								<div class="boxlists-image" style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+							</div>
+
+							<h2 class="boxlists-title"><?php echo $title; ?></h2>
+
+							<div class="boxlists-content">
+
+								<?php echo wpautop( content2( $content, 50 ) ); ?>
+
+							</div>
+
+							<div class="boxlists-links">
+								<a href="<?php echo $booklink; ?>"><?php _e( 'Book Now', 'row-theme-text' ); ?></a>
+								<a class="boxlists-moreinfo" href="<?php echo $moreinfo; ?>"><?php _e( 'More Info', 'row-theme-text' ); ?></a>
+							</div>
 						</div>
 
-						<h2 class="boxlists-title">Pay Now &amp; Save</h2>
-
-						<div class="boxlists-content">
-
-							<p>Commitment isn&rsquo; for eveeryone... but what better reason to commit when you can receive 10% off your entire stay! With all of that money saved you can spend more on all that New York City has to offer such...</p>
-
-						</div>
-
-						<div class="boxlists-links">
-							<a href="#">Book Now</a>
-							<a class="boxlists-moreinfo" href="#">More Info</a>
-						</div>
-					</div>
-
-					<div class="boxlists-box right">
-						<div class="boxlists-imagebox">
-							<div class="boxlists-offersign">10% OFF</div>
-							<div class="boxlists-image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);"></div>
-						</div>
-
-						<h2 class="boxlists-title">City Kitchen Ultimate Breakfast Package</h2>
-
-						<div class="boxlists-content">
-							
-							<p>Commitment isn&rsquo; for eveeryone... but what better reason to commit when you can receive 10% off your entire stay! With all of that money saved you can spend more on all that New York City has to offer such...</p>
-
-						</div>
-
-						<div class="boxlists-links">
-							<a href="#">Book Now</a>
-							<a class="boxlists-moreinfo" href="#">More Info</a>
-						</div>
-					</div>
+					<?php $count++; endwhile; endif; ?>
 
 				</div>
 
@@ -171,55 +179,79 @@
 
 		<div class="home-features">
 
-			<div class="feature-box left" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+			<?php
 
-				<div class="feature-content">
-					<h2>City Kitchen</h2>
-					<p>A Times Square Food Market</p>
+				$count = 1;
+
+				if ( have_rows('homepage_featured_pages_repeater', 'options') ) : while ( have_rows('homepage_featured_pages_repeater', 'options') ) : the_row();
+
+					$box_size = get_sub_field('box_size');
+					$box_type = get_sub_field('box_type');
+
+					$page = get_sub_field('page_select');
+					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' )[0];
+
+					$title = get_sub_field('title');
+					$content = get_sub_field('description');
+					$image = get_sub_field('image');
+
+					if ( $title && $title != '' ) {}
+					else { $title = $page->post_title; }
+
+					if ( $content && $content != '' ) {}
+					else { $content = $page->post_content; }
+
+					if ( $image && $image != '' ) { $image = $image['url']; }
+					else { $image = $imgsrc; }
+
+					if ( $box_size == 'half' ) { $addclass = 'feature-box-half'; }
+					elseif ( $box_size == 'full' ) { $addclass = 'feature-box-full'; }
+
+					if ( $box_type == 'normal' ) {
+
+						if ( $count % 2 == 0 ) { $addclass .= ' right'; }
+						else { $addclass .= ' left'; }
+
+						$addclass .= ' feature-box-normal';
+
+			?>
+
+				<div class="<?php echo $addclass; ?>">
+
+					<a class="feature-box-link" href="#">
+
+						<div class="feature-box-image" style="background-image: url(<?php echo $image; ?>);"></div>
+
+						<div class="feature-content">
+							<h2><?php echo $title; ?></h2>
+							<?php echo wpautop( content2( $content ) ); ?>
+						</div>
+
+					</a>
+
 				</div>
 
-			</div>
+			<?php $count++; } elseif ( $box_type == 'getcontent' ) {
 
-			<div class="feature-box right" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+				$addclass .= ' feature-box-getcontent';
 
-				<div class="feature-content">
-					<h2>City Kitchen</h2>
-					<p>A Times Square Food Market</p>
-				</div>
+			?>
 
-			</div>
+				<div class="<?php echo $addclass; ?>">
 
-			<div class="feature-box left" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
-
-				<div class="feature-content">
-					<h2>City Kitchen</h2>
-					<p>A Times Square Food Market</p>
-				</div>
-
-			</div>
-
-			<div class="feature-box right" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
-
-				<div class="feature-content">
-					<h2>City Kitchen</h2>
-					<p>A Times Square Food Market</p>
-				</div>
-
-			</div>
-
-			<div class="feature-boxfull" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
-				
-				<h2>Outside The Row NYC Hotel</h2>
-
-				<div class="feature-contentfull">
+					<div class="feature-box-image" style="background-image: url(<?php echo $image; ?>);"></div>
 					
-					<p>With so many New York activities and attractions to see, do and enjoy, NYC is every traveler's dream. We at the Row NYC hotel know that choosing what, where, why and how can be a challenge, so we've made things easy with a list of our favorite Manhattan attractions in TImes Square - and beyond.</p>
+					<h2><?php echo $title; ?></h2>
 
-					<a href="#">Explore our guides below</a>
+					<div class="feature-content">
+						
+						<?php echo wpautop( content2( $content ) ); ?>
+
+					</div>
 
 				</div>
 
-			</div>
+			<?php $count = 0; } endwhile; endif; ?>
 
 		</div>
 

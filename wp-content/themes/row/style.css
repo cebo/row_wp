@@ -7514,6 +7514,14 @@ li.deal.foreign-box{
 	padding: 20px 0;
 }
 
+.intro-amen-ico-utensil { background: url(images/icons/ico-utensil.png) no-repeat scroll 0 center transparent;}
+.intro-amen-ico-walk { background: url(images/icons/ico-walk.png) no-repeat scroll 0 center transparent;}
+.intro-amen-ico-gym { background: url(images/icons/ico-gym.png) no-repeat scroll 0 center transparent;}
+.intro-amen-ico-wifi { background: url(images/icons/ico-wifi.png) no-repeat scroll 0 center transparent;}
+.intro-amen-ico-camera { background: url(images/icons/ico-camera.png) no-repeat scroll 0 center transparent;}
+.intro-amen-ico-hairdryer { background: url(images/icons/ico-hairdryer.png) no-repeat scroll 0 center transparent;}
+.intro-amen-ico-usd { background: url(images/icons/ico-usd.png) no-repeat scroll 0 center transparent;}
+
 .intro-iconamenities li {
 	float: left;
 	width: 33.33%;
@@ -7522,22 +7530,12 @@ li.deal.foreign-box{
 	position: relative;
 }
 
-.intro-iconamenities i {
-	font-size: 30px;
-	line-height: 80px;
-	text-align: center;
-	height: 100%;
-	width: 50px;
-
-	position: absolute;
-}
-
 .intro-iconamenities span {
 	display: inline-block;
 	color: #414141;
 	font-family: 'GothamBook', sans-serif;
 	font-size: 16px;
-	padding: 0 10px 0 65px;
+	padding: 0 10px 0 50px;
 }
 
 .intro-iconamenities a {
@@ -7560,26 +7558,69 @@ li.deal.foreign-box{
 	overflow: auto;
 }
 
-.feature-box {
-	background: none no-repeat scroll center center transparent;
-	background-size: cover;
+.feature-box-half {
 	width: 49.5%;
-	height: 450px;
 	margin: 0 0 1%;
 
 	position: relative;
 }
+	.feature-box-half.left { float: left;}
+	.feature-box-half.right { float: right;}
 
-.feature-content {
+.feature-box-link {
+	display: block;
+	height: 100%;
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.feature-box-image {
+	background: none no-repeat scroll center center transparent;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+	.feature-box-normal:hover .feature-box-image,
+	.feature-box-getcontent:hover .feature-box-image {
+		-webkit-transform: scale(1.05);
+		-moz-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+
+.feature-box-normal {
+	height: 450px;
+	overflow: hidden;
+
+	position: relative;
+}
+
+.feature-box-normal .feature-content {
 	width: 90%;
 	text-align: center;
 
 	position: absolute;
 	left: 5%;
 	bottom: 35px;
+	z-index: 2;
 }
 
-.feature-content h2 {
+.feature-box-normal .feature-content h2 {
 	color: #fff;
 	font-family: 'GothamBold', sans-serif;
 	font-size: 40px;
@@ -7587,21 +7628,25 @@ li.deal.foreign-box{
 	margin-bottom: 8px;
 }
 
-.feature-content p {
+.feature-box-normal .feature-content p {
 	color: #fff;
 	font-family: 'GothamBook', sans-serif;
 	font-size: 16px;
 	padding: 0;
 }
 
-.feature-boxfull {
+.feature-box-full {
 	background: none no-repeat scroll center center transparent;
 	background-size: cover;
 	clear: both;
 	text-align: center;
+	margin: 0 0 1%;
+	overflow: hidden;
+
+	position: relative;
 }
 
-.feature-boxfull h2 {
+.feature-box-getcontent h2 {
 	color: #fff;
 	font-family: 'GothamBold', sans-serif;
 	font-size: 60px;
@@ -7609,16 +7654,22 @@ li.deal.foreign-box{
 	text-shadow: 0 0 3px #000;
 	text-transform: uppercase;
 	padding: 40px 0 20px;
+
+	position: relative;
+	z-index: 2;
 }
 
-.feature-contentfull {
+.feature-box-getcontent .feature-content {
 	background-color: rgba(255,255,255,0.8);
 	max-width: 60%;
 	padding: 20px;
 	margin: 0 auto;
+
+	position: relative;
+	z-index: 2;
 }
 
-.feature-contentfull p {
+.feature-box-getcontent .feature-content p {
 	color: #000;
 }
 
