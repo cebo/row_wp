@@ -260,7 +260,11 @@ ga('send', 'pageview');
 
 		<div class="topnav-area">
 			
-			<div class="nav-logo"><img title="Row NYC" alt="Row NYC" src="<?php bloginfo('template_url'); ?>/images/logo.png" /></div>
+			<div class="nav-logo">
+				<a href="<?php bloginfo('url'); ?>">
+					<img title="Row NYC" alt="Row NYC" src="<?php bloginfo('template_url'); ?>/images/logo.png" />
+				</a>
+			</div>
 
 			<div class="nav-language-address">
 

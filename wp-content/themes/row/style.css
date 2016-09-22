@@ -7272,6 +7272,17 @@ li.deal.foreign-box{
 	left: 60px;
 }
 
+.nav-logo a {
+	display: block;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+	.nav-logo a:hover { opacity: 0.7; }
+
 .nav-logo img {
 	display: block;
 	width: 100%;
@@ -7290,7 +7301,7 @@ li.deal.foreign-box{
 	font-size: 14px;
 	line-height: 1;
 	text-transform: uppercase;
-	padding: 10px 0;
+	padding: 10px 0 20px;
 	margin-right: 10px;
 	cursor: pointer;
 
@@ -7321,15 +7332,29 @@ li.deal.foreign-box{
 	visibility: hidden;
 
 	position: absolute;
-	top: 40px;
+	top: 30px;
 	left: 50%;
 	margin-left: -75px;
 	z-index: 1;
+
+	-webkit-transition: all 0.1s ease 0s;
+	-moz-transition: all 0.1s ease 0s;
+	-o-transition: all 0.1s ease 0s;
+	-ms-transition: all 0.1s ease 0s;
+	transition: all 0.1s ease 0s;
 }
 
 .nav-language:hover ul {
 	opacity: 1;
 	visibility: visible;
+
+	top: 40px;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
 
 .nav-language li {
@@ -7345,6 +7370,12 @@ li.deal.foreign-box{
 	display: block;
 	color: #fff;
 	padding: 15px 25px;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
 	.nav-language a:hover {
 		background-color: #fff;
@@ -7371,7 +7402,7 @@ li.deal.foreign-box{
 	}
 
 .nav-list {
-	padding: 15px 30px 40px 0;
+	padding: 5px 30px 40px 0;
 	text-align: right;
 }
 
@@ -7382,11 +7413,18 @@ li.deal.foreign-box{
 	.nav-list li:last-child { margin-right: 0; }
 
 .nav-list a {
-	color: #ddd;
+	color: #fff;
 	font-family: 'GothamBook';
 	font-size: 23px;
 	text-transform: uppercase;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
+	.nav-list a:hover { opacity: 0.7;}
 
 .bottomnav-area {
 	background-color: rgba(0,0,0,0.8);
@@ -7462,7 +7500,14 @@ li.deal.foreign-box{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
+	.schedulebook button:hover { color: #000; }
 
 .table-parent { display: table; height: 100%; width: 100%;}
 .table-child { display: table-cell; vertical-align: middle;}
@@ -7500,7 +7545,18 @@ li.deal.foreign-box{
 	color: #e51a9b;
 	font-size: 18px;
 	font-family: 'GothamBook', sans-serif;
+
+	opacity: 1;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
+	.intro-pages a:hover {
+		opacity: 0.7;
+	}
 
 .intro-iconamenities {
 	overflow: auto;
@@ -7540,11 +7596,18 @@ li.deal.foreign-box{
 
 .intro-iconamenities a {
 	display: inline-block;
-	color: #e51a9b;
+	color: #E51A9A;
 	font-family: 'GothamBook', sans-serif;
 	font-size: 16px;
 	margin-left: 10px;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
+	.intro-iconamenities a:hover { opacity: 0.7; }
 
 .intro-showamenities {
 	overflow: auto;
@@ -7588,11 +7651,11 @@ li.deal.foreign-box{
 	left: 0;
 	z-index: 1;
 
-	-webkit-transition: all 0.4s ease 0s;
-	-moz-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	-ms-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.5s ease-out 0s;
+	-moz-transition: all 0.5s ease-out 0s;
+	-o-transition: all 0.5s ease-out 0s;
+	-ms-transition: all 0.5s ease-out 0s;
+	transition: all 0.5s ease-out 0s;
 }
 	.feature-box-normal:hover .feature-box-image,
 	.feature-box-getcontent:hover .feature-box-image {
@@ -8196,14 +8259,25 @@ li.deal.foreign-box{
 	text-transform: uppercase;
 	padding: 10px 20px;
 	margin-right: 5px;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
+	.boxlists-links a:hover { color: #000; }
+
 	.boxlists-links .boxlists-moreinfo {
 		box-sizing: border-box;
 		border: 1px solid #000;
 		background-color: #fff;
 		color: #000;
 		margin-right: 0;
+
+		opacity: 1;
 	}
+		.boxlists-links .boxlists-moreinfo:hover { opacity: 0.7; }
 
 	.boxlists-links .boxlists-enroll {
 		display: inline-block;
@@ -8335,6 +8409,12 @@ li.deal.foreign-box{
 	position: absolute;
 	top: 0;
 	right: 0;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
 
 	.roomslist-link.roomslist-link-moreinfo {
@@ -8343,6 +8423,7 @@ li.deal.foreign-box{
 
 		right: 25%;
 	}
+		.roomslist-link.roomslist-link-moreinfo:hover { opacity: 1; background-color: rgba(0,0,0,0.3);}
 
 .roomslist-link span {
 	color: #fff;
@@ -8359,9 +8440,17 @@ li.deal.foreign-box{
 	-o-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
+	.roomslist-link:hover span { color: #000; }
 
 	.roomslist-link.roomslist-link-moreinfo span { color: #000; }
+		.roomslist-link.roomslist-link-moreinfo:hover span { color: #000; }
 
 /* FLEXSLIDER - GALLERY THEME */
 
@@ -8424,8 +8513,8 @@ li.deal.foreign-box{
 	text-transform: uppercase;
 }
 
-.home-intro-theme h3 {
-	color: #ddd;
+.home-intro-theme p {
+	color: #E1E0DE;
 	font-family: 'GothamBook', sans-serif;
 	font-size: 16px;
 	line-height: 1;
@@ -8433,8 +8522,8 @@ li.deal.foreign-box{
 	padding: 15px 0 20px;
 }
 
-.home-intro-theme a {
-	background-color: #e51a9b;
+.home-intro-theme .owl-block-link {
+	background-color: #E51A9A;
 	display: inline-block;
 	color: #fff;
 	font-family: 'Montserrat', sans-serif;

@@ -2,10 +2,6 @@
 	
 	get_header();
 
-	ini_set('xdebug.var_display_max_depth', -1);
-	ini_set('xdebug.var_display_max_children', -1);
-	ini_set('xdebug.var_display_max_data', -1);
-
 ?>
 
 	<section class="contentarea">
@@ -14,38 +10,31 @@
 
 			<div id="owl-example" class="owl-carousel home-intro-theme">
 
-				<?php 
+				<?php
 
-					query_posts(array(
-						'post_type' => 'page',
-						'p' => 6308,
-					));
+					if ( have_rows('homepage_gallery_repeater', 'options') ) : while ( have_rows('homepage_gallery_repeater', 'options') ) : the_row();
 
-					if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
-
-						$galleryImages = get_post_gallery_imagess(); 
-						$imagesCount = count( $galleryImages );
-
-						if ( $imagesCount > 0 ) :
-						for ( $i = 0; $i < $imagesCount; $i++ ) :
-						if (!empty($galleryImages[$i])) :
+						$imgsrc = get_sub_field('image');
+						$title = get_sub_field('title');
+						$description = get_sub_field('description');
+						$link = get_sub_field('link');
+						$link_text = get_sub_field('link_text');
 
 				?>
 
-					<div class="owl-block" style="background-image: url(<?php bloginfo('template_url'); ?>/images/hall.jpg);">
+					<div class="owl-block" style="background-image: url(<?php echo $imgsrc['url']; ?>);">
 						<div class="table-parent">
 						<div class="table-child">
-							<h2>A Times Square Hotel</h2>
-							<p>The heart of Manhattan. 24/7 anything and everything</p>
-							<a href="#">View Rooms</a>
+							<h2><?php echo $title; ?></h2>
+							<?php echo $description; ?>
+							<?php if ( $link && $link != '' ) { ?>
+								<a class="owl-block-link" href="<?php echo $link; ?>"><?php echo $link_text; ?></a>
+							<?php } ?>
 						</div>
 						</div>
 					</div>
 
-					<?php endif; endfor; endif; ?>
-				<?php endwhile; endif; wp_reset_query(); ?>	
+				<?php endwhile; endif; ?>
 
 			</div>
 
@@ -85,7 +74,15 @@
 
 				<ul class="intro-iconamenities">
 
-					<h2><?php echo 'test'; ?></h2>
+					<?php
+
+						$title = get_field('homepage_amenities_list_item_title', 'options');
+
+						if ( $title && $title != '' ) { ?>
+
+						<h2><?php echo $title; ?></h2>
+
+					<?php } ?>
 
 					<?php
 
@@ -134,7 +131,9 @@
 							$content = $page->post_content;
 
 							$moreinfo = get_permalink( $page->ID );
-							$booklink = get_post_meta( $page->ID, 'cebo_booklink' );
+							$booklink = get_post_meta( $page->ID, 'cebo_booklink', true );
+
+							$pricepoint = get_post_meta( $page->ID, 'cebo_pricepoint', true );
 
 							$fullpic = get_post_meta( $page->ID, 'cebo_fullpic', true );
 
@@ -151,7 +150,9 @@
 
 						<div class="boxlists-box <?php echo $addclass; ?>">
 							<div class="boxlists-imagebox">
-								<div class="boxlists-offersign">10% OFF</div>
+								<?php if ( $pricepoint && $pricepoint != '' ) { ?>
+									<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
+								<?php } ?>
 								<div class="boxlists-image" style="background-image: url(<?php echo $imgsrc; ?>);"></div>
 							</div>
 
@@ -245,7 +246,7 @@
 
 					<div class="feature-content">
 						
-						<?php echo wpautop( content2( $content ) ); ?>
+						<?php echo wpautop( $content ); ?>
 
 					</div>
 

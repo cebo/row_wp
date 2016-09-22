@@ -48,6 +48,8 @@
 						$fullpic = get_post_meta( $post->ID, 'cebo_fullpic', true );
 						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full" );
 
+						$pricepoint = get_post_meta( $post->ID, 'cebo_pricepoint', true );
+
 						if ( $count % 3 == 0 ) { $last = 'last'; }
 						else { $last = ''; }
 
@@ -58,21 +60,27 @@
 					<?php if ( $fullpic ) { ?>
 
 						<div class="boxlists-imagebox">
-							<div class="boxlists-offersign">10% OFF</div>
+							<?php if ( $pricepoint && $pricepoint != '' ) { ?>
+								<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
+							<?php } ?>
 							<div class="boxlists-image" style="background-image: url(<?php echo $fullpic; ?>);"></div>
 						</div>
 
 					<?php } elseif ( $imgsrc ) { ?>
 
 						<div class="boxlists-imagebox">
-							<div class="boxlists-offersign">10% OFF</div>
+							<?php if ( $pricepoint && $pricepoint != '' ) { ?>
+								<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
+							<?php } ?>
 							<div class="boxlists-image" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 						</div>
 
 					<?php } else { ?>
 
 						<div class="boxlists-imagebox">
-							<div class="boxlists-offersign">10% OFF</div>
+							<?php if ( $pricepoint && $pricepoint != '' ) { ?>
+								<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
+							<?php } ?>
 							<div class="boxlists-image" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
 						</div>
 
