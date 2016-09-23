@@ -166,7 +166,7 @@
 
 					<ul>
 						<?php foreach ( $col['list_item_repeater'] as $list_item ) : ?>
-							<li><?php echo $list_item['list_item'] ?></li>
+							<li><?php echo $list_item['text'] ?></li>
 						<?php endforeach; ?>
 					</ul>
 
@@ -180,7 +180,7 @@
 
 					<ul>
 						<?php foreach ( $col['list_item_repeater'] as $list_item ) : ?>
-							<li class="roomsdetail-icon-<?php echo $list_item['list_icon']; ?>"><?php echo $list_item['list_item'] ?></li>
+							<li class="roomsdetail-icon-<?php echo $list_item['icon']; ?>"><?php echo $list_item['text'] ?></li>
 						<?php endforeach; ?>
 					</ul>
 
