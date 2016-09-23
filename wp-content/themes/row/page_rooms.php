@@ -26,7 +26,7 @@
 
 				if ( get_post_meta( $post->ID, 'cebo_fullpic', true) ) {
 
-					$imgsrcuse = 'background-image: url(' . get_post_meta( $post->ID, 'cebo_fullpic', true ) . ');';
+					$imgsrcuse = get_post_meta( $post->ID, 'cebo_fullpic', true );
 
 				} elseif ( $imgsrc ) {
 
@@ -34,7 +34,7 @@
 
 				} else {
 
-					$imgsrcuse = 'background-image: url(' . get_bloginfo('template_url') . '/images/watermark.jpg);';
+					$imgsrcuse = get_bloginfo('template_url') . '/images/watermark.jpg);';
 
 				}
 
