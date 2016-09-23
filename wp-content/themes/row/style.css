@@ -8423,7 +8423,9 @@ li.deal.foreign-box{
 
 		right: 25%;
 	}
-		.roomslist-link.roomslist-link-moreinfo:hover { opacity: 1; background-color: rgba(0,0,0,0.3);}
+		.roomslist-link.roomslist-link-moreinfo:hover {
+			opacity: 0.6;
+		}
 
 .roomslist-link span {
 	color: #fff;
