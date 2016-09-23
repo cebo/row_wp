@@ -7970,7 +7970,14 @@ li.deal.foreign-box{
 	-o-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
+	.roomssingle-link:hover span { color: #000; }
 
 .browselist-box.browselist-singlerooms {
 	margin: 0 5%;

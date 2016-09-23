@@ -38,7 +38,9 @@
 
 				}
 
-				$get_permalink = get_site_url() . '/' . ICL_LANGUAGE_CODE . '/hotel-rooms-times-square-new-york/' . $post->post_name;
+				// $get_permalink = get_site_url() . '/' . ICL_LANGUAGE_CODE . '/hotel-rooms-times-square-new-york/' . $post->post_name;
+
+				$get_permalink = get_permalink();
 
 				if ( get_the_title() == "Penthouse Suites" ) {
 
@@ -74,7 +76,7 @@
 
 					<?php if ( get_the_title() == "Penthouse Suites" ) { ?>
 
-						<a class="roomslist-link" href="mailto:reservations@rownyc.com"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+						<a class="roomslist-link" href="mailto:reservations@rownyc.com"><span><?php _e( 'Book Now', 'row-theme-text' ); ?></span></a>
 
 					<?php } else {
 
@@ -90,9 +92,9 @@
 
 					?>
 
-						<a class="roomslist-link roomslist-link-moreinfo" href="<?php echo $get_permalink; ?>"><span><?php _e('More Info','row-theme-text'); ?></span></a>
+						<a class="roomslist-link roomslist-link-moreinfo" href="<?php echo $get_permalink; ?>"><span><?php _e( 'More Info', 'row-theme-text' ); ?></span></a>
 
-						<a class="roomslist-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $booklink; ?>"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+						<a class="roomslist-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $booklink; ?>"><span><?php _e( 'Book Now', 'row-theme-text' ); ?></span></a>
 
 					<?php } ?>
 
