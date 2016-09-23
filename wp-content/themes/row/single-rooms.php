@@ -25,7 +25,7 @@
 
 		<div class="toppage-intro toppage-flexslider-backgroundimage toppage-singlerooms">
 
-			<?php if ( false ) { ?>
+			<?php if ( $gallery_repeater ) { ?>
 			
 				<div class="flexslider-js flexslider">
 
@@ -88,8 +88,19 @@
 		</div>
 
 		<div class="browselist-box browselist-singlerooms">
+
+			<?php 
+
+				$room_page = get_pages(array(
+					'meta_key' => '_wp_page_template',
+					'meta_value' => 'page_rooms.php'
+				));
+
+				$backlink = get_permalink( $room_page[0]->ID );
+
+			?>
 				
-			<div class="browselist-back"><a href="#"><i class="fa fa-chevron-left"></i>Back</a></div>
+			<div class="browselist-back"><a href="<?php echo $backlink; ?>"><i class="fa fa-chevron-left"></i>Back</a></div>
 
 			<ul class="browselist-links">
 
@@ -115,19 +126,23 @@
 			$second_col = array();
 			$third_col = array();
 
-			foreach ( $list_column_flexible as $flex ) {
+			if ( $list_column_flexisble ) {
 
-				if ( $flex['placement'] == 'first_col' ) {
+				foreach ( $list_column_flexible as $flex ) {
 
-					array_push( $first_col, $flex );
+					if ( $flex['placement'] == 'first_col' ) {
 
-				} elseif ( $flex['placement'] == 'second_col' ) {
+						array_push( $first_col, $flex );
 
-					array_push( $second_col, $flex );
+					} elseif ( $flex['placement'] == 'second_col' ) {
 
-				} elseif ( $flex['placement'] == 'third_col' ) {
+						array_push( $second_col, $flex );
 
-					array_push( $third_col, $flex );
+					} elseif ( $flex['placement'] == 'third_col' ) {
+
+						array_push( $third_col, $flex );
+
+					}
 
 				}
 
@@ -144,6 +159,7 @@
 
 			if ( $check == 2 ) { $addclass = 'roomsdetail-box-twoway'; }
 			elseif ( $check == 3 ) { $addclass = 'roomsdetail-box-threeway'; }
+
 		?>
 
 		<div class="roomsdetail-box <?php echo $addclass; ?>">
