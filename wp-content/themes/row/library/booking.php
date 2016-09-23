@@ -1,4 +1,5 @@
 
+<?php if ( false ) { ?>
 
 <script type="text/javascript">
 
@@ -26,7 +27,7 @@
 				    },
 				    function(){
 				    });
-		
+		/*
 		$(function() {
 			var fixadent = $(".topnav"), pos = fixadent.offset();
 			$(window).scroll(function() {
@@ -34,12 +35,156 @@
 			else if($(this).scrollTop() <= pos.top && fixadent.hasClass('fixed')){ fixadent.removeClass('fixed'); }
 			})
 		});
+*/
 		 				
 	});	
 	
 </script>
 
+<?php } ?>
+
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js'></script>
+
+<style>
+	
+.datepicker {
+	right: auto;
+	margin: 0;
+	visibility: visible;
+	opacity: 1;
+	display: none;
+}
+
+.datepicker.datepicker-show {
+	display: block;
+}
+
+</style>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	// DATEPICKER: WHEN ARRIVAL/DEPARTURE INPUT IS CLICKED
+
+	$('#arrival_date').click(function() {
+
+		$('.datepicker-arrival').addClass('datepicker-show');
+		$('.datepicker-departure').removeClass('datepicker-show');
+
+	});
+
+	$('#departure_date').click(function() {
+
+		$('.datepicker-departure').addClass('datepicker-show');
+		$('.datepicker-arrival').removeClass('datepicker-show');
+
+	});
+
+
+
+	// DATEPICKER: FUNCTION
+	
+	$.datepicker._defaults.dateFormat = 'yy-mm-dd';
+
+	var today = new Date(),
+		tomorrow = new Date();
+
+	tomorrow.setDate( tomorrow.getDate() + 1 );
+
+	$('#arrival_date').val($.datepicker.formatDate('yy-mm-dd', today));
+	$('#departure_date').val($.datepicker.formatDate('yy-mm-dd', tomorrow));
+		
+	$('.datepicker-arrival').datepicker({
+		minDate: new Date(),
+
+		beforeShowDay: function(date) {
+			var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+			var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+			return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+		},
+
+		onSelect: function( selectedDate ) {
+
+			$('.datepicker-arrival').removeClass('datepicker-show');
+
+			if ( $('.datepicker-arrival').hasClass('turnaround') ) {
+				$('.datepicker-arrival').removeClass('turnaround');
+			} else {
+				$('.datepicker-departure').addClass('datepicker-show');
+			}
+
+			var arrivalDate = $(this).datepicker('getDate'),
+				departureDate = $('.datepicker-departure').datepicker('getDate');
+
+			if ( arrivalDate.getTime() > departureDate.getTime() ) {
+
+				$('.datepicker-departure').addClass('datepicker-show');
+				
+				arrivalDate.setDate( arrivalDate.getDate() + 1 );
+				var new_departureDate = $.datepicker.formatDate('yy-mm-dd',arrivalDate);
+
+				$('.datepicker-departure').datepicker( 'setDate', new_departureDate);
+
+				$('#arrival_date').val( selectedDate );
+				$('#departure_date').val( new_departureDate );
+
+			} else {
+
+				$('#arrival_date').val( selectedDate );
+
+			}
+
+		}
+	});
+
+	$('.datepicker-departure').datepicker({
+		minDate: 1,
+
+		beforeShowDay: function(date) {
+			var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+			var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+			return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+		},
+
+		onSelect: function( selectedDate ) {
+
+			$('.datepicker-departure').removeClass('datepicker-show');
+
+			var arrivalDate = $('.datepicker-arrival').datepicker('getDate'),
+				departureDate = $(this).datepicker('getDate');
+
+			if ( arrivalDate.getTime() > departureDate.getTime() ) {
+
+				$('.datepicker-arrival').addClass('datepicker-show');
+
+				departureDate.setDate( departureDate.getDate() - 1 );
+				var new_arrivalDate = $.datepicker.formatDate('yy-mm-dd',departureDate);
+
+				$('.datepicker-arrival').datepicker( 'setDate', new_arrivalDate);
+
+				$('#departure_date').val( selectedDate );
+				$('#arrival_date').val( new_arrivalDate );
+				$('#arrival_date').addClass('turnaround');
+
+			} else {
+
+				$('#departure_date').val( selectedDate );
+
+			}
+
+		}
+	});
+
+
+	});
+</script>
+
+
+
+
+<?php if ( false ) { ?>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		   
@@ -361,6 +506,8 @@ $(document).ready(function() {
 
 	});
 	</script>
+
+<?php } ?>
 
 	<script type="text/javascript">
 		$(document).ready(function(){

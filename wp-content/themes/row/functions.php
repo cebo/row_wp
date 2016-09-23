@@ -240,7 +240,11 @@ function click_taxonomy_dropdown($taxonomy) { ?>
 	?>
 <?php }
 
- /* ................. ADDITIONAL INFO FOR SHORTCODES .................... */
+if ( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+}
+
+/* ................. ADDITIONAL INFO FOR SHORTCODES .................... */
 /* Below is an include to a few options for your projects.*/
 
 define( 'SS_BASE_DIR', TEMPLATEPATH . '/' );

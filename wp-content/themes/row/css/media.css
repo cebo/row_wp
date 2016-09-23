@@ -229,10 +229,6 @@ and (max-width : 1275px) {
 
 	/* Content area */
 
-	.contentarea {
-		margin-left: 250px;
-	}
-
 	.shorter {
 		height: 270px;
 	}
@@ -540,32 +536,6 @@ and (max-width : 1275px) {
 
 
 }
-
-/* ================================================ 641 - 1260px ======================================= */
-
-@media only screen
-and (min-width : 641px)
-and (max-width : 1260px) {
-
-
-
-	.home-intro {
-	  margin-left: 250px;
-	  width: auto;
-	  z-index: 9999;
-	}
-
-	.contentarea {
-		margin-left: 250px;
-		z-index: 9999;
-	}
-
-	.contentarea .home-intro {
-		margin-left: 0;
-	}
-
-}
-
 
 /* ================================================ 1024 ======================================= */
 
@@ -1401,10 +1371,6 @@ and (max-width : 640px) {
 
 
 	/* Home */
-
-	.contentarea {
-	    margin-left: 0;
-	}
 
 	.banner {
 	    margin-left: 0;
@@ -2313,9 +2279,6 @@ and (max-width : 1366px)
 
 .navigate:before {
     width: 250px;
-}
-.contentarea {
-    margin-left: 250px;
 }
 
 }

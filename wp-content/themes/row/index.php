@@ -1,6 +1,263 @@
-<?php get_header(); ?>
+<?php
+	
+	get_header();
+
+?>
+
+	<section class="contentarea">
+
+		<div class="home-intro">
+
+			<div id="owl-example" class="owl-carousel home-intro-theme">
+
+				<?php
+
+					if ( have_rows('homepage_gallery_repeater', 'options') ) : while ( have_rows('homepage_gallery_repeater', 'options') ) : the_row();
+
+						$imgsrc = get_sub_field('image');
+						$title = get_sub_field('title');
+						$description = get_sub_field('description');
+						$link = get_sub_field('link');
+						$link_text = get_sub_field('link_text');
+
+				?>
+
+					<div class="owl-block" style="background-image: url(<?php echo $imgsrc['url']; ?>);">
+						<div class="table-parent">
+						<div class="table-child">
+							<h2><?php echo $title; ?></h2>
+							<?php echo $description; ?>
+							<?php if ( $link && $link != '' ) { ?>
+								<a class="owl-block-link" href="<?php echo $link; ?>"><?php echo $link_text; ?></a>
+							<?php } ?>
+						</div>
+						</div>
+					</div>
+
+				<?php endwhile; endif; ?>
+
+			</div>
+
+		</div>
+
+		<div class="below-intro">
+
+			<div class="intro-box left">
+
+				<?php
+
+					if ( have_rows('homepage_page_section_repeater', 'options') ) : while ( have_rows('homepage_page_section_repeater', 'options') ) : the_row();
+
+						$page = get_sub_field('page_select');
+						$title = get_sub_field('title');
+
+						if ( $title && $title != '' ) {}
+						else { $title = $page->post_title; }
+
+				?>
+
+				<div class="intro-pages">
+
+					<h2><?php echo $title; ?></h2>
+
+					<?php echo wpautop( content2( $page->post_content, 50 ) ); ?>
+
+					<a href="<?php echo get_permalink( $page->ID ); ?>"><?php _e( 'Read more', 'row-theme-text' ); ?></a>
+
+				</div>
+
+				<?php endwhile; endif; ?>
+
+			</div>
+
+			<div class="intro-box right">
+
+				<ul class="intro-iconamenities">
+
+					<?php
+
+						$title = get_field('homepage_amenities_list_item_title', 'options');
+
+						if ( $title && $title != '' ) { ?>
+
+						<h2><?php echo $title; ?></h2>
+
+					<?php } ?>
+
+					<?php
+
+						if ( have_rows('homepage_amenities_list_item_repeater', 'options') ) : while ( have_rows('homepage_amenities_list_item_repeater', 'options') ) : the_row();
+
+							$type = get_sub_field('type');
+							$text = get_sub_field('text');
+
+					?>
+
+						<?php if ( $type == 'text' ) {
+
+							$icon = get_sub_field('icon');
+						?>
+					
+							<li class="intro-amen-ico-<?php echo $icon; ?>">
+								<div class="table-parent"><div class="table-child"><span><?php echo $text; ?></span></div></div>
+							</li>
+
+						<?php } elseif ( $type == 'link' ) {
+
+							$link = get_sub_field( 'link' );
+						?>
+
+							<li>
+								<div class="table-parent"><div class="table-child"><a href="<?php echo $link; ?>"><?php echo $text; ?></a></div></div>
+							</li>
+
+						<?php } ?>
+
+					<?php endwhile; endif; ?>
+
+				</ul>
+
+				<div class="intro-showamenities boxlists-twocol boxlists-showamen">
+
+					<?php
+
+						$count = 1;
+
+						if ( have_rows('homepage_specials_page_select_repeater', 'options') ) : while ( have_rows('homepage_specials_page_select_repeater', 'options') ) : the_row();
+
+							$page = get_sub_field('page_select');
+
+							$title = $page->post_title;
+							$content = $page->post_content;
+
+							$moreinfo = get_permalink( $page->ID );
+							$booklink = get_post_meta( $page->ID, 'cebo_booklink', true );
+
+							$pricepoint = get_post_meta( $page->ID, 'cebo_pricepoint', true );
+
+							$fullpic = get_post_meta( $page->ID, 'cebo_fullpic', true );
+
+							if ( $fullpic ) {
+								$imgsrc = $fullpic;
+							} else {
+								$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' )[0];
+							}
+
+							if ( $count % 2 == 0 ) { $addclass = 'right'; }
+							else { $addclass = 'left'; }
+
+					?>
+
+						<div class="boxlists-box <?php echo $addclass; ?>">
+							<div class="boxlists-imagebox">
+								<?php if ( $pricepoint && $pricepoint != '' ) { ?>
+									<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
+								<?php } ?>
+								<div class="boxlists-image" style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+							</div>
+
+							<h2 class="boxlists-title"><?php echo $title; ?></h2>
+
+							<div class="boxlists-content">
+
+								<?php echo wpautop( content2( $content, 50 ) ); ?>
+
+							</div>
+
+							<div class="boxlists-links">
+								<a href="<?php echo $booklink; ?>"><?php _e( 'Book Now', 'row-theme-text' ); ?></a>
+								<a class="boxlists-moreinfo" href="<?php echo $moreinfo; ?>"><?php _e( 'More Info', 'row-theme-text' ); ?></a>
+							</div>
+						</div>
+
+					<?php $count++; endwhile; endif; ?>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="home-features">
+
+			<?php
+
+				$count = 1;
+
+				if ( have_rows('homepage_featured_pages_repeater', 'options') ) : while ( have_rows('homepage_featured_pages_repeater', 'options') ) : the_row();
+
+					$box_size = get_sub_field('box_size');
+					$box_type = get_sub_field('box_type');
+
+					$page = get_sub_field('page_select');
+					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' )[0];
+
+					$title = get_sub_field('title');
+					$content = get_sub_field('description');
+					$image = get_sub_field('image');
+
+					if ( $title && $title != '' ) {}
+					else { $title = $page->post_title; }
+
+					if ( $content && $content != '' ) {}
+					else { $content = $page->post_content; }
+
+					if ( $image && $image != '' ) { $image = $image['url']; }
+					else { $image = $imgsrc; }
+
+					if ( $box_size == 'half' ) { $addclass = 'feature-box-half'; }
+					elseif ( $box_size == 'full' ) { $addclass = 'feature-box-full'; }
+
+					if ( $box_type == 'normal' ) {
+
+						if ( $count % 2 == 0 ) { $addclass .= ' right'; }
+						else { $addclass .= ' left'; }
+
+						$addclass .= ' feature-box-normal';
+
+			?>
+
+				<div class="<?php echo $addclass; ?>">
+
+					<a class="feature-box-link" href="#">
+
+						<div class="feature-box-image" style="background-image: url(<?php echo $image; ?>);"></div>
+
+						<div class="feature-content">
+							<h2><?php echo $title; ?></h2>
+							<?php echo wpautop( content2( $content ) ); ?>
+						</div>
+
+					</a>
+
+				</div>
+
+			<?php $count++; } elseif ( $box_type == 'getcontent' ) {
+
+				$addclass .= ' feature-box-getcontent';
+
+			?>
+
+				<div class="<?php echo $addclass; ?>">
+
+					<div class="feature-box-image" style="background-image: url(<?php echo $image; ?>);"></div>
+					
+					<h2><?php echo $title; ?></h2>
+
+					<div class="feature-content">
+						
+						<?php echo wpautop( $content ); ?>
+
+					</div>
+
+				</div>
+
+			<?php $count = 0; } endwhile; endif; ?>
+
+		</div>
 
 
+	<?php if ( false ) { ?>
 
 	<section class="contentarea">
 			
@@ -784,6 +1041,6 @@
 			<?php } ?>
 
 
-
+	<?php } ?>
 
 <?php get_footer(); ?>

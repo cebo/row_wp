@@ -1,10 +1,241 @@
 <?php 
 
-/* Single Rooms
+	/* Single Rooms */
+	
+	get_header();
 
-*/
- get_header(); ?>
+	$acf_fields = get_fields( $post->ID );
+	// var_dump( $acf_fields );
 
+	$gallery_repeater = $acf_fields['roomsdetail_gallery_repeater'];
+
+?>
+
+<?php
+	
+	if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+		$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full" );
+
+?>
+
+	<section class="contentarea">
+
+		<div class="headernav-block-secondary"></div>
+
+		<div class="toppage-intro toppage-flexslider-backgroundimage toppage-singlerooms">
+
+			<?php if ( false ) { ?>
+			
+				<div class="flexslider-js flexslider">
+
+					<ul class="slides">
+
+						<?php foreach ( $gallery_repeater as $gallery ) : ?>
+
+							<li class="toppage-image" style="background-image: url(<?php echo $gallery['image']['url']; ?>)"></li>
+
+						<?php endforeach; ?>
+
+					</ul>
+
+				</div>
+
+			<?php } else { ?>
+
+				<div class="toppage-image" style="background-image: url(<?php echo $imgsrc[0]; ?>)"></div>
+
+			<?php } ?>
+
+			<h1 class="roomssingle-title roomssingle-title-desktop"><?php the_title(); ?></h1>
+
+			<div class="roomssingle-panel">
+
+				<div class="roomssingle-content">
+
+					<h1 class="roomssingle-title roomssingle-title-mobile"><?php the_title(); ?></h1>
+
+					<?php the_content(); ?>
+
+				</div>
+
+				<div class="clear"></div>
+
+				<?php if ( get_the_title() == "Penthouse Suites" ) { ?>
+
+					<a class="roomssingle-link" href="mailto:reservations@rownyc.com"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+
+				<?php } else {
+
+					if ( get_post_meta($post->ID, 'cebo_booklink', true ) ) {
+
+						$booklink = get_option('cebo_genbooklink') . '/search?selected_room_category=' . get_post_meta($post->ID, 'cebo_room_code', true);
+
+					} else {
+
+						$booklink = get_option('cebo_genbooklink');
+
+					}
+
+				?>
+
+					<a class="roomssingle-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $booklink; ?>"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+
+				<?php } ?>
+
+			</div>
+
+		</div>
+
+		<div class="browselist-box browselist-singlerooms">
+				
+			<div class="browselist-back"><a href="#"><i class="fa fa-chevron-left"></i>Back</a></div>
+
+			<ul class="browselist-links">
+
+				<li class="browselist-title">Room Types:</li>
+				<li><a href="#">Premium City View</a></li>
+				<li><a href="#">Superior</a></li>
+				<li><a href="#">Deluxe City View</a></li>
+				<li><a href="#">Executive Suites</a></li>
+				<li><a href="#">Penthouse Suites</a></li>
+				<li><a href="#">Standard</a></li>
+
+			</ul>
+
+		</div>
+
+		<?php
+
+			$list_column_flexible = $acf_fields['roomsdetail_list_column_flexible'];
+
+			// Push array according by column
+
+			$first_col = array();
+			$second_col = array();
+			$third_col = array();
+
+			foreach ( $list_column_flexible as $flex ) {
+
+				if ( $flex['placement'] == 'first_col' ) {
+
+					array_push( $first_col, $flex );
+
+				} elseif ( $flex['placement'] == 'second_col' ) {
+
+					array_push( $second_col, $flex );
+
+				} elseif ( $flex['placement'] == 'third_col' ) {
+
+					array_push( $third_col, $flex );
+
+				}
+
+			}
+
+			// Check how many columns are used
+
+			$check = 0;
+			$addclass = '';
+
+			if ( count( $first_col ) > 0 ) { $check++; }
+			if ( count( $second_col ) > 0 ) { $check++; }
+			if ( count( $third_col ) > 0 ) { $check++; }
+
+			if ( $check == 2 ) { $addclass = 'roomsdetail-box-twoway'; }
+			elseif ( $check == 3 ) { $addclass = 'roomsdetail-box-threeway'; }
+		?>
+
+		<div class="roomsdetail-box <?php echo $addclass; ?>">
+
+			<?php
+
+				// START function roomsdetail()
+
+				function roomsdetail( $col_array ) {
+
+					foreach ( $col_array as $col ) :
+
+						if ( $col['acf_fc_layout'] == 'roomsdetail_list_content' ) :
+
+			?>
+
+				<div class="roomsdetail-list-content">
+				
+					<h2><?php echo $col['title']; ?></h2>
+
+					<ul>
+						<?php foreach ( $col['list_item_repeater'] as $list_item ) : ?>
+							<li><?php echo $list_item['list_item'] ?></li>
+						<?php endforeach; ?>
+					</ul>
+
+				</div>
+
+			<?php elseif ( $col['acf_fc_layout'] == 'roomsdetail_feature_list_content' ) : ?>
+
+				<div class="roomsdetail-feature-list-content">
+
+					<h2><?php echo $col['title']; ?></h2>
+
+					<ul>
+						<?php foreach ( $col['list_item_repeater'] as $list_item ) : ?>
+							<li class="roomsdetail-icon-<?php echo $list_item['list_icon']; ?>"><?php echo $list_item['list_item'] ?></li>
+						<?php endforeach; ?>
+					</ul>
+
+				</div>
+
+			<?php
+				
+				endif; endforeach; }
+
+				// END function roomsdetail()
+
+			?>
+
+			<?php if ( count( $first_col ) > 0 ) { ?>
+
+				<div class="roomsdetail-col">
+
+					<?php roomsdetail( $first_col ); ?>
+
+				</div>
+
+			<?php } ?>
+
+			<?php if ( count( $second_col ) > 0 ) { ?>
+
+				<div class="roomsdetail-col">
+
+					<?php roomsdetail( $second_col ); ?>
+
+				</div>
+
+			<?php } ?>
+
+			<?php if ( count( $third_col ) > 0 ) { ?>
+
+				<div class="roomsdetail-col">
+
+					<?php roomsdetail( $third_col ); ?>
+
+				</div>
+
+			<?php } ?>
+
+		</div>
+
+<?php endwhile; endif; wp_reset_query(); ?>
+
+
+
+
+
+
+
+
+<?php if ( false ) { ?>
 
 	<section class="contentarea">
 
@@ -294,7 +525,7 @@
 			</div>
 
 			
-			<?php endwhile; endif; wp_reset_query(); ?>	
+			<?php endwhile; endif; wp_reset_query(); ?>
 				<div class="gallery-categories">
 					<ul>
 						
@@ -313,6 +544,6 @@
 			
 			
 			
-			
+<?php } ?>
 			 
 <?php get_footer(); ?>
