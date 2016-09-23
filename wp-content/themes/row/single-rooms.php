@@ -105,12 +105,31 @@
 			<ul class="browselist-links">
 
 				<li class="browselist-title">Room Types:</li>
-				<li><a href="#">Premium City View</a></li>
-				<li><a href="#">Superior</a></li>
-				<li><a href="#">Deluxe City View</a></li>
-				<li><a href="#">Executive Suites</a></li>
-				<li><a href="#">Penthouse Suites</a></li>
-				<li><a href="#">Standard</a></li>
+
+				<?php
+
+					$current_id = get_the_ID();
+
+					$rooms_args = array(
+						'post_type' => 'rooms',
+						'posts_per_page' => -1,
+						'nopaging' => true,
+					);
+
+					$rooms_query = new WP_Query( $rooms_args );
+
+					if ( $rooms_query->have_posts() ) : while ( $rooms_query->have_posts() ) : $rooms_query->the_post();
+
+						$loop_id = get_the_ID();
+
+						if ( $current_id == $loop_id ) { $addclass = 'active'; }
+						else { $addclass= ''; }
+
+				?>
+
+					<li><a class="<?php echo $addclass; ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+
+				<?php endwhile; endif; wp_reset_postdata(); ?>
 
 			</ul>
 
