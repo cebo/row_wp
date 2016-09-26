@@ -326,8 +326,8 @@ ga('send', 'pageview');
 
 					onsubmit="_gaq.push(['_linkByPost', this]);">
 
-						<div class="datepicker datepicker-arrival"></div>
-						<div class="datepicker datepicker-departure"></div>
+						<div class="datepicker datepicker-arrival"><div class="close-dp">X</div></div>
+						<div class="datepicker datepicker-departure"><div class="close-dp">X</div></div>
 
 						<div class="schedule-box">
 							<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" class="calendarsection" />
