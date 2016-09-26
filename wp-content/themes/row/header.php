@@ -326,15 +326,14 @@ ga('send', 'pageview');
 
 					onsubmit="_gaq.push(['_linkByPost', this]);">
 
-						<div class="datepicker datepicker-arrival"></div>
-						<div class="datepicker datepicker-departure"></div>
-
 						<div class="schedule-box">
+							<div class="datepicker datepicker-arrival"></div>
 							<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" class="calendarsection" />
 							<i class="fa fa-calendar"></i>
 						</div>
 
 						<div class="schedule-box">
+							<div class="datepicker datepicker-departure"></div>
 							<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" class="calendarsection" />
 							<i class="fa fa-calendar"></i>
 						</div>

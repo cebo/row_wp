@@ -7436,6 +7436,16 @@ li.deal.foreign-box{
 	text-align: center;
 }
 
+.schedulebook .datepicker-arrival {
+	top: 0;
+	left: 0;
+}
+
+.schedulebook .datepicker-departure {
+	top: 0;
+	left: 0;
+}
+
 .schedulebook input,
 .schedulebook select {
 	background-color: #323232;
