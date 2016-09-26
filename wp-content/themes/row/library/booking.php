@@ -98,7 +98,7 @@
 	$('.datepicker-arrival').datepicker({
 		minDate: new Date(),
 
-		beforeShowDay: function(date) {
+		beforeShowDay: function( date ) {
 			var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 			var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
 			return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
@@ -135,13 +135,19 @@
 
 			}
 
+			$('.datepicker-departure').datepicker( "option", "beforeShowDay", function( date ) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			});
+
 		}
 	});
 
 	$('.datepicker-departure').datepicker({
 		minDate: 1,
 
-		beforeShowDay: function(date) {
+		beforeShowDay: function( date ) {
 			var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 			var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
 			return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
@@ -172,6 +178,12 @@
 				$('#departure_date').val( selectedDate );
 
 			}
+
+			$('.datepicker-arrival').datepicker( "option", "beforeShowDay", function( date ) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			});
 
 		}
 	});
