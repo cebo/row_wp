@@ -65,6 +65,13 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 
+	// DATEPICKER: CLOSE BUTTON
+
+	$('.close-dp').click(function() {
+		$(this).parent().removeClass('datepicker-show');
+	});
+
+
 	// DATEPICKER: WHEN ARRIVAL/DEPARTURE INPUT IS CLICKED
 
 	$('#arrival_date').click(function() {
@@ -98,12 +105,6 @@
 	$('.datepicker-arrival').datepicker({
 		minDate: new Date(),
 
-		beforeShowDay: function( date ) {
-			var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
-			var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
-			return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-		},
-
 		onSelect: function( selectedDate ) {
 
 			$('.datepicker-arrival').removeClass('datepicker-show');
@@ -135,7 +136,7 @@
 
 			}
 
-			$('.datepicker-departure').datepicker( "option", "beforeShowDay", function( date ) {
+			$('.datepicker-arrival, .datepicker-departure').datepicker( "option", "beforeShowDay", function( date ) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
 				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
@@ -146,12 +147,6 @@
 
 	$('.datepicker-departure').datepicker({
 		minDate: 1,
-
-		beforeShowDay: function( date ) {
-			var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
-			var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
-			return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-		},
 
 		onSelect: function( selectedDate ) {
 
@@ -179,7 +174,7 @@
 
 			}
 
-			$('.datepicker-arrival').datepicker( "option", "beforeShowDay", function( date ) {
+			$('.datepicker-arrival, .datepicker-departure').datepicker( "option", "beforeShowDay", function( date ) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
 				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
