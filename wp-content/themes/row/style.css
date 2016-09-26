@@ -8495,12 +8495,40 @@ li.deal.foreign-box{
 .flexslider-gallery-theme .flex-control-thumbs li {
 	height: 150px;
 	width: 20%;
+
+	position: relative;
 }
 
 .flexslider-gallery-theme .flex-control-thumbs li div {
 	background: none no-repeat scroll center center transparent;
 	background-size: cover;
 	height: 100%;
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	opacity: 0.7;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+	.flexslider-gallery-theme .flex-control-thumbs li:hover div { opacity: 0.9; }
+	.flexslider-gallery-theme .flex-control-thumbs li div.flex-active { opacity: 1; }
+
+.flexslider-gallery-theme .flex-control-thumbs li img {
+	height: 100%;
+	width: 100%;
+
+	opacity: 0;
+
+	position: relative;
+	z-index: 2;
 }
 
 

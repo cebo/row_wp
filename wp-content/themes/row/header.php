@@ -112,10 +112,8 @@
 		$(document).ready(function() {
 
 			$('.flexslider-gallery-js').flexslider({
-				animation: "slide",
-				animationSpeed: 1500,
-				controlNav: "thumbnails",
-				startAt: 0,
+				animation: 'slide',
+				controlNav: 'thumbnails',
 			});
 
 			$('.flexslider-js').flexslider({
