@@ -8461,6 +8461,34 @@ li.deal.foreign-box{
 	.roomslist-link.roomslist-link-moreinfo span { color: #000; }
 		.roomslist-link.roomslist-link-moreinfo:hover span { color: #000; }
 
+
+/* FLEXSLIDER - MAIN */
+
+.flex-direction-nav a::before {
+	color: #fff !important;
+	text-shadow: 0 0 0 transparent !important;
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev {
+	opacity: 1 !important;
+	left: 30px !important;
+}
+
+.flexslider:hover .flex-direction-nav .flex-next {
+	opacity: 1 !important;
+	right: 30px !important;
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
+	opacity: 0.7 !important;
+}
+
+.flexslider:hover .flex-direction-nav .flex-next:hover {
+	opacity: 0.7 !important;
+}
+
+
+
 /* FLEXSLIDER - GALLERY THEME */
 
 .flexslider.flexslider-gallery-theme {
