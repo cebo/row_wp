@@ -26,10 +26,6 @@
 						$attachment_meta_title = get_post( $galleryImages[ $i ]['id'] )->post_excerpt;
 						$imgsrc = $galleryImages[ $i ]['full'][0];
 
-						if ( $i % 2 == 0 ) { $imgsrc = get_bloginfo('template_url') . '/images/pic-intro.jpg'; }
-						else { $imgsrc = get_bloginfo('template_url') . '/images/box1.jpg'; }
-
-
 				?>
 
 					<li data-thumb="<?php echo $imgsrc; ?>" style="background-image: url(<?php echo $imgsrc; ?>);">
