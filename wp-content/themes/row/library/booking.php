@@ -94,6 +94,9 @@
 	
 	$.datepicker._defaults.dateFormat = 'yy-mm-dd';
 
+
+	// * set input dates
+
 	var today = new Date(),
 		tomorrow = new Date();
 
@@ -101,41 +104,70 @@
 
 	$('#arrival_date').val($.datepicker.formatDate('yy-mm-dd', today));
 	$('#departure_date').val($.datepicker.formatDate('yy-mm-dd', tomorrow));
+
+
+	// * datepicker for the arrival input
 		
 	$('.datepicker-arrival').datepicker({
 		minDate: new Date(),
 
 		onSelect: function( selectedDate ) {
 
-			$('.datepicker-arrival').removeClass('datepicker-show');
+			// * variables
+			var $arrival = $('.datepicker-arrival'),
+				$departure = $('.datepicker-departure');
 
-			if ( $('.datepicker-arrival').hasClass('turnaround') ) {
-				$('.datepicker-arrival').removeClass('turnaround');
-			} else {
-				$('.datepicker-departure').addClass('datepicker-show');
+			// * remove arrival datepicker-show class first
+			$arrival.removeClass('datepicker-show');
+
+			// * variables
+			var arrivalDate = $arrival.datepicker('getDate'),
+				departureDate = $departure.datepicker('getDate');
+
+
+			if ( $arrival.hasClass('turnaround') ) {
+
+				// * check if hasClass turnaround
+				// * logic: to tell if a user went back to this input
+				// * because his/her departure date is lower than or equal to his arrival date
+
+				$arrival.removeClass('turnaround');
+			} else if ( $arrival.hasClass('first-time') ) {
+
+				// * check elseif hasClass first-time
+				// * logic: to tell if a user adds an input for the first time
+
+				$arrival.removeClass('first-time');
+				$departure.addClass('datepicker-show');
 			}
 
-			var arrivalDate = $(this).datepicker('getDate'),
-				departureDate = $('.datepicker-departure').datepicker('getDate');
+			// * check if arrival date is higher than or equal to departure date
+			if ( arrivalDate.getTime() >= departureDate.getTime() ) {
 
-			if ( arrivalDate.getTime() > departureDate.getTime() ) {
+				// * open up datepicker-departure
+				$departure.addClass('datepicker-show');
 
-				$('.datepicker-departure').addClass('datepicker-show');
-				
+				// * format arrivalDate and use it to update datepicker-departure date
+				// * add 1: prevent user to check in or check out on the same day
 				arrivalDate.setDate( arrivalDate.getDate() + 1 );
-				var new_departureDate = $.datepicker.formatDate('yy-mm-dd',arrivalDate);
+				var new_departureDate = $.datepicker.formatDate( 'yy-mm-dd', arrivalDate );
+				$departure.datepicker( 'setDate', new_departureDate );
 
-				$('.datepicker-departure').datepicker( 'setDate', new_departureDate);
-
+				// * set these new values into their respective inputs
 				$('#arrival_date').val( selectedDate );
 				$('#departure_date').val( new_departureDate );
 
+				$arrival.addClass('turnaround');
+
 			} else {
 
+				// * just update this input...
 				$('#arrival_date').val( selectedDate );
 
 			}
 
+
+			// update both datepickers dp-highlight class
 			$('.datepicker-arrival, .datepicker-departure').datepicker( "option", "beforeShowDay", function( date ) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
@@ -145,35 +177,53 @@
 		}
 	});
 
+
+	// * datepicker for the departure input
+
 	$('.datepicker-departure').datepicker({
 		minDate: 1,
 
 		onSelect: function( selectedDate ) {
 
-			$('.datepicker-departure').removeClass('datepicker-show');
+			// * variables
+			var $arrival = $('.datepicker-arrival'),
+				$departure = $('.datepicker-departure');
 
-			var arrivalDate = $('.datepicker-arrival').datepicker('getDate'),
-				departureDate = $(this).datepicker('getDate');
+			// * remove departure datepicker-show class first
+			$departure.removeClass('datepicker-show');
 
-			if ( arrivalDate.getTime() > departureDate.getTime() ) {
+			// * variables
+			var arrivalDate = $arrival.datepicker('getDate'),
+				departureDate = $departure.datepicker('getDate');
 
-				$('.datepicker-arrival').addClass('datepicker-show');
 
+			// * check if arrival date is higher than or equal to departure date
+			// * if yes, user will have to input arrival date again
+			if ( arrivalDate.getTime() >= departureDate.getTime() ) {
+
+				// * open up datepicker-arrival
+				$arrival.addClass('datepicker-show');
+
+				// * format departureDate and use it to update datepicker-arrival date
+				// * minus 1: prevent user to check in or check out on the same day
 				departureDate.setDate( departureDate.getDate() - 1 );
-				var new_arrivalDate = $.datepicker.formatDate('yy-mm-dd',departureDate);
+				var new_arrivalDate = $.datepicker.formatDate( 'yy-mm-dd', departureDate );
+				$arrival.datepicker( 'setDate', new_arrivalDate );
 
-				$('.datepicker-arrival').datepicker( 'setDate', new_arrivalDate);
 
+				// * set these new values into their respective inputs
 				$('#departure_date').val( selectedDate );
 				$('#arrival_date').val( new_arrivalDate );
-				$('#arrival_date').addClass('turnaround');
 
 			} else {
 
+				// * just update this input...
 				$('#departure_date').val( selectedDate );
 
 			}
 
+
+			// update both datepickers dp-highlight class
 			$('.datepicker-arrival, .datepicker-departure').datepicker( "option", "beforeShowDay", function( date ) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
