@@ -7783,7 +7783,7 @@ li.deal.foreign-box{
 /* PAGE: THE HOTEL */
 
 .contentarea-container.contentarea-container-hotelpage {
-	max-width: auto;
+	max-width: none;
 }
 
 .toptitle-area.toptitle-hotelpage {
