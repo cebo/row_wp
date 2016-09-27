@@ -19,7 +19,7 @@
 	
 	<section class="contentarea">
 
-		<div class="toppage-intro toptitle-pagedefault">
+		<div class="toppage-intro toppage-pagedefault">
 
 			<?php if( $fullpic ) { ?>
 

@@ -31,7 +31,7 @@
 
 	?>
 
-		<div class="toppage-intro toptitle-domestic">
+		<div class="toppage-intro toppage-domestic">
 
 			<?php if( $fullpic ) { ?>
 
