@@ -17,7 +17,7 @@
 
 	?>
 
-		<div class="toppage-intro toptitle-internationalpress">
+		<div class="toppage-intro toppage-internationalpress">
 
 			<?php if( $fullpic ) { ?>
 
