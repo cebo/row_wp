@@ -98,7 +98,7 @@
 						<h2 class="boxlists-title"><?php echo $subtagline; ?></h2>
 						<div class="boxlists-content">
 
-							<?php echo content(25); ?>
+							<?php echo wpautop ( content2( get_the_content(), 40, '<p><img>' ) ); ?>
 
 							<div id="theguestbook_widget"></div>
 							<div class="wonder-vertical"></div>
@@ -123,9 +123,9 @@
 
 							<?php
 								if ( $shordesc ) { 
-									echo $shordesc;
+									echo wpautop ( content2( $shordesc, null, '<p><img>' ) );
 								} else {
-									echo content(40);
+									echo wpautop ( content2( get_the_content(), 40, '<p><img>' ) );
 								}
 							?>
 
