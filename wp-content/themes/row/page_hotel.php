@@ -54,7 +54,7 @@
 
 					<div class="toptitle-description">
 
-						<?php echo content(100); ?>
+						<?php echo content2( get_the_content(), 100, '<p>' ); ?>
 
 					</div>
 
@@ -86,7 +86,7 @@
 					</div>
 
 					<div class="boxlists-links">
-						<a onclick="_gaq.push(['_link', this.href]);return false;" href="<?php bloginfo('url'); ?>/times-square-hotels/amenities/">Read More</a>
+						<a onclick="_gaq.push(['_link', this.href]);return false;" href="<?php bloginfo('url'); ?>/times-square-hotels/amenities/"><?php _e( 'Read More', 'row-theme-text' ); ?></a>
 					</div>
 
 				</div>
@@ -142,7 +142,7 @@
 
 						<div class="boxlists-content">
 
-							<?php echo content(40); ?>
+							<?php echo content2( get_the_content(), 40, '<p><a><br><i>' ); ?>
 
 						</div>
 
