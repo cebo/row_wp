@@ -7782,6 +7782,15 @@ li.deal.foreign-box{
 
 /* PAGE: THE HOTEL */
 
+.contentarea-container.contentarea-container-hotelpage {
+	max-width: auto;
+}
+
+.toptitle-area.toptitle-hotelpage {
+	max-width: 90%;
+	margin: 0 auto 50px;
+}
+
 .toptitle-hotelpage h1 {
 	text-align: left;
 }
