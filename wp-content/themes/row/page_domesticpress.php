@@ -148,6 +148,8 @@
 
 			<?php $count++; endwhile; endif; wp_reset_postdata(); ?>
 
+			<div class="clear"></div>
+
 		</div>
 
 
