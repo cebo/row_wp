@@ -133,7 +133,7 @@ function content($limit) {
   return $content;
 }
 
-function content2($string, $limit = null) {
+function content2( $string, $limit = null, $notstrip = null ) {
     if ( isset( $limit ) ) {
 
         $content = explode( ' ', $string, $limit );
@@ -151,10 +151,10 @@ function content2($string, $limit = null) {
     
     }
 
-    $content = preg_replace('/\[.+\]/','', $content);
-    $content = apply_filters('the_content', $content); 
-    $content = str_replace(']]>', ']]&gt;', $content);
-    $content = strip_tags($content);
+    $content = preg_replace( '/\[.+\]/', '', $content );
+    $content = apply_filters( 'the_content', $content ); 
+    $content = str_replace( ']]>', ']]&gt;', $content );
+    $content = strip_tags( $content, $notstrip );
     return $content;
 
 }

@@ -8167,6 +8167,16 @@ li.deal.foreign-box{
 	left: 15px;
 }
 
+.browselist-back a,
+.browselist-back a i,
+.browselist-links a {
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
 .browselist-back a {
 	color: #000;
 	font-family: 'GothamBold', sans-serif;
@@ -8181,6 +8191,8 @@ li.deal.foreign-box{
 	color: #000;
 	font-size: 14px;
 	padding-right: 5px;
+
+
 }
 	.browselist-back a:hover i {
 		color: #FA9700;
@@ -8347,7 +8359,14 @@ li.deal.foreign-box{
 
 		position: relative;
 		top: -2px;
+
+		-webkit-transition: all 0.4s ease 0s;
+		-moz-transition: all 0.4s ease 0s;
+		-o-transition: all 0.4s ease 0s;
+		-ms-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
 	}
+		.boxlists-links .boxlists-enroll:hover { opacity: 0.7; }
 
 
 /* ROOMSLIST */
