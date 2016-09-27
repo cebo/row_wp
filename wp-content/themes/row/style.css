@@ -8151,8 +8151,17 @@ li.deal.foreign-box{
 	line-height: 1;
 	padding: 10px 20px;
 	margin-right: 5px;
+	text-transform: uppercase;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
-	.toptitle-links a:last-child { margin-right: 0;}
+	.toptitle-links a:last-child { margin-right: 0; }
+
+	.toptitle-links a:hover { color: #000; }
 
 
 /* BROWSELIST */
