@@ -8260,6 +8260,9 @@ li.deal.foreign-box{
 		width: 32%;
 		margin-right: 2%;
 	}
+
+		.boxlists-threecol .clear3 { display: none;}
+
 		.boxlists-threecol .boxlists-box.last { margin-right: 0;}
 
 .boxlists-imagebox {
