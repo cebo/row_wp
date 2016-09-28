@@ -48,6 +48,50 @@ and (max-width : 1439px) {
 
 
 
+/* ================================================ 0 - 1279px ======================================= */
+
+@media only screen and (max-width : 1279px) {
+
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HOMEPAGE */
+
+	.below-intro {
+		width: 90%;
+	    padding: 5% 0;
+	}
+
+	.intro-pages,
+	.intro-pages:last-child {
+		padding: 0 0 50px;
+	}
+
+	.intro-box.left,
+	.intro-box.right {
+		float: none;
+		width: auto;
+	}
+
+
+	/* NDC: BOXLISTS */
+	
+	.boxlists-links a {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+		.boxlists-links a:last-child {
+			margin-bottom: 0;
+		}
+
+	.boxlists-separate { display: block;}
+
+
+}
+
+
+
+
 /* ================================================ 0 - 1275px ======================================= */
 
 @media only screen
@@ -589,7 +633,108 @@ and (max-width : 1024px) {
     color: #fff;
 	}
 
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: PAGE: SINGLE SPECIALS */
+
+	.single-specials-links {
+		text-align: left;
+		margin-bottom: 15px;
+
+		position: static;
+	}
+
+	.single-specials-links a {
+		padding: 15px 25px;
+		min-width: 155px;
+		width: auto;
+	}
+
+	.single-specials-content {
+		width: auto;
+	}
+
+
+	/* NDC: PAGE: ROOMS PAGE */
+
+	.roomslist-title {
+		max-width: 90%;
+		margin-left: -45%;
+	}
+
+	.roomslist-content {
+		width: auto;
+	}
+		.roomslist-box-booknowonly .roomslist-content {
+			width: auto;
+		}
+
+	.roomslist-link {
+		float: left;
+		height: auto;
+		width: 50%;
+		padding: 10px 0;
+
+		position: static;
+	}
+		.roomslist-link.roomslist-link-moreinfo { width: 50%; }
+
+		.roomslist-box-booknowonly .roomslist-link { width: 100%; }
+
+	.roomslist-link span {
+		position: static;
+	}
+
+
+	/* NDC: BOXLISTS */
+
+	.boxlists-threecol .boxlists-box {
+		width: 48.5%;
+		margin-right: 0;
+		margin-bottom: 3%;
+	}
+
+		.boxlists-threecol .clear3 { display: none; }
+		.boxlists-threecol .clear2 { display: block; }
+
+		.boxlists-threecol .boxlists-box.left { float: left; }
+		.boxlists-threecol .boxlists-box.right { float: right; }
+
 }
+
+
+
+/* ================================================  959 - 000  ======================================= */
+
+@media only screen and (max-width : 959px) {
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HOMEPAGE */
+
+	.feature-box-normal {
+		height: 400px;
+	}
+
+	.feature-box-half {
+		width: auto;
+	}
+
+	.feature-box-half.left,
+	.feature-box-half.right { float: none; }
+
+	.feature-box-getcontent h2 {
+		font-size: 40px;
+	}
+
+	.feature-box-getcontent .feature-content {
+		max-width: 90%;
+	}
+
+}
+
+
 
 
 
@@ -1015,6 +1160,33 @@ and (max-width : 1024px) {
 	}
 
 
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HEADERNAV */
+
+	.nav-list,
+	.bottomnav-area,
+	.headernav-block-secondary { display: none;}
+
+	.mobilenav { display: block;}
+	.nav-button-menu { display: block;}
+
+	.nav-language-address {
+		float: right;
+	}
+
+	.nav-language {
+		float: left;
+	}
+
+	.nav-address {
+		line-height: 1.5;
+		margin-top: 10px;
+	}
+
+	.nav-address br { display: inline; }
+	.nav-address span.punct { display: none; }
+
 
 }
 
@@ -1034,6 +1206,35 @@ and (max-width : 840px) {
 }
 
 
+
+/* ================================================  800 - 000  ======================================= */
+
+@media only screen and (max-width : 800px) {
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HOMEPAGE */
+
+	.intro-iconamenities li {
+		width: 40%;
+	}
+
+
+
+	/* NDC: BOXLISTS */
+
+	.boxlists-twocol .boxlists-box {
+		float: none;
+		width: auto;
+	}
+
+	.boxlists-separate { display: none;}
+
+
+}
+
+
+
 /* ================================================ 770 ======================================= */
 
 @media only screen
@@ -1045,6 +1246,62 @@ and (max-width : 770px) {
 
 	.deal-wrapper {
 		height: 555px;
+	}
+
+}
+
+
+
+/* ================================================  767 - 000  ======================================= */
+
+@media only screen and (max-width : 767px) {
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HOMEPAGE */
+
+	.intro-iconamenities {
+		display: none;
+	}
+
+
+	/* NDC: PAGE: SPECIALS */
+
+	.boxlists-dealspage .boxlists-content {
+		min-height: auto;
+	}
+
+	.page.deals #theguestbook_widget .theguestbook-widget-form,
+	.page.page-template-page_deals #theguestbook_widget .theguestbook-widget-form {
+		margin-bottom: 10px;
+	}
+
+
+	/* NDC: PAGE: ROOMS PAGE */
+
+	.roomslist-content {
+		display: none;
+	}
+
+
+	/* NDC: BOXLISTS */
+
+	.boxlists-threecol .boxlists-box {
+		width: auto;
+		float: none;
+		margin-bottom: 30px;
+	}
+		.boxlists-threecol .boxlists-box.left { float: none; }
+		.boxlists-threecol .boxlists-box.right { float: none; }
+
+	.boxlists-twocol .boxlists-box {
+		float: none;
+		width: auto;
+		margin-bottom: 30px;
+	}
+
+	.boxlists-imagebox {
+		height: 240px;
 	}
 
 }
@@ -1667,18 +1924,6 @@ and (max-width : 640px) {
 
 
 
-	/* PAGE - Gallery */
-
-	.gallery .flexslider {
-	    height: 390px;
-	}
-
-	.gallery .flexslider .slides > li {
-	    height: 360px;
-	}
-
-
-
 	/* PAGE - Deals */
 
 	.deal {
@@ -1801,10 +2046,6 @@ and (max-width : 480px) {
 	.calspacer span input,
 	.calspacer span select {
 		font-size: 65px;
-	}
-
-	.datepicker, .datepickerr {
-		left: 120%;
 	}
 		.calspacer span:hover .datepicker, .calspacer span:hover .datepickerr {
 		    left: 120%;

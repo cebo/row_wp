@@ -7226,6 +7226,20 @@ li.deal.foreign-box{
 *
 ------------------------------------------------------------------------------------ */
 
+.datepicker {
+	display: none;
+	margin: 0;
+	visibility: visible;
+	opacity: 1;
+
+	right: auto;
+	z-index: 1;
+}
+
+.datepicker.datepicker-show {
+	display: block;
+}
+
 .wrapper {
 	overflow: hidden;
 }
@@ -7261,6 +7275,7 @@ li.deal.foreign-box{
 
 .topnav-area {
 	background-color: #000;
+	height: 121px;
 	position: relative;
 }
 
@@ -7390,6 +7405,7 @@ li.deal.foreign-box{
 	line-height: 1;
 	text-transform: uppercase;
 }
+	.nav-address br { display: none; }
 	.nav-address span { font-family: 'GothamBold'; }
 	.nav-address .punct {
 		color: #fff;
@@ -7425,6 +7441,22 @@ li.deal.foreign-box{
 	transition: all 0.4s ease 0s;
 }
 	.nav-list a:hover { opacity: 0.7;}
+
+.nav-button-menu {
+	display: none;
+	clear: both;
+	text-align: right;
+	padding: 0 20px 0 0;
+}
+
+.nav-button-menu div {
+	display: inline-block;
+	color: #fff;
+	font-family: 'GothamBook';
+	font-size: 23px;
+	text-transform: uppercase;
+	padding: 10px;
+}
 
 .bottomnav-area {
 	background-color: rgba(0,0,0,0.8);
@@ -7551,6 +7583,237 @@ li.deal.foreign-box{
 	transition: all 0.4s ease 0s;
 }
 	.schedulebook button:hover { color: #000; }
+
+.mobilenav {
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	display: none;
+
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	-ms-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+	body.mobilenav-active .mobilenav {
+		opacity: 1;
+		visibility: visible;
+
+		z-index: 5;
+
+		-webkit-transition: all 1s ease 0s;
+		-moz-transition: all 1s ease 0s;
+		-o-transition: all 1s ease 0s;
+		-ms-transition: all 1s ease 0s;
+		transition: all 1s ease 0s;
+	}
+
+.mobilenav-top {
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.mobilenav-logo {
+	background-color: #000;
+}
+
+.mobilenav-logo img {
+	display: block;
+	height: 40px;
+	padding: 5px 0;
+	margin: 0 auto;
+}
+
+.mobilenav-button-reserve {
+	background-color: #e51a9b;
+	color: #fff;
+	font-size: 14px;
+	line-height: 26px;
+	height: 26px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.mobilenav-button-close {
+	background-color: #666;
+	height: 50px;
+	width: 50px;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.mobilenav-button-close div {
+	position: relative;
+}
+
+.mobilenav-schedulebook-close {
+	background-color: #000;
+	height: 50px;
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.mobilenav-button-close div:before,
+.mobilenav-button-close div:after,
+.mobilenav-schedulebook-close div:before,
+.mobilenav-schedulebook-close div:after {
+	background-color: #fff;
+	display: block;
+	content: '';
+	height: 40px;
+	width: 2px;
+
+	position: absolute;
+	top: 5px;
+	left: 50%;
+	margin-left: -1px;
+}
+	.mobilenav-button-close div:before,
+	.mobilenav-schedulebook-close div:before {
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	.mobilenav-button-close div:after,
+	.mobilenav-schedulebook-close div:after {
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+
+.mobilenav-block {
+	height: 76px;
+}
+
+.mobilenav-menu {
+	overflow: auto;
+	height: 100%;
+	padding: 0;
+}
+
+.mobilenav-menu li {
+	margin: 15px 0;
+	text-align: center;
+}
+
+.mobilenav-menu li a {
+	display: inline-block;
+	color: #000;
+	font-family: 'GothamBook', sans-serif;
+	font-size: 24px;
+	line-height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.mobilenav-reserve {
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	-ms-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+	body.mobilenav-reserve-active .mobilenav-reserve {
+		opacity: 1;
+		visibility: visible;
+		z-index: 5;
+
+		-webkit-transition: all 0.5s ease 0s;
+		-moz-transition: all 0.5s ease 0s;
+		-o-transition: all 0.5s ease 0s;
+		-ms-transition: all 0.5s ease 0s;
+		transition: all 0.5s ease 0s;
+	}
+
+.mobilenav-schedulebook-selector {
+	padding: 50px 0 0;
+	overflow: auto;
+}
+
+.mobilenav-sb-select {
+	background-color: #000;
+	float: left;
+	color: #fff;
+	font-family: 'GothamBook', sans-serif;
+	font-size: 16px;
+	line-height: 26px;
+	height: 26px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 50%;
+}
+	.arrive-selector .mobilenav-sb-arrive { background-color: #e51a9b;}
+	.depart-selector .mobilenav-sb-depart { background-color: #e51a9b;}
+
+.mobilenav-reserve .schedulebook {
+	padding: 10px 0 30px;
+}
+
+.mobilenav-reserve .schedulebook form {
+	display: block;
+}
+
+.mobilenav-reserve .schedule-box {
+	display: block;
+	margin: 0 10px 5px;
+}
+
+.mobilenav-reserve .schedulebook input,
+.mobilenav-reserve .schedulebook select {
+	width: 100%;
+}
+
+.mobilenav-reserve .schedulebook button {
+	width: 100%;
+}
+
+.datepicker.datepicker-mobile {
+	display: block;
+	margin: 10px;
+	min-width: auto;
+	visibility: visible;
+	opacity: 1;
+
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+}
 
 .table-parent { display: table; height: 100%; width: 100%;}
 .table-child { display: table-cell; vertical-align: middle;}
@@ -7845,6 +8108,7 @@ li.deal.foreign-box{
 .page.page-template-page_deals #theguestbook_widget .theguestbook-widget-form #currency_select {
 	float: none;
 	display: inline-block;
+	font-size: 16px !important;
 	margin: 0 0 0 8px;
 }
 
@@ -8265,6 +8529,9 @@ li.deal.foreign-box{
 
 		.boxlists-threecol .boxlists-box.last { margin-right: 0;}
 
+		.boxlists-threecol .boxlists-box.left,
+		.boxlists-threecol .boxlists-box.right { float: left; }
+
 .boxlists-imagebox {
 	overflow: hidden;
 	height: 300px;
@@ -8332,6 +8599,7 @@ li.deal.foreign-box{
 }
 
 .boxlists-links a {
+	box-sizing: border-box;
 	display: inline-block;
 	background-color: #e51a9b;
 	border: 1px solid #e51a9b;
@@ -8340,6 +8608,7 @@ li.deal.foreign-box{
 	font-family: 'Montserrat', sans-serif;
 	line-height: 1;
 	text-transform: uppercase;
+	min-width: 155px;
 	padding: 10px 20px;
 	margin-right: 5px;
 
@@ -8370,8 +8639,8 @@ li.deal.foreign-box{
 		font-size: 18px;
 		font-family: 'Montserrat', sans-serif;
 		line-height: 1;
+		min-width: 155px;
 		height: 40px;
-		width: 140px;
 		padding: 10px;
 		text-align: center;
 		text-transform: uppercase;
@@ -8388,6 +8657,8 @@ li.deal.foreign-box{
 		transition: all 0.4s ease 0s;
 	}
 		.boxlists-links .boxlists-enroll:hover { opacity: 0.7; }
+
+.boxlists-separate { display: none;}
 
 
 /* ROOMSLIST */
