@@ -45,23 +45,6 @@
 
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js'></script>
 
-<style>
-	
-.datepicker {
-	right: auto;
-	margin: 0;
-	visibility: visible;
-	opacity: 1;
-	display: none;
-}
-
-.datepicker.datepicker-show {
-	display: block;
-}
-
-</style>
-
-
 <script type="text/javascript">
 	$(document).ready(function(){
 
@@ -105,6 +88,9 @@
 	$('#arrival_date').val($.datepicker.formatDate('yy-mm-dd', today));
 	$('#departure_date').val($.datepicker.formatDate('yy-mm-dd', tomorrow));
 
+	$('#arrival_date_mobile').val($.datepicker.formatDate('yy-mm-dd', today));
+	$('#departure_date_mobile').val($.datepicker.formatDate('yy-mm-dd', tomorrow));
+
 
 	// * datepicker for the arrival input
 		
@@ -147,11 +133,10 @@
 				// * open up datepicker-departure
 				$departure.addClass('datepicker-show');
 
-				// * format arrivalDate and use it to update datepicker-departure date
-				// * add 1: prevent user to check in or check out on the same day
+				// * format arrivalDate and use it to update #departure_date input
+				// * add 1 to arrivalDate: prevents user to check out on the same day
 				arrivalDate.setDate( arrivalDate.getDate() + 1 );
 				var new_departureDate = $.datepicker.formatDate( 'yy-mm-dd', arrivalDate );
-				$departure.datepicker( 'setDate', new_departureDate );
 
 				// * set these new values into their respective inputs
 				$('#arrival_date').val( selectedDate );
@@ -167,8 +152,8 @@
 			}
 
 
-			// update both datepickers dp-highlight class
-			$('.datepicker-arrival, .datepicker-departure').datepicker( "option", "beforeShowDay", function( date ) {
+			// * update all datepickers dp-highlight class
+			$('.datepicker-arrival, .datepicker-departure, .datepicker-mobile').datepicker( "option", "beforeShowDay", function( date ) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
 				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
@@ -204,11 +189,10 @@
 				// * open up datepicker-arrival
 				$arrival.addClass('datepicker-show');
 
-				// * format departureDate and use it to update datepicker-arrival date
-				// * minus 1: prevent user to check in or check out on the same day
+				// * format departureDate and use it to update #arrival_date input
+				// * minus 1 to departureDate: prevents user to check in or check out on the same day
 				departureDate.setDate( departureDate.getDate() - 1 );
 				var new_arrivalDate = $.datepicker.formatDate( 'yy-mm-dd', departureDate );
-				$arrival.datepicker( 'setDate', new_arrivalDate );
 
 
 				// * set these new values into their respective inputs
@@ -223,8 +207,8 @@
 			}
 
 
-			// update both datepickers dp-highlight class
-			$('.datepicker-arrival, .datepicker-departure').datepicker( "option", "beforeShowDay", function( date ) {
+			// * update all datepickers dp-highlight class
+			$('.datepicker-arrival, .datepicker-departure, .datepicker-mobile').datepicker( "option", "beforeShowDay", function( date ) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
 				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
@@ -232,6 +216,119 @@
 
 		}
 	});
+
+
+	// * datepicker for mobile input
+
+	$('.nav-button-menu').click(function() {
+		$('body').addClass('mobilenav-active');
+	});
+
+	$('.mobilenav-button-close').click(function() {
+		$('body').removeClass('mobilenav-active');
+	});
+
+	$('.mobilenav-button-reserve').click(function() {
+		$('body').addClass('mobilenav-reserve-active');
+	});
+
+	$('.mobilenav-schedulebook-close').click(function() {
+		$('body').removeClass('mobilenav-reserve-active');
+	});
+
+	$('.mobilenav-sb-arrive').click(function() {
+		var main = $('.mobilenav-schedulebook-selector');
+
+		main.removeClass('depart-selector');
+		main.addClass('arrive-selector');
+	});
+
+	$('.mobilenav-sb-depart').click(function() {
+		var main = $('.mobilenav-schedulebook-selector');
+
+		main.removeClass('arrive-selector');
+		main.addClass('depart-selector');
+	});
+	
+	$('.datepicker-mobile').datepicker({
+		minDate: 0,
+
+		onSelect: function( selectedDate ) {
+
+			// * variables
+			var $selector = $('.mobilenav-schedulebook-selector'),
+
+				arrivalDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date_mobile").val()),
+				departureDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date_mobile").val()),
+				selected = $.datepicker.parseDate($.datepicker._defaults.dateFormat, selectedDate);
+
+			// check if what selector got highlighted and use that procedure
+			if ( $selector.hasClass('arrive-selector') ) {
+
+				$selector.removeClass('arrive-selector');
+				$selector.addClass('depart-selector');
+
+				// check if selected date is higher than or equal to departure time
+				if ( selected.getTime() >= departureDate.getTime() ) {
+
+					// * save selected to departureDate
+					// * format departureDate and use it to update #departure_date_mobile input
+					// * add 1: prevents user to check in or check out on the same day
+					departureDate = selected;
+					departureDate.setDate( departureDate.getDate() + 1 );
+					var new_departureDate = $.datepicker.formatDate( 'yy-mm-dd', departureDate );
+					
+
+					// * set these new values into their respective inputs
+					$("#arrival_date_mobile").val( selectedDate );
+					$("#departure_date_mobile").val( new_departureDate );
+
+				} else {
+
+					// * just update this input...
+					$("#arrival_date_mobile").val( selectedDate );
+
+				}
+
+			} else {
+
+				$selector.removeClass('depart-selector');
+				$selector.addClass('arrive-selector');
+
+				if ( selected.getTime() <= arrivalDate.getTime() ) {
+
+					// * save selected to arrivalDate
+					// * format arrivalDate and use it to update #departure_date_mobile input
+					// * minus 1: prevents user to check in or check out on the same day
+					arrivalDate = selected;
+					arrivalDate.setDate( arrivalDate.getDate() - 1 );
+					var new_arrivalDate = $.datepicker.formatDate( 'yy-mm-dd', arrivalDate );
+					
+
+					// * set these new values into their respective inputs
+					$("#arrival_date_mobile").val( new_arrivalDate );
+					$("#departure_date_mobile").val( selectedDate );
+
+				} else {
+
+					// * just update this input...
+					$("#departure_date_mobile").val( selectedDate );
+
+				}
+
+			}
+
+
+			// * update all datepickers dp-highlight class
+			$('.datepicker-arrival, .datepicker-departure, .datepicker-mobile').datepicker( "option", "beforeShowDay", function( date ) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date_mobile").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date_mobile").val());
+				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			});
+
+		}
+	});
+
 
 
 	});

@@ -71,7 +71,7 @@
 
 			<div class="boxlists-main boxlists-threecol boxlists-hotelpage">
 
-				<div class="boxlists-box">
+				<div class="boxlists-box left">
 
 					<div class="boxlists-imagebox">
 						<div class="boxlists-image" style="background-image: url(<?php echo site_url(); ?>/wp-content/uploads/2014/10/row-hotel-nyc-amenities.jpg);"></div>
@@ -113,6 +113,9 @@
 
 						if ( $count % 3 == 0 ) { $last = 'last'; }
 						else { $last = ''; }
+
+						if ( $count % 2 == 0 ) { $last .= ' right'; }
+						else { $last .= ' left'; }
 
 				?>
 
@@ -156,9 +159,16 @@
 
 					</div>
 
-					<?php if ( $count % 3 == 0 ) { echo '<div class="clear clear3"></div>'; } ?>
+					<?php
+
+						if ( $count % 3 == 0 ) { echo '<div class="clear clear3"></div>'; }
+						if ( $count % 2 == 0 ) { echo '<div class="clear clear2"></div>'; }
+
+					?>
 
 				<?php $count++; endwhile; endif; wp_reset_postdata(); ?>
+
+				<div class="clear"></div>
 
 			</div>
 

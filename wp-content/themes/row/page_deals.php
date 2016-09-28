@@ -53,6 +53,9 @@
 						if ( $count % 3 == 0 ) { $last = 'last'; }
 						else { $last = ''; }
 
+						if ( $count % 2 == 0 ) { $last .= ' right'; }
+						else { $last .= ' left'; }
+
 				?>
 
 				<div class="boxlists-box <?php echo $last; ?>">
@@ -107,6 +110,7 @@
 
 						<div class="boxlists-links">
 							<a href="<?php if ( $learnmore ) { echo $learnmore; } else { the_permalink(); } ?>"><?php _e('Read Now','row-theme-text'); ?></a>
+
 							<input type="button" class="boxlists-enroll theguestbook-email-submit-input" value="<?php _e('Enroll','row-theme-text'); ?>">
 						</div>
 
@@ -140,9 +144,16 @@
 
 				</div>
 
-				<?php if ( $count % 3 == 0 ) { echo '<div class="clear clear3"></div>'; } ?>
+				<?php
+
+					if ( $count % 3 == 0 ) { echo '<div class="clear clear3"></div>'; }
+					if ( $count % 2 == 0 ) { echo '<div class="clear clear2"></div>'; }
+
+				?>
 
 				<?php $count++; endwhile; endif; wp_reset_query(); ?>
+
+				<div class="clear"></div>
 
 			</div>
 

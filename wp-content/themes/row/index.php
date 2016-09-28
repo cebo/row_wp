@@ -166,6 +166,7 @@
 
 							<div class="boxlists-links">
 								<a href="<?php echo $booklink; ?>"><?php _e( 'Book Now', 'row-theme-text' ); ?></a>
+								<div class="boxlists-separate"></div>
 								<a class="boxlists-moreinfo" href="<?php echo $moreinfo; ?>"><?php _e( 'More Info', 'row-theme-text' ); ?></a>
 							</div>
 						</div>

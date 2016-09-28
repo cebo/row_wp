@@ -282,7 +282,7 @@ ga('send', 'pageview');
 
 				</div>
 
-				<div class="nav-address">A Times Square Hotel<span class="punct">·</span>700 8th Ave, NYC<span class="punct">·</span><span class="pink">Reservations:</span> 888.352.3650</div>
+				<div class="nav-address">A Times Square Hotel<br><span class="punct">·</span>700 8th Ave, NYC<br><span class="punct">·</span><span class="pink">Reservations:</span> 888.352.3650</div>
 
 			</div>
 
@@ -293,6 +293,8 @@ ga('send', 'pageview');
 				<li><a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><?php _e('Gallery','row-theme-text'); ?></a></li>
 				<li><a target="_blank" href="<?php bloginfo ('url'); ?>/blog"><?php _e('Blog','row-theme-text'); ?></a></li>
 			</ul>
+
+			<div class="nav-button-menu"><div><?php _e('Menu','row-theme-text'); ?></div></div>
 
 		</div>
 
@@ -337,12 +339,12 @@ ga('send', 'pageview');
 						</div>
 
 						<div class="schedule-box">
-							<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" class="calendarsection" />
+							<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
 							<i class="fa fa-calendar"></i>
 						</div>
 
 						<div class="schedule-box">
-							<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" class="calendarsection" />
+							<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
 							<i class="fa fa-calendar"></i>
 						</div>
 
@@ -386,6 +388,119 @@ ga('send', 'pageview');
 	</div>
 
 	<div class="headernav-block"></div>
+
+	<div class="mobilenav">
+		
+		<div class="mobilenav-top">
+			
+			<div class="mobilenav-logo">
+				<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" /></a>
+			</div>
+			<div class="mobilenav-button-reserve"><?php _e('Reserve Now','row-theme-text'); ?></div>
+			<div class="mobilenav-button-close"><div></div></div>
+
+		</div>
+
+		<ul class="mobilenav-menu">
+
+			<div class="mobilenav-block"></div>
+
+			<li><a href="<?php bloginfo ('url'); ?>/the-hotel/"><?php _e('Hotel','row-theme-text'); ?></a></li>
+			<li><a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><?php _e('Special','row-theme-text'); ?></a></li>
+			<li><a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><?php _e('Rooms','row-theme-text'); ?></a></li>
+			<li><a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><?php _e('Gallery','row-theme-text'); ?></a></li>
+			<li><a target="_blank" href="<?php bloginfo ('url'); ?>/blog"><?php _e('Blog','row-theme-text'); ?></a></li>
+		</ul>
+
+		<div class="mobilenav-reserve">
+
+			<div class="mobilenav-schedulebook-close"><div></div></div>
+
+			<div class="mobilenav-schedulebook-selector arrive-selector">
+				
+				<div class="mobilenav-sb-select mobilenav-sb-arrive"><?php _e('Arrive','row-theme-text'); ?></div>
+				<div class="mobilenav-sb-select mobilenav-sb-depart"><?php _e('Depart','row-theme-text'); ?></div>
+
+			</div>
+
+			<div class="schedulebook">
+				<form
+
+					<?php if( $current_lang == 'en') { ?>
+
+						action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+					<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+						action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" 
+
+					<?php } elseif( $current_lang == 'pt-br') { ?>
+
+						action="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" 
+
+					<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+						action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" 
+
+					<?php } else { ?>
+
+						action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+					<?php } ?>
+
+					onsubmit="_gaq.push(['_linkByPost', this]);">
+
+						<div class="datepicker datepicker-mobile"></div>
+
+						<div class="schedule-box">
+							<input name="arrival_date" id="arrival_date_mobile" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
+							<i class="fa fa-calendar"></i>
+						</div>
+
+						<div class="schedule-box">
+							<input name="departure_date" id="departure_date_mobile" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
+							<i class="fa fa-calendar"></i>
+						</div>
+
+						<div class="schedule-box">
+							<select name="rooms">
+								<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
+								<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
+								<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
+							</select>
+							<i class="fa fa-caret-down"></i>
+						</div>
+
+						<div class="schedule-box">
+							<select name="adults[]">
+								<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
+								<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
+								<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
+								<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
+							</select>
+							<i class="fa fa-caret-down"></i>
+						</div>
+
+						<div class="schedule-box">
+							<select name="children[]">
+								<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
+								<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
+								<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
+								<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
+							</select>
+							<i class="fa fa-caret-down"></i>
+						</div>
+
+						<div class="schedule-box">
+							<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+						</div>
+
+				</form>
+			</div>
+
+		</div>
+
+	</div>
 	
 	<?php if ( false ) { ?>
 
