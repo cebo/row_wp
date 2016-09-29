@@ -550,18 +550,6 @@ and (max-width : 1275px) {
 
 
 
-	/* PAGE - Gallery */
-
-	.gallery .flexslider {
-	    height: 580px;
-	}
-
-	.gallery .flexslider .slides > li {
-	    height: 550px;
-	}
-
-
-
 	/* SINGLE - Explore */
 
 	.page.time-square .textbox {
@@ -581,12 +569,9 @@ and (max-width : 1275px) {
 
 }
 
-/* ================================================ 1024 ======================================= */
+/* ================================================  1024 - 0000  ======================================= */
 
-@media only screen
-and (max-width : 1024px) {
-
-
+@media only screen and (max-width : 1024px) {
 
 	/* Video */
 
@@ -656,7 +641,7 @@ and (max-width : 1024px) {
 	}
 
 
-	/* NDC: PAGE: ROOMS PAGE */
+	/* NDC: ROOMSLIST */
 
 	.roomslist-title-desktop { display: none; }
 	.roomslist-title-mobile { display: block; }
@@ -726,6 +711,28 @@ and (max-width : 1024px) {
 
 	.toppage-intro {
 		height: 450px;
+	}
+
+
+	/* NDC: ROOMSLIST */
+
+	.roomslist-box {
+		height: 450px;
+	}
+
+
+	/* NDC: FLEXSIDER GALLERY THEME */
+
+	.flexslider-gallery-theme .slides {
+		height: 450px;
+	}
+
+	.flexslider-gallery-theme .flex-direction-nav {
+		top: 225px;
+	}
+
+	.flexslider-gallery-theme .flex-control-thumbs li {
+		width: 25%;
 	}
 
 }
@@ -1095,18 +1102,6 @@ and (max-width : 1024px) {
 
 
 
-	/* PAGE - Gallery */
-
-	.gallery .flexslider, .slide-image {
-	    height: 390px;
-	}
-
-	.gallery .flexslider .slides > li {
-	    height: 360px;
-	}
-
-
-
 	/* SINGLE - Room */
 
 	.room-more-details {
@@ -1316,7 +1311,11 @@ and (max-width : 770px) {
 	}
 
 
-	/* NDC: PAGE: ROOMS PAGE */
+	/* NDC: ROOMSLIST */
+
+	.roomslist-box {
+		height: 320px;
+	}
 
 	.roomslist-title-mobile {
 		text-align: center;
@@ -1355,6 +1354,14 @@ and (max-width : 770px) {
 	.boxlists-imagebox {
 		height: 240px;
 	}
+
+
+	/* NDC: FLEXSLIDER GALLERY THEME */
+
+	.flexslider-gallery-theme .flex-control-thumbs li {
+		width: 50%;
+	}
+
 
 }
 
@@ -1999,10 +2006,23 @@ and (max-width : 640px) {
 
 @media only screen and (max-width : 599px) {
 
+	/* NEW DESIGN CHANGES */
+
 	/* NDC: TOPPAGE INTRO */
 
 	.toppage-intro {
 		height: 320px;
+	}
+
+
+	/* NDC: FLEXSIDER GALLERY THEME */
+
+	.flexslider-gallery-theme .slides {
+		height: 320px;
+	}
+
+	.flexslider-gallery-theme .flex-direction-nav {
+		top: 160px;
 	}
 
 }
@@ -2206,27 +2226,6 @@ and (max-width : 480px) {
 	.blogposters li {
 		width: 100%;
 	}
-
-
-
-	/* PAGE - Gallery */
-
-	.gallery .flexslider {
-	    height: 390px;
-	}
-
-	.gallery .flexslider .slides > li {
-	    height: 360px;
-	}
-
-	.gallery .flex-direction-nav a:before {
-	    font-size: 30px;
-	}
-
-	.gallery .flex-direction-nav a {
-		height: 30px;
-	}
-
 
 
 	/* SINGLE - Room */
