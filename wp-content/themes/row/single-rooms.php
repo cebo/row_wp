@@ -35,7 +35,7 @@
 					<ul class="slides">
 
 						<?php foreach ( $gallery_repeater as $gallery ) : ?>
-							<?php $gallery['image']['url'] = get_bloginfo('template_url') . '/images/amenities/amenities-photo-1.jpg'; ?>
+
 							<li class="toppage-image" style="background-image: url(<?php echo $gallery['image']['url']; ?>)"></li>
 
 						<?php endforeach; ?>
