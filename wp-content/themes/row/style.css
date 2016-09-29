@@ -8409,6 +8409,9 @@ li.deal.foreign-box{
 	text-align: center;
 	margin-bottom: 50px;
 }
+	.toptitle-area.toptitle-titleonly {
+		margin: 15px 0;
+	}
 
 .toptitle-area h1 {
 	color: #000;
@@ -8417,6 +8420,9 @@ li.deal.foreign-box{
 	line-height: 1;
 	padding: 40px 0 20px;
 }
+	.toptitle-area.toptitle-titleonly h1 {
+		padding: 10px 0;
+	}
 
 .toptitle-description {
 	color: #000;
@@ -8426,6 +8432,7 @@ li.deal.foreign-box{
 	max-width: 650px;
 	margin: 0 auto;
 }
+	.toptitle-area.toptitle-titleonly .toptitle-description { display: none; }
 
 .toptitle-description p {
 	color: inherit;
@@ -8682,7 +8689,7 @@ li.deal.foreign-box{
 /* ROOMSLIST */
 
 .roomslist-box {
-	height: 470px;
+	height: 500px;
 	position: relative;
 }
 
@@ -8890,7 +8897,6 @@ li.deal.foreign-box{
 .flexslider-gallery-theme .flex-direction-nav {
 	position: absolute;
 	top: 250px;
-	width: 100%;
 }
 
 .flexslider-gallery-theme .flex-direction-nav a {

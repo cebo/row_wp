@@ -49,7 +49,7 @@
 
 		</div>
 
-		<div class="toptitle-area toptitle-domestic">
+		<div class="toptitle-area toptitle-titleonly toptitle-domestic">
 
 			<h1><?php the_title(); ?></h1>
 

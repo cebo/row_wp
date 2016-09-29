@@ -10,7 +10,7 @@
 
 	<div class="headernav-block-secondary"></div>
 
-	<div class="toptitle-area toptitle-amenitiespage">
+	<div class="toptitle-area toptitle-titleonly toptitle-amenitiespage">
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
