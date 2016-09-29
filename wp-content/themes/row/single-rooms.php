@@ -5,9 +5,12 @@
 	get_header();
 
 	$acf_fields = get_fields( $post->ID );
-	// var_dump( $acf_fields );
 
 	$gallery_repeater = $acf_fields['roomsdetail_gallery_repeater'];
+
+	ini_set('xdebug.var_display_max_depth', -1);
+	ini_set('xdebug.var_display_max_children', -1);
+	ini_set('xdebug.var_display_max_data', -1);
 
 ?>
 
@@ -51,9 +54,9 @@
 
 			<div class="roomssingle-panel">
 
-				<div class="roomssingle-content">
+				<h1 class="roomssingle-title roomssingle-title-mobile"><?php the_title(); ?></h1>
 
-					<h1 class="roomssingle-title roomssingle-title-mobile"><?php the_title(); ?></h1>
+				<div class="roomssingle-content">
 
 					<?php the_content(); ?>
 
@@ -145,7 +148,7 @@
 			$second_col = array();
 			$third_col = array();
 
-			if ( $list_column_flexisble ) {
+			if ( $list_column_flexible ) {
 
 				foreach ( $list_column_flexible as $flex ) {
 
@@ -249,9 +252,24 @@
 
 			<?php } ?>
 
-			<?php if ( count( $third_col ) > 0 ) { ?>
+			<?php
 
-				<div class="roomsdetail-col">
+				if ( count( $third_col ) > 0 ) {
+
+					if ( $check == 3 ) {
+
+						echo '<div class="clear clear2"></div>';
+						$last = 'last';
+
+					} else {
+
+						$last = '';
+
+					}
+
+			?>
+
+				<div class="roomsdetail-col <?php echo $last; ?>">
 
 					<?php roomsdetail( $third_col ); ?>
 

@@ -60,11 +60,13 @@
 
 					<a class="roomslist-image" href="<?php echo $get_permalink; ?>" style="background-image: url(<?php echo $imgsrcuse; ?>);"></a>
 
-					<a class="roomslist-title" href="<?php echo $get_permalink; ?>"><h2><?php the_title(); ?></h2></a>
+					<a class="roomslist-title roomslist-title-desktop" href="<?php echo $get_permalink; ?>"><h2><?php the_title(); ?></h2></a>
 
 				</div>
 
 				<div class="roomslist-panel">
+
+					<h2 class="roomslist-title roomslist-title-mobile"><?php the_title(); ?></h2>
 
 					<div class="roomslist-content">
 

@@ -5565,7 +5565,7 @@ body .ui-tooltip {
 	border: none;
 	background: #ffffff url(images/ui-bg_flat_65_ffffff_40x100.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #cc0000;
+	/*color: #cc0000;*/
 }
 .ui-state-active a,
 .ui-state-active a:link,
@@ -7442,14 +7442,24 @@ li.deal.foreign-box{
 }
 	.nav-list a:hover { opacity: 0.7;}
 
-.nav-button-menu {
+.nav-button-mobile {
 	display: none;
 	clear: both;
 	text-align: right;
-	padding: 0 20px 0 0;
+	padding: 0 20px 0 0;	
 }
 
-.nav-button-menu div {
+.nav-button-menu,
+.nav-button-reserve {
+	display: inline-block;
+}
+
+.nav-button-reserve {
+	margin-right: 10px;
+}
+
+.nav-button-menu div,
+.nav-button-reserve div {
 	display: inline-block;
 	color: #fff;
 	font-family: 'GothamBook';
@@ -7457,6 +7467,8 @@ li.deal.foreign-box{
 	text-transform: uppercase;
 	padding: 10px;
 }
+	.nav-button-menu div { color: #fff; }
+	.nav-button-reserve div { color: #e51a9b; }
 
 .bottomnav-area {
 	background-color: rgba(0,0,0,0.8);
@@ -7524,16 +7536,17 @@ li.deal.foreign-box{
 	.close-dp:hover { background: #e51a9b; }
 
 .letter-dp {
-	background-color: #333;
+	background-color: #e51a9b;
 	color: #fff;
-	line-height: 1.2;
+	font-size: 16px;
+	line-height: 20px;
 	text-align: center;
-	width: 50px;
-	padding: 10px 0;
+	height: 20px;
+	padding: 10px;
 
 	position: absolute;
-	left: -50px;
-	top: 40px;
+	left: 0;
+	top: -40px;
 }
 
 .schedule-box {
@@ -7608,7 +7621,7 @@ li.deal.foreign-box{
 		opacity: 1;
 		visibility: visible;
 
-		z-index: 5;
+		z-index: 10;
 
 		-webkit-transition: all 1s ease 0s;
 		-moz-transition: all 1s ease 0s;
@@ -7634,16 +7647,6 @@ li.deal.foreign-box{
 	height: 40px;
 	padding: 5px 0;
 	margin: 0 auto;
-}
-
-.mobilenav-button-reserve {
-	background-color: #e51a9b;
-	color: #fff;
-	font-size: 14px;
-	line-height: 26px;
-	height: 26px;
-	text-align: center;
-	text-transform: uppercase;
 }
 
 .mobilenav-button-close {
@@ -7704,7 +7707,7 @@ li.deal.foreign-box{
 	}
 
 .mobilenav-block {
-	height: 76px;
+	height: 50px;
 }
 
 .mobilenav-menu {
@@ -7734,7 +7737,7 @@ li.deal.foreign-box{
 	width: 100%;
 	overflow: auto;
 
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: -1;
@@ -7751,7 +7754,7 @@ li.deal.foreign-box{
 	body.mobilenav-reserve-active .mobilenav-reserve {
 		opacity: 1;
 		visibility: visible;
-		z-index: 5;
+		z-index: 10;
 
 		-webkit-transition: all 0.5s ease 0s;
 		-moz-transition: all 0.5s ease 0s;
@@ -7786,12 +7789,23 @@ li.deal.foreign-box{
 
 .mobilenav-reserve .schedulebook form {
 	display: block;
+	overflow: hidden;
+	margin: 0 10px;
 }
 
 .mobilenav-reserve .schedule-box {
+	float: left;
 	display: block;
-	margin: 0 10px 5px;
+	width: 49.5%;
+	margin: 0 0 1%;
 }
+	.mobilenav-reserve .schedule-box.left { float: left; }
+	.mobilenav-reserve .schedule-box.right { float: right; }
+	.mobilenav-reserve .schedule-box.full {
+		float: none;
+		width: auto;
+		clear: both;
+	}
 
 .mobilenav-reserve .schedulebook input,
 .mobilenav-reserve .schedulebook select {
@@ -7804,7 +7818,7 @@ li.deal.foreign-box{
 
 .datepicker.datepicker-mobile {
 	display: block;
-	margin: 10px;
+	margin: 0 0 10px;
 	min-width: auto;
 	visibility: visible;
 	opacity: 1;
@@ -8231,7 +8245,10 @@ li.deal.foreign-box{
 }
 
 .roomssingle-title-mobile {
+	background-color: rgba(255,255,255,0.7);
 	display: none;
+	font-size: 30px;
+	padding: 10px 20px 0;
 }
 
 .roomssingle-panel {
@@ -8327,6 +8344,7 @@ li.deal.foreign-box{
 		width: 33.3333%;
 		padding-right: 5%;
 	}
+	.roomsdetail-box-threeway .clear2 { display: none; }
 
 .roomsdetail-list-content h2,
 .roomsdetail-feature-list-content h2 {
@@ -8700,12 +8718,23 @@ li.deal.foreign-box{
 	}
 
 .roomslist-title {
-	background-color: rgba(255,255,255,0.7);
-	box-sizing: border-box;
 	color: #333;
 	font-family: 'GothamBold', sans-serif;
 	font-size: 36px;
 	line-height: 1;
+}
+	.roomslist-title:hover { color: #333; }
+
+	.roomslist-title h2 {
+		color: inherit;
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+.roomslist-title-desktop {
+	background-color: rgba(255,255,255,0.7);
+	box-sizing: border-box;
 	text-align: center;
 	width: 100%;
 	max-width: 40%;
@@ -8723,13 +8752,12 @@ li.deal.foreign-box{
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-	.roomslist-title:hover { color: #333; }
 
-.roomslist-title h2 {
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
+.roomslist-title-mobile {
+	background-color: rgba(255,255,255,0.7);
+	display: none;
+	font-size: 30px;
+	padding: 10px 20px 0;
 }
 
 .roomslist-panel {

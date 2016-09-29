@@ -218,7 +218,9 @@
 	});
 
 
-	// * datepicker for mobile input
+	// * MOBILE
+
+	// * mobile click menu and reserve functions
 
 	$('.nav-button-menu').click(function() {
 		$('body').addClass('mobilenav-active');
@@ -228,13 +230,17 @@
 		$('body').removeClass('mobilenav-active');
 	});
 
-	$('.mobilenav-button-reserve').click(function() {
+	$('.nav-button-reserve').click(function() {
 		$('body').addClass('mobilenav-reserve-active');
 	});
 
 	$('.mobilenav-schedulebook-close').click(function() {
 		$('body').removeClass('mobilenav-reserve-active');
 	});
+
+
+	// * mobile click arrive and depart functions
+	// * used together with datepicker-mobile
 
 	$('.mobilenav-sb-arrive').click(function() {
 		var main = $('.mobilenav-schedulebook-selector');
@@ -249,6 +255,9 @@
 		main.removeClass('arrive-selector');
 		main.addClass('depart-selector');
 	});
+
+
+	// * datepicker for the mobile input
 	
 	$('.datepicker-mobile').datepicker({
 		minDate: 0,

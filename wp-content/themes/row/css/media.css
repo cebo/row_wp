@@ -658,10 +658,8 @@ and (max-width : 1024px) {
 
 	/* NDC: PAGE: ROOMS PAGE */
 
-	.roomslist-title {
-		max-width: 90%;
-		margin-left: -45%;
-	}
+	.roomslist-title-desktop { display: none; }
+	.roomslist-title-mobile { display: block; }
 
 	.roomslist-content {
 		width: auto;
@@ -687,6 +685,28 @@ and (max-width : 1024px) {
 	}
 
 
+	/* NDC: PAGE: SINGLE ROOMS */
+
+	.roomssingle-title-desktop { display: none; }
+	.roomssingle-title-mobile { display: block; }
+
+	.roomssingle-content { width: auto; }
+
+	.roomssingle-link {
+		display: block;
+		width: auto;
+		height: auto;
+		padding: 10px;
+
+		position: static;
+	}
+		.roomssingle-link span { position: static; }
+
+	.roomsdetail-box-threeway .roomsdetail-col { width: 50%; }
+	.roomsdetail-box-threeway .roomsdetail-col.last { width: 100%;}
+	.roomsdetail-box-threeway .clear2 { display: block;}
+
+
 	/* NDC: BOXLISTS */
 
 	.boxlists-threecol .boxlists-box {
@@ -700,6 +720,13 @@ and (max-width : 1024px) {
 
 		.boxlists-threecol .boxlists-box.left { float: left; }
 		.boxlists-threecol .boxlists-box.right { float: right; }
+
+
+	/* NDC: TOPPAGE INTRO */
+
+	.toppage-intro {
+		height: 450px;
+	}
 
 }
 
@@ -1078,11 +1105,6 @@ and (max-width : 1024px) {
 	    height: 360px;
 	}
 
-	.flex-direction-nav {
-	    margin-top: -40% !important;
-	    position: relative;
-	}
-
 
 
 	/* SINGLE - Room */
@@ -1169,7 +1191,7 @@ and (max-width : 1024px) {
 	.headernav-block-secondary { display: none;}
 
 	.mobilenav { display: block;}
-	.nav-button-menu { display: block;}
+	.nav-button-mobile { display: block; }
 
 	.nav-language-address {
 		float: right;
@@ -1251,6 +1273,23 @@ and (max-width : 770px) {
 }
 
 
+/* ================================================  768 - 000 ======================================= */
+
+@media only screen and (max-width : 768px) {
+
+	/* NDC: PAGE: SINGLE ROOMS */
+
+	.roomsdetail-box-twoway .roomsdetail-col,
+	.roomsdetail-box-threeway .roomsdetail-col {
+		float: none;
+		width: auto;
+		padding-right: 20px;
+	}
+	.roomsdetail-box-threeway .roomsdetail-col.last { width: auto; }
+
+}
+
+
 
 /* ================================================  767 - 000  ======================================= */
 
@@ -1279,9 +1318,22 @@ and (max-width : 770px) {
 
 	/* NDC: PAGE: ROOMS PAGE */
 
-	.roomslist-content {
-		display: none;
+	.roomslist-title-mobile {
+		text-align: center;
+		padding: 10px 20px;
 	}
+
+	.roomslist-content { display: none; }
+
+
+	/* NDC: PAGE: SINGLE ROOMS */
+
+	.roomssingle-title-mobile {
+		text-align: center;
+		padding: 10px 20px;
+	}
+
+	.roomssingle-content { display: none; }
 
 
 	/* NDC: BOXLISTS */
@@ -1938,6 +1990,20 @@ and (max-width : 640px) {
 
 
 
+
+}
+
+
+
+/* ================================================  599 - 000  ======================================= */
+
+@media only screen and (max-width : 599px) {
+
+	/* NDC: TOPPAGE INTRO */
+
+	.toppage-intro {
+		height: 320px;
+	}
 
 }
 
