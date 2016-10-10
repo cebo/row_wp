@@ -91,7 +91,7 @@
 
 					<?php
 
-						$title = get_field('homepage_amenities_list_item_title', 'options');
+						$title = get_field('homepage_amenities_list_title', 'options');
 
 						if ( $title && $title != '' ) { ?>
 
