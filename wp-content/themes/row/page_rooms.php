@@ -24,6 +24,8 @@
 
 			if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 
+				$roomspage_content = get_field('roomspage_content', $post->ID );
+
 				if ( get_post_meta( $post->ID, 'cebo_fullpic', true) ) {
 
 					$imgsrcuse = get_post_meta( $post->ID, 'cebo_fullpic', true );
@@ -70,7 +72,10 @@
 
 					<div class="roomslist-content">
 
-						<?php the_content(); ?>
+						<?php
+							if ( $roomspage_content && $roomspage_content != '' ) { echo $roomspage_content; }
+							else { the_content(); }
+						?>
 
 					</div>
 

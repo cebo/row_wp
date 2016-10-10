@@ -8946,6 +8946,7 @@ li.deal.foreign-box{
 }
 
 .flexslider-gallery-theme .flex-direction-nav {
+	width: 100%;
 	position: absolute;
 	top: 250px;
 }
