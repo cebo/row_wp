@@ -17,7 +17,7 @@
 
 				<div class="toptitle-description">
 					
-					<?php echo content(100); ?>
+					<?php echo wpautop( content2( get_the_content(), null, '<p><br><span><a>' ) ); ?>
 
 				</div>
 
@@ -50,6 +50,14 @@
 
 						$pricepoint = get_post_meta( $post->ID, 'cebo_pricepoint', true );
 
+						if ( $fullpic ) {
+							$image = $fullpic;
+						} elseif ( $imgsrc ) {
+							$image = $imgsrc[0];
+						} else {
+							$image = get_bloginfo('template_url') . '/images/watermark.jpg';
+						}
+
 						if ( $count % 3 == 0 ) { $last = 'last'; }
 						else { $last = ''; }
 
@@ -60,34 +68,12 @@
 
 				<div class="boxlists-box <?php echo $last; ?>">
 
-					<?php if ( $fullpic ) { ?>
-
-						<div class="boxlists-imagebox">
-							<?php if ( $pricepoint && $pricepoint != '' ) { ?>
-								<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
-							<?php } ?>
-							<div class="boxlists-image" style="background-image: url(<?php echo $fullpic; ?>);"></div>
-						</div>
-
-					<?php } elseif ( $imgsrc ) { ?>
-
-						<div class="boxlists-imagebox">
-							<?php if ( $pricepoint && $pricepoint != '' ) { ?>
-								<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
-							<?php } ?>
-							<div class="boxlists-image" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
-						</div>
-
-					<?php } else { ?>
-
-						<div class="boxlists-imagebox">
-							<?php if ( $pricepoint && $pricepoint != '' ) { ?>
-								<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
-							<?php } ?>
-							<div class="boxlists-image" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/watermark.jpg);"></div>
-						</div>
-
-					<?php } ?>
+					<div class="boxlists-imagebox">
+						<?php if ( $pricepoint && $pricepoint != '' ) { ?>
+							<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
+						<?php } ?>
+						<div class="boxlists-image" style="background-image: url(<?php echo $image; ?>);"></div>
+					</div>
 
 					<?php
 
@@ -109,7 +95,7 @@
 						</div>
 
 						<div class="boxlists-links">
-							<a href="<?php if ( $learnmore ) { echo $learnmore; } else { the_permalink(); } ?>"><?php _e('Read Now','row-theme-text'); ?></a>
+							<a href="<?php if ( $learnmore ) { echo $learnmore; } else { the_permalink(); } ?>"><?php _e('Read More','row-theme-text'); ?></a>
 
 							<input type="button" class="boxlists-enroll theguestbook-email-submit-input" value="<?php _e('Enroll','row-theme-text'); ?>">
 						</div>
