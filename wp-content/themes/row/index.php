@@ -211,6 +211,14 @@
 					$title = get_sub_field('title');
 					$content = get_sub_field('description');
 					$image = get_sub_field('image');
+					$link = get_permalink( $page->ID );
+
+					$enable_button = get_sub_field('enable_button');
+					$button_select = get_sub_field('button_select');
+					$button_page_select = get_sub_field('button_page_select');
+					$button_link = get_sub_field('button_link');
+					$button_link_text = get_sub_field('button_link_text');
+					$open_button_in_new_tab = get_sub_field('open_button_in_new_tab');
 
 					if ( $title && $title != '' ) {}
 					else { $title = $page->post_title; }
@@ -224,6 +232,15 @@
 					if ( $box_size == 'half' ) { $addclass = 'feature-box-half'; }
 					elseif ( $box_size == 'full' ) { $addclass = 'feature-box-full'; }
 
+					if ( $button_select == 'page_select' ) {
+						$button_save_link = $button_page_select;
+					} elseif ( $button_select == 'custom_link' ) {
+						$button_save_link = $button_link;
+					}
+
+					if ( $open_button_in_new_tab == 'yes' ) { $target = 'target="_blank"'; }
+					else { $target = ''; }
+
 					if ( $box_type == 'normal' ) {
 
 						if ( $count % 2 == 0 ) { $addclass .= ' right'; }
@@ -235,7 +252,18 @@
 
 				<div class="<?php echo $addclass; ?>">
 
-					<a class="feature-box-link" href="#">
+					<?php if ( $enable_button == 'yes' ) { ?>
+						<div class="feature-box-linkbox">
+							<a <?php echo $target; ?> href="<?php echo $button_save_link; ?>">
+								<?php
+									if ( $button_text && $button_text != '' ) { echo $button_text; } 
+									else { _e( 'Read more', 'row-theme-text' ); }
+								?>
+							</a>
+						</div>
+					<?php } ?>
+
+					<a class="feature-box-link" href="<?php echo $link; ?>">
 
 						<div class="feature-box-overlay"></div>
 
