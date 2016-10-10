@@ -256,7 +256,7 @@
 						<div class="feature-box-linkbox">
 							<a <?php echo $target; ?> href="<?php echo $button_save_link; ?>">
 								<?php
-									if ( $button_text && $button_text != '' ) { echo $button_text; } 
+									if ( $button_link_text && $button_link_text != '' ) { echo $button_link_text; } 
 									else { _e( 'Read more', 'row-theme-text' ); }
 								?>
 							</a>
