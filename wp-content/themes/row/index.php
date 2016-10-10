@@ -50,9 +50,19 @@
 
 						$page = get_sub_field('page_select');
 						$title = get_sub_field('title');
+						$link_select = get_sub_field('link_select');
+						$open_in_new_tab = get_sub_field('open_in_new_tab');
+						$link = get_sub_field('link');
+						$link_text = get_sub_field('link_text');
 
 						if ( $title && $title != '' ) {}
 						else { $title = $page->post_title; }
+
+						if ( $link_select == 'page_select_link' ) { $link_use = get_permalink( $page->ID ); }
+						else { $link_use = $link; }
+
+						if ( $open_in_new_tab == 'yes' ) { $target = 'target="_blank"'; }
+						else { $target = ''; }
 
 				?>
 
@@ -62,7 +72,12 @@
 
 					<?php echo wpautop( content2( $page->post_content, 50 ) ); ?>
 
-					<a href="<?php echo get_permalink( $page->ID ); ?>"><?php _e( 'Read more', 'row-theme-text' ); ?></a>
+					<a <?php echo $target; ?> href="<?php echo $link_use; ?>">
+						<?php
+							if ( $link_text && $link_text != '' ) { echo $link_text; }
+							else { _e( 'Read more', 'row-theme-text' ); }
+						?>
+					</a>
 
 				</div>
 
