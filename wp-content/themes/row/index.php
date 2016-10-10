@@ -237,6 +237,8 @@
 
 					<a class="feature-box-link" href="#">
 
+						<div class="feature-box-overlay"></div>
+
 						<div class="feature-box-image" style="background-image: url(<?php echo $image; ?>);"></div>
 
 						<div class="feature-content">

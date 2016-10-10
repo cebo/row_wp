@@ -7986,6 +7986,31 @@ li.deal.foreign-box{
 		transform: scale(1.05);
 	}
 
+.feature-box-overlay {
+	background-color: rgba(0,0,0,0.3);
+	height: 100%;
+	width: 100%;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+
+	-webkit-transition: all 0.5s ease-out 0s;
+	-moz-transition: all 0.5s ease-out 0s;
+	-o-transition: all 0.5s ease-out 0s;
+	-ms-transition: all 0.5s ease-out 0s;
+	transition: all 0.5s ease-out 0s;
+}
+	.feature-box-normal:hover .feature-box-overlay,
+	.feature-box-getcontent:hover .feature-box-overlay {
+		-webkit-transform: scale(1.05);
+		-moz-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+
 .feature-box-normal {
 	height: 450px;
 	overflow: hidden;
@@ -8000,7 +8025,7 @@ li.deal.foreign-box{
 	position: absolute;
 	left: 5%;
 	bottom: 35px;
-	z-index: 2;
+	z-index: 3;
 }
 
 .feature-box-normal .feature-content h2 {
@@ -8064,7 +8089,7 @@ li.deal.foreign-box{
 }
 
 .toptitle-area.toptitle-hotelpage {
-	max-width: 90%;
+	max-width: 85%;
 	margin: 0 auto 50px;
 }
 
@@ -8080,6 +8105,8 @@ li.deal.foreign-box{
 
 .boxlists-hotelpage {
 	overflow: auto;
+	max-width: 90%;
+	margin: 0 auto;
 }
 
 .boxlists-hotelpage .boxlists-content {
@@ -8264,13 +8291,14 @@ li.deal.foreign-box{
 	background-color: rgba(255,255,255,0.7);
 	box-sizing: border-box;
 	width: 70%;
-	padding: 10px 20px;
+	padding: 10px 20px 20px;
 }
 
 .roomssingle-content p {
 	color: #000;
-	font-family: 'Montserrat', sans-serif;
-	font-family: 16px;
+	font-family: 'GothamCondensedMedium', sans-serif;
+	font-size: 20px;
+	line-height: 1.2;
 	padding: 0;
 }
 
@@ -8430,7 +8458,7 @@ li.deal.foreign-box{
 	line-height: 2;
 	width: 90%;
 	max-width: 650px;
-	margin: 0 auto;
+	margin: 0 auto 20px;
 }
 	.toptitle-area.toptitle-titleonly .toptitle-description { display: none; }
 
