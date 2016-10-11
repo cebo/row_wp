@@ -8317,6 +8317,7 @@ li.deal.foreign-box{
 	width: 70%;
 	padding: 10px 20px 20px;
 }
+	.roomssingle-panel-nolink .roomssingle-content { width: auto; }
 
 .roomssingle-content p {
 	color: #000;
@@ -8776,6 +8777,8 @@ li.deal.foreign-box{
 		transform: scale(1.05);
 	}
 
+	.roomslist-image-nocursor { cursor: default; }
+
 .roomslist-title {
 	color: #333;
 	font-family: 'GothamBold', sans-serif;
@@ -8838,6 +8841,10 @@ li.deal.foreign-box{
 	.roomslist-box-booknow-only .roomslist-content,
 	.roomslist-box-moreinfo-only .roomslist-content {
 		width: 75%;
+	}
+
+	.roomslist-box-nolinks .roomslist-content {
+		width: auto;
 	}
 
 .roomslist-content p {

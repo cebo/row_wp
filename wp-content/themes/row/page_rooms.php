@@ -46,6 +46,10 @@
 
 					$only = 'roomslist-box-booknow-only';
 
+				} else {
+
+					$only = 'roomslist-box-nolinks';
+
 				}
 
 		?>
@@ -54,7 +58,15 @@
 
 				<div class="roomslist-view">
 
-					<a class="roomslist-image" href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $image; ?>);"></a>
+					<?php if ( $enable_more_info == 'yes' ) { ?>
+
+						<a class="roomslist-image" href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $image; ?>);"></a>
+
+					<?php } else { ?>
+
+						<a class="roomslist-image roomslist-image-nocursor" href="#" onClick='return false;' style="background-image: url(<?php echo $image; ?>);"></a>
+
+					<?php } ?>
 
 					<a class="roomslist-title roomslist-title-desktop" href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 
@@ -75,7 +87,7 @@
 
 					<div class="clear"></div>
 
-					<?php if ( $enable_more_info && $enable_more_info == 'yes' ) { ?>
+					<?php if ( $enable_more_info == 'yes' ) { ?>
 
 						<a class="roomslist-link roomslist-link-moreinfo" href="<?php the_permalink(); ?>"><span><?php _e( 'More Info', 'row-theme-text' ); ?></span></a>
 
@@ -83,7 +95,7 @@
 
 					<?php
 
-						if ( $enable_book_now && ( $enable_book_now == 'roomspage_only' || $enable_book_now == 'roomspage_and_roomsdetail' ) ) {
+						if ( $enable_book_now == 'roomspage_only' || $enable_book_now == 'roomspage_and_roomsdetail' ) {
 
 								$book_now_link = get_field( 'roomsdetail_book_now_link', $post->ID );
 
