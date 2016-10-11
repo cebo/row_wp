@@ -649,7 +649,8 @@ and (max-width : 1275px) {
 	.roomslist-content {
 		width: auto;
 	}
-		.roomslist-box-booknowonly .roomslist-content {
+		.roomslist-box-booknow-only .roomslist-content,
+		.roomslist-box-moreinfo-only .roomslist-content {
 			width: auto;
 		}
 
@@ -663,7 +664,8 @@ and (max-width : 1275px) {
 	}
 		.roomslist-link.roomslist-link-moreinfo { width: 50%; }
 
-		.roomslist-box-booknowonly .roomslist-link { width: 100%; }
+		.roomslist-box-booknow-only .roomslist-link,
+		.roomslist-box-moreinfo-only .roomslist-link.roomslist-link-moreinfo { width: 100%; }
 
 	.roomslist-link span {
 		position: static;
