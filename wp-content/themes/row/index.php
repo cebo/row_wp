@@ -58,7 +58,7 @@
 						if ( $title && $title != '' ) {}
 						else { $title = $page->post_title; }
 
-						if ( $link_select == 'page_select_link' ) { $link_use = get_permalink( $page->ID ); }
+						if ( $link_select == 'page_link' ) { $link_use = get_permalink( $page->ID ); }
 						else { $link_use = $link; }
 
 						if ( $open_in_new_tab == 'yes' ) { $target = 'target="_blank"'; }
@@ -105,6 +105,7 @@
 
 							$type = get_sub_field('type');
 							$text = get_sub_field('text');
+							$link_select = get_sub_field('link_select');
 
 					?>
 
@@ -119,11 +120,18 @@
 
 						<?php } elseif ( $type == 'link' ) {
 
-							$link = get_sub_field( 'link' );
+							$open_in_new_tab = get_sub_field('open_in_new_tab');
+
+							if ( $open_in_new_tab == 'yes' ) { $target = 'target="_blank"'; }
+							else { $target = ''; }
+
+							if ( $link_select == 'page_link' ) { $link = get_sub_field('link_page'); }
+							else { $link = get_sub_field('link'); }
+
 						?>
 
 							<li>
-								<div class="table-parent"><div class="table-child"><a href="<?php echo $link; ?>"><?php echo $text; ?></a></div></div>
+								<div class="table-parent"><div class="table-child"><a <?php echo $target; ?> href="<?php echo $link; ?>"><?php echo $text; ?></a></div></div>
 							</li>
 
 						<?php } ?>
@@ -238,7 +246,7 @@
 					if ( $box_size == 'half' ) { $addclass = 'feature-box-half'; }
 					elseif ( $box_size == 'full' ) { $addclass = 'feature-box-full'; }
 
-					if ( $button_select == 'page_select' ) {
+					if ( $button_select == 'page_link' ) {
 						$button_save_link = $button_page_select;
 					} elseif ( $button_select == 'custom_link' ) {
 						$button_save_link = $button_link;
