@@ -25,32 +25,26 @@
 			if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 
 				$roomspage_content = get_field('roomspage_content', $post->ID );
+				$enable_more_info = get_field( 'roomsdetail_enable_more_info', $post->ID );
+				$enable_book_now = get_field( 'roomsdetail_enable_book_now', $post->ID );
 
-				if ( get_post_meta( $post->ID, 'cebo_fullpic', true) ) {
+				$fullpic = get_post_meta( $post->ID, 'cebo_fullpic', true);
 
-					$imgsrcuse = get_post_meta( $post->ID, 'cebo_fullpic', true );
+				if ( $fullpic ) { $image = $fullpic; }
+				elseif ( $imgsrc ) { $image = $imgsrc; }
+				else { $image = get_bloginfo('template_url') . '/images/watermark.jpg);'; }
 
-				} elseif ( $imgsrc ) {
-
-					$imgsrcuse = $imgsrc;
-
-				} else {
-
-					$imgsrcuse = get_bloginfo('template_url') . '/images/watermark.jpg);';
-
-				}
-
-				// $get_permalink = get_site_url() . '/' . ICL_LANGUAGE_CODE . '/hotel-rooms-times-square-new-york/' . $post->post_name;
-
-				$get_permalink = get_permalink();
-
-				if ( get_the_title() == "Penthouse Suites" ) {
-
-					$only = 'roomslist-box-booknowonly';
-
-				} else {
+				if ( $enable_more_info == 'yes' && ( $enable_book_now == 'roomspage_only' || $enable_book_now == 'roomspage_and_roomsdetail' ) ) {
 
 					$only = '';
+
+				} elseif ( $enable_more_info == 'yes' ) {
+
+					$only = 'roomslist-box-moreinfo-only';
+
+				} elseif ( $enable_book_now == 'roomspage_only' || $enable_book_now == 'roomspage_and_roomsdetail' ) {
+
+					$only = 'roomslist-box-booknow-only';
 
 				}
 
@@ -60,9 +54,9 @@
 
 				<div class="roomslist-view">
 
-					<a class="roomslist-image" href="<?php echo $get_permalink; ?>" style="background-image: url(<?php echo $imgsrcuse; ?>);"></a>
+					<a class="roomslist-image" href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $image; ?>);"></a>
 
-					<a class="roomslist-title roomslist-title-desktop" href="<?php echo $get_permalink; ?>"><h2><?php the_title(); ?></h2></a>
+					<a class="roomslist-title roomslist-title-desktop" href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 
 				</div>
 
@@ -81,27 +75,25 @@
 
 					<div class="clear"></div>
 
-					<?php if ( get_the_title() == "Penthouse Suites" ) { ?>
+					<?php if ( $enable_more_info && $enable_more_info == 'yes' ) { ?>
 
-						<a class="roomslist-link" href="mailto:reservations@rownyc.com"><span><?php _e( 'Book Now', 'row-theme-text' ); ?></span></a>
+						<a class="roomslist-link roomslist-link-moreinfo" href="<?php the_permalink(); ?>"><span><?php _e( 'More Info', 'row-theme-text' ); ?></span></a>
 
-					<?php } else {
+					<?php } ?>
 
-						if ( get_post_meta($post->ID, 'cebo_booklink', true ) ) {
+					<?php
 
-							$booklink = get_option('cebo_genbooklink') . '/search?selected_room_category=' . get_post_meta($post->ID, 'cebo_room_code', true);
+						if ( $enable_book_now && ( $enable_book_now == 'roomspage_only' || $enable_book_now == 'roomspage_and_roomsdetail' ) ) {
 
-						} else {
+								$book_now_link = get_field( 'roomsdetail_book_now_link', $post->ID );
 
-							$booklink = get_option('cebo_genbooklink');
-
-						}
+								$booknow_target = '';
+								$book_now_open_in_new_tab = get_field( 'roomsdetail_book_now_open_in_new_tab', $post->ID );
+								if ( $book_now_open_in_new_tab == 'yes' ) { $booknow_target = 'target="_blank"'; }
 
 					?>
 
-						<a class="roomslist-link roomslist-link-moreinfo" href="<?php echo $get_permalink; ?>"><span><?php _e( 'More Info', 'row-theme-text' ); ?></span></a>
-
-						<a class="roomslist-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $booklink; ?>"><span><?php _e( 'Book Now', 'row-theme-text' ); ?></span></a>
+						<a <?php echo $booknow_target; ?> class="roomslist-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $$book_now_link; ?>"><span><?php _e( 'Book Now', 'row-theme-text' ); ?></span></a>
 
 					<?php } ?>
 

@@ -8834,7 +8834,9 @@ li.deal.foreign-box{
 	width: 60%;
 	padding: 10px 20px;
 }
-	.roomslist-box-booknowonly .roomslist-content {
+
+	.roomslist-box-booknow-only .roomslist-content,
+	.roomslist-box-moreinfo-only .roomslist-content {
 		width: 75%;
 	}
 
@@ -8873,6 +8875,11 @@ li.deal.foreign-box{
 	}
 		.roomslist-link.roomslist-link-moreinfo:hover {
 			opacity: 0.6;
+		}
+
+		.roomslist-box-moreinfo-only .roomslist-link.roomslist-link-moreinfo {
+			width: 25%;
+			right: 0;
 		}
 
 .roomslist-link span {
