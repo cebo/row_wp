@@ -8116,8 +8116,9 @@ li.deal.foreign-box{
 	margin: 0 auto 50px;
 }
 
-.toptitle-hotelpage h1 {
+.toptitle-area.toptitle-hotelpage h1 {
 	text-align: left;
+	padding: 60px 0 20px;
 }
 
 .toptitle-hotelpage .toptitle-description {
