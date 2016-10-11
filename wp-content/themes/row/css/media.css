@@ -733,10 +733,6 @@ and (max-width : 1275px) {
 		top: 225px;
 	}
 
-	.flexslider-gallery-theme .flex-control-thumbs li {
-		width: 25%;
-	}
-
 }
 
 
@@ -1355,13 +1351,6 @@ and (max-width : 770px) {
 
 	.boxlists-imagebox {
 		height: 240px;
-	}
-
-
-	/* NDC: FLEXSLIDER GALLERY THEME */
-
-	.flexslider-gallery-theme .flex-control-thumbs li {
-		width: 50%;
 	}
 
 

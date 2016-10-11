@@ -28,9 +28,36 @@
 
 				?>
 
-					<li data-thumb="<?php echo $imgsrc; ?>" style="background-image: url(<?php echo $imgsrc; ?>);">
+					<li style="background-image: url(<?php echo $imgsrc; ?>);">
 						<div class="slide-description"><?php _e( $attachment_meta_title, 'row-theme-text' ); ?></div>
 					</li>
+
+				<?php
+					endif;
+					endfor;
+					endif;
+				?>
+
+			</ul>
+
+		</div>
+
+		<div class="flexslider-gallery-nav-js flexslider-gallery-nav-theme flexslider">
+			
+			<ul class="slides">
+
+				<?php
+
+					if ( $imagesCount > 0 ) :
+					for ( $i = 0; $i < $imagesCount; $i++ ) :
+					if ( ! empty( $galleryImages[ $i ] ) ) :
+
+						$attachment_meta_title = get_post( $galleryImages[ $i ]['id'] )->post_excerpt;
+						$imgsrc = $galleryImages[ $i ]['full'][0];
+
+				?>
+
+					<li style="background-image: url(<?php echo $imgsrc; ?>);"><img src="<?php echo $imgsrc; ?>" /></li>
 
 				<?php
 					endif;

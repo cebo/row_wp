@@ -113,7 +113,20 @@
 
 			$('.flexslider-gallery-js').flexslider({
 				animation: 'slide',
-				controlNav: 'thumbnails',
+				controlNav: false,
+				animationLoop: false,
+				slideshow: false,
+				sync: '.flexslider-gallery-nav-js',
+			});
+
+			$('.flexslider-gallery-nav-js').flexslider({
+				animation: 'slide',
+				controlNav: false,
+				animationLoop: false,
+				slideshow: false,
+				itemWidth: 210,
+				maxItems: 5,
+				asNavFor: '.flexslider-gallery-js'
 			});
 
 			$('.flexslider-js').flexslider({
