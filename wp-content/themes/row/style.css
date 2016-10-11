@@ -8317,6 +8317,7 @@ li.deal.foreign-box{
 	width: 70%;
 	padding: 10px 20px 20px;
 }
+	.roomssingle-panel-nolink .roomssingle-content { width: auto; }
 
 .roomssingle-content p {
 	color: #000;

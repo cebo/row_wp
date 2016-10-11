@@ -20,6 +20,8 @@
 
 		$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full" );
 
+		$enable_book_now = get_field( 'roomsdetail_enable_book_now', $post->ID );
+
 ?>
 
 	<section class="contentarea">
@@ -52,7 +54,16 @@
 
 			<h1 class="roomssingle-title roomssingle-title-desktop"><?php the_title(); ?></h1>
 
-			<div class="roomssingle-panel">
+			<?php
+
+				$only = '';
+				if ( ! ( $enable_book_now == 'roomsdetail_only' || $enable_book_now == 'roomspage_and_roomsdetail' ) ) {
+					$only = 'roomssingle-panel-nolink';
+				}
+
+			?>
+
+			<div class="roomssingle-panel <?php echo $only; ?>">
 
 				<h1 class="roomssingle-title roomssingle-title-mobile"><?php the_title(); ?></h1>
 
@@ -64,25 +75,19 @@
 
 				<div class="clear"></div>
 
-				<?php if ( get_the_title() == "Penthouse Suites" ) { ?>
+				<?php
 
-					<a class="roomssingle-link" href="mailto:reservations@rownyc.com"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+					if ( $enable_book_now == 'roomsdetail_only' || $enable_book_now == 'roomspage_and_roomsdetail' ) {
 
-				<?php } else {
+						$book_now_link = get_field( 'roomsdetail_book_now_link', $post->ID );
 
-					if ( get_post_meta($post->ID, 'cebo_booklink', true ) ) {
-
-						$booklink = get_option('cebo_genbooklink') . '/search?selected_room_category=' . get_post_meta($post->ID, 'cebo_room_code', true);
-
-					} else {
-
-						$booklink = get_option('cebo_genbooklink');
-
-					}
+						$booknow_target = '';
+						$book_now_open_in_new_tab = get_field( 'roomsdetail_book_now_open_in_new_tab', $post->ID );
+						if ( $book_now_open_in_new_tab == 'yes' ) { $booknow_target = 'target="_blank"'; }
 
 				?>
 
-					<a class="roomssingle-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $booklink; ?>"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+					<a <?php echo $booknow_target; ?> class="roomssingle-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $book_now_link; ?>"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
 
 				<?php } ?>
 
