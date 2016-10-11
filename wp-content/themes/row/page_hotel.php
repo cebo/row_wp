@@ -109,6 +109,7 @@
 
 					if ( $dealboxes_query->have_posts() ) : while ( $dealboxes_query->have_posts() ) : $dealboxes_query->the_post();
 
+						$fullpic = get_post_meta( $post->ID, 'cebo_fullpic', true );
 						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 
 						if ( $count % 3 == 0 ) { $last = 'last'; }
@@ -121,10 +122,10 @@
 
 					<div class="boxlists-box <?php echo $last; ?>">
 
-						<?php if ( get_post_meta( $post->ID, 'cebo_fullpic', true ) ) { ?>
+						<?php if ( $fullpic ) { ?>
 
 							<div class="boxlists-imagebox">
-								<div class="boxlists-image" style="background-image: url(<?php echo get_post_meta( $post->ID, 'cebo_fullpic', true ); ?>);"></div>
+								<div class="boxlists-image" style="background-image: url(<?php echo $fullpic; ?>);"></div>
 							</div>
 
 						<?php } elseif ( $imgsrc ) { ?>
