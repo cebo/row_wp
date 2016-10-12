@@ -230,7 +230,7 @@
 		$('body').removeClass('mobilenav-active');
 	});
 
-	$('.nav-button-reserve').click(function() {
+	$('.nav-button-reserve, .bookingnav-reserve').click(function() {
 		$('body').addClass('mobilenav-reserve-active');
 	});
 

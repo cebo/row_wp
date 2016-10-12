@@ -8,7 +8,7 @@
 	
 <section class="contentarea">
 
-	<div class="headernav-block-secondary"></div>
+	<div class="bookingnav-block"></div>
 
 	<div class="toptitle-area toptitle-titleonly toptitle-amenitiespage">
 
