@@ -569,6 +569,70 @@ and (max-width : 1275px) {
 
 }
 
+
+
+/* ================================================  1200 - 0000  ======================================= */
+
+@media only screen and (max-width : 1200px) {
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HEADERNAV */
+
+	.nav-list,
+	.bottomnav-area { display: none; }
+
+	.bookingnav {
+		position: fixed;
+		top: -60px;
+
+		-webkit-transition: all 0.4s ease 0s;
+		-moz-transition: all 0.4s ease 0s;
+		-o-transition: all 0.4s ease 0s;
+		-ms-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
+	}
+
+	.bookingnav .schedulebook { display: none; }
+
+	.bookingnav-reserve { display: block; }
+
+	.ham-menu {
+		right: 10px;
+	}
+		.bookingnav-fixed .ham-menu { right: 10px; }
+
+	.ham-list {
+		margin-left: auto;
+		left: auto;
+		right: 10px;
+	}
+
+	.bookingnav-block { display: none; }
+
+	.mobilenav { display: block;}
+	.nav-button-mobile { display: block; }
+
+	.nav-language-address {
+		float: right;
+	}
+
+	.nav-language {
+		float: left;
+	}
+
+	.nav-address {
+		line-height: 1.5;
+		margin-top: 10px;
+	}
+
+	.nav-address br { display: inline; }
+	.nav-address span.punct { display: none; }
+
+}
+
+
+
 /* ================================================  1024 - 0000  ======================================= */
 
 @media only screen and (max-width : 1024px) {
@@ -1173,34 +1237,6 @@ and (max-width : 1275px) {
     line-height: 22px;
     color: #fff;
 	}
-
-
-	/* NEW DESIGN CHANGES */
-
-	/* NDC: HEADERNAV */
-
-	.nav-list,
-	.bottomnav-area,
-	.headernav-block-secondary { display: none;}
-
-	.mobilenav { display: block;}
-	.nav-button-mobile { display: block; }
-
-	.nav-language-address {
-		float: right;
-	}
-
-	.nav-language {
-		float: left;
-	}
-
-	.nav-address {
-		line-height: 1.5;
-		margin-top: 10px;
-	}
-
-	.nav-address br { display: inline; }
-	.nav-address span.punct { display: none; }
 
 
 }

@@ -7242,6 +7242,7 @@ li.deal.foreign-box{
 
 .wrapper {
 	overflow: hidden;
+	position: relative;
 }
 
 .contentarea {
@@ -7257,19 +7258,11 @@ li.deal.foreign-box{
 }
 
 .headernav {
-	width: 100%;
-
-	position: fixed;
-	top: 0;
-	left: 0;
+	position: relative;
 	z-index: 3;
 }
 
-.headernav-block {
-	height: 121px;
-}
-
-.headernav-block-secondary {
+.bookingnav-block {
 	height: 57px;
 }
 
@@ -7470,11 +7463,21 @@ li.deal.foreign-box{
 	.nav-button-menu div { color: #fff; }
 	.nav-button-reserve div { color: #e51a9b; }
 
-.bottomnav-area {
+.bookingnav {
 	background-color: rgba(0,0,0,0.8);
 	padding: 9px 0 12px;
 	height: 36px;
+	width: 100%;
+
+	position: absolute;
+	top: 121px;
+	left: 0;
+	z-index: 2;
 }
+	.bookingnav-fixed .bookingnav {
+		position: fixed;
+		top: 0;
+	}
 
 .schedulebook {
 	text-align: center;
@@ -7597,8 +7600,138 @@ li.deal.foreign-box{
 }
 	.schedulebook button:hover { color: #000; }
 
+.bookingnav-reserve {
+	display: none;
+	text-align: right;
+	padding: 0 68px 0 0;
+}
+
+.bookingnav-reserve div {
+	background-color: #e51a9b;
+	display: inline-block;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 35px;
+	min-width: 125px;
+
+	position: relative;
+	top: 1px;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+	.bookingnav-reserve div:hover {
+		color: #000;
+	}
+
+.ham-menu {
+	height: 40px;
+	width: 45px;
+
+	position: absolute;
+	right: -50px;
+	top: 8px;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+	.bookingnav-fixed .ham-menu {
+		right: 80px;
+	}
+
+.ham-lines {
+	height: 100%;
+	width: 100%;
+}
+
+.ham-lines div {
+	background-color: #E51A9A;
+	height: 2px;
+	width: 25px;
+
+	position: relative;
+	top: 18px;
+	left: 10px;
+}
+	.ham-lines div:before,
+	.ham-lines div:after {
+		content: '';
+		background-color: #E51A9A;
+		height: 100%;
+		width: 100%;
+
+		position: absolute;
+	}
+
+	.ham-lines div:before { top: -6px; }
+	.ham-lines div:after { bottom: -6px; }
+
+.ham-list {
+	border-top: 1px solid #414141;
+	border-left: 1px solid #414141;
+	border-right: 1px solid #414141;
+
+	min-width: 150px;
+	padding: 0;
+
+	position: absolute;
+	left: 50%;
+	margin-left: -75px;
+
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	-ms-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+	.ham-menu:hover .ham-list {
+		opacity: 1;
+		visibility: visible;
+
+		-webkit-transition: all 0.4s ease 0s;
+		-moz-transition: all 0.4s ease 0s;
+		-o-transition: all 0.4s ease 0s;
+		-ms-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
+	}
+
+.ham-list li {
+	border-bottom: 1px solid #414141;
+	text-align: center;
+}
+
+.ham-list li a {
+	background-color: #000;
+	display: block;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 10px 0;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+	.ham-list li a:hover {
+		background-color: #fff;
+		color: #000;
+	}
+
 .mobilenav {
 	background-color: #fff;
+	display: none;
 	height: 100%;
 	width: 100%;
 
@@ -7606,7 +7739,6 @@ li.deal.foreign-box{
 	top: 0;
 	left: 0;
 	z-index: -1;
-	display: none;
 
 	opacity: 0;
 	visibility: hidden;
@@ -7784,7 +7916,9 @@ li.deal.foreign-box{
 	.depart-selector .mobilenav-sb-depart { background-color: #e51a9b;}
 
 .mobilenav-reserve .schedulebook {
+	max-width: 500px;
 	padding: 10px 0 30px;
+	margin: 0 auto;
 }
 
 .mobilenav-reserve .schedulebook form {
