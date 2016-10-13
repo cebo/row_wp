@@ -9165,6 +9165,23 @@ li.deal.foreign-box{
 	background-size: cover;
 	height: 100%;
 	text-align: center;
+
+	position: relative;
+}
+
+.home-intro-theme .owl-overlay {
+	background-color: rgba(0,0,0,0.3);
+	height: 100%;
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.home-intro-theme .table-parent {
+	position: relative;
+	z-index: 2;
 }
 
 .home-intro-theme h2 {
