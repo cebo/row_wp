@@ -8365,7 +8365,16 @@ li.deal.foreign-box{
 	text-transform: uppercase;
 	width: 20%;
 	padding: 15px 0;
+
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
+	.single-specials-links a:hover {
+		color: #000;
+	}
 
 .single-specials-content {
 	width: 70%;
