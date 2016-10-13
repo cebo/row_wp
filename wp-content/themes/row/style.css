@@ -7976,8 +7976,11 @@ li.deal.foreign-box{
 .intro-box.left { width: 32%;}
 .intro-box.right { width: 60%;}
 
-.intro-pages { padding: 0 0 120px;}
-.intro-pages:last-child { padding: 0;}
+.intro-pages {
+	text-align: justify;
+	padding: 0 0 120px;
+}
+	.intro-pages:last-child { padding: 0;}
 
 .intro-pages h2 {
 	color: #000;
