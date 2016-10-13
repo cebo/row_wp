@@ -27,6 +27,7 @@
 				$roomspage_content = get_field('roomspage_content', $post->ID );
 				$enable_more_info = get_field( 'roomsdetail_enable_more_info', $post->ID );
 				$enable_book_now = get_field( 'roomsdetail_enable_book_now', $post->ID );
+				$book_now_text = get_field( 'roomsdetail_book_now_text', $post->ID );
 
 				$fullpic = get_post_meta( $post->ID, 'cebo_fullpic', true);
 
@@ -37,6 +38,7 @@
 				if ( $enable_more_info == 'yes' && ( $enable_book_now == 'roomspage_only' || $enable_book_now == 'roomspage_and_roomsdetail' ) ) {
 
 					$only = '';
+					if ( $book_now_text == 'contact_reservations' ) { $only .= ' roomslist-box-contact-reserve-text'; }
 
 				} elseif ( $enable_more_info == 'yes' ) {
 
@@ -45,6 +47,7 @@
 				} elseif ( $enable_book_now == 'roomspage_only' || $enable_book_now == 'roomspage_and_roomsdetail' ) {
 
 					$only = 'roomslist-box-booknow-only';
+					if ( $book_now_text == 'contact_reservations' ) { $only .= ' roomslist-box-contact-reserve-text'; }
 
 				} else {
 
@@ -105,7 +108,13 @@
 
 					?>
 
-						<a <?php echo $booknow_target; ?> class="roomslist-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $$book_now_link; ?>"><span><?php _e( 'Book Now', 'row-theme-text' ); ?></span></a>
+						<a <?php echo $booknow_target; ?> class="roomslist-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $book_now_link; ?>">
+							<span>
+								<?php
+									if ( $book_now_text == 'contact_reservations' ) { _e( 'Contact Reservations', 'row-theme-text' ); } else { _e( 'Book Now', 'row-theme-text' ); }
+								?>
+							</span>
+						</a>
 
 					<?php } ?>
 
