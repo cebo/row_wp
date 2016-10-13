@@ -8,10 +8,6 @@
 
 	$gallery_repeater = $acf_fields['roomsdetail_gallery_repeater'];
 
-	ini_set('xdebug.var_display_max_depth', -1);
-	ini_set('xdebug.var_display_max_children', -1);
-	ini_set('xdebug.var_display_max_data', -1);
-
 ?>
 
 <?php
@@ -21,6 +17,7 @@
 		$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full" );
 
 		$enable_book_now = get_field( 'roomsdetail_enable_book_now', $post->ID );
+		$book_now_text = get_field( 'roomsdetail_book_now_text', $post->ID );
 
 ?>
 
@@ -87,7 +84,14 @@
 
 				?>
 
-					<a <?php echo $booknow_target; ?> class="roomssingle-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $book_now_link; ?>"><span><?php _e('Book Now','row-theme-text'); ?></span></a>
+					<a <?php echo $booknow_target; ?> class="roomssingle-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $book_now_link; ?>">
+						<span>
+							<?php
+								if ( $book_now_text == 'contact_reservations' ) { _e('Contact Reservations','row-theme-text'); }
+								else { _e('Book Now','row-theme-text'); }
+							?>
+						</span>
+					</a>
 
 				<?php } ?>
 

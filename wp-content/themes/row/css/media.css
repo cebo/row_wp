@@ -1368,6 +1368,13 @@ and (max-width : 770px) {
 
 	.roomssingle-content { display: none; }
 
+	.roomslist-box-contact-reserve-text .roomslist-link,
+	.roomslist-box-contact-reserve-text .roomslist-link.roomslist-link-moreinfo {
+		float: none;
+		width: auto;
+		display: block;
+	}
+
 
 	/* NDC: BOXLISTS */
 
