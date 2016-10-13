@@ -10,7 +10,7 @@
 
 		<div class="bookingnav-block"></div>
 			
-		<div class="title-div">
+		<div class="toptitle-area toptitle-titleonly toptitle-eatdrinkpage">
 			<h1><?php the_title(); ?></h1>
 		</div>
 
