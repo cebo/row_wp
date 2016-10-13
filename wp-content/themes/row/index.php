@@ -17,18 +17,31 @@
 						$imgsrc = get_sub_field('image');
 						$title = get_sub_field('title');
 						$description = get_sub_field('description');
-						$link = get_sub_field('link');
+						$dark_overlay = get_sub_field('dark_overlay');
 						$link_text = get_sub_field('link_text');
+						$open_in_new_tab = get_sub_field('open_in_new_tab');
+
+						$link_select = get_sub_field('link_select');
+
+						$link = '';
+						if ( $link_select == 'page_link' ) { $link = get_sub_field('link_page'); }
+						elseif ( $link_select == 'custom_link' ) { $link = get_sub_field('link'); }
+
+						$target = '';
+						if ( $open_in_new_tab == 'yes' ) { $target = 'target="_blank"'; }
 
 				?>
 
 					<div class="owl-block" style="background-image: url(<?php echo $imgsrc['url']; ?>);">
+						
+						<?php if ( $dark_overlay == 'yes' ) { ?><div class="owl-overlay"></div><?php } ?>
+
 						<div class="table-parent">
 						<div class="table-child">
 							<h2><?php echo $title; ?></h2>
 							<?php echo $description; ?>
-							<?php if ( $link && $link != '' ) { ?>
-								<a class="owl-block-link" href="<?php echo $link; ?>"><?php echo $link_text; ?></a>
+							<?php if ( $link_select != 'disable_link' ) { ?>
+								<a <?php echo $target; ?> class="owl-block-link" href="<?php echo $link; ?>"><?php echo $link_text; ?></a>
 							<?php } ?>
 						</div>
 						</div>
@@ -61,8 +74,8 @@
 						if ( $link_select == 'page_link' ) { $link_use = get_permalink( $page->ID ); }
 						else { $link_use = $link; }
 
+						$target = '';
 						if ( $open_in_new_tab == 'yes' ) { $target = 'target="_blank"'; }
-						else { $target = ''; }
 
 				?>
 
@@ -122,8 +135,8 @@
 
 							$open_in_new_tab = get_sub_field('open_in_new_tab');
 
+							$target = '';
 							if ( $open_in_new_tab == 'yes' ) { $target = 'target="_blank"'; }
-							else { $target = ''; }
 
 							if ( $link_select == 'page_link' ) { $link = get_sub_field('link_page'); }
 							else { $link = get_sub_field('link'); }
@@ -252,8 +265,8 @@
 						$button_save_link = $button_link;
 					}
 
+					$target = '';
 					if ( $open_button_in_new_tab == 'yes' ) { $target = 'target="_blank"'; }
-					else { $target = ''; }
 
 					if ( $box_type == 'normal' ) {
 
