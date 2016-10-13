@@ -8086,18 +8086,18 @@ li.deal.foreign-box{
 
 .feature-box-linkbox {
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	top: 30px;
+	right: 30px;
 	z-index: 3;
 }
 
 .feature-box-linkbox a {
-	display: inline-block;
+	display: block;
 	background-color: #e51a9b;
 	color: #fff;
-	font-size: 16px;
+	font-size: 15px;
 	font-family: 'Montserrat', sans-serif;
-	padding: 10px 30px;
+	padding: 15px 35px;
 	line-height: 1;
 	text-transform: uppercase;
 
