@@ -8382,6 +8382,7 @@ li.deal.foreign-box{
 	position: relative;
 	z-index: 2;
 }
+	.single-specials-box-nobooklink .single-specials-content { width: auto; }
 
 .single-specials-content h2 {
 	font-family: 'GothamCondensedMedium', sans-serif;

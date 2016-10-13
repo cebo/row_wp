@@ -179,12 +179,6 @@
 								$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' )[0];
 							}
 
-							if ( $booklink ) {
-								$special_link = $booklink;
-							} else {
-								$special_link = get_permalink();
-							}
-
 							if ( $count % 2 == 0 ) { $addclass = 'right'; }
 							else { $addclass = 'left'; }
 
@@ -207,7 +201,9 @@
 							</div>
 
 							<div class="boxlists-links">
-								<a href="<?php echo $special_link; ?>"><?php _e( 'Book Now', 'row-theme-text' ); ?></a>
+								<?php if ( $booklink ) { ?>
+									<a href="<?php echo $booklink; ?>"><?php _e( 'Book Now', 'row-theme-text' ); ?></a>
+								<?php } ?>
 								<div class="boxlists-separate"></div>
 								<a class="boxlists-moreinfo" href="<?php echo $moreinfo; ?>"><?php _e( 'More Info', 'row-theme-text' ); ?></a>
 							</div>
