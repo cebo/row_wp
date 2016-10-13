@@ -57,7 +57,19 @@ $(document).ready(function(){
 	});
 	*/
 
+	
+	var eat_drink = function() {
+		if ( $('body').hasClass('page-template-page-eat-drink-php') ) {
+			var winheight = $(window).height();
+			$('.third-level').css('height', winheight);
+		}
+	}
+
+	eat_drink();
+
 	$( window ).resize(function() {
+
+		eat_drink();
 
 		if ($(window).width() > 940) {
 
