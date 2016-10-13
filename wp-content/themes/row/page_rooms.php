@@ -108,7 +108,7 @@
 
 					?>
 
-						<a <?php echo $booknow_target; ?> class="roomslist-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $$book_now_link; ?>">
+						<a <?php echo $booknow_target; ?> class="roomslist-link" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $book_now_link; ?>">
 							<span>
 								<?php
 									if ( $book_now_text == 'contact_reservations' ) { _e( 'Contact Reservations', 'row-theme-text' ); } else { _e( 'Book Now', 'row-theme-text' ); }
