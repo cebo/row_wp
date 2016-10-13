@@ -16,6 +16,11 @@
 
 		$title = get_the_title();
 		$slug_comp = sanitize_title($title); 
+		$booklink = get_post_meta( $post->ID, 'cebo_booklink', true );
+		$inner_content = get_field( 'specialsdetail_inner_content', $post->ID );
+
+		$nobooklink = '';
+		if ( ! $booklink ) { $nobooklink = 'single-specials-box-nobooklink'; }
 
 ?>
 
@@ -49,7 +54,7 @@
 
 			</div>
 
-			<div class="single-specials-box">
+			<div class="single-specials-box <?php echo $nobooklink; ?>">
 
 				<?php
 
@@ -67,21 +72,29 @@
 
 					</div>
 
-				<?php } else {
+				<?php } else { ?>
 
-					$booklink = get_post_meta( $post->ID, 'cebo_booklink', true );
-
-				?>
-
-					<div class="single-specials-links">
-						<a onclick="_gaq.push(['_link', this.href]);return false;" href="<?php if ( $booklink ) { echo $booklink; } else { the_permalink(); } ?>"><?php _e('Book Now','row-theme-text'); ?></a>
-					</div>
+					<?php if ( $booklink ) { ?>
+						<div class="single-specials-links">
+							<a onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $booklink; ?>"><?php _e('Book Now','row-theme-text'); ?></a>
+						</div>
+					<?php } ?>
 
 					<div class="single-specials-content">
 
 						<?php the_content(); ?>
 
 					</div>
+
+					<?php if ( $inner_content ) { ?>
+
+						<div class="single-specials-content">
+
+							<?php echo $inner_content; ?>
+
+						</div>
+
+					<?php } ?>
 
 				<?php } ?>
 

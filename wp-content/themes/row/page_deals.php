@@ -122,7 +122,9 @@
 						</div>
 
 						<div class="boxlists-links">
-							<a onclick="_gaq.push(['_link', this.href]);return false;" href="<?php if ( $booklink ) { echo $booklink; } else { the_permalink(); } ?>"><?php _e('Book Now','row-theme-text'); ?></a>
+							<?php if ( $booklink ) { ?>
+								<a onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo $booklink; ?>"><?php _e('Book Now','row-theme-text'); ?></a>
+							<?php } ?>
 							<a class="boxlists-moreinfo" href="<?php if ( $learnmore ) { echo $learnmore; } else { the_permalink(); } ?>"><?php _e('More Info','row-theme-text'); ?></a>
 						</div>
 

@@ -412,6 +412,8 @@ ga('send', 'pageview');
 				<li><a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><?php _e('Specials','row-theme-text'); ?></a></li>
 				<li><a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><?php _e('Rooms','row-theme-text'); ?></a></li>
 				<li><a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><?php _e('Gallery','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/eat-drink/"><?php _e('Eat & Drink','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/amenities/"><?php _e('Amenities','row-theme-text'); ?></a></li>
 				<li><a target="_blank" href="<?php bloginfo ('url'); ?>/blog"><?php _e('Blog','row-theme-text'); ?></a></li>
 			</ul>
 		</div>
