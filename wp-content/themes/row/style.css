@@ -8378,10 +8378,13 @@ li.deal.foreign-box{
 
 .single-specials-content {
 	width: 70%;
+	padding: 0 0 30px;
 
 	position: relative;
 	z-index: 2;
 }
+	.single-specials-content:last-child { padding: 0; }
+
 	.single-specials-box-nobooklink .single-specials-content { width: auto; }
 
 .single-specials-content h2 {

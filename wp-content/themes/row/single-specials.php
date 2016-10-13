@@ -17,6 +17,7 @@
 		$title = get_the_title();
 		$slug_comp = sanitize_title($title); 
 		$booklink = get_post_meta( $post->ID, 'cebo_booklink', true );
+		$inner_content = get_field( 'specialsdetail_inner_content', $post->ID );
 
 		$nobooklink = '';
 		if ( ! $booklink ) { $nobooklink = 'single-specials-box-nobooklink'; }
@@ -84,6 +85,16 @@
 						<?php the_content(); ?>
 
 					</div>
+
+					<?php if ( $inner_content ) { ?>
+
+						<div class="single-specials-content">
+
+							<?php echo $inner_content; ?>
+
+						</div>
+
+					<?php } ?>
 
 				<?php } ?>
 
