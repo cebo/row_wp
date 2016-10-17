@@ -172,11 +172,12 @@
 							$pricepoint = get_post_meta( $page->ID, 'cebo_pricepoint', true );
 
 							$fullpic = get_post_meta( $page->ID, 'cebo_fullpic', true );
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' )[0];
 
 							if ( $fullpic ) {
-								$imgsrc = $fullpic;
+								$image = $fullpic;
 							} else {
-								$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' )[0];
+								$image = $imgsrc[0];
 							}
 
 							if ( $count % 2 == 0 ) { $addclass = 'right'; }
@@ -189,7 +190,7 @@
 								<?php if ( $pricepoint && $pricepoint != '' ) { ?>
 									<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
 								<?php } ?>
-								<div class="boxlists-image" style="background-image: url(<?php echo $imgsrc; ?>);"></div>
+								<div class="boxlists-image" style="background-image: url(<?php echo $image; ?>);"></div>
 							</div>
 
 							<h2 class="boxlists-title"><?php echo $title; ?></h2>

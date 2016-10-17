@@ -1376,6 +1376,13 @@ and (max-width : 770px) {
 	}
 
 
+	/* NDC: PAGE: EXPLORE NYC */
+
+	.toptitle-area.toptitle-explorenyc {
+		max-width: 90%;
+	}
+
+
 	/* NDC: BOXLISTS */
 
 	.boxlists-threecol .boxlists-box {

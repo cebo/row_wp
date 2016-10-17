@@ -8585,6 +8585,19 @@ li.deal.foreign-box{
 .roomsdetail-icon-wifi { background: url(images/icons/ico-wifi.png) no-repeat scroll 6px center transparent;}
 
 
+/* PAGE: EXPLORE NYC */
+
+.toptitle-area.toptitle-explorenyc {
+	text-align: left;
+	max-width: 95%;
+	margin: 0 auto;
+}
+
+.toptitle-explorenyc .toptitle-description {
+	width: auto;
+	max-width: none;
+}
+
 
 /* TOPPAGE INTRO */
 
