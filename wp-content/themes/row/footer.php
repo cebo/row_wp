@@ -141,7 +141,7 @@
 			
 			<div class="tier-two conde conde3">
 				<div class="conde-block">
-					<a href="https://www.zagat.com/b/new-york-city/city-kitchen-times-square-gets-much-needed-gourmet-food-court" alt="">
+					<a target="_blank" href="https://www.zagat.com/b/new-york-city/city-kitchen-times-square-gets-much-needed-gourmet-food-court" alt="">
 						<img src="<?php echo site_url(); ?>/wp-content/uploads/2016/05/54f942eaf30bf_-_zagat-logo.gif">
 					</a>
 					
