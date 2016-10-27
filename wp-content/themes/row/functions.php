@@ -281,7 +281,6 @@ function the_slug($echo=true){
 
 add_action( 'after_setup_theme', 'customSize_setup' );
 function customSize_setup() {
-	add_image_size( 'customSize_soft_anyx600', 9999, 600, false );
-	add_image_size( 'customSize_soft_anyx450', 9999, 450, false );
-	add_image_size( 'customSize_soft_anyx300', 9999, 300, false );
+	add_image_size( 'customSize_soft_1024xany', 1024, 9999, false );
+	add_image_size( 'customSize_soft_600xany', 600, 9999, false );
 }
