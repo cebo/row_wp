@@ -97,32 +97,51 @@
 <script src="//cdn.optimizely.com/js/3569390496.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
-	<?php if(get_post_type() == 'imagegalleries') { ?>
 
-		<!-- Flex Slider -->
-		<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
+<?php
+	if (
+		get_post_type() == 'imagegalleries' ||
+		get_post_type() == 'rooms'
+	) {
+?>
 
-				$('.flexslider-gallery').flexslider({
-					animation: "slide",
-					animationSpeed: 1500,
-					controlNav: true,
-					startAt: 0,
-				});
+	<!-- Flex Slider -->
+	<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
+	<script type="text/javascript">
 
-			  $('.flexslider').flexslider({
-			    animation: "slide",
-			    animationSpeed: 800,
-			    pauseOnAction: false,
-			    controlNav: true,
-			    startAt: 0,
-			  });
+		$(document).ready(function() {
 
+			$('.flexslider-gallery-js').flexslider({
+				animation: 'slide',
+				controlNav: false,
+				animationLoop: false,
+				slideshow: false,
+				sync: '.flexslider-gallery-nav-js',
 			});
-		</script>
 
-	<?php } ?>
+			$('.flexslider-gallery-nav-js').flexslider({
+				animation: 'slide',
+				controlNav: false,
+				animationLoop: false,
+				slideshow: false,
+				itemWidth: 210,
+				maxItems: 5,
+				asNavFor: '.flexslider-gallery-js'
+			});
+
+			$('.flexslider-js').flexslider({
+				animation: "slide",
+				animationSpeed: 1500,
+				pauseOnAction: false,
+				controlNav: true,
+				startAt: 0,
+			});
+
+		});
+
+	</script>
+
+<?php } ?>
 	
 
 <?php if( !is_home() || !is_front_page() ) { ?>
@@ -228,12 +247,7 @@ ga('send', 'pageview');
 
 <body <?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?>class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?>class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?>class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?>class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?>class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?>class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?>class="page single amenity"<?php } elseif(is_page() || is_single()) { body_class('single'); ?><?php } elseif(is_home() || is_front_page()) { ?>class="home"<?php } ?>>
 
-<a class="shutdown" href="#" id="jom"></a>
-<div class="darkover"><a href="#"></a></div>
-<div class="slightover"><a href="#"></a></div>
-
-
-<div>
+<div class="wrapper">
 
 	<?php query_posts('post_type=weather&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
@@ -257,7 +271,269 @@ ga('send', 'pageview');
 
 	<?php endwhile; endif; wp_reset_query(); ?>
 
+	<div class="headernav">
+
+		<div class="topnav-area">
+			
+			<div class="nav-logo">
+				<a href="<?php bloginfo('url'); ?>">
+					<img title="Row NYC" alt="Row NYC" src="<?php bloginfo('template_url'); ?>/images/logo.png" />
+				</a>
+			</div>
+
+			<div class="nav-language-address">
+
+				<div class="nav-language">
+
+					<?php if (function_exists('language_selector_flags')) { ?>
+
+						<i class="fa fa-globe"></i><span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down"></i>
+
+						<ul><?php language_selector_flags(); ?></ul>
+
+					<?php } ?>
+
+				</div>
+
+				<div class="nav-address">A Times Square Hotel<br><span class="punct">·</span>700 8th Ave, NYC<br><span class="punct">·</span><span class="pink">Reservations:</span> 888.352.3650</div>
+
+			</div>
+
+			<ul class="nav-list">
+				<li><a href="<?php bloginfo ('url'); ?>/the-hotel/"><?php _e('Hotel','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><?php _e('Specials','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><?php _e('Rooms','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><?php _e('Gallery','row-theme-text'); ?></a></li>
+				<li><a target="_blank" href="<?php bloginfo ('url'); ?>/blog"><?php _e('Blog','row-theme-text'); ?></a></li>
+			</ul>
+
+			<div class="nav-button-mobile">
+				<div class="nav-button-reserve"><div><?php _e('Reserve','row-theme-text'); ?></div></div>
+				<div class="nav-button-menu"><div><?php _e('Menu','row-theme-text'); ?></div></div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="bookingnav">
+		
+		<div class="schedulebook">
+
+			<form
+
+				<?php if( $current_lang == 'en') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+				<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" 
+
+				<?php } elseif( $current_lang == 'pt-br') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" 
+
+				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" 
+
+				<?php } else { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+				<?php } ?>
+
+				onsubmit="_gaq.push(['_linkByPost', this]);">
+
+					<div class="datepicker datepicker-arrival first-time">
+						<div class="close-dp">X</div>
+						<div class="letter-dp">ARRIVE</div>
+					</div>
+
+					<div class="datepicker datepicker-departure">
+						<div class="close-dp">X</div>
+						<div class="letter-dp">DEPART</div>
+					</div>
+
+					<div class="schedule-box">
+						<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
+						<i class="fa fa-calendar"></i>
+					</div>
+
+					<div class="schedule-box">
+						<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
+						<i class="fa fa-calendar"></i>
+					</div>
+
+					<div class="schedule-box">
+						<select name="rooms">
+							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<div class="schedule-box">
+						<select name="adults[]">
+							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
+							<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<div class="schedule-box">
+						<select name="children[]">
+							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
+							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+						
+			</form>
+
+		</div>
+
+		<div class="bookingnav-reserve">
+			<div><?php _e('Reserve','row-theme-text'); ?></div>
+		</div>
+
+		<div class="ham-menu">
+			<div class="ham-lines"><div></div></div>
+			<ul class="ham-list">
+				<li><a href="<?php bloginfo ('url'); ?>/the-hotel/"><?php _e('Hotel','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><?php _e('Specials','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><?php _e('Rooms','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><?php _e('Gallery','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/eat-drink/"><?php _e('Eat & Drink','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/amenities/"><?php _e('Amenities','row-theme-text'); ?></a></li>
+				<li><a target="_blank" href="<?php bloginfo ('url'); ?>/blog"><?php _e('Blog','row-theme-text'); ?></a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="mobilenav">
+		
+		<div class="mobilenav-top">
+			
+			<div class="mobilenav-logo">
+				<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" /></a>
+			</div>
+			<div class="mobilenav-button-close"><div></div></div>
+
+		</div>
+
+		<ul class="mobilenav-menu">
+
+			<div class="mobilenav-block"></div>
+
+			<li><a href="<?php bloginfo ('url'); ?>/the-hotel/"><?php _e('Hotel','row-theme-text'); ?></a></li>
+			<li><a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><?php _e('Special','row-theme-text'); ?></a></li>
+			<li><a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><?php _e('Rooms','row-theme-text'); ?></a></li>
+			<li><a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><?php _e('Gallery','row-theme-text'); ?></a></li>
+			<li><a target="_blank" href="<?php bloginfo ('url'); ?>/blog"><?php _e('Blog','row-theme-text'); ?></a></li>
+		</ul>
+
+	</div>
+
+	<div class="mobilenav-reserve">
+
+		<div class="mobilenav-schedulebook-close"><div></div></div>
+
+		<div class="mobilenav-schedulebook-selector arrive-selector">
+			
+			<div class="mobilenav-sb-select mobilenav-sb-arrive"><?php _e('Arrive','row-theme-text'); ?></div>
+			<div class="mobilenav-sb-select mobilenav-sb-depart"><?php _e('Depart','row-theme-text'); ?></div>
+
+		</div>
+
+		<div class="schedulebook">
+			<form
+
+				<?php if( $current_lang == 'en') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+				<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" 
+
+				<?php } elseif( $current_lang == 'pt-br') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" 
+
+				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" 
+
+				<?php } else { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+				<?php } ?>
+
+				onsubmit="_gaq.push(['_linkByPost', this]);">
+
+					<div class="datepicker datepicker-mobile"></div>
+
+					<div class="schedule-box left">
+						<input name="arrival_date" id="arrival_date_mobile" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
+						<i class="fa fa-calendar"></i>
+					</div>
+
+					<div class="schedule-box right">
+						<input name="departure_date" id="departure_date_mobile" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
+						<i class="fa fa-calendar"></i>
+					</div>
+
+					<div class="schedule-box left">
+						<select name="rooms">
+							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<div class="schedule-box right">
+						<select name="adults[]">
+							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
+							<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<div class="schedule-box full">
+						<select name="children[]">
+							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
+							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<div class="schedule-box full">
+						<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+					</div>
+
+			</form>
+		</div>
+
+	</div>
 	
+	<?php if ( false ) { ?>
+
 	<section class="navigate">
 			
 			<div class="logobox">
@@ -388,8 +664,6 @@ ga('send', 'pageview');
 			<p style="padding:30px 0;text-align:center;"><a href="http://www.highgate.com" target="_blank"><img style="height:50px;" src="<?php bloginfo('template_url'); ?>/images/highgate-logo-white.png" alt="Highgate" /></a></p>
 		
 		</div>
-		
-		<div class="bottom"></div>
 	
 	</section>
 
@@ -482,8 +756,6 @@ ga('send', 'pageview');
 		</nav>
 	
 	</section>
-	
-	<div class="behindnavigate"></div>
 
 	<div class="banner desktop"> 
 		
@@ -613,7 +885,10 @@ ga('send', 'pageview');
 			</form>
 
 		</div>
-	</div>	
+	</div>
+
+	<?php } ?>
+
 	<!-- wonderful widget -->
 	<div class="wonderful">
 		<a class="stay-wanderful-button" href="https://staywanderful.com/widgets/#/24"></a> 

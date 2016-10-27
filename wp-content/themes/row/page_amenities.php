@@ -6,20 +6,25 @@
  get_header(); ?>
 	
 	
-	<section class="contentarea">
-			
-		<div class="welcomebox" style="padding: 20px 350px 10px 20px;">
-			
-			<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-			
-				<h1><?php the_title(); ?></h1>
-				
+<section class="contentarea">
+
+	<div class="bookingnav-block"></div>
+
+	<div class="toptitle-area toptitle-titleonly toptitle-amenitiespage">
+
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+			<h1><?php the_title(); ?></h1>
+
+			<div class="toptitle-description">
+
 				<?php the_content(); ?>
-		
-		
-			<?php endwhile; endif; wp_reset_query(); ?>	
-		
-		</div>		
+
+			</div>
+
+		<?php endwhile; endif; wp_reset_query(); ?>	
+
+	</div>
 
 			<!-- Cyc Fitness -->
 			<?php query_posts('post_type=amenities&p=32'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>

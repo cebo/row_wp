@@ -1,6 +1,6 @@
 <div id="home-slider">
 	
-	<div class="flexslider">
+	<div class="flexslider-js flexslider">
 		<ul class="slides">
 		
 			<!-- loop for the slides -->

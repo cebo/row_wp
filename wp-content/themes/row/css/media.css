@@ -48,6 +48,50 @@ and (max-width : 1439px) {
 
 
 
+/* ================================================ 0 - 1279px ======================================= */
+
+@media only screen and (max-width : 1279px) {
+
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HOMEPAGE */
+
+	.below-intro {
+		width: 90%;
+	    padding: 5% 0;
+	}
+
+	.intro-pages,
+	.intro-pages:last-child {
+		padding: 0 0 50px;
+	}
+
+	.intro-box.left,
+	.intro-box.right {
+		float: none;
+		width: auto;
+	}
+
+
+	/* NDC: BOXLISTS */
+	
+	.boxlists-links a {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+		.boxlists-links a:last-child {
+			margin-bottom: 0;
+		}
+
+	.boxlists-separate { display: block;}
+
+
+}
+
+
+
+
 /* ================================================ 0 - 1275px ======================================= */
 
 @media only screen
@@ -228,10 +272,6 @@ and (max-width : 1275px) {
 
 
 	/* Content area */
-
-	.contentarea {
-		margin-left: 250px;
-	}
 
 	.shorter {
 		height: 270px;
@@ -510,18 +550,6 @@ and (max-width : 1275px) {
 
 
 
-	/* PAGE - Gallery */
-
-	.gallery .flexslider {
-	    height: 580px;
-	}
-
-	.gallery .flexslider .slides > li {
-	    height: 550px;
-	}
-
-
-
 	/* SINGLE - Explore */
 
 	.page.time-square .textbox {
@@ -541,38 +569,73 @@ and (max-width : 1275px) {
 
 }
 
-/* ================================================ 641 - 1260px ======================================= */
-
-@media only screen
-and (min-width : 641px)
-and (max-width : 1260px) {
 
 
+/* ================================================  1200 - 0000  ======================================= */
 
-	.home-intro {
-	  margin-left: 250px;
-	  width: auto;
-	  z-index: 9999;
+@media only screen and (max-width : 1200px) {
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HEADERNAV */
+
+	.nav-list,
+	.bottomnav-area { display: none; }
+
+	.bookingnav {
+		position: fixed;
+		top: -60px;
+
+		-webkit-transition: all 0.4s ease 0s;
+		-moz-transition: all 0.4s ease 0s;
+		-o-transition: all 0.4s ease 0s;
+		-ms-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
 	}
 
-	.contentarea {
-		margin-left: 250px;
-		z-index: 9999;
+	.bookingnav .schedulebook { display: none; }
+
+	.bookingnav-reserve { display: block; }
+
+	.ham-menu {
+		right: 10px;
+	}
+		.bookingnav-fixed .ham-menu { right: 10px; }
+
+	.ham-list {
+		margin-left: auto;
+		left: auto;
+		right: 10px;
 	}
 
-	.contentarea .home-intro {
-		margin-left: 0;
+	.bookingnav-block { display: none; }
+
+	.mobilenav { display: block;}
+	.nav-button-mobile { display: block; }
+
+	.nav-language-address {
+		float: right;
 	}
+
+	.nav-language {
+		float: left;
+	}
+
+	.nav-address {
+		line-height: 1.5;
+		margin-top: 10px;
+	}
+
+	.nav-address br { display: inline; }
+	.nav-address span.punct { display: none; }
 
 }
 
 
-/* ================================================ 1024 ======================================= */
 
-@media only screen
-and (max-width : 1024px) {
+/* ================================================  1024 - 0000  ======================================= */
 
-
+@media only screen and (max-width : 1024px) {
 
 	/* Video */
 
@@ -619,7 +682,155 @@ and (max-width : 1024px) {
     color: #fff;
 	}
 
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: PAGE: SINGLE SPECIALS */
+
+	.single-specials-links {
+		text-align: left;
+		margin-bottom: 15px;
+
+		position: static;
+	}
+
+	.single-specials-links a {
+		padding: 15px 25px;
+		min-width: 155px;
+		width: auto;
+	}
+
+	.single-specials-content {
+		width: auto;
+	}
+
+
+	/* NDC: ROOMSLIST */
+
+	.roomslist-title-desktop { display: none; }
+	.roomslist-title-mobile { display: block; }
+
+	.roomslist-content {
+		width: auto;
+	}
+		.roomslist-box-booknow-only .roomslist-content,
+		.roomslist-box-moreinfo-only .roomslist-content {
+			width: auto;
+		}
+
+	.roomslist-link {
+		float: left;
+		height: auto;
+		width: 50%;
+		padding: 10px 0;
+
+		position: static;
+	}
+		.roomslist-link.roomslist-link-moreinfo { width: 50%; }
+
+		.roomslist-box-booknow-only .roomslist-link,
+		.roomslist-box-moreinfo-only .roomslist-link.roomslist-link-moreinfo { width: 100%; }
+
+	.roomslist-link span {
+		position: static;
+	}
+
+
+	/* NDC: PAGE: SINGLE ROOMS */
+
+	.roomssingle-title-desktop { display: none; }
+	.roomssingle-title-mobile { display: block; }
+
+	.roomssingle-content { width: auto; }
+
+	.roomssingle-link {
+		display: block;
+		width: auto;
+		height: auto;
+		padding: 10px;
+
+		position: static;
+	}
+		.roomssingle-link span { position: static; }
+
+	.roomsdetail-box-threeway .roomsdetail-col { width: 50%; }
+	.roomsdetail-box-threeway .roomsdetail-col.last { width: 100%;}
+	.roomsdetail-box-threeway .clear2 { display: block;}
+
+
+	/* NDC: BOXLISTS */
+
+	.boxlists-threecol .boxlists-box {
+		width: 48.5%;
+		margin-right: 0;
+		margin-bottom: 3%;
+	}
+
+		.boxlists-threecol .clear3 { display: none; }
+		.boxlists-threecol .clear2 { display: block; }
+
+		.boxlists-threecol .boxlists-box.left { float: left; }
+		.boxlists-threecol .boxlists-box.right { float: right; }
+
+
+	/* NDC: TOPPAGE INTRO */
+
+	.toppage-intro {
+		height: 450px;
+	}
+
+
+	/* NDC: ROOMSLIST */
+
+	.roomslist-box {
+		height: 450px;
+	}
+
+
+	/* NDC: FLEXSIDER GALLERY THEME */
+
+	.flexslider-gallery-theme .slides {
+		height: 450px;
+	}
+
+	.flexslider-gallery-theme .flex-direction-nav {
+		top: 225px;
+	}
+
 }
+
+
+
+/* ================================================  959 - 000  ======================================= */
+
+@media only screen and (max-width : 959px) {
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HOMEPAGE */
+
+	.feature-box-normal {
+		height: 400px;
+	}
+
+	.feature-box-half {
+		width: auto;
+	}
+
+	.feature-box-half.left,
+	.feature-box-half.right { float: none; }
+
+	.feature-box-getcontent h2 {
+		font-size: 40px;
+	}
+
+	.feature-box-getcontent .feature-content {
+		max-width: 90%;
+	}
+
+}
+
+
 
 
 
@@ -953,23 +1164,6 @@ and (max-width : 1024px) {
 
 
 
-	/* PAGE - Gallery */
-
-	.gallery .flexslider, .slide-image {
-	    height: 390px;
-	}
-
-	.gallery .flexslider .slides > li {
-	    height: 360px;
-	}
-
-	.flex-direction-nav {
-	    margin-top: -40% !important;
-	    position: relative;
-	}
-
-
-
 	/* SINGLE - Room */
 
 	.room-more-details {
@@ -1045,7 +1239,6 @@ and (max-width : 1024px) {
 	}
 
 
-
 }
 
 /* ================================================ 840 ======================================= */
@@ -1064,6 +1257,35 @@ and (max-width : 840px) {
 }
 
 
+
+/* ================================================  800 - 000  ======================================= */
+
+@media only screen and (max-width : 800px) {
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HOMEPAGE */
+
+	.intro-iconamenities li {
+		width: 40%;
+	}
+
+
+
+	/* NDC: BOXLISTS */
+
+	.boxlists-twocol .boxlists-box {
+		float: none;
+		width: auto;
+	}
+
+	.boxlists-separate { display: none;}
+
+
+}
+
+
+
 /* ================================================ 770 ======================================= */
 
 @media only screen
@@ -1076,6 +1298,111 @@ and (max-width : 770px) {
 	.deal-wrapper {
 		height: 555px;
 	}
+
+}
+
+
+/* ================================================  768 - 000 ======================================= */
+
+@media only screen and (max-width : 768px) {
+
+	/* NDC: PAGE: SINGLE ROOMS */
+
+	.roomsdetail-box-twoway .roomsdetail-col,
+	.roomsdetail-box-threeway .roomsdetail-col {
+		float: none;
+		width: auto;
+		padding-right: 20px;
+	}
+	.roomsdetail-box-threeway .roomsdetail-col.last { width: auto; }
+
+}
+
+
+
+/* ================================================  767 - 000  ======================================= */
+
+@media only screen and (max-width : 767px) {
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: HOMEPAGE */
+
+	.intro-iconamenities {
+		display: none;
+	}
+
+
+	/* NDC: PAGE: SPECIALS */
+
+	.boxlists-dealspage .boxlists-content {
+		min-height: auto;
+	}
+
+	.page.deals #theguestbook_widget .theguestbook-widget-form,
+	.page.page-template-page_deals #theguestbook_widget .theguestbook-widget-form {
+		margin-bottom: 10px;
+	}
+
+
+	/* NDC: ROOMSLIST */
+
+	.roomslist-box {
+		height: 320px;
+	}
+
+	.roomslist-title-mobile {
+		text-align: center;
+		padding: 10px 20px;
+	}
+
+	.roomslist-content { display: none; }
+
+
+	/* NDC: PAGE: SINGLE ROOMS */
+
+	.roomssingle-title-mobile {
+		text-align: center;
+		padding: 10px 20px;
+	}
+
+	.roomssingle-content { display: none; }
+
+	.roomslist-box-contact-reserve-text .roomslist-link,
+	.roomslist-box-contact-reserve-text .roomslist-link.roomslist-link-moreinfo {
+		float: none;
+		width: auto;
+		display: block;
+	}
+
+
+	/* NDC: PAGE: EXPLORE NYC */
+
+	.toptitle-area.toptitle-explorenyc {
+		max-width: 90%;
+	}
+
+
+	/* NDC: BOXLISTS */
+
+	.boxlists-threecol .boxlists-box {
+		width: auto;
+		float: none;
+		margin-bottom: 30px;
+	}
+		.boxlists-threecol .boxlists-box.left { float: none; }
+		.boxlists-threecol .boxlists-box.right { float: none; }
+
+	.boxlists-twocol .boxlists-box {
+		float: none;
+		width: auto;
+		margin-bottom: 30px;
+	}
+
+	.boxlists-imagebox {
+		height: 240px;
+	}
+
 
 }
 
@@ -1402,10 +1729,6 @@ and (max-width : 640px) {
 
 	/* Home */
 
-	.contentarea {
-	    margin-left: 0;
-	}
-
 	.banner {
 	    margin-left: 0;
 	}
@@ -1701,18 +2024,6 @@ and (max-width : 640px) {
 
 
 
-	/* PAGE - Gallery */
-
-	.gallery .flexslider {
-	    height: 390px;
-	}
-
-	.gallery .flexslider .slides > li {
-	    height: 360px;
-	}
-
-
-
 	/* PAGE - Deals */
 
 	.deal {
@@ -1727,6 +2038,33 @@ and (max-width : 640px) {
 
 
 
+
+}
+
+
+
+/* ================================================  599 - 000  ======================================= */
+
+@media only screen and (max-width : 599px) {
+
+	/* NEW DESIGN CHANGES */
+
+	/* NDC: TOPPAGE INTRO */
+
+	.toppage-intro {
+		height: 320px;
+	}
+
+
+	/* NDC: FLEXSIDER GALLERY THEME */
+
+	.flexslider-gallery-theme .slides {
+		height: 320px;
+	}
+
+	.flexslider-gallery-theme .flex-direction-nav {
+		top: 160px;
+	}
 
 }
 
@@ -1836,10 +2174,6 @@ and (max-width : 480px) {
 	.calspacer span select {
 		font-size: 65px;
 	}
-
-	.datepicker, .datepickerr {
-		left: 120%;
-	}
 		.calspacer span:hover .datepicker, .calspacer span:hover .datepickerr {
 		    left: 120%;
 		    top: 160px;
@@ -1933,27 +2267,6 @@ and (max-width : 480px) {
 	.blogposters li {
 		width: 100%;
 	}
-
-
-
-	/* PAGE - Gallery */
-
-	.gallery .flexslider {
-	    height: 390px;
-	}
-
-	.gallery .flexslider .slides > li {
-	    height: 360px;
-	}
-
-	.gallery .flex-direction-nav a:before {
-	    font-size: 30px;
-	}
-
-	.gallery .flex-direction-nav a {
-		height: 30px;
-	}
-
 
 
 	/* SINGLE - Room */
@@ -2313,9 +2626,6 @@ and (max-width : 1366px)
 
 .navigate:before {
     width: 250px;
-}
-.contentarea {
-    margin-left: 250px;
 }
 
 }
