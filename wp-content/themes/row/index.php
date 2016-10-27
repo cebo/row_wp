@@ -303,7 +303,7 @@
 						</div>
 					<?php } ?>
 
-					<a class="feature-box-link" href="<?php echo $link; ?>">
+					<a class="feature-box-link" href="<?php echo $link; ?>" <?php echo (get_sub_field( 'external_link' )) ? 'target="_blank"' : ''; ?>>
 
 						<div class="feature-box-overlay"></div>
 
