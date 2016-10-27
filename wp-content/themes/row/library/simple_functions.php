@@ -329,7 +329,13 @@ function language_selector_flags(){
     if(!empty($languages)){
         foreach($languages as $l){
             if(!$l['active']) {
-                echo '<li><a href="',$l['url'],'">',$l['language_code'],'</a></li>';
+
+            	if($l['language_code'] == 'en') {
+            		echo '<li><a href="', bloginfo('url') ,'">',$l['language_code'],'</a></li>';
+            	} else {
+            		echo '<li><a href="',$l['url'],'">',$l['language_code'],'</a></li>';
+            	}
+
             }
         }
     }
