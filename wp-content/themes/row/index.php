@@ -12,7 +12,10 @@
 
 				<?php
 
-					if ( have_rows('homepage_gallery_repeater', 'options') ) : while ( have_rows('homepage_gallery_repeater', 'options') ) : the_row();
+					if ( 
+						have_rows('homepage_gallery_repeater', 'options') ) : 
+						$i = 1;
+						while ( have_rows('homepage_gallery_repeater', 'options') ) : the_row();
 
 						$imgsrc = get_sub_field('image');
 						$title = get_sub_field('title');
@@ -38,7 +41,11 @@
 
 						<div class="table-parent">
 						<div class="table-child">
-							<h2><?php echo $title; ?></h2>
+							<?php if($i == 1) { ?>
+								<h1><?php echo $title; ?></h1>
+							<?php } else { ?>
+								<h2><?php echo $title; ?></h2>
+							<?php } ?>
 							<?php echo $description; ?>
 							<?php if ( $link_select != 'disable_link' ) { ?>
 								<a <?php echo $target; ?> class="owl-block-link" href="<?php echo $link; ?>"><?php echo $link_text; ?></a>
@@ -47,7 +54,7 @@
 						</div>
 					</div>
 
-				<?php endwhile; endif; ?>
+				<?php $i++; endwhile; endif; ?>
 
 			</div>
 
