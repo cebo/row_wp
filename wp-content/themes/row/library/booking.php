@@ -159,6 +159,11 @@
 				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
 			});
 
+			// * Set the earliest available departure date to be the day after the arrival date
+			var theDate = new Date($(this).datepicker('getDate'));
+			theDate.setDate(theDate.getDate() + 1);
+			$(".datepicker-departure").datepicker("option", "minDate", theDate.getFullYear()+"-"+(theDate.getMonth()+1)+"-"+theDate.getDate());
+			
 		}
 	});
 
