@@ -42,11 +42,11 @@
 						<div class="table-parent">
 						<div class="table-child">
 							<?php if($i == 1) { ?>
-								<h1><?php echo $title; ?></h1>
+								<?php echo ($title) ? '<h1>' . $title . '</h1>' : ''; ?>
 							<?php } else { ?>
-								<h2><?php echo $title; ?></h2>
+								<?php echo ($title) ? '<h2>' . $title . '</h2>' : ''; ?>
 							<?php } ?>
-							<?php echo $description; ?>
+							<?php echo ($description) ? $description : ''; ?>
 							<?php if ( $link_select != 'disable_link' ) { ?>
 								<a <?php echo $target; ?> class="owl-block-link" href="<?php echo $link; ?>"><?php echo $link_text; ?></a>
 							<?php } ?>
