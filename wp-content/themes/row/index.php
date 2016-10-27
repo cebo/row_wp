@@ -242,7 +242,16 @@
 					$title = get_sub_field('title');
 					$content = get_sub_field('description');
 					$image = get_sub_field('image');
-					$link = get_permalink( $page->ID );
+
+					if(get_sub_field('page_or_external_link') == 'page') {
+						$link = get_permalink( $page->ID );
+					} else {
+						if(get_sub_field( 'external_link' )) {
+							$link = false;
+						} else {
+							$link = get_sub_field( 'external_link' );
+						}						
+					}					
 
 					$enable_button = get_sub_field('enable_button');
 					$button_select = get_sub_field('button_select');
