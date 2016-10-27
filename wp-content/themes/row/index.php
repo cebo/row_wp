@@ -12,7 +12,10 @@
 
 				<?php
 
-					if ( have_rows('homepage_gallery_repeater', 'options') ) : while ( have_rows('homepage_gallery_repeater', 'options') ) : the_row();
+					if ( 
+						have_rows('homepage_gallery_repeater', 'options') ) : 
+						$i = 1;
+						while ( have_rows('homepage_gallery_repeater', 'options') ) : the_row();
 
 						$imgsrc = get_sub_field('image');
 						$title = get_sub_field('title');
@@ -32,14 +35,18 @@
 
 				?>
 
-					<div class="owl-block" style="background-image: url(<?php echo $imgsrc['url']; ?>);">
+					<div class="owl-block" style="background-image: url(<?php echo $imgsrc['sizes']['customSize_soft_1024xany']; ?>);">
 						
 						<?php if ( $dark_overlay == 'yes' ) { ?><div class="owl-overlay"></div><?php } ?>
 
 						<div class="table-parent">
 						<div class="table-child">
-							<h2><?php echo $title; ?></h2>
-							<?php echo $description; ?>
+							<?php if($i == 1) { ?>
+								<?php echo ($title) ? '<h1>' . $title . '</h1>' : ''; ?>
+							<?php } else { ?>
+								<?php echo ($title) ? '<h2>' . $title . '</h2>' : ''; ?>
+							<?php } ?>
+							<?php echo ($description) ? $description : ''; ?>
 							<?php if ( $link_select != 'disable_link' ) { ?>
 								<a <?php echo $target; ?> class="owl-block-link" href="<?php echo $link; ?>"><?php echo $link_text; ?></a>
 							<?php } ?>
@@ -47,7 +54,7 @@
 						</div>
 					</div>
 
-				<?php endwhile; endif; ?>
+				<?php $i++; endwhile; endif; ?>
 
 			</div>
 
@@ -172,7 +179,7 @@
 							$pricepoint = get_post_meta( $page->ID, 'cebo_pricepoint', true );
 
 							$fullpic = get_post_meta( $page->ID, 'cebo_fullpic', true );
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' )[0];
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'customSize_soft_600xany' )[0];
 
 							if ( $fullpic ) {
 								$image = $fullpic;
@@ -230,7 +237,7 @@
 					$box_type = get_sub_field('box_type');
 
 					$page = get_sub_field('page_select');
-					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' )[0];
+					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'customSize_soft_1024xany' )[0];
 
 					$title = get_sub_field('title');
 					$content = get_sub_field('description');
