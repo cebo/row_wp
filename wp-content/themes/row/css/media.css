@@ -67,12 +67,6 @@ and (max-width : 1439px) {
 		padding: 0 0 50px;
 	}
 
-	.intro-box.left,
-	.intro-box.right {
-		float: none;
-		width: auto;
-	}
-
 
 	/* NDC: BOXLISTS */
 	
@@ -798,6 +792,21 @@ and (max-width : 1275px) {
 	}
 
 }
+
+
+/* ================================================  999 - 000  ======================================= */
+
+@media only screen and (max-width : 999px) {
+
+	.intro-box.left,
+	.intro-box.right {
+		float: none;
+		width: auto;
+	}
+
+}
+
+
 
 
 
