@@ -32,7 +32,7 @@
 
 				?>
 
-					<div class="owl-block" style="background-image: url(<?php echo $imgsrc['sizes']['customSize_hard_anyx600']; ?>);">
+					<div class="owl-block" style="background-image: url(<?php echo $imgsrc['sizes']['customSize_soft_anyx600']; ?>);">
 						
 						<?php if ( $dark_overlay == 'yes' ) { ?><div class="owl-overlay"></div><?php } ?>
 
@@ -172,7 +172,7 @@
 							$pricepoint = get_post_meta( $page->ID, 'cebo_pricepoint', true );
 
 							$fullpic = get_post_meta( $page->ID, 'cebo_fullpic', true );
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'customSize_hard_anyx300' )[0];
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'customSize_soft_anyx300' )[0];
 
 							if ( $fullpic ) {
 								$image = $fullpic;
@@ -230,7 +230,7 @@
 					$box_type = get_sub_field('box_type');
 
 					$page = get_sub_field('page_select');
-					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'customSize_hard_anyx450' )[0];
+					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'customSize_soft_anyx450' )[0];
 
 					$title = get_sub_field('title');
 					$content = get_sub_field('description');
