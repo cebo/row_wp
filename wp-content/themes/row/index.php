@@ -242,7 +242,16 @@
 					$title = get_sub_field('title');
 					$content = get_sub_field('description');
 					$image = get_sub_field('image');
-					$link = get_permalink( $page->ID );
+
+					if(get_sub_field('page_or_external') == 'page') {
+						$link = get_permalink( $page->ID );
+					} else {
+						if(get_sub_field( 'external_link' )) {
+							$link = get_sub_field( 'external_link' );
+						} else {
+							$link = false;
+						}						
+					}					
 
 					$enable_button = get_sub_field('enable_button');
 					$button_select = get_sub_field('button_select');
@@ -294,7 +303,7 @@
 						</div>
 					<?php } ?>
 
-					<a class="feature-box-link" href="<?php echo $link; ?>">
+					<a class="feature-box-link" href="<?php echo $link; ?>" <?php echo (get_sub_field( 'external_link' )) ? 'target="_blank"' : ''; ?>>
 
 						<div class="feature-box-overlay"></div>
 

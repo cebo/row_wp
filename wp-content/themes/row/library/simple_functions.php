@@ -331,7 +331,7 @@ function language_selector_flags(){
             if(!$l['active']) {
 
             	if($l['language_code'] == 'en') {
-            		echo '<li><a href="', bloginfo('url') ,'">',$l['language_code'],'</a></li>';
+            		echo '<li><a href="//www.rownyc.com">',$l['language_code'],'</a></li>';
             	} else {
             		echo '<li><a href="',$l['url'],'">',$l['language_code'],'</a></li>';
             	}
