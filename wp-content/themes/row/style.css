@@ -7553,7 +7553,8 @@ li.deal.foreign-box{
 }
 
 .schedule-box {
-	display: inline-block;
+	float: left;
+	margin-right: 5px;
 	position: relative;
 }
 
@@ -7578,6 +7579,7 @@ li.deal.foreign-box{
 .schedulebook button {
 	background-color: #e51a9b;
 	box-sizing: border-box;
+	float: left;
 	color: #fff;
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
@@ -7586,7 +7588,6 @@ li.deal.foreign-box{
 	cursor: pointer;
 
 	position: relative;
-	top: 1px;
 
 	-webkit-appearance: none;
 	-moz-appearance: none;

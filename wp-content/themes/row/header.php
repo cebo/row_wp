@@ -1,46 +1,39 @@
 <?php
 
-	global $sitepress;
-	if (function_exists('get_current_language') || function_exists('get_default_language')) { 
-		$current_lang = $sitepress->get_current_language();
-		$default_lang = $sitepress->get_default_language();
-	} else {
-		$current_lang = 'en';
-		$default_lang = 'en';
-	}
-
 	if ( file_exists( TEMPLATEPATH . '/library/Mobile_Detect.php' ) ) {
 
 		require_once TEMPLATEPATH . '/library/Mobile_Detect.php';
 		$detect = new Mobile_Detect;
 
 		function redirect() {
-		    $url = 'Location: http://m.rownyc.com';
-		    $statusCode = 303;
-		    header($url, true, $statusCode);
-		    die();
+			$url = 'Location: http://m.rownyc.com';
+			$statusCode = 303;
+			header( $url, true, $statusCode );
+			die();
 		}
 
 		$check = $detect->isMobile(); 
 		$parse = parse_url($_SERVER['REQUEST_URI']);
 		//print_r($parse['path']);
-		
+
 		//print_r('http://m.rownyc.com' . $parse['path']);
-		if( $check && !get_post_meta($post->ID,'cebo_redirect_url', true) ) {
+		if ( $check && !get_post_meta( $post->ID, 'cebo_redirect_url', true ) ) {
 			header("HTTP/1.1 301 Moved Permanently");
 			header( 'Location: http://m.rownyc.com' . $parse['path'] );
 			exit();
-		} 
+		}
 
-		if( $check && get_post_meta($post->ID,'cebo_redirect_url', true) ) {
+		if ( $check && !get_post_meta( $post->ID, 'cebo_redirect_url', true ) ) {
 			header("HTTP/1.1 301 Moved Permanently");
-			header( 'Location: ' . get_post_meta($post->ID,'cebo_redirect_url', true) );
+			header( 'Location: ' . get_post_meta( $post->ID, 'cebo_redirect_url', true ) );
 			exit();
 		}
 
-		elseif( $check ) { redirect(); }
+		elseif ( $check ) { redirect(); }
 
 	}
+
+	$current_lang = ICL_LANGUAGE_CODE;
 
 ?>
 <!DOCTYPE HTML>
