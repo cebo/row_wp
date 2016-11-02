@@ -1,46 +1,39 @@
 <?php
 
-	global $sitepress;
-	if (function_exists('get_current_language') || function_exists('get_default_language')) { 
-		$current_lang = $sitepress->get_current_language();
-		$default_lang = $sitepress->get_default_language();
-	} else {
-		$current_lang = 'en';
-		$default_lang = 'en';
-	}
-
 	if ( file_exists( TEMPLATEPATH . '/library/Mobile_Detect.php' ) ) {
 
 		require_once TEMPLATEPATH . '/library/Mobile_Detect.php';
 		$detect = new Mobile_Detect;
 
 		function redirect() {
-		    $url = 'Location: http://m.rownyc.com';
-		    $statusCode = 303;
-		    header($url, true, $statusCode);
-		    die();
+			$url = 'Location: http://m.rownyc.com';
+			$statusCode = 303;
+			header( $url, true, $statusCode );
+			die();
 		}
 
 		$check = $detect->isMobile(); 
 		$parse = parse_url($_SERVER['REQUEST_URI']);
 		//print_r($parse['path']);
-		
+
 		//print_r('http://m.rownyc.com' . $parse['path']);
-		if( $check && !get_post_meta($post->ID,'cebo_redirect_url', true) ) {
+		if ( $check && !get_post_meta( $post->ID, 'cebo_redirect_url', true ) ) {
 			header("HTTP/1.1 301 Moved Permanently");
 			header( 'Location: http://m.rownyc.com' . $parse['path'] );
 			exit();
-		} 
+		}
 
-		if( $check && get_post_meta($post->ID,'cebo_redirect_url', true) ) {
+		if ( $check && !get_post_meta( $post->ID, 'cebo_redirect_url', true ) ) {
 			header("HTTP/1.1 301 Moved Permanently");
-			header( 'Location: ' . get_post_meta($post->ID,'cebo_redirect_url', true) );
+			header( 'Location: ' . get_post_meta( $post->ID, 'cebo_redirect_url', true ) );
 			exit();
 		}
 
-		elseif( $check ) { redirect(); }
+		elseif ( $check ) { redirect(); }
 
 	}
+
+	$current_lang = ICL_LANGUAGE_CODE;
 
 ?>
 <!DOCTYPE HTML>
@@ -97,32 +90,51 @@
 <script src="//cdn.optimizely.com/js/3569390496.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
-	<?php if(get_post_type() == 'imagegalleries') { ?>
 
-		<!-- Flex Slider -->
-		<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
+<?php
+	if (
+		get_post_type() == 'imagegalleries' ||
+		get_post_type() == 'rooms'
+	) {
+?>
 
-				$('.flexslider-gallery').flexslider({
-					animation: "slide",
-					animationSpeed: 1500,
-					controlNav: true,
-					startAt: 0,
-				});
+	<!-- Flex Slider -->
+	<script src="<?php bloginfo ('template_url'); ?>/js/flexslider/jquery.flexslider.js"></script>
+	<script type="text/javascript">
 
-			  $('.flexslider').flexslider({
-			    animation: "slide",
-			    animationSpeed: 800,
-			    pauseOnAction: false,
-			    controlNav: true,
-			    startAt: 0,
-			  });
+		$(document).ready(function() {
 
+			$('.flexslider-gallery-js').flexslider({
+				animation: 'slide',
+				controlNav: false,
+				animationLoop: false,
+				slideshow: false,
+				sync: '.flexslider-gallery-nav-js',
 			});
-		</script>
 
-	<?php } ?>
+			$('.flexslider-gallery-nav-js').flexslider({
+				animation: 'slide',
+				controlNav: false,
+				animationLoop: false,
+				slideshow: false,
+				itemWidth: 210,
+				maxItems: 5,
+				asNavFor: '.flexslider-gallery-js'
+			});
+
+			$('.flexslider-js').flexslider({
+				animation: "slide",
+				animationSpeed: 1500,
+				pauseOnAction: false,
+				controlNav: true,
+				startAt: 0,
+			});
+
+		});
+
+	</script>
+
+<?php } ?>
 	
 
 <?php if( !is_home() || !is_front_page() ) { ?>
@@ -228,12 +240,7 @@ ga('send', 'pageview');
 
 <body <?php if(is_page_template('page_rooms.php') || get_post_type() == 'rooms') { ?>class="rooms"<?php } elseif(is_home() || is_front_page() ) { ?>class="home"<?php } elseif(get_post_type() == 'imagegalleries') { ?>class="rooms gallery"<?php } elseif(is_page_template('page_amenities.php')) { ?>class="page amenities"<?php } elseif(is_page(92)) { ?>class="page deals"<?php } elseif(is_page_template('page_concierge.php')) { ?>class="page concierge"<?php } elseif(is_page_template('page_localinner.php')) { ?>class="page time-square"<?php } elseif(get_post_type() == 'amenities') { ?>class="page single amenity"<?php } elseif(is_page() || is_single()) { body_class('single'); ?><?php } elseif(is_home() || is_front_page()) { ?>class="home"<?php } ?>>
 
-<a class="shutdown" href="#" id="jom"></a>
-<div class="darkover"><a href="#"></a></div>
-<div class="slightover"><a href="#"></a></div>
-
-
-<div>
+<div class="wrapper">
 
 	<?php query_posts('post_type=weather&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
@@ -257,251 +264,54 @@ ga('send', 'pageview');
 
 	<?php endwhile; endif; wp_reset_query(); ?>
 
-	
-	<section class="navigate">
+	<div class="headernav">
+
+		<div class="topnav-area">
 			
-			<div class="logobox">
-				
-				<div class="languages langdrop">
+			<div class="nav-logo">
+				<a href="<?php bloginfo('url'); ?>">
+					<img title="Row NYC" alt="Row NYC" src="<?php bloginfo('template_url'); ?>/images/logo.png" />
+				</a>
+			</div>
+
+			<div class="nav-language-address">
+
+				<div class="nav-language">
 
 					<?php if (function_exists('language_selector_flags')) { ?>
 
-						<div class="current-lang">
-							<i class="fa fa-globe"></i> <?php echo ICL_LANGUAGE_CODE ?> <i class="fa fa-caret-down"></i>
-						</div>
+						<i class="fa fa-globe"></i><span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down"></i>
 
-						<ul style="opacity: 0; visibility: hidden;"><?php language_selector_flags(); ?></ul>
+						<ul><?php language_selector_flags(); ?></ul>
 
 					<?php } ?>
 
 				</div>
-			
-			</div>
-			
-			
-		<ul class="supernav">
 
-			<?php if( ICL_LANGUAGE_CODE == 'en') { ?>
-			
-			<li class="subinside inhotel">
-				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
-			</li>
-
-			<li class="subinside indeals">
-				<a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><span class="deals"></span><p><?php _e('Special Offers','row-theme-text'); ?></p></a>	
-			</li>
-
-			<li class="subinside inrooms">
-				<a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>		
-			</li>
-
-			<li class="subinside ineats">
-				<a href="<?php bloginfo ('url'); ?>/eat-drink/"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>	
-			</li>
-
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/times-square-hotels/amenities/"><span class="fitness"></span><p><?php _e('Amenities','row-theme-text'); ?></p></a>
-			</li>	
-
-			<li class="subinside ingallery">
-				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
-			</li>
-
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/blog" target="_blank"><span class="hotel"></span><p><?php _e('Blog','row-theme-text'); ?></p></a>
-			</li>
-
-			<li>
-				<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
-			</li>
-
-			<?php } else { ?>
-
-			<li class="subinside inhotel">
-				<a href="<?php bloginfo ('url'); ?>/the-hotel/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
-			</li>
-
-			<li class="subinside indeals">
-				<a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><span class="deals"></span><p><?php _e('Special Offers','row-theme-text'); ?></p></a>	
-			</li>
-
-			<li class="subinside inrooms">
-				<a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>		
-			</li>
-
-			<li class="subinside ingallery">
-				<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
-			</li>
-
-			<?php } ?>
-		
-		</ul>
-		
-		<div class="finished">
-						
-			<div class="socials">
-				<a href="<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
-				<a href="<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
-				<a href="<?php echo get_option('cebo_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
-				<a href="<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
-				<a href="<?php echo get_option('cebo_youtube'); ?>" target="_blank"><i class="fa fa-youtube"></i></a>
-
-					<a href="https://plus.google.com/103755241093806177642" target="_blank" rel="publisher"><i class="fa fa-google-plus-square"></i></a>
+				<div class="nav-address">A Times Square Hotel<br><span class="punct">·</span>700 8th Ave, NYC<br><span class="punct">·</span><span class="pink">Reservations:</span> 888.352.3650</div>
 
 			</div>
 
-			<div class="exclusive-offer">
-				
-				<form method="post" id="eclubCheck" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub">
-				
-					<div class="da-block">
-						<input required type="text" size="40" name="FIRSTNAME" maxlength="40" value="" id="firstname" placeholder="<?php _e('first name','row-theme-text'); ?>">
-					</div>
-					<div class="da-block">
-						<input required type="text" size="40" name="LASTNAME" maxlength="40" value="" id="lastname" placeholder="<?php _e('last name','row-theme-text'); ?>">
-					</div>
-					<div class="da-block">
-						<input type="email" required size="40" name="email" maxlength="150" id="email_address" placeholder="<?php _e('email address','row-theme-text'); ?>">
-					</div>
-					
-					<i class="fa fa-caret-right"></i>
-					<input id="form_submit" type="submit" value="" />
-					
-					<input type="HIDDEN" name="PEA"					value="jayme@digital-alchemy.com" />
-					
-					  <input type="HIDDEN" name="PEACC" 				value="" />
-					  <input type="HIDDEN" name="PEABC"					value="" />
-					  <input type="HIDDEN" name="PEASUBJECT" 			value="LOOKUP" />
-					  <INPUT TYPE="HIDDEN" NAME="NewUser" 				VALUE="1">
-					  <INPUT TYPE="HIDDEN" NAME="PrThanksPage" 			VALUE="1">
-					  <INPUT TYPE="HIDDEN" NAME="ftpbox" 				VALUE="01603">
-					  <INPUT TYPE="HIDDEN" NAME="PRThanksTemplate"		VALUE="ETHANKS">
-					  <input type="hidden" name="sys_formtype" 			value="eClub">
-					  <input type="hidden" name="hv_preftype" 			value="eClub" />
-					  <input type="hidden" name="ECWT" 			        value="EWELCOME" />
-
-				</form>
-
-			</div>
-
-			<p><?php _e('High Speed Wifi Access Available','row-theme-text'); ?></p>
-			<p style="padding:30px 0;text-align:center;"><a href="http://www.highgate.com" target="_blank"><img style="height:50px;" src="<?php bloginfo('template_url'); ?>/images/highgate-logo-white.png" alt="Highgate" /></a></p>
-		
-		</div>
-		
-		<div class="bottom"></div>
-	
-	</section>
-
-	<section class="navigate mobile">
-			
-		<div class="logobox">
-		
-			<a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" /></a>
-						
-		</div>
-
-		<div class="mobile-menu right">
-
-			<div class="mobile-menu-section">
-
-				<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i> <?php _e('MENU','row-theme-text'); ?></a>
-
-			</div>
-
-		</div>
-
-		<nav id="menu" class="mobile">
-		
-			<ul>
-				
-				<li>
-
-					<?php if( $current_lang == 'en') { ?>
-
-						<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-					<?php } elseif( $current_lang == 'zh-hans') { ?>
-
-						<a href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-					<?php } elseif( $current_lang == 'pt-br') { ?>
-
-						<a href="<?php echo get_option('cebo_genbooklink'); ?>/pt/search" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-					<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-
-						<a href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-					<?php } else { ?>
-
-						<a href="<?php echo get_option('cebo_genbooklink'); ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
-
-					<?php } ?>
-
-				</li>
-
-				<li>
-					<a href="<?php bloginfo ('url'); ?>/times-square-hotels/"><span class="hotel"></span><p><?php _e('Hotel','row-theme-text'); ?></p></a>
-				</li>
-
-				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=86"><span class="rooms"></span><p><?php _e('Rooms','row-theme-text'); ?></p></a>
-				</li>
-		
-				<li>
-					<a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc"><span class="gallery"></span><p><?php _e('Gallery','row-theme-text'); ?></p></a>
-				</li>
-				
-				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=92"><span class="deals"></span><p><?php _e('Deals','row-theme-text'); ?></p></a>
-				</li>
-				
-				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=54"><span class="eats"></span><p><?php _e('Eat & Drink','row-theme-text'); ?></p></a>
-				</li>
-				
-				<li>
-					<a href="<?php bloginfo ('url'); ?>/?page_id=148"><span class="explore"></span><p><?php _e('Explore NYC','row-theme-text'); ?></p></a>						
-				</li>
-				
-				<li>
-					<a href="<?php bloginfo ('url'); ?>/contact"><span class="contact"></span><p><?php _e('Contact','row-theme-text'); ?></p></a>
-				</li>
-				
-				<li>
-					<a href="<?php bloginfo ('url'); ?>/hotel-amenities/glamgo/"><span class="glamgo"></span><p><?php _e('GLAM&GO','row-theme-text'); ?></p></a>
-				</li>
-
-				<li>
-					<a href="<?php bloginfo ('url'); ?>/hotel-amenities/cyc-fitness/"><span class="fitness"></span><p><?php _e('CYC FITNESS','row-theme-text'); ?></p></a>
-				</li>
-			
+			<ul class="nav-list">
+				<li><a href="<?php bloginfo ('url'); ?>/the-hotel/"><?php _e('Hotel','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><?php _e('Specials','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><?php _e('Rooms','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><?php _e('Gallery','row-theme-text'); ?></a></li>
+				<li><a target="_blank" href="<?php bloginfo ('url'); ?>/blog"><?php _e('Blog','row-theme-text'); ?></a></li>
 			</ul>
 
-		</nav>
-	
-	</section>
-	
-	<div class="behindnavigate"></div>
-
-	<div class="banner desktop"> 
-		
-		<div class="header-contact">
-			
-			<p class="contacto"><?php _e('Reservations:','row-theme-text'); ?> <span style="font-family: 'GothamBold';"><?php _e('888.352.3650','row-theme-text'); ?></span></p>
-			<p class="contacto"><i class="fa fa-map-marker"></i> <a href="https://www.google.com/maps/place/Row+NYC/@40.758695,-73.988284,17z/data=!3m1!4b1!4m2!3m1!1s0x89c25854799df1f7:0x8890505e02666256" target="_blank"><span><?php _e('700 8th Avenue, New York, NY 10036','row-theme-text'); ?></span></a></p>			
-			<p class="contacto"><a class="group-booking" target="_blank" href="https://rownyc.groupize.com/properties/25047/groups"><?php _e('Group Booking (10+)','row-theme-text'); ?></a></p>
-			<!-- <a href="mailto:info@rownyc.com" target="_blank">info@rownyc.com</a> -->
+			<div class="nav-button-mobile">
+				<div class="nav-button-reserve"><div><?php _e('Reserve','row-theme-text'); ?></div></div>
+				<div class="nav-button-menu"><div><?php _e('Menu','row-theme-text'); ?></div></div>
+			</div>
 
 		</div>
-		
-		<a class="logo" href="<?php bloginfo('url'); ?>">
-			<img src="<?php bloginfo ('template_url'); ?>/images/logo.png" alt="Row NYC" />
-			<p><?php _e('A Times Square Hotel','row-theme-text'); ?></p>
-		</a>
 
-		<div class="booking">
+	</div>
+
+	<div class="bookingnav">
+		
+		<div class="schedulebook">
 
 			<form
 
@@ -529,91 +339,192 @@ ga('send', 'pageview');
 
 				onsubmit="_gaq.push(['_linkByPost', this]);">
 
-					
-				<div class="calspacer">
-				
-					<span class="arrv">
-						<div class="squaredance">
-							<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" class="calendarsection" />							
-							<i class="fa fa-calendar"></i>
-						</div>
-						
-						<div class="datepicker">
-							<a href="#" class="cls">X</a>
-						</div>
-					</span>		 	
-							 	
-					<span class="lowselect">
-						<div class="squaredance select">
-							<select id="adults" name="adults[]">
-							 	<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
-			                    <option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
-			                    <option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
-			                    <option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>                                
-							</select>
-							<i class="fa fa-caret-down"></i>
-						</div>
-					</span>
-					
-					<span class="lowselect">						
-						<div class="squaredance select">
-							 <select id="children" name="children[]">
-							 	<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
-								<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
-			                    <option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
-			                    <option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
-							</select>
-							<i class="fa fa-caret-down"></i>
-						</div>
-					</span>
-
-					<div class="butonconton">
-						<button type="submit" class="button"><?php _e('Reserve Now','row-theme-text'); ?></button>
+					<div class="datepicker datepicker-arrival first-time">
+						<div class="close-dp">X</div>
+						<div class="letter-dp">ARRIVE</div>
 					</div>
 
-					
-					<div class="clear"></div>
-					<span class="dept">
-						<div class="squaredance">
-							<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" class="calendarsection" />
-							<!-- <input type="text" id="dep"> -->
-							<!-- <input type="text" id="depee"> -->
-							
-							<i class="fa fa-calendar"></i>
-						</div>
-						
-						<div class="departdatepicker">
-							<a href="#" class="cls">X</a>
-						</div>
-					</span>
+					<div class="datepicker datepicker-departure">
+						<div class="close-dp">X</div>
+						<div class="letter-dp">DEPART</div>
+					</div>
 
-					<span class="lowselect">
-						<div class="squaredance select">
-						<select  id="children" name="rooms" class="halfsies">
+					<div class="schedule-box">
+						<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
+						<i class="fa fa-calendar"></i>
+					</div>
+
+					<div class="schedule-box">
+						<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
+						<i class="fa fa-calendar"></i>
+					</div>
+
+					<div class="schedule-box">
+						<select name="rooms">
 							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
 						</select>
 						<i class="fa fa-caret-down"></i>
-						</div>
-					</span>
-
-					<span>
-						<div class="squaredance">
-						<input class="calendarsection" id="offercode" name="offer_code" placeholder="<?php _e('Offer Code','row-theme-text'); ?>">
-						</div>
-					</span>
-					<div class="butonconton">
-						<a href="" target="_blank"><button type="submit" class="checkrates button"><?php _e('Check Rates','row-theme-text'); ?></button></a>
 					</div>
-					
-					<div class="clear"></div>
-				</div>						
+
+					<div class="schedule-box">
+						<select name="adults[]">
+							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
+							<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<div class="schedule-box">
+						<select name="children[]">
+							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
+							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
 						
 			</form>
 
 		</div>
-	</div>	
+
+		<div class="bookingnav-reserve">
+			<div><?php _e('Reserve','row-theme-text'); ?></div>
+		</div>
+
+		<div class="ham-menu">
+			<div class="ham-lines"><div></div></div>
+			<ul class="ham-list">
+				<li><a href="<?php bloginfo ('url'); ?>/the-hotel/"><?php _e('Hotel','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><?php _e('Specials','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><?php _e('Rooms','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><?php _e('Gallery','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/eat-drink/"><?php _e('Eat & Drink','row-theme-text'); ?></a></li>
+				<li><a href="<?php bloginfo ('url'); ?>/amenities/"><?php _e('Amenities','row-theme-text'); ?></a></li>
+				<li><a target="_blank" href="<?php bloginfo ('url'); ?>/blog"><?php _e('Blog','row-theme-text'); ?></a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="mobilenav">
+		
+		<div class="mobilenav-top">
+			
+			<div class="mobilenav-logo">
+				<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" /></a>
+			</div>
+			<div class="mobilenav-button-close"><div></div></div>
+
+		</div>
+
+		<ul class="mobilenav-menu">
+
+			<div class="mobilenav-block"></div>
+
+			<li><a href="<?php bloginfo ('url'); ?>/the-hotel/"><?php _e('Hotel','row-theme-text'); ?></a></li>
+			<li><a href="<?php bloginfo ('url'); ?>/times-square-hotel-deals/"><?php _e('Special','row-theme-text'); ?></a></li>
+			<li><a href="<?php bloginfo ('url'); ?>/hotel-rooms-times-square-new-york/"><?php _e('Rooms','row-theme-text'); ?></a></li>
+			<li><a href="<?php bloginfo ('url'); ?>/gallery/inside-row-nyc/"><?php _e('Gallery','row-theme-text'); ?></a></li>
+			<li><a target="_blank" href="<?php bloginfo ('url'); ?>/blog"><?php _e('Blog','row-theme-text'); ?></a></li>
+		</ul>
+
+	</div>
+
+	<div class="mobilenav-reserve">
+
+		<div class="mobilenav-schedulebook-close"><div></div></div>
+
+		<div class="mobilenav-schedulebook-selector arrive-selector">
+			
+			<div class="mobilenav-sb-select mobilenav-sb-arrive"><?php _e('Arrive','row-theme-text'); ?></div>
+			<div class="mobilenav-sb-select mobilenav-sb-depart"><?php _e('Depart','row-theme-text'); ?></div>
+
+		</div>
+
+		<div class="schedulebook">
+			<form
+
+				<?php if( $current_lang == 'en') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+				<?php } elseif( $current_lang == 'zh-hans') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" 
+
+				<?php } elseif( $current_lang == 'pt-br') { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" 
+
+				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" 
+
+				<?php } else { ?>
+
+					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+
+				<?php } ?>
+
+				onsubmit="_gaq.push(['_linkByPost', this]);">
+
+					<div class="datepicker datepicker-mobile"></div>
+
+					<div class="schedule-box left">
+						<input name="arrival_date" id="arrival_date_mobile" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
+						<i class="fa fa-calendar"></i>
+					</div>
+
+					<div class="schedule-box right">
+						<input name="departure_date" id="departure_date_mobile" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
+						<i class="fa fa-calendar"></i>
+					</div>
+
+					<div class="schedule-box left">
+						<select name="rooms">
+							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<div class="schedule-box right">
+						<select name="adults[]">
+							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
+							<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<div class="schedule-box full">
+						<select name="children[]">
+							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
+							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
+							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
+							<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
+						</select>
+						<i class="fa fa-caret-down"></i>
+					</div>
+
+					<div class="schedule-box full">
+						<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+					</div>
+
+			</form>
+		</div>
+
+	</div>
+
 	<!-- wonderful widget -->
 	<div class="wonderful">
 		<a class="stay-wanderful-button" href="https://staywanderful.com/widgets/#/24"></a> 

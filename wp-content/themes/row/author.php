@@ -105,7 +105,7 @@ get_header(); ?>
 								<?php } elseif(count($attachments) > 1) { ?>
 								
 								
-									<div class="flexslider">
+									<div class="flexslider-js flexslider">
 									  <ul class="slides">
 			
 										<?php if(sp_get_image(1)) : ?>   

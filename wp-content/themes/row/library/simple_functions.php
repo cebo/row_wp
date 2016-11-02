@@ -133,6 +133,32 @@ function content($limit) {
   return $content;
 }
 
+function content2( $string, $limit = null, $notstrip = null ) {
+    if ( isset( $limit ) ) {
+
+        $content = explode( ' ', $string, $limit );
+
+        if ( count( $content ) >= $limit ) {
+            array_pop( $content );
+            $content = implode( ' ', $content ) . '...';
+        } else {
+            $content = implode( ' ', $content );
+        }
+
+    } else {
+
+        $content = $string;
+    
+    }
+
+    $content = preg_replace( '/\[.+\]/', '', $content );
+    $content = apply_filters( 'the_content', $content ); 
+    $content = str_replace( ']]>', ']]&gt;', $content );
+    $content = strip_tags( $content, $notstrip );
+    return $content;
+
+}
+
 /* ==================================== */
 
 if ( function_exists( 'add_theme_support' ) ) { // WP 2.9 Post Thumbnail Feature
@@ -303,7 +329,13 @@ function language_selector_flags(){
     if(!empty($languages)){
         foreach($languages as $l){
             if(!$l['active']) {
-                echo '<li><a href="',$l['url'],'">',$l['language_code'],'</a></li>';
+
+            	if($l['language_code'] == 'en') {
+            		echo '<li><a href="//www.rownyc.com">',$l['language_code'],'</a></li>';
+            	} else {
+            		echo '<li><a href="',$l['url'],'">',$l['language_code'],'</a></li>';
+            	}
+
             }
         }
     }

@@ -163,6 +163,7 @@
 			var theDate = new Date($(this).datepicker('getDate'));
 			theDate.setDate(theDate.getDate() + 1);
 			$(".datepicker-departure").datepicker("option", "minDate", theDate.getFullYear()+"-"+(theDate.getMonth()+1)+"-"+theDate.getDate());
+
 		}
 	});
 
