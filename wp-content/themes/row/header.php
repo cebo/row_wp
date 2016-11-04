@@ -317,23 +317,23 @@ ga('send', 'pageview');
 
 				<?php if( $current_lang == 'en') { ?>
 
-					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+					action="<?php echo get_option('cebo_genbooklink'); ?>/" 
 
 				<?php } elseif( $current_lang == 'zh-hans') { ?>
 
-					action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" 
+					action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN" 
 
 				<?php } elseif( $current_lang == 'pt-br') { ?>
 
-					action="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" 
+					action="<?php echo get_option('cebo_genbooklink'); ?>/pt" 
 
 				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
 
-					action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" 
+					action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>" 
 
 				<?php } else { ?>
 
-					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+					action="<?php echo get_option('cebo_genbooklink'); ?>" 
 
 				<?php } ?>
 
