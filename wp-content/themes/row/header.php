@@ -376,7 +376,7 @@ ga('send', 'pageview');
 					<i class="fa fa-caret-down"></i>
 				</div>
 
-				<button type="submit" aria-label="Submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+				<button type="submit" aria-label="Reserve Now"><?php _e('Reserve Now','row-theme-text'); ?></button>
 						
 			</form>
 
@@ -488,7 +488,7 @@ ga('send', 'pageview');
 					</div>
 
 					<div class="schedule-box full">
-						<button type="submit" aria-label="Submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+						<button type="submit" aria-label="Reserve Now"><?php _e('Reserve Now','row-theme-text'); ?></button>
 					</div>
 
 			</form>
