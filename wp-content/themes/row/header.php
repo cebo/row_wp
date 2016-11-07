@@ -408,7 +408,7 @@ ga('send', 'pageview');
 			<div class="mobilenav-logo">
 				<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" /></a>
 			</div>
-			<div class="mobilenav-button-close"><div></div></div>
+			<div class="mobilenav-button-close" aria-label="Close"><div></div></div>
 
 		</div>
 
@@ -427,7 +427,7 @@ ga('send', 'pageview');
 
 	<div class="mobilenav-reserve">
 
-		<div class="mobilenav-schedulebook-close"><div></div></div>
+		<div class="mobilenav-schedulebook-close" aria-label="Close"><div></div></div>
 
 		<div class="mobilenav-schedulebook-selector arrive-selector">
 			
