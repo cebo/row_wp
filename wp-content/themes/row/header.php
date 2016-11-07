@@ -38,7 +38,7 @@
 	if( $current_lang == 'en') { $locale = 'en'; } 
 	elseif( $current_lang == 'zh-hans') { $locale = 'zh-CN'; } 
 	elseif( $current_lang == 'pt-br') { $locale = 'pt'; } 
-	else { $locale = 'en'; } 
+	else { $locale = $current_lang; } 
 
 ?>
 <!DOCTYPE HTML>
