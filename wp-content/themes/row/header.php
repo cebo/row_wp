@@ -38,7 +38,7 @@
 	if( $current_lang == 'en') { $locale = 'en'; } 
 	elseif( $current_lang == 'zh-hans') { $locale = 'zh-CN'; } 
 	elseif( $current_lang == 'pt-br') { $locale = 'pt'; } 
-	else { $locale = 'en'; } 
+	else { $locale = $current_lang; } 
 
 ?>
 <!DOCTYPE HTML>
@@ -323,27 +323,30 @@ ga('send', 'pageview');
 				<input name="locale" type="hidden" value="<?php echo $locale; ?>">
 
 				<div class="datepicker datepicker-arrival first-time">
-					<div class="close-dp">X</div>
+					<div class="close-dp" aria-label="Close">X</div>
 					<div class="letter-dp">ARRIVE</div>
 				</div>
 
 				<div class="datepicker datepicker-departure">
-					<div class="close-dp">X</div>
+					<div class="close-dp" aria-label="Close">X</div>
 					<div class="letter-dp">DEPART</div>
 				</div>
 
 				<div class="schedule-box">
+					<label class="visuallyhidden" for="arrival_date">Arrival</label>
 					<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
 					<i class="fa fa-calendar"></i>
 				</div>
 
 				<div class="schedule-box">
+					<label class="visuallyhidden" for="departure_date">Departure</label>
 					<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
 					<i class="fa fa-calendar"></i>
 				</div>
 
 				<div class="schedule-box">
-					<select name="rooms">
+					<label class="visuallyhidden" for="rooms">Number of Rooms</label>
+					<select id="rooms" name="rooms">
 						<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
 						<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
@@ -352,7 +355,8 @@ ga('send', 'pageview');
 				</div>
 
 				<div class="schedule-box">
-					<select name="adults[]">
+					<label class="visuallyhidden" for="adults">Number of Adults</label>
+					<select name="adults[]" id="adults">
 						<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
 						<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
@@ -362,7 +366,8 @@ ga('send', 'pageview');
 				</div>
 
 				<div class="schedule-box">
-					<select name="children[]">
+					<label class="visuallyhidden" for="children">Number of Children</label>
+					<select name="children[]" id="children">
 						<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 						<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
@@ -371,14 +376,14 @@ ga('send', 'pageview');
 					<i class="fa fa-caret-down"></i>
 				</div>
 
-				<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+				<button type="submit" aria-label="Submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
 						
 			</form>
 
 		</div>
 
 		<div class="bookingnav-reserve">
-			<div><?php _e('Reserve','row-theme-text'); ?></div>
+			<div aria-label="Reserve"><?php _e('Reserve','row-theme-text'); ?></div>
 		</div>
 
 		<div class="ham-menu">
@@ -403,7 +408,7 @@ ga('send', 'pageview');
 			<div class="mobilenav-logo">
 				<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" /></a>
 			</div>
-			<div class="mobilenav-button-close"><div></div></div>
+			<div class="mobilenav-button-close" aria-label="Close"><div></div></div>
 
 		</div>
 
@@ -422,7 +427,7 @@ ga('send', 'pageview');
 
 	<div class="mobilenav-reserve">
 
-		<div class="mobilenav-schedulebook-close"><div></div></div>
+		<div class="mobilenav-schedulebook-close" aria-label="Close"><div></div></div>
 
 		<div class="mobilenav-schedulebook-selector arrive-selector">
 			
@@ -439,17 +444,20 @@ ga('send', 'pageview');
 					<div class="datepicker datepicker-mobile"></div>
 
 					<div class="schedule-box left">
+						<label class="visuallyhidden" for="arrival_date_mobile">Arrival</label>
 						<input name="arrival_date" id="arrival_date_mobile" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
 						<i class="fa fa-calendar"></i>
 					</div>
 
 					<div class="schedule-box right">
+						<label class="visuallyhidden" for="departure_date_mobile">Departure</label>
 						<input name="departure_date" id="departure_date_mobile" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
 						<i class="fa fa-calendar"></i>
 					</div>
 
 					<div class="schedule-box left">
-						<select name="rooms">
+						<label class="visuallyhidden" for="rooms2">Number of Rooms</label>
+						<select id="rooms2" name="rooms">
 							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
@@ -458,7 +466,8 @@ ga('send', 'pageview');
 					</div>
 
 					<div class="schedule-box right">
-						<select name="adults[]">
+						<label class="visuallyhidden" for="adults2">Number of Adults</label>
+						<select id="adults2" name="adults[]">
 							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
@@ -468,7 +477,8 @@ ga('send', 'pageview');
 					</div>
 
 					<div class="schedule-box full">
-						<select name="children[]">
+						<label class="visuallyhidden" for="children2">Number of Children</label>
+						<select id="children2" name="children[]">
 							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
@@ -478,7 +488,7 @@ ga('send', 'pageview');
 					</div>
 
 					<div class="schedule-box full">
-						<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+						<button type="submit" aria-label="Submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
 					</div>
 
 			</form>
