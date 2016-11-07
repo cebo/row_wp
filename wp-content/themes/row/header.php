@@ -288,7 +288,7 @@ ga('send', 'pageview');
 
 				</div>
 
-				<div class="nav-address">A Times Square Hotel<br><span class="punct">·</span>700 8th Ave, NYC<br><span class="punct">·</span><span class="pink">Reservations:</span> 888.352.3650</div>
+				<div class="nav-address">A Times Square Hotel<br><span class="punct">·</span>700 8th Ave, NYC<br><span class="punct">·</span><a class="smooth-transition-4s" href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank"><span class="pink">Reservations:</span></a> 888.352.3650</div>
 
 			</div>
 
