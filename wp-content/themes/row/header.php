@@ -35,6 +35,11 @@
 
 	$current_lang = ICL_LANGUAGE_CODE;
 
+	if( $current_lang == 'en') { $locale = 'en'; } 
+	elseif( $current_lang == 'zh-hans') { $locale = 'zh-CN'; } 
+	elseif( $current_lang == 'pt-br') { $locale = 'pt'; } 
+	else { $locale = $current_lang; } 
+
 ?>
 <!DOCTYPE HTML>
 <head>
@@ -288,7 +293,7 @@ ga('send', 'pageview');
 
 				</div>
 
-				<div class="nav-address">A Times Square Hotel<br><span class="punct">·</span>700 8th Ave, NYC<br><span class="punct">·</span><span class="pink">Reservations:</span> 888.352.3650</div>
+				<div class="nav-address">A Times Square Hotel<br><span class="punct">·</span>700 8th Ave, NYC<br><span class="punct">·</span><a class="smooth-transition-4s" href="<?php echo get_option('cebo_genbooklink'); ?>/?locale=<?php echo $locale; ?>" target="_blank"><span class="pink">Reservations:</span></a> 888.352.3650</div>
 
 			</div>
 
@@ -313,82 +318,60 @@ ga('send', 'pageview');
 		
 		<div class="schedulebook">
 
-			<form
+			<form action="<?php echo get_option('cebo_genbooklink'); ?>" onsubmit="_gaq.push(['_linkByPost', this]);">
 
-				<?php if( $current_lang == 'en') { ?>
+				<input name="locale" type="hidden" value="<?php echo $locale; ?>">
 
-					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
+				<div class="datepicker datepicker-arrival first-time">
+					<div class="close-dp">X</div>
+					<div class="letter-dp">ARRIVE</div>
+				</div>
 
-				<?php } elseif( $current_lang == 'zh-hans') { ?>
+				<div class="datepicker datepicker-departure">
+					<div class="close-dp">X</div>
+					<div class="letter-dp">DEPART</div>
+				</div>
 
-					action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" 
+				<div class="schedule-box">
+					<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
+					<i class="fa fa-calendar"></i>
+				</div>
 
-				<?php } elseif( $current_lang == 'pt-br') { ?>
+				<div class="schedule-box">
+					<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
+					<i class="fa fa-calendar"></i>
+				</div>
 
-					action="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" 
+				<div class="schedule-box">
+					<select name="rooms">
+						<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
+						<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
+						<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
+					</select>
+					<i class="fa fa-caret-down"></i>
+				</div>
 
-				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
+				<div class="schedule-box">
+					<select name="adults[]">
+						<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
+						<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
+						<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
+						<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
+					</select>
+					<i class="fa fa-caret-down"></i>
+				</div>
 
-					action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" 
+				<div class="schedule-box">
+					<select name="children[]">
+						<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
+						<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
+						<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
+						<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
+					</select>
+					<i class="fa fa-caret-down"></i>
+				</div>
 
-				<?php } else { ?>
-
-					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
-
-				<?php } ?>
-
-				onsubmit="_gaq.push(['_linkByPost', this]);">
-
-					<div class="datepicker datepicker-arrival first-time">
-						<div class="close-dp">X</div>
-						<div class="letter-dp">ARRIVE</div>
-					</div>
-
-					<div class="datepicker datepicker-departure">
-						<div class="close-dp">X</div>
-						<div class="letter-dp">DEPART</div>
-					</div>
-
-					<div class="schedule-box">
-						<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
-						<i class="fa fa-calendar"></i>
-					</div>
-
-					<div class="schedule-box">
-						<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
-						<i class="fa fa-calendar"></i>
-					</div>
-
-					<div class="schedule-box">
-						<select name="rooms">
-							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
-							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
-							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
-						</select>
-						<i class="fa fa-caret-down"></i>
-					</div>
-
-					<div class="schedule-box">
-						<select name="adults[]">
-							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
-							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
-							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
-							<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
-						</select>
-						<i class="fa fa-caret-down"></i>
-					</div>
-
-					<div class="schedule-box">
-						<select name="children[]">
-							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
-							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
-							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
-							<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
-						</select>
-						<i class="fa fa-caret-down"></i>
-					</div>
-
-					<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+				<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
 						
 			</form>
 
@@ -449,31 +432,9 @@ ga('send', 'pageview');
 		</div>
 
 		<div class="schedulebook">
-			<form
+			<form action="<?php echo get_option('cebo_genbooklink'); ?>" onsubmit="_gaq.push(['_linkByPost', this]);">
 
-				<?php if( $current_lang == 'en') { ?>
-
-					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
-
-				<?php } elseif( $current_lang == 'zh-hans') { ?>
-
-					action="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN/search?" 
-
-				<?php } elseif( $current_lang == 'pt-br') { ?>
-
-					action="<?php echo get_option('cebo_genbooklink'); ?>/pt/search?" 
-
-				<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
-
-					action="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>/search?" 
-
-				<?php } else { ?>
-
-					action="<?php echo get_option('cebo_genbooklink'); ?>/search?" 
-
-				<?php } ?>
-
-				onsubmit="_gaq.push(['_linkByPost', this]);">
+					<input name="locale" type="hidden" value="<?php echo $locale; ?>">
 
 					<div class="datepicker datepicker-mobile"></div>
 

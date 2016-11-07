@@ -7410,6 +7410,10 @@ li.deal.foreign-box{
 		color: #FF00B2;
 	}
 
+	.nav-address a:hover {
+		opacity: .7;
+	}
+
 .nav-list {
 	padding: 5px 30px 40px 0;
 	text-align: right;
