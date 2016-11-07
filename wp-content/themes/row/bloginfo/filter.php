@@ -39,24 +39,6 @@
 					}
 				dropdown.onchange = onCatChange;
 				</script>
-				
-
-				
-				
-					<!--<fieldset>
-						<?php //click_taxonomy_dropdown( 'category' ); ?>
-						 <script type="text/javascript">
-							var dropdown = document.getElementById("cat");
-							function onCatChange() {
-								if ( dropdown.options[dropdown.selectedIndex].value > '' ) {
-									location.href = "<?php echo get_option('home'); ?>/category/"+dropdown.options[dropdown.selectedIndex].value;
-								}
-							}
-						dropdown.onchange = onCatChange;
-						</script> 
-					<i class="fa fa-angle-down"></i>
-					</fieldset> -->	
-
 			
 					<span class="category-dropdown">
 						<a id="cat-trigger"><?php _e('Category','row-theme-text'); ?><i class="fa fa-angle-down"></i></a>	
@@ -137,52 +119,7 @@
 			            echo '</div>'; 
 			        ?>
 
-			</div>
-
-			<!-- <div class="reservations">
-				<div class="reservationform">
-				<form action="<?php echo get_option('cebo_genbooklink'); ?>/search?"  method="get" target="_blank">
-
-					<span class="calsec">
-					
-					<p>From</p>
-						<input type="text"  id="arrival_date" placeholder="" class="calendarsection" />
-						<input type="hidden" name="arrival_date" id="arv">
-					
-						
-					</span>
-					
-					<span class="calsec">
-					<p>To</p>
-						<input type="text" id="departure_date" placeholder="" class="calendarsection" />
-						<input name="departure_date" type="hidden" id="dep">
-						
-						
-						
-					</span>
-					
-					<span class="calsec shortercal">
-					<p>Guests</p>
-					<select id="adults" name="adults[]">
-					 	<option value="1">1</option>
-	                    <option value="2">2</option>
-	                    <option value="3">3</option>
-	                    <option value="4">4</option>                                
-					</select>
-					</span>
-
-					<div class="clear"></div>
-					
-						<a href="#" class="button"><?php _e('Book A Room','row-theme-text'); ?></a>
-					
-				
-				</form>
-			</div>	
-			
-			
-			
-			</div>-->
-			
+			</div>			
 			
 		</div>
 
