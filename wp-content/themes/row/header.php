@@ -367,7 +367,7 @@ ga('send', 'pageview');
 
 				<div class="schedule-box">
 					<label class="visuallyhidden" for="children">Number of Children</label>
-					<select name="children[]">
+					<select name="children[]" id="children">
 						<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 						<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
@@ -444,17 +444,20 @@ ga('send', 'pageview');
 					<div class="datepicker datepicker-mobile"></div>
 
 					<div class="schedule-box left">
+						<label class="visuallyhidden" for="arrival_date_mobile">Arrival</label>
 						<input name="arrival_date" id="arrival_date_mobile" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
 						<i class="fa fa-calendar"></i>
 					</div>
 
 					<div class="schedule-box right">
+						<label class="visuallyhidden" for="departure_date_mobile">Departure</label>
 						<input name="departure_date" id="departure_date_mobile" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
 						<i class="fa fa-calendar"></i>
 					</div>
 
 					<div class="schedule-box left">
-						<select name="rooms">
+						<label class="visuallyhidden" for="rooms2">Number of Rooms</label>
+						<select id="rooms2" name="rooms">
 							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
@@ -463,7 +466,8 @@ ga('send', 'pageview');
 					</div>
 
 					<div class="schedule-box right">
-						<select name="adults[]">
+						<label class="visuallyhidden" for="adults2">Number of Adults</label>
+						<select id="adults2" name="adults[]">
 							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
@@ -473,7 +477,8 @@ ga('send', 'pageview');
 					</div>
 
 					<div class="schedule-box full">
-						<select name="children[]">
+						<label class="visuallyhidden" for="children2">Number of Children</label>
+						<select id="children2" name="children[]">
 							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
@@ -483,7 +488,7 @@ ga('send', 'pageview');
 					</div>
 
 					<div class="schedule-box full">
-						<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+						<button type="submit" aria-label="Submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
 					</div>
 
 			</form>
