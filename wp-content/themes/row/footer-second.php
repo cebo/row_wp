@@ -29,15 +29,15 @@
 
 						<?php } elseif( $current_lang == 'zh-hans') { ?>
 
-							<a href="<?php echo get_option('cebo_genbooklink'); ?>/zh-CN" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+							<a href="<?php echo get_option('cebo_genbooklink'); ?>/?locale=zh-CN" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
 
 						<?php } elseif( $current_lang == 'pt-br') { ?>
 
-							<a href="<?php echo get_option('cebo_genbooklink'); ?>/pt" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+							<a href="<?php echo get_option('cebo_genbooklink'); ?>/?locale=pt" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
 
 						<?php } elseif( $current_lang == 'de' || 'es' || 'fr' || 'it' ) { ?>
 
-							<a href="<?php echo get_option('cebo_genbooklink'); ?>/<?php echo $current_lang; ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
+							<a href="<?php echo get_option('cebo_genbooklink'); ?>/?locale=<?php echo $current_lang; ?>" onclick="_gaq.push(['_link', this.href]);return false;"><span class="reserve"></span><p><?php _e('Reservations','row-theme-text'); ?></p></a>
 
 						<?php } else { ?>
 
