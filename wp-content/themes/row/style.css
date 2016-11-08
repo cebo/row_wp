@@ -7565,6 +7565,7 @@ li.deal.foreign-box{
 .schedule-box .fa-calendar {
 	color: #B8B8B8;
 	font-size: 14px;
+	pointer-events: none;
 
 	position: absolute;
 	top: 10px;
@@ -7574,6 +7575,7 @@ li.deal.foreign-box{
 .schedule-box .fa-caret-down {
 	color: #e51a9b;
 	font-size: 14px;
+	pointer-events: none;
 
 	position: absolute;
 	top: 10px;
