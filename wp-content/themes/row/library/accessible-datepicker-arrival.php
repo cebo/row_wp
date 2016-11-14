@@ -2,6 +2,10 @@
 	
 	$(document).ready(function() {
 		dayTripper();
+
+		$('#arrival_date').focus(function(){
+			activate_dayTripper();
+		});
 	});
 
 
@@ -74,6 +78,7 @@
 
 		var activeDate;
 		var container = $('.datepicker-arrival .ui-datepicker')[0];
+		var table = $('.datepicker-arrival .ui-datepicker table')[0];
 		var input = document.getElementById('arrival_date');
 		
 		if (!container || !input) {
@@ -83,7 +88,8 @@
 		$(container).find('table').first().attr('role', 'grid');
 
 		container.setAttribute('role', 'application');
-		container.setAttribute('aria-label', 'Below: Arrival calendar view date-picker');
+		container.setAttribute('aria-label', 'Arrival calendar view date-picker');
+		table.setAttribute('summary', 'A calendar to select your arrival. The week in this calendar starts on a Sunday. Your current position is today. Press right to highlight tomorrow.');
 
 		// the top controls:
 		var prev = $('.datepicker-arrival .ui-datepicker-prev')[0],

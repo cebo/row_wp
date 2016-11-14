@@ -7544,7 +7544,7 @@ li.deal.foreign-box{
     display: none;
 }
 
-.close-dp {
+.schedulebook .close-dp {
 	background-color: #000;
 	color: #fff;
 	font-size: 16px;
@@ -7552,12 +7552,12 @@ li.deal.foreign-box{
 	width: 50px;
 	text-align: center;
 	cursor: pointer;
-
 	position: absolute;
 	top: 0;
 	left: -50px;
+	height: auto;
 }
-	.close-dp:hover { background: #e51a9b; }
+	.schedulebook .close-dp:hover { background: #e51a9b; color: #fff; }
 
 .letter-dp {
 	background-color: #e51a9b;
