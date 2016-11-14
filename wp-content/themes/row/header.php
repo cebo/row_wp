@@ -316,7 +316,7 @@ ga('send', 'pageview');
 
 	<div class="bookingnav">
 		
-		<div class="schedulebook">
+		<div class="schedulebook" aria-label="Row NYC Booking Widget">
 
 			<form action="<?php echo get_option('cebo_genbooklink'); ?>" onsubmit="_gaq.push(['_linkByPost', this]);">
 
@@ -438,7 +438,7 @@ ga('send', 'pageview');
 
 		</div>
 
-		<div class="schedulebook">
+		<div class="schedulebook" aria-label="Row NYC Responsive Booking Widget">
 			<form action="<?php echo get_option('cebo_genbooklink'); ?>" onsubmit="_gaq.push(['_linkByPost', this]);">
 
 					<input name="locale" type="hidden" value="<?php echo $locale; ?>">

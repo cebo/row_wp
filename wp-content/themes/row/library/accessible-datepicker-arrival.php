@@ -83,7 +83,7 @@
 		$(container).find('table').first().attr('role', 'grid');
 
 		container.setAttribute('role', 'application');
-		container.setAttribute('aria-label', 'Calendar view date-picker');
+		container.setAttribute('aria-label', 'Below: Arrival calendar view date-picker');
 
 		// the top controls:
 		var prev = $('.datepicker-arrival .ui-datepicker-prev')[0],
