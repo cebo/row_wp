@@ -2008,6 +2008,15 @@ visibility: hidden;
     width: 186px;
 }
 
+a.ui-state-default.ui-state-highlight {
+	background: none repeat scroll 0 0 #e51a9b;
+	color: #fff;
+}
+
+.ui-datepicker-today .ui-state-default {
+	color: #e51a9b;
+}
+
 
 
 
@@ -7501,12 +7510,12 @@ li.deal.foreign-box{
 }
 
 .schedulebook .datepicker-arrival {
-	top: 0;
+	top: 75px;
 	left: 0;
 }
 
 .schedulebook .datepicker-departure {
-	top: 0;
+	top: 75px;
 	left: 133px;
 }
 
@@ -7891,6 +7900,7 @@ li.deal.foreign-box{
 
 	opacity: 0;
 	visibility: hidden;
+	display: none;
 
 	-webkit-transition: all 0.2s ease 0s;
 	-moz-transition: all 0.2s ease 0s;

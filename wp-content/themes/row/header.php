@@ -316,12 +316,12 @@ ga('send', 'pageview');
 
 	<div class="bookingnav">
 		
-		<div class="schedulebook">
+		<div class="schedulebook" aria-label="Row NYC Booking Widget">
 
 			<form action="<?php echo get_option('cebo_genbooklink'); ?>" onsubmit="_gaq.push(['_linkByPost', this]);">
 
 				<input name="locale" type="hidden" value="<?php echo $locale; ?>">
-
+				
 				<div class="datepicker datepicker-arrival first-time">
 					<div class="close-dp" aria-label="Close">X</div>
 					<div class="letter-dp">ARRIVE</div>
@@ -333,19 +333,19 @@ ga('send', 'pageview');
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="arrival_date">Arrival</label>
-					<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
+					<label class="visuallyhidden">Arrival</label>
+					<input name="arrival_date" id="arrival_date" data-datepicker="arrival-date"/>
 					<i class="fa fa-calendar"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="departure_date">Departure</label>
-					<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
+					<label class="visuallyhidden">Departure</label>
+					<input name="departure_date" id="departure_date" data-datepicker="datepicker-departure"/>
 					<i class="fa fa-calendar"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="rooms">Number of Rooms</label>
+					<label class="visuallyhidden">Number of Rooms</label>
 					<select id="rooms" name="rooms">
 						<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
@@ -355,7 +355,7 @@ ga('send', 'pageview');
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="adults">Number of Adults</label>
+					<label class="visuallyhidden">Number of Adults</label>
 					<select name="adults[]" id="adults">
 						<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
@@ -366,7 +366,7 @@ ga('send', 'pageview');
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="children">Number of Children</label>
+					<label class="visuallyhidden">Number of Children</label>
 					<select name="children[]" id="children">
 						<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 						<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
@@ -425,6 +425,8 @@ ga('send', 'pageview');
 
 	</div>
 
+
+
 	<div class="mobilenav-reserve">
 
 		<div class="mobilenav-schedulebook-close" aria-label="Close"><div></div></div>
@@ -436,7 +438,7 @@ ga('send', 'pageview');
 
 		</div>
 
-		<div class="schedulebook">
+		<div class="schedulebook" aria-label="Row NYC Responsive Booking Widget">
 			<form action="<?php echo get_option('cebo_genbooklink'); ?>" onsubmit="_gaq.push(['_linkByPost', this]);">
 
 					<input name="locale" type="hidden" value="<?php echo $locale; ?>">
@@ -444,19 +446,19 @@ ga('send', 'pageview');
 					<div class="datepicker datepicker-mobile"></div>
 
 					<div class="schedule-box left">
-						<label class="visuallyhidden" for="arrival_date_mobile">Arrival</label>
-						<input name="arrival_date" id="arrival_date_mobile" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
+						<label class="visuallyhidden">Arrival</label>
+						<input name="arrival_date" id="arrival_date_mobile" />
 						<i class="fa fa-calendar"></i>
 					</div>
 
 					<div class="schedule-box right">
-						<label class="visuallyhidden" for="departure_date_mobile">Departure</label>
-						<input name="departure_date" id="departure_date_mobile" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
+						<label class="visuallyhidden">Departure</label>
+						<input name="departure_date" id="departure_date_mobile" />
 						<i class="fa fa-calendar"></i>
 					</div>
 
 					<div class="schedule-box left">
-						<label class="visuallyhidden" for="rooms2">Number of Rooms</label>
+						<label class="visuallyhidden">Number of Rooms</label>
 						<select id="rooms2" name="rooms">
 							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
@@ -466,7 +468,7 @@ ga('send', 'pageview');
 					</div>
 
 					<div class="schedule-box right">
-						<label class="visuallyhidden" for="adults2">Number of Adults</label>
+						<label class="visuallyhidden">Number of Adults</label>
 						<select id="adults2" name="adults[]">
 							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
@@ -477,7 +479,7 @@ ga('send', 'pageview');
 					</div>
 
 					<div class="schedule-box full">
-						<label class="visuallyhidden" for="children2">Number of Children</label>
+						<label class="visuallyhidden">Number of Children</label>
 						<select id="children2" name="children[]">
 							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
@@ -495,6 +497,8 @@ ga('send', 'pageview');
 		</div>
 
 	</div>
+
+	
 
 	<!-- wonderful widget -->
 	<div class="wonderful">
