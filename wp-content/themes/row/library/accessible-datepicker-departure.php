@@ -76,6 +76,7 @@
 
 		var activeDate;
 		var container = $('.datepicker-departure .ui-datepicker')[0];
+		var table = $('.datepicker-departure .ui-datepicker table')[0];
 		var input = document.getElementById('departure_date');
 		
 		if (!container || !input) {
@@ -85,7 +86,8 @@
 		$(container).find('table').first().attr('role', 'grid');
 
 		container.setAttribute('role', 'application');
-		container.setAttribute('aria-label', 'Below: Departure calendar view date-picker');
+		container.setAttribute('aria-label', 'Departure calendar view date-picker');
+		table.setAttribute('summary', 'A calendar to select your departure. The week in this calendar starts on a Sunday. Your current position is today. Press right to highlight tomorrow.');
 
 		// the top controls:
 		var prev = $('.datepicker-departure .ui-datepicker-prev')[0],

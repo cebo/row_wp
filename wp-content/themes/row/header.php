@@ -253,7 +253,7 @@ ga('send', 'pageview');
 
 			<div class="ns-box ns-bar ns-effect-slidetop ns-type-notice" style="visibility: hidden; opacity: 0;">
 
-				<i class="fa fa-exclamation-triangle"></i>
+				<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
 
 				<div class="ns-box-inner">
 
@@ -285,7 +285,7 @@ ga('send', 'pageview');
 
 					<?php if (function_exists('language_selector_flags')) { ?>
 
-						<i class="fa fa-globe"></i><span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down"></i>
+						<i class="fa fa-globe" aria-hidden="true"></i><span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down" aria-hidden="true"></i>
 
 						<ul><?php language_selector_flags(); ?></ul>
 
@@ -323,57 +323,57 @@ ga('send', 'pageview');
 				<input name="locale" type="hidden" value="<?php echo $locale; ?>">
 				
 				<div class="datepicker datepicker-arrival first-time">
-					<div class="close-dp" aria-label="Close">X</div>
+					<a class="close-dp" aria-label="Close">X</a>
 					<div class="letter-dp">ARRIVE</div>
 				</div>
 
 				<div class="datepicker datepicker-departure">
-					<div class="close-dp" aria-label="Close">X</div>
+					<a class="close-dp" aria-label="Close">X</a>
 					<div class="letter-dp">DEPART</div>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden">Arrival</label>
-					<input name="arrival_date" id="arrival_date" data-datepicker="arrival-date"/>
-					<i class="fa fa-calendar"></i>
+					<label id="arrival_label" class="visuallyhidden">Arrival</label>
+					<input name="arrival_date" id="arrival_date" data-datepicker="arrival-date" aria-labeledby="arrival_label"/>
+					<i class="fa fa-calendar" aria-hidden="true"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden">Departure</label>
-					<input name="departure_date" id="departure_date" data-datepicker="datepicker-departure"/>
-					<i class="fa fa-calendar"></i>
+					<label id="departure_label" class="visuallyhidden">Departure</label>
+					<input name="departure_date" id="departure_date" data-datepicker="datepicker-departure" aria-labeledby="departure_label"/>
+					<i class="fa fa-calendar" aria-hidden="true"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden">Number of Rooms</label>
-					<select id="rooms" name="rooms">
+					<label class="visuallyhidden" for="rooms1">Number of Rooms</label>
+					<select name="rooms" id="rooms1">
 						<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
 						<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
 					</select>
-					<i class="fa fa-caret-down"></i>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden">Number of Adults</label>
-					<select name="adults[]" id="adults">
+					<label class="visuallyhidden" for="adults1">Number of Adults</label>
+					<select name="adults[]" id="adults1">
 						<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
 						<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
 						<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
 					</select>
-					<i class="fa fa-caret-down"></i>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden">Number of Children</label>
-					<select name="children[]" id="children">
+					<label class="visuallyhidden" for="children1">Number of Children</label>
+					<select name="children[]" id="children1">
 						<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 						<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
 						<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
 					</select>
-					<i class="fa fa-caret-down"></i>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
 				</div>
 
 				<button type="submit" aria-label="Reserve Now"><?php _e('Reserve Now','row-theme-text'); ?></button>
@@ -446,47 +446,47 @@ ga('send', 'pageview');
 					<div class="datepicker datepicker-mobile"></div>
 
 					<div class="schedule-box left">
-						<label class="visuallyhidden">Arrival</label>
+						<label class="visuallyhidden" for="arrival_date_mobile">Arrival</label>
 						<input name="arrival_date" id="arrival_date_mobile" />
-						<i class="fa fa-calendar"></i>
+						<i class="fa fa-calendar" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box right">
-						<label class="visuallyhidden">Departure</label>
+						<label class="visuallyhidden" for="departure_date_mobile">Departure</label>
 						<input name="departure_date" id="departure_date_mobile" />
-						<i class="fa fa-calendar"></i>
+						<i class="fa fa-calendar" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box left">
-						<label class="visuallyhidden">Number of Rooms</label>
+						<label class="visuallyhidden" for="rooms2">Number of Rooms</label>
 						<select id="rooms2" name="rooms">
 							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
 						</select>
-						<i class="fa fa-caret-down"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box right">
-						<label class="visuallyhidden">Number of Adults</label>
+						<label class="visuallyhidden" children="adults2">Number of Adults</label>
 						<select id="adults2" name="adults[]">
 							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
 							<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
 						</select>
-						<i class="fa fa-caret-down"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box full">
-						<label class="visuallyhidden">Number of Children</label>
+						<label class="visuallyhidden" for="children2">Number of Children</label>
 						<select id="children2" name="children[]">
 							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
 						</select>
-						<i class="fa fa-caret-down"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box full">
