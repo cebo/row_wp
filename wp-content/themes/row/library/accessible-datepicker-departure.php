@@ -8,7 +8,7 @@
 
 	function dayTripper2() {
 
-		$('#departure_date').click(function () {
+		$('#departure_date').bind('click focus', function () {
 			setTimeout(function () {
 				var datepicker_id = '.datepicker-departure',
 					today = $('.datepicker-departure .ui-datepicker-today a')[0];
@@ -32,8 +32,6 @@
 
 				today.focus();
 				datePickHandler2();
-
-				console.log(today);
 
 			}, 0);
 		});
@@ -91,11 +89,16 @@
 
 		// the top controls:
 		var prev = $('.datepicker-departure .ui-datepicker-prev')[0],
-			next = $('.datepicker-departure .ui-datepicker-next')[0];
+			next = $('.datepicker-departure .ui-datepicker-next')[0],
+			prev_text = $('.datepicker-arrival .ui-datepicker-prev span'),
+			next_text = $('.datepicker-arrival .ui-datepicker-next span');
 
 	// This is the line that needs to be fixed for use on pages with base URL set in head
 		next.href = 'javascript:void(0)';
 		prev.href = 'javascript:void(0)';
+
+		prev_text.html('Previous');
+		next_text.html('Next');
 
 		next.setAttribute('role', 'button');
 		next.removeAttribute('title');
@@ -131,7 +134,7 @@
 			if ($(target).hasClass('ui-datepicker-close')) { // close button
 			$('.datepicker-departure .ui-datepicker-prev')[0].focus();
 			} else if ($(target).hasClass('ui-state-default')) { // a date link
-			$('.datepicker-departure .ui-datepicker-close')[0].focus();
+			$('.close-dp')[0].focus();
 			} else if ($(target).hasClass('ui-datepicker-prev')) { // the prev link
 			$('.datepicker-departure .ui-datepicker-next')[0].focus();
 			} else if ($(target).hasClass('ui-datepicker-next')) { // the next link
@@ -154,7 +157,7 @@
 			} else if ($(target).hasClass('ui-datepicker-next')) {
 			$('.datepicker-departure .ui-datepicker-prev')[0].focus();
 			} else if ($(target).hasClass('ui-datepicker-prev')) {
-			$('.datepicker-departure .ui-datepicker-close')[0].focus();
+			$('.close-dp')[0].focus();
 			} 
 		} else if (which === 37) { // LEFT arrow key
 			// if we're on a date link...
