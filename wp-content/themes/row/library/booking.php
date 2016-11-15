@@ -12,14 +12,14 @@
 
 	// DATEPICKER: WHEN ARRIVAL/DEPARTURE INPUT IS CLICKED
 
-	$('#arrival_date').click(function() {
+	$('#arrival_date').bind('click focus', function () {
 
 		$('.datepicker-arrival').addClass('datepicker-show');
 		$('.datepicker-departure').removeClass('datepicker-show');
 
 	});
 
-	$('#departure_date').click(function() {
+	$('#departure_date').bind('click focus', function () {
 
 		$('.datepicker-departure').addClass('datepicker-show');
 		$('.datepicker-arrival').removeClass('datepicker-show');

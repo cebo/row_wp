@@ -323,12 +323,12 @@ ga('send', 'pageview');
 				<input name="locale" type="hidden" value="<?php echo $locale; ?>">
 				
 				<div class="datepicker datepicker-arrival first-time">
-					<a class="close-dp" aria-label="Close">X</a>
+					<a class="close-dp" aria-label="Close arrival datepicker" tabindex="0">X</a>
 					<div class="letter-dp">ARRIVE</div>
 				</div>
 
 				<div class="datepicker datepicker-departure">
-					<a class="close-dp" aria-label="Close">X</a>
+					<a class="close-dp" aria-label="Close departure datepicker" tabindex="0">X</a>
 					<div class="letter-dp">DEPART</div>
 				</div>
 
