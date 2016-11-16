@@ -160,11 +160,13 @@
 				// * set these new values into their respective inputs
 				$('#departure_date').val( selectedDate );
 				$('#arrival_date').val( new_arrivalDate );
+				$('#rooms1').focus();
 
 			} else {
 
 				// * just update this input...
 				$('#departure_date').val( selectedDate );
+				$('#rooms1').focus();
 
 			}
 

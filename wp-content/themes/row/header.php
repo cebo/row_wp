@@ -316,7 +316,7 @@ ga('send', 'pageview');
 
 	<div class="bookingnav">
 		
-		<div class="schedulebook" aria-label="Row NYC Booking Widget">
+		<div class="schedulebook" aria-label="Row NYC Booking Widget. If you have any issues using our booking widget, please contact us through the number 888-352-3650">
 
 			<form action="<?php echo get_option('cebo_genbooklink'); ?>" onsubmit="_gaq.push(['_linkByPost', this]);">
 
@@ -324,23 +324,29 @@ ga('send', 'pageview');
 				
 				<div class="datepicker datepicker-arrival first-time">
 					<a class="close-dp" aria-label="Close arrival datepicker" tabindex="0">X</a>
-					<div class="letter-dp">ARRIVE</div>
+					<div class="letter-dp">
+						ARRIVE
+						<div class="visuallyhidden">A calendar to select your arrival. The week in this calendar starts on a Sunday. Your current position is today. Press right to highlight tomorrow.</div>
+					</div>
 				</div>
 
 				<div class="datepicker datepicker-departure">
 					<a class="close-dp" aria-label="Close departure datepicker" tabindex="0">X</a>
-					<div class="letter-dp">DEPART</div>
+					<div class="letter-dp">
+						DEPART
+						<div class="visuallyhidden">A calendar to select your departure. The week in this calendar starts on a Sunday. Your current position is today. Press right to highlight tomorrow.</div>
+					</div>
 				</div>
 
 				<div class="schedule-box">
 					<label id="arrival_label" class="visuallyhidden">Arrival</label>
-					<input name="arrival_date" id="arrival_date" data-datepicker="arrival-date" aria-labeledby="arrival_label"/>
+					<input name="arrival_date" id="arrival_date" data-datepicker="arrival-date" aria-labeledby="arrival_label" aria-live="assertive"/>
 					<i class="fa fa-calendar" aria-hidden="true"></i>
 				</div>
 
 				<div class="schedule-box">
 					<label id="departure_label" class="visuallyhidden">Departure</label>
-					<input name="departure_date" id="departure_date" data-datepicker="datepicker-departure" aria-labeledby="departure_label"/>
+					<input name="departure_date" id="departure_date" data-datepicker="datepicker-departure" aria-labeledby="departure_label" aria-live="assertive"/>
 					<i class="fa fa-calendar" aria-hidden="true"></i>
 				</div>
 
@@ -443,17 +449,19 @@ ga('send', 'pageview');
 
 					<input name="locale" type="hidden" value="<?php echo $locale; ?>">
 
-					<div class="datepicker datepicker-mobile"></div>
+					<div class="datepicker datepicker-mobile">
+						<div class="visuallyhidden">A calendar to select your arrival and departure. Your first selections is the arrival date and the second selection is the departure date. The week in this calendar starts on a Sunday. Your current position is today. Press right to highlight tomorrow.</div>
+					</div>
 
 					<div class="schedule-box left">
 						<label class="visuallyhidden" for="arrival_date_mobile">Arrival</label>
-						<input name="arrival_date" id="arrival_date_mobile" />
+						<input name="arrival_date" id="arrival_date_mobile" aria-live="assertive"/>
 						<i class="fa fa-calendar" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box right">
 						<label class="visuallyhidden" for="departure_date_mobile">Departure</label>
-						<input name="departure_date" id="departure_date_mobile" />
+						<input name="departure_date" id="departure_date_mobile" aria-live="assertive"/>
 						<i class="fa fa-calendar" aria-hidden="true"></i>
 					</div>
 
