@@ -7,7 +7,7 @@
  * @subpackage post-translation
  */
 
-class WPML_Admin_Post_Actions extends  WPML_Post_Translation{
+class WPML_Admin_Post_Actions extends  WPML_Post_Translation {
 
 	public function init() {
 		parent::init ();
@@ -25,7 +25,7 @@ class WPML_Admin_Post_Actions extends  WPML_Post_Translation{
 	 */
 	function get_save_post_trid( $post_id, $post_status ) {
 		$trid = $this->get_element_trid( $post_id );
-		$trid = ! $trid && isset( $post_vars['icl_trid'] ) ? $post_vars['icl_trid'] : $trid;
+		$trid = $trid ? $trid : filter_var( isset( $_POST['icl_trid'] ) ? $_POST['icl_trid'] : '', FILTER_SANITIZE_NUMBER_INT );
 		$trid = $trid ? $trid : filter_var( isset( $_GET['trid'] ) ? $_GET['trid'] : '', FILTER_SANITIZE_NUMBER_INT );
 		$trid = $trid ? $trid : $this->get_trid_from_referer();
 		$trid = apply_filters( 'wpml_save_post_trid_value', $trid, $post_status );
@@ -44,7 +44,10 @@ class WPML_Admin_Post_Actions extends  WPML_Post_Translation{
 
 			return;
 		}
-		if ( WPML_WordPress_Actions::is_bulk_trash( $pidd ) || WPML_WordPress_Actions::is_bulk_untrash( $pidd ) ) {
+		if ( WPML_WordPress_Actions::is_bulk_trash( $pidd ) ||
+		     WPML_WordPress_Actions::is_bulk_untrash( $pidd ) ||
+		     WPML_WordPress_Actions::is_heartbeat( )
+		) {
 
 			return;
 		}
@@ -97,7 +100,9 @@ class WPML_Admin_Post_Actions extends  WPML_Post_Translation{
 		if ( isset( $post_vars['icl_tn_note'] ) ) {
 			update_post_meta( $post_id, '_icl_translator_note', $post_vars['icl_tn_note'] );
 		}
+		$save_filter_action_state = new WPML_WP_Filter_State( 'save_post' );
 		$this->after_save_post( $trid, $post_vars, $language_code, $source_language );
+		$save_filter_action_state->restore();
 	}
 
 	/**
@@ -106,7 +111,7 @@ class WPML_Admin_Post_Actions extends  WPML_Post_Translation{
 	 *
 	 * @return null|string
 	 */
-	protected function get_save_post_lang( $post_id, $sitepress ) {
+	public function get_save_post_lang( $post_id, $sitepress ) {
 		$language_code = filter_var(
 			( isset( $_POST['icl_post_language'] ) ? $_POST['icl_post_language'] : '' ),
 			FILTER_SANITIZE_FULL_SPECIAL_CHARS );
@@ -158,12 +163,21 @@ class WPML_Admin_Post_Actions extends  WPML_Post_Translation{
 		return $source_language;
 	}
 
-	private function get_trid_from_referer() {
+	public function get_trid_from_referer() {
 		if ( isset( $_SERVER[ 'HTTP_REFERER' ] ) ) {
-			$query = parse_url ( $_SERVER[ 'HTTP_REFERER' ], PHP_URL_QUERY );
+			$query = wpml_parse_url ( $_SERVER[ 'HTTP_REFERER' ], PHP_URL_QUERY );
 			parse_str ( $query, $vars );
 		}
 
-		return isset( $vars[ 'trid' ] ) ? filter_var ( $vars[ 'trid' ], FILTER_SANITIZE_NUMBER_INT ) : false;
+		if ( isset( $_SERVER[ 'REQUEST_URI' ] ) ) {
+			$request_uri = wpml_parse_url( $_SERVER[ 'REQUEST_URI' ], PHP_URL_QUERY );
+			parse_str( $request_uri, $request_uri_vars );
+		}
+
+		/**
+		 * trid from `HTTP_REFERER` should be return only if `REQUEST_URI` also has trid set.
+		 * @link https://onthegosystems.myjetbrains.com/youtrack/issue/wpmltm-1351
+		 */
+		return isset( $vars[ 'trid' ] ) && isset( $request_uri_vars['trid'] ) ? filter_var ( $vars[ 'trid' ], FILTER_SANITIZE_NUMBER_INT ) : false;
 	}
 }

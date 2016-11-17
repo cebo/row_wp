@@ -138,14 +138,16 @@ class WPML_Package_Helper {
 	}
 
 	final function translate_string( $string_value, $string_name, $package ) {
-		$package = new WPML_Package( $package );
-
 		$result = $string_value;
 
-		if ( $package ) {
-			$sanitized_string_name = $package->sanitize_string_name( $string_name );
-
-			$result = $package->translate_string( $string_value, $sanitized_string_name );
+		if ( is_string( $string_value ) ) {
+			$package = new WPML_Package( $package );
+	
+			if ( $package ) {
+				$sanitized_string_name = $package->sanitize_string_name( $string_name );
+	
+				$result = $package->translate_string( $string_value, $sanitized_string_name );
+			}
 		}
 
 		return $result;
@@ -186,43 +188,6 @@ class WPML_Package_Helper {
 		}
 
 		return $types;
-	}
-
-	final function get_translatable_items( $items, $kind, $translation_filter ) {
-		global $wpdb;
-
-		$packages_query   = "SELECT name FROM {$wpdb->prefix}icl_string_packages WHERE kind = %s";
-		$packages_prepare = $wpdb->prepare( $packages_query, $kind );
-		$packages         = $wpdb->get_col( $packages_prepare );
-
-		//TODO: deprecated, use the 'wpml_register_string_packages' action
-		do_action( 'WPML_register_string_packages', $kind, $packages );
-		do_action( 'wpml_register_string_packages', $kind, $packages );
-
-		$packages_query   = "SELECT id FROM {$wpdb->prefix}icl_string_packages WHERE kind = %s";
-		$packages_prepare = $wpdb->prepare( $packages_query, $kind );
-		$packages         = $wpdb->get_col( $packages_prepare );
-
-		//  for the Translation Dashboard
-
-		$from_language = $translation_filter[ 'from_lang' ];
-		foreach ( $packages as $package_id ) {
-			$item = new WPML_Package( $package_id );
-
-			$item_default_language = $item->get_default_language();
-			if ( $item_default_language == $from_language ) {
-				$tm = new WPML_Package_TM( $item );
-
-				$translation_statuses = $tm->get_translation_statuses();
-				if ( $translation_statuses ) {
-					$items = array_merge( $items, $translation_statuses );
-				} else {
-					$items[ ] = $item;
-				}
-			}
-		}
-
-		return $items;
 	}
 
 	/**
@@ -340,7 +305,7 @@ class WPML_Package_Helper {
 		$package_data[ 'kind' ] = $kind;
 
 		$package                = new WPML_Package( $package_data );
-		if ( $package && $this->is_a_package( $package ) ) {
+		if ( $package && $package->ID && $this->is_a_package( $package ) ) {
 			$this->delete_package( $package->ID );
 			$this->flush_cache();
 		}
@@ -357,6 +322,31 @@ class WPML_Package_Helper {
 		if ( $flush_cache ) {
 			$this->flush_cache();
 		}
+	}
+
+	final function change_package_lang_ajax() {
+		global $wpdb, $sitepress;
+
+		if ( ! $this->verify_ajax_call( 'wpml_package_nonce' ) ) {
+			die( 'verification failed' );
+		}
+		
+		$package_id = $_POST[ 'package_id' ];
+
+		$package = new WPML_Package( $package_id );
+		$package->set_strings_language( $_POST[ 'package_lang' ] );
+
+		$package_job = new WPML_Package_TM( $package );
+		$package_job->set_language_details( $_POST[ 'package_lang' ] );
+		
+		$args = json_decode( base64_decode( $_POST[ 'args' ] ) );
+		
+		$package_metabox = new WPML_Package_Translation_Metabox( $package, $wpdb, $sitepress, $args );
+		$response = array( 'metabox' => $package_metabox->get_metabox_status(),
+						   'lang'    => $package_metabox->get_package_language_name()
+						 );
+
+		wp_send_json( $response );
 	}
 
 	/**
@@ -379,14 +369,8 @@ class WPML_Package_Helper {
 	}
 
 	final private function flush_cache() {
-		/** @var WP_Object_Cache $wp_object_cache */
-		global $wp_object_cache;
-		$cache = $wp_object_cache->__get( 'cache' );
-		if ( isset( $cache[ $this->cache_group ] ) ) {
-			foreach ( $cache[ $this->cache_group ] as $cache_key => $data ) {
-				wp_cache_delete( $cache_key, $this->cache_group );
-			}
-		}
+		// delete the cache key we use
+		wp_cache_delete( 'get_all_packages', $this->cache_group );
 	}
 
 	/**
@@ -455,16 +439,32 @@ class WPML_Package_Helper {
 			'string_package_id' => $package_id,
 			'type'              => $string_type,
 			'title'             => $string_title,
-			'value'             => $string_value
 		);
 		$update_where = array( 'id' => $string_id );
-
 		$did_update = $wpdb->update( $wpdb->prefix . 'icl_strings', $update_data, $update_where );
-		if ( $did_update ) {
-			$status_update_data = array( 'status' => ICL_TM_NEEDS_UPDATE );
-			$wpdb->update( $wpdb->prefix . 'icl_strings', $status_update_data, $update_where );
-			$update_icl_string_translations_where = array( 'string_id' => $string_id );
-			$wpdb->update( $wpdb->prefix . 'icl_string_translations', $status_update_data, $update_icl_string_translations_where );
+
+		$update_data  = array(
+			'value'             => $string_value
+		);
+		$did_update_value = $wpdb->update( $wpdb->prefix . 'icl_strings', $update_data, $update_where );
+		if ( $did_update || $did_update_value ) {
+			$wpdb->query( $wpdb->prepare( "UPDATE {$wpdb->prefix}icl_strings
+										   SET status=%d
+										   WHERE id=%d AND status<>%d",
+										   ICL_TM_NEEDS_UPDATE,
+										   $string_id,
+										   ICL_TM_NOT_TRANSLATED
+										)
+						);
+			$wpdb->query( $wpdb->prepare( "UPDATE {$wpdb->prefix}icl_string_translations
+										   SET status=%d
+										   WHERE string_id=%d AND status<>%d",
+										   ICL_TM_NEEDS_UPDATE,
+										   $string_id,
+										   ICL_TM_NOT_TRANSLATED
+										)
+						);
+			
 			$translation_ids = $wpdb->get_col( $wpdb->prepare( " SELECT translation_id
                       FROM {$wpdb->prefix}icl_translations
                       WHERE trid = ( SELECT trid
@@ -568,4 +568,69 @@ class WPML_Package_Helper {
 			$package->update_package_record();
 		}
 	}
+	
+	public function change_language_of_strings( $strings, $lang ) {
+		global $wpdb;
+		
+		$all_ok = true;
+		
+		$strings_in = implode(',', $strings);
+		
+		$string_packages_query   = "SELECT DISTINCT string_package_id FROM {$wpdb->prefix}icl_strings WHERE id IN ($strings_in)";
+		$package_ids             = $wpdb->get_col( $string_packages_query );
+		
+		foreach( $package_ids as $package_id ) {
+			if ( $package_id ) {
+				$package = new WPML_Package( $package_id );
+				if ( ! $package->are_all_strings_included( $strings ) ) {
+					$all_ok = false;
+					break;
+				}
+			}
+		}
+		
+		if ( $all_ok ) {
+			$this->set_packages_language( $package_ids, $lang );
+		}
+		
+		$response = array();
+		$response[ 'success' ] = $all_ok;
+		if ( ! $all_ok ) {
+			$response[ 'error' ] = __( 'Some of the strings selected belong to packages. You can only change the language of these strings if all strings in the packages are selected.', 'wpml-string-translation');
+		}
+		
+		return $response;
+	}
+	
+	public function change_language_of_strings_in_domain( $domain, $langs, $to_lang ) {
+		global $wpdb;
+		
+		if ( ! empty( $langs ) ) {
+			foreach( $langs as &$lang ) {
+				$lang = "'" . $lang . "'";
+			}
+			$langs = implode(',', $langs);
+		
+			$string_packages_query   = "SELECT DISTINCT string_package_id FROM {$wpdb->prefix}icl_strings WHERE context='%s' AND language IN ($langs)";
+			$string_packages_query   = $wpdb->prepare( $string_packages_query, $domain );
+			$package_ids             = $wpdb->get_col( $string_packages_query );
+			
+			$this->set_packages_language( $package_ids, $to_lang );
+		}
+		
+	}
+
+	private function set_packages_language( $package_ids, $lang ) {	
+		foreach( $package_ids as $package_id ) {
+			if ( $package_id ) {
+				$package = new WPML_Package( $package_id );
+				$package->set_strings_language( $lang );
+				
+				$package_job = new WPML_Package_TM( $package );
+				$package_job->set_language_details( $lang );
+			}
+		}
+	}
+	
+	
 }

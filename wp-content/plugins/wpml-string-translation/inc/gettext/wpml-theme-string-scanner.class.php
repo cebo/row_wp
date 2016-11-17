@@ -4,10 +4,6 @@ require_once dirname( __FILE__ ) . '/wpml-string-scanner.class.php';
 
 class WPML_Theme_String_Scanner extends WPML_String_Scanner {
 
-	public function __construct() {
-		parent::__construct();
-	}
-
 	public function scan( $no_echo ) {
 
 		$this->current_type = 'theme';
@@ -40,7 +36,10 @@ class WPML_Theme_String_Scanner extends WPML_String_Scanner {
 		}
 		$this->copy_old_translations( $theme_localization_domains, 'theme' );
 		$this->cleanup_wrong_contexts( );
-		
+
+		if ( $theme_info && ! is_wp_error( $theme_info ) ) {
+			$this->remove_notice( $theme_info->get( 'Name' ) );
+		}
 
 		if ( ! $no_echo ) {
 			$this->scan_response();
@@ -71,7 +70,7 @@ class WPML_Theme_String_Scanner extends WPML_String_Scanner {
 				// THE potx way
 				$this->add_stat( str_repeat( "\t", $recursion ) . sprintf( __( 'Scanning file: %s', 'wpml-string-translation' ), $dir_or_file . "/" . $file ) );
 				$this->add_scanned_file( $dir_or_file . "/" . $file );
-				_potx_process_file( $dir_or_file . "/" . $file, 0, array( $this, 'store_results' ), '_potx_save_version', $this->get_default_domain(), POTX_API_7 );
+				_potx_process_file( $dir_or_file . "/" . $file, 0, array( $this, 'store_results' ), '_potx_save_version', $this->get_default_domain() );
 			} else {
 				$this->add_stat( str_repeat( "\t", $recursion ) . sprintf( __( 'Skipping file: %s', 'wpml-string-translation' ), $dir_or_file . "/" . $file ) );
 			}

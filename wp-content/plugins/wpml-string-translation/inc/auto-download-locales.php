@@ -71,8 +71,7 @@ class WPML_ST_MO_Downloader{
 					foreach ( $this->translation_files[ $language[ 'code' ] ] as $project => $info ) {
 						$this->settings[ 'translations' ][ $language[ 'code' ] ][ $project ][ 'available' ] = $info[ 'signature' ];
 						if ( empty( $this->settings[ 'translations' ][ $language[ 'code' ] ][ $project ][ 'installed' ] ) ||
-						     isset( $this->translation_files[ $language[ 'code' ] ][ $project ][ 'available' ] ) &&
-						     $this->settings[ 'translations' ][ $language[ 'code' ] ][ $project ][ 'installed' ] != $this->translation_files[ $language[ 'code' ] ][ $project ][ 'available' ]
+						     (isset( $info[ 'available' ] ) && $this->settings[ 'translations' ][ $language[ 'code' ] ][ $project ][ 'installed' ] != $info[ 'available' ])
 						) {
 							$updates[ 'languages' ][ $language[ 'code' ] ][ $project ] = $this->settings[ 'translations' ][ $language[ 'code' ] ][ $project ][ 'available' ];
 						}
@@ -159,11 +158,14 @@ class WPML_ST_MO_Downloader{
         
         $iclsettings['st']['auto_download_mo'] = @intval($_POST['auto_download_mo']);
         $iclsettings['hide_upgrade_notice'] = implode('.', array_slice(explode('.', ICL_SITEPRESS_VERSION), 0, 3));
-        $sitepress->save_settings($iclsettings);
-        
-        echo json_encode(array('enabled' => $iclsettings['st']['auto_download_mo']));
-        
-        exit;
+	    $sitepress->save_settings($iclsettings);
+	    if ( $iclsettings['st']['auto_download_mo'] ) {
+		    try {
+			    $this->updates_check( array( 'trigger' => 'setting-changed' ) );
+		    } catch( Exception $e ) {
+	        }
+	    }
+        wp_send_json_success( array('enabled' => $iclsettings['st']['auto_download_mo'] ) );
     }
     
     function save_settings(){
@@ -311,7 +313,19 @@ class WPML_ST_MO_Downloader{
                 $mo = new MO();
                 $pomo_reader = new POMO_StringReader($response['body']);
                 $mo->import_from_reader( $pomo_reader );
-                
+	            $data            = $wpdb->get_results( $wpdb->prepare( "
+                            SELECT st.value, s.name, s.gettext_context
+                            FROM {$wpdb->prefix}icl_string_translations st
+                            JOIN {$wpdb->prefix}icl_strings s ON st.string_id = s.id
+                            WHERE s.context = %s AND st.language = %s
+							",
+		            self::CONTEXT,
+		            $language ) );
+	            $string_existing = array();
+	            foreach ( $data as $row ) {
+		            $string_existing[ md5( $row->name . $row->gettext_context ) ] = $row->value;
+	            }
+
                 foreach($mo->entries as $key=>$v){
                     
                     $tpairs = array();
@@ -334,16 +348,8 @@ class WPML_ST_MO_Downloader{
                     }
                     
                     foreach($tpairs as $pair){
-                        $existing_translation = $wpdb->get_var($wpdb->prepare("
-                            SELECT st.value 
-                            FROM {$wpdb->prefix}icl_string_translations st
-                            JOIN {$wpdb->prefix}icl_strings s ON st.string_id = s.id
-                            WHERE s.context = %s AND s.gettext_context = %s AND s.name = %s AND st.language = %s 
-							",
-							self::CONTEXT,
-							$pair[ 'gettext_context' ],
-							$pair[ 'name' ],
-							$language ) );
+		                $key                  = md5( $pair['name'] . $pair['gettext_context'] );
+		                $existing_translation = isset( $string_existing[ $key ] ) ? $string_existing[ $key ] : null;
                         
                         if(empty($existing_translation)){
                             $translations['new'][] = array(
