@@ -284,3 +284,16 @@ function customSize_setup() {
 	add_image_size( 'customSize_soft_1024xany', 1024, 9999 );
 	add_image_size( 'customSize_soft_600xany', 600, 9999 );
 }
+
+// add x-default to hreflang
+function x_default_hreflang() {
+    $languages = icl_get_languages('skip_missing=1');
+    foreach($languages as $l){
+        if ( $l['language_code'] == 'en' ) { // set your default language
+            $x_default_url = $l['url'];
+            $output='<link rel="alternate" hreflang="x-default" href="' . $x_default_url . '" />'  . PHP_EOL;
+            echo $output;
+        } 
+    }
+}
+add_action('wp_head','x_default_hreflang',1);
