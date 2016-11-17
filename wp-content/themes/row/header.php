@@ -285,7 +285,7 @@ ga('send', 'pageview');
 
 					<?php if (function_exists('language_selector_flags')) { ?>
 
-						<i class="fa fa-globe"></i><span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down"></i>
+						<span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down"></i>
 
 						<ul><?php language_selector_flags(); ?></ul>
 
