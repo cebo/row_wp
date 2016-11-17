@@ -92,7 +92,7 @@ class WPML_Package_TM extends WPML_Package_TM_Jobs {
 		$trid    = $this->get_trid();
 
 		if ( $is_new_package ) {
-			$this->set_language_details( $package );
+			$this->set_language_details( );
 
 			return true;
 		}
@@ -286,7 +286,7 @@ class WPML_Package_TM extends WPML_Package_TM_Jobs {
 		$package_helper = new WPML_Package_Helper();
 		$post           = $package_helper->get_translatable_item( null, $package_id );
 
-		$post_title   = $post->title;
+		$post_title   = esc_html( $post->title );
 		$element_type = $package->get_element_type_prefix() . '_' . $post->kind_slug;
 		$trid         = $sitepress->get_element_trid( $package_id, $element_type );
 		$job_id       = $iclTranslationManagement->get_translation_job_id( $trid, $target_language );
@@ -337,5 +337,15 @@ class WPML_Package_TM extends WPML_Package_TM_Jobs {
 		}
 
 		return $send_to_basket;
+	}
+	
+	public function is_in_basket( $target_lang ) {
+		if ( class_exists( 'TranslationProxy_Basket') ) {
+			$basket = TranslationProxy_Basket::get_basket();
+			return isset( $basket[ 'package' ][ $this->package->ID ][ 'to_langs' ][ $target_lang ] );
+		} else {
+			return false;
+		}
+		
 	}
 }

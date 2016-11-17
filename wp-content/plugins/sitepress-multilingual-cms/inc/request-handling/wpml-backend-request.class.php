@@ -12,15 +12,17 @@ class WPML_Backend_Request extends WPML_Request {
 	 * @param WPML_URL_Converter $url_converter
 	 * @param array              $active_languages
 	 * @param string             $default_language
+	 * @param WPML_Cookie        $cookie
+	 * @param WPML_WP_API        $wp_api
 	 */
-	public function __construct( &$url_converter, $active_languages, $default_language ) {
-		parent::__construct( $url_converter, $active_languages, $default_language );
+	public function __construct( &$url_converter, $active_languages, $default_language, $cookie, $wp_api ) {
+		parent::__construct( $url_converter, $active_languages, $default_language, $cookie, $wp_api );
 		global $wpml_url_filters;
 
 		if ( strpos( (string) filter_var( $_SERVER['REQUEST_URI'] ), 'wpml_root_page=1' ) !== false
 		     || $wpml_url_filters->frontend_uses_root() !== false
 		) {
-			require_once ICL_PLUGIN_PATH . '/inc/url-handling/wpml-root-page.class.php';
+			WPML_Root_Page::init();
 		}
 	}
 
@@ -45,7 +47,7 @@ class WPML_Backend_Request extends WPML_Request {
 	 */
 	public function get_source_language_from_referer() {
 		$referer = isset( $_SERVER[ 'HTTP_REFERER' ] ) ? $_SERVER[ 'HTTP_REFERER' ] : '';
-		$query   = parse_url( $referer, PHP_URL_QUERY );
+		$query   = wpml_parse_url( $referer, PHP_URL_QUERY );
 		parse_str( $query, $query_parts );
 		$source_lang = isset( $query_parts[ 'source_lang' ] ) ? $query_parts[ 'source_lang' ] : false;
 
@@ -103,6 +105,13 @@ class WPML_Backend_Request extends WPML_Request {
 	protected function get_cookie_name() {
 
 		return wpml_is_ajax() && $this->check_if_admin_action_from_referer() === false
-			? '_icl_current_language' : '_icl_current_admin_language';
+			? '_icl_current_language' : '_icl_current_admin_language_' . md5( $this->get_cookie_domain() );
+	}
+
+	/**
+	 * @return string
+	 */
+	public function get_referer_url_cookie_name() {
+		return 'wpml_admin_referer_url';
 	}
 }

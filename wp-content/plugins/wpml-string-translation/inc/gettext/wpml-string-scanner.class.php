@@ -13,13 +13,20 @@ class WPML_String_Scanner {
 	private $currently_scanning;
 	private $domains_found;
 	private $default_domain;
+
+	/**
+	 * WP_Filesystem object.
+	 * @var oject
+	 */
+	private $wp_filesystem;
+
 	/**
 	 * @var array
 	 */
 	private $scan_stats;
 	private $scanned_files;
 
-	public function __construct() {
+	public function __construct( $wp_filesystem ) {
 		$this->domains            = array();
 		$this->registered_strings = array();
 		$this->lang_codes         = array();
@@ -27,7 +34,8 @@ class WPML_String_Scanner {
 		$this->scan_stats         = array();
 		$this->scanned_files      = array();
 
-		$this->default_domain     = '';
+		$this->default_domain     = 'default';
+		$this->wp_filesystem      = $wp_filesystem;
 	}
 
 	private function remove_trailing_new_line( $text ) {
@@ -41,7 +49,7 @@ class WPML_String_Scanner {
 	protected function scan_starting( $scanning ) {
 		$this->currently_scanning                         = $scanning;
 		$this->domains_found[ $this->currently_scanning ] = array();
-		$this->default_domain                             = '';
+		$this->default_domain                             = 'default';
 	}
 
 	protected function scan_response() {
@@ -55,7 +63,7 @@ class WPML_String_Scanner {
 
 		$use_header_text_domain = isset( $string_settings[ 'use_header_text_domains_when_missing' ] ) && $string_settings[ 'use_header_text_domains_when_missing' ];
 		
-		$this->default_domain = '';
+		$this->default_domain = 'default';
 	
 		if ( $use_header_text_domain && $text_domain ) {
 			$this->default_domain = $text_domain;
@@ -75,6 +83,8 @@ class WPML_String_Scanner {
 		if ( $contexts ) {
 			$path     = $this->current_path;
 			$mo_files = $this->get_mo_files( $path );
+			$path     = preg_replace( '#\/plugins\/(.+)#', '/languages/plugins/', $path );
+			$mo_files = array_merge( $mo_files, $this->get_mo_files( $path ) );
 			foreach ( (array) $mo_files as $m ) {
 				$i = preg_match( '#[-]?([a-z_]+)\.mo$#i', $m, $matches );
 				if ( $i && $lang = $this->get_lang_code( $matches[ 1 ] ) ) {
@@ -94,31 +104,68 @@ class WPML_String_Scanner {
 		}
 	}
 
-	private function get_mo_files( $path ) {
+	/**
+	 * Get list of .mo files under directory.
+	 *
+	 * @param  string $path
+	 * @return array
+	 */
+	public function get_mo_files( $path ) {
+
 		static $mo_files = array();
-		
+
 		if ( function_exists( 'realpath' ) ) {
 			$path = realpath( $path );
 		}
-		
-		if( is_dir( $path ) && is_readable( $path ) ) {
-			$dh = opendir( $path );
-			if( $dh !== false ) {
-				while( $f = readdir( $dh ) ) {
-					if( 0 !== strpos( $f, '.' ) ) {    
-						if( is_dir( $path . '/' . $f ) ) {
-							$this->get_mo_files( $path . '/' . $f );
-						}else{
-							if(preg_match( '#\.mo$#', $f ) ) {                    
-								$mo_files[] = $path . '/' . $f;
-							}
-						}
-					}
-				}    
+
+		if ( $this->wp_filesystem->is_dir( $path ) && $this->wp_filesystem->is_readable( $path ) ) {
+			$files = $this->extract_files( $path, $this->wp_filesystem );
+			foreach ( $files as $file ) {
+				if ( preg_match( '#\.mo$#', $file ) ) {
+					$mo_files[] = $file;
+				}
 			}
 		}
-		
+
 		return $mo_files;
+	}
+
+	/**
+	 * Get list of files under directory.
+	 * @param  string $path       Directory to parse.
+	 * @param  object $filesystem WP_Filesystem object
+	 * @return array
+	 */
+	private function extract_files( $path, $filesystem ) {
+		$path = $this->add_dir_separator( $path );
+		$files = array();
+		$list = $filesystem->dirlist( $path );
+		foreach ( $list as $single_file ) {
+			if ( 'f' === $single_file['type'] ) {
+				$files[] = $path . $single_file['name'];
+			} else {
+				$files = array_merge( $files, $this->extract_files( $path . $single_file['name'], $filesystem ) );
+			}
+		}
+		return $files;
+	}
+
+	/**
+	 * Make sure that the last character is second argument.
+	 * @param  string $path
+	 * @param  string $separator
+	 * @return string
+	 */
+	private function add_dir_separator( $path, $separator = DIRECTORY_SEPARATOR ) {
+		if ( strlen( $path ) > 0 ) {
+			if ( substr( $path, -1 ) !== $separator ) {
+				return $path . $separator;
+			} else {
+				return $path;
+			}
+		} else {
+			return $path;
+		}
 	}
 	
 	private function load_translations_from_mo( $mo_file ) {
@@ -212,7 +259,20 @@ class WPML_String_Scanner {
 
 	private function fix_string_context( $string_id, $new_string_context ) {
 		global $wpdb;
-		$wpdb->update( $wpdb->prefix . 'icl_strings', array( 'context' => $new_string_context ), array( 'id' => $string_id ), '%s', '%d' );
+
+		$string = $wpdb->get_row( $wpdb->prepare( "SELECT gettext_context, name FROM {$wpdb->prefix}icl_strings WHERE id=%d", $string_id ) );
+
+		$domain_name_context_md5 = md5( $new_string_context . $string->name . $string->gettext_context );
+		
+		$wpdb->update( $wpdb->prefix . 'icl_strings',
+						array(
+							  'context'                 => $new_string_context,
+							  'domain_name_context_md5' => $domain_name_context_md5
+							  ),
+						array( 'id' => $string_id ), array( '%s', '%s') , '%d' );
+		
+
+
 	}
 
 	public function store_results( $string, $domain, $_gettext_context, $file, $line ) {
@@ -299,6 +359,7 @@ class WPML_String_Scanner {
                         SELECT * FROM {$wpdb->prefix}icl_strings
                         WHERE context=%s", esc_sql( $domain ) );
 
+			/** @var array $results */
 			$results = $wpdb->get_results( $query, ARRAY_A );
 			foreach ( $results as $result ) {
 				
@@ -374,7 +435,8 @@ class WPML_String_Scanner {
         global $wpdb;
 		
         $old_context = $this->get_old_context( );
-        
+
+	    /** @var array $results */
 		$results = $wpdb->get_results( $wpdb->prepare( "
 	        SELECT id, name, value
 	        FROM {$wpdb->prefix}icl_strings
@@ -384,15 +446,16 @@ class WPML_String_Scanner {
 		
 		foreach( $results as $string ) {
 			// See if the string has no translations
-			
+
+			/** @var array $old_translations */
 			$old_translations = $wpdb->get_results( $wpdb->prepare( "
 				SELECT id, language, status, value
 				FROM {$wpdb->prefix}icl_string_translations
 				WHERE string_id = %d",
 				$string->id
 				) );
-			
-			if ( empty( $old_translations ) ) {
+
+			if ( ! $old_translations ) {
 				// We don't have any translations so we can delete the string.
 				
 				$wpdb->delete( $wpdb->prefix . 'icl_strings', array( 'id' => $string->id ), array( '%d' ) );
@@ -412,7 +475,8 @@ class WPML_String_Scanner {
 					if ( $new_string_id ) {
 						
 						// See if it has the same translations
-						
+
+						/** @var array $new_translations */
 						$new_translations = $wpdb->get_results( $wpdb->prepare( "
 							SELECT id, language, status, value
 							FROM {$wpdb->prefix}icl_string_translations
@@ -429,7 +493,7 @@ class WPML_String_Scanner {
 								}
 							}
 						}
-						if ( empty( $old_translations ) ) {
+						if ( ! $old_translations ) {
 							// We don't have any old translations that are not in the new strings so we can delete the string.
 							
 							$wpdb->delete( $wpdb->prefix . 'icl_strings', array( 'id' => $string->id ), array( '%d' ) );
@@ -458,7 +522,6 @@ class WPML_String_Scanner {
 									 $obsolete_context,
 									 $old_context ) );
         
-		WPML_String_Translation::clear_use_original_cache_setting( );
     }
 	
 	protected function copy_old_translations( $contexts, $prefix ) {
@@ -466,6 +529,7 @@ class WPML_String_Scanner {
 		global $wpdb;
 		
 		foreach ( $contexts as $context ) {
+			/** @var array $new_strings */
 			$new_strings = $wpdb->get_results( $wpdb->prepare( "
 				SELECT id, name, value
 				FROM {$wpdb->prefix}icl_strings
@@ -487,7 +551,8 @@ class WPML_String_Scanner {
 			} else {
 				$new_translations = array( );
 			}
-			
+
+			/** @var array $old_strings */
 			$old_strings = $wpdb->get_results( $wpdb->prepare( "
 				SELECT id, name, value
 				FROM {$wpdb->prefix}icl_strings
@@ -499,7 +564,7 @@ class WPML_String_Scanner {
 				$old_ids[ ] = $old_string->id;
 			}
 			$old_ids = implode( ',', $old_ids );
-			
+
 			if ( $old_ids != '' ) {
 				$old_translations = $wpdb->get_results( "
 							SELECT id, string_id, language, status, value
@@ -509,10 +574,12 @@ class WPML_String_Scanner {
 			} else {
 				$old_translations = array( );
 			}
-			
+
+			/** @var array $old_translations */
 			foreach( $old_translations as $old_translation ) {
 				// see if we have a new translation.
 				$found = false;
+				/** @var array $new_translations */
 				foreach ( $new_translations as $new_translation ) {
 					if ( $new_translation->string_id == $old_translation->string_id &&
 							$new_translation->language == $old_translation->language ) {
@@ -545,6 +612,13 @@ class WPML_String_Scanner {
 		}
 			
 	}
-	
+
+	protected function remove_notice( $notice_id ) {
+		global $wpml_st_admin_notices;
+		if ( isset( $wpml_st_admin_notices ) ) {
+			/** @var WPML_ST_Themes_And_Plugins_Updates $wpml_st_admin_notices */
+			$wpml_st_admin_notices->remove_notice( $notice_id );
+		}
+	}
 }
 

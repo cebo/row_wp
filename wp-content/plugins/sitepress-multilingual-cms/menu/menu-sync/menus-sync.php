@@ -1,5 +1,5 @@
 <?php
-require 'wpml-menu-sync-display.class.php';
+require dirname( __FILE__ ) . '/wpml-menu-sync-display.class.php';
 
 /** @var $sitepress SitePress */
 /** @var $icl_menus_sync ICLMenusSync */
@@ -16,8 +16,8 @@ foreach ( $active_languages as $code => $lang ) {
 ?>
 <!--suppress HtmlFormInputWithoutLabel --><!--suppress HtmlUnknownAttribute -->
 <div class="wrap">
-<div id="icon-wpml" class="icon32"><br/></div>
 <h2><?php echo __( 'WP Menus Sync', 'sitepress' ) ?></h2>
+<p><?php echo sprintf( __( 'Menu synchronization will sync the menu structure from the default language of %s to the secondary languages.', 'sitepress' ), $def_lang[ 'display_name' ] ); ?></p>
 
 <br/>
 <?php
@@ -30,7 +30,7 @@ if ( $icl_menus_sync->is_preview ) {
 	<table id="icl_msync_confirm" class="widefat icl_msync">
 	<thead>
 	<tr>
-		<th scope="row" class="check-column"><input type="checkbox"/></th>
+		<th scope="row" class="menu-check-all"><input type="checkbox"/></th>
 		<th><?php _e( 'Language', 'sitepress' ) ?></th>
 		<th><?php _e( 'Action', 'sitepress' ) ?></th>
 	</tr>
@@ -154,7 +154,7 @@ if ( $icl_menus_sync->is_preview ) {
 									?>
 									<input type="text" name="sync[menu_translations][<?php echo $menu_id ?>][<?php echo $l[ 'code' ] ?>]" class="icl_msync_add" value="<?php
 									echo esc_attr( $menu[ 'name' ] ) . ' - ' . $l[ 'display_name' ] ?>"/>
-									<small><?php _e( 'Auto-generated title. Edit to change.', 'sitepress' ) ?></small>
+									<small><?php _e( 'Auto-generated title. Click to edit.', 'sitepress' ) ?></small>
 									<input type="hidden" name="sync[menu_options][<?php echo $menu_id ?>][<?php echo $l[ 'code' ] ?>][auto_add]"
 																				value=""/>
 								<?php
@@ -188,7 +188,7 @@ if ( $icl_menus_sync->is_preview ) {
 					  style="display:none"
 					  class="icl-admin-message-warning"
 					  data-max_input_vars="<?php echo ini_get( 'max_input_vars' ); ?>">
-					<?php _e( 'The menus on this page may not sync because it requires more input variables. Please modify the <strong>max_input_vars</strong> setting in your php.ini or .htaccess files to <strong>!NUM!</strong> or more.', 'siteprss'); ?>
+					<?php _e( 'The menus on this page may not sync because it requires more input variables. Please modify the <strong>max_input_vars</strong> setting in your php.ini or .htaccess files to <strong>!NUM!</strong> or more.', 'sitepress'); ?>
 				</span>
 			<?php
 			} else {
@@ -252,20 +252,8 @@ if ( $icl_menus_sync->is_preview ) {
 			}
 		}
 	}
-	if ( defined( 'WPML_ST_FOLDER' ) && $icl_menus_sync->string_translation_links ) {
-		echo '<p>';
-		echo __( 'Translate menu strings and URLs for:', 'sitepress' ) . ' ';
-		$url_pattern = ' href="admin.php?page=' . WPML_ST_FOLDER . '/menu/string-translation.php&context=%s"';
-		$menu_names       = array_keys( $icl_menus_sync->string_translation_links );
-		$menu_links  = array();
-		foreach ( $menu_names as $menu_name ) {
-			$menu_url_pattern = sprintf($url_pattern, urlencode($menu_name . ' menu'));
-			$menu_links[ ] = sprintf( __( '<a%s>%s</a>', 'sitepress' ), $menu_url_pattern, $menu_name );
-		}
-		$menu_links_string = join( ', ', $menu_links );
-		echo $menu_links_string;
-		echo '</p>';
-	}
+
+	$icl_menus_sync->display_menu_links_to_string_translation();
 }
 do_action( 'icl_menu_footer' );
 ?>

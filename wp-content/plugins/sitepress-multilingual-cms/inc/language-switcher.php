@@ -11,6 +11,10 @@ class SitePressLanguageSwitcher {
 	public  $widget_css_defaults;
 	public  $footer_css_defaults;
 	public  $color_schemes;
+	/**
+	 * @var SitePress
+	 */
+	public  $sitepress;
 
 	private $current_language_color_selector_item;
 
@@ -24,8 +28,9 @@ class SitePressLanguageSwitcher {
 	}
 
 	function init() {
-		global $sitepress_settings;
+		global $sitepress_settings, $sitepress;
 		$this->settings = $sitepress_settings;
+		$this->sitepress = $sitepress;
 		if ( ! empty( $this->settings[ 'icl_lang_sel_footer' ] ) ) {
 			add_action( 'wp_head', array( $this, 'language_selector_footer_style' ), 19 );
 			add_action( 'wp_footer', array( $this, 'language_selector_footer' ), 19 );
@@ -50,16 +55,22 @@ class SitePressLanguageSwitcher {
 			add_action( 'wp_head', array( $this, 'custom_language_switcher_style' ) );
 		}
 
-		if ( ! empty( $sitepress_settings[ 'display_ls_in_menu' ] ) && ( ! function_exists( 'wpml_home_url_ls_hide_check' ) || ! wpml_home_url_ls_hide_check() ) ) {
-			add_filter( 'wp_nav_menu_items', array( $this, 'wp_nav_menu_items_filter' ), 10, 2 );
-			add_filter( 'wp_page_menu', array( $this, 'wp_page_menu_filter' ), 10, 2 );
-		}
+		add_filter( 'wp_nav_menu_items', array( $this, 'wp_nav_menu_items_filter' ), 10, 2 );
+		add_filter( 'wp_page_menu', array( $this, 'wp_page_menu_filter' ), 10, 2 );
 	}
 
 	function language_selector_widget_init() {
-		register_widget( 'ICL_Language_Switcher' );
+		if ( $this->sitepress->get_setting( 'setup_complete' ) ) {
+			register_widget( 'ICL_Language_Switcher' );
+		}
 		add_action( 'template_redirect', 'icl_lang_sel_nav_ob_start', 0 );
 		add_action( 'wp_head', 'icl_lang_sel_nav_ob_end' );
+	}
+
+	private function must_filter_menus() {
+		global $sitepress_settings;
+
+		return ! empty( $sitepress_settings[ 'display_ls_in_menu' ] ) && ( ! function_exists( 'wpml_home_url_ls_hide_check' ) || ! wpml_home_url_ls_hide_check() );
 	}
 
 	function set_widget() {
@@ -121,43 +132,43 @@ class SitePressLanguageSwitcher {
 				switch ( $k ) {
 					case 'font-current-normal':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer a, #lang_sel_footer a.lang_sel_sel, #lang_sel_footer a.lang_sel_sel:visited{color:' . $v . ';}';
+						echo '#lang_sel_footer a, #lang_sel_footer a.lang_sel_sel, #lang_sel_footer a.lang_sel_sel:visited{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 					case 'font-current-hover':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer a:hover, #lang_sel_footer a.lang_sel_sel:hover{color:' . $v . ';}';
+						echo '#lang_sel_footer a:hover, #lang_sel_footer a.lang_sel_sel:hover{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 					case 'background-current-normal':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer a.lang_sel_sel, #lang_sel_footer a.lang_sel_sel:visited{background-color:' . $v . ';}';
+						echo '#lang_sel_footer a.lang_sel_sel, #lang_sel_footer a.lang_sel_sel:visited{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 					case 'background-current-hover':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer a.lang_sel_sel:hover{background-color:' . $v . ';}';
+						echo '#lang_sel_footer a.lang_sel_sel:hover{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 					case 'font-other-normal':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer ul a, #lang_sel_footer ul a:visited{color:' . $v . ';}';
+						echo '#lang_sel_footer ul a, #lang_sel_footer ul a:visited{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 					case 'font-other-hover':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer ul a:hover{color:' . $v . ';}';
+						echo '#lang_sel_footer ul a:hover{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 					case 'background-other-normal':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer ul a, #lang_sel_footer ul a:visited{background-color:' . $v . ';}';
+						echo '#lang_sel_footer ul a, #lang_sel_footer ul a:visited{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 					case 'background-other-hover':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer ul a:hover{background-color:' . $v . ';}';
+						echo '#lang_sel_footer ul a:hover{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 					case 'border':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer{border-color:' . $v . ';}';
+						echo '#lang_sel_footer{border-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 					case 'background':
 						//if($v != $this->color_schemes[$k])
-						echo '#lang_sel_footer{background-color:' . $v . ';}';
+						echo '#lang_sel_footer{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						break;
 				}
 			}
@@ -172,7 +183,7 @@ class SitePressLanguageSwitcher {
 		$languages                = array();
 
 		if ( ! function_exists( 'wpml_home_url_ls_hide_check' ) || ! wpml_home_url_ls_hide_check() ) {
-			$languages = $sitepress->footer_preview ? icl_get_languages() : $sitepress->get_ls_languages();
+			$languages = $sitepress->get_ls_languages();
 		}
 
 		if ( ! empty( $languages ) ) {
@@ -282,7 +293,7 @@ class SitePressLanguageSwitcher {
 			<p>
 				<a href="#icl_lang_preview_config_footer_editor_wrapper" id="icl_lang_sel_footer_preview_link" class="js-toggle-colors-edit">
 					<?php _e( 'Edit the footer language switcher colors', 'sitepress' ) ?>
-					<i class="icon-caret-down js-arrow-toggle"></i>
+					<span class="dashicons dashicons-arrow-down js-arrow-toggle"></span>
 				</a>
 			</p>
 			<div class="hidden" id="icl_lang_preview_config_footer_editor_wrapper">
@@ -497,73 +508,73 @@ class SitePressLanguageSwitcher {
 					case 'font-current-normal':
 						//if($v != $this->widget_css_defaults[$k])
 						if ( $list ) {
-							echo '#lang_sel_list a.lang_sel_sel, #lang_sel_list a.lang_sel_sel:visited{color:' . $v . ';}';
+							echo '#lang_sel_list a.lang_sel_sel, #lang_sel_list a.lang_sel_sel:visited{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						} else {
-							echo '#lang_sel a, #lang_sel a.lang_sel_sel{color:' . $v . ';}';
+							echo '#lang_sel a, #lang_sel a.lang_sel_sel{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						}
 						break;
 					case 'font-current-hover':
 						//if($v != $this->widget_css_defaults[$k])
 						if ( $list ) {
-							echo '#lang_sel_list a:hover, #lang_sel_list a.lang_sel_sel:hover{color:' . $v . ';}';
+							echo '#lang_sel_list a:hover, #lang_sel_list a.lang_sel_sel:hover{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						} else {
-							echo '#lang_sel a:hover, #lang_sel a.lang_sel_sel:hover{color:' . $v . ';}';
+							echo '#lang_sel a:hover, #lang_sel a.lang_sel_sel:hover{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						}
 						break;
 					case 'background-current-normal':
 						//if($v != $this->widget_css_defaults[$k])
 						if ( $list ) {
-							echo '#lang_sel_list a.lang_sel_sel, #lang_sel_list a.lang_sel_sel:visited{background-color:' . $v . ';}';
+							echo '#lang_sel_list a.lang_sel_sel, #lang_sel_list a.lang_sel_sel:visited{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						} else {
-							echo '#lang_sel a.lang_sel_sel, #lang_sel a.lang_sel_sel:visited{background-color:' . $v . ';}';
+							echo '#lang_sel a.lang_sel_sel, #lang_sel a.lang_sel_sel:visited{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						}
 						break;
 					case 'background-current-hover':
 						//if($v != $this->widget_css_defaults[$k])
 						if ( $list ) {
-							echo '#lang_sel_list a.lang_sel_sel:hover{background-color:' . $v . ';}';
+							echo '#lang_sel_list a.lang_sel_sel:hover{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						} else {
-							echo '#lang_sel a.lang_sel_sel:hover{background-color:' . $v . ';}';
+							echo '#lang_sel a.lang_sel_sel:hover{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						}
 						break;
 					case 'font-other-normal':
 						//if($v != $this->widget_css_defaults[$k])
 						if ( $list ) {
-							echo '#lang_sel_list ul a.lang_sel_other, #lang_sel_list ul a.lang_sel_other:visited{color:' . $v . ';}';
+							echo '#lang_sel_list ul a.lang_sel_other, #lang_sel_list ul a.lang_sel_other:visited{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						} else {
-							echo '#lang_sel li ul a, #lang_sel li ul a:visited{color:' . $v . ';}';
+							echo '#lang_sel li ul a, #lang_sel li ul a:visited{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						}
 						break;
 					case 'font-other-hover':
 						//if($v != $this->widget_css_defaults[$k])
 						if ( $list ) {
-							echo '#lang_sel_list ul a.lang_sel_other:hover{color:' . $v . ';}';
+							echo '#lang_sel_list ul a.lang_sel_other:hover{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						} else {
-							echo '#lang_sel li ul a:hover{color:' . $v . ';}';
+							echo '#lang_sel li ul a:hover{color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						}
 						break;
 					case 'background-other-normal':
 						//if($v != $this->widget_css_defaults[$k])
 						if ( $list ) {
-							echo '#lang_sel_list ul a.lang_sel_other, #lang_sel li ul a:link, #lang_sel_list ul a.lang_sel_other:visited{background-color:' . $v . ';}';
+							echo '#lang_sel_list ul a.lang_sel_other, #lang_sel li ul a:link, #lang_sel_list ul a.lang_sel_other:visited{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						} else {
-							echo '#lang_sel li ul a, #lang_sel li ul a:link, #lang_sel li ul a:visited{background-color:' . $v . ';}';
+							echo '#lang_sel li ul a, #lang_sel li ul a:link, #lang_sel li ul a:visited{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						}
 						break;
 					case 'background-other-hover':
 						//if($v != $this->widget_css_defaults[$k])
 						if ( $list ) {
-							echo '#lang_sel_list ul a.lang_sel_other:hover{background-color:' . $v . ';}';
+							echo '#lang_sel_list ul a.lang_sel_other:hover{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						} else {
-							echo '#lang_sel li ul a:hover{background-color:' . $v . ';}';
+							echo '#lang_sel li ul a:hover{background-color:' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						}
 						break;
 					case 'border':
 						//if($v != $this->widget_css_defaults[$k])
 						if ( $list ) {
-							echo '#lang_sel_list a, #lang_sel_list a:visited{border-color:' . $v . ';} #lang_sel_list  ul{border-top:1px solid ' . $v . ';}';
+							echo '#lang_sel_list a, #lang_sel_list a:visited{border-color:' . sanitize_text_field( $v ) . ';} #lang_sel_list  ul{border-top:1px solid ' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						} else {
-							echo '#lang_sel a, #lang_sel a:visited{border-color:' . $v . ';} #lang_sel ul ul{border-top:1px solid ' . $v . ';}';
+							echo '#lang_sel a, #lang_sel a:visited{border-color:' . sanitize_text_field( $v ) . ';} #lang_sel ul ul{border-top:1px solid ' . wpml_sanitize_hex_color_array( $v ) . ';}';
 						}
 						break;
 				}
@@ -579,17 +590,18 @@ class SitePressLanguageSwitcher {
 	}
 
 	function wp_page_menu_filter( $items, $args ) {
-		$obj_args = new stdClass();
-		foreach ( $args as $key => $value ) {
-			$obj_args->$key = $value;
+		if($this->must_filter_menus()) {
+			$obj_args = new stdClass();
+			foreach ( $args as $key => $value ) {
+				$obj_args->$key = $value;
+			}
+
+			$items = str_replace( "</ul></div>", "", $items );
+
+			$items = apply_filters( 'wp_nav_menu_items', $items, $obj_args );
+
+			$items .= "</ul></div>";
 		}
-
-		$items = str_replace( "</ul></div>", "", $items );
-
-		$items = apply_filters( 'wp_nav_menu_items', $items, $obj_args );
-
-		$items .= "</ul></div>";
-
 		return $items;
 	}
 
@@ -602,7 +614,7 @@ class SitePressLanguageSwitcher {
 	 * @return string
 	 */
 	function wp_nav_menu_items_filter( $items, $args ) {
-		if ( $this->menu_has_ls( $args ) ) {
+		if ( $this->must_filter_menus() && $this->menu_has_ls( $args ) ) {
 			$items .= $this->get_menu_ls_html( $args );
 		}
 
@@ -623,8 +635,12 @@ class SitePressLanguageSwitcher {
 		$languages_helper = new WPML_Languages( $wpml_term_translations, $sitepress, $wpml_post_translations );
 		$languages        = $sitepress->get_ls_languages();
 
+		if ( empty( $languages ) ) {
+			return '';
+		}
+
 		$items = '';
-		$items .= '<li class="menu-item menu-item-language menu-item-language-current">';
+		$items .= '<li class="menu-item menu-item-language menu-item-language-current menu-item-has-children">';
 		$items .= isset( $args->before ) ? $args->before : '';
 		$items .= '<a href="#" onclick="return false">';
 		$items .= isset( $args->link_before ) ? $args->link_before : '';
@@ -678,19 +694,21 @@ class SitePressLanguageSwitcher {
 	private function get_menu_locations_and_ids( $args ) {
 		global $sitepress;
 
-		$default_language = $sitepress->get_default_language();
-		$args->menu       = isset( $args->menu->term_id ) ? $args->menu->term_id : $args->menu;
-		$abs_menu_id      = apply_filters( 'translate_object_id', $args->menu, 'nav_menu', false, $default_language );
-		$settings_menu_id = apply_filters( 'translate_object_id',
-										   $sitepress->get_setting( 'menu_for_ls' ),
-										   'nav_menu',
-										   false,
-										   $default_language );
-		$menu_locations   = get_nav_menu_locations();
-		if ( ! $abs_menu_id && $settings_menu_id ) {
-			foreach ( $menu_locations as $location => $id ) {
-				if ( $id != $settings_menu_id ) {
-					unset( $menu_locations[ $location ] );
+		$abs_menu_id = false;
+		$settings_menu_id = false;
+		$menu_locations = array();
+
+		if(isset($args->menu)) {
+			$default_language = $sitepress->get_default_language();
+			$args->menu       = isset( $args->menu->term_id ) ? $args->menu->term_id : $args->menu;
+			$abs_menu_id      = apply_filters( 'translate_object_id', $args->menu, 'nav_menu', false, $default_language );
+			$settings_menu_id = apply_filters( 'translate_object_id', $sitepress->get_setting( 'menu_for_ls' ), 'nav_menu', false, $default_language );
+			$menu_locations   = get_nav_menu_locations();
+			if ( ! $abs_menu_id && $settings_menu_id ) {
+				foreach ( $menu_locations as $location => $id ) {
+					if ( $id != $settings_menu_id ) {
+						unset( $menu_locations[ $location ] );
+					}
 				}
 			}
 		}
@@ -701,7 +719,8 @@ class SitePressLanguageSwitcher {
 	private function render_ls_sub_items( $languages ) {
 		global $sitepress;
 
-		$ls_orientation   = $sitepress->get_setting( 'icl_lang_sel_orientation' );
+		$ls_type   = $sitepress->get_setting( 'icl_lang_sel_type' );
+		$ls_orientation   = ($ls_type == 'list') && $sitepress->get_setting( 'icl_lang_sel_orientation' );
 		$menu_is_vertical = ! $ls_orientation || $ls_orientation === 'vertical';
 
 		$sub_items = '';
@@ -832,7 +851,7 @@ class SitePressLanguageSwitcher {
 		<p>
 			<a href="#icl_lang_preview_config_wrapper" class="js-toggle-colors-edit">
 				<?php _e( 'Edit the language switcher widget colors', 'sitepress' ) ?>
-				<i class="icon-caret-down js-arrow-toggle"></i>
+				<span class="dashicons dashicons-arrow-down js-arrow-toggle"></span>
 			</a>
 		</p>
 		<div id="icl_lang_preview_config_wrapper" class="hidden">
