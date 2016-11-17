@@ -1,3 +1,45 @@
+# 1.4.0
+
+## Fixes
+* [wpmlsl-17] Fix conversion to sticky link for custom taxonomies and custom post types
+* [wpmlsl-34] Fix so anchors are not lost when converting categories to plain links
+* [wpmlsl-41] Remove Sticky Links functionality for strings
+* [wpmlsl-48] Fix problem with RTL display in admin pages when plugin is activated network wide
+* [wpmlsl-53] Fix message about WPML core not being enabled for a multisite install
+
+# 1.3.19
+
+## Fixes
+* [wpmlcore-3030] Class auto loading is not compatible with version of PHP older than 5.3
+
+# 1.3.18
+
+##Fixes
+* [wpmlst-695] Fix performance issue when checking fo sticky links plugin
+
+##Performances
+* [wpmlcore-2988] Removed unneeded dependencies checks in admin pages: this now runs only once and later only when activating/deactivating plugins
+
+# 1.3.17
+
+##Fixes
+* Removed dead code for handling auto loaded classes: is not used yet
+
+# 1.3.16
+
+##Fixes
+* Added backward compatibility for `__DIR__` magic constant not being supported before PHP 5.3.
+
+# 1.3.15
+
+## New
+* [wpmlga-96] WordPress 4.4 compatibility: pulled all html headings by one (e.g. h2 -> h1, he -> h2, etc.)
+
+# 1.3.14
+
+## New
+* Updated dependency versions
+
 # 1.3.13
 
 ## New
