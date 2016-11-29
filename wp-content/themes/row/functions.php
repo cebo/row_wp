@@ -282,6 +282,7 @@ function the_slug($echo=true){
 add_action( 'after_setup_theme', 'customSize_setup' );
 function customSize_setup() {
 	add_image_size( 'customSize_soft_1024xany', 1024, 9999 );
+	add_image_size( '705x450', 705, 450, true );
 	add_image_size( 'customSize_soft_600xany', 600, 9999 );
 }
 

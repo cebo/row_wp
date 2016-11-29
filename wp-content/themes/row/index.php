@@ -13,9 +13,9 @@
 				<?php
 
 					if ( 
-						have_rows('homepage_gallery_repeater', 'options') ) : 
+						have_rows('homepage_gallery_repeater', 'option') ) : 
 						$i = 1;
-						while ( have_rows('homepage_gallery_repeater', 'options') ) : the_row();
+						while ( have_rows('homepage_gallery_repeater', 'option') ) : the_row();
 
 						$imgsrc = get_sub_field('image');
 						$title = get_sub_field('title');
@@ -66,7 +66,7 @@
 
 				<?php
 
-					if ( have_rows('homepage_page_section_repeater', 'options') ) : while ( have_rows('homepage_page_section_repeater', 'options') ) : the_row();
+					if ( have_rows('homepage_page_section_repeater', 'option') ) : while ( have_rows('homepage_page_section_repeater', 'option') ) : the_row();
 
 						$page = get_sub_field('page_select');
 						$title = get_sub_field('title');
@@ -111,7 +111,7 @@
 
 					<?php
 
-						$title = get_field('homepage_amenities_list_title', 'options');
+						$title = get_field('homepage_amenities_list_title', 'option');
 
 						if ( $title && $title != '' ) { ?>
 
@@ -121,7 +121,7 @@
 
 					<?php
 
-						if ( have_rows('homepage_amenities_list_item_repeater', 'options') ) : while ( have_rows('homepage_amenities_list_item_repeater', 'options') ) : the_row();
+						if ( have_rows('homepage_amenities_list_item_repeater', 'option') ) : while ( have_rows('homepage_amenities_list_item_repeater', 'option') ) : the_row();
 
 							$type = get_sub_field('type');
 							$text = get_sub_field('text');
@@ -166,7 +166,7 @@
 
 						$count = 1;
 
-						if ( have_rows('homepage_specials_page_select_repeater', 'options') ) : while ( have_rows('homepage_specials_page_select_repeater', 'options') ) : the_row();
+						if ( have_rows('homepage_specials_page_select_repeater', 'option') ) : while ( have_rows('homepage_specials_page_select_repeater', 'option') ) : the_row();
 
 							$page = get_sub_field('page_select');
 
@@ -197,7 +197,9 @@
 								<?php if ( $pricepoint && $pricepoint != '' ) { ?>
 									<div class="boxlists-offersign"><?php echo $pricepoint; ?></div>
 								<?php } ?>
-								<div class="boxlists-image" style="background-image: url(<?php echo $image; ?>);"></div>
+								<div ></div>
+
+								<img class="boxlists-image" src="<?php echo $image; ?>" alt="" />
 							</div>
 
 							<h2 class="boxlists-title"><?php echo $title; ?></h2>
@@ -231,13 +233,13 @@
 
 				$count = 1;
 
-				if ( have_rows('homepage_featured_pages_repeater', 'options') ) : while ( have_rows('homepage_featured_pages_repeater', 'options') ) : the_row();
+				if ( have_rows('homepage_featured_pages_repeater', 'option') ) : while ( have_rows('homepage_featured_pages_repeater', 'option') ) : the_row();
 
 					$box_size = get_sub_field('box_size');
 					$box_type = get_sub_field('box_type');
 
 					$page = get_sub_field('page_select');
-					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'customSize_soft_1024xany' )[0];
+					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), '705x450' )[0];
 
 					$title = get_sub_field('title');
 					$content = get_sub_field('description');
@@ -307,7 +309,7 @@
 
 						<div class="feature-box-overlay"></div>
 
-						<div class="feature-box-image" style="background-image: url(<?php echo $image; ?>);"></div>
+						<img class="feature-box-image" src="<?php echo $image; ?>" alt="" />
 
 						<div class="feature-content">
 							<h2><?php echo $title; ?></h2>
@@ -326,7 +328,7 @@
 
 				<div class="<?php echo $addclass; ?>">
 
-					<div class="feature-box-image" style="background-image: url(<?php echo $image; ?>);"></div>
+					<img class="feature-box-image" src="<?php echo $image; ?>" alt="" />
 					
 					<h2><?php echo $title; ?></h2>
 

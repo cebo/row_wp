@@ -8152,12 +8152,12 @@ li.deal.foreign-box{
 .feature-box-image {
 	background: none no-repeat scroll center center transparent;
 	background-size: cover;
-	width: 100%;
 	height: 100%;
-
 	position: absolute;
 	top: 0;
 	left: 0;
+	right: 0;
+	margin: 0 auto;
 	z-index: 1;
 
 	-webkit-transition: all 0.5s ease-out 0s;
