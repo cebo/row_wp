@@ -100,7 +100,7 @@ class WPML_Localization {
 		$most_count = 0;
 
 		foreach( $plugin_localization_domains[ $plugin ] as $name => $count) {
-			if ( $name == 'WordPress' ) {
+			if ( $name == 'WordPress' || $name == 'default' ) {
 				continue;
 			}
 			if ($count > $most_count) {

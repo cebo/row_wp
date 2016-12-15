@@ -43,13 +43,18 @@
 ?>
 <!DOCTYPE HTML>
 <head>
+
 <!-- wanderful widget - tracking pixel -->
 <script src="https://scripts.staywanderful.com/scrapers/24.js"></script>
 
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 
 <title><?php wp_title(''); ?></title>
-
+<?php 
+	if ( file_exists( dirname( __FILE__ ) . '/noindex.php' ) ) {
+	    include( dirname( __FILE__ ) . '/noindex.php' );
+	}
+?>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
@@ -64,6 +69,17 @@
 
 <?php } ?>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<?php
+	/****************** DO NOT REMOVE **********************
+	/* We add some JavaScript to pages with the comment form
+	 * to support sites with threaded comments (when in use).
+	 */
+	if ( is_singular() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+	wp_head();
+?>
 
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php if ( get_option('cebo_feedburner_url') <> "" ) { echo get_option('cebo_feedburner_url'); } else { echo get_bloginfo_rss('rss2_url'); } ?>" />
 
@@ -93,8 +109,6 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
 
 <script src="//cdn.optimizely.com/js/3569390496.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
 
 <?php
 	if (
@@ -177,16 +191,6 @@
 
 	<!-- Plugin CSS -->
 	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/plugin.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"/>
-
-<?php
-	/****************** DO NOT REMOVE **********************
-	/* We add some JavaScript to pages with the comment form
-	 * to support sites with threaded comments (when in use).
-	 */
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-	wp_head();
-?>
 
  
 
@@ -285,7 +289,7 @@ ga('send', 'pageview');
 
 					<?php if (function_exists('language_selector_flags')) { ?>
 
-						<i class="fa fa-globe" aria-hidden="true"></i><span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down" aria-hidden="true"></i>
+						<span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down" aria-hidden="true"></i>
 
 						<ul><?php language_selector_flags(); ?></ul>
 

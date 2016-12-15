@@ -39,7 +39,7 @@ class WPML_Admin_Scripts_Setup extends WPML_Full_Translation_API {
 			var icl_cat_adder_msg = '<?php echo icl_js_escape(sprintf(__('To add categories that already exist in other languages go to the <a%s>category management page</a>','sitepress'), ' href="'.admin_url('edit-tags.php?taxonomy=category').'"'));?>';
 			// ]]>
 
-			<?php if(!$this->sitepress->get_setting('ajx_health_checked')): ?>
+			<?php if ( ! $this->sitepress->get_setting( 'ajx_health_checked' ) && ! (bool) get_option( '_wpml_inactive' ) ) : ?>
 			addLoadEvent(function () {
 				jQuery.ajax({
 					type: "POST", url: icl_ajx_url, data: "icl_ajx_action=health_check", error: function (msg) {
@@ -75,13 +75,18 @@ class WPML_Admin_Scripts_Setup extends WPML_Full_Translation_API {
 
 		if ( 'options-reading.php' === $pagenow ) {
 			$this->print_reading_options_js();
-		} elseif ( in_array( $pagenow, array( 'categories.php', 'edit-tags.php' ), true )
+		} elseif ( in_array( $pagenow, array(
+				'categories.php',
+				'edit-tags.php',
+				'edit.php',
+				'term.php'
+			), true )
 		           && $current_language !== $default_language
 		) {
 			$this->correct_status_links_js( $current_language );
 		}
 
-		if ( 'edit-tags.php' === $pagenow ) {
+		if ( 'edit-tags.php' === $pagenow || 'term.php' === $pagenow ) {
 			?>
 			<script type="text/javascript">
 				addLoadEvent(function () {
@@ -124,7 +129,7 @@ class WPML_Admin_Scripts_Setup extends WPML_Full_Translation_API {
 				if ( $this->sitepress->get_setting( 'sync_ping_status' ) || $this->sitepress->get_setting( 'sync_comment_status' ) ) {
 					$this->print_ping_and_comment_sync_js( $trid, $source_lang );
 				}
-				if ( 'private' === $this->post_translations->get_original_post_status ( $trid, $source_lang )
+				if ($this->sitepress->get_setting( 'sync_private_flag' ) && 'private' === $this->post_translations->get_original_post_status ( $trid, $source_lang )
 				) {
 					?>
 					<script type="text/javascript">addLoadEvent(function () {
@@ -204,7 +209,7 @@ class WPML_Admin_Scripts_Setup extends WPML_Full_Translation_API {
 				function () {
 					jQuery(document).ready(
 						function () {
-							jQuery('.subsubsub:not(.icl_subsubsub) li a').each(
+							jQuery('.subsubsub>li a').each(
 								function () {
 									var h = jQuery(this).attr('href');
 									var urlg = -1 === h.indexOf('?') ? '?' : '&';
@@ -299,7 +304,9 @@ class WPML_Admin_Scripts_Setup extends WPML_Full_Translation_API {
 					addLoadEvent(
 						function () {
 							jQuery('#aa').val('<?php echo $aa ?>').attr('readonly', 'readonly');
-							jQuery('#mm').val('<?php echo $mm ?>').attr('disabled', 'disabled');
+							jQuery('#mm').val('<?php echo $mm ?>').attr('disabled', 'disabled').attr('id', 'mm-disabled').attr('name', 'mm-disabled');
+							// create a hidden element for month because we wont get anything returned from the disabled month dropdown.
+							jQuery('<input type="hidden" id="mm" name="mm" value="<?php echo $mm ?>" />').insertAfter('#mm-disabled')
 							jQuery('#jj').val('<?php echo $jj ?>').attr('readonly', 'readonly');
 							jQuery('#hh').val('<?php echo $hh ?>').attr('readonly', 'readonly');
 							jQuery('#mn').val('<?php echo $mn ?>').attr('readonly', 'readonly');
@@ -401,9 +408,18 @@ class WPML_Admin_Scripts_Setup extends WPML_Full_Translation_API {
 			wp_enqueue_style( 'sitepress-' . $page_basename, ICL_PLUGIN_URL . '/res/css/' . $page_basename . '.css', array(), ICL_SITEPRESS_VERSION );
 		}
 
+		wp_register_style( 'otgs-dialogs', ICL_PLUGIN_URL . '/res/css/otgs-dialogs.css', null, ICL_SITEPRESS_VERSION );
+		wp_register_style( 'wpml-dialog', ICL_PLUGIN_URL . '/res/css/dialog.css', array('wp-jquery-ui-dialog', 'otgs-dialogs'), ICL_SITEPRESS_VERSION );
+		wp_enqueue_style( 'wpml-dialog');
+
+
+		wp_register_style( 'otgs-ico', ICL_PLUGIN_URL . '/res/css/otgs-ico.css', null, ICL_SITEPRESS_VERSION );
+		wp_enqueue_style( 'otgs-ico');
+		
+		
 		wp_enqueue_style( 'thickbox' );
 		wp_enqueue_style( 'translate-taxonomy', ICL_PLUGIN_URL . '/res/css/taxonomy-translation.css', array(), ICL_SITEPRESS_VERSION );
-
+		
 	}
 
 	private function verify_home_and_blog_pages_translations() {

@@ -2875,6 +2875,13 @@ a.ui-state-default.ui-state-highlight {
 	background: #444;
 }
 
+.tier-three {
+	position: relative;
+	clear: both;
+	display: block;
+	width: 76%;
+}
+
 
 
 
@@ -7054,13 +7061,12 @@ p.contacto a {
 /* SAVE THE CHILDREN ########################################################################################## */
 
 .save-the-children {
-  width: 50%;
-  margin: 0 auto;
-  position: relative;
-      margin-top: 30px;
-      float: left;
+	width: 90%;
+	margin: 0 auto 0;
+	position: relative;
+	margin-top: 30px;
+	clear: both;
 }
-
 
 p.save-the-children {
   color: #fff;
