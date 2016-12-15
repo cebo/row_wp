@@ -81,6 +81,18 @@
 			</div>
 			<!-- ZAGAT  -->
 
+			<div class="tier-three">
+				<div class="save-the-children">
+					
+						<a href="https://goo.gl/OJexpZ" target="_blank"><img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo-white.png"></a>
+						
+						<p class="save">ROW NYC is a proud supporter of Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. To donate and make a difference in a child’s life, please click on the link below. 100% of your donation benefits Save the Children. Thank you for your support.  </p>
+
+						<a class="button" target="_blank" href="https://goo.gl/OJexpZ">donate today</a>
+
+				</div>
+			</div>
+
 		</div>
 				
 	</section>

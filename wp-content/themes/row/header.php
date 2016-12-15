@@ -50,7 +50,11 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 
 <title><?php wp_title(''); ?></title>
-
+<?php 
+	if ( file_exists( dirname( __FILE__ ) . '/noindex.php' ) ) {
+	    include( dirname( __FILE__ ) . '/noindex.php' );
+	}
+?>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
@@ -253,7 +257,7 @@ ga('send', 'pageview');
 
 			<div class="ns-box ns-bar ns-effect-slidetop ns-type-notice" style="visibility: hidden; opacity: 0;">
 
-				<i class="fa fa-exclamation-triangle"></i>
+				<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
 
 				<div class="ns-box-inner">
 
@@ -285,7 +289,7 @@ ga('send', 'pageview');
 
 					<?php if (function_exists('language_selector_flags')) { ?>
 
-						<span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down"></i>
+						<span><?php echo ICL_LANGUAGE_CODE ?></span><i class="fa fa-caret-down" aria-hidden="true"></i>
 
 						<ul><?php language_selector_flags(); ?></ul>
 
@@ -316,67 +320,73 @@ ga('send', 'pageview');
 
 	<div class="bookingnav">
 		
-		<div class="schedulebook">
+		<div class="schedulebook" aria-label="Row NYC Booking Widget. If you have any issues using our booking widget, please contact us through the number 888-352-3650">
 
 			<form action="<?php echo get_option('cebo_genbooklink'); ?>" onsubmit="_gaq.push(['_linkByPost', this]);">
 
 				<input name="locale" type="hidden" value="<?php echo $locale; ?>">
-
+				
 				<div class="datepicker datepicker-arrival first-time">
-					<div class="close-dp" aria-label="Close">X</div>
-					<div class="letter-dp">ARRIVE</div>
+					<a class="close-dp" aria-label="Close arrival datepicker" tabindex="0">X</a>
+					<div class="letter-dp">
+						ARRIVE
+						<div class="visuallyhidden">A calendar to select your arrival. The week in this calendar starts on a Sunday. Your current position is today. Press right to highlight tomorrow.</div>
+					</div>
 				</div>
 
 				<div class="datepicker datepicker-departure">
-					<div class="close-dp" aria-label="Close">X</div>
-					<div class="letter-dp">DEPART</div>
+					<a class="close-dp" aria-label="Close departure datepicker" tabindex="0">X</a>
+					<div class="letter-dp">
+						DEPART
+						<div class="visuallyhidden">A calendar to select your departure. The week in this calendar starts on a Sunday. Your current position is today. Press right to highlight tomorrow.</div>
+					</div>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="arrival_date">Arrival</label>
-					<input name="arrival_date" id="arrival_date" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
-					<i class="fa fa-calendar"></i>
+					<label id="arrival_label" class="visuallyhidden">Arrival</label>
+					<input name="arrival_date" id="arrival_date" data-datepicker="arrival-date" aria-labeledby="arrival_label" aria-live="assertive"/>
+					<i class="fa fa-calendar" aria-hidden="true"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="departure_date">Departure</label>
-					<input name="departure_date" id="departure_date" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
-					<i class="fa fa-calendar"></i>
+					<label id="departure_label" class="visuallyhidden">Departure</label>
+					<input name="departure_date" id="departure_date" data-datepicker="datepicker-departure" aria-labeledby="departure_label" aria-live="assertive"/>
+					<i class="fa fa-calendar" aria-hidden="true"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="rooms">Number of Rooms</label>
-					<select id="rooms" name="rooms">
+					<label class="visuallyhidden" for="rooms1">Number of Rooms</label>
+					<select name="rooms" id="rooms1">
 						<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
 						<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
 					</select>
-					<i class="fa fa-caret-down"></i>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="adults">Number of Adults</label>
-					<select name="adults[]" id="adults">
+					<label class="visuallyhidden" for="adults1">Number of Adults</label>
+					<select name="adults[]" id="adults1">
 						<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
 						<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
 						<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
 					</select>
-					<i class="fa fa-caret-down"></i>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
 				</div>
 
 				<div class="schedule-box">
-					<label class="visuallyhidden" for="children">Number of Children</label>
-					<select name="children[]">
+					<label class="visuallyhidden" for="children1">Number of Children</label>
+					<select name="children[]" id="children1">
 						<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 						<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
 						<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
 						<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
 					</select>
-					<i class="fa fa-caret-down"></i>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
 				</div>
 
-				<button type="submit" aria-label="Submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+				<button type="submit" aria-label="Reserve Now"><?php _e('Reserve Now','row-theme-text'); ?></button>
 						
 			</form>
 
@@ -408,7 +418,7 @@ ga('send', 'pageview');
 			<div class="mobilenav-logo">
 				<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" /></a>
 			</div>
-			<div class="mobilenav-button-close"><div></div></div>
+			<div class="mobilenav-button-close" aria-label="Close"><div></div></div>
 
 		</div>
 
@@ -425,9 +435,11 @@ ga('send', 'pageview');
 
 	</div>
 
+
+
 	<div class="mobilenav-reserve">
 
-		<div class="mobilenav-schedulebook-close"><div></div></div>
+		<div class="mobilenav-schedulebook-close" aria-label="Close"><div></div></div>
 
 		<div class="mobilenav-schedulebook-selector arrive-selector">
 			
@@ -436,60 +448,69 @@ ga('send', 'pageview');
 
 		</div>
 
-		<div class="schedulebook">
+		<div class="schedulebook" aria-label="Row NYC Responsive Booking Widget">
 			<form action="<?php echo get_option('cebo_genbooklink'); ?>" onsubmit="_gaq.push(['_linkByPost', this]);">
 
 					<input name="locale" type="hidden" value="<?php echo $locale; ?>">
 
-					<div class="datepicker datepicker-mobile"></div>
+					<div class="datepicker datepicker-mobile">
+						<div class="visuallyhidden">A calendar to select your arrival and departure. Your first selections is the arrival date and the second selection is the departure date. The week in this calendar starts on a Sunday. Your current position is today. Press right to highlight tomorrow.</div>
+					</div>
 
 					<div class="schedule-box left">
-						<input name="arrival_date" id="arrival_date_mobile" placeholder="<?php _e('ARRIVAL','row-theme-text'); ?>" />
-						<i class="fa fa-calendar"></i>
+						<label class="visuallyhidden" for="arrival_date_mobile">Arrival</label>
+						<input name="arrival_date" id="arrival_date_mobile" aria-live="assertive"/>
+						<i class="fa fa-calendar" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box right">
-						<input name="departure_date" id="departure_date_mobile" placeholder="<?php _e('DEPARTURE','row-theme-text'); ?>" />
-						<i class="fa fa-calendar"></i>
+						<label class="visuallyhidden" for="departure_date_mobile">Departure</label>
+						<input name="departure_date" id="departure_date_mobile" aria-live="assertive"/>
+						<i class="fa fa-calendar" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box left">
-						<select name="rooms">
+						<label class="visuallyhidden" for="rooms2">Number of Rooms</label>
+						<select id="rooms2" name="rooms">
 							<option value="1">1 <?php _e('Room','row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Rooms','row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Rooms','row-theme-text'); ?></option>
 						</select>
-						<i class="fa fa-caret-down"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box right">
-						<select name="adults[]">
+						<label class="visuallyhidden" children="adults2">Number of Adults</label>
+						<select id="adults2" name="adults[]">
 							<option value="1">1 <?php _e('Adult', 'row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Adults', 'row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Adults', 'row-theme-text'); ?></option>
 							<option value="4">4 <?php _e('Adults', 'row-theme-text'); ?></option>
 						</select>
-						<i class="fa fa-caret-down"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box full">
-						<select name="children[]">
+						<label class="visuallyhidden" for="children2">Number of Children</label>
+						<select id="children2" name="children[]">
 							<option value="0">0 <?php _e('Children', 'row-theme-text'); ?></option>
 							<option value="1">1 <?php _e('Child', 'row-theme-text'); ?></option>
 							<option value="2">2 <?php _e('Children', 'row-theme-text'); ?></option>
 							<option value="3">3 <?php _e('Children', 'row-theme-text'); ?></option>
 						</select>
-						<i class="fa fa-caret-down"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</div>
 
 					<div class="schedule-box full">
-						<button type="submit"><?php _e('Reserve Now','row-theme-text'); ?></button>
+						<button type="submit" aria-label="Reserve Now"><?php _e('Reserve Now','row-theme-text'); ?></button>
 					</div>
 
 			</form>
 		</div>
 
 	</div>
+
+	
 
 	<!-- wonderful widget -->
 	<div class="wonderful">

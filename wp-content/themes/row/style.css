@@ -2008,6 +2008,15 @@ visibility: hidden;
     width: 186px;
 }
 
+a.ui-state-default.ui-state-highlight {
+	background: none repeat scroll 0 0 #e51a9b;
+	color: #fff;
+}
+
+.ui-datepicker-today .ui-state-default {
+	color: #e51a9b;
+}
+
 
 
 
@@ -2864,6 +2873,13 @@ visibility: hidden;
 	width: 100%;
 	height: 35px;
 	background: #444;
+}
+
+.tier-three {
+	position: relative;
+	clear: both;
+	display: block;
+	width: 76%;
 }
 
 
@@ -7045,13 +7061,12 @@ p.contacto a {
 /* SAVE THE CHILDREN ########################################################################################## */
 
 .save-the-children {
-  width: 50%;
-  margin: 0 auto;
-  position: relative;
-      margin-top: 30px;
-      float: left;
+	width: 90%;
+	margin: 0 auto 0;
+	position: relative;
+	margin-top: 30px;
+	clear: both;
 }
-
 
 p.save-the-children {
   color: #fff;
@@ -7501,12 +7516,12 @@ li.deal.foreign-box{
 }
 
 .schedulebook .datepicker-arrival {
-	top: 0;
+	top: 75px;
 	left: 0;
 }
 
 .schedulebook .datepicker-departure {
-	top: 0;
+	top: 75px;
 	left: 133px;
 }
 
@@ -7535,7 +7550,7 @@ li.deal.foreign-box{
     display: none;
 }
 
-.close-dp {
+.schedulebook .close-dp {
 	background-color: #000;
 	color: #fff;
 	font-size: 16px;
@@ -7543,12 +7558,12 @@ li.deal.foreign-box{
 	width: 50px;
 	text-align: center;
 	cursor: pointer;
-
 	position: absolute;
 	top: 0;
 	left: -50px;
+	height: auto;
 }
-	.close-dp:hover { background: #e51a9b; }
+	.schedulebook .close-dp:hover { background: #e51a9b; color: #fff; }
 
 .letter-dp {
 	background-color: #e51a9b;
@@ -7891,6 +7906,7 @@ li.deal.foreign-box{
 
 	opacity: 0;
 	visibility: hidden;
+	display: none;
 
 	-webkit-transition: all 0.2s ease 0s;
 	-moz-transition: all 0.2s ease 0s;
