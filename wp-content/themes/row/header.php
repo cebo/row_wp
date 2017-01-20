@@ -50,11 +50,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 
 <title><?php wp_title(''); ?></title>
-<?php 
-	if ( file_exists( dirname( __FILE__ ) . '/noindex.php' ) ) {
-	    include( dirname( __FILE__ ) . '/noindex.php' );
-	}
-?>
+<?php include( dirname( __FILE__ ) . '/noindex.php' ); ?>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
